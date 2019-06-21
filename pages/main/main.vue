@@ -98,6 +98,9 @@
 		components: {
 			token
 		},
+		mounted() {
+			console.log("sss");
+		},
 		methods: {
 			toPan() {
 				uni.switchTab({
