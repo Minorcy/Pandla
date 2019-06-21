@@ -17,17 +17,20 @@
 			<text>公益基金池建設中，捐贈10個token星球返回10個</text>
 		</view>
 		<view class="token-area">
+			<view class="welfare-content" @tap="toPan">
+				<image src="../../static/img/main/welfare.png" class="welfare-icon"/>
+				<span class="welfare-text">星球公益</span>
+			</view>
 			<view id="content" class="token-content">
 				<token
 					v-for="(item, index) in tokens"
 					:key="index"
 					class="mine-item topTobottom"
-					:tokenValue="item.value"/>
+					:tokenValue="item.value"
+					:index="index"
+					/>
 			</view>
-			<view class="welfare-content" @tap="toPan">
-				<image src="../../static/img/main/welfare.png" class="welfare-icon"/>
-				<span class="welfare-text">星球公益</span>
-			</view>
+			
 		</view>
 		<!-- swiper滑动器 -->
 		<swiper class="swiper"
@@ -92,14 +95,13 @@
 					value: '0.0476'
 				}, {
 					value: '0.0013'
+				}, {
+					value: '0.0013'
 				}]
 			}
 		},	
 		components: {
 			token
-		},
-		mounted() {
-			console.log("sss");
 		},
 		methods: {
 			toPan() {
@@ -143,7 +145,7 @@
     }
 </script>
 
-<style scoped="true">
+<style lang="scss" scoped="true">
 	.header {
 		display: flex;
 		flex-direction: row;
@@ -182,16 +184,20 @@
 	}
 	
 	.token-content {
-		width: 100%;
+		margin: 60upx auto;
+		width: 85%;
 		height: auto;
-		float: left;
-		padding: 40upx 0 20upx 30upx;
+		padding: 40upx 0 20upx 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
 	}
 	
 	.welfare-content {
 		position: absolute;
 		right: 50upx;
-		margin-top: 50upx;
+		margin-top: 20upx;
+		z-index: 6;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
