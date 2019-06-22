@@ -36,7 +36,12 @@
 	}
 
 	/* #endif */
-
+	
+	/* li样式 */
+	li {
+		list-style: none;
+	}
+	
 	/* 按钮样式 */
 	.btn-row {
 		padding: 50upx;

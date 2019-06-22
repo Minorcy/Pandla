@@ -1,26 +1,29 @@
 <template>
 	<view class="pages-content">
 		<view class="pan-data">
-			<p>PAN幣數量</p>
-			<text>888900</text>
-			<text>交易 ></text>
-			<p>凍結數量:50000</p>
+			<image class="pan-img-pan" src="../../static/img/main/pan.png"></image>
+			<p class="pan-label-num">PAN幣數量</p>
+			<text class="pan-data-num">{{assetInfo.balance}}</text>
+			<text class="pan-label-deal">交易 ></text>
+			<p class="pan-data-freeze">凍結數量: {{assetInfo.freeze}}</p>
 		</view>
 		<view class="pan-notice">
-			<p>PAN幣簡介</p>
-			<text>PAN幣是基於區塊鏈技術，用於記錄用戶在潘多拉的工作量證明，可用於星球上的消費與兌換等</br>
-			除日常根據原力大小生長PAN幣之外，星球用戶之間可以互相點贊送禮物贈與獲得PAN幣，48小時不領取PAN幣
-			將暫停生長。超過7天未領取，生長的PAN幣將自動消失。PAN幣的總數量有限，且每2年產出減少一半，隨著時
-			閒的退役獲取的難度將越來越大，前期參與更有優勢
-			</text>
+			<p class="pan-label-introduction">{{assetInfo.title}}</p>
+			<p class="pan-label-context">{{assetInfo.context}}</p>
+		</view>
+		<view class="pan-label-list">
+			<text class="pan-label-budget">收支記錄</text>
+			<text>|</text>
+			<text class="pan-label-task">任務獲取</text>
 		</view>
 		<view class="pan-list">
-			<text>收支記錄</text>
-			<text>|</text>
-			<text>任務獲取PAN幣</text>
-			<ul>
-				<li>
-					
+			<ul class="pan-list-ul">
+				<li v-for="(item, index) in billInfo" :key="index" class="pan-list-li">
+					<view>
+						<p class="pan-list-action">{{item.action}}</p>
+						<text class="pan-list-time">{{item.create_time}}</text>
+					</view>
+					<text class="pan-list-number">{{item.status}}{{item.number}}</text>
 				</li>
 			</ul>
 		</view>
@@ -28,27 +31,141 @@
 </template>
 
 <script>
+	import {getBalance, getBill} from '../../api/api.js';
+	export default {
+		data() {
+			return {
+				assetInfo: '',
+				billInfo: ''
+			}
+		},
+		methods: {
+			getBalanceData() {
+				getBalance().then(data => {
+					this.assetInfo = data;
+				});
+				getBill().then(data => {
+					this.billInfo = data;
+				});
+			}
+		},
+		onLoad() {
+			this.getBalanceData();
+		}
+	}
 </script>
 
 <style lang="scss" scoped>
+	.pages-content {
+		background-color: #EFEFF4;
+		width: 100%;
+	}
+	
 	.pan {
 		&-data {
 			width: 100%;
-			height: 100%;
 			background: -webkit-linear-gradient(to right, #000000, #979797); /* Safari 5.1 - 6.0 */
 			background: -o-linear-gradient(to right, #000000, #979797); /* Opera 11.1 - 12.0 */
 			background: -moz-linear-gradient(to right, #000000, #979797); /* Firefox 3.6 - 15 */
 			background: linear-gradient(to right, #000000, #979797); /* 标准的语法 */
-		}
-		
-		&-data p:nth-child(1) {
-			font-size: 30upx;
-			border-bottom: 1upx solid #FFFFFF;
-			padding: 20upx
-		}
-		
-		&-data text {
 			
+			&-num {
+				display: block;
+				font-size: 40upx;
+				padding: 20upx 0 0 20upx;
+			}
+			
+			&-freeze {
+				font-size: 25upx;
+				padding: 20upx;
+				clear: both;
+				background: -webkit-linear-gradient(to right, #424A4D, #979797); /* Safari 5.1 - 6.0 */
+				background: -o-linear-gradient(to right, #424A4D, #979797); /* Opera 11.1 - 12.0 */
+				background: -moz-linear-gradient(to right, #424A4D, #979797); /* Firefox 3.6 - 15 */
+				background: linear-gradient(to right, #424A4D, #979797); /* 标准的语法 */
+			}
+		}
+		
+		&-label {
+			&-num {
+				font-size: 30upx;
+				border-bottom: 1upx solid #FFFFFF;
+				padding: 20upx;
+			}
+			
+			&-deal {
+				float: right;
+				margin-right: 20upx;
+				font-size: 30upx;
+			}
+			
+			&-introduction {
+				font-size: 35upx;
+				border-bottom: 1upx solid #979797;
+			}
+			
+			&-context {
+				font-size: 25upx;
+				line-height: 45upx;
+			}
+			
+			&-list {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				font-size: 30upx;
+				padding: 50upx 100upx;
+				color: #000000;
+			}
+			
+			&-budget {
+				
+			}
+			
+			&-task {
+				
+			}
+		}
+		
+		&-notice {
+			background-color: #EFEFF4;
+			color: #000000;
+			padding: 30upx;
+			border-bottom: 1upx solid #979797;
+		}
+		
+		&-list {
+			border-top: 1upx solid #979797;
+			font-size: 35upx;
+			color: #000000;
+			
+			&-ul {
+				padding: 0 50upx;
+			}
+			
+			&-li {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				padding: 20upx 0;
+				border-bottom: 1upx solid #979797;
+			}
+			
+			&-action {
+				font-size: 30upx;
+			}
+			
+			&-time {
+				font-size: 25upx;
+				color: #979797;
+			}
+		}
+		
+		&-img-pan {
+			width:50upx;
+			height: 50upx;
+			padding: 15upx;
+			float: left;
 		}
 	}
 </style>

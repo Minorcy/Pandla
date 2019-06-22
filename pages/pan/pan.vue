@@ -59,7 +59,7 @@
 				<view class="donate">
 					<ul class="modifi">
 						<li @click="sub">-</li>
-						<li><input type="number" :value="donateValue" v-model="donateValue"></input></li>
+						<li><input type="number" v-model="donateValue"></input></li>
 						<li @click="add">+</li>
 					</ul>
 					<button size="mini" @tap="donatePan">確認捐贈</button>
