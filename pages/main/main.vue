@@ -27,8 +27,7 @@
 					:key="index"
 					class="mine-item topTobottom"
 					:tokenValue="item.value"
-					:index="index"
-					/>
+					:index="index"/>
 			</view>
 			
 		</view>
@@ -42,9 +41,9 @@
 			next-margin="1upx"
 			display-multiple-items=2.2>
 			<swiper-item v-for="(i, ind) in slides" :key="ind">
-				<view class="swiper-item" @tap="linkTo(i.linkTab)">
+				<navigator class="swiper-item" :url="i.linkTab">
 					<img :src="i.number" alt="加载失败">
-				</view>
+				</navigator>
 			</swiper-item>
 		</swiper>
     </view>
@@ -61,25 +60,25 @@
 			return {
 				slides: [{
 					number: 'static/img/slider/mainPact.svg',
-					linkTab: 'pact'
+					linkTab: '../pact/pact'
 				}, {
 					number: 'static/img/slider/mainDaily.svg',
-					linkTab: 'daily'
+					linkTab: '../daily/daily'
 				}, {
 					number: 'static/img/slider/mainNearby.svg',
-					linkTab: 'nearby'
+					linkTab: ''
 				}, {
 					number: 'static/img/slider/mainPan.svg',
-					linkTab: 'pan'
+					linkTab: ''
 				}, {
 					number: 'static/img/slider/mainStore.svg',
-					linkTab: 'store'
+					linkTab: '../store/store'
 				}, {
 					number: 'static/img/slider/mainGame.svg',
-					linkTab: 'game'
+					linkTab: '../game/game'
 				}, {
 					number: 'static/img/slider/mainEntertain.svg',
-					linkTab: 'entertain'
+					linkTab: '../entertain/entertain'
 				}],
 				indicatorDots: false,
 				autoplay: false,
@@ -97,6 +96,8 @@
 					value: '0.0013'
 				}, {
 					value: '0.0013'
+				}, {
+					value: '0.0048'
 				}]
 			}
 		},	
@@ -108,38 +109,6 @@
 				uni.switchTab({
 					url: '../pan/pan'
 				});
-			},
-			linkTo(linkTab) {
-				// console.log(linkTab)
-				if(linkTab == 'pan') {
-					uni.switchTab({
-					  url: '../pan/pan'
-					});
-				} else if (linkTab == 'pact') {
-					uni.navigateTo({
-					  url:'../pact/pact'
-					});
-				  }
-				  else if (linkTab == 'daily') {
-				  	uni.navigateTo({
-				  	  url:'../daily/daily'
-				  	});
-				  }
-				  else if (linkTab == 'store') {
-					uni.navigateTo({
-					  url:'../store/store'
-					});
-				  }
-				  else if (linkTab == 'game') {
-					uni.navigateTo({
-					  url:'../game/game'
-					});
-				  }
-				  else if (linkTab == 'entertain') {
-					uni.navigateTo({
-					   url:'../entertain/entertain'
-					});
-				  }
 			}
 		}
     }

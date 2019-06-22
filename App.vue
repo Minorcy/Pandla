@@ -114,6 +114,7 @@
 	
 	.pages-content {
 		width: 100%;
+		overflow: hidden;
 		display: flex;
 		flex: 1;
 		flex-direction: column;
@@ -122,7 +123,7 @@
 		border-top:solid;
 		border-width: 2upx;
 		border-top-color: #4CD964;
-		overflow: hidden;
+		
 	}
 	
 	/* 输入框 */

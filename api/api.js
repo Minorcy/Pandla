@@ -3,8 +3,9 @@ const systemUrl = 'http://printsn.com:8080/v1/system/';
 const fansUrl = 'http://printsn.com:8080/v1/fans/';
 const dynUrl = 'http://printsn.com:8080/v1/dyn/';
 const pollUrl = 'http://printsn.com:8080/v1/poll/';
-const panUrl = 'http://printsn.com:8080/v1/pan/'
-const forceUrl = 'http://printsn.com:8080/v1/force/'
+const panUrl = 'http://printsn.com:8080/v1/pan/';
+const forceUrl = 'http://printsn.com:8080/v1/force/';
+const treatyUrl = 'http://printsn.com:8080/v1/tre/';
 
 /*********************登录注册***************************/
 // 登录
@@ -373,7 +374,7 @@ export const concern = (type, gid) => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success:(res) => {
-			console.log(res.data);
+			// console.log(res.data);
 			if(res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
@@ -478,7 +479,7 @@ export const getBalance = () => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success:(res) => {
-			console.log(res.data);
+			// console.log(res.data);
 			if(res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
@@ -500,7 +501,7 @@ export const getBill = () => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success:(res) => {
-			console.log(res.data);
+			// console.log(res.data);
 			if(res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
@@ -523,7 +524,7 @@ export const getForBalance = () => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success:(res) => {
-			console.log(res.data);
+			// console.log(res.data);
 			if(res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
@@ -545,7 +546,76 @@ export const getForBill = () => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success:(res) => {
-			console.log(res.data);
+			// console.log(res.data);
+			if(res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+/*********************公約***************************/
+//公约列表
+export const toTreIndex = () => new Promise((resolve, reject) => {
+	uni.request({
+		url: treatyUrl + 'toTreIndex',
+		header: {
+			'token': Token
+		},
+		success:(res) => {
+			// console.log(res.data);
+			if(res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+//列表详情
+export const isVote = (tid) => new Promise((resolve, reject) => {
+	uni.request({
+		url: treatyUrl + 'isVote?tid=' + tid,
+		method: 'POST',
+		header: {
+			'token': Token
+		},
+		success:(res) => {
+			// console.log(res.data);
+			if(res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+//投票
+export const sysVote = (tid, isWell) => new Promise((resolve, reject) => {
+	uni.request({
+		url: treatyUrl + 'sysVote?tid=' + tid + '&isWell=' + isWell,
+		method: 'POST',
+		header: {
+			'token': Token
+		},
+		success:(res) => {
+			// console.log(res.data);
 			if(res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},

@@ -10,7 +10,11 @@ const store = new Vuex.Store({
 		hasLogin: (uni.getStorageSync('USERS_KEY').token != '') ? true : false,
 		
 		// 星球公约列表传值
-		voteItem: '',
+		voteValue: {
+			voteName: '',
+			voteId: 0,
+			voteStatus: 0
+		},
 		
 		// 日志图片
 		imgTemp: '',
@@ -19,9 +23,9 @@ const store = new Vuex.Store({
 		isHidden: (uni.getStorageSync('ASSET_KEY')) ? true : false
     },
     mutations: {
-		setBarText(state, voteItem) {
-			state.voteItem = '';
-			state.voteItem = voteItem;
+		setBarText(state, voteValue) {
+			state.voteValue = '';
+			state.voteValue = voteValue;
 		},
 		logout(state) {
 			state.token = '';

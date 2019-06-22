@@ -4,22 +4,22 @@
 		<view class="img-group">
 			<image src="../../static/img/main/pact/bg1.svg" mode="aspectFit"></image>
 			<view class="img-title">
-				<p>星球公約</p>
+				<p>{{labelList.title}}</p>
 				<p>由星球居民共同投票修訂</p>
 			</view>
 		</view>
 		<view class="img-group">
 			<image class="center-img" src="../../static/img/main/pact/bg2.svg" mode="aspectFit"></image>
-			<p class="center-title">潘多拉星球是一個居民自治的星球，星球的產品和公約都由星球居民投票決定。作為星球的居民有權利和義務一起
-			建設屬於我們美好的家園。</br>
-			居民在每一次投票建設中，都會獲得星球原力值，增加星球通行證PAN弊的生產</p>
+			<p class="center-title">{{labelList.context}}</p>
 		</view>
 		<p class="vote-title">投票列表</p>
 		<view class="vote-list">
 			<view v-for="(item, index) in voteList" :key="index" >
-				<view class="vote-li" @tap="voteDetails(item.voteItem)">
-					<text>{{item.voteItem}}</text><text>{{item.status}}</text>
-					<p>投票可獲得{{item.focus}}個永久原力</p>
+				<view class="vote-li" @tap="voteDetails(item.name, item.id, item.status)">
+					<text>{{item.name}}</text>
+					<text v-if="item.status == 0">已結束</text>
+					<text v-else>正在進行中</text>
+					<p>投票可獲得{{item.foces}}個永久原力</p>
 					<hr>
 				</view>
 			</view>
@@ -29,28 +29,33 @@
 
 <script>
 	import {mapState, mapMutations} from 'vuex';
+	import {toTreIndex} from '../../api/api.js';
+	
 	export default {
 		data() {
 			return {
-				voteList: [{
-					voteItem: '關於定位社交的設計',
-					status: '正在進行中',
-					focus: '5'
-				}, {
-					voteItem: '公益基金的使用與監管',
-					status: '已結束',
-					focus: '8'
-				}]
+				voteList: '',
+				labelList: ''
 			}
 		},
 		methods: {
 			...mapMutations(['setBarText']),
-			voteDetails(voteItem) {
+			voteDetails(voteName, voteId, voteStatus) {
+				let voteValue = {voteName: voteName, voteId: voteId, voteStatus: voteStatus}
+				this.setBarText(voteValue);
 				uni.navigateTo({
 					url: 'pactVoteDetail'
-				})
-				this.$store.state.voteItem = voteItem
+				});
+			},
+			treatyIndex() {
+				toTreIndex().then(data => {
+					this.voteList = data;
+					this.labelList = data[0];
+				});
 			}
+		},
+		onLoad() {
+			this.treatyIndex();
 		}
 	}
 </script>

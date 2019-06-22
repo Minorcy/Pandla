@@ -16,7 +16,7 @@
 		},
 		props: ["tokenValue","index"],
 		mounted(){
-			console.log("index",this.index);
+			// console.log("index",this.index);
 		}
 	}
 </script>

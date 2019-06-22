@@ -57,8 +57,8 @@
 
 <style lang="scss" scoped>
 	.pages-content {
-		background-color: #EFEFF4;
 		width: 100%;
+		background-color: #EFEFF4;
 	}
 	
 	.pan {
