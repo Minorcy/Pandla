@@ -1,0 +1,25 @@
+@font-face {
+	font-family: uniicons;
+	font-weight: normal;
+	font-style: normal;
+	src: url('https://at.alicdn.com/t/font_1258335_xnnbklnp24k.ttf') format('truetype');
+}
+
+.m-icon {
+	font-family: uniicons;
+	font-size: 48upx;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1;
+	display: inline-block;
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+.m-icon.uni-active {
+	color: #007aff;
+}
+
+.m-icon-search:before {
+	content: '\e608';
+}

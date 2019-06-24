@@ -11,7 +11,9 @@
 		}
 	}
 </script>
-
+<style>
+	@import url("./components/m-icon/m-icon.css");
+</style>
 <style>
 	/*每个页面公共css */
 	/* uni-app默认全局使用flex布局。因为flex布局有利于跨更多平台，尤其是采用原生渲染的平台。如不了解flex布局，请参考http://www.w3.org/TR/css3-flexbox/。如不使用flex布局，请删除或注释掉本行。*/
@@ -36,28 +38,28 @@
 	}
 
 	/* #endif */
-	
+
 	/* li样式 */
 	li {
 		list-style: none;
 	}
-	
+
 	/* 按钮样式 */
 	.btn-row {
 		padding: 50upx;
 	}
-		
+
 	button {
 		padding-top: 10upx;
 		font-size: 30upx;
 	}
-	
-	
+
+
 	button[disabled] {
 		color: #9E9E9E !important;
 		background: #000000 !important;
 	}
-	
+
 	button.primary {
 		display: flex;
 		justify-content: flex-end;
@@ -68,11 +70,11 @@
 		color: #EFEFF4;
 		border: none;
 	}
-	
+
 	button.hover-primary {
 		opacity: 0.5;
 	}
-	
+
 	.verCode {
 		background: transparent;
 		color: #EFEFF4;
@@ -82,16 +84,16 @@
 		padding: 0;
 		margin: 0;
 	}
-	
+
 	/* 链接 */
 	.action-row {
-	    display: flex;
-	    flex-direction: row;
-	    justify-content: flex-start;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
 		font-size: 25upx;
 		margin-left: 10upx;
 	}
-	
+
 	/* 原生组件模式下需要注意组件外部样式 */
 	.content {
 		display: flex;
@@ -101,7 +103,7 @@
 		padding: 20upx;
 		color: #EFEFF4;
 	}
-	
+
 	.main-content {
 		display: flex;
 		flex: 1;
@@ -111,7 +113,7 @@
 		background: #131D21;
 		color: #EFEFF4;
 	}
-	
+
 	.pages-content {
 		width: 100%;
 		overflow: hidden;
@@ -120,12 +122,12 @@
 		flex-direction: column;
 		color: #EFEFF4;
 		background: #000000;
-		border-top:solid;
+		border-top: solid;
 		border-width: 2upx;
 		border-top-color: #4CD964;
-		
+
 	}
-	
+
 	/* 输入框 */
 	m-input {
 		width: 100%;
