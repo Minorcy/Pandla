@@ -10,7 +10,7 @@
 			</view>
 		</view>
 		<view class="chat-wrapper">
-			<view class="chat-item" v-for="(item,index) in 3" :key="index">
+			<view class="chat-item" v-for="(item,index) in 3" :key="index" @click="toChat">
 				<view class="logo-box">
 					<image src="" class="logo"></image>
 				</view>
@@ -64,6 +64,14 @@
 		},
 		mounted() {
 
+		},
+		methods: {
+			toChat() {
+				uni.navigateTo({
+					url: '/pages/im-chat/im-chat',
+					animationDuration: 2000
+				});
+			}
 		}
 	}
 </script>

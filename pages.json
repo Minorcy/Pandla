@@ -23,6 +23,13 @@
 		},
 
 		{
+			"path": "pages/im-chat/im-chat",
+			"style": {
+				"navigationBarTitleText": "聊天"
+			}
+		},
+		
+		{
 			"path": "pages/pwd/pwd",
 			"style": {
 				"navigationBarTitleText": ""
