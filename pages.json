@@ -223,7 +223,7 @@
 		"list": [{
 			"name": "daily", //模式名称  
 			"pathName": "pages/daily/daily", //启动页面，必选  
-			"query": "id=1" //启动参数, QueryString 格式  
+			"query": "id=1" //启动参数, QueryString 格式
 		}]
 	}
 }
