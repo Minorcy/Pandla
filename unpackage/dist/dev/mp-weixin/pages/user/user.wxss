@@ -1,0 +1,98 @@
+
+.userInfo.data-v-049f5804 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	margin-top: 20rpx;
+}
+.portrait.data-v-049f5804 {
+	width: 150rpx;
+	height: 150rpx;
+	margin: 0 auto;
+	margin-bottom: 30rpx;
+	-webkit-border-radius: 100%;
+	        border-radius: 100%;
+}
+.avatar.data-v-049f5804 {
+	width: 150rpx;
+	height: 150rpx;
+	margin: 0 auto;
+	margin-bottom: 30rpx;
+}
+.userInfo ._p.data-v-049f5804 {
+	font-size: 25rpx;
+	text-align: center;
+	margin: 5rpx 0 5rpx 0;
+}
+.userInfo ._p.data-v-049f5804:nth-child(2) {
+	font-size: 40rpx;
+}
+.edit.data-v-049f5804 {
+	width: 40rpx;
+	height: 40rpx;
+	position: absolute;
+	right: 10rpx;
+	margin-right: 30rpx;
+}
+.panInfo.data-v-049f5804 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	margin: 30rpx;
+	font-size: 25rpx;
+	text-align: center;
+}
+.bag.data-v-049f5804 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	margin: 20rpx 40rpx;
+}
+.bag image.data-v-049f5804{
+	width: 40%;
+	height: 100rpx;
+}
+.option.data-v-049f5804 {
+	font-size: 28rpx;
+}
+.option image.data-v-049f5804 {
+	width: 40rpx;
+	height: 40rpx;
+	margin: 0 20rpx 10rpx 20rpx;
+}
+.option text.data-v-049f5804:nth-child(3) {
+	margin-left: auto;
+	margin-top: 10rpx;
+	font-size: 25rpx;
+	color: #007AFF;
+}
+.btn-row.data-v-049f5804 {
+	margin: 0 auto;
+}
+

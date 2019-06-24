@@ -1,214 +1,223 @@
 {
-    "pages": [ //pages数组中第一项表示应用启动页,
-        {
-            "path": "pages/index/index",
-        	"style": {
-        	    "navigationBarTitleText": "",
-				"app-plus": {
-					"titleNView": false
-				}
-        	}
-        }, {
-            "path": "pages/login/login",
-			"style": {
-			    "navigationBarTitleText": ""
-			}
-        }, 
-		
+	"pages": [ //pages数组中第一项表示应用启动页,
 		{
-            "path": "pages/reg/reg",
+			"path": "pages/index/index",
 			"style": {
-			    "navigationBarTitleText": ""
-			}
-        },
-		
-		{
-            "path": "pages/pwd/pwd",
-			"style": {
-			    "navigationBarTitleText": ""
-			}
-        },
-		
-		{
-            "path": "pages/main/main",
-			"style": {
-			    "navigationBarTitleText": "",
-				"app-plus": {
-					"titleNView": false
-				}
-			}
-        }, 
-		
-		{
-			"path":"pages/pact/pact",
-			"style": {
-				"navigationBarTitleText":"星球公約"
-			}
-		}, {
-			"path":"pages/pact/pactVoteDetail",
-			"style": {
-				"navigationBarTitleText":""
-			}
-		}, 
-		
-		{
-			"path":"pages/daily/daily",
-			"style": {
-				"navigationBarTitleText":"",
+				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false
 				}
 			}
 		}, {
-			"path":"pages/daily/publish",
+			"path": "pages/login/login",
 			"style": {
-				"navigationBarTitleText":"",
+				"navigationBarTitleText": ""
+			}
+		},
+
+		{
+			"path": "pages/reg/reg",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+
+		{
+			"path": "pages/pwd/pwd",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+
+		{
+			"path": "pages/main/main",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		},
+
+		{
+			"path": "pages/pact/pact",
+			"style": {
+				"navigationBarTitleText": "星球公約"
+			}
+		}, {
+			"path": "pages/pact/pactVoteDetail",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+
+		{
+			"path": "pages/daily/daily",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/daily/publish",
+			"style": {
+				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
 							"text": "發表",
-							"fontSize":"35upx",
-							"color":"#4CD964"
+							"fontSize": "35upx",
+							"color": "#4CD964"
 						}]
 					}
 				}
 			}
 		}, {
-			"path":"pages/daily/userInfo",
+			"path": "pages/daily/userInfo",
 			"style": {
-				"navigationBarTitleText":""
+				"navigationBarTitleText": ""
 			}
 		},
-		
+
 		{
-			"path":"pages/store/store",
+			"path": "pages/store/store",
 			"style": {
-				"navigationBarTitleText":""
-			}
-		}, 
-		{
-			"path":"pages/game/game",
-			"style": {
-				"navigationBarTitleText":""
-			}
-		}, 
-		{
-			"path":"pages/entertain/entertain",
-			"style": {
-				"navigationBarTitleText":"位置 | 活動"
-			}
-		}, 
-		{
-			"path":"pages/entertain/entertainDetail",
-			"style": {
-				"navigationBarTitleText":""
-			}
-		}, 
-		{
-			"path":"pages/entertain/entertainApplication",
-			"style": {
-				"navigationBarTitleText":""
+				"navigationBarTitleText": ""
 			}
 		},
-		
 		{
-            "path": "pages/user/user",
+			"path": "pages/game/game",
 			"style": {
-			    "navigationBarTitleText": "",
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/entertain/entertain",
+			"style": {
+				"navigationBarTitleText": "位置 | 活動"
+			}
+		},
+		{
+			"path": "pages/entertain/entertainDetail",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/entertain/entertainApplication",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+
+		{
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false
 				}
-				
+
 			}
-        }, {
-		    "path": "pages/user/update",
+		}, {
+			"path": "pages/user/update",
 			"style": {
-			    "navigationBarTitleText": ""
+				"navigationBarTitleText": ""
 			}
 		},
-		
+
 		{
-            "path": "pages/msg/msg",
+			"path": "pages/msg/msg",
 			"style": {
-			    "navigationBarTitleText": "",
+				"navigationBarTitleText": "通讯",
+				"navigationBarBackgroundColor": "#E1E1E1",
+				"navigationBarTextStyle": "black",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue6a4",
+							"fontSrc": "https://at.alicdn.com/t/font_1258335_6h11trbb733.ttf",
+							"fontSize": "22px",
+							"color": "#999999"
+						}]
+					}
+				}
+			}
+
+		},
+
+		{
+			"path": "pages/pan/pan",
+			"style": {
+				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false
 				}
 			}
-			
-        },
-		
-		{
-            "path": "pages/pan/pan",
-			"style": {
-			    "navigationBarTitleText": "",
-				"app-plus": {
-					"titleNView": false
-				}
-			}
-        }, {
+		}, {
 			"path": "pages/pan/donateList",
 			"style": {
-			    "navigationBarTitleText": "捐贈榜單"
+				"navigationBarTitleText": "捐贈榜單"
 			}
 		},
-		
+
 		{
-		    "path": "pages/ledger/asset",
+			"path": "pages/ledger/asset",
 			"style": {
-			    "navigationBarTitleText": "PAN幣賬本"
+				"navigationBarTitleText": "PAN幣賬本"
 			}
 		}, {
 			"path": "pages/ledger/focus",
 			"style": {
-			    "navigationBarTitleText": "原力賬本"
+				"navigationBarTitleText": "原力賬本"
 			}
 		},
-		
+
 		{
-		    "path": "pages/setting/setting",
+			"path": "pages/setting/setting",
 			"style": {
-			    "navigationBarTitleText": ""
+				"navigationBarTitleText": ""
 			}
 		}
-    ],
-    "tabBar": {
-        "color": "#767676",
-        "selectedColor": "#EFEFF4",
-        "backgroundColor": "#000000",
-        "list": [{
-            "pagePath": "pages/main/main",
-            "text": "首頁",
-            "iconPath": "static/img/tabbar/home.png",
-            "selectedIconPath": "static/img/tabbar/homeHL.png"
-        }, {
+	],
+	"tabBar": {
+		"color": "#767676",
+		"selectedColor": "#EFEFF4",
+		"backgroundColor": "#000000",
+		"list": [{
+			"pagePath": "pages/main/main",
+			"text": "首頁",
+			"iconPath": "static/img/tabbar/home.png",
+			"selectedIconPath": "static/img/tabbar/homeHL.png"
+		}, {
 			"pagePath": "pages/msg/msg",
-            "text": "通訊",
-            "iconPath": "static/img/tabbar/msg.png",
-            "selectedIconPath": "static/img/tabbar/msgHL.png"
-        }, {
-            "pagePath": "pages/pan/pan",
-            "text": "PAN",
-            "iconPath": "static/img/tabbar/PAN.png",
-            "selectedIconPath": "static/img/tabbar/PANHL.png"
-        }, {
-            "pagePath": "pages/user/user",
-            "text": "我的",
-            "iconPath": "static/img/tabbar/user.png",
-            "selectedIconPath": "static/img/tabbar/userHL.png"
-        }]
-    },
-    "globalStyle": {
-        "navigationBarTextStyle": "white",
-        "navigationBarBackgroundColor": "#000000",
-        "backgroundColor": "#fbf9fe"
-    },
+			"text": "通訊",
+			"iconPath": "static/img/tabbar/msg.png",
+			"selectedIconPath": "static/img/tabbar/msgHL.png"
+		}, {
+			"pagePath": "pages/pan/pan",
+			"text": "PAN",
+			"iconPath": "static/img/tabbar/PAN.png",
+			"selectedIconPath": "static/img/tabbar/PANHL.png"
+		}, {
+			"pagePath": "pages/user/user",
+			"text": "我的",
+			"iconPath": "static/img/tabbar/user.png",
+			"selectedIconPath": "static/img/tabbar/userHL.png"
+		}]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#000000",
+		"backgroundColor": "#fbf9fe"
+	},
 	"condition": { //编译模式配置，仅开发期间生效  
-        "current": 0, //当前激活的编译模式（list 的索引项）  
-        "list": [{  
-            "name": "daily", //模式名称  
-            "pathName": "pages/daily/daily", //启动页面，必选  
-             "query": "id=1" //启动参数, QueryString 格式  
-        }]  
-    }  
+		"current": 0, //当前激活的编译模式（list 的索引项）  
+		"list": [{
+			"name": "daily", //模式名称  
+			"pathName": "pages/daily/daily", //启动页面，必选  
+			"query": "id=1" //启动参数, QueryString 格式  
+		}]
+	}
 }

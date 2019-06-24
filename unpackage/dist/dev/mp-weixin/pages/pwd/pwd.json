@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "m-input": "/components/m-input",
+    "logo": "/components/logo"
+  }
+}

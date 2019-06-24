@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="550px" viewBox="0 0 375 550" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>分组 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="星球公约" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="投票頁面" transform="translate(0.000000, -39.000000)">
+            <g id="分组-2" transform="translate(0.000000, 39.000000)">
+                <polyline id="Stroke-1" stroke="#929292" stroke-width="1.567" points="29.0007977 23 22 16.0007977 29.0007977 9"></polyline>
+                <rect id="矩形" fill="#FFFFFF" x="0" y="34" width="375" height="224"></rect>
+                <g id="编组" transform="translate(331.000000, 48.000000)">
+                    <g transform="translate(0.000000, 0.250000)" fill="#007AFF" id="Fill-1">
+                        <path d="M26.2494,13.8756 C26.2494,6.6456 20.3534,0.7496 13.1254,0.7496 C5.8954,0.7496 0.0014,6.6456 0.0014,13.8756 C0.0014,21.1036 5.8954,26.9996 13.1254,26.9996 C20.3534,26.9996 26.2494,21.1036 26.2494,13.8756 Z"></path>
+                    </g>
+                    <path d="M16.1878,21.237 C15.0658,21.237 14.1558,20.325 14.1558,19.205 C14.1558,18.083 15.0658,17.173 16.1878,17.173 C17.3098,17.173 18.2198,18.083 18.2198,19.205 C18.2198,20.325 17.3098,21.237 16.1878,21.237 M8.0598,16.157 C6.9398,16.157 6.0278,15.245 6.0278,14.125 C6.0278,13.003 6.9398,12.093 8.0598,12.093 C9.1818,12.093 10.0918,13.003 10.0918,14.125 C10.0918,15.245 9.1818,16.157 8.0598,16.157 M16.1878,11.077 C15.0658,11.077 14.1558,10.167 14.1558,9.045 C14.1558,7.925 15.0658,7.013 16.1878,7.013 C17.3098,7.013 18.2198,7.925 18.2198,9.045 C18.2198,10.167 17.3098,11.077 16.1878,11.077 M16.1878,5.997 C14.5038,5.997 13.1398,7.361 13.1398,9.045 C13.1398,9.457 13.2238,9.849 13.3718,10.205 L10.3298,12.107 C9.7718,11.481 8.9658,11.077 8.0598,11.077 C6.3758,11.077 5.0118,12.441 5.0118,14.125 C5.0118,15.809 6.3758,17.173 8.0598,17.173 C8.9658,17.173 9.7718,16.771 10.3298,16.143 L13.3718,18.043 C13.2238,18.401 13.1398,18.793 13.1398,19.205 C13.1398,20.889 14.5038,22.253 16.1878,22.253 C17.8718,22.253 19.2358,20.889 19.2358,19.205 C19.2358,17.521 17.8718,16.157 16.1878,16.157 C15.2818,16.157 14.4778,16.559 13.9178,17.187 L10.8758,15.285 C11.0238,14.929 11.1078,14.537 11.1078,14.125 C11.1078,13.713 11.0238,13.321 10.8758,12.963 L13.9178,11.063 C14.4778,11.691 15.2818,12.093 16.1878,12.093 C17.8718,12.093 19.2358,10.729 19.2358,9.045 C19.2358,7.361 17.8718,5.997 16.1878,5.997" id="Fill-3" fill="#FEFEFE"></path>
+                </g>
+                <path d="M0,34 L375,34" id="直线-4" stroke="#979797" stroke-linecap="square"></path>
+                <text id="關於定位社交的設計" font-family="PingFangSC-Semibold, PingFang SC" font-size="15" font-weight="500" letter-spacing="-0.1136365" fill="#000000">
+                    <tspan x="120.011364" y="65">關於定位社交的設計</tspan>
+                </text>
+                <path d="M0,1 L375,1" id="直线-4" stroke="#979797" stroke-linecap="square"></path>
+                <text id="為星球居民能夠更便捷查找到附近的朋友，我" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" line-spacing="25" letter-spacing="-0.1136365" fill="#000000">
+                    <tspan x="22" y="107">為星球居民能夠更便捷查找到附近的朋友，我們將</tspan>
+                    <tspan x="22" y="132">開啟定位社交，查看你身邊的星球居民，基於現有</tspan>
+                    <tspan x="22" y="157">定位社交產品的綜合總結，我們希望能為星球居民</tspan>
+                    <tspan x="22" y="182">提供一個更優質的產品，特向星球居民徵集產品意</tspan>
+                    <tspan x="22" y="207">見，歡迎大家參與建設</tspan>
+                </text>
+                <text id="定位社交產品投票" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" letter-spacing="-0.1136365" fill="#000000">
+                    <tspan x="123" y="22">定位社交產品投票</tspan>
+                </text>
+                <text id="參與投票可獲得5個永久原力值" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" letter-spacing="-0.1136365" fill="#707070">
+                    <tspan x="22" y="247">參與投票可獲得5個永久原力值</tspan>
+                </text>
+                <text id="【多選投票】" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" letter-spacing="-0.1136365" fill="#007AFF">
+                    <tspan x="11" y="286">【多選投票】</tspan>
+                </text>
+                <rect id="矩形" fill="#FFFFFF" x="0" y="323" width="375" height="60"></rect>
+                <rect id="矩形" fill="#FFFFFF" x="0" y="443" width="375" height="60"></rect>
+                <text id="支持開啟" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" letter-spacing="-0.1136365" fill="#000000">
+                    <tspan x="19" y="359">支持開啟</tspan>
+                </text>
+                <text id="不支持開啟" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" letter-spacing="-0.1136365" fill="#000000">
+                    <tspan x="19" y="479">不支持開啟</tspan>
+                </text>
+                <polyline id="Stroke-1" stroke="#007AFF" stroke-width="1.5" stroke-linecap="round" points="101 353.59982 107.40018 360 119.610375 348"></polyline>
+                <polyline id="Stroke-1" stroke="#007AFF" stroke-width="1.5" stroke-linecap="round" points="114 472.59982 120.40018 479 132.610375 467"></polyline>
+                <text id="160人-80%" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" letter-spacing="-0.1136365" fill="#000000">
+                    <tspan x="264" y="359">160人   80%</tspan>
+                </text>
+                <text id="40人-20%" font-family="PingFangSC-Regular, PingFang SC" font-size="15" font-weight="normal" letter-spacing="-0.1136365" fill="#000000">
+                    <tspan x="264" y="479">40人   20%</tspan>
+                </text>
+                <path d="M0,383 L275.5,383" id="直线-5" stroke="#007AFF" stroke-linecap="square"></path>
+                <path d="M0,503 L92.3019943,503" id="直线-5" stroke="#007AFF" stroke-linecap="square"></path>
+                <circle id="椭圆形" fill="#707070" cx="38" cy="413" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="71" cy="413" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="104" cy="413" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="137" cy="413" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="170" cy="413" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="204" cy="413" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="237" cy="413" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="270" cy="413" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="303" cy="413" r="14"></circle>
+                <circle id="椭圆形" fill="#B8B8B8" cx="335" cy="413" r="12"></circle>
+                <text id="自己" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" letter-spacing="-0.09090921" fill="#FFFFFF">
+                    <tspan x="26" y="418">自己</tspan>
+                </text>
+                <g id="编组-6" transform="translate(326.000000, 411.000000)" fill="#565656">
+                    <circle id="椭圆形" cx="2.5" cy="2.5" r="2.5"></circle>
+                    <circle id="椭圆形" cx="9.16666667" cy="2.5" r="2.5"></circle>
+                    <circle id="椭圆形" cx="15.8333333" cy="2.5" r="2.5"></circle>
+                </g>
+                <circle id="椭圆形" fill="#707070" cx="38" cy="536" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="71" cy="536" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="104" cy="536" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="137" cy="536" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="170" cy="536" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="204" cy="536" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="237" cy="536" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="270" cy="536" r="14"></circle>
+                <circle id="椭圆形" fill="#707070" cx="303" cy="536" r="14"></circle>
+                <circle id="椭圆形" fill="#B8B8B8" cx="335" cy="536" r="12"></circle>
+                <text id="自己" font-family="PingFangSC-Regular, PingFang SC" font-size="12" font-weight="normal" letter-spacing="-0.09090921" fill="#FFFFFF">
+                    <tspan x="26" y="541">自己</tspan>
+                </text>
+                <g id="编组-6" transform="translate(326.000000, 534.000000)" fill="#565656">
+                    <circle id="椭圆形" cx="2.5" cy="2.5" r="2.5"></circle>
+                    <circle id="椭圆形" cx="9.16666667" cy="2.5" r="2.5"></circle>
+                    <circle id="椭圆形" cx="15.8333333" cy="2.5" r="2.5"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
