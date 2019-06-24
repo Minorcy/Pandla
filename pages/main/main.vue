@@ -66,19 +66,19 @@
 					linkTab: '../daily/daily'
 				}, {
 					number: 'static/img/slider/mainNearby.svg',
-					linkTab: ''
+					linkTab: '../nearby/nearby'
+				}, {
+					number: 'static/img/slider/mainEntertain.svg',
+					linkTab: '../entertain/entertain'
 				}, {
 					number: 'static/img/slider/mainPan.svg',
-					linkTab: ''
+					linkTab: '../entertain/entertain'
 				}, {
 					number: 'static/img/slider/mainStore.svg',
 					linkTab: '../store/store'
 				}, {
 					number: 'static/img/slider/mainGame.svg',
 					linkTab: '../game/game'
-				}, {
-					number: 'static/img/slider/mainEntertain.svg',
-					linkTab: '../entertain/entertain'
 				}],
 				indicatorDots: false,
 				autoplay: false,

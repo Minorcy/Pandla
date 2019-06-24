@@ -12,18 +12,37 @@
 			<p class="pan-label-context">{{assetInfo.context}}</p>
 		</view>
 		<view class="pan-label-list">
-			<text class="pan-label-budget">收支記錄</text>
+			<text class="pan-label-budget" :style="{color: budgetText}" @tap="changeList('budget')">收支記錄</text>
 			<text>|</text>
-			<text class="pan-label-task">任務獲取</text>
+			<text class="pan-label-task" :style="{color: taskText}" @tap="changeList('task')">任務獲取</text>
 		</view>
 		<view class="pan-list">
-			<ul class="pan-list-ul">
-				<li v-for="(item, index) in billInfo" :key="index" class="pan-list-li">
+			<ul class="pan-list-ul" v-for="(item, index) in listInfo" :key="index">
+				<li class="pan-list-li" v-if="labelList == 'budget'">
 					<view>
 						<p class="pan-list-action">{{item.action}}</p>
 						<text class="pan-list-time">{{item.create_time}}</text>
 					</view>
 					<text class="pan-list-number">{{item.status}}{{item.number}}</text>
+				</li>
+				<li class="pan-list-li"  v-if="labelList == 'task' && index == 0">
+					<view>
+						<p class="pan-list-action">星球注冊</p>
+					</view>
+					<view>
+						<p class="pan-list-number">10個PAN幣</p>
+						<text class="pan-list-time">已完成</text>
+					</view>
+				</li>
+				<li class="pan-list-li"  v-if="labelList == 'task'">
+					<view>
+						<p class="pan-list-action">{{item.name}}</p>
+					</view>
+					<view>
+						<p class="pan-list-number">{{item.number}}個PAN幣</p>
+						<text class="pan-list-time" v-if="item.status == 1">已完成</text>
+						<text class="pan-list-time" v-if="item.status == 0">未完成</text>
+					</view>
 				</li>
 			</ul>
 		</view>
@@ -31,12 +50,15 @@
 </template>
 
 <script>
-	import {getBalance, getBill} from '../../api/api.js';
+	import {getBalance, getBill, checkTaskList} from '../../api/api.js';
 	export default {
 		data() {
 			return {
 				assetInfo: '',
-				billInfo: ''
+				listInfo: '',
+				labelList: 'budget',
+				budgetText: 'black',
+				taskText: 'gray'
 			}
 		},
 		methods: {
@@ -44,13 +66,38 @@
 				getBalance().then(data => {
 					this.assetInfo = data;
 				});
+			},
+			getBillData() {
 				getBill().then(data => {
-					this.billInfo = data;
+					this.listInfo = '';
+					this.listInfo = data;
+					// console.log(this.listInfo);
 				});
+			},
+			getTaskData() {
+				checkTaskList().then(data => {
+					this.listInfo = '';
+					this.listInfo = data;
+					// console.log(this.listInfo);
+				});
+			},
+			changeList(chooseItem) {
+				if(chooseItem == 'budget') {
+					this.labelList = 'budget';
+					this.budgetText = 'black';
+					this.taskText = 'gray';
+					this.getBillData();
+				} else {
+					this.labelList = 'task';
+					this.budgetText = 'gray';
+					this.taskText = 'black';
+					this.getTaskData();
+				}
 			}
 		},
 		onLoad() {
 			this.getBalanceData();
+			this.getBillData();
 		}
 	}
 </script>
@@ -158,6 +205,11 @@
 			&-time {
 				font-size: 25upx;
 				color: #979797;
+			}
+			
+			&-number {
+				color: #CD2626;
+				font-size: 30upx;
 			}
 		}
 		

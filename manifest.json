@@ -9,7 +9,9 @@
         /* 5+App特有相关 */
         "usingComponents" : true,
         "modules" : {
-            "OAuth" : {}
+            "OAuth" : {},
+            "Maps" : {},
+            "Share" : {}
         },
         /* 模块配置 */
         "distribute" : {
@@ -101,8 +103,8 @@
         },
         "usingComponents" : true
     },
-	"networkTimeout" : {
-		"request" : 6000,
-		"uploadFile" : 10000
-	}
+    "networkTimeout" : {
+        "request" : 6000,
+        "uploadFile" : 10000
+    }
 }

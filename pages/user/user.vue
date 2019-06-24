@@ -29,8 +29,8 @@
 			</view>
 		</view>
 		<view class="bag">
-			<image src="../../static/img/user/purse.svg"></image>
-			<image src="../../static/img/user/passport.svg"></image>
+			<navigator url="../purse/purse"><image src="../../static/img/user/purse.svg"></image></navigator>
+			<navigator url="../passport/passport"><image src="../../static/img/user/passport.svg"></image></navigator>
 		</view>
 		<view class="option">
 			<view class="input-row border">
@@ -179,7 +179,7 @@
 	}
 	
 	.bag image{
-		width: 40%;
+		width: 250upx;
 		height: 100upx;
 	}
 	

@@ -1,6 +1,6 @@
 <template>
-	<view class="main-content">
-		<view>星球特供-----正在开發中</view>
+	<view class="pages-content">
+		<image src="../../static/img/main/opening.svg"></image>
 	</view>
 </template>
 
@@ -8,4 +8,9 @@
 </script>
 
 <style>
+	image {
+		width: 100%;
+		height: 55%;
+		margin-top: 20upx;
+	}
 </style>

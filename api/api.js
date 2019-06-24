@@ -515,8 +515,30 @@ export const getBill = () => new Promise((resolve, reject) => {
 	});
 });
 
+// PAN币任务列表
+export const checkTaskList = () => new Promise((resolve, reject) => {
+	uni.request({
+		url: panUrl + 'checkTaskList',
+		header: {
+			'token': Token
+		},
+		success:(res) => {
+			// console.log(res.data);
+			if(res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
 /*********************原力账本***************************/
-//原力余额
+// 原力余额
 export const getForBalance = () => new Promise((resolve, reject) => {
 	uni.request({
 		url: forceUrl + 'getBalance',
@@ -538,10 +560,32 @@ export const getForBalance = () => new Promise((resolve, reject) => {
 	});
 });
 
-//原力账单信息
+// 原力账单信息
 export const getForBill = () => new Promise((resolve, reject) => {
 	uni.request({
 		url: forceUrl + 'getBill',
+		header: {
+			'token': Token
+		},
+		success:(res) => {
+			// console.log(res.data);
+			if(res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+// 原力任务列表
+export const checkForTaskList = () => new Promise((resolve, reject) => {
+	uni.request({
+		url: forceUrl + 'checkTaskList',
 		header: {
 			'token': Token
 		},

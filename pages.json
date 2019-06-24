@@ -81,17 +81,24 @@
 		},
 		
 		{
+			"path":"pages/nearby/nearby",
+			"style": {
+				"navigationBarTitleText":"附近的人"
+			}
+		}, 
+		{
 			"path":"pages/store/store",
 			"style": {
-				"navigationBarTitleText":""
+				"navigationBarTitleText":"星球特供"
 			}
 		}, 
 		{
 			"path":"pages/game/game",
 			"style": {
-				"navigationBarTitleText":""
+				"navigationBarTitleText":"星球娛樂"
 			}
 		}, 
+		
 		{
 			"path":"pages/entertain/entertain",
 			"style": {
@@ -120,10 +127,41 @@
 				}
 				
 			}
-        }, {
+        },
+		{
 		    "path": "pages/user/update",
 			"style": {
 			    "navigationBarTitleText": ""
+			}
+		},
+		{
+		    "path": "pages/purse/purse",
+			"style": {
+			    "navigationBarTitleText": "我的錢包"
+			}
+		},
+		{
+			"path": "pages/passport/passport",
+			"style": {
+			    "navigationBarTitleText": "星球護照"
+			}
+		},
+		{
+		    "path": "pages/ledger/asset",
+			"style": {
+			    "navigationBarTitleText": "PAN幣賬本"
+			}
+		}, {
+			"path": "pages/ledger/focus",
+			"style": {
+			    "navigationBarTitleText": "原力賬本"
+			}
+		},
+		
+		{
+		    "path": "pages/setting/setting",
+			"style": {
+			    "navigationBarTitleText": "設置"
 			}
 		},
 		
@@ -150,25 +188,6 @@
 			"path": "pages/pan/donateList",
 			"style": {
 			    "navigationBarTitleText": "捐贈榜單"
-			}
-		},
-		
-		{
-		    "path": "pages/ledger/asset",
-			"style": {
-			    "navigationBarTitleText": "PAN幣賬本"
-			}
-		}, {
-			"path": "pages/ledger/focus",
-			"style": {
-			    "navigationBarTitleText": "原力賬本"
-			}
-		},
-		
-		{
-		    "path": "pages/setting/setting",
-			"style": {
-			    "navigationBarTitleText": ""
 			}
 		}
     ],

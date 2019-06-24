@@ -11,13 +11,13 @@
 			<p class="focus-label-context">{{assetInfo.context}}</p>
 		</view>
 		<view class="focus-label-list">
-			<text class="focus-label-budget">獲取原力記錄</text>
+			<text class="pan-label-budget" :style="{color: budgetText}" @tap="changeList('budget')">獲取原力記錄</text>
 			<text>|</text>
-			<text class="focus-label-task">任務獲取原力</text>
+			<text class="pan-label-task" :style="{color: taskText}" @tap="changeList('task')">任務獲取原力</text>
 		</view>
 		<view class="focus-list">
-			<ul class="focus-list-ul">
-				<li v-for="(item, index) in billInfo" :key="index" class="focus-list-li">
+			<ul class="focus-list-ul"  v-for="(item, index) in listInfo" :key="index">
+				<li class="focus-list-li" v-if="labelList == 'budget'">
 					<view>
 						<p class="focus-list-action">{{item.action}}</p>
 						<text class="focus-list-time">{{item.createTime}}</text>
@@ -26,7 +26,25 @@
 						<p class="focus-list-number">{{item.type}} +{{item.number}}</p>
 						<text class="focus-list-time">{{item.loseTime}}</text>
 					</view>
-					
+				</li>
+				<li class="focus-list-li"  v-if="labelList == 'task' && index == 0">
+					<view>
+						<p class="focus-list-action">星球注冊</p>
+					</view>
+					<view>
+						<p class="focus-list-number">50個永久原力</p>
+						<text class="focus-list-time">已完成</text>
+					</view>
+				</li>
+				<li class="focus-list-li"  v-if="labelList == 'task'">
+					<view>
+						<p class="focus-list-action">{{item.name}}</p>
+					</view>
+					<view>
+						<p class="focus-list-number">{{item.number}}個永久原力</p>
+						<text class="focus-list-time" v-if="item.status == 1">已完成</text>
+						<text class="focus-list-time" v-if="item.status == 0">未完成</text>
+					</view>
 				</li>
 			</ul>
 		</view>
@@ -34,12 +52,15 @@
 </template>
 
 <script>
-	import {getForBalance, getForBill} from '../../api/api.js';
+	import {getForBalance, getForBill, checkForTaskList} from '../../api/api.js';
 	export default {
 		data() {
 			return {
 				assetInfo: '',
-				billInfo: ''
+				listInfo: '',
+				labelList: 'budget',
+				budgetText: 'black',
+				taskText: 'gray'
 			}
 		},
 		methods: {
@@ -47,13 +68,38 @@
 				getForBalance().then(data => {
 					this.assetInfo = data;
 				});
+			},
+			getBillData() {
 				getForBill().then(data => {
-					this.billInfo = data;
+					this.listInfo = '';
+					this.listInfo = data;
+					// console.log(this.listInfo);
 				});
+			},
+			getTaskData() {
+				checkForTaskList().then(data => {
+					this.listInfo = '';
+					this.listInfo = data;
+					// console.log(this.listInfo);
+				});
+			},
+			changeList(chooseItem) {
+				if(chooseItem == 'budget') {
+					this.labelList = 'budget';
+					this.budgetText = 'black';
+					this.taskText = 'gray';
+					this.getBillData();
+				} else {
+					this.labelList = 'task';
+					this.budgetText = 'gray';
+					this.taskText = 'black';
+					this.getTaskData();
+				}
 			}
 		},
 		onLoad() {
 			this.getBalanceData();
+			this.getBillData()
 		}
 	}
 </script>

@@ -70,7 +70,7 @@
 	}
 	
 	.main-pact-content>hr {
-		height:2upx;
+		height:1upx;
 		border:none;
 		background-color: #4CD964;
 	}
