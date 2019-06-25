@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "titleNView": false,
+  "usingComponents": {
+    "barrage": "/components/barrage"
+  }
+}

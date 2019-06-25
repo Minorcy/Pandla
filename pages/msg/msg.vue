@@ -58,8 +58,7 @@
 					console.log('选中了第' + (res.tapIndex) + '个按钮');
 					if (res.tapIndex == 2) {
 						uni.navigateTo({
-							url: '/pagesA/settingChat/settingChat',
-							animationDuration: 2000
+							url: '/pagesA/settingChat/settingChat'
 						});
 					}
 				},
@@ -74,8 +73,7 @@
 		methods: {
 			toChat() {
 				uni.navigateTo({
-					url: '/pages/im-chat/im-chat',
-					animationDuration: 2000
+					url: '/pages/im-chat/im-chat'
 				});
 			}
 		}

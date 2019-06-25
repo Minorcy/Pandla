@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "通讯",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "",
+        "fontSrc": "https://at.alicdn.com/t/font_1258335_il44vot1ah9.ttf",
+        "fontSize": "22px",
+        "color": "#999999"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
