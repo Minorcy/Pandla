@@ -24,12 +24,20 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+<<<<<<< HEAD
 .status_bar.data-v-4d5971ca {
+=======
+.status_bar.data-v-421104d2 {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   height: var(--status-bar-height);
   width: 100%;
   background-color: #131D21;
 }
+<<<<<<< HEAD
 .top_view.data-v-4d5971ca {
+=======
+.top_view.data-v-421104d2 {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   height: var(--status-bar-height);
   width: 100%;
   position: fixed;
@@ -37,11 +45,19 @@
   background-color: #131D21;
   z-index: 999;
 }
+<<<<<<< HEAD
 .barrage-header-box.data-v-4d5971ca {
   height: 82rpx;
   width: 100%;
 }
 .barrage-header.data-v-4d5971ca {
+=======
+.barrage-header-box.data-v-421104d2 {
+  height: 82rpx;
+  width: 100%;
+}
+.barrage-header.data-v-421104d2 {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   position: fixed;
   left: 0;
   top: 0;
@@ -50,15 +66,26 @@
   background-color: #131D21;
   border-bottom: 2rpx solid #00D419;
 }
+<<<<<<< HEAD
 .fly.data-v-4d5971ca {
+=======
+.fly.data-v-421104d2 {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   position: absolute;
   -webkit-transform: translateX(10deg);
       -ms-transform: translateX(10deg);
           transform: translateX(10deg);
+<<<<<<< HEAD
   -webkit-animation: go-data-v-4d5971ca .3s ease-in infinite;
           animation: go-data-v-4d5971ca .3s ease-in infinite;
 }
 @-webkit-keyframes go-data-v-4d5971ca {
+=======
+  -webkit-animation: go-data-v-421104d2 .3s ease-in infinite;
+          animation: go-data-v-421104d2 .3s ease-in infinite;
+}
+@-webkit-keyframes go-data-v-421104d2 {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 from {
     -webkit-transform: translateX(100deg);
             transform: translateX(100deg);
@@ -68,7 +95,11 @@ to {
             transform: translateX(100deg);
 }
 }
+<<<<<<< HEAD
 @keyframes go-data-v-4d5971ca {
+=======
+@keyframes go-data-v-421104d2 {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 from {
     -webkit-transform: translateX(100deg);
             transform: translateX(100deg);

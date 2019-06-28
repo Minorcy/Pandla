@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <view class="pages-content data-v-8b0bcb9a"><view class="_ul data-v-8b0bcb9a"><block wx:for="{{settings}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="_li data-v-8b0bcb9a"><button class="btn-primary data-v-8b0bcb9a" style="{{'background:'+(item.specColor)+';'}}" hover-class="hover-primary">{{''+item.label+''}}</button></view></block></view></view>
+=======
+<view class="pages-content data-v-61795f46"><view class="_ul data-v-61795f46"><block wx:for="{{settings}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="_li data-v-61795f46"><button class="btn-primary data-v-61795f46" hover-class="hover-primary">{{item.label}}</button></view></block></view></view>
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544

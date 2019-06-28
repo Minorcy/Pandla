@@ -24,11 +24,19 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+<<<<<<< HEAD
 .pages-content.data-v-a91d2800 {
   background-color: #EFEFF4;
   width: 100%;
 }
 .focus-data.data-v-a91d2800 {
+=======
+.pages-content.data-v-3d0f77cd {
+  background-color: #EFEFF4;
+  width: 100%;
+}
+.focus-data.data-v-3d0f77cd {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   width: 100%;
   background: -webkit-linear-gradient(to right, #000000, #979797);
   /* Safari 5.1 - 6.0 */
@@ -41,12 +49,20 @@
   background: linear-gradient(to right, #000000, #979797);
   /* 标准的语法 */
 }
+<<<<<<< HEAD
 .focus-data-num.data-v-a91d2800 {
+=======
+.focus-data-num.data-v-3d0f77cd {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
     display: block;
     font-size: 40rpx;
     padding: 40rpx 0 40rpx 20rpx;
 }
+<<<<<<< HEAD
 .focus-data-freeze.data-v-a91d2800 {
+=======
+.focus-data-freeze.data-v-3d0f77cd {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
     font-size: 25rpx;
     padding: 20rpx;
     clear: both;
@@ -61,16 +77,25 @@
     background: linear-gradient(to right, #424A4D, #979797);
     /* 标准的语法 */
 }
+<<<<<<< HEAD
 .focus-label-num.data-v-a91d2800 {
+=======
+.focus-label-num.data-v-3d0f77cd {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   font-size: 30rpx;
   border-bottom: 1rpx solid #FFFFFF;
   padding: 20rpx;
 }
+<<<<<<< HEAD
 .focus-label-deal.data-v-a91d2800 {
+=======
+.focus-label-deal.data-v-3d0f77cd {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   float: right;
   margin-right: 20rpx;
   font-size: 30rpx;
 }
+<<<<<<< HEAD
 .focus-label-introduction.data-v-a91d2800 {
   font-size: 35rpx;
   border-bottom: 1rpx solid #979797;
@@ -80,6 +105,17 @@
   line-height: 45rpx;
 }
 .focus-label-list.data-v-a91d2800 {
+=======
+.focus-label-introduction.data-v-3d0f77cd {
+  font-size: 35rpx;
+  border-bottom: 1rpx solid #979797;
+}
+.focus-label-context.data-v-3d0f77cd {
+  font-size: 25rpx;
+  line-height: 45rpx;
+}
+.focus-label-list.data-v-3d0f77cd {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -97,21 +133,36 @@
   padding: 50rpx 100rpx;
   color: #000000;
 }
+<<<<<<< HEAD
 .focus-notice.data-v-a91d2800 {
+=======
+.focus-notice.data-v-3d0f77cd {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   background-color: #EFEFF4;
   color: #000000;
   padding: 30rpx;
   border-bottom: 1rpx solid #979797;
 }
+<<<<<<< HEAD
 .focus-list.data-v-a91d2800 {
+=======
+.focus-list.data-v-3d0f77cd {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   border-top: 1rpx solid #979797;
   font-size: 35rpx;
   color: #000000;
 }
+<<<<<<< HEAD
 .focus-list-ul.data-v-a91d2800 {
     padding: 0 50rpx;
 }
 .focus-list-li.data-v-a91d2800 {
+=======
+.focus-list-ul.data-v-3d0f77cd {
+    padding: 0 50rpx;
+}
+.focus-list-li.data-v-3d0f77cd {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -128,6 +179,7 @@
     padding: 20rpx 0;
     border-bottom: 1rpx solid #979797;
 }
+<<<<<<< HEAD
 .focus-list-action.data-v-a91d2800 {
     font-size: 30rpx;
 }
@@ -140,6 +192,20 @@
     color: #CD2626;
 }
 .focus-img-focus.data-v-a91d2800 {
+=======
+.focus-list-action.data-v-3d0f77cd {
+    font-size: 30rpx;
+}
+.focus-list-time.data-v-3d0f77cd {
+    font-size: 25rpx;
+    color: #979797;
+}
+.focus-list-number.data-v-3d0f77cd {
+    font-size: 25rpx;
+    color: #CD2626;
+}
+.focus-img-focus.data-v-3d0f77cd {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   width: 50rpx;
   height: 50rpx;
   padding: 15rpx;

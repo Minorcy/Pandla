@@ -56,6 +56,11 @@
 				itemList: ['忽略未读提醒', '清空聊天列表', '提醒设置'],
 				success: function(res) {
 					console.log('选中了第' + (res.tapIndex) + '个按钮');
+					if (res.tapIndex == 2) {
+						uni.navigateTo({
+							url: '/pagesA/settingChat/settingChat'
+						});
+					}
 				},
 				fail: function(res) {
 					console.log(res.errMsg);
@@ -68,8 +73,7 @@
 		methods: {
 			toChat() {
 				uni.navigateTo({
-					url: '/pages/im-chat/im-chat',
-					animationDuration: 2000
+					url: '/pages/im-chat/im-chat'
 				});
 			}
 		}

@@ -6,7 +6,11 @@
     "buttons": [
       {
         "text": "",
+<<<<<<< HEAD
         "fontSrc": "https://at.alicdn.com/t/font_1258335_6h11trbb733.ttf",
+=======
+        "fontSrc": "https://at.alicdn.com/t/font_1258335_il44vot1ah9.ttf",
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
         "fontSize": "22px",
         "color": "#999999"
       }

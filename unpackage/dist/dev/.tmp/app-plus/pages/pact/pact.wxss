@@ -1,12 +1,42 @@
 
+<<<<<<< HEAD
 .img-group.data-v-8eb191de {
 	position: relative;
 }
 .img-title.data-v-8eb191de {
+=======
+.main-pact-content.data-v-650ef338 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	background-color: #131D21;
+	color: #EFEFF4;
+}
+.main-pact-content>._hr.data-v-650ef338 {
+	height:1rpx;
+	border:none;
+	background-color: #4CD964;
+}
+.img-group.data-v-650ef338 {
+	position: relative;
+}
+.img-title.data-v-650ef338 {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	position: absolute;
 	bottom: 30rpx;
 	padding: 0 50rpx;
 }
+<<<<<<< HEAD
 .img-title ._p.data-v-8eb191de:nth-child(1) {
 	font-size: 50rpx;
 	margin-bottom: 10rpx;
@@ -19,17 +49,36 @@
 	height: 315rpx;
 }
 .center-img.data-v-8eb191de {
+=======
+.img-title ._p.data-v-650ef338:nth-child(1) {
+	font-size: 50rpx;
+	margin-bottom: 10rpx;
+}
+.img-title ._p.data-v-650ef338:nth-child(2) {
+	font-size: 30rpx;
+}
+.img-group image.data-v-650ef338 {
+	width: 100%;
+	height: 315rpx;
+}
+.center-img.data-v-650ef338 {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	width: 100%;
 	height: 250rpx;
 	margin-top: -40rpx;
 }
+<<<<<<< HEAD
 .center-title.data-v-8eb191de {
+=======
+.center-title.data-v-650ef338 {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	position: absolute;
 	top: 20rpx;
 	padding: 0 50rpx;
 	font-size: 25rpx;
 	line-height: 42rpx;
 }
+<<<<<<< HEAD
 .vote-title.data-v-8eb191de {
 	margin: 50rpx 50rpx 0 50rpx;
 	font-size: 35rpx;
@@ -38,19 +87,40 @@
 	margin: 0 50rpx;
 }
 .vote-li.data-v-8eb191de {
+=======
+.vote-title.data-v-650ef338 {
+	margin: 50rpx 50rpx 0 50rpx;
+	font-size: 35rpx;
+}
+.vote-list.data-v-650ef338 {
+	margin: 0 50rpx;
+}
+.vote-li.data-v-650ef338 {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	margin-top: 10rpx;
 	padding: 40rpx 10rpx;
 	font-size: 30rpx;
 }
+<<<<<<< HEAD
 .vote-list text.data-v-8eb191de:nth-child(2) {
 	float: right;
 }
 .vote-list view ._p.data-v-8eb191de {
+=======
+.vote-list text.data-v-650ef338:nth-child(2) {
+	float: right;
+}
+.vote-list view ._p.data-v-650ef338 {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	font-size: 20rpx;
 	color: #808080;
 	margin-top: 5rpx;
 }
+<<<<<<< HEAD
 ._hr.data-v-8eb191de {
+=======
+._hr.data-v-650ef338 {
+>>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	margin-top: 5rpx;
 	height: 3rpx;
 	border: none;
