@@ -24,7 +24,7 @@
 				<p>相冊</p>
 			</view>|
 			<view class="item-commune">
-				<p>{{commune}}</p>
+				<p>0</p>
 				<p>公社</p>
 			</view>
 		</view>
@@ -32,33 +32,33 @@
 			<navigator url="../purse/purse"><image src="../../static/img/user/purse.svg"></image></navigator>
 			<navigator url="../passport/passport"><image src="../../static/img/user/passport.svg"></image></navigator>
 		</view>
-		<view class="option">
-			<view class="input-row border">
-				<image src="../../static/img/user/relNameAuth.svg"></image>
-				<text>實名認證</text>
-				<text>PAN幣綫上交易所交易需要實名認證</text>
-			</view>
-			<view class="input-row border">
-				<image src="../../static/img/user/invCode.svg"></image>
-				<text>我的邀請碼</text>
-				<text>獲得PAN幣和原力</text>
-			</view>
-			<navigator class="input-row border" url="../ledger/asset">
-				<image src="../../static/img/user/assetLedger.svg"></image>
-				<text>資產賬本</text>
+		<view class="option" v-for="(item, index) in settings" :key="index">
+			<navigator class="input-row border" :url="item.url">
+				<image :src="item.src"></image>
+				<text>{{item.label}}</text>
+				<text>{{item.expla}}</text>
 			</navigator>
-			<navigator class="input-row border" url="../ledger/focus">
+<!-- 			<view class="input-row border">
+				<image src=""></image>
+				<text></text>
+				<text></text>
+			</view>
+			<navigator class="input-row border" url="">
+				<image src=""></image>
+				<text></text>
+			</navigator>
+			<navigator class="input-row border" url="">
 				<image src="../../static/img/user/focusLedger.svg"></image>
-				<text>原力賬本</text>
+				<text></text>
 			</navigator>
 			<view class="input-row border">
 				<image src="../../static/img/user/plantBase.svg"></image>
-				<text>星球基地</text>
+				<text></text>
 			</view>
 			<navigator class="input-row border" url="../setting/setting">
-				<image src="../../static/img/user/option.svg"></image>
-				<text>設置</text>
-			</navigator>
+				<image src="../../static/img/user/.svg"></image>
+				<text></text>
+			</navigator> -->
 		</view>
         <view class="btn-row">
             <button class="primary" hover-class="hover-primary" @tap="bindLogout">退出登錄</button>
@@ -75,10 +75,37 @@
 			return {
 				userInfo: '',
 				socialInfo: '',
-				fans: '18296',
-				focus: '13565',
-				photo: '345',
-				commune: '3'
+				settings: [{
+					src: '../../static/img/user/relNameAuth.svg',
+					url: '../auth/auth',
+					label: '實名認證',
+					expla: 'PAN幣綫上交易所交易需要實名認證'
+				}, {
+					src: '../../static/img/user/invCode.svg',
+					url: '../invite/invite',
+					label: '我的邀請碼',
+					expla: '獲得PAN幣和原力'
+				}, {
+					src: '../../static/img/user/assetLedger.svg',
+					url: '../ledger/asset',
+					label: '資產賬本',
+					expla: ''
+				}, {
+					src: '../../static/img/user/focusLedger.svg',
+					url: '../ledger/focus',
+					label: '原力賬本',
+					expla: ''
+				}, {
+					src: '../../static/img/user/plantBase.svg',
+					url: '../base/base',
+					label: '星球基地',
+					expla: ''
+				}, {
+					src: '../../static/img/user/option.svg',
+					url: '../setting/setting',
+					label: '設置',
+					expla: ''
+				}]
 			}
 		},
         computed: {
@@ -202,5 +229,9 @@
 	
 	.btn-row {
 		margin: 0 auto;
+	}
+	
+	.primary {
+		padding: 0;
 	}
 </style>

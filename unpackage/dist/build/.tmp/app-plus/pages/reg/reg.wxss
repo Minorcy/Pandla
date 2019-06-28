@@ -1,0 +1,27 @@
+
+.regSelect {
+	padding-top: 27rpx;
+}
+.regSelect>button {
+	border: 0rpx;
+	background-color:#000000;
+	color: #007AFF;
+	padding-left: 0;
+}
+.footer {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	font-size: 25rpx;
+	color: #EFEFF4;
+	margin-top: 50rpx;
+}
+.footer>._a {
+	color: #007AFF;
+}
+

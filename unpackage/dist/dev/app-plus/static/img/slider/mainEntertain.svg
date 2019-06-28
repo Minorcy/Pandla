@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="268px" height="352px" viewBox="0 0 268 352" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>分组 9</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="2.61151607%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#03FFEF" offset="0%"></stop>
+            <stop stop-color="#C8FB55" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="公益" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="分组-9" transform="translate(1.000000, 1.000000)">
+            <g id="分组-8">
+                <g id="分组-6" transform="translate(83.000000, 125.000000)" fill="url(#linearGradient-1)" fill-opacity="0.4">
+                    <path d="M50,100 C77.5372581,100 100,77.5406298 100,50 C100,22.4593702 77.5372581,5.68434189e-14 50,5.68434189e-14 C22.4627419,5.68434189e-14 0,22.4593702 0,50 C0,77.5406298 22.4627419,100 50,100" id="Fill-1"></path>
+                </g>
+                <path d="M6.415349,5.68434189e-14 L259.581456,5.68434189e-14 C263.111815,5.68434189e-14 266,2.90389787 266,6.45346329 L266,343.546537 C266,347.099314 263.111815,350 259.581456,350 L6.415349,350 C2.88499011,350 0,347.099314 0,343.546537 L0,6.45346329 C0,2.90389787 2.88499011,5.68434189e-14 6.415349,5.68434189e-14 Z" id="Stroke-3" stroke="#FFFFFF" stroke-width="2"></path>
+                <text id="星球娱乐" font-family="PingFangSC-Thin, PingFang SC" font-size="25" font-weight="300" letter-spacing="2" fill="#FFFFFF">
+                    <tspan x="79" y="61">星球娛樂</tspan>
+                </text>
+                <text id="居民消费场所" font-family="PingFangSC-Semibold, PingFang SC" font-size="25" font-weight="500" letter-spacing="2" fill="#FFFFFF">
+                    <tspan x="52" y="281">居民消费场所</tspan>
+                </text>
+                <text id="查找你附近的娱乐场所" font-family="PingFangSC-Light, PingFang SC" font-size="18" font-weight="300" line-spacing="24" letter-spacing="1.44" fill="#02F52B">
+                    <tspan x="35.5" y="313">查找你附近的娱乐场所</tspan>
+                </text>
+                <g id="icon--" transform="translate(111.000000, 152.000000)" fill="#02F52B" stroke="#00FB00">
+                    <path d="M44.4999186,3.01330586 C44.8330892,2.67873024 45,2.34374591 45,1.67410422 C45,1.00454428 44.4999186,0.334984331 43.9999186,0.167328679 C43.6664225,0 43.4998372,0 43.166748,0 L1.83317057,0 C1.33317057,0 0.833089193,0.167328679 0.5,0.50231301 C-0.166666667,1.17187296 -0.166666667,2.17641723 0.5,2.84597718 L21.6664225,28.4597718 L21.6664225,43.5267098 L14.9999186,43.5267098 C13.9998372,43.5267098 13.333252,44.1963515 13.333252,45.2008958 C13.333252,46.2051131 13.9998372,46.875 14.9999186,46.875 L31.6666667,46.875 C32.6664225,46.875 33.3334147,46.2051131 33.3334147,45.2008958 C33.3334147,44.1963515 32.6664225,43.5267098 31.6666667,43.5267098 L24.9998372,43.5267098 L24.9998372,28.4597718 L44.4999186,3.01330586 Z M23.3331706,25.1114816 L5.16658529,3.34829019 L39.9999186,3.34829019 L23.3331706,25.1114816 Z" id="Fill-1"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

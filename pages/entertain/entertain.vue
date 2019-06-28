@@ -1,63 +1,69 @@
 <template>
-	<view class="main-entertain-content">
-		<hr class="green-hr">
-		<view v-for="(item, index) in barInfo" :key="index">
-			<navigator class="item-group" url="entertainDetail">
-				<image :src='item.avatar'></image>
-				<p>{{item.name}}</p>
-				<p>
-					<image class="map" src="../../static/img/main/entertain/map.svg" />
-					{{item.localtion}}</p>
-			</navigator>
-			<hr>
-		</view>
+	<view class="pages-content">
+		<scroll-view scroll-y>
+			<view v-for="(item, index) in barInfo" :key="index">
+				<view class="item-group" :url="'entertainDetail?itemStr=' + itemStr" @tap="navigatorParam(item)">
+					<image class="logo" :src='item.logo'></image>
+					<p>{{item.name}}</p>
+					<p>
+						<image class="map" src="../../static/img/main/entertain/map.svg" />
+						{{item.location}}</p>
+				</view>
+				<hr>
+			</view>
+		</scroll-view>
 		<navigator url="entertainApplication">
 			<image class="entry" src="../../static/img/main/entertain/entry.svg" />
 		</navigator>
 	</view>
 </template>
-
+ 
 <script>
+	import {getBarList, setBar, upLogo} from '../../api/api.js';
+	
 	export default {
 		data() {
 			return {
-				barInfo: [{
-					avatar: '../../static/img/main/daily/avatar3.svg',
-					name: 'Bannanaunion',
-					localtion: '廣東省天河區天河南183號廣才大廈4棟901',
-				}, {
-					avatar: '../../static/img/main/daily/avatar2.svg',
-					name: 'Star',
-					localtion: '廣東省番禺區奧園城市天地3棟905'
-				}]
+				location: '',
+				barInfo: '',
+				itemStr: ''
 			}
 		},
-		methods: {},
-		onShow() {
+		methods: {
+			getBarListData() {
+				getBarList(this.location).then(data => {
+					this.barInfo = data;
+				});
+			},
+			navigatorParam(item) {
+				this.itemStr = JSON.stringify(item);
+				uni.navigateTo({
+					url: 'entertainDetail?itemStr=' + this.itemStr
+
+				});
+			}
+		},
+		onLoad() {
+			let _this = this;
 			uni.getLocation({
-				type: 'wgs84',
-				success: function (res) {
-					console.log('当前位置的经度：' + res.longitude);
-					console.log('当前位置的纬度：' + res.latitude);
+				geocode:true,
+				success(res) {
+					_this.location = res.address.city;
+					console.log('城市' + _this.location);
+					_this.getBarListData();
+					// console.log(JSON.stringify(res));
 				}
 			});
+			// this.getBarListData();
 		}
 	}
 </script>
 
-<style scoped="true">
-	.main-entertain-content {
-		display: flex;
-		flex: 1;
-		flex-direction: column;
-		background-color: #131D21;
-		color: #EFEFF4;
-	}
-	
-	.green-hr {
-		height: 3upx;
-		border: none;
-		border-top: 3upx solid #4CD964;
+<style scoped>
+	.pages-content {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
 	}
 	
 	.item-group {
@@ -76,6 +82,13 @@
 		font-size: 25upx;
 	}
 	
+	.logo {
+		width: 100upx;
+		height: 100upx;
+		margin: 50upx auto 20upx auto;
+		border-radius: 50%;
+	}
+	
 	.map {
 		width: 30upx;
 		height: 20upx;
@@ -84,11 +97,14 @@
 	
 	.entry {
 		width: 150upx;
-		position: absolute;
+		position: fixed;
 		bottom: 50upx;
 		right: 20upx;
 	}
 
+	scroll-view {
+		height: 100%;
+	}
 	
 	image {
 		width: 100%;

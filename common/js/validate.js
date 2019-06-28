@@ -182,3 +182,73 @@ export const userValidate = (userInfo) => {
 	}
 	return true;
 };
+
+// 酒吧信息申请校验
+export const barValidate = (barInfo, isUpload) => {
+	if (barInfo.name == "") {
+		uni.showToast({
+			icon: 'none',
+			title: '請填寫酒吧名稱'
+		});
+		return false;
+	}
+	if (barInfo.phone.length == "") {
+		uni.showToast({
+			icon: 'none',
+			title: '聯係電話不能爲空'
+		});
+		return false;
+	} else {
+		if (!pReg.exec(barInfo.phone) || barInfo.phone.length < 8) {
+			uni.showToast({
+				icon: 'none',
+				title: '联系电话格式不正確'
+			});
+			return false;
+		}
+	}
+	if (barInfo.location == "") {
+		uni.showToast({
+			icon: 'none',
+			title: '請填寫詳細地址'
+		});
+		return false;
+	}
+	if (barInfo.intro == "") {
+		uni.showToast({
+			icon: 'none',
+			title: '請填寫酒吧簡介'
+		});
+		return false;
+	}
+	if (barInfo.username == "") {
+		uni.showToast({
+			icon: 'none',
+			title: '請填寫申請人姓名'
+		});
+		return false;
+	}
+	if (barInfo.userphone == "") {
+		uni.showToast({
+			icon: 'none',
+			title: '請填寫申請人聯係方式'
+		});
+		return false;
+	} else {
+		if (!pReg.exec(barInfo.userphone) || barInfo.userphone.length < 8) {
+			uni.showToast({
+				icon: 'none',
+				title: '聯係方式格式不正確'
+			});
+			return false;
+		}
+	}
+	if (isUpload == false) {
+		uni.showToast({
+			icon: 'none',
+			title: '請上傳酒吧LOGO'
+		});
+		return false;
+	}
+	return true;
+};

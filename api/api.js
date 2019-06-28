@@ -6,6 +6,7 @@ const pollUrl = 'http://printsn.com:8080/v1/poll/';
 const panUrl = 'http://printsn.com:8080/v1/pan/';
 const forceUrl = 'http://printsn.com:8080/v1/force/';
 const treatyUrl = 'http://printsn.com:8080/v1/tre/';
+const barUrl = 'http://printsn.com:8080/v1/bar/';
 
 /*********************登录注册***************************/
 // 登录
@@ -305,7 +306,7 @@ export const findAllDyn = () => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success:(res) => {
-			// console.log(res.data);
+			console.log(res.data);
 			if(res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
@@ -328,8 +329,8 @@ export const getComment = (did) => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success:(res) => {
-			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data.content);
+			// console.log(res.data.data);
+			if(res.data.status == 200) resolve(res.data.data);
 			// if(res.data.status == 400) reject(0);
 			// else reject(res.data.msg);
 		},
@@ -352,7 +353,7 @@ export const addComment = (content, did) => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success:(res) => {
-			// console.log(res.data);
+			console.log(res.data);
 			if(res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
@@ -673,6 +674,86 @@ export const sysVote = (tid, isWell) => new Promise((resolve, reject) => {
 	});
 });
 
+/*********************酒吧***************************/
+// 获取酒吧列表
+export const getBarList = (location) => new Promise((resolve, reject) => {
+	uni.request({
+		url: barUrl + 'getBarList?location=' + location,
+		header: {
+			'token': Token
+		},
+		success:(res) => {
+			console.log(res.data);
+			if(res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+// 申请酒吧
+export const setBar = (dto) => new Promise((resolve, reject) => {
+	uni.request({
+		url: barUrl + 'setBar',
+		method: 'POST',
+		header: {
+			'token': Token
+		},
+		data: dto,
+		success:(res) => {
+			// console.log(res.data);
+			if(res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+// 上传酒吧相册/营业执照
+export const upLogo = (imgTemp, type) => new Promise((resolve, reject) => {
+	uni.uploadFile({
+		url: barUrl + 'upLogo?type=' + type,
+		header: {token: Token},
+		filePath: imgTemp,
+		name: 'file',
+		success: (res) => {
+			// console.log(res.data);
+			var jsonObj = JSON.parse(res.data);
+			// console.log('uploadImage success, res is:', jsonObj.data);
+			resolve(jsonObj.data);
+			if(type == 3) {
+				uni.showToast({
+					icon: 'none',
+					title: '上传成功,請等待審核'
+				}).then(data => {
+					uni.redirectTo({
+						url: 'entertain'
+					});
+				});
+			}
+		},
+		fail: (err) => {
+			console.log('uploadImage fail', err);
+			uni.showToast({
+				icon: 'none',
+				title: '上传失败,请勿选择超过4M的图片'
+			});
+		}
+	});
+});
+
 /*********************上传***************************/
 // 上传头像
 export const upPicture = (userId) => new Promise((resolve, reject) => {
@@ -715,7 +796,7 @@ export const upPicture = (userId) => new Promise((resolve, reject) => {
 	});
 });
 
-// 获取日志图片视频本地路径
+// 获取图片视频本地路径
 export const getImgTemp = () => new Promise((resolve, reject) => {
 	uni.chooseImage({
 		count: 1,

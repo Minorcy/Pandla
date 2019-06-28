@@ -8,30 +8,31 @@
 					"titleNView": false
 				}
 			}
-		}, {
+		}, 
+		
+		{
 			"path": "pages/login/login",
 			"style": {
 				"navigationBarTitleText": ""
 			}
 		},
-
 		{
 			"path": "pages/reg/reg",
 			"style": {
 				"navigationBarTitleText": ""
 			}
 		},
-
-		{
-			"path": "pages/im-chat/im-chat",
-			"style": {
-				"navigationBarTitleText": "聊天"
-			}
-		},
 		{
 			"path": "pages/pwd/pwd",
 			"style": {
 				"navigationBarTitleText": ""
+			}
+		},
+		
+		{
+			"path": "pages/im-chat/im-chat",
+			"style": {
+				"navigationBarTitleText": "聊天"
 			}
 		},
 
@@ -44,7 +45,7 @@
 				}
 			}
 		},
-
+		
 		{
 			"path": "pages/pact/pact",
 			"style": {
@@ -73,8 +74,7 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "發表",
-							"fontSize": "35upx",
-							"color": "#4CD964"
+							"fontSize": "35upx"
 						}]
 					}
 				}
@@ -89,13 +89,19 @@
 		{
 			"path": "pages/store/store",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "星球特供"
 			}
 		},
 		{
 			"path": "pages/game/game",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "星球游戲"
+			}
+		},
+		{
+			"path": "pages/nearby/nearby",
+			"style": {
+				"navigationBarTitleText": "附近居民"
 			}
 		},
 		{
@@ -103,17 +109,28 @@
 			"style": {
 				"navigationBarTitleText": "位置 | 活動"
 			}
-		},
-		{
+		}, {
 			"path": "pages/entertain/entertainDetail",
 			"style": {
 				"navigationBarTitleText": ""
 			}
-		},
-		{
+		}, {
 			"path": "pages/entertain/entertainApplication",
 			"style": {
 				"navigationBarTitleText": ""
+			}
+		}, {
+			"path": "pages/entertain/entertainUpload",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "提交",
+							"fontSize": "35upx"
+						}]
+					}
+				}
 			}
 		},
 
@@ -179,7 +196,38 @@
 				"navigationBarTitleText": "原力賬本"
 			}
 		},
-
+		
+		{
+			"path": "pages/purse/purse",
+			"style": {
+				"navigationBarTitleText": "我的錢包"
+			}
+		},
+		{
+			"path": "pages/passport/passport",
+			"style": {
+				"navigationBarTitleText": "星球護照"
+			}
+		},
+		{
+			"path": "pages/auth/auth",
+			"style": {
+				"navigationBarTitleText": "實名認證"
+			}
+		},
+		{
+			"path": "pages/invite/invite",
+			"style": {
+				"navigationBarTitleText": "邀請碼"
+			}
+		},
+		{
+			"path": "pages/base/base",
+			"style": {
+				"navigationBarTitleText": "星球基地"
+			}
+		},
+		
 		{
 			"path": "pages/setting/setting",
 			"style": {

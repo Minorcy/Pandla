@@ -1,6 +1,5 @@
 <template>
-	<view class="main-pact-content">
-		<hr>
+	<view class="pages-content">
 		<view class="img-group">
 			<image src="../../static/img/main/pact/bg1.svg" mode="aspectFit"></image>
 			<view class="img-title">
@@ -61,20 +60,6 @@
 </script>
 
 <style scoped="true">
-	.main-pact-content {
-		display: flex;
-		flex: 1;
-		flex-direction: column;
-		background-color: #131D21;
-		color: #EFEFF4;
-	}
-	
-	.main-pact-content>hr {
-		height:1upx;
-		border:none;
-		background-color: #4CD964;
-	}
-
 	.img-group {
 		position: relative;
 	}

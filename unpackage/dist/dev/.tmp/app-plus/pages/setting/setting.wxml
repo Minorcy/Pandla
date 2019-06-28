@@ -1,0 +1,1 @@
+<view class="pages-content data-v-8b0bcb9a"><view class="_ul data-v-8b0bcb9a"><block wx:for="{{settings}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="_li data-v-8b0bcb9a"><button class="btn-primary data-v-8b0bcb9a" style="{{'background:'+(item.specColor)+';'}}" hover-class="hover-primary">{{''+item.label+''}}</button></view></block></view></view>

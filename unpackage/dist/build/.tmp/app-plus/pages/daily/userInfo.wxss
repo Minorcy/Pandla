@@ -1,0 +1,103 @@
+
+.userInfo.data-v-551d3e4c {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	margin-top: 50rpx;
+}
+.portrait.data-v-551d3e4c {
+	width: 150rpx;
+	height: 150rpx;
+	margin: 0 auto;
+	margin-bottom: 30rpx;
+	-webkit-border-radius: 100%;
+	        border-radius: 100%;
+}
+.avatar.data-v-551d3e4c {
+	width: 150rpx;
+	height: 150rpx;
+	margin: 0 auto;
+	margin-bottom: 30rpx;
+}
+.userInfo ._p.data-v-551d3e4c {
+	font-size: 25rpx;
+	text-align: center;
+	margin: 5rpx 0 5rpx 0;
+}
+.userInfo ._p.data-v-551d3e4c:nth-child(2) {
+	font-size: 40rpx;
+}
+
+/* 状态 */
+.statusInfo.data-v-551d3e4c {
+	display:  -webkit-box;
+	display:  -webkit-flex;
+	display:  -ms-flexbox;
+	display:  flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	padding: 40rpx 100rpx;
+}
+.statusInfo view.data-v-551d3e4c {
+	background-color: #8E8E93;
+	-webkit-border-radius: 5rpx;
+	        border-radius: 5rpx;
+	padding: 5rpx 30rpx;
+}
+.statusInfo image.data-v-551d3e4c {
+	width: 25rpx;
+	height: 25rpx;
+	float: left;
+}
+.statusInfo text.data-v-551d3e4c {
+	font-size: 20rpx;
+	margin-left: 10rpx;
+	float: right;
+}
+
+/* 动态列表 */
+.dynInfo.data-v-551d3e4c {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	margin-top: 50rpx;
+	padding: 1rpx;
+}
+.dynInfo image.data-v-551d3e4c {
+	width: 31%;
+	height: 250rpx;
+	padding: 5rpx;
+	margin: 5rpx;
+}
+.btn-con.data-v-551d3e4c {
+	position: absolute;
+	width: 400rpx;
+	height: 100rpx;
+	left: 0;
+	right: 0;
+	margin-left: auto; 
+	margin-right: auto; 
+	bottom: 50rpx;
+}
+

@@ -15,7 +15,12 @@
 					<view class="userInfo">
 						<view>
 							<image class="avatar" :src="item.portrait"  @tap="userInfo()"></image>
-							<image class="folllow" src="../../static/img/main/daily/follow.svg" @tap="userFollow()" v-if="following == false"></image>
+							<image 
+								class="folllow"
+								src="../../static/img/main/daily/follow.svg" 
+								@tap="userFollow()" 
+								v-if="item.following == 0 && item.isOwn == 0">
+							</image>
 						</view>
 						<view>
 							<p>{{item.name}}</p>
@@ -49,16 +54,21 @@
 					<!-- 日志评论 -->
 					<view class="daily-seciton">
 						<image src="../../static/img/main/daily/tag.svg"></image>
-						<text class="remind" v-if="following == false">需要關注才能看到對方的日志内容</text>
-						<text class="dailyContent" v-else>{{item.content}}</text>
+						<text class="dailyContent" v-if="item.isOwn == 1">{{item.content}}</text>
+						<text class="dailyContent" v-else-if="item.isOwn == 0 && item.following == 1">{{item.content}}</text>
+						<text class="remind" v-else-if="item.following == 0 && item.isOwn == 0">需要關注才能看到對方的日志内容</text>
+						<text class="remind" v-else-if="item.following == 0">需要關注才能看到對方的日志内容</text>
 					</view>
 					<view class="comment-section" v-for="(ite, ind) in commentInfo" :key="ind">
 						<p>
-							<text></text>
-							<!-- <text>{{item.commentPerson}}</text> -->
-							<text>{{ite.content}}</text>
+							
+							<text>{{ite[ind].name}}:</text>
+							<text>{{ite[ind].content}}</text>
 						</p>
-						<!-- <p><text>{{item.replyPerson}}</text><text>{{item.replyContent}}</text></p> -->
+						<p>
+							<text>{{ite[ind].replyName}}:</text>
+							<text>{{ite[ind].replyContent}}</text>
+						</p>
 					</view>
 				</swiper-item>
 			</swiper>
@@ -113,7 +123,7 @@
 				});
 			},
 			publishDyn() {
-				getImgTemp(uni.getStorageSync('USERS_KEY').id).then(data => {
+				getImgTemp().then(data => {
 					this.$store.commit('setImgTemp', data);
 					console.log(this.$store.state.imgTemp);
 					uni.navigateTo({
@@ -142,9 +152,9 @@
 					this.did = this.dynInfo[0].id;
 					this.uid = this.dynInfo[0].uid;
 					getComment(this.did).then(data => {
-						if(data == 0) this.commentInfo.content = '0';
-						else this.commentInfo = data;
-						// console.log(this.commentInfo);
+						// if(data == 0) this.commentInfo.content = '0';
+						this.commentInfo = data;
+						console.log(this.commentInfo);
 					});
 				});
 				
@@ -160,11 +170,13 @@
 			},
 			addComm() {
 				// console.log(this.did);
-				addComment(this.commContent, this.did);
-				getComment(this.did).then(data => {
-					this.commentInfo = data;
-					// console.log(this.commentInfo);
+				addComment(this.commContent, this.did).then(data => {
+					getComment(this.did).then(data => {
+						this.commentInfo = data;
+						// console.log(this.commentInfo);
+					});
 				});
+				
 				// this.commContent = '';
 			},
 			behaviour() {
@@ -250,7 +262,7 @@
 		position: absolute;
 		width: 30upx;
 		height: 150upx;
-		margin-left: -20upx;
+		margin: 15upx 0 0 -30upx;
 	}
 	
 	.userInfo view {
@@ -384,7 +396,7 @@
 	
 	hr {
 		margin-top: 10upx;
-		height:2upx;
+		height: 3upx;
 		border:none;
 		background-color: #4CD964;
 	}

@@ -38,8 +38,8 @@
 					<text>{{noBind}}</text>
 				</view>
 				<view class="fireCurr">
-					<text>火幣</text>
-					<text>{{Bind}}</text>
+					<text></text>
+					<text></text>
 				</view>
 			</view>
 		</view>

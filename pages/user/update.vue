@@ -3,39 +3,39 @@
         <view class="input-group">
 		<image :src="avatar" @tap='uploadAvatar()'/>
              <view class="input-row border">
-				 <text class="title">昵称：</text>
+				 <text>昵称：</text>
                 <m-input type="text" v-model="userInfo.name" focus clearable></m-input>
             </view>
 			<view class="input-row border">
-				<text class="title">身高：</text>
+				<text>身高：</text>
                 <m-input type="number" v-model="userInfo.stature" maxlength="3" clearable></m-input>
             </view>
 			<view class="input-row border">
-				<text class="title">體重：</text>
+				<text>體重：</text>
 				<m-input type="number" v-model="userInfo.weight" maxlength="3" clearable></m-input>
 			</view>
 			<view class="input-row border">
-				<text class="title">年齡：</text>
+				<text>年齡：</text>
 				<m-input type="number" v-model="userInfo.age" clearable></m-input>
 			</view>
 			<view class="input-row border">
-				<text class="title">角色：</text>
+				<text>角色：</text>
 				<picker @change="bindAcc" :value="accIndex" :range="accArray">
 					<view class="uni-input">{{accArray[accIndex]}}</view>
 				</picker>
 			</view>
 			<view class="input-row border">
-				<text class="title">種族：</text>
+				<text>種族：</text>
 				<picker @change="bindRace" :value="raceIndex" :range="raceArray">
 					<view class="uni-input">{{raceArray[raceIndex]}}</view>
 				</picker>
 			</view>
 			<view class="input-row border">
-				<text class="title">居住：</text>
+				<text>居住：</text>
 				<m-input type="text" v-model="userInfo.site" clearable></m-input>
 			</view>
 			<view class="input-row border">
-				<text class="title">簽名：</text>
+				<text>簽名：</text>
 				<m-input type="text" v-model="userInfo.signature" clearable></m-input>
 			</view>
         </view>
@@ -141,11 +141,10 @@
 		border-radius: 100%;
 	}
 	
-	.title {
+	text {
 		width: 100upx;
 		height: 50upx;
-		padding: 15upx 0 5upx 0;
-		padding-left: 15upx;
+		padding: 15upx 0 5upx 15upx;
 		color: #9E9E9E;
 	}
 	
