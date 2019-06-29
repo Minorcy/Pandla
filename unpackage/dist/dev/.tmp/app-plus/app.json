@@ -3,13 +3,8 @@
     "pages/index/index",
     "pages/login/login",
     "pages/reg/reg",
-<<<<<<< HEAD
     "pages/pwd/pwd",
     "pages/im-chat/im-chat",
-=======
-    "pages/im-chat/im-chat",
-    "pages/pwd/pwd",
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
     "pages/main/main",
     "pages/pact/pact",
     "pages/pact/pactVoteDetail",
@@ -18,17 +13,11 @@
     "pages/daily/userInfo",
     "pages/store/store",
     "pages/game/game",
-<<<<<<< HEAD
     "pages/nearby/nearby",
     "pages/entertain/entertain",
     "pages/entertain/entertainDetail",
     "pages/entertain/entertainApplication",
     "pages/entertain/entertainUpload",
-=======
-    "pages/entertain/entertain",
-    "pages/entertain/entertainDetail",
-    "pages/entertain/entertainApplication",
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
     "pages/user/user",
     "pages/user/update",
     "pages/msg/msg",
@@ -36,14 +25,13 @@
     "pages/pan/donateList",
     "pages/ledger/asset",
     "pages/ledger/focus",
-<<<<<<< HEAD
     "pages/purse/purse",
     "pages/passport/passport",
-    "pages/setting/setting"
-=======
+    "pages/auth/auth",
+    "pages/invite/invite",
+    "pages/base/base",
     "pages/setting/setting",
     "pagesA/settingChat/settingChat"
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   ],
   "subPackages": [],
   "window": {
@@ -92,10 +80,6 @@
     "autoclose": false
   },
   "appname": "Pandla",
-<<<<<<< HEAD
   "compilerVersion": "2.0.1",
-=======
-  "compilerVersion": "2.0.0",
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   "usingComponents": {}
 }

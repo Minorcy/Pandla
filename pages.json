@@ -61,6 +61,7 @@
 		{
 			"path": "pages/daily/daily",
 			"style": {
+				"enablePullDownRefresh": true,
 				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false

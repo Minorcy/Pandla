@@ -4,12 +4,7 @@
     "buttons": [
       {
         "text": "發表",
-<<<<<<< HEAD
         "fontSize": "35upx"
-=======
-        "fontSize": "35upx",
-        "color": "#4CD964"
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
       }
     ]
   },

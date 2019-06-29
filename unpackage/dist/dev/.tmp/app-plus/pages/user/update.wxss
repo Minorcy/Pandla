@@ -15,18 +15,10 @@ image {
 	-webkit-border-radius: 100%;
 	        border-radius: 100%;
 }
-<<<<<<< HEAD
 text {
 	width: 100rpx;
 	height: 50rpx;
 	padding: 15rpx 0 5rpx 15rpx;
-=======
-.title {
-	width: 100rpx;
-	height: 50rpx;
-	padding: 15rpx 0 5rpx 0;
-	padding-left: 15rpx;
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	color: #9E9E9E;
 }
 .uni-input {

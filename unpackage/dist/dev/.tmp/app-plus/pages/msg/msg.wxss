@@ -24,7 +24,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-<<<<<<< HEAD
 .chat-box.data-v-12a33d95 {
   width: 100%;
 }
@@ -32,15 +31,6 @@
   width: 100%;
 }
 .chat-wrapper .chat-item.data-v-12a33d95 {
-=======
-.chat-box.data-v-8fd374b0 {
-  width: 100%;
-}
-.chat-wrapper.data-v-8fd374b0 {
-  width: 100%;
-}
-.chat-wrapper .chat-item.data-v-8fd374b0 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
     width: 100%;
     height: 174rpx;
     -webkit-box-sizing: border-box;
@@ -52,28 +42,17 @@
     display: -ms-flexbox;
     display: flex;
 }
-<<<<<<< HEAD
 .chat-wrapper .chat-item .logo-box.data-v-12a33d95 {
       margin-right: 26rpx;
 }
 .chat-wrapper .chat-item .logo-box .logo.data-v-12a33d95 {
-=======
-.chat-wrapper .chat-item .logo-box.data-v-8fd374b0 {
-      margin-right: 26rpx;
-}
-.chat-wrapper .chat-item .logo-box .logo.data-v-8fd374b0 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
         width: 120rpx;
         height: 120rpx;
         -webkit-border-radius: 50%;
                 border-radius: 50%;
         background-color: #f5f5f5;
 }
-<<<<<<< HEAD
 .chat-wrapper .chat-item .item-details.data-v-12a33d95 {
-=======
-.chat-wrapper .chat-item .item-details.data-v-8fd374b0 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
       -webkit-box-flex: 1;
       -webkit-flex: 1;
           -ms-flex: 1;
@@ -81,11 +60,7 @@
       height: 100%;
       border-bottom: 1rpx solid #979797;
 }
-<<<<<<< HEAD
 .chat-wrapper .chat-item .item-details .item-title.data-v-12a33d95 {
-=======
-.chat-wrapper .chat-item .item-details .item-title.data-v-8fd374b0 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -99,38 +74,22 @@
             -ms-flex-pack: justify;
                 justify-content: space-between;
 }
-<<<<<<< HEAD
 .chat-wrapper .chat-item .item-details .item-title .name.data-v-12a33d95 {
-=======
-.chat-wrapper .chat-item .item-details .item-title .name.data-v-8fd374b0 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
           font-size: 32rpx;
           font-weight: 600;
           color: #000;
 }
-<<<<<<< HEAD
 .chat-wrapper .chat-item .item-details .item-title .time.data-v-12a33d95 {
-=======
-.chat-wrapper .chat-item .item-details .item-title .time.data-v-8fd374b0 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
           margin-right: 24rpx;
           font-size: 24rpx;
           color: #A5A6B2;
 }
-<<<<<<< HEAD
 .chat-wrapper .chat-item .item-details .item-content.data-v-12a33d95 {
-=======
-.chat-wrapper .chat-item .item-details .item-content.data-v-8fd374b0 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
         margin-top: 20rpx;
         font-size: 26rpx;
         color: #8B8B8B;
 }
-<<<<<<< HEAD
 .search-box.data-v-12a33d95 {
-=======
-.search-box.data-v-8fd374b0 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   position: fixed;
   left: 0;
   top: 0;
@@ -140,11 +99,7 @@
           box-sizing: border-box;
   padding: 28rpx 40rpx;
 }
-<<<<<<< HEAD
 .search-box .search-input.data-v-12a33d95 {
-=======
-.search-box .search-input.data-v-8fd374b0 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
     width: 100%;
     height: 60rpx;
     display: -webkit-box;
@@ -164,21 +119,13 @@
             border-radius: 40rpx;
     position: relative;
 }
-<<<<<<< HEAD
 .search-box .search-input .m-icon-search.data-v-12a33d95 {
-=======
-.search-box .search-input .m-icon-search.data-v-8fd374b0 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
       position: absolute;
       left: 10rpx;
       color: #CBCBCB;
       font-size: 40rpx;
 }
-<<<<<<< HEAD
 .search-box .search-input .input.data-v-12a33d95 {
-=======
-.search-box .search-input .input.data-v-8fd374b0 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
       width: 100%;
       height: 60rpx;
       line-height: 60rpx;
@@ -190,7 +137,6 @@
       font-size: 24rpx;
       padding-left: 60rpx;
 }
-<<<<<<< HEAD
 .chat-box.data-v-12a33d95 {
   width: 100%;
   background-color: #fff;
@@ -199,16 +145,6 @@
   width: 100%;
 }
 .header-box.data-v-12a33d95 {
-=======
-.chat-box.data-v-8fd374b0 {
-  width: 100%;
-  background-color: #fff;
-}
-.chat-wrapper.data-v-8fd374b0 {
-  width: 100%;
-}
-.header-box.data-v-8fd374b0 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   width: 100%;
   height: 120rpx;
 }

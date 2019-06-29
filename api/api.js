@@ -1,4 +1,4 @@
-const Token = uni.getStorageSync('USERS_KEY').token;
+let Token = uni.getStorageSync('USERS_KEY').token;
 const systemUrl = 'http://printsn.com:8080/v1/system/';
 const fansUrl = 'http://printsn.com:8080/v1/fans/';
 const dynUrl = 'http://printsn.com:8080/v1/dyn/';
@@ -26,6 +26,7 @@ export const login = (account, password) => {
 			if (res.data.status == 200)
 			{
 				uni.setStorageSync('USERS_KEY', res.data.data);
+				Token = uni.getStorageSync('USERS_KEY').token;
 				uni.reLaunch({
 					url: '../main/main'
 				});
@@ -300,13 +301,14 @@ export const getDyn = (uid) => new Promise((resolve, reject) => {
 /*********************日志***************************/
 // 获取日志列表
 export const findAllDyn = () => new Promise((resolve, reject) => {
+	// console.log(Token);
 	uni.request({
 		url: dynUrl + 'findAllDyn',
 		header: {
 			'token': Token
 		},
 		success:(res) => {
-			console.log(res.data);
+			// console.log(res.data);
 			if(res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
@@ -346,14 +348,14 @@ export const getComment = (did) => new Promise((resolve, reject) => {
 
 // 用户评论
 export const addComment = (content, did) => new Promise((resolve, reject) => {
-	console.log(did);
+	// console.log(did);
 	uni.request({
 		url: dynUrl + 'createCom?did=' + did + '&content=' + content,
 		header: {
 			'token': Token
 		},
 		success:(res) => {
-			console.log(res.data);
+			// console.log(res.data);
 			if(res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
@@ -371,6 +373,86 @@ export const addComment = (content, did) => new Promise((resolve, reject) => {
 export const concern = (type, gid) => new Promise((resolve, reject) => {
 	uni.request({
 		url: fansUrl + 'concern?gid=' + gid + '&type=' + type,
+		header: {
+			'token': Token
+		},
+		success:(res) => {
+			// console.log(res.data);
+			if(res.data.status == 200) {
+				if(type == 2) {
+					uni.showToast({
+						icon: 'none',
+						title: '已取消關注'
+					});
+				}
+				resolve(res.data.data);
+			}
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+// 点赞
+export const like = (did, likeNumber) => new Promise((resolve, reject) => {
+	uni.request({
+		url: dynUrl + 'like?did=' + did + '&likeNumber=' + likeNumber,
+		method: 'POST',
+		header: {
+			'token': Token
+		},
+		success:(res) => {
+			// console.log(res.data);
+			if(res.data.status == 200) resolve(res.data.data);
+			if(res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: '余额不足'
+				});
+			}
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+// 弹幕
+export const getBullet = (did) => new Promise((resolve, reject) => {
+	uni.request({
+		url: dynUrl + 'getBullet?did=' + did,
+		header: {
+			'token': Token
+		},
+		success:(res) => {
+			// console.log(res.data);
+			if(res.data.status == 200) resolve(res.data.data);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+// 回复评论
+export const reply = (cid, content) => new Promise((resolve, reject) => {
+	uni.request({
+		url: dynUrl + 'reply?cid=' + cid + '&content=' + content,
 		header: {
 			'token': Token
 		},

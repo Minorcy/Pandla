@@ -16,9 +16,9 @@ image {
 	        border-radius: 100%;
 }
 text {
+	width: 100rpx;
 	height: 50rpx;
-	padding: 15rpx 0 5rpx 0;
-	padding-left: 15rpx;
+	padding: 15rpx 0 5rpx 15rpx;
 	color: #9E9E9E;
 }
 .uni-input {

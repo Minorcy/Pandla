@@ -19,7 +19,7 @@
 								class="folllow"
 								src="../../static/img/main/daily/follow.svg" 
 								@tap="userFollow()" 
-								v-if="item.following == 0 && item.isOwn == 0">
+								v-if="item.following == 0 && item.isOwn == 0  && following == false">
 							</image>
 						</view>
 						<view>
@@ -28,30 +28,32 @@
 						</view>
 						<!-- <image class="img-option" src="../../static/img/main/daily/option.svg"></image> -->
 						<view @change.stop="behaviour()">
-							<image class="btn-behaviour" src="../../static/img/main/daily/option.svg" @tap="behaviour()"/>
-							<ul v-if="beStatus == true">
-								<li value="cancel">取消关注</li>
-								<li value="report">舉報用戶</li>
-								<li value="shield">屏蔽用戶</li>
-							</ul>
+							<picker @change="bindPickerChange" :value="pickIndex" :range="array" v-if="item.isOwn == 0">
+								<image class="btn-behaviour" src="../../static/img/main/daily/option.svg" @tap="behaviour()"/>
+								<!-- <view class="uni-input">{{array[index]}}</view> -->
+							</picker>
 						</view>
 						
 					</view>
 					<!-- 功能栏 -->
 					<view class="option-section">
-						<image src="../../static/img/main/daily/love.svg"></image>
+						<image src="../../static/img/main/daily/love.svg" @tap="likePerson(item.isOwn)"></image>
 						<p>{{item.like_count}}</p>
 						<image src="../../static/img/main/logo.svg"></image>
 						<p>{{item.force}}</p>
-						<image src="../../static/img/main/daily/comment.svg"></image>
+						<image src="../../static/img/main/daily/comment.svg" @tap="showComm"></image>
 						<p>{{item.com_count}}</p>
 					</view>
 					<view class="block">{{item.commentContent}}</view>
-					<!-- 日志内容 -->
+					<!-- 弹幕 -->
+					<view class="block-bullet">
+						<text v-for="(buItem, buIndex) in bulletList" :key="buIndex">{{buItem}}</text>
+					</view>
+					<!-- 日志图片 -->
 					<view class="img-hold">
 						<image class="img-daily" :src="item.images" mode="aspectFill" lazy-load="true"></image>
 					</view>
-					<!-- 日志评论 -->
+					<!-- 日志内容 -->
 					<view class="daily-seciton">
 						<image src="../../static/img/main/daily/tag.svg"></image>
 						<text class="dailyContent" v-if="item.isOwn == 1">{{item.content}}</text>
@@ -59,16 +61,18 @@
 						<text class="remind" v-else-if="item.following == 0 && item.isOwn == 0">需要關注才能看到對方的日志内容</text>
 						<text class="remind" v-else-if="item.following == 0">需要關注才能看到對方的日志内容</text>
 					</view>
-					<view class="comment-section" v-for="(ite, ind) in commentInfo" :key="ind">
-						<p>
-							
-							<text>{{ite[ind].name}}:</text>
-							<text>{{ite[ind].content}}</text>
-						</p>
-						<p>
-							<text>{{ite[ind].replyName}}:</text>
-							<text>{{ite[ind].replyContent}}</text>
-						</p>
+					<!-- 评论 -->
+					<view :class="comClass" v-for="(ite, ind) in commentInfo" :key="ind">
+						<!-- <view v-for="(iteItem, indIndex) in ite" :key="indIndex"> -->
+							<p class="comment-section-comm" @tap="reply(ite.id, ite.name)">
+								<text>{{ite.name}}:</text>
+								<text>{{ite.content}}</text>
+							</p>
+							<p class="comment-section-comm" v-if="ite.replyName != '' && ite.replyContent != ''">
+								<text>@{{ite.replyName}}:</text>
+								<text>{{ite.replyContent}}</text>
+							</p>
+						<!-- </view> -->
 					</view>
 				</swiper-item>
 			</swiper>
@@ -76,7 +80,7 @@
 		</view>
 		<!-- 评论栏 -->
 		<view class="input-section">
-			<input v-model="commContent" placeholder="   添加評論" />
+			<input v-model="commContent" :placeholder="commplaceholder" />
 			<button class="primary" hover-class="hover-primary" @tap="addComm()">發送</button>
 		</view>
 	</view>
@@ -84,7 +88,14 @@
 
 <script>
 	import barrage from '../../components/barrage.vue';
-	import {findAllDyn, getImgTemp, getComment, addComment, concern} from '../../api/api.js';
+	import {findAllDyn,
+		getImgTemp,
+		getComment,
+		addComment,
+		concern,
+		like,
+		getBullet,
+		reply} from '../../api/api.js';
 	
 	export default {
 		components: {
@@ -94,34 +105,50 @@
 			return {
 				dynInfo: '',
 				commentInfo: '',
+				bulletList: '',
 				following: false,
-				did: 0,
-				uid: 0,
+				did: 0,	// 日志id
+				uid: 0,	// 用户id
+				cid: 0, // 评论用户id
 				beStatus: false,
-				commContent: ''
-				
-				// dailyInfo: [{
-				// 	avatar: '../../static/img/main/daily/avatar3.svg',
-				// 	name: 'King',
-				// 	country: 'Japan',
-				// 	follow: 254,
-				// 	focus: 48,
-				// 	comment: 129,
-				// 	dailyImg: '../../static/img/main/daily/dailyImg3.png',
-				// 	dailyContent: 'Let my smile melt your heart',
-				// 	commentPerson: 'Joson :',
-				// 	commentContent: '优雅的生活',
-				// 	replyPerson: '@Joson :',
-				// 	replyContent: '你也可以'
-				// }],
+				commContent: '',
+				commplaceholder: '  添加評論',
+				addType: '', // 发送按钮请求不同接口
+				array: ['取消關注', '屏蔽用戶', '舉報用戶'],
+				pickIndex: 0,
+				likeNumber: 0,
+				comClass: 'comment-section'
 			}
 		},
 		methods: {
+			// 日志详情
+			findDyn(loadTime) {
+				findAllDyn().then(data => {
+					this.dynInfo = data;
+					// this.likeNumber = 0; //重置点赞次数
+					// 第一个特殊，因为需要滑动后才能监听到swiperChange，所以第一个直接赋值
+					if(loadTime == 1) {
+						this.did = this.dynInfo[0].id;
+						this.uid = this.dynInfo[0].uid;
+					}
+					// 获取弹幕
+					getBullet(this.did).then(data => {
+						this.bulletList = data.content;
+					});
+					getComment(this.did).then(data => {
+						// if(data == 0) this.commentInfo.content = '0';
+						this.commentInfo = data;
+						// console.log(this.commentInfo);
+					});
+				});
+			},
+			// 返回
 			goBack() {
 				uni.switchTab({
 					url: "../main/main"
 				});
 			},
+			// 发表日志
 			publishDyn() {
 				getImgTemp().then(data => {
 					this.$store.commit('setImgTemp', data);
@@ -131,62 +158,134 @@
 					});
 				});
 			},
+			// 关注用户
 			userFollow() {
-				let type = 0;
 				if(this.following == false) {
-					type = 1;
-					concern(type, this.did).then(data => {
+					concern(1, this.uid).then(data => {
 						this.following = true;
-					})
+						this.findDyn(2);
+					});
 				}
 				// else this.following = false;
 			},
+			// 举报功能等实现
+			bindPickerChange(e) {
+				// console.log('picker发送选择改变，携带值为', e.target.value);
+				this.pickIndex = e.target.value;
+				if(e.target.value == 0) { //取消关注
+					this.following = false;
+					console.log(this.uid);
+					concern(2, this.uid).then(data => {
+						this.findDyn();
+					});
+				}
+			},
+			//
+			behaviour() {
+				if(this.beStatus == false) this.beStatus = true;
+				else if(this.beStatus == true) this.beStatus = false;
+				// console.log(this.beStatus);
+			},
+			// 用户详情
 			userInfo() {
 				uni.navigateTo({
 					url: '/pages/daily/userInfo?uid=' + this.uid
 				});
 			},
-			findDyn() {
-				findAllDyn().then(data => {
-					this.dynInfo = data;
-					this.did = this.dynInfo[0].id;
-					this.uid = this.dynInfo[0].uid;
-					getComment(this.did).then(data => {
-						// if(data == 0) this.commentInfo.content = '0';
-						this.commentInfo = data;
-						console.log(this.commentInfo);
+			// 点赞
+			likePerson(isOwn) {
+				if(isOwn == 1) {
+					uni.showToast({
+						icon: 'none',
+						title: '不可以給自己點贊哦'
 					});
-				});
-				
+				} else {
+					like(this.did, 1);
+					this.findDyn(2);
+					// this.likeNumber++;
+					// uni.showToast({
+					// 	icon: 'none',
+					// 	title: '點贊了' + this.likeNumber + '次'
+					// });
+					// let likeTime = 5;
+					// let timeCount = setInterval(() => {
+					// 	likeTime --;
+					// 	console.log('likeTime:' + likeTime);
+					// 	if(likeTime < 1) {
+					// 		clearInterval(timeCount);
+					// 		console.log('likeNumber:' + this.likeNumber);
+					// 		like(this.did, this.likeNumber);
+					// 		this.findDyn(2);
+					// 	}
+					// }, 1000);
+				}
 			},
+			endLike() {
+				uni.showToast({
+					icon: 'none',
+					title: '结束触摸，点击了' + this.likeNumber + '次'
+				});
+			},
+			// 改变评论样式表
+			showComm() {
+				(this.comClass == 'comment-section') ? (this.comClass = 'comment-section-details') : (this.comClass = 'comment-section')
+			},
+			// 获取swiper滚动后日志值
 			swiperChange(e) {
+				this.following = false; // 重置关注按钮状态
+				this.comClass = 'comment-section'; // 重置评论样式
+				this.addType = ''; // 重置发送按钮类型
+				this.commplaceholder = '  添加評論'; // 清除占位符
+				
 				// console.log(e.detail.current);
 				this.did = this.dynInfo[e.detail.current].id;
 				this.uid = this.dynInfo[e.detail.current].uid;
+				// 获取弹幕
+				getBullet(this.did).then(data => {
+					this.bulletList = data.content;
+				});
 				getComment(this.did).then(data => {
 					this.commentInfo = data;
 					// console.log(this.commentInfo);
 				});
 			},
+			// 评论
 			addComm() {
 				// console.log(this.did);
-				addComment(this.commContent, this.did).then(data => {
-					getComment(this.did).then(data => {
-						this.commentInfo = data;
-						// console.log(this.commentInfo);
-					});
-				});
-				
-				// this.commContent = '';
+				if(this.commContent != '') {
+					if(this.addType == 'reply') {
+						// console.log('刚刚是回复');
+						// console.log('cid' + this.cid);
+						// console.log('commContent' + this.commContent);
+						reply(this.cid, this.commContent).then(data => {
+							this.findDyn(2);
+						});
+					} else {
+						addComment(this.commContent, this.did).then(data => {
+							getComment(this.did).then(data => {
+								this.commentInfo = data;
+								this.commContent = '';
+								// console.log(this.commentInfo);
+							});
+							// 获取弹幕
+							getBullet(this.did).then(data => {
+								this.bulletList = data.content;
+							});
+						});
+					}
+				}
 			},
-			behaviour() {
-				if(this.beStatus == false) this.beStatus = true;
-				else if(this.beStatus == true) this.beStatus = false;
-				// console.log(this.beStatus);
+			// 回复评论
+			reply(cid, name) {
+				if(this.uid != uni.getStorageSync('USERS_KEY').id) {
+					this.commplaceholder = '@' + name;
+					this.addType = 'reply';
+					this.cid = cid;
+				}
 			}
 		},
-		onShow() {
-			this.findDyn();
+		onLoad() {
+			this.findDyn(1);
 		}
 	}
 </script>
@@ -244,7 +343,6 @@
 		margin-top: 50upx;
 	}
 	
-	
 	/* 用户信息栏 */
 	.userInfo {
 		display: flex;
@@ -270,7 +368,6 @@
 		line-height: 32upx;
 		font-size: 30upx;
 	}
-	
 	
 	.userInfo p:nth-child(2) {
 		margin-top: 10upx;
@@ -320,7 +417,7 @@
 		
 	}
 
-	/* 评论 */
+	/* 日志内容 */
 	.daily-seciton image {
 		width: 42upx;
 		height: 42upx;
@@ -340,21 +437,36 @@
 		color: #EFEFF4;
 	}
 	
+	
+	/* 评论内容区域 */
 	.comment-section {
 		font-size: 25upx;
 		margin: 10upx 0 10upx 30upx;
 	}
 	
-	.comment-section p {
+	.comment-section-details {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		z-index: 2000;
+		background-color: #000000;
+		border-radius: 50upx;
+		padding: 50upx 0;
+	}
+	
+	.comment-section-comm {
 		font-size: 25upx;
 		margin-top: 10upx;
 	}
 	
-	.comment-section p text:nth-child(1) {
+	.comment-section-comm text:nth-child(1) {
 		margin-right: 10upx;
 		color: #888484;
 	}
 	
+	/* 评论 */
 	.input-section {
 		position: absolute;
 		width: 100%;
@@ -368,18 +480,20 @@
 	}
 	
 	.input-section input {
-		width: 80%;
+		width: 70%;
 		height: 65upx;
+		padding: 0 20upx;
 		vertical-align: middle;
 		float: left;
 	}
 	
 	.input-section button {
 		margin: 0;
+		padding: 0;
 		width: 20%;
 		padding-right: 20upx;
 		float: right;
-		margin-top: -20upx;
+		margin-top: -10upx;
 		font-size: 35upx;
 		color: #000000;
 	}
@@ -402,6 +516,21 @@
 	}
 	
 	/* 弹幕 */
+	.block-bullet {
+		position:absolute;
+		/* other decorate style */
+		animation:barrage 7s infinite linear 0s;
+		width: 120%;
+		font-size: 30upx;
+		opacity: 0;
+		z-index: 1500;
+	}
+	
+	.block-bullet>text {
+		margin: 50upx;
+		color: #FFFFFF;
+	}
+	
 	@keyframes barrage{
 	   from {
 		 left:100%;
@@ -413,15 +542,5 @@
 		 transform:translate3d(-100%,50upx,0);
 		 opacity: 1;
 	   }
-	}
-	
-	.block {
-	  position:absolute;
-	  /* other decorate style */
-	  animation:barrage 5s infinite linear 0s;
-	  width: 20%;
-	  font-size: 30upx;
-	  opacity: 0;
-	  z-index: 1500;
 	}
 </style>

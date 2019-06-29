@@ -1,10 +1,6 @@
 {
   "navigationBarTitleText": "",
-<<<<<<< HEAD
   "usingComponents": {
     "m-input": "/components/m-input"
   }
-=======
-  "usingComponents": {}
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 }

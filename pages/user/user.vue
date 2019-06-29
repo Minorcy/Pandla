@@ -115,10 +115,10 @@
             ...mapMutations(['logout']),
             bindLogout() {
                 this.logout();
+				uni.clearStorage('USERS_KEY');
 				uni.reLaunch({
 					url: '../login/login'
-				})
-				uni.clearStorage('USERS_KEY');
+				});
             },
 			getUserInfo() {
 				findByID().then(data => {

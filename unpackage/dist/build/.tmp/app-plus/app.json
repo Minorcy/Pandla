@@ -17,6 +17,7 @@
     "pages/entertain/entertain",
     "pages/entertain/entertainDetail",
     "pages/entertain/entertainApplication",
+    "pages/entertain/entertainUpload",
     "pages/user/user",
     "pages/user/update",
     "pages/msg/msg",
@@ -24,7 +25,13 @@
     "pages/pan/donateList",
     "pages/ledger/asset",
     "pages/ledger/focus",
-    "pages/setting/setting"
+    "pages/purse/purse",
+    "pages/passport/passport",
+    "pages/auth/auth",
+    "pages/invite/invite",
+    "pages/base/base",
+    "pages/setting/setting",
+    "pagesA/settingChat/settingChat"
   ],
   "subPackages": [],
   "window": {

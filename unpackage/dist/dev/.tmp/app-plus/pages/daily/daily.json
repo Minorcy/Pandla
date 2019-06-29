@@ -1,4 +1,5 @@
 {
+  "enablePullDownRefresh": true,
   "navigationBarTitleText": "",
   "titleNView": false,
   "usingComponents": {

@@ -1,30 +1,18 @@
 
-<<<<<<< HEAD
 facebook-link ._a.data-v-40e814f7 {
 	text-decoration: underline;
 }
 ._hr.data-v-40e814f7 {
-=======
-facebook-link ._a.data-v-66a2db8a {
-	text-decoration: underline;
-}
-._hr.data-v-66a2db8a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	margin-top: 40rpx;
 	height: 1rpx;
 	border: none;
 	background: #777777;
 }
-<<<<<<< HEAD
 .content.data-v-40e814f7{
-=======
-.content.data-v-66a2db8a{
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	color: #EFEFF4;
 }
 
 /* 滑动器 */
-<<<<<<< HEAD
 .swiper.data-v-40e814f7 {
 	width: 100%;
 	height: 750rpx;
@@ -34,17 +22,6 @@ facebook-link ._a.data-v-66a2db8a {
 	height: 750rpx;
 }
 .login-reg-link.data-v-40e814f7 {
-=======
-.swiper.data-v-66a2db8a {
-	width: 100%;
-	height: 750rpx;
-}
-.swiper-item>._img.data-v-66a2db8a {
-	width: 100%;
-	height: 750rpx;
-}
-.login-reg-link.data-v-66a2db8a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	margin: 0rpx 30rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -60,11 +37,7 @@ facebook-link ._a.data-v-66a2db8a {
 	    -ms-flex-pack: center;
 	        justify-content: center;
 }
-<<<<<<< HEAD
 .facebook-link.data-v-40e814f7 {
-=======
-.facebook-link.data-v-66a2db8a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	margin-top: 90rpx;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -80,20 +53,12 @@ facebook-link ._a.data-v-66a2db8a {
             justify-content: center;
 	font-size: 30rpx;
 }
-<<<<<<< HEAD
 .facebook-link>._a.data-v-40e814f7 {
-=======
-.facebook-link>._a.data-v-66a2db8a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	margin: 0 5rpx 0 5rpx;
 	color: #EFEFF4;
 	text-decoration: underline;
 }
-<<<<<<< HEAD
 .lang-link.data-v-40e814f7 {
-=======
-.lang-link.data-v-66a2db8a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -109,7 +74,6 @@ facebook-link ._a.data-v-66a2db8a {
 	right: 0;
 	padding: 20rpx;
 }
-<<<<<<< HEAD
 .en.data-v-40e814f7 {
 	color: #EFEFF4;
 	margin-left: 10rpx;
@@ -121,19 +85,6 @@ facebook-link ._a.data-v-66a2db8a {
 	margin-left: 40rpx;
 }
 .reg.data-v-40e814f7 {
-=======
-.en.data-v-66a2db8a {
-	color: #EFEFF4;
-	margin-left: 10rpx;
-}
-.ch.data-v-66a2db8a {
-	margin-right: 10rpx;
-}
-.login.data-v-66a2db8a {
-	margin-left: 40rpx;
-}
-.reg.data-v-66a2db8a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	margin-right: 40rpx;
 }
 

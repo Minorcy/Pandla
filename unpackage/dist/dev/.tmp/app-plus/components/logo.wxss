@@ -1,9 +1,5 @@
 
-<<<<<<< HEAD
 .header.data-v-294b52b1 {
-=======
-.header.data-v-3e1ca204 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -18,21 +14,13 @@
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
-<<<<<<< HEAD
 .logo.data-v-294b52b1 {
-=======
-.logo.data-v-3e1ca204 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	width: 160rpx;
 	height: 150rpx;
 	display: block;
 	margin: 0 auto;
 }
-<<<<<<< HEAD
 .slogan.data-v-294b52b1 {
-=======
-.slogan.data-v-3e1ca204 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	color: #EFEFF4;
 	font-size: 60rpx;
 	text-align: center;

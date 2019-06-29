@@ -1,20 +1,12 @@
 
-<<<<<<< HEAD
 .input-section.data-v-4697b63b{
-=======
-.input-section.data-v-2e89b7e4{
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	width: 100%;
 	height: 600rpx;
 	margin-top: 40rpx;
 	font-size: 30rpx;
 	padding: 20rpx;
 }
-<<<<<<< HEAD
 .option-section.data-v-4697b63b {
-=======
-.option-section.data-v-2e89b7e4 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -27,20 +19,12 @@
 	padding: 20rpx;
 	border-top: 1rpx solid #4CD964;
 }
-<<<<<<< HEAD
 .option-section image.data-v-4697b63b {
-=======
-.option-section image.data-v-2e89b7e4 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	width: 40rpx;
 	height: 40rpx;
 	margin: 20rpx 10rpx 0 0;
 }
-<<<<<<< HEAD
 .primary.data-v-4697b63b {
-=======
-.primary.data-v-2e89b7e4 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	-webkit-box-pack: start;
 	-webkit-justify-content: flex-start;
 	    -ms-flex-pack: start;
@@ -48,11 +32,7 @@
 	margin: 20rpx 0;
 	border-bottom: 1rpx solid #4CD964;
 }
-<<<<<<< HEAD
 image.data-v-4697b63b {
-=======
-image.data-v-2e89b7e4 {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	width: 350rpx;
 	height: 350rpx;
 	margin-bottom: 50rpx;

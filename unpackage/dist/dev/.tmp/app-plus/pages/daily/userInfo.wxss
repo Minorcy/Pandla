@@ -1,9 +1,5 @@
 
-<<<<<<< HEAD
 .userInfo.data-v-4a2cbcc6 {
-=======
-.userInfo.data-v-7d33ee2a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -15,11 +11,7 @@
 	        flex-direction: column;
 	margin-top: 50rpx;
 }
-<<<<<<< HEAD
 .portrait.data-v-4a2cbcc6 {
-=======
-.portrait.data-v-7d33ee2a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	width: 150rpx;
 	height: 150rpx;
 	margin: 0 auto;
@@ -27,39 +19,23 @@
 	-webkit-border-radius: 100%;
 	        border-radius: 100%;
 }
-<<<<<<< HEAD
 .avatar.data-v-4a2cbcc6 {
-=======
-.avatar.data-v-7d33ee2a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	width: 150rpx;
 	height: 150rpx;
 	margin: 0 auto;
 	margin-bottom: 30rpx;
 }
-<<<<<<< HEAD
 .userInfo ._p.data-v-4a2cbcc6 {
-=======
-.userInfo ._p.data-v-7d33ee2a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	font-size: 25rpx;
 	text-align: center;
 	margin: 5rpx 0 5rpx 0;
 }
-<<<<<<< HEAD
 .userInfo ._p.data-v-4a2cbcc6:nth-child(2) {
-=======
-.userInfo ._p.data-v-7d33ee2a:nth-child(2) {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	font-size: 40rpx;
 }
 
 /* 状态 */
-<<<<<<< HEAD
 .statusInfo.data-v-4a2cbcc6 {
-=======
-.statusInfo.data-v-7d33ee2a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	display:  -webkit-box;
 	display:  -webkit-flex;
 	display:  -ms-flexbox;
@@ -70,41 +46,25 @@
 	        justify-content: space-between;
 	padding: 40rpx 100rpx;
 }
-<<<<<<< HEAD
 .statusInfo view.data-v-4a2cbcc6 {
-=======
-.statusInfo view.data-v-7d33ee2a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	background-color: #8E8E93;
 	-webkit-border-radius: 5rpx;
 	        border-radius: 5rpx;
 	padding: 5rpx 30rpx;
 }
-<<<<<<< HEAD
 .statusInfo image.data-v-4a2cbcc6 {
-=======
-.statusInfo image.data-v-7d33ee2a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	width: 25rpx;
 	height: 25rpx;
 	float: left;
 }
-<<<<<<< HEAD
 .statusInfo text.data-v-4a2cbcc6 {
-=======
-.statusInfo text.data-v-7d33ee2a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	font-size: 20rpx;
 	margin-left: 10rpx;
 	float: right;
 }
 
 /* 动态列表 */
-<<<<<<< HEAD
 .dynInfo.data-v-4a2cbcc6 {
-=======
-.dynInfo.data-v-7d33ee2a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -124,21 +84,13 @@
 	margin-top: 50rpx;
 	padding: 1rpx;
 }
-<<<<<<< HEAD
 .dynInfo image.data-v-4a2cbcc6 {
-=======
-.dynInfo image.data-v-7d33ee2a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	width: 31%;
 	height: 250rpx;
 	padding: 5rpx;
 	margin: 5rpx;
 }
-<<<<<<< HEAD
 .btn-con.data-v-4a2cbcc6 {
-=======
-.btn-con.data-v-7d33ee2a {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
 	position: absolute;
 	width: 400rpx;
 	height: 100rpx;

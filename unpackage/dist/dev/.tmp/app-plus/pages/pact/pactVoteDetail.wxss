@@ -24,39 +24,23 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-<<<<<<< HEAD
 .pages-content.data-v-4fdb1a4c {
-=======
-.pages-content.data-v-2cbb9ddf {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   width: 100%;
   background-color: #EFEFF4;
   color: #000000;
   font-size: 30rpx;
 }
-<<<<<<< HEAD
 .label-detail.data-v-4fdb1a4c {
-=======
-.label-detail.data-v-2cbb9ddf {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   padding: 30rpx 30rpx 5rpx 30rpx;
   background-color: #FFFFFF;
   line-height: 60rpx;
 }
-<<<<<<< HEAD
 .label-focus.data-v-4fdb1a4c {
-=======
-.label-focus.data-v-2cbb9ddf {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   font-size: 25rpx;
   color: #979797;
   margin-top: 20rpx;
 }
-<<<<<<< HEAD
 .vote.data-v-4fdb1a4c {
-=======
-.vote.data-v-2cbb9ddf {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -77,7 +61,6 @@
   margin-top: 60rpx;
   padding: 60rpx;
 }
-<<<<<<< HEAD
 .vote-img.data-v-4fdb1a4c {
     padding: 10rpx 50rpx;
 }
@@ -85,15 +68,6 @@
       margin: 15rpx 0 0 30rpx;
 }
 .vote-list-group.data-v-4fdb1a4c {
-=======
-.vote-img.data-v-2cbb9ddf {
-    padding: 10rpx 50rpx;
-}
-.vote-img-succ.data-v-2cbb9ddf {
-      margin: 15rpx 0 0 30rpx;
-}
-.vote-list-group.data-v-2cbb9ddf {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -104,36 +78,21 @@
         -ms-flex-direction: row;
             flex-direction: row;
 }
-<<<<<<< HEAD
 text.data-v-4fdb1a4c {
   margin-left: 20rpx;
 }
 image.data-v-4fdb1a4c {
-=======
-text.data-v-2cbb9ddf {
-  margin-left: 20rpx;
-}
-image.data-v-2cbb9ddf {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   width: 50rpx;
   height: 50rpx;
   margin: 20rpx 5rpx;
   -webkit-border-radius: 50%;
           border-radius: 50%;
 }
-<<<<<<< HEAD
 button.data-v-4fdb1a4c::after {
   -webkit-border-radius: 0;
           border-radius: 0;
 }
 button[disabled].data-v-4fdb1a4c {
-=======
-button.data-v-2cbb9ddf::after {
-  -webkit-border-radius: 0;
-          border-radius: 0;
-}
-button[disabled].data-v-2cbb9ddf {
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
   color: #000000 !important;
   background: #CBCBCB !important;
 }

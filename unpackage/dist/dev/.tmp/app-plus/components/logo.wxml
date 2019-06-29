@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 <view class="header data-v-294b52b1"><image class="logo data-v-294b52b1" src="../../static/img/logo.png"></image><text class="slogan data-v-294b52b1">{{slogan}}</text></view>
-=======
-<view class="header data-v-3e1ca204"><image class="logo data-v-3e1ca204" src="../../static/img/logo.png"></image><text class="slogan data-v-3e1ca204">{{slogan}}</text></view>
->>>>>>> 73c9ed42abe39618ae01bbaa70ead18ea0d16544
