@@ -3,8 +3,8 @@
 		<view class="focus-data">
 			<image class="focus-img-focus" src="../../static/img/main/focus.svg"></image>
 			<p class="focus-label-num">原力值</p>
-			<text class="focus-data-num">{{assetInfo.balance}}</text>
-			<p class="focus-data-freeze">未釋放原力: {{assetInfo.notFree}}</p>
+			<text class="focus-data-num">{{assetInfo.balance | toFixed(4)}}</text>
+			<p class="focus-data-freeze">未釋放原力: {{assetInfo.notFree | toFixed(4)}}</p>
 		</view>
 		<view class="focus-notice">
 			<p class="focus-label-introduction">{{assetInfo.title}}</p>

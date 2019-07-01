@@ -38,27 +38,6 @@
 				<text>{{item.label}}</text>
 				<text>{{item.expla}}</text>
 			</navigator>
-<!-- 			<view class="input-row border">
-				<image src=""></image>
-				<text></text>
-				<text></text>
-			</view>
-			<navigator class="input-row border" url="">
-				<image src=""></image>
-				<text></text>
-			</navigator>
-			<navigator class="input-row border" url="">
-				<image src="../../static/img/user/focusLedger.svg"></image>
-				<text></text>
-			</navigator>
-			<view class="input-row border">
-				<image src="../../static/img/user/plantBase.svg"></image>
-				<text></text>
-			</view>
-			<navigator class="input-row border" url="../setting/setting">
-				<image src="../../static/img/user/.svg"></image>
-				<text></text>
-			</navigator> -->
 		</view>
         <view class="btn-row">
             <button class="primary" hover-class="hover-primary" @tap="bindLogout">退出登錄</button>

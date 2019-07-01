@@ -9,10 +9,11 @@
 						:autoplay="autoplay"
 						:interval="interval"
 						:duration="duration"
-						:circular="circular">
+						:circular="circular"
+						@change="sliderChange">
 						<swiper-item v-for="(item, index) in slides" :key="index">
 							<view class="swiper-item">
-								<img :src="item.number" alt="">
+								<image :src="item.number" alt="加载失败" mode="aspectFill"/>
 							</view>
 						</swiper-item>
                     </swiper>
@@ -21,6 +22,7 @@
         </view>
 		
 		<!-- 重置小圆点样式 -->
+		<progress :percent="sliderPercent" stroke-width="2" active-mode="backwards" activeColor="#02F52B"/>
 		
 		<view class="login-reg-link">
 			<navigator class="reg" url="../reg/reg">注冊</navigator>
@@ -42,46 +44,42 @@
 
 <script>
 	import {skipIndex} from "../../common/js/storage.js";
+	import {indexSlider} from '../../common/js/json.js';
+	
     export default {
 		data() {
 			return {
-				slides: [{
-					number: 'static/img/slider/indexSlide1.svg'
-				}, {
-					number: 'static/img/slider/indexSlide2.svg'
-				}, {
-					number: 'static/img/slider/indexSlide3.svg'
-				}, {
-					number: 'static/img/slider/indexSlide4.svg'
-				}],
+				slides: '',
 				indicatorDots: false,
 				autoplay: true,
 				interval: 3000,
 				duration: 1000,
 				circular: true,
-				currentSwiper: 0
+				currentSwiper: 0,
+				sliderPercent: 25
+			}
+		},
+		methods: {
+			getIndexSlider() {
+				indexSlider().then(data => {
+					this.slides = data;
+				});
+			},
+			sliderChange() {
+				(this.sliderPercent == 100) ? (this.sliderPercent = 25) : (this.sliderPercent += 25);
 			}
 		},
 		onLoad() {
 			skipIndex();
+			this.getIndexSlider();
 		}
     }
 </script>
 
 <style scoped="true">
-	facebook-link a {
-		text-decoration: underline;
-	}
-	
-	hr {
-		margin-top: 40upx;
-		height: 1upx;
-		border: none;
-		background: #777777;
-	}
-	
 	.content{
 		color: #EFEFF4;
+		padding: 0;
 	}
 	
 	/* 滑动器 */
@@ -89,17 +87,18 @@
 		width: 100%;
 		height: 750upx;
 	}
-	.swiper-item>img {
+	.swiper-item>image {
 		width: 100%;
 		height: 750upx;
 	}
 
 	.login-reg-link {
-		margin: 0upx 30upx;
+		margin: 50upx 30upx 0 30upx;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 	}
+	
 	.facebook-link {
 		margin-top: 90upx;
 		display: flex;
@@ -108,12 +107,14 @@
 	    justify-content: center;
 		font-size: 30upx;
 	}
+	
 	.facebook-link>a {
 		margin: 0 5upx 0 5upx;
 		color: #EFEFF4;
 		text-decoration: underline;
 		
 	}
+	
 	.lang-link {
 		display: flex;
 		flex-direction: row;
@@ -127,13 +128,27 @@
 		color: #EFEFF4;
 		margin-left: 10upx;
 	}
+	
 	.ch {
 		margin-right: 10upx;
 	}
+	
 	.login {
 		margin-left: 40upx;
 	}
+	
 	.reg {
 		margin-right: 40upx;
+	}
+	
+		facebook-link a {
+		text-decoration: underline;
+	}
+	
+	hr {
+		margin-top: 40upx;
+		height: 1upx;
+		border: none;
+		background: #777777;
 	}
 </style>

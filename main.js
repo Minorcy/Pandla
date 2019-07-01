@@ -2,10 +2,16 @@ import Vue from 'vue';
 import App from './App';
 
 import store from './store';
+import filters from './common/js/filter.js';
 
 Vue.config.productionTip = false;
 
 Vue.prototype.$store = store;
+
+
+Object.keys(filters).forEach(key => {//返回filters对象中属性名组成的数组
+  Vue.filter(key, filters[key])
+})
 
 App.mpType = 'app';
 

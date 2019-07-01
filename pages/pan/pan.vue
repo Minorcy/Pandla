@@ -3,17 +3,17 @@
 		<view class="asset">
 			<view class="asset-item">
 				<p>總資產</p>
-				<text v-if="!isHidden">{{propInfo.balance}}</text>
+				<text v-if="!isHidden">{{propInfo.balance | toFixed(4)}}</text>
 				<text v-else>*****</text>
 			</view>
 			<view class="asset-item">
 				<p>凍結</p>
-				<text v-if="!isHidden">{{propInfo.freeze}}</text>
+				<text v-if="!isHidden">{{propInfo.freeze | toFixed(4)}}</text>
 				<text v-else>*****</text>
 			</view>
 			<view class="asset-item">
 				<p>流通</p>
-				<text v-if="!isHidden">{{propInfo.usable}}</text>
+				<text v-if="!isHidden">{{propInfo.usable | toFixed(4)}}</text>
 				<text v-else>*****</text>
 			</view>
 			<m-icon
@@ -123,6 +123,7 @@
 			getMyIndex() {
 				getIndex().then(data => {
 					this.propInfo = data;
+					// 限制小数点后为4位
 				})
 			},
 			add() {

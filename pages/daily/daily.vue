@@ -286,6 +286,14 @@
 		},
 		onLoad() {
 			this.findDyn(1);
+		},
+		onPullDownRefresh() { //监听下拉刷新动作
+			console.log('onPullDownRefresh');
+			// 这里获取数据
+			setTimeout(function() {
+				//初始化数据
+				uni.stopPullDownRefresh(); //停止下拉刷新
+			}, 1000);
 		}
 	}
 </script>

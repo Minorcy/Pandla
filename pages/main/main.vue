@@ -51,35 +51,13 @@
 
 <script>
 	import token from '../../components/token.vue';
-    import {
-        mapState
-    } from 'vuex'
+	import {mainSlider} from '../../common/js/json.js';
+    import {mapState} from 'vuex';
 	
     export default {
 		data() {
 			return {
-				slides: [{
-					number: 'static/img/slider/mainPact.svg',
-					linkTab: '../pact/pact'
-				}, {
-					number: 'static/img/slider/mainDaily.svg',
-					linkTab: '../daily/daily'
-				}, {
-					number: 'static/img/slider/mainNearby.svg',
-					linkTab: '../nearby/nearby'
-				}, {
-					number: 'static/img/slider/mainEntertain.svg',
-					linkTab: '../entertain/entertain'
-				}, {
-					number: 'static/img/slider/mainPan.svg',
-					linkTab: '../entertain/entertain'
-				}, {
-					number: 'static/img/slider/mainStore.svg',
-					linkTab: '../store/store'
-				}, {
-					number: 'static/img/slider/mainGame.svg',
-					linkTab: '../game/game'
-				}],
+				slides: '',
 				indicatorDots: false,
 				autoplay: false,
 				interval: 2000,
@@ -109,7 +87,15 @@
 				uni.switchTab({
 					url: '../pan/pan'
 				});
+			},
+			getMainSlider() {
+				mainSlider().then(data => {
+					this.slides = data;
+				});
 			}
+		},
+		onLoad() {
+			this.getMainSlider();
 		}
     }
 </script>

@@ -1,12 +1,14 @@
 let Token = uni.getStorageSync('USERS_KEY').token;
-const systemUrl = 'http://printsn.com:8080/v1/system/';
-const fansUrl = 'http://printsn.com:8080/v1/fans/';
-const dynUrl = 'http://printsn.com:8080/v1/dyn/';
-const pollUrl = 'http://printsn.com:8080/v1/poll/';
-const panUrl = 'http://printsn.com:8080/v1/pan/';
-const forceUrl = 'http://printsn.com:8080/v1/force/';
-const treatyUrl = 'http://printsn.com:8080/v1/tre/';
-const barUrl = 'http://printsn.com:8080/v1/bar/';
+const URL = 'http://printsn.com:8080/v1/';
+const systemUrl = URL + 'system/';
+const fansUrl = URL + 'fans/';
+const dynUrl = URL + 'dyn/';
+const pollUrl = URL + 'poll/';
+const panUrl = URL + 'pan/';
+const forceUrl = URL + 'force/';
+const treatyUrl = URL + 'tre/';
+const barUrl = URL + 'bar/';
+const invUrl = URL + 'inv/';
 
 /*********************登录注册***************************/
 // 登录
@@ -832,6 +834,19 @@ export const upLogo = (imgTemp, type) => new Promise((resolve, reject) => {
 				icon: 'none',
 				title: '上传失败,请勿选择超过4M的图片'
 			});
+		}
+	});
+});
+
+
+/*********************邀请码***************************/
+
+export const getInvCode = () => new Promise((resolve, reject) => {
+	uni.request({
+		url: invUrl + 'getInvCode',
+		header: {token: Token},
+		success(res) {
+			if(res.data.status == 200) resolve(res.data.data);
 		}
 	});
 });

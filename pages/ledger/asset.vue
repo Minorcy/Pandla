@@ -3,9 +3,9 @@
 		<view class="pan-data">
 			<image class="pan-img-pan" src="../../static/img/main/pan.png"></image>
 			<p class="pan-label-num">PAN幣數量</p>
-			<text class="pan-data-num">{{assetInfo.balance}}</text>
+			<text class="pan-data-num">{{assetInfo.balance | toFixed(4)}}</text>
 			<text class="pan-label-deal">交易 ></text>
-			<p class="pan-data-freeze">凍結數量: {{assetInfo.freeze}}</p>
+			<p class="pan-data-freeze">凍結數量: {{assetInfo.freeze | toFixed(4)}}</p>
 		</view>
 		<view class="pan-notice">
 			<p class="pan-label-introduction">{{assetInfo.title}}</p>
