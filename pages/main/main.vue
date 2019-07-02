@@ -83,6 +83,15 @@
 			},
 			pushToken(item) { //收取token
 				this.tokens.splice(item.index, 1);
+				this.takePan(item.token);
+			},
+			async takePan(token) {
+				let res = await this.api.homeToken().takePan({
+					numbers: Number(token)
+				});
+				if (res.data.status == 200) {
+					console.log("成功");
+				}
 			}
 		},
 		onLoad() {

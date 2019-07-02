@@ -1,6 +1,6 @@
 <template>
 	<view class="token-box">
-		<view class="token" @click="clickToken(tokenValue)" :class="{'animation-one':index%2==0,'animation-two':index%2!=0}">
+		<view class="token" @click="clickToken(tokenValue)" :class="{'animation-one':index%2==0,'animation-two':index%2!=0,'fadeOut':isDelete}">
 			<image class="token-icon" src="../../static/img/main/token.png"></image>
 			<p class="tokenValue">{{tokenValue}}</p>
 		</view>
@@ -11,7 +11,7 @@
 	export default {
 		data() {
 			return {
-
+				isDelete: false
 			};
 		},
 		props: ["tokenValue", "index"],
@@ -20,10 +20,14 @@
 		},
 		methods: {
 			clickToken(token) {
-				this.$emit("confirm", {
-					token,
-					index: this.index
-				});
+				this.isDelete = true;
+				setTimeout(() => {
+					this.isDelete = false;
+					this.$emit("confirm", {
+						token,
+						index: this.index
+					});
+				}, 1500);
 			}
 		}
 	}
@@ -103,6 +107,17 @@
 		font-size: 25upx;
 	}
 
+	.fadeOut {
+		-webkit-animation-name: fadeOut;
+		/*动画名称*/
+		-webkit-animation-duration: 1.5s;
+		/*动画持续时间*/
+		-webkit-animation-iteration-count: 1;
+		/*动画次数*/
+		-webkit-animation-delay: 0s;
+		/*延迟时间*/
+	}
+
 	@-webkit-keyframes bird {
 		0% {
 			-moz-transform: translate(0, 0);
@@ -142,6 +157,23 @@
 			-o-transform: translate(0, 0);
 			-ms-transform: translate(0, 0);
 			transform: translate(0, 0);
+		}
+	}
+
+	@-webkit-keyframes fadeOut {
+		0% {
+			opacity: 1;
+			/*初始状态 透明度为0*/
+		}
+
+		50% {
+			opacity: 0.5;
+			/*中间状态 透明度为0*/
+		}
+
+		100% {
+			opacity: 0;
+			/*结尾状态 透明度为1*/
 		}
 	}
 </style>
