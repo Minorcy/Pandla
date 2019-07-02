@@ -1,60 +1,54 @@
 <template>
-    <view class="main-content">
-        <!-- <view v-if="hasLogin" class="hello"></view>
+	<view class="main-content">
+		<!-- <view v-if="hasLogin" class="hello"></view>
         <view v-if="!hasLogin" class="hello"></view> -->
 		<view id="header" class="header">
 			<view class="header-border">
-				<image src="../../static/img/main/pan.png" class="header-icon"/>
+				<image src="../../static/img/main/pan.png" class="header-icon" />
 				<text>889088</text>
 			</view>
 			<view class="header-border">
-				<image src="../../static/img/main/focus.svg" class="header-icon"/>
+				<image src="../../static/img/main/focus.svg" class="header-icon" />
 				<text>657</text>
 			</view>
 		</view>
 		<view class="header-border" style="border:0.1upx solid #8F8F94;">
-			<image src="../../static/img/main/notice.png" class="header-icon"/>
+			<image src="../../static/img/main/notice.png" class="header-icon" />
 			<text>公益基金池建設中，捐贈10個token星球返回10個</text>
 		</view>
 		<view class="token-area">
 			<view class="welfare-content" @tap="toPan">
-				<image src="../../static/img/main/welfare.png" class="welfare-icon"/>
+				<image src="../../static/img/main/welfare.png" class="welfare-icon" />
 				<span class="welfare-text">星球公益</span>
 			</view>
 			<view id="content" class="token-content">
-				<token
-					v-for="(item, index) in tokens"
-					:key="index"
-					class="mine-item topTobottom"
-					:tokenValue="item.value"
-					:index="index"/>
+				<token v-for="(item, index) in tokens" :key="index" class="mine-item topTobottom" :tokenValue="item" :index="index"
+				 @confirm="pushToken" />
 			</view>
-			
+
 		</view>
 		<!-- swiper滑动器 -->
-		<swiper class="swiper"
-			:indicator-dots="indicatorDots"
-			:autoplay="autoplay"
-			:interval="interval"
-			:duration="duration"
-			:circular="circular"
-			next-margin="1upx"
-			display-multiple-items=2.2>
+		<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration"
+		 :circular="circular" next-margin="1upx" display-multiple-items=2.2>
 			<swiper-item v-for="(i, ind) in slides" :key="ind">
 				<navigator class="swiper-item" :url="i.linkTab">
 					<img :src="i.number" alt="加载失败">
 				</navigator>
 			</swiper-item>
 		</swiper>
-    </view>
+	</view>
 </template>
 
 <script>
 	import token from '../../components/token.vue';
-	import {mainSlider} from '../../common/js/json.js';
-    import {mapState} from 'vuex';
-	
-    export default {
+	import {
+		mainSlider
+	} from '../../common/js/json.js';
+	import {
+		mapState
+	} from 'vuex';
+
+	export default {
 		data() {
 			return {
 				slides: '',
@@ -64,21 +58,9 @@
 				duration: 500,
 				circular: false,
 				currentSwiper: 0,
-				tokens: [{
-					value: '0.0214'
-				}, {
-					value: '0.0872'
-				}, {
-					value: '0.0476'
-				}, {
-					value: '0.0013'
-				}, {
-					value: '0.0013'
-				}, {
-					value: '0.0048'
-				}]
+				tokens: []
 			}
-		},	
+		},
 		components: {
 			token
 		},
@@ -92,12 +74,22 @@
 				mainSlider().then(data => {
 					this.slides = data;
 				});
+			},
+			async getToken() { //获取token
+				let res = await this.api.homeToken().getIndexPan();
+				if (res.data.status == 200) {
+					this.tokens = res.data.data;
+				}
+			},
+			pushToken(item) { //收取token
+				this.tokens.splice(item.index, 1);
 			}
 		},
 		onLoad() {
 			this.getMainSlider();
+			this.getToken();
 		}
-    }
+	}
 </script>
 
 <style lang="scss" scoped="true">
@@ -107,9 +99,9 @@
 		margin-left: 0;
 
 	}
-	
+
 	.header-border {
-		border:1px solid #C8C7CC;
+		border: 1px solid #C8C7CC;
 		border-radius: 30upx;
 		display: flex;
 		flex-direction: row;
@@ -123,13 +115,13 @@
 		width: 32upx;
 		height: 32upx;
 	}
-	
+
 	text {
 		font-size: 25upx;
 		margin-left: 15upx;
 		margin-bottom: 5upx;
 	}
-	
+
 	.token-area {
 		width: 100%;
 		height: 60%;
@@ -137,7 +129,7 @@
 		background-repeat: no-repeat;
 		background-position: center;
 	}
-	
+
 	.token-content {
 		margin: 60upx auto;
 		width: 85%;
@@ -147,7 +139,7 @@
 		flex-wrap: wrap;
 		justify-content: space-around;
 	}
-	
+
 	.welfare-content {
 		position: absolute;
 		right: 50upx;
@@ -157,26 +149,26 @@
 		flex-direction: column;
 		justify-content: flex-end;
 	}
-	
+
 	.welfare-icon {
 		width: 55upx;
 		height: 48upx;
 		margin-bottom: 8upx;
 	}
-	
+
 	.welfare-text {
 		margin-left: -22upx;
 		font-size: 25upx;
 		color: #4CD964;
 	}
-	
+
 	.swiper {
 		width: 100%;
 		height: 450upx;
 		margin-bottom: 40upx;
 	}
 
-	.swiper-item > img {
+	.swiper-item>img {
 		width: 300upx;
 	}
 </style>

@@ -25,8 +25,7 @@ export const login = (account, password) => {
 		},
 		success: (res) => {
 			// console.log(res.data.data);
-			if (res.data.status == 200)
-			{
+			if (res.data.status == 200) {
 				uni.setStorageSync('USERS_KEY', res.data.data);
 				Token = uni.getStorageSync('USERS_KEY').token;
 				uni.reLaunch({
@@ -100,10 +99,10 @@ export const register = (password, account, regCode, inviteCode) => {
 		},
 		success: (res) => {
 			// console.log(res.data.status);
-			if(res.data.status == 200) {
+			if (res.data.status == 200) {
 				uni.showToast({
 					icon: 'none',
-				    title: '注冊成功'
+					title: '注冊成功'
 				});
 				uni.setStorageSync('USERS_KEY', res.data.data);
 				uni.redirectTo({
@@ -140,7 +139,7 @@ export const changePwd = (password, account, regCode) => {
 		},
 		success: (res) => {
 			// console.log(res.data);
-			if(res.data == true) {
+			if (res.data == true) {
 				uni.redirectTo({
 					url: '../login/login'
 				})
@@ -168,9 +167,9 @@ export const findByID = () => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// uni.setStorageSync('USERS_KEY', res.data.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -190,9 +189,9 @@ export const getAllSocialInfo = () => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -208,7 +207,7 @@ export const getAllSocialInfo = () => new Promise((resolve, reject) => {
 // 更新用户数据
 export const upInfo = (userInfo, userId) => new Promise((resolve, reject) => {
 	uni.request({
-		url: systemUrl+'updata',
+		url: systemUrl + 'updata',
 		method: 'POST',
 		data: {
 			acctType: userInfo.acctType,
@@ -216,7 +215,7 @@ export const upInfo = (userInfo, userId) => new Promise((resolve, reject) => {
 			name: userInfo.name,
 			race: userInfo.race,
 			signature: userInfo.signature,
-			site : userInfo.site,
+			site: userInfo.site,
 			stature: userInfo.stature,
 			weight: userInfo.weight,
 			id: userId
@@ -226,8 +225,8 @@ export const upInfo = (userInfo, userId) => new Promise((resolve, reject) => {
 		},
 		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) {
-				if(uni.getStorageSync('USERS_KEY').token) {
+			if (res.data.status == 200) {
+				if (uni.getStorageSync('USERS_KEY').token) {
 					uni.switchTab({
 						url: 'user'
 					});
@@ -238,7 +237,7 @@ export const upInfo = (userInfo, userId) => new Promise((resolve, reject) => {
 				}
 				resolve(res.data.status);
 				// console.log(res.data);
-			} else { 
+			} else {
 				uni.showToast({
 					icon: 'none',
 					title: '提交失败，没有修改'
@@ -262,9 +261,9 @@ export const getInfo = (uid) => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -285,9 +284,9 @@ export const getDyn = (uid) => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -309,9 +308,9 @@ export const findAllDyn = () => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -332,9 +331,9 @@ export const getComment = (did) => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// if(res.data.status == 400) reject(0);
 			// else reject(res.data.msg);
 		},
@@ -356,9 +355,9 @@ export const addComment = (content, did) => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -378,10 +377,10 @@ export const concern = (type, gid) => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) {
-				if(type == 2) {
+			if (res.data.status == 200) {
+				if (type == 2) {
 					uni.showToast({
 						icon: 'none',
 						title: '已取消關注'
@@ -409,10 +408,10 @@ export const like = (did, likeNumber) => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
-			if(res.data.status == 404) {
+			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 404) {
 				uni.showToast({
 					icon: 'none',
 					title: '余额不足'
@@ -437,9 +436,9 @@ export const getBullet = (did) => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 		},
 		fail: (err) => {
 			uni.showToast({
@@ -458,9 +457,9 @@ export const reply = (cid, content) => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -481,9 +480,9 @@ export const getIndex = () => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -500,20 +499,20 @@ export const getIndex = () => new Promise((resolve, reject) => {
 export const donate = (number) => new Promise((resolve, reject) => {
 	uni.request({
 		url: pollUrl + 'donate?number=' + number,
-		method:'POST',
+		method: 'POST',
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) {
+			if (res.data.status == 200) {
 				uni.showToast({
 					icon: 'success',
 					title: res.data.data
 				});
 				resolve(res.data.data);
 			}
-			if(res.data.status == 404) {
+			if (res.data.status == 404) {
 				uni.showToast({
 					icon: "none",
 					title: res.data.msg
@@ -521,7 +520,7 @@ export const donate = (number) => new Promise((resolve, reject) => {
 				resolve(res.data.data);
 			}
 			// else reject(res.data.msg);
-			
+
 		},
 		fail: (err) => {
 			uni.showToast({
@@ -540,9 +539,9 @@ export const getPollTop = () => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -563,9 +562,9 @@ export const getBalance = () => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -585,9 +584,9 @@ export const getBill = () => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -607,9 +606,9 @@ export const checkTaskList = () => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -630,9 +629,9 @@ export const getForBalance = () => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -652,9 +651,9 @@ export const getForBill = () => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -674,9 +673,9 @@ export const checkForTaskList = () => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -697,9 +696,9 @@ export const toTreIndex = () => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -720,9 +719,9 @@ export const isVote = (tid) => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -743,9 +742,9 @@ export const sysVote = (tid, isWell) => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -766,9 +765,9 @@ export const getBarList = (location) => new Promise((resolve, reject) => {
 		header: {
 			'token': Token
 		},
-		success:(res) => {
+		success: (res) => {
 			console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -790,9 +789,9 @@ export const setBar = (dto) => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		data: dto,
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
@@ -809,7 +808,9 @@ export const setBar = (dto) => new Promise((resolve, reject) => {
 export const upLogo = (imgTemp, type) => new Promise((resolve, reject) => {
 	uni.uploadFile({
 		url: barUrl + 'upLogo?type=' + type,
-		header: {token: Token},
+		header: {
+			token: Token
+		},
 		filePath: imgTemp,
 		name: 'file',
 		success: (res) => {
@@ -817,7 +818,7 @@ export const upLogo = (imgTemp, type) => new Promise((resolve, reject) => {
 			var jsonObj = JSON.parse(res.data);
 			// console.log('uploadImage success, res is:', jsonObj.data);
 			resolve(jsonObj.data);
-			if(type == 3) {
+			if (type == 3) {
 				uni.showToast({
 					icon: 'none',
 					title: '上传成功,請等待審核'
@@ -844,9 +845,11 @@ export const upLogo = (imgTemp, type) => new Promise((resolve, reject) => {
 export const getInvCode = () => new Promise((resolve, reject) => {
 	uni.request({
 		url: invUrl + 'getInvCode',
-		header: {token: Token},
+		header: {
+			token: Token
+		},
 		success(res) {
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 		}
 	});
 });
@@ -861,7 +864,7 @@ export const upPicture = (userId) => new Promise((resolve, reject) => {
 		success(chooseImageRes) {
 			const tempFilePaths = chooseImageRes.tempFilePaths;
 			const uploadTask = uni.uploadFile({
-				url: systemUrl+'pic/upPicture?id='+userId,
+				url: systemUrl + 'pic/upPicture?id=' + userId,
 				filePath: tempFilePaths[0],
 				name: 'file',
 				success: (res) => {
@@ -915,8 +918,10 @@ export const getImgTemp = () => new Promise((resolve, reject) => {
 // 上传日志图片视频
 export const upload = (imgTemp) => new Promise((resolve, reject) => {
 	uni.uploadFile({
-		url: dynUrl+'upload',
-		header: {token: Token},
+		url: dynUrl + 'upload',
+		header: {
+			token: Token
+		},
 		filePath: imgTemp,
 		name: 'file',
 		success: (res) => {
@@ -956,9 +961,9 @@ export const createDyn = (dynContent) => new Promise((resolve, reject) => {
 			'content': dynContent,
 			'location': ''
 		},
-		success:(res) => {
+		success: (res) => {
 			// console.log(res.data);
-			if(res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
