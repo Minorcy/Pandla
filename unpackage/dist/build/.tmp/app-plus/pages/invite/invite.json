@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "我的專屬邀請碼",
+  "bounce": "none",
   "usingComponents": {
     "wm-poster": "/components/wm-poster/wm-poster"
   }

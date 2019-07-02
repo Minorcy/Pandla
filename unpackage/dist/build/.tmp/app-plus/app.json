@@ -76,8 +76,8 @@
   },
   "nvueCompiler": "weex",
   "splashscreen": {
-    "alwaysShowBeforeRender": true,
-    "autoclose": false
+    "alwaysShowBeforeRender": false,
+    "autoclose": true
   },
   "appname": "Pandla",
   "compilerVersion": "2.0.1",

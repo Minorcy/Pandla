@@ -1,109 +1,133 @@
 
-.token-box{
-		position: relative;
-		width: 150rpx;
-		height: 150rpx;
+.token-box {
+	position: relative;
+	width: 150rpx;
+	height: 150rpx;
 }
 .token {
-		position: absolute;
-		z-index: 999;
-		width: 128rpx;
-		height: 128rpx;
-		display: -webkit-box;
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		-webkit-flex-direction: column;
-		    -ms-flex-direction: column;
-		        flex-direction: column;
-		-webkit-box-align: center;
-		-webkit-align-items: center;
-		    -ms-flex-align: center;
-		        align-items: center;
-		-webkit-box-pack: center;
-		-webkit-justify-content: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
+	position: absolute;
+	z-index: 999;
+	width: 128rpx;
+	height: 128rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
-.animation-one{
-		-webkit-animation-name: bird;
-		-webkit-animation-duration: 5s;
-		-webkit-animation-timing-function: linear;
-		-webkit-animation-iteration-count: infinite;
-		-moz-animation-name: bird;
-		-moz-animation-duration: 5s;
-		-moz-animation-timing-function: linear;
-		-moz-animation-iteration-count: infinite;
-		-o-animation-name: bird;
-		-o-animation-duration: 5s;
-		-o-animation-timing-function: linear;
-		-o-animation-iteration-count: infinite;
-		-ms-animation-name: bird;
-		-ms-animation-duration: 5s;
-		-ms-animation-timing-function: linear;
-		-ms-animation-iteration-count: infinite;
-		animation-name: bird;
-		animation-duration: 5s;
-		animation-timing-function: linear;
-		animation-iteration-count: infinite;
+.animation-one {
+	-webkit-animation-name: bird;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-name: bird;
+	-moz-animation-duration: 5s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: infinite;
+	-o-animation-name: bird;
+	-o-animation-duration: 5s;
+	-o-animation-timing-function: linear;
+	-o-animation-iteration-count: infinite;
+	-ms-animation-name: bird;
+	-ms-animation-duration: 5s;
+	-ms-animation-timing-function: linear;
+	-ms-animation-iteration-count: infinite;
+	animation-name: bird;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
 }
-.animation-two{
-		-webkit-animation-name: bird;
-		-webkit-animation-duration: 3s;
-		-webkit-animation-timing-function: linear;
-		-webkit-animation-iteration-count: infinite;
-		-moz-animation-name: bird;
-		-moz-animation-duration: 3s;
-		-moz-animation-timing-function: linear;
-		-moz-animation-iteration-count: infinite;
-		-o-animation-name: bird;
-		-o-animation-duration: 3s;
-		-o-animation-timing-function: linear;
-		-o-animation-iteration-count: infinite;
-		-ms-animation-name: bird;
-		-ms-animation-duration: 3s;
-		-ms-animation-timing-function: linear;
-		-ms-animation-iteration-count: infinite;
-		animation-name: bird;
-		animation-duration: 3s;
-		animation-timing-function: linear;
-		animation-iteration-count: infinite;
+.animation-two {
+	-webkit-animation-name: bird;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-name: bird;
+	-moz-animation-duration: 3s;
+	-moz-animation-timing-function: linear;
+	-moz-animation-iteration-count: infinite;
+	-o-animation-name: bird;
+	-o-animation-duration: 3s;
+	-o-animation-timing-function: linear;
+	-o-animation-iteration-count: infinite;
+	-ms-animation-name: bird;
+	-ms-animation-duration: 3s;
+	-ms-animation-timing-function: linear;
+	-ms-animation-iteration-count: infinite;
+	animation-name: bird;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
 }
 .token-icon {
-		width: 48rpx;
-		height: 48rpx;
+	width: 48rpx;
+	height: 48rpx;
 }
 .tokenValue {
-		margin-left: -15rpx;
-		font-size: 25rpx;
+	margin-left: -15rpx;
+	font-size: 25rpx;
 }
-@-webkit-keyframes bird{
+.fadeOut {
+	-webkit-animation-name: fadeOut;
+	/*动画名称*/
+	-webkit-animation-duration: 1.5s;
+	/*动画持续时间*/
+	-webkit-animation-iteration-count: 1;
+	/*动画次数*/
+	-webkit-animation-delay: 0s;
+	/*延迟时间*/
+}
+@-webkit-keyframes bird {
 0% {
-         -webkit-transform: translate(0,0);
-         -ms-transform: translate(0, 0);
-         transform: translate(0,0);
+		-webkit-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		transform: translate(0, 0);
 }
 25% {
-         -webkit-transform: translate(0,-10rpx);
-         -ms-transform: translate(0, -10rpx);
-         transform: translate(0,-10rpx);
+		-webkit-transform: translate(0, -10rpx);
+		-ms-transform: translate(0, -10rpx);
+		transform: translate(0, -10rpx);
 }
 50% {
-         -webkit-transform: translate(0,-20rpx);
-         -ms-transform: translate(0, -20rpx);
-         transform: translate(0,-20rpx);
+		-webkit-transform: translate(0, -20rpx);
+		-ms-transform: translate(0, -20rpx);
+		transform: translate(0, -20rpx);
 }
 75% {
-         -webkit-transform: translate(0,-10rpx);
-         -ms-transform: translate(0, -10rpx);
-         transform: translate(0,-10rpx);
+		-webkit-transform: translate(0, -10rpx);
+		-ms-transform: translate(0, -10rpx);
+		transform: translate(0, -10rpx);
 }
 100% {
-         -webkit-transform: translate(0,0);
-         -ms-transform: translate(0, 0);
-         transform: translate(0,0);
+		-webkit-transform: translate(0, 0);
+		-ms-transform: translate(0, 0);
+		transform: translate(0, 0);
+}
+}
+@-webkit-keyframes fadeOut {
+0% {
+		opacity: 1;
+		/*初始状态 透明度为0*/
+}
+50% {
+		opacity: 0.5;
+		/*中间状态 透明度为0*/
+}
+100% {
+		opacity: 0;
+		/*结尾状态 透明度为1*/
 }
 }
 

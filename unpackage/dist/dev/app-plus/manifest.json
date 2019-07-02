@@ -89,7 +89,10 @@
         },
         "ios": {
           "iphone": {
-            "retina47": "E:/桌面/A-750.png"
+            "retina47": "E:/桌面/I-750.png",
+            "portrait-896h@2x": "E:/桌面/I-828.png",
+            "portrait-896h@3x": "E:/桌面/I-1242.png",
+            "iphonex": "E:/桌面/I-1242.png"
           }
         }
       },
