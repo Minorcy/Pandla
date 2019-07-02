@@ -105,7 +105,7 @@ export const register = (password, account, regCode, inviteCode) => {
 					title: '注冊成功'
 				});
 				uni.setStorageSync('USERS_KEY', res.data.data);
-				uni.redirectTo({
+				uni.reLaunch({
 					url: '../user/update'
 				});
 				// console.log(res.data);
@@ -168,6 +168,7 @@ export const findByID = () => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success: (res) => {
+			// console.log(res.data);
 			// uni.setStorageSync('USERS_KEY', res.data.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
@@ -481,7 +482,7 @@ export const getIndex = () => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success: (res) => {
-			// console.log(res.data);
+			console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},

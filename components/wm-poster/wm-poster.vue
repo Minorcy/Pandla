@@ -43,7 +43,7 @@ export default {
 		},
 		OriginalTxt:{	//原价值
 			Type:String,
-			default:'199.99'
+			default:''
 		},
 		OriginalColor:{	//默认颜色（如原价与扫描二维码颜色）
 			Type:String,
@@ -82,7 +82,7 @@ export default {
 			_this.ctx = uni.createCanvasContext(_this.CanvasID,this);
 			const C_W = uni.upx2px(_this.Width), //canvas宽度
 				C_P = uni.upx2px(30), //canvas Paddng 间距
-				C_Q = uni.upx2px(150); //二维码或太阳码宽高
+				C_Q = uni.upx2px(200); //二维码或太阳码宽高
 			let _strlineW = 0; //文本宽度
 			let _imgInfo = await _this.getImageInfo({ imgSrc: _this.imgSrc }); //广告图
 			let _QrCode = await _this.getImageInfo({ imgSrc: _this.QrSrc }); //二维码或太阳码
@@ -107,7 +107,7 @@ export default {
 			//添加图片展示 end
 
 			//设置文本
-			_this.ctx.setFontSize(uni.upx2px(28)); //设置标题字体大小
+			_this.ctx.setFontSize(uni.upx2px(30)); //设置标题字体大小
 			_this.ctx.setFillStyle(_this.TitleColor); //设置标题文本颜色
 			let _strLastIndex = 0; //每次开始截取的字符串的索引
 			let _strHeight = r[1] + C_P * 2 + 10; //绘制字体距离canvas顶部的初始高度
@@ -130,7 +130,7 @@ export default {
 						_num++;
 					}
 				}else if (i == _this.Title.length - 1) {
-					_this.ctx.fillText(_this.Title.substring(_strLastIndex, i + 1), C_P, _strHeight);
+					_this.ctx.fillText(_this.Title.substring(_strLastIndex, i + 1), C_P, _strHeight + uni.upx2px(70));
 					_strlineW = 0;
 				}
 			}
@@ -138,10 +138,10 @@ export default {
 
 			//设置价格
 			_strlineW = C_P;
-			_strHeight += uni.upx2px(60);
-			if(_num==1){
-				_strHeight += 20;	//单行标题时占位符
-			}
+			_strHeight += uni.upx2px(20);
+			// if(_num==1){
+			// 	_strHeight += 20;	//单行标题时占位符
+			// }
 			
 			if(_this.PriceTxt !=''){	//判断是否有销售价格
 				_this.ctx.setFillStyle(_this.PriceColor);
@@ -161,17 +161,18 @@ export default {
 			//设置价格 end
 
 			//添加二维码
-			_strHeight += uni.upx2px(20);
+			_strHeight -= uni.upx2px(50);
 			_this.ctx.drawImage(_QrCode.path, r[0] - q[0] + C_P, _strHeight, q[0], q[1]);
 			//添加二维码 end
 
 			//添加推荐人与描述
 			_this.ctx.setFillStyle(_this.TitleColor);
-			_this.ctx.setFontSize(uni.upx2px(30));
-			_this.ctx.fillText(_this.Referrer, C_P, _strHeight + q[1] / 2);
 			_this.ctx.setFillStyle(_this.OriginalColor);
 			_this.ctx.setFontSize(uni.upx2px(24));
-			_this.ctx.fillText(_this.ViewDetails, C_P, _strHeight + q[1] / 2 + 20);
+			_this.ctx.fillText(_this.Referrer, C_P, _strHeight + uni.upx2px(50) + q[1] / 2);
+			_this.ctx.setFillStyle(_this.OriginalColor);
+			_this.ctx.setFontSize(uni.upx2px(24));
+			_this.ctx.fillText(_this.ViewDetails, C_P, _strHeight + uni.upx2px(50) + q[1] / 2 + 20);
 			//添加推荐人与描述 end
 			
 			//延迟后渲染至canvas上

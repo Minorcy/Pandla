@@ -1290,10 +1290,13 @@ function gz$gwx_21(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_21)return __WXML_GLOBAL__.ops_cached.$gwx_21
 __WXML_GLOBAL__.ops_cached.$gwx_21=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'pages-content data-v-1c621e1e'])
+Z([[2,'=='],[[7],[3,'created']],[1,false]])
+Z(z[1])
 Z([[7],[3,'created']])
-Z([3,'僅限前5萬名星球居民'])
+Z([3,'注冊送1000魔法原力'])
 Z([[7],[3,'createImg']])
-Z([3,'注冊送1000原力值'])
+Z([3,'僅限前5萬名星球居民'])
 Z([3,'__l'])
 Z([3,'pan-poster data-v-1c621e1e'])
 Z([3,'http://47.100.228.211/images/static/img/poster/poster.svg'])
@@ -1369,9 +1372,11 @@ Z([3,'item'])
 Z([[7],[3,'tokens']])
 Z(z[0])
 Z([3,'__l'])
+Z([3,'__e'])
 Z([3,'mine-item topTobottom data-v-f9f2a51e'])
+Z([[4],[[5],[[4],[[5],[[5],[1,'^confirm']],[[4],[[5],[[4],[[5],[1,'pushToken']]]]]]]]])
 Z([[7],[3,'index']])
-Z([[6],[[7],[3,'item']],[3,'value']])
+Z([[7],[3,'item']])
 Z([[2,'+'],[1,'1-'],[[7],[3,'index']]])
 })(__WXML_GLOBAL__.ops_cached.$gwx_25);return __WXML_GLOBAL__.ops_cached.$gwx_25
 }
@@ -1856,135 +1861,148 @@ e_[x[19]]={f:m19,j:[],i:[],ti:[],ic:[]}
 d_[x[20]]={}
 var m20=function(e,s,r,gg){
 var z=gz$gwx_21()
-var e8B=_v()
-_(r,e8B)
-if(_oz(z,0,e,s,gg)){e8B.wxVkey=1
-var b9B=_mz(z,'wm-poster',['OriginalTxt',-1,'PriceTxt',1,'QrSrc',1,'Title',2,'bind:__l',3,'class',4,'imgSrc',5,'vueId',6],[],e,s,gg)
+var e8B=_n('view')
+_rz(z,e8B,'class',0,e,s,gg)
+var b9B=_v()
 _(e8B,b9B)
+if(_oz(z,1,e,s,gg)){b9B.wxVkey=1
 }
-e8B.wxXCkey=1
-e8B.wxXCkey=3
+var o0B=_v()
+_(e8B,o0B)
+if(_oz(z,2,e,s,gg)){o0B.wxVkey=1
+}
+var xAC=_v()
+_(e8B,xAC)
+if(_oz(z,3,e,s,gg)){xAC.wxVkey=1
+var oBC=_mz(z,'wm-poster',['PriceTxt',4,'QrSrc',1,'Title',2,'bind:__l',3,'class',4,'imgSrc',5,'vueId',6],[],e,s,gg)
+_(xAC,oBC)
+}
+b9B.wxXCkey=1
+o0B.wxXCkey=1
+xAC.wxXCkey=1
+xAC.wxXCkey=3
+_(r,e8B)
 return r
 }
 e_[x[20]]={f:m20,j:[],i:[],ti:[],ic:[]}
 d_[x[21]]={}
 var m21=function(e,s,r,gg){
 var z=gz$gwx_22()
-var xAC=_v()
-_(r,xAC)
-var oBC=function(cDC,fCC,hEC,gg){
-var cGC=_n('view')
-_rz(z,cGC,'class',4,cDC,fCC,gg)
-var oHC=_v()
-_(cGC,oHC)
-if(_oz(z,5,cDC,fCC,gg)){oHC.wxVkey=1
+var cDC=_v()
+_(r,cDC)
+var hEC=function(cGC,oFC,oHC,gg){
+var aJC=_n('view')
+_rz(z,aJC,'class',4,cGC,oFC,gg)
+var tKC=_v()
+_(aJC,tKC)
+if(_oz(z,5,cGC,oFC,gg)){tKC.wxVkey=1
 }
-var lIC=_v()
-_(cGC,lIC)
-if(_oz(z,6,cDC,fCC,gg)){lIC.wxVkey=1
-}
-var aJC=_v()
-_(cGC,aJC)
-if(_oz(z,7,cDC,fCC,gg)){aJC.wxVkey=1
-var tKC=_n('view')
-_rz(z,tKC,'class',8,cDC,fCC,gg)
 var eLC=_v()
-_(tKC,eLC)
-if(_oz(z,9,cDC,fCC,gg)){eLC.wxVkey=1
+_(aJC,eLC)
+if(_oz(z,6,cGC,oFC,gg)){eLC.wxVkey=1
 }
 var bMC=_v()
-_(tKC,bMC)
-if(_oz(z,10,cDC,fCC,gg)){bMC.wxVkey=1
+_(aJC,bMC)
+if(_oz(z,7,cGC,oFC,gg)){bMC.wxVkey=1
+var oNC=_n('view')
+_rz(z,oNC,'class',8,cGC,oFC,gg)
+var xOC=_v()
+_(oNC,xOC)
+if(_oz(z,9,cGC,oFC,gg)){xOC.wxVkey=1
 }
+var oPC=_v()
+_(oNC,oPC)
+if(_oz(z,10,cGC,oFC,gg)){oPC.wxVkey=1
+}
+xOC.wxXCkey=1
+oPC.wxXCkey=1
+_(bMC,oNC)
+}
+tKC.wxXCkey=1
 eLC.wxXCkey=1
 bMC.wxXCkey=1
-_(aJC,tKC)
+_(oHC,aJC)
+return oHC
 }
-oHC.wxXCkey=1
-lIC.wxXCkey=1
-aJC.wxXCkey=1
-_(hEC,cGC)
-return hEC
-}
-xAC.wxXCkey=2
-_2z(z,2,oBC,e,s,gg,xAC,'item','index','index')
+cDC.wxXCkey=2
+_2z(z,2,hEC,e,s,gg,cDC,'item','index','index')
 return r
 }
 e_[x[21]]={f:m21,j:[],i:[],ti:[],ic:[]}
 d_[x[22]]={}
 var m22=function(e,s,r,gg){
 var z=gz$gwx_23()
-var xOC=_v()
-_(r,xOC)
-var oPC=function(cRC,fQC,hSC,gg){
-var cUC=_n('view')
-_rz(z,cUC,'class',4,cRC,fQC,gg)
-var oVC=_v()
-_(cUC,oVC)
-if(_oz(z,5,cRC,fQC,gg)){oVC.wxVkey=1
+var cRC=_v()
+_(r,cRC)
+var hSC=function(cUC,oTC,oVC,gg){
+var aXC=_n('view')
+_rz(z,aXC,'class',4,cUC,oTC,gg)
+var tYC=_v()
+_(aXC,tYC)
+if(_oz(z,5,cUC,oTC,gg)){tYC.wxVkey=1
 }
-var lWC=_v()
-_(cUC,lWC)
-if(_oz(z,6,cRC,fQC,gg)){lWC.wxVkey=1
-}
-var aXC=_v()
-_(cUC,aXC)
-if(_oz(z,7,cRC,fQC,gg)){aXC.wxVkey=1
-var tYC=_n('view')
-_rz(z,tYC,'class',8,cRC,fQC,gg)
 var eZC=_v()
-_(tYC,eZC)
-if(_oz(z,9,cRC,fQC,gg)){eZC.wxVkey=1
+_(aXC,eZC)
+if(_oz(z,6,cUC,oTC,gg)){eZC.wxVkey=1
 }
 var b1C=_v()
-_(tYC,b1C)
-if(_oz(z,10,cRC,fQC,gg)){b1C.wxVkey=1
+_(aXC,b1C)
+if(_oz(z,7,cUC,oTC,gg)){b1C.wxVkey=1
+var o2C=_n('view')
+_rz(z,o2C,'class',8,cUC,oTC,gg)
+var x3C=_v()
+_(o2C,x3C)
+if(_oz(z,9,cUC,oTC,gg)){x3C.wxVkey=1
 }
+var o4C=_v()
+_(o2C,o4C)
+if(_oz(z,10,cUC,oTC,gg)){o4C.wxVkey=1
+}
+x3C.wxXCkey=1
+o4C.wxXCkey=1
+_(b1C,o2C)
+}
+tYC.wxXCkey=1
 eZC.wxXCkey=1
 b1C.wxXCkey=1
-_(aXC,tYC)
+_(oVC,aXC)
+return oVC
 }
-oVC.wxXCkey=1
-lWC.wxXCkey=1
-aXC.wxXCkey=1
-_(hSC,cUC)
-return hSC
-}
-xOC.wxXCkey=2
-_2z(z,2,oPC,e,s,gg,xOC,'item','index','index')
+cRC.wxXCkey=2
+_2z(z,2,hSC,e,s,gg,cRC,'item','index','index')
 return r
 }
 e_[x[22]]={f:m22,j:[],i:[],ti:[],ic:[]}
 d_[x[23]]={}
 var m23=function(e,s,r,gg){
 var z=gz$gwx_24()
-var x3C=_n('view')
-_rz(z,x3C,'class',0,e,s,gg)
-var o4C=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
-_(x3C,o4C)
-var f5C=_n('view')
-_rz(z,f5C,'class',4,e,s,gg)
-var c6C=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',5,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(f5C,c6C)
-var h7C=_mz(z,'m-input',['displayable',-1,'bind:__l',13,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(f5C,h7C)
-_(x3C,f5C)
-_(r,x3C)
+var c6C=_n('view')
+_rz(z,c6C,'class',0,e,s,gg)
+var h7C=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
+_(c6C,h7C)
+var o8C=_n('view')
+_rz(z,o8C,'class',4,e,s,gg)
+var c9C=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',5,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
+_(o8C,c9C)
+var o0C=_mz(z,'m-input',['displayable',-1,'bind:__l',13,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(o8C,o0C)
+_(c6C,o8C)
+_(r,c6C)
 return r
 }
 e_[x[23]]={f:m23,j:[],i:[],ti:[],ic:[]}
 d_[x[24]]={}
 var m24=function(e,s,r,gg){
 var z=gz$gwx_25()
-var c9C=_v()
-_(r,c9C)
-var o0C=function(aBD,lAD,tCD,gg){
-var bED=_mz(z,'token',['bind:__l',4,'class',1,'index',2,'tokenValue',3,'vueId',4],[],aBD,lAD,gg)
-_(tCD,bED)
-return tCD
+var aBD=_v()
+_(r,aBD)
+var tCD=function(bED,eDD,oFD,gg){
+var oHD=_mz(z,'token',['bind:__l',4,'bind:confirm',1,'class',2,'data-event-opts',3,'index',4,'tokenValue',5,'vueId',6],[],bED,eDD,gg)
+_(oFD,oHD)
+return oFD
 }
-c9C.wxXCkey=4
-_2z(z,2,o0C,e,s,gg,c9C,'item','index','index')
+aBD.wxXCkey=4
+_2z(z,2,tCD,e,s,gg,aBD,'item','index','index')
 return r
 }
 e_[x[24]]={f:m24,j:[],i:[],ti:[],ic:[]}
@@ -2009,23 +2027,23 @@ e_[x[27]]={f:m27,j:[],i:[],ti:[],ic:[]}
 d_[x[28]]={}
 var m28=function(e,s,r,gg){
 var z=gz$gwx_29()
-var cJD=_n('view')
-_rz(z,cJD,'class',0,e,s,gg)
-var hKD=_mz(z,'button',['bindtap',1,'class',1,'data-event-opts',2,'disabled',3,'hoverClass',4],[],e,s,gg)
-var oLD=_v()
-_(hKD,oLD)
-if(_oz(z,6,e,s,gg)){oLD.wxVkey=1
+var cMD=_n('view')
+_rz(z,cMD,'class',0,e,s,gg)
+var oND=_mz(z,'button',['bindtap',1,'class',1,'data-event-opts',2,'disabled',3,'hoverClass',4],[],e,s,gg)
+var lOD=_v()
+_(oND,lOD)
+if(_oz(z,6,e,s,gg)){lOD.wxVkey=1
 }
-oLD.wxXCkey=1
-_(cJD,hKD)
-var cMD=_mz(z,'button',['bindtap',7,'class',1,'data-event-opts',2,'disabled',3],[],e,s,gg)
-var oND=_v()
+lOD.wxXCkey=1
 _(cMD,oND)
-if(_oz(z,11,e,s,gg)){oND.wxVkey=1
+var aPD=_mz(z,'button',['bindtap',7,'class',1,'data-event-opts',2,'disabled',3],[],e,s,gg)
+var tQD=_v()
+_(aPD,tQD)
+if(_oz(z,11,e,s,gg)){tQD.wxVkey=1
 }
-oND.wxXCkey=1
-_(cJD,cMD)
-_(r,cJD)
+tQD.wxXCkey=1
+_(cMD,aPD)
+_(r,cMD)
 return r
 }
 e_[x[28]]={f:m28,j:[],i:[],ti:[],ic:[]}
@@ -2038,8 +2056,8 @@ e_[x[29]]={f:m29,j:[],i:[],ti:[],ic:[]}
 d_[x[30]]={}
 var m30=function(e,s,r,gg){
 var z=gz$gwx_31()
-var tQD=_mz(z,'m-icon',['bind:__l',0,'bind:click',1,'class',1,'color',2,'data-event-opts',3,'size',4,'type',5,'vueId',6],[],e,s,gg)
-_(r,tQD)
+var oTD=_mz(z,'m-icon',['bind:__l',0,'bind:click',1,'class',1,'color',2,'data-event-opts',3,'size',4,'type',5,'vueId',6],[],e,s,gg)
+_(r,oTD)
 return r
 }
 e_[x[30]]={f:m30,j:[],i:[],ti:[],ic:[]}
@@ -2058,61 +2076,61 @@ e_[x[32]]={f:m32,j:[],i:[],ti:[],ic:[]}
 d_[x[33]]={}
 var m33=function(e,s,r,gg){
 var z=gz$gwx_34()
-var xUD=_n('view')
-_rz(z,xUD,'class',0,e,s,gg)
-var cXD=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
-_(xUD,cXD)
-var oVD=_v()
-_(xUD,oVD)
-if(_oz(z,4,e,s,gg)){oVD.wxVkey=1
-var hYD=_n('view')
-_rz(z,hYD,'class',5,e,s,gg)
-var oZD=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',6,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(hYD,oZD)
-var c1D=_mz(z,'m-input',['clearable',-1,'bind:__l',13,'bind:input',1,'data-event-opts',2,'maxlength',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(hYD,c1D)
-_(oVD,hYD)
-}
-var fWD=_v()
-_(xUD,fWD)
-if(_oz(z,21,e,s,gg)){fWD.wxVkey=1
+var cXD=_n('view')
+_rz(z,cXD,'class',0,e,s,gg)
+var c1D=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
+_(cXD,c1D)
+var hYD=_v()
+_(cXD,hYD)
+if(_oz(z,4,e,s,gg)){hYD.wxVkey=1
 var o2D=_n('view')
-_rz(z,o2D,'class',22,e,s,gg)
-var l3D=_mz(z,'m-input',['displayable',-1,'bind:__l',23,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_rz(z,o2D,'class',5,e,s,gg)
+var l3D=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',6,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
 _(o2D,l3D)
-var a4D=_mz(z,'m-input',['displayable',-1,'bind:__l',30,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+var a4D=_mz(z,'m-input',['clearable',-1,'bind:__l',13,'bind:input',1,'data-event-opts',2,'maxlength',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
 _(o2D,a4D)
-_(fWD,o2D)
+_(hYD,o2D)
 }
-oVD.wxXCkey=1
-oVD.wxXCkey=3
-fWD.wxXCkey=1
-fWD.wxXCkey=3
-_(r,xUD)
+var oZD=_v()
+_(cXD,oZD)
+if(_oz(z,21,e,s,gg)){oZD.wxVkey=1
+var t5D=_n('view')
+_rz(z,t5D,'class',22,e,s,gg)
+var e6D=_mz(z,'m-input',['displayable',-1,'bind:__l',23,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(t5D,e6D)
+var b7D=_mz(z,'m-input',['displayable',-1,'bind:__l',30,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(t5D,b7D)
+_(oZD,t5D)
+}
+hYD.wxXCkey=1
+hYD.wxXCkey=3
+oZD.wxXCkey=1
+oZD.wxXCkey=3
+_(r,cXD)
 return r
 }
 e_[x[33]]={f:m33,j:[],i:[],ti:[],ic:[]}
 d_[x[34]]={}
 var m34=function(e,s,r,gg){
 var z=gz$gwx_35()
-var e6D=_n('view')
-_rz(z,e6D,'class',0,e,s,gg)
-var b7D=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
-_(e6D,b7D)
-var o8D=_n('view')
-_rz(z,o8D,'class',4,e,s,gg)
-var x9D=_mz(z,'m-input',['clearable',-1,'bind:__l',5,'bind:input',1,'data-event-opts',2,'placeholder',3,'value',4,'vueId',5],[],e,s,gg)
-_(o8D,x9D)
-var o0D=_mz(z,'m-input',['clearable',-1,'bind:__l',11,'bind:input',1,'data-event-opts',2,'maxlength',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(o8D,o0D)
-var fAE=_mz(z,'m-input',['displayable',-1,'bind:__l',19,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(o8D,fAE)
-var cBE=_mz(z,'m-input',['displayable',-1,'bind:__l',26,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(o8D,cBE)
-var hCE=_mz(z,'m-input',['clearable',-1,'bind:__l',33,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(o8D,hCE)
-_(e6D,o8D)
-_(r,e6D)
+var x9D=_n('view')
+_rz(z,x9D,'class',0,e,s,gg)
+var o0D=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
+_(x9D,o0D)
+var fAE=_n('view')
+_rz(z,fAE,'class',4,e,s,gg)
+var cBE=_mz(z,'m-input',['clearable',-1,'bind:__l',5,'bind:input',1,'data-event-opts',2,'placeholder',3,'value',4,'vueId',5],[],e,s,gg)
+_(fAE,cBE)
+var hCE=_mz(z,'m-input',['clearable',-1,'bind:__l',11,'bind:input',1,'data-event-opts',2,'maxlength',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
+_(fAE,hCE)
+var oDE=_mz(z,'m-input',['displayable',-1,'bind:__l',19,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(fAE,oDE)
+var cEE=_mz(z,'m-input',['displayable',-1,'bind:__l',26,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(fAE,cEE)
+var oFE=_mz(z,'m-input',['clearable',-1,'bind:__l',33,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(fAE,oFE)
+_(x9D,fAE)
+_(r,x9D)
 return r
 }
 e_[x[34]]={f:m34,j:[],i:[],ti:[],ic:[]}
@@ -2131,21 +2149,21 @@ e_[x[36]]={f:m36,j:[],i:[],ti:[],ic:[]}
 d_[x[37]]={}
 var m37=function(e,s,r,gg){
 var z=gz$gwx_38()
-var lGE=_n('view')
-_rz(z,lGE,'class',0,e,s,gg)
-var aHE=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',1,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
-_(lGE,aHE)
-var tIE=_mz(z,'m-input',['clearable',-1,'bind:__l',7,'bind:input',1,'data-event-opts',2,'maxlength',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(lGE,tIE)
-var eJE=_mz(z,'m-input',['clearable',-1,'bind:__l',14,'bind:input',1,'data-event-opts',2,'maxlength',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(lGE,eJE)
-var bKE=_mz(z,'m-input',['clearable',-1,'bind:__l',21,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
-_(lGE,bKE)
-var oLE=_mz(z,'m-input',['clearable',-1,'bind:__l',27,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
-_(lGE,oLE)
-var xME=_mz(z,'m-input',['clearable',-1,'bind:__l',33,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
-_(lGE,xME)
-_(r,lGE)
+var eJE=_n('view')
+_rz(z,eJE,'class',0,e,s,gg)
+var bKE=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',1,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
+_(eJE,bKE)
+var oLE=_mz(z,'m-input',['clearable',-1,'bind:__l',7,'bind:input',1,'data-event-opts',2,'maxlength',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(eJE,oLE)
+var xME=_mz(z,'m-input',['clearable',-1,'bind:__l',14,'bind:input',1,'data-event-opts',2,'maxlength',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(eJE,xME)
+var oNE=_mz(z,'m-input',['clearable',-1,'bind:__l',21,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
+_(eJE,oNE)
+var fOE=_mz(z,'m-input',['clearable',-1,'bind:__l',27,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
+_(eJE,fOE)
+var cPE=_mz(z,'m-input',['clearable',-1,'bind:__l',33,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
+_(eJE,cPE)
+_(r,eJE)
 return r
 }
 e_[x[37]]={f:m37,j:[],i:[],ti:[],ic:[]}
@@ -2178,7 +2196,7 @@ return root;
 
 
 
-__wxAppCode__['app.json']={"pages":["pages/index/index","pages/login/login","pages/reg/reg","pages/pwd/pwd","pages/im-chat/im-chat","pages/main/main","pages/pact/pact","pages/pact/pactVoteDetail","pages/daily/daily","pages/daily/publish","pages/daily/userInfo","pages/store/store","pages/game/game","pages/nearby/nearby","pages/entertain/entertain","pages/entertain/entertainDetail","pages/entertain/entertainApplication","pages/entertain/entertainUpload","pages/user/user","pages/user/update","pages/msg/msg","pages/pan/pan","pages/pan/donateList","pages/ledger/asset","pages/ledger/focus","pages/purse/purse","pages/passport/passport","pages/auth/auth","pages/invite/invite","pages/base/base","pages/setting/setting","pagesA/settingChat/settingChat"],"subPackages":[],"window":{"navigationBarTextStyle":"white","navigationBarBackgroundColor":"#000000","backgroundColor":"#fbf9fe"},"tabBar":{"color":"#767676","selectedColor":"#EFEFF4","backgroundColor":"#000000","list":[{"pagePath":"pages/main/main","text":"首頁","iconPath":"static/img/tabbar/home.png","selectedIconPath":"static/img/tabbar/homeHL.png"},{"pagePath":"pages/msg/msg","text":"通訊","iconPath":"static/img/tabbar/msg.png","selectedIconPath":"static/img/tabbar/msgHL.png"},{"pagePath":"pages/pan/pan","text":"PAN","iconPath":"static/img/tabbar/PAN.png","selectedIconPath":"static/img/tabbar/PANHL.png"},{"pagePath":"pages/user/user","text":"我的","iconPath":"static/img/tabbar/user.png","selectedIconPath":"static/img/tabbar/userHL.png"}]},"networkTimeout":{"request":6000,"uploadFile":10000},"nvueCompiler":"weex","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"appname":"Pandla","compilerVersion":"2.0.1","usingComponents":{}};
+__wxAppCode__['app.json']={"pages":["pages/index/index","pages/login/login","pages/reg/reg","pages/pwd/pwd","pages/im-chat/im-chat","pages/main/main","pages/pact/pact","pages/pact/pactVoteDetail","pages/daily/daily","pages/daily/publish","pages/daily/userInfo","pages/store/store","pages/game/game","pages/nearby/nearby","pages/entertain/entertain","pages/entertain/entertainDetail","pages/entertain/entertainApplication","pages/entertain/entertainUpload","pages/user/user","pages/user/update","pages/msg/msg","pages/pan/pan","pages/pan/donateList","pages/ledger/asset","pages/ledger/focus","pages/purse/purse","pages/passport/passport","pages/auth/auth","pages/invite/invite","pages/base/base","pages/setting/setting","pagesA/settingChat/settingChat"],"subPackages":[],"window":{"navigationBarTextStyle":"white","navigationBarBackgroundColor":"#000000","backgroundColor":"#fbf9fe"},"tabBar":{"color":"#767676","selectedColor":"#EFEFF4","backgroundColor":"#000000","list":[{"pagePath":"pages/main/main","text":"首頁","iconPath":"static/img/tabbar/home.png","selectedIconPath":"static/img/tabbar/homeHL.png"},{"pagePath":"pages/msg/msg","text":"通訊","iconPath":"static/img/tabbar/msg.png","selectedIconPath":"static/img/tabbar/msgHL.png"},{"pagePath":"pages/pan/pan","text":"PAN","iconPath":"static/img/tabbar/PAN.png","selectedIconPath":"static/img/tabbar/PANHL.png"},{"pagePath":"pages/user/user","text":"我的","iconPath":"static/img/tabbar/user.png","selectedIconPath":"static/img/tabbar/userHL.png"}]},"networkTimeout":{"request":6000,"uploadFile":10000},"nvueCompiler":"weex","splashscreen":{"alwaysShowBeforeRender":false,"autoclose":true},"appname":"Pandla","compilerVersion":"2.0.1","usingComponents":{}};
 __wxAppCode__['app.wxml']=$gwx('./app.wxml');
 
 __wxAppCode__['components/barrage.json']={"usingComponents":{},"component":true};
@@ -2205,97 +2223,97 @@ __wxAppCode__['components/token.wxml']=$gwx('./components/token.wxml');
 __wxAppCode__['components/wm-poster/wm-poster.json']={"usingComponents":{},"component":true};
 __wxAppCode__['components/wm-poster/wm-poster.wxml']=$gwx('./components/wm-poster/wm-poster.wxml');
 
-__wxAppCode__['pages/auth/auth.json']={"navigationBarTitleText":"實名認證","usingComponents":{}};
+__wxAppCode__['pages/auth/auth.json']={"navigationBarTitleText":"實名認證","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/auth/auth.wxml']=$gwx('./pages/auth/auth.wxml');
 
-__wxAppCode__['pages/base/base.json']={"navigationBarTitleText":"星球基地","usingComponents":{}};
+__wxAppCode__['pages/base/base.json']={"navigationBarTitleText":"星球基地","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/base/base.wxml']=$gwx('./pages/base/base.wxml');
 
-__wxAppCode__['pages/daily/daily.json']={"enablePullDownRefresh":true,"navigationBarTitleText":"","titleNView":false,"usingComponents":{"barrage":"/components/barrage"}};
+__wxAppCode__['pages/daily/daily.json']={"enablePullDownRefresh":true,"navigationBarTitleText":"","titleNView":false,"bounce":"none","usingComponents":{"barrage":"/components/barrage"}};
 __wxAppCode__['pages/daily/daily.wxml']=$gwx('./pages/daily/daily.wxml');
 
-__wxAppCode__['pages/daily/publish.json']={"navigationBarTitleText":"","titleNView":{"buttons":[{"text":"發表","fontSize":"35upx"}]},"usingComponents":{}};
+__wxAppCode__['pages/daily/publish.json']={"navigationBarTitleText":"","titleNView":{"buttons":[{"text":"發表","fontSize":"35upx"}]},"bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/daily/publish.wxml']=$gwx('./pages/daily/publish.wxml');
 
-__wxAppCode__['pages/daily/userInfo.json']={"navigationBarTitleText":"","usingComponents":{}};
+__wxAppCode__['pages/daily/userInfo.json']={"navigationBarTitleText":"","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/daily/userInfo.wxml']=$gwx('./pages/daily/userInfo.wxml');
 
-__wxAppCode__['pages/entertain/entertain.json']={"navigationBarTitleText":"位置 | 活動","usingComponents":{}};
+__wxAppCode__['pages/entertain/entertain.json']={"navigationBarTitleText":"位置 | 活動","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/entertain/entertain.wxml']=$gwx('./pages/entertain/entertain.wxml');
 
-__wxAppCode__['pages/entertain/entertainApplication.json']={"navigationBarTitleText":"","usingComponents":{"m-input":"/components/m-input"}};
+__wxAppCode__['pages/entertain/entertainApplication.json']={"navigationBarTitleText":"","bounce":"none","usingComponents":{"m-input":"/components/m-input"}};
 __wxAppCode__['pages/entertain/entertainApplication.wxml']=$gwx('./pages/entertain/entertainApplication.wxml');
 
-__wxAppCode__['pages/entertain/entertainDetail.json']={"navigationBarTitleText":"","usingComponents":{}};
+__wxAppCode__['pages/entertain/entertainDetail.json']={"navigationBarTitleText":"","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/entertain/entertainDetail.wxml']=$gwx('./pages/entertain/entertainDetail.wxml');
 
-__wxAppCode__['pages/entertain/entertainUpload.json']={"navigationBarTitleText":"","titleNView":{"buttons":[{"text":"提交","fontSize":"35upx"}]},"usingComponents":{}};
+__wxAppCode__['pages/entertain/entertainUpload.json']={"navigationBarTitleText":"","titleNView":{"buttons":[{"text":"提交","fontSize":"35upx"}]},"bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/entertain/entertainUpload.wxml']=$gwx('./pages/entertain/entertainUpload.wxml');
 
-__wxAppCode__['pages/game/game.json']={"navigationBarTitleText":"星球游戲","usingComponents":{}};
+__wxAppCode__['pages/game/game.json']={"navigationBarTitleText":"星球游戲","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/game/game.wxml']=$gwx('./pages/game/game.wxml');
 
-__wxAppCode__['pages/im-chat/im-chat.json']={"navigationBarTitleText":"聊天","usingComponents":{"chat-input":"/components/im-chat/chatinput","message-show":"/components/im-chat/messageshow"}};
+__wxAppCode__['pages/im-chat/im-chat.json']={"navigationBarTitleText":"聊天","bounce":"none","usingComponents":{"chat-input":"/components/im-chat/chatinput","message-show":"/components/im-chat/messageshow"}};
 __wxAppCode__['pages/im-chat/im-chat.wxml']=$gwx('./pages/im-chat/im-chat.wxml');
 
-__wxAppCode__['pages/index/index.json']={"navigationBarTitleText":"","titleNView":false,"usingComponents":{}};
+__wxAppCode__['pages/index/index.json']={"navigationBarTitleText":"","titleNView":false,"bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/index/index.wxml']=$gwx('./pages/index/index.wxml');
 
-__wxAppCode__['pages/invite/invite.json']={"navigationBarTitleText":"我的專屬邀請碼","usingComponents":{"wm-poster":"/components/wm-poster/wm-poster"}};
+__wxAppCode__['pages/invite/invite.json']={"navigationBarTitleText":"我的專屬邀請碼","bounce":"none","usingComponents":{"wm-poster":"/components/wm-poster/wm-poster"}};
 __wxAppCode__['pages/invite/invite.wxml']=$gwx('./pages/invite/invite.wxml');
 
-__wxAppCode__['pages/ledger/asset.json']={"navigationBarTitleText":"PAN幣賬本","usingComponents":{}};
+__wxAppCode__['pages/ledger/asset.json']={"navigationBarTitleText":"PAN幣賬本","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/ledger/asset.wxml']=$gwx('./pages/ledger/asset.wxml');
 
-__wxAppCode__['pages/ledger/focus.json']={"navigationBarTitleText":"原力賬本","usingComponents":{}};
+__wxAppCode__['pages/ledger/focus.json']={"navigationBarTitleText":"原力賬本","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/ledger/focus.wxml']=$gwx('./pages/ledger/focus.wxml');
 
-__wxAppCode__['pages/login/login.json']={"navigationBarTitleText":"","usingComponents":{"m-input":"/components/m-input","logo":"/components/logo"}};
+__wxAppCode__['pages/login/login.json']={"navigationBarTitleText":"","bounce":"none","usingComponents":{"m-input":"/components/m-input","logo":"/components/logo"}};
 __wxAppCode__['pages/login/login.wxml']=$gwx('./pages/login/login.wxml');
 
-__wxAppCode__['pages/main/main.json']={"navigationBarTitleText":"","titleNView":false,"usingComponents":{"token":"/components/token"}};
+__wxAppCode__['pages/main/main.json']={"navigationBarTitleText":"","titleNView":false,"bounce":"none","usingComponents":{"token":"/components/token"}};
 __wxAppCode__['pages/main/main.wxml']=$gwx('./pages/main/main.wxml');
 
-__wxAppCode__['pages/msg/msg.json']={"navigationBarTitleText":"通讯","navigationBarBackgroundColor":"#E1E1E1","navigationBarTextStyle":"black","titleNView":{"buttons":[{"text":"","fontSrc":"https://at.alicdn.com/t/font_1258335_6h11trbb733.ttf","fontSize":"22px","color":"#999999"}]},"usingComponents":{}};
+__wxAppCode__['pages/msg/msg.json']={"navigationBarTitleText":"通讯","navigationBarBackgroundColor":"#E1E1E1","navigationBarTextStyle":"black","titleNView":{"buttons":[{"text":"","fontSrc":"https://at.alicdn.com/t/font_1258335_6h11trbb733.ttf","fontSize":"22px","color":"#999999"}]},"bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/msg/msg.wxml']=$gwx('./pages/msg/msg.wxml');
 
-__wxAppCode__['pages/nearby/nearby.json']={"navigationBarTitleText":"附近居民","usingComponents":{}};
+__wxAppCode__['pages/nearby/nearby.json']={"navigationBarTitleText":"附近居民","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/nearby/nearby.wxml']=$gwx('./pages/nearby/nearby.wxml');
 
-__wxAppCode__['pages/pact/pact.json']={"navigationBarTitleText":"星球公約","usingComponents":{}};
+__wxAppCode__['pages/pact/pact.json']={"navigationBarTitleText":"星球公約","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/pact/pact.wxml']=$gwx('./pages/pact/pact.wxml');
 
-__wxAppCode__['pages/pact/pactVoteDetail.json']={"navigationBarTitleText":"","usingComponents":{}};
+__wxAppCode__['pages/pact/pactVoteDetail.json']={"navigationBarTitleText":"","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/pact/pactVoteDetail.wxml']=$gwx('./pages/pact/pactVoteDetail.wxml');
 
-__wxAppCode__['pages/pan/donateList.json']={"navigationBarTitleText":"捐贈榜單","usingComponents":{}};
+__wxAppCode__['pages/pan/donateList.json']={"navigationBarTitleText":"捐贈榜單","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/pan/donateList.wxml']=$gwx('./pages/pan/donateList.wxml');
 
-__wxAppCode__['pages/pan/pan.json']={"navigationBarTitleText":"","titleNView":false,"usingComponents":{"m-icon":"/components/m-icon/m-icon"}};
+__wxAppCode__['pages/pan/pan.json']={"navigationBarTitleText":"","titleNView":false,"bounce":"none","usingComponents":{"m-icon":"/components/m-icon/m-icon"}};
 __wxAppCode__['pages/pan/pan.wxml']=$gwx('./pages/pan/pan.wxml');
 
-__wxAppCode__['pages/passport/passport.json']={"navigationBarTitleText":"星球護照","usingComponents":{}};
+__wxAppCode__['pages/passport/passport.json']={"navigationBarTitleText":"星球護照","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/passport/passport.wxml']=$gwx('./pages/passport/passport.wxml');
 
-__wxAppCode__['pages/purse/purse.json']={"navigationBarTitleText":"我的錢包","usingComponents":{}};
+__wxAppCode__['pages/purse/purse.json']={"navigationBarTitleText":"我的錢包","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/purse/purse.wxml']=$gwx('./pages/purse/purse.wxml');
 
-__wxAppCode__['pages/pwd/pwd.json']={"navigationBarTitleText":"","usingComponents":{"m-input":"/components/m-input","logo":"/components/logo"}};
+__wxAppCode__['pages/pwd/pwd.json']={"navigationBarTitleText":"","bounce":"none","usingComponents":{"m-input":"/components/m-input","logo":"/components/logo"}};
 __wxAppCode__['pages/pwd/pwd.wxml']=$gwx('./pages/pwd/pwd.wxml');
 
-__wxAppCode__['pages/reg/reg.json']={"navigationBarTitleText":"","usingComponents":{"m-input":"/components/m-input","logo":"/components/logo"}};
+__wxAppCode__['pages/reg/reg.json']={"navigationBarTitleText":"","bounce":"none","usingComponents":{"m-input":"/components/m-input","logo":"/components/logo"}};
 __wxAppCode__['pages/reg/reg.wxml']=$gwx('./pages/reg/reg.wxml');
 
-__wxAppCode__['pages/setting/setting.json']={"navigationBarTitleText":"","usingComponents":{}};
+__wxAppCode__['pages/setting/setting.json']={"navigationBarTitleText":"","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/setting/setting.wxml']=$gwx('./pages/setting/setting.wxml');
 
-__wxAppCode__['pages/store/store.json']={"navigationBarTitleText":"星球特供","usingComponents":{}};
+__wxAppCode__['pages/store/store.json']={"navigationBarTitleText":"星球特供","bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/store/store.wxml']=$gwx('./pages/store/store.wxml');
 
-__wxAppCode__['pages/user/update.json']={"navigationBarTitleText":"","usingComponents":{"m-input":"/components/m-input","logo":"/components/logo"}};
+__wxAppCode__['pages/user/update.json']={"navigationBarTitleText":"","bounce":"none","usingComponents":{"m-input":"/components/m-input","logo":"/components/logo"}};
 __wxAppCode__['pages/user/update.wxml']=$gwx('./pages/user/update.wxml');
 
-__wxAppCode__['pages/user/user.json']={"navigationBarTitleText":"","titleNView":false,"usingComponents":{}};
+__wxAppCode__['pages/user/user.json']={"navigationBarTitleText":"","titleNView":false,"bounce":"none","usingComponents":{}};
 __wxAppCode__['pages/user/user.wxml']=$gwx('./pages/user/user.wxml');
 
 __wxAppCode__['pagesA/settingChat/settingChat.json']={"navigationBarTitleText":"提醒设置","navigationBarBackgroundColor":"#E1E1E1","navigationBarTextStyle":"black","titleNView":{},"usingComponents":{}};
@@ -2314,7 +2332,7 @@ define('common/main.js',function(require, module, exports, window, document, fra
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
 {
   onLaunch: function onLaunch() {
     console.log('App Launch', " at App.vue:4");
@@ -2324,7 +2342,33 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   },
   onHide: function onHide() {
     console.log('App Hide', " at App.vue:10");
+  },
+
+  mounted: function mounted() {
+    this.$request.interceptors.response(function (res) {
+      if (res) {
+        if (res.data.status && res.data.status.code != 200) {
+          uni.showToast({
+            title: res.data.status.message,
+            icon: "none",
+            duration: 2000 });
+
+        }
+        if (res.statusCode != 200) {
+          uni.showToast({
+            title: res.data.status.message,
+            icon: "none",
+            duration: 2000 });
+
+        }
+        if (res.statusCode == 401) {//退出登录
+          console.log("token失效", " at App.vue:31");
+        }
+      }
+      return res;
+    });
   } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
 
@@ -11766,8 +11810,7 @@ var login = function login(account, password) {
 
     success: function success(res) {
       // console.log(res.data.data);
-      if (res.data.status == 200)
-      {
+      if (res.data.status == 200) {
         uni.setStorageSync('USERS_KEY', res.data.data);
         Token = uni.getStorageSync('USERS_KEY').token;
         uni.reLaunch({
@@ -11847,7 +11890,7 @@ exports.sendCode = sendCode;var register = function register(password, account, 
           title: '注冊成功' });
 
         uni.setStorageSync('USERS_KEY', res.data.data);
-        uni.redirectTo({
+        uni.reLaunch({
           url: '../user/update' });
 
         // console.log(res.data);
@@ -11910,6 +11953,7 @@ exports.changePwd = changePwd;var findByID = function findByID() {return new Pro
         'token': Token },
 
       success: function success(res) {
+        // console.log(res.data);
         // uni.setStorageSync('USERS_KEY', res.data.data);
         if (res.data.status == 200) resolve(res.data.data);
         // else reject(res.data.msg);
@@ -12223,7 +12267,7 @@ exports.reply = reply;var getIndex = function getIndex() {return new Promise(fun
         'token': Token },
 
       success: function success(res) {
-        // console.log(res.data);
+        console.log(res.data, " at api\\api.js:485");
         if (res.data.status == 200) resolve(res.data.data);
         // else reject(res.data.msg);
       },
@@ -12550,7 +12594,9 @@ exports.getBarList = getBarList;var setBar = function setBar(dto) {return new Pr
 exports.setBar = setBar;var upLogo = function upLogo(imgTemp, type) {return new Promise(function (resolve, reject) {
     uni.uploadFile({
       url: barUrl + 'upLogo?type=' + type,
-      header: { token: Token },
+      header: {
+        token: Token },
+
       filePath: imgTemp,
       name: 'file',
       success: function success(res) {
@@ -12570,7 +12616,7 @@ exports.setBar = setBar;var upLogo = function upLogo(imgTemp, type) {return new 
         }
       },
       fail: function fail(err) {
-        console.log('uploadImage fail', err, " at api\\api.js:832");
+        console.log('uploadImage fail', err, " at api\\api.js:834");
         uni.showToast({
           icon: 'none',
           title: '上传失败,请勿选择超过4M的图片' });
@@ -12585,7 +12631,9 @@ exports.setBar = setBar;var upLogo = function upLogo(imgTemp, type) {return new 
 var getInvCode = function getInvCode() {return new Promise(function (resolve, reject) {
     uni.request({
       url: invUrl + 'getInvCode',
-      header: { token: Token },
+      header: {
+        token: Token },
+
       success: function success(res) {
         if (res.data.status == 200) resolve(res.data.data);
       } });
@@ -12606,9 +12654,9 @@ exports.getInvCode = getInvCode;var upPicture = function upPicture(userId) {retu
           filePath: tempFilePaths[0],
           name: 'file',
           success: function success(res) {
-            console.log(res.data, " at api\\api.js:868");
+            console.log(res.data, " at api\\api.js:872");
             var jsonObj = JSON.parse(res.data);
-            console.log('uploadImage success, res is:', jsonObj.data, " at api\\api.js:870");
+            console.log('uploadImage success, res is:', jsonObj.data, " at api\\api.js:874");
             uni.showToast({
               title: '上传成功',
               icon: 'success',
@@ -12618,7 +12666,7 @@ exports.getInvCode = getInvCode;var upPicture = function upPicture(userId) {retu
             // avatar = jsonObj.data.id;
           },
           fail: function fail(err) {
-            console.log('uploadImage fail', err, " at api\\api.js:880");
+            console.log('uploadImage fail', err, " at api\\api.js:884");
             uni.showToast({
               icon: 'none',
               title: '上传失败,请勿选择超过4M的图片' });
@@ -12626,9 +12674,9 @@ exports.getInvCode = getInvCode;var upPicture = function upPicture(userId) {retu
           } });
 
         uploadTask.onProgressUpdate(function (res) {
-          console.log('上传进度' + res.progress, " at api\\api.js:888");
-          console.log('已经上传的数据长度' + res.totalBytesSent, " at api\\api.js:889");
-          console.log('预期需要上传的数据总长度' + res.totalBytesExpectedToSend, " at api\\api.js:890");
+          console.log('上传进度' + res.progress, " at api\\api.js:892");
+          console.log('已经上传的数据长度' + res.totalBytesSent, " at api\\api.js:893");
+          console.log('预期需要上传的数据总长度' + res.totalBytesExpectedToSend, " at api\\api.js:894");
         });
       } });
 
@@ -12657,14 +12705,16 @@ exports.upPicture = upPicture;var getImgTemp = function getImgTemp() {return new
 exports.getImgTemp = getImgTemp;var upload = function upload(imgTemp) {return new Promise(function (resolve, reject) {
     uni.uploadFile({
       url: dynUrl + 'upload',
-      header: { token: Token },
+      header: {
+        token: Token },
+
       filePath: imgTemp,
       name: 'file',
       success: function success(res) {
-        console.log(res.data, " at api\\api.js:923");
+        console.log(res.data, " at api\\api.js:929");
         var jsonObj = JSON.parse(res.data);
-        console.log('uploadImage success, res is:', jsonObj.data, " at api\\api.js:925");
-        console.log(jsonObj.data.id, " at api\\api.js:926");
+        console.log('uploadImage success, res is:', jsonObj.data, " at api\\api.js:931");
+        console.log(jsonObj.data.id, " at api\\api.js:932");
         resolve(jsonObj.data.id);
         uni.showToast({
           icon: 'none',
@@ -12675,7 +12725,7 @@ exports.getImgTemp = getImgTemp;var upload = function upload(imgTemp) {return ne
 
       },
       fail: function fail(err) {
-        console.log('uploadImage fail', err, " at api\\api.js:937");
+        console.log('uploadImage fail', err, " at api\\api.js:943");
         uni.showToast({
           icon: 'none',
           title: '上传失败,请勿选择超过4M的图片' });
@@ -12712,6 +12762,232 @@ exports.upload = upload;var createDyn = function createDyn(dynContent) {return n
 
   });};exports.createDyn = createDyn;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
+
+/***/ }),
+
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\api\\apiUrl.js":
+/*!********************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/api/apiUrl.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var _request = _interopRequireDefault(__webpack_require__(/*! ./request/request.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\request\\request.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var baseURL;
+if (true) {
+  console.log('开发环境', " at api\\apiUrl.js:4");
+  baseURL = 'http://printsn.com:8080';
+} else {}
+// 全局配置
+_request.default.setConfig({
+  baseUrl: baseURL, // 此为测试地址，需加入到域名白名单，或者更改为您自己的线上地址即可
+  dataType: 'json', // 可删除，默认为json
+  responseType: 'text', // 可删除，默认为text
+  // 设置请求头，支持所有请求头设置，也可不设置，去掉header就行 
+  header: {
+    'content-type': 'application/json' } });
+
+/***/ }),
+
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\api\\index.js":
+/*!*******************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/api/index.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _homeToken = _interopRequireDefault(__webpack_require__(/*! ./modules/homeToken */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\modules\\homeToken.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+{
+  homeToken: _homeToken.default };exports.default = _default;
+
+/***/ }),
+
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\api\\modules\\homeToken.js":
+/*!*******************************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/api/modules/homeToken.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js"));var _request = _interopRequireDefault(__webpack_require__(/*! ../request/request.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\request\\request.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
+var Token = uni.getStorageSync('USERS_KEY').token;
+var api = function api(token) {
+  return {
+    /*
+           1.获取首页随机token
+           */
+    getIndexPan: function () {var _getIndexPan = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
+                  _request.default.get('/v1/pan/getIndexPan', {
+                    header: {
+                      "token": Token } }).
+
+                  then(function (respons) {
+                    return respons;
+                  }, function (error) {
+                    console.log("error", error, " at api\\modules\\homeToken.js:16");
+                  }));case 2:res = _context.sent;return _context.abrupt("return",
+                res);case 4:case "end":return _context.stop();}}}, _callee, this);}));function getIndexPan() {return _getIndexPan.apply(this, arguments);}return getIndexPan;}(),
+
+    /*
+                                                                                                                                                                                  2.收取token
+                                                                                                                                                                                  */
+    takePan: function () {var _takePan = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(_ref) {var numbers, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                numbers = _ref.numbers;_context2.next = 3;return (
+
+                  _request.default.get('/v1/pan/takePan', {
+                    data: {
+                      numbers: numbers },
+
+                    header: {
+                      "token": Token } }).
+
+                  then(function (respons) {
+                    return respons;
+                  }, function (error) {
+                    console.log("error", error, " at api\\modules\\homeToken.js:36");
+                  }));case 3:res = _context2.sent;return _context2.abrupt("return",
+                res);case 5:case "end":return _context2.stop();}}}, _callee2, this);}));function takePan(_x) {return _takePan.apply(this, arguments);}return takePan;}() };
+
+
+};var _default =
+api;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
+
+/***/ }),
+
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\api\\request\\request.js":
+/*!*****************************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/api/request/request.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni, global) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;} /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * version 1.1.2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           */var
+
+Request = /*#__PURE__*/function () {
+  function Request() {var _this2 = this;var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};_classCallCheck(this, Request);
+    this.config = {};
+    this.config.baseUrl = config.baseUrl ? config.baseUrl : '';
+    this.config.dataType = config.dataType ? config.dataType : 'json';
+    this.config.responseType = config.responseType ? config.responseType : 'text';
+    this.config.header = config.header ? config.header : {};
+    this.reqInterceptors = null;
+    this.resInterceptors = null;
+    this.interceptors = {
+      request: function request(fn) {
+        _this2.reqInterceptors = fn;
+      },
+      response: function response(fn) {
+        _this2.resInterceptors = fn;
+      } };
+
+  }_createClass(Request, [{ key: "get", value: function () {var _get = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(
+      url) {var config,_args = arguments;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:config = _args.length > 1 && _args[1] !== undefined ? _args[1] : {};return _context.abrupt("return",
+                this._request('get', url, config));case 2:case "end":return _context.stop();}}}, _callee, this);}));function get(_x) {return _get.apply(this, arguments);}return get;}() }, { key: "post", value: function () {var _post = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(
+
+      url) {var config,_args2 = arguments;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:config = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : {};return _context2.abrupt("return",
+                this._request('post', url, config));case 2:case "end":return _context2.stop();}}}, _callee2, this);}));function post(_x2) {return _post.apply(this, arguments);}return post;}() }, { key: "put", value: function () {var _put = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3(
+
+      url) {var config,_args3 = arguments;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:config = _args3.length > 1 && _args3[1] !== undefined ? _args3[1] : {};return _context3.abrupt("return",
+                this._request('put', url, config));case 2:case "end":return _context3.stop();}}}, _callee3, this);}));function put(_x3) {return _put.apply(this, arguments);}return put;}() }, { key: "delete", value: function () {var _delete2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4(
+
+      url) {var config,_args4 = arguments;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:config = _args4.length > 1 && _args4[1] !== undefined ? _args4[1] : {};return _context4.abrupt("return",
+                this._request('delete', url, config));case 2:case "end":return _context4.stop();}}}, _callee4, this);}));function _delete(_x4) {return _delete2.apply(this, arguments);}return _delete;}() }, { key: "setConfig", value: function setConfig()
+
+    {var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      this.config = Object.assign({}, this._merge(this.config, config));
+    } }, { key: "_request", value: function _request(
+    method, url, config) {
+      var _this = this;
+      var newConfig = Object.assign({}, this._merge(this.config, config));
+      var lastConfig = {};
+
+      if (this.reqInterceptors && typeof this.reqInterceptors === 'function') {
+        var reqInterceptors = this.reqInterceptors(newConfig);
+        if (!reqInterceptors) {
+          if (true) {
+            console.log('请求被拦截，此消息仅在开发环境显示。', " at api\\request\\request.js:47");
+          }
+          return false;
+        }
+        lastConfig = Object.assign({}, reqInterceptors);
+      } else {
+        lastConfig = Object.assign({}, newConfig);
+      }
+      return new Promise(function (resolve, reject) {
+        uni.request({
+          url: _this._formatUrl(lastConfig.baseUrl, url),
+          method: method,
+          data: lastConfig.data ? lastConfig.data : {},
+          header: lastConfig.header,
+          dataType: lastConfig.dataType,
+          responseType: lastConfig.responseType,
+          complete: function complete(response) {
+            var res = response;
+            if (!res.statusCode || res.statusCode !== 200) {
+              var resInterceptors = _this.resInterceptors(res);
+              res = resInterceptors;
+              reject(res);
+              return;
+            }
+            if (_this.resInterceptors && typeof _this.resInterceptors === 'function') {
+              var _resInterceptors = _this.resInterceptors(res);
+              if (!_resInterceptors) {
+                reject('返回值已被您拦截！');
+                return;
+              } else {
+                res = _resInterceptors;
+              }
+            }
+            resolve(res);
+          } });
+
+      });
+    } }, { key: "_formatUrl", value: function _formatUrl(
+    baseUrl, url) {
+      if (!baseUrl) return url;
+      var formatUrl = '';
+      var baseUrlEndsWithSlash = baseUrl.endsWith('/');
+      var urlStartsWithSlash = url.startsWith('/');
+      if (baseUrlEndsWithSlash && urlStartsWithSlash) {
+        formatUrl = baseUrl + url.substring(1);
+      } else if (baseUrlEndsWithSlash || urlStartsWithSlash) {
+        formatUrl = baseUrl + url;
+      } else {
+        formatUrl = baseUrl + '/' + url;
+      }
+      return formatUrl;
+    } }, { key: "_merge", value: function _merge(
+    oldConfig, newConfig) {
+      var mergeConfig = Object.assign({}, oldConfig);
+      if (!newConfig || !Object.keys(newConfig).length) return mergeConfig;
+      for (var key in newConfig) {
+        if (key !== 'header') {
+          mergeConfig[key] = newConfig[key];
+        } else {
+          if (Object.prototype.toString.call(newConfig[key]) === '[object Object]') {
+            for (var headerKey in newConfig[key]) {
+              mergeConfig[key][headerKey] = newConfig[key][headerKey];
+            }
+          }
+        }
+      }
+      return mergeConfig;
+    } }]);return Request;}();
+
+
+if (!global.$request) {
+  global.$request = new Request();
+}var _default =
+
+global.$request;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"], __webpack_require__(/*! (webpack)/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -14836,13 +15112,18 @@ var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "E:\\Project\\HBuilderProjects\\Pandla\\App.vue"));
 
 var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ "E:\\Project\\HBuilderProjects\\Pandla\\store\\index.js"));
-var _filter = _interopRequireDefault(__webpack_require__(/*! ./common/js/filter.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\filter.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var _filter = _interopRequireDefault(__webpack_require__(/*! ./common/js/filter.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\filter.js"));
+
+
+var _index = _interopRequireDefault(__webpack_require__(/*! ./api/index.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\index.js"));
+__webpack_require__(/*! ./api/apiUrl.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\apiUrl.js");
+var _request = _interopRequireDefault(__webpack_require__(/*! @/api/request/request.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\request\\request.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+_vue.default.prototype.api = _index.default;
+_vue.default.prototype.$request = _request.default;
+/*lei end*/
 
 _vue.default.config.productionTip = false;
-
 _vue.default.prototype.$store = _store.default;
-
-
 Object.keys(_filter.default).forEach(function (key) {//返回filters对象中属性名组成的数组
   _vue.default.filter(key, _filter.default[key]);
 });
@@ -16721,14 +17002,25 @@ define('components/token.js',function(require, module, exports, window, document
     var _default =
     {
       data: function data() {
-        return {};
-
+        return {
+          isDelete: false };
 
       },
       props: ["tokenValue", "index"],
       mounted: function mounted() {
         // console.log("index",this.index);
-      } };exports.default = _default;
+      },
+      methods: {
+        clickToken: function clickToken(token) {var _this = this;
+          this.isDelete = true;
+          setTimeout(function () {
+            _this.isDelete = false;
+            _this.$emit("confirm", {
+              token: token,
+              index: _this.index });
+
+          }, 1500);
+        } } };exports.default = _default;
 
     /***/},
 
@@ -16925,7 +17217,7 @@ define('components/wm-poster/wm-poster.js',function(require, module, exports, wi
 
           OriginalTxt: { //原价值
             Type: String,
-            default: '199.99' },
+            default: '' },
 
           OriginalColor: { //默认颜色（如原价与扫描二维码颜色）
             Type: String,
@@ -16964,7 +17256,7 @@ define('components/wm-poster/wm-poster.js',function(require, module, exports, wi
                       _this.ctx = uni.createCanvasContext(_this.CanvasID, this);
                       C_W = uni.upx2px(_this.Width),
                       C_P = uni.upx2px(30),
-                      C_Q = uni.upx2px(150); //二维码或太阳码宽高
+                      C_Q = uni.upx2px(200); //二维码或太阳码宽高
                       _strlineW = 0; //文本宽度
                       _context.next = 6;return _this.getImageInfo({ imgSrc: _this.imgSrc });case 6:_imgInfo = _context.sent;_context.next = 9;return (
                         _this.getImageInfo({ imgSrc: _this.QrSrc }));case 9:_QrCode = _context.sent; //二维码或太阳码
@@ -16989,7 +17281,7 @@ define('components/wm-poster/wm-poster.js',function(require, module, exports, wi
                       //添加图片展示 end
 
                       //设置文本
-                      _this.ctx.setFontSize(uni.upx2px(28)); //设置标题字体大小
+                      _this.ctx.setFontSize(uni.upx2px(30)); //设置标题字体大小
                       _this.ctx.setFillStyle(_this.TitleColor); //设置标题文本颜色
                       _strLastIndex = 0; //每次开始截取的字符串的索引
                       _strHeight = r[1] + C_P * 2 + 10; //绘制字体距离canvas顶部的初始高度
@@ -17012,7 +17304,7 @@ define('components/wm-poster/wm-poster.js',function(require, module, exports, wi
                       _num++;case 42:_context.next = 45;break;case 44:
 
                       if (i == _this.Title.length - 1) {
-                        _this.ctx.fillText(_this.Title.substring(_strLastIndex, i + 1), C_P, _strHeight);
+                        _this.ctx.fillText(_this.Title.substring(_strLastIndex, i + 1), C_P, _strHeight + uni.upx2px(70));
                         _strlineW = 0;
                       }case 45:i++;_context.next = 26;break;case 48:
 
@@ -17020,10 +17312,10 @@ define('components/wm-poster/wm-poster.js',function(require, module, exports, wi
 
                       //设置价格
                       _strlineW = C_P;
-                      _strHeight += uni.upx2px(60);
-                      if (_num == 1) {
-                        _strHeight += 20; //单行标题时占位符
-                      }
+                      _strHeight += uni.upx2px(20);
+                      // if(_num==1){
+                      // 	_strHeight += 20;	//单行标题时占位符
+                      // }
 
                       if (_this.PriceTxt != '') {//判断是否有销售价格
                         _this.ctx.setFillStyle(_this.PriceColor);
@@ -17043,17 +17335,18 @@ define('components/wm-poster/wm-poster.js',function(require, module, exports, wi
                       //设置价格 end
 
                       //添加二维码
-                      _strHeight += uni.upx2px(20);
+                      _strHeight -= uni.upx2px(50);
                       _this.ctx.drawImage(_QrCode.path, r[0] - q[0] + C_P, _strHeight, q[0], q[1]);
                       //添加二维码 end
 
                       //添加推荐人与描述
                       _this.ctx.setFillStyle(_this.TitleColor);
-                      _this.ctx.setFontSize(uni.upx2px(30));
-                      _this.ctx.fillText(_this.Referrer, C_P, _strHeight + q[1] / 2);
                       _this.ctx.setFillStyle(_this.OriginalColor);
                       _this.ctx.setFontSize(uni.upx2px(24));
-                      _this.ctx.fillText(_this.ViewDetails, C_P, _strHeight + q[1] / 2 + 20);
+                      _this.ctx.fillText(_this.Referrer, C_P, _strHeight + uni.upx2px(50) + q[1] / 2);
+                      _this.ctx.setFillStyle(_this.OriginalColor);
+                      _this.ctx.setFontSize(uni.upx2px(24));
+                      _this.ctx.fillText(_this.ViewDetails, C_P, _strHeight + uni.upx2px(50) + q[1] / 2 + 20);
                       //添加推荐人与描述 end
 
                       //延迟后渲染至canvas上
@@ -17482,7 +17775,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");
+
+
 var _validate = __webpack_require__(/*! ../../common/js/validate.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\validate.js");var logo = function logo() {return __webpack_require__.e(/*! import() | components/logo */ "components/logo").then(__webpack_require__.bind(null, /*! ../../components/logo.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\logo.vue"));};var mInput = function mInput() {return __webpack_require__.e(/*! import() | components/m-input */ "components/m-input").then(__webpack_require__.bind(null, /*! ../../components/m-input.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\m-input.vue"));};var _default =
+
+
+
 
 {
   components: {
@@ -18343,17 +18641,7 @@ define('pages/main/main.js',function(require, module, exports, window, document,
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-
-
-
-
-
-
-
-
-
-
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js"));
 
 
 
@@ -18397,7 +18685,11 @@ define('pages/main/main.js',function(require, module, exports, window, document,
 
 
 var _json = __webpack_require__(/*! ../../common/js/json.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\json.js");
-var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");var token = function token() {return __webpack_require__.e(/*! import() | components/token */ "components/token").then(__webpack_require__.bind(null, /*! ../../components/token.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\token.vue"));};var _default =
+
+
+var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var token = function token() {return __webpack_require__.e(/*! import() | components/token */ "components/token").then(__webpack_require__.bind(null, /*! ../../components/token.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\token.vue"));};var _default =
+
+
 
 {
   data: function data() {
@@ -18409,19 +18701,7 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
       duration: 500,
       circular: false,
       currentSwiper: 0,
-      tokens: [{
-        value: '0.0214' },
-      {
-        value: '0.0872' },
-      {
-        value: '0.0476' },
-      {
-        value: '0.0013' },
-      {
-        value: '0.0013' },
-      {
-        value: '0.0048' }] };
-
+      tokens: [] };
 
   },
   components: {
@@ -18437,10 +18717,29 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
       (0, _json.mainSlider)().then(function (data) {
         _this.slides = data;
       });
-    } },
+    },
+    getToken: function () {var _getToken = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
+                  this.api.homeToken().getIndexPan());case 2:res = _context.sent;
+                if (res.data.status == 200) {
+                  this.tokens = res.data.data;
+                }case 4:case "end":return _context.stop();}}}, _callee, this);}));function getToken() {return _getToken.apply(this, arguments);}return getToken;}(),
+
+    pushToken: function pushToken(item) {//收取token
+      this.tokens.splice(item.index, 1);
+      this.takePan(item.token);
+    },
+    takePan: function () {var _takePan = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(token) {var res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
+                  this.api.homeToken().takePan({
+                    numbers: Number(token) }));case 2:res = _context2.sent;
+
+                if (res.data.status == 200) {
+                  console.log("成功", " at pages\\main\\main.vue:93");
+                }case 4:case "end":return _context2.stop();}}}, _callee2, this);}));function takePan(_x) {return _takePan.apply(this, arguments);}return takePan;}() },
+
 
   onLoad: function onLoad() {
     this.getMainSlider();
+    this.getToken();
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
@@ -21153,6 +21452,9 @@ define('pages/user/user.js',function(require, module, exports, window, document,
 
 
 
+
+
+
 var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 
@@ -21426,6 +21728,7 @@ define('pages/user/update.js',function(require, module, exports, window, documen
 
 
 
+
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");
 var _validate = __webpack_require__(/*! ../../common/js/validate.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\validate.js");var mInput = function mInput() {return __webpack_require__.e(/*! import() | components/m-input */ "components/m-input").then(__webpack_require__.bind(null, /*! ../../components/m-input.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\m-input.vue"));};var logo = function logo() {return __webpack_require__.e(/*! import() | components/logo */ "components/logo").then(__webpack_require__.bind(null, /*! ../../components/logo.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\logo.vue"));};
 
@@ -21476,6 +21779,8 @@ var _default =
         this.userInfo.acctType = this.accArray[this.accIndex];
         this.userInfo.race = this.raceArray[this.raceIndex];
         // console.log('acctType:'+this.accArray[this.accIndex]);
+        // console.log(this.userInfo);
+        // console.log(userId);
         (0, _api.upInfo)(this.userInfo, userId);
       }
     },
@@ -21495,7 +21800,7 @@ var _default =
         if (data.acctType == '0') _this2.accIndex = 1;
         if (data.acctType == '0.5') _this2.accIndex = 2;
         if (data.acctType == '其它') _this2.accIndex = 3;
-        _this2.avatar = data.portrait;
+        if (data.portrait != null && data.portrait != "") _this2.avatar = data.portrait;
         _this2.userInfo.age = '' + data.age;
         _this2.userInfo.stature = '' + data.stature;
         _this2.userInfo.weight = '' + data.weight;
@@ -23421,7 +23726,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");
 var _json = __webpack_require__(/*! ../../common/js/json.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\json.js");
 
@@ -23463,10 +23767,10 @@ var _image = __webpack_require__(/*! ../../common/js/image.js */ "E:\\Project\\H
 //
 //
 //
-//
 var wmPoster = function wmPoster() {return Promise.all(/*! import() | components/wm-poster/wm-poster */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/wm-poster/wm-poster")]).then(__webpack_require__.bind(null, /*! ../..//components/wm-poster/wm-poster.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\wm-poster\\wm-poster.vue"));};var _default = { data: function data() {return { assetInfo: '', listInfo: '', inviteCode: '', created: false, createImg: '' };}, components: { wmPoster: wmPoster }, methods: { getInvData: function getInvData() {var _this = this;(0, _json.invList)().then(function (data) {_this.listInfo = data; // console.log(this.listInfo);
       });(0, _api.getInvCode)().then(function (data) {_this.inviteCode = data;});}, createPoster: function createPoster() {var _this2 = this;var URL = 'http://pandla.io?invCode=' + this.inviteCode;var img = _wxqrcode.default.createQrCodeImg(URL, { size: parseInt(300) //二维码大小  
-      });(0, _image.base64ToPath)(img).then(function (path) {console.log(path, " at pages\\invite\\invite.vue:76");_this2.createImg = path;}).catch(function (error) {console.error(error, " at pages\\invite\\invite.vue:79");});this.created = true;} },
+      });(0, _image.base64ToPath)(img).then(function (path) {console.log(path, " at pages\\invite\\invite.vue:75");_this2.createImg = path;}).catch(function (error) {console.error(error, " at pages\\invite\\invite.vue:78");});this.created = true;
+    } },
 
   onLoad: function onLoad() {
     this.getInvData();

@@ -12,5 +12,6 @@
       }
     ]
   },
+  "bounce": "none",
   "usingComponents": {}
 }

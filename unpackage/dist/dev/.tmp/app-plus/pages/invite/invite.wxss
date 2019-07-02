@@ -24,10 +24,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.pan-poster.data-v-1c621e1e {
-  position: absolute;
-  top: 0;
-}
 .pan-list.data-v-1c621e1e {
   -webkit-border-radius: 10rpx;
           border-radius: 10rpx;

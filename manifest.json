@@ -94,11 +94,17 @@
                     "xxhdpi" : "E:/桌面/1080.png",
                     "xhdpi" : "E:/桌面/720.png",
                     "hdpi" : "E:/桌面/480.png"
+                },
+                "ios" : {
+                    "iphone" : {
+                        "retina47" : "E:/桌面/A-750.png"
+                    }
                 }
             }
         },
         "splashscreen" : {
-            "waiting" : false
+            "waiting" : false,
+            "alwaysShowBeforeRender" : false
         }
     },
     /* SDK配置 */

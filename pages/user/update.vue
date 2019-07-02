@@ -1,41 +1,42 @@
 <template>
     <view class="content">
         <view class="input-group">
+		
 		<image :src="avatar" @tap='uploadAvatar()'/>
              <view class="input-row border">
-				 <text>昵称：</text>
+				 <text class="title">昵称：</text>
                 <m-input type="text" v-model="userInfo.name" focus clearable></m-input>
             </view>
 			<view class="input-row border">
-				<text>身高：</text>
+				<text class="title">身高：</text>
                 <m-input type="number" v-model="userInfo.stature" maxlength="3" clearable></m-input>
             </view>
 			<view class="input-row border">
-				<text>體重：</text>
+				<text class="title">體重：</text>
 				<m-input type="number" v-model="userInfo.weight" maxlength="3" clearable></m-input>
 			</view>
 			<view class="input-row border">
-				<text>年齡：</text>
+				<text class="title">年齡：</text>
 				<m-input type="number" v-model="userInfo.age" clearable></m-input>
 			</view>
 			<view class="input-row border">
-				<text>角色：</text>
+				<text class="title">角色：</text>
 				<picker @change="bindAcc" :value="accIndex" :range="accArray">
 					<view class="uni-input">{{accArray[accIndex]}}</view>
 				</picker>
 			</view>
 			<view class="input-row border">
-				<text>種族：</text>
+				<text class="title">種族：</text>
 				<picker @change="bindRace" :value="raceIndex" :range="raceArray">
 					<view class="uni-input">{{raceArray[raceIndex]}}</view>
 				</picker>
 			</view>
 			<view class="input-row border">
-				<text>居住：</text>
+				<text class="title">居住：</text>
 				<m-input type="text" v-model="userInfo.site" clearable></m-input>
 			</view>
 			<view class="input-row border">
-				<text>簽名：</text>
+				<text class="title">簽名：</text>
 				<m-input type="text" v-model="userInfo.signature" clearable></m-input>
 			</view>
         </view>
@@ -52,7 +53,7 @@
 	import {upPicture, upInfo, findByID} from '../../api/api.js';
 	import {userValidate} from '../../common/js/validate.js';
 
-	const userId = uni.getStorageSync('USERS_KEY').id;
+	let userId = uni.getStorageSync('USERS_KEY').id;
 	// console.log(userId);
 	
     export default {
@@ -99,6 +100,8 @@
 					this.userInfo.acctType = this.accArray[this.accIndex];
 					this.userInfo.race = this.raceArray[this.raceIndex];
 					// console.log('acctType:'+this.accArray[this.accIndex]);
+					// console.log(this.userInfo);
+					// console.log(userId);
 					upInfo(this.userInfo, userId);
 				}
 			},
@@ -118,7 +121,7 @@
 					if(data.acctType == '0') this.accIndex = 1;
 					if(data.acctType == '0.5') this.accIndex = 2;
 					if(data.acctType == '其它') this.accIndex = 3;
-					this.avatar = data.portrait;
+					if(data.portrait != null && data.portrait != "") this.avatar = data.portrait;
 					this.userInfo.age = '' + data.age;
 					this.userInfo.stature = '' + data.stature;
 					this.userInfo.weight = '' + data.weight;
@@ -142,9 +145,6 @@
 	}
 	
 	text {
-		width: 100upx;
-		height: 50upx;
-		padding: 15upx 0 5upx 15upx;
 		color: #9E9E9E;
 	}
 	

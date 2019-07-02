@@ -59,6 +59,7 @@
 
 
 
+
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");
 var _validate = __webpack_require__(/*! ../../common/js/validate.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\validate.js");var mInput = function mInput() {return __webpack_require__.e(/*! import() | components/m-input */ "components/m-input").then(__webpack_require__.bind(null, /*! ../../components/m-input.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\m-input.vue"));};var logo = function logo() {return __webpack_require__.e(/*! import() | components/logo */ "components/logo").then(__webpack_require__.bind(null, /*! ../../components/logo.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\logo.vue"));};
 
@@ -109,6 +110,8 @@ var _default =
         this.userInfo.acctType = this.accArray[this.accIndex];
         this.userInfo.race = this.raceArray[this.raceIndex];
         // console.log('acctType:'+this.accArray[this.accIndex]);
+        // console.log(this.userInfo);
+        // console.log(userId);
         (0, _api.upInfo)(this.userInfo, userId);
       }
     },
@@ -128,7 +131,7 @@ var _default =
         if (data.acctType == '0') _this2.accIndex = 1;
         if (data.acctType == '0.5') _this2.accIndex = 2;
         if (data.acctType == '其它') _this2.accIndex = 3;
-        _this2.avatar = data.portrait;
+        if (data.portrait != null && data.portrait != "") _this2.avatar = data.portrait;
         _this2.userInfo.age = '' + data.age;
         _this2.userInfo.stature = '' + data.stature;
         _this2.userInfo.weight = '' + data.weight;

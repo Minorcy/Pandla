@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
 {
   onLaunch: function onLaunch() {
     console.log('App Launch', " at App.vue:4");
@@ -18,7 +18,33 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   },
   onHide: function onHide() {
     console.log('App Hide', " at App.vue:10");
+  },
+
+  mounted: function mounted() {
+    this.$request.interceptors.response(function (res) {
+      if (res) {
+        if (res.data.status && res.data.status.code != 200) {
+          uni.showToast({
+            title: res.data.status.message,
+            icon: "none",
+            duration: 2000 });
+
+        }
+        if (res.statusCode != 200) {
+          uni.showToast({
+            title: res.data.status.message,
+            icon: "none",
+            duration: 2000 });
+
+        }
+        if (res.statusCode == 401) {//退出登录
+          console.log("token失效", " at App.vue:31");
+        }
+      }
+      return res;
+    });
   } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
 

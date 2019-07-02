@@ -20,14 +20,25 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 var _default =
 {
   data: function data() {
-    return {};
-
+    return {
+      isDelete: false };
 
   },
   props: ["tokenValue", "index"],
   mounted: function mounted() {
     // console.log("index",this.index);
-  } };exports.default = _default;
+  },
+  methods: {
+    clickToken: function clickToken(token) {var _this = this;
+      this.isDelete = true;
+      setTimeout(function () {
+        _this.isDelete = false;
+        _this.$emit("confirm", {
+          token: token,
+          index: _this.index });
+
+      }, 1500);
+    } } };exports.default = _default;
 
 /***/ }),
 

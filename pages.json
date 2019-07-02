@@ -5,7 +5,8 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
-					"titleNView": false
+					"titleNView": false,
+					"bounce": "none"
 				}
 			}
 		}, 
@@ -13,26 +14,38 @@
 		{
 			"path": "pages/login/login",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 		{
 			"path": "pages/reg/reg",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 		{
 			"path": "pages/pwd/pwd",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 		
 		{
 			"path": "pages/im-chat/im-chat",
 			"style": {
-				"navigationBarTitleText": "聊天"
+				"navigationBarTitleText": "聊天",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 
@@ -41,7 +54,8 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
-					"titleNView": false
+					"titleNView": false,
+					"bounce": "none"
 				}
 			}
 		},
@@ -49,12 +63,18 @@
 		{
 			"path": "pages/pact/pact",
 			"style": {
-				"navigationBarTitleText": "星球公約"
+				"navigationBarTitleText": "星球公約",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		}, {
 			"path": "pages/pact/pactVoteDetail",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 
@@ -64,7 +84,8 @@
 				"enablePullDownRefresh": true,
 				"navigationBarTitleText": "",
 				"app-plus": {
-					"titleNView": false
+					"titleNView": false,
+					"bounce": "none"
 				}
 			}
 		}, {
@@ -77,48 +98,70 @@
 							"text": "發表",
 							"fontSize": "35upx"
 						}]
-					}
+					},
+					"bounce": "none"
 				}
 			}
 		}, {
 			"path": "pages/daily/userInfo",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 
 		{
 			"path": "pages/store/store",
 			"style": {
-				"navigationBarTitleText": "星球特供"
+				"navigationBarTitleText": "星球特供",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 		{
 			"path": "pages/game/game",
 			"style": {
-				"navigationBarTitleText": "星球游戲"
+				"navigationBarTitleText": "星球游戲",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 		{
 			"path": "pages/nearby/nearby",
 			"style": {
-				"navigationBarTitleText": "附近居民"
+				"navigationBarTitleText": "附近居民",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 		{
 			"path": "pages/entertain/entertain",
 			"style": {
-				"navigationBarTitleText": "位置 | 活動"
+				"navigationBarTitleText": "位置 | 活動",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		}, {
 			"path": "pages/entertain/entertainDetail",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		}, {
 			"path": "pages/entertain/entertainApplication",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		}, {
 			"path": "pages/entertain/entertainUpload",
@@ -130,7 +173,8 @@
 							"text": "提交",
 							"fontSize": "35upx"
 						}]
-					}
+					},
+					"bounce": "none"
 				}
 			}
 		},
@@ -140,14 +184,18 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
-					"titleNView": false
+					"titleNView": false,
+					"bounce":"none"
 				}
 
 			}
 		}, {
 			"path": "pages/user/update",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 
@@ -165,7 +213,8 @@
 							"fontSize": "22px",
 							"color": "#999999"
 						}]
-					}
+					},
+					"bounce":"none"
 				}
 			}
 
@@ -176,63 +225,91 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
-					"titleNView": false
+					"titleNView": false,
+					"bounce": "none"
 				}
 			}
 		}, {
 			"path": "pages/pan/donateList",
 			"style": {
-				"navigationBarTitleText": "捐贈榜單"
+				"navigationBarTitleText": "捐贈榜單",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 
 		{
 			"path": "pages/ledger/asset",
 			"style": {
-				"navigationBarTitleText": "PAN幣賬本"
+				"navigationBarTitleText": "PAN幣賬本",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		}, {
 			"path": "pages/ledger/focus",
 			"style": {
-				"navigationBarTitleText": "原力賬本"
+				"navigationBarTitleText": "原力賬本",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 		
 		{
 			"path": "pages/purse/purse",
 			"style": {
-				"navigationBarTitleText": "我的錢包"
+				"navigationBarTitleText": "我的錢包",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 		{
 			"path": "pages/passport/passport",
 			"style": {
-				"navigationBarTitleText": "星球護照"
+				"navigationBarTitleText": "星球護照",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 		{
 			"path": "pages/auth/auth",
 			"style": {
-				"navigationBarTitleText": "實名認證"
+				"navigationBarTitleText": "實名認證",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 		{
 			"path": "pages/invite/invite",
 			"style": {
-				"navigationBarTitleText": "我的專屬邀請碼"
+				"navigationBarTitleText": "我的專屬邀請碼",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 		{
 			"path": "pages/base/base",
 			"style": {
-				"navigationBarTitleText": "星球基地"
+				"navigationBarTitleText": "星球基地",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 		
 		{
 			"path": "pages/setting/setting",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		}
 	],

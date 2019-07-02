@@ -188,4 +188,13 @@
 		transform: scaleY(.5);
 		background-color: #c8c7cc;
 	}
+	
+	.input-row .title {
+		width: 20%;
+		height: 50upx;
+		min-height: 50upx;
+		padding: 15upx 0;
+		padding-left: 15upx;
+		line-height: 50upx;
+	}
 </style>

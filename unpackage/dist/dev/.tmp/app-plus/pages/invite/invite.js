@@ -45,7 +45,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");
 var _json = __webpack_require__(/*! ../../common/js/json.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\json.js");
 
@@ -87,10 +86,10 @@ var _image = __webpack_require__(/*! ../../common/js/image.js */ "E:\\Project\\H
 //
 //
 //
-//
 var wmPoster = function wmPoster() {return Promise.all(/*! import() | components/wm-poster/wm-poster */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/wm-poster/wm-poster")]).then(__webpack_require__.bind(null, /*! ../..//components/wm-poster/wm-poster.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\wm-poster\\wm-poster.vue"));};var _default = { data: function data() {return { assetInfo: '', listInfo: '', inviteCode: '', created: false, createImg: '' };}, components: { wmPoster: wmPoster }, methods: { getInvData: function getInvData() {var _this = this;(0, _json.invList)().then(function (data) {_this.listInfo = data; // console.log(this.listInfo);
       });(0, _api.getInvCode)().then(function (data) {_this.inviteCode = data;});}, createPoster: function createPoster() {var _this2 = this;var URL = 'http://pandla.io?invCode=' + this.inviteCode;var img = _wxqrcode.default.createQrCodeImg(URL, { size: parseInt(300) //二维码大小  
-      });(0, _image.base64ToPath)(img).then(function (path) {console.log(path, " at pages\\invite\\invite.vue:76");_this2.createImg = path;}).catch(function (error) {console.error(error, " at pages\\invite\\invite.vue:79");});this.created = true;} },
+      });(0, _image.base64ToPath)(img).then(function (path) {console.log(path, " at pages\\invite\\invite.vue:75");_this2.createImg = path;}).catch(function (error) {console.error(error, " at pages\\invite\\invite.vue:78");});this.created = true;
+    } },
 
   onLoad: function onLoad() {
     this.getInvData();

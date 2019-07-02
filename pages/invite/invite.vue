@@ -1,6 +1,6 @@
 <template>
 	<view class="pages-content">
-		<view class="pan-list">
+		<view class="pan-list" v-if="created == false">
 			<p class="pan-list-label">邀請好友定居星球獲得PAN幣和原力</p>
 			<ul class="pan-list-ul" v-for="(item, index) in listInfo" :key="index">
 				<li class="pan-list-li">
@@ -19,16 +19,15 @@
 				<text>點擊下方邀請碼即可生成專屬邀請碼海報</text>
 			</p>
 		</view>
-		<view class="pan-invite-code" @tap="createPoster">
+		<view class="pan-invite-code" @tap="createPoster" v-if="created == false">
 			<text>邀請碼</text>
 			<text>{{inviteCode}}</text>
 		</view>
 		<wm-poster
 			imgSrc="http://47.100.228.211/images/static/img/poster/poster.svg"
 			:QrSrc="createImg"
-			Title="注冊送1000原力值"
-			PriceTxt="僅限前5萬名星球居民"
-			OriginalTxt=""
+			Title="僅限前5萬名星球居民"
+			PriceTxt="注冊送1000魔法原力"
 			class="pan-poster"
 			v-if="created">
 		</wm-poster>
@@ -90,11 +89,6 @@
 
 <style lang="scss" scoped>
 	.pan {
-		
-		&-poster {
-			position: absolute;
-			top: 0;
-		}
 		
 		&-list {
 			border-radius: 10upx;

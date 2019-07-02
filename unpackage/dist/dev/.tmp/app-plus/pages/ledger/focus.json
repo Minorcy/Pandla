@@ -1,4 +1,5 @@
 {
   "navigationBarTitleText": "原力賬本",
+  "bounce": "none",
   "usingComponents": {}
 }

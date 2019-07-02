@@ -4,7 +4,10 @@
 			<image class="edit" src="../../static/img/user/edit.svg"></image>
 		</navigator>
 		<view class="userInfo">
-			<image class="avatar" src="../../static/img/user/upload.svg" v-if="userInfo.portrait == null"></image>
+			<image
+				class="avatar" 
+				src="../../static/img/user/upload.svg"
+				v-if="userInfo.portrait == null || userInfo.portrait == ''"></image>
 			<image class="portrait" :src="userInfo.portrait" @tap="uploadAvatar()" v-else/>
 			<p>{{userInfo.name}}</p>
 			<p>{{userInfo.age}}/{{userInfo.stature}}cm/{{userInfo.weight}}kg</p>

@@ -9056,8 +9056,7 @@ var login = function login(account, password) {
 
     success: function success(res) {
       // console.log(res.data.data);
-      if (res.data.status == 200)
-      {
+      if (res.data.status == 200) {
         uni.setStorageSync('USERS_KEY', res.data.data);
         Token = uni.getStorageSync('USERS_KEY').token;
         uni.reLaunch({
@@ -9137,7 +9136,7 @@ exports.sendCode = sendCode;var register = function register(password, account, 
           title: '注冊成功' });
 
         uni.setStorageSync('USERS_KEY', res.data.data);
-        uni.redirectTo({
+        uni.reLaunch({
           url: '../user/update' });
 
         // console.log(res.data);
@@ -9200,6 +9199,7 @@ exports.changePwd = changePwd;var findByID = function findByID() {return new Pro
         'token': Token },
 
       success: function success(res) {
+        // console.log(res.data);
         // uni.setStorageSync('USERS_KEY', res.data.data);
         if (res.data.status == 200) resolve(res.data.data);
         // else reject(res.data.msg);
@@ -9513,7 +9513,7 @@ exports.reply = reply;var getIndex = function getIndex() {return new Promise(fun
         'token': Token },
 
       success: function success(res) {
-        // console.log(res.data);
+        console.log(res.data, " at api\\api.js:485");
         if (res.data.status == 200) resolve(res.data.data);
         // else reject(res.data.msg);
       },
@@ -9840,7 +9840,9 @@ exports.getBarList = getBarList;var setBar = function setBar(dto) {return new Pr
 exports.setBar = setBar;var upLogo = function upLogo(imgTemp, type) {return new Promise(function (resolve, reject) {
     uni.uploadFile({
       url: barUrl + 'upLogo?type=' + type,
-      header: { token: Token },
+      header: {
+        token: Token },
+
       filePath: imgTemp,
       name: 'file',
       success: function success(res) {
@@ -9860,7 +9862,7 @@ exports.setBar = setBar;var upLogo = function upLogo(imgTemp, type) {return new 
         }
       },
       fail: function fail(err) {
-        console.log('uploadImage fail', err, " at api\\api.js:832");
+        console.log('uploadImage fail', err, " at api\\api.js:834");
         uni.showToast({
           icon: 'none',
           title: '上传失败,请勿选择超过4M的图片' });
@@ -9875,7 +9877,9 @@ exports.setBar = setBar;var upLogo = function upLogo(imgTemp, type) {return new 
 var getInvCode = function getInvCode() {return new Promise(function (resolve, reject) {
     uni.request({
       url: invUrl + 'getInvCode',
-      header: { token: Token },
+      header: {
+        token: Token },
+
       success: function success(res) {
         if (res.data.status == 200) resolve(res.data.data);
       } });
@@ -9896,9 +9900,9 @@ exports.getInvCode = getInvCode;var upPicture = function upPicture(userId) {retu
           filePath: tempFilePaths[0],
           name: 'file',
           success: function success(res) {
-            console.log(res.data, " at api\\api.js:868");
+            console.log(res.data, " at api\\api.js:872");
             var jsonObj = JSON.parse(res.data);
-            console.log('uploadImage success, res is:', jsonObj.data, " at api\\api.js:870");
+            console.log('uploadImage success, res is:', jsonObj.data, " at api\\api.js:874");
             uni.showToast({
               title: '上传成功',
               icon: 'success',
@@ -9908,7 +9912,7 @@ exports.getInvCode = getInvCode;var upPicture = function upPicture(userId) {retu
             // avatar = jsonObj.data.id;
           },
           fail: function fail(err) {
-            console.log('uploadImage fail', err, " at api\\api.js:880");
+            console.log('uploadImage fail', err, " at api\\api.js:884");
             uni.showToast({
               icon: 'none',
               title: '上传失败,请勿选择超过4M的图片' });
@@ -9916,9 +9920,9 @@ exports.getInvCode = getInvCode;var upPicture = function upPicture(userId) {retu
           } });
 
         uploadTask.onProgressUpdate(function (res) {
-          console.log('上传进度' + res.progress, " at api\\api.js:888");
-          console.log('已经上传的数据长度' + res.totalBytesSent, " at api\\api.js:889");
-          console.log('预期需要上传的数据总长度' + res.totalBytesExpectedToSend, " at api\\api.js:890");
+          console.log('上传进度' + res.progress, " at api\\api.js:892");
+          console.log('已经上传的数据长度' + res.totalBytesSent, " at api\\api.js:893");
+          console.log('预期需要上传的数据总长度' + res.totalBytesExpectedToSend, " at api\\api.js:894");
         });
       } });
 
@@ -9947,14 +9951,16 @@ exports.upPicture = upPicture;var getImgTemp = function getImgTemp() {return new
 exports.getImgTemp = getImgTemp;var upload = function upload(imgTemp) {return new Promise(function (resolve, reject) {
     uni.uploadFile({
       url: dynUrl + 'upload',
-      header: { token: Token },
+      header: {
+        token: Token },
+
       filePath: imgTemp,
       name: 'file',
       success: function success(res) {
-        console.log(res.data, " at api\\api.js:923");
+        console.log(res.data, " at api\\api.js:929");
         var jsonObj = JSON.parse(res.data);
-        console.log('uploadImage success, res is:', jsonObj.data, " at api\\api.js:925");
-        console.log(jsonObj.data.id, " at api\\api.js:926");
+        console.log('uploadImage success, res is:', jsonObj.data, " at api\\api.js:931");
+        console.log(jsonObj.data.id, " at api\\api.js:932");
         resolve(jsonObj.data.id);
         uni.showToast({
           icon: 'none',
@@ -9965,7 +9971,7 @@ exports.getImgTemp = getImgTemp;var upload = function upload(imgTemp) {return ne
 
       },
       fail: function fail(err) {
-        console.log('uploadImage fail', err, " at api\\api.js:937");
+        console.log('uploadImage fail', err, " at api\\api.js:943");
         uni.showToast({
           icon: 'none',
           title: '上传失败,请勿选择超过4M的图片' });
@@ -10002,6 +10008,232 @@ exports.upload = upload;var createDyn = function createDyn(dynContent) {return n
 
   });};exports.createDyn = createDyn;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
+
+/***/ }),
+
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\api\\apiUrl.js":
+/*!********************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/api/apiUrl.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var _request = _interopRequireDefault(__webpack_require__(/*! ./request/request.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\request\\request.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var baseURL;
+if (true) {
+  console.log('开发环境', " at api\\apiUrl.js:4");
+  baseURL = 'http://printsn.com:8080';
+} else {}
+// 全局配置
+_request.default.setConfig({
+  baseUrl: baseURL, // 此为测试地址，需加入到域名白名单，或者更改为您自己的线上地址即可
+  dataType: 'json', // 可删除，默认为json
+  responseType: 'text', // 可删除，默认为text
+  // 设置请求头，支持所有请求头设置，也可不设置，去掉header就行 
+  header: {
+    'content-type': 'application/json' } });
+
+/***/ }),
+
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\api\\index.js":
+/*!*******************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/api/index.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _homeToken = _interopRequireDefault(__webpack_require__(/*! ./modules/homeToken */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\modules\\homeToken.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+{
+  homeToken: _homeToken.default };exports.default = _default;
+
+/***/ }),
+
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\api\\modules\\homeToken.js":
+/*!*******************************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/api/modules/homeToken.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js"));var _request = _interopRequireDefault(__webpack_require__(/*! ../request/request.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\request\\request.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
+var Token = uni.getStorageSync('USERS_KEY').token;
+var api = function api(token) {
+  return {
+    /*
+           1.获取首页随机token
+           */
+    getIndexPan: function () {var _getIndexPan = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
+                  _request.default.get('/v1/pan/getIndexPan', {
+                    header: {
+                      "token": Token } }).
+
+                  then(function (respons) {
+                    return respons;
+                  }, function (error) {
+                    console.log("error", error, " at api\\modules\\homeToken.js:16");
+                  }));case 2:res = _context.sent;return _context.abrupt("return",
+                res);case 4:case "end":return _context.stop();}}}, _callee, this);}));function getIndexPan() {return _getIndexPan.apply(this, arguments);}return getIndexPan;}(),
+
+    /*
+                                                                                                                                                                                  2.收取token
+                                                                                                                                                                                  */
+    takePan: function () {var _takePan = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(_ref) {var numbers, res;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                numbers = _ref.numbers;_context2.next = 3;return (
+
+                  _request.default.get('/v1/pan/takePan', {
+                    data: {
+                      numbers: numbers },
+
+                    header: {
+                      "token": Token } }).
+
+                  then(function (respons) {
+                    return respons;
+                  }, function (error) {
+                    console.log("error", error, " at api\\modules\\homeToken.js:36");
+                  }));case 3:res = _context2.sent;return _context2.abrupt("return",
+                res);case 5:case "end":return _context2.stop();}}}, _callee2, this);}));function takePan(_x) {return _takePan.apply(this, arguments);}return takePan;}() };
+
+
+};var _default =
+api;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
+
+/***/ }),
+
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\api\\request\\request.js":
+/*!*****************************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/api/request/request.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni, global) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;} /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * version 1.1.2
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           */var
+
+Request = /*#__PURE__*/function () {
+  function Request() {var _this2 = this;var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};_classCallCheck(this, Request);
+    this.config = {};
+    this.config.baseUrl = config.baseUrl ? config.baseUrl : '';
+    this.config.dataType = config.dataType ? config.dataType : 'json';
+    this.config.responseType = config.responseType ? config.responseType : 'text';
+    this.config.header = config.header ? config.header : {};
+    this.reqInterceptors = null;
+    this.resInterceptors = null;
+    this.interceptors = {
+      request: function request(fn) {
+        _this2.reqInterceptors = fn;
+      },
+      response: function response(fn) {
+        _this2.resInterceptors = fn;
+      } };
+
+  }_createClass(Request, [{ key: "get", value: function () {var _get = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(
+      url) {var config,_args = arguments;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:config = _args.length > 1 && _args[1] !== undefined ? _args[1] : {};return _context.abrupt("return",
+                this._request('get', url, config));case 2:case "end":return _context.stop();}}}, _callee, this);}));function get(_x) {return _get.apply(this, arguments);}return get;}() }, { key: "post", value: function () {var _post = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(
+
+      url) {var config,_args2 = arguments;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:config = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : {};return _context2.abrupt("return",
+                this._request('post', url, config));case 2:case "end":return _context2.stop();}}}, _callee2, this);}));function post(_x2) {return _post.apply(this, arguments);}return post;}() }, { key: "put", value: function () {var _put = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3(
+
+      url) {var config,_args3 = arguments;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:config = _args3.length > 1 && _args3[1] !== undefined ? _args3[1] : {};return _context3.abrupt("return",
+                this._request('put', url, config));case 2:case "end":return _context3.stop();}}}, _callee3, this);}));function put(_x3) {return _put.apply(this, arguments);}return put;}() }, { key: "delete", value: function () {var _delete2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4(
+
+      url) {var config,_args4 = arguments;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:config = _args4.length > 1 && _args4[1] !== undefined ? _args4[1] : {};return _context4.abrupt("return",
+                this._request('delete', url, config));case 2:case "end":return _context4.stop();}}}, _callee4, this);}));function _delete(_x4) {return _delete2.apply(this, arguments);}return _delete;}() }, { key: "setConfig", value: function setConfig()
+
+    {var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      this.config = Object.assign({}, this._merge(this.config, config));
+    } }, { key: "_request", value: function _request(
+    method, url, config) {
+      var _this = this;
+      var newConfig = Object.assign({}, this._merge(this.config, config));
+      var lastConfig = {};
+
+      if (this.reqInterceptors && typeof this.reqInterceptors === 'function') {
+        var reqInterceptors = this.reqInterceptors(newConfig);
+        if (!reqInterceptors) {
+          if (true) {
+            console.log('请求被拦截，此消息仅在开发环境显示。', " at api\\request\\request.js:47");
+          }
+          return false;
+        }
+        lastConfig = Object.assign({}, reqInterceptors);
+      } else {
+        lastConfig = Object.assign({}, newConfig);
+      }
+      return new Promise(function (resolve, reject) {
+        uni.request({
+          url: _this._formatUrl(lastConfig.baseUrl, url),
+          method: method,
+          data: lastConfig.data ? lastConfig.data : {},
+          header: lastConfig.header,
+          dataType: lastConfig.dataType,
+          responseType: lastConfig.responseType,
+          complete: function complete(response) {
+            var res = response;
+            if (!res.statusCode || res.statusCode !== 200) {
+              var resInterceptors = _this.resInterceptors(res);
+              res = resInterceptors;
+              reject(res);
+              return;
+            }
+            if (_this.resInterceptors && typeof _this.resInterceptors === 'function') {
+              var _resInterceptors = _this.resInterceptors(res);
+              if (!_resInterceptors) {
+                reject('返回值已被您拦截！');
+                return;
+              } else {
+                res = _resInterceptors;
+              }
+            }
+            resolve(res);
+          } });
+
+      });
+    } }, { key: "_formatUrl", value: function _formatUrl(
+    baseUrl, url) {
+      if (!baseUrl) return url;
+      var formatUrl = '';
+      var baseUrlEndsWithSlash = baseUrl.endsWith('/');
+      var urlStartsWithSlash = url.startsWith('/');
+      if (baseUrlEndsWithSlash && urlStartsWithSlash) {
+        formatUrl = baseUrl + url.substring(1);
+      } else if (baseUrlEndsWithSlash || urlStartsWithSlash) {
+        formatUrl = baseUrl + url;
+      } else {
+        formatUrl = baseUrl + '/' + url;
+      }
+      return formatUrl;
+    } }, { key: "_merge", value: function _merge(
+    oldConfig, newConfig) {
+      var mergeConfig = Object.assign({}, oldConfig);
+      if (!newConfig || !Object.keys(newConfig).length) return mergeConfig;
+      for (var key in newConfig) {
+        if (key !== 'header') {
+          mergeConfig[key] = newConfig[key];
+        } else {
+          if (Object.prototype.toString.call(newConfig[key]) === '[object Object]') {
+            for (var headerKey in newConfig[key]) {
+              mergeConfig[key][headerKey] = newConfig[key][headerKey];
+            }
+          }
+        }
+      }
+      return mergeConfig;
+    } }]);return Request;}();
+
+
+if (!global.$request) {
+  global.$request = new Request();
+}var _default =
+
+global.$request;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"], __webpack_require__(/*! (webpack)/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -12126,13 +12358,18 @@ var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "E:\\Project\\HBuilderProjects\\Pandla\\App.vue"));
 
 var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ "E:\\Project\\HBuilderProjects\\Pandla\\store\\index.js"));
-var _filter = _interopRequireDefault(__webpack_require__(/*! ./common/js/filter.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\filter.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var _filter = _interopRequireDefault(__webpack_require__(/*! ./common/js/filter.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\filter.js"));
+
+
+var _index = _interopRequireDefault(__webpack_require__(/*! ./api/index.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\index.js"));
+__webpack_require__(/*! ./api/apiUrl.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\apiUrl.js");
+var _request = _interopRequireDefault(__webpack_require__(/*! @/api/request/request.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\request\\request.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+_vue.default.prototype.api = _index.default;
+_vue.default.prototype.$request = _request.default;
+/*lei end*/
 
 _vue.default.config.productionTip = false;
-
 _vue.default.prototype.$store = _store.default;
-
-
 Object.keys(_filter.default).forEach(function (key) {//返回filters对象中属性名组成的数组
   _vue.default.filter(key, _filter.default[key]);
 });
