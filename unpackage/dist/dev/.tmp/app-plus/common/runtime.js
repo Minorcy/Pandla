@@ -106,7 +106,7 @@
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/logo":"components/logo","components/m-input":"components/m-input","components/im-chat/chatinput":"components/im-chat/chatinput","components/im-chat/messageshow":"components/im-chat/messageshow","components/token":"components/token","components/barrage":"components/barrage","components/m-icon/m-icon":"components/m-icon/m-icon"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/logo":"components/logo","components/m-input":"components/m-input","components/im-chat/chatinput":"components/im-chat/chatinput","components/im-chat/messageshow":"components/im-chat/messageshow","components/token":"components/token","components/barrage":"components/barrage","components/m-icon/m-icon":"components/m-icon/m-icon","components/wm-poster/wm-poster":"components/wm-poster/wm-poster"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

@@ -41,6 +41,7 @@
 	import {getInvCode} from '../../api/api.js';
 	import wmPoster from "../..//components/wm-poster/wm-poster.vue"
 	import QR from "../../common/js/wxqrcode.js";
+	import { pathToBase64, base64ToPath } from '../../common/js/image.js';
 	
 		export default {
 			data() {
@@ -71,7 +72,12 @@
 					let img = QR.createQrCodeImg(URL, {  
 						 size: parseInt(300)//二维码大小  
 					});
-					this.createImg = img;
+					base64ToPath(img).then(path => {
+						console.log(path);
+						this.createImg = path;
+					}).catch(error => {
+						console.error(error)
+					});
 					this.created = true;
 					
 				}
