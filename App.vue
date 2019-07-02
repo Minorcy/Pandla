@@ -8,7 +8,33 @@
 		},
 		onHide: function() {
 			console.log('App Hide');
+		},
+
+		mounted() {
+			this.$request.interceptors.response(res => {
+				if (res) {
+					if (res.data.status && res.data.status.code != 200) {
+						uni.showToast({
+							title: res.data.status.message,
+							icon: "none",
+							duration: 2000
+						});
+					}
+					if (res.statusCode != 200) {
+						uni.showToast({
+							title: res.data.status.message,
+							icon: "none",
+							duration: 2000
+						});
+					}
+					if (res.statusCode == 401) { //退出登录
+						console.log("token失效");
+					}
+				}
+				return res;
+			})
 		}
+
 	}
 </script>
 <style>

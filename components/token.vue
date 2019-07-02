@@ -1,8 +1,8 @@
 <template>
 	<view class="token-box">
-		<view class="token" :class="{'animation-one':index%2==0,'animation-two':index%2!=0}">
+		<view class="token" @click="clickToken(tokenValue)" :class="{'animation-one':index%2==0,'animation-two':index%2!=0}">
 			<image class="token-icon" src="../../static/img/main/token.png"></image>
-		    <p class="tokenValue">{{tokenValue}}</p>
+			<p class="tokenValue">{{tokenValue}}</p>
 		</view>
 	</view>
 </template>
@@ -11,22 +11,31 @@
 	export default {
 		data() {
 			return {
-				
+
 			};
 		},
-		props: ["tokenValue","index"],
-		mounted(){
+		props: ["tokenValue", "index"],
+		mounted() {
 			// console.log("index",this.index);
+		},
+		methods: {
+			clickToken(token) {
+				this.$emit("confirm", {
+					token,
+					index: this.index
+				});
+			}
 		}
 	}
 </script>
 
 <style>
-	.token-box{
+	.token-box {
 		position: relative;
 		width: 150upx;
 		height: 150upx;
 	}
+
 	.token {
 		position: absolute;
 		z-index: 999;
@@ -37,7 +46,8 @@
 		align-items: center;
 		justify-content: center;
 	}
-	.animation-one{
+
+	.animation-one {
 		-webkit-animation-name: bird;
 		-webkit-animation-duration: 5s;
 		-webkit-animation-timing-function: linear;
@@ -59,7 +69,8 @@
 		animation-timing-function: linear;
 		animation-iteration-count: infinite;
 	}
-	.animation-two{
+
+	.animation-two {
 		-webkit-animation-name: bird;
 		-webkit-animation-duration: 3s;
 		-webkit-animation-timing-function: linear;
@@ -81,53 +92,56 @@
 		animation-timing-function: linear;
 		animation-iteration-count: infinite;
 	}
+
 	.token-icon {
 		width: 48upx;
 		height: 48upx;
 	}
-	
+
 	.tokenValue {
 		margin-left: -15upx;
 		font-size: 25upx;
 	}
-	@-webkit-keyframes bird{
-     0% {
-         -moz-transform: translate(0,0);
-         -webkit-transform: translate(0,0);
-         -o-transform: translate(0,0);
-         -ms-transform: translate(0, 0);
-         transform: translate(0,0);
-     }
- 
-     25% {
-         -moz-transform: translate(0,-10upx);
-         -webkit-transform: translate(0,-10upx);
-         -o-transform: translate(0,-10upx);
-         -ms-transform: translate(0, -10upx);
-         transform: translate(0,-10upx);
-     }
-     50% {
-         -moz-transform: translate(0,-20upx);
-         -webkit-transform: translate(0,-20upx);
-         -o-transform: translate(0,-20upx);
-         -ms-transform: translate(0, -20upx);
-         transform: translate(0,-20upx);
-     }
- 
-      75% {
-         -moz-transform: translate(0,-10upx);
-         -webkit-transform: translate(0,-10upx);
-         -o-transform: translate(0,-10upx);
-         -ms-transform: translate(0, -10upx);
-         transform: translate(0,-10upx);
-     }
- 
-      100% {
-         -moz-transform: translate(0,0);
-         -webkit-transform: translate(0,0);
-         -o-transform: translate(0,0);
-         -ms-transform: translate(0, 0);
-         transform: translate(0,0);
-     }
-}
+
+	@-webkit-keyframes bird {
+		0% {
+			-moz-transform: translate(0, 0);
+			-webkit-transform: translate(0, 0);
+			-o-transform: translate(0, 0);
+			-ms-transform: translate(0, 0);
+			transform: translate(0, 0);
+		}
+
+		25% {
+			-moz-transform: translate(0, -10upx);
+			-webkit-transform: translate(0, -10upx);
+			-o-transform: translate(0, -10upx);
+			-ms-transform: translate(0, -10upx);
+			transform: translate(0, -10upx);
+		}
+
+		50% {
+			-moz-transform: translate(0, -20upx);
+			-webkit-transform: translate(0, -20upx);
+			-o-transform: translate(0, -20upx);
+			-ms-transform: translate(0, -20upx);
+			transform: translate(0, -20upx);
+		}
+
+		75% {
+			-moz-transform: translate(0, -10upx);
+			-webkit-transform: translate(0, -10upx);
+			-o-transform: translate(0, -10upx);
+			-ms-transform: translate(0, -10upx);
+			transform: translate(0, -10upx);
+		}
+
+		100% {
+			-moz-transform: translate(0, 0);
+			-webkit-transform: translate(0, 0);
+			-o-transform: translate(0, 0);
+			-ms-transform: translate(0, 0);
+			transform: translate(0, 0);
+		}
+	}
 </style>
