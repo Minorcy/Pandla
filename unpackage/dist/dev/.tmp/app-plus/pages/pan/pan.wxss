@@ -126,6 +126,7 @@
 ._a.data-v-326485cd {
 	color: #007AFF;
 	font-size: 25rpx;
+	float: left;
 	text-decoration: none;
 }
 .right.data-v-326485cd {

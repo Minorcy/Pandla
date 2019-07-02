@@ -51,7 +51,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _storage = __webpack_require__(/*! ../../common/js/storage.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\storage.js"); //
+
+
+var _storage = __webpack_require__(/*! ../../common/js/storage.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\storage.js");
+var _json = __webpack_require__(/*! ../../common/js/json.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\json.js"); //
 //
 //
 //
@@ -93,7 +96,9 @@ var _storage = __webpack_require__(/*! ../../common/js/storage.js */ "E:\\Projec
 //
 //
 //
-var _default = { data: function data() {return { slides: [{ number: 'static/img/slider/indexSlide1.svg' }, { number: 'static/img/slider/indexSlide2.svg' }, { number: 'static/img/slider/indexSlide3.svg' }, { number: 'static/img/slider/indexSlide4.svg' }], indicatorDots: false, autoplay: true, interval: 3000, duration: 1000, circular: true, currentSwiper: 0 };}, onLoad: function onLoad() {(0, _storage.skipIndex)();} };exports.default = _default;
+//
+//
+var _default = { data: function data() {return { slides: '', indicatorDots: false, autoplay: true, interval: 3000, duration: 1000, circular: true, currentSwiper: 0, sliderPercent: 25 };}, methods: { getIndexSlider: function getIndexSlider() {var _this = this;(0, _json.indexSlider)().then(function (data) {_this.slides = data;});}, sliderChange: function sliderChange() {this.sliderPercent == 100 ? this.sliderPercent = 25 : this.sliderPercent += 25;} }, onLoad: function onLoad() {(0, _storage.skipIndex)();this.getIndexSlider();} };exports.default = _default;
 
 /***/ }),
 

@@ -133,6 +133,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     getMyIndex: function getMyIndex() {var _this = this;
       (0, _api.getIndex)().then(function (data) {
         _this.propInfo = data;
+        // 限制小数点后为4位
       });
     },
     add: function add() {
@@ -180,6 +181,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var f0 = _vm._f("toFixed")(_vm.propInfo.balance, 4)
+
+  var f1 = _vm._f("toFixed")(_vm.propInfo.freeze, 4)
+
+  var f2 = _vm._f("toFixed")(_vm.propInfo.usable, 4)
+
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        f0: f0,
+        f1: f1,
+        f2: f2
+      }
+    }
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

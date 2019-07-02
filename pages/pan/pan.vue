@@ -257,6 +257,7 @@
 	a {
 		color: #007AFF;
 		font-size: 25upx;
+		float: left;
 		text-decoration: none;
 	}
 

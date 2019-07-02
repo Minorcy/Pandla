@@ -61,35 +61,13 @@
 
 
 
+var _json = __webpack_require__(/*! ../../common/js/json.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\json.js");
 var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");var token = function token() {return __webpack_require__.e(/*! import() | components/token */ "components/token").then(__webpack_require__.bind(null, /*! ../../components/token.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\token.vue"));};var _default =
-
-
 
 {
   data: function data() {
     return {
-      slides: [{
-        number: 'static/img/slider/mainPact.svg',
-        linkTab: '../pact/pact' },
-      {
-        number: 'static/img/slider/mainDaily.svg',
-        linkTab: '../daily/daily' },
-      {
-        number: 'static/img/slider/mainNearby.svg',
-        linkTab: '../nearby/nearby' },
-      {
-        number: 'static/img/slider/mainEntertain.svg',
-        linkTab: '../entertain/entertain' },
-      {
-        number: 'static/img/slider/mainPan.svg',
-        linkTab: '../entertain/entertain' },
-      {
-        number: 'static/img/slider/mainStore.svg',
-        linkTab: '../store/store' },
-      {
-        number: 'static/img/slider/mainGame.svg',
-        linkTab: '../game/game' }],
-
+      slides: '',
       indicatorDots: false,
       autoplay: false,
       interval: 2000,
@@ -119,7 +97,16 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
       uni.switchTab({
         url: '../pan/pan' });
 
-    } } };exports.default = _default;
+    },
+    getMainSlider: function getMainSlider() {var _this = this;
+      (0, _json.mainSlider)().then(function (data) {
+        _this.slides = data;
+      });
+    } },
+
+  onLoad: function onLoad() {
+    this.getMainSlider();
+  } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),

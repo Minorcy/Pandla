@@ -1,15 +1,7 @@
 
-facebook-link ._a.data-v-40e814f7 {
-	text-decoration: underline;
-}
-._hr.data-v-40e814f7 {
-	margin-top: 40rpx;
-	height: 1rpx;
-	border: none;
-	background: #777777;
-}
 .content.data-v-40e814f7{
 	color: #EFEFF4;
+	padding: 0;
 }
 
 /* 滑动器 */
@@ -17,12 +9,12 @@ facebook-link ._a.data-v-40e814f7 {
 	width: 100%;
 	height: 750rpx;
 }
-.swiper-item>._img.data-v-40e814f7 {
+.swiper-item>image.data-v-40e814f7 {
 	width: 100%;
 	height: 750rpx;
 }
 .login-reg-link.data-v-40e814f7 {
-	margin: 0rpx 30rpx;
+	margin: 50rpx 30rpx 0 30rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -86,5 +78,14 @@ facebook-link ._a.data-v-40e814f7 {
 }
 .reg.data-v-40e814f7 {
 	margin-right: 40rpx;
+}
+facebook-link ._a.data-v-40e814f7 {
+	text-decoration: underline;
+}
+._hr.data-v-40e814f7 {
+	margin-top: 40rpx;
+	height: 1rpx;
+	border: none;
+	background: #777777;
 }
 

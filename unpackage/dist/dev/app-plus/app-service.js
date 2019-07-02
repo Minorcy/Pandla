@@ -1135,6 +1135,12 @@ function gz$gwx_10(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_10)return __WXML_GLOBAL__.ops_cached.$gwx_10
 __WXML_GLOBAL__.ops_cached.$gwx_10=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_10);return __WXML_GLOBAL__.ops_cached.$gwx_10
+}
+function gz$gwx_11(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_11)return __WXML_GLOBAL__.ops_cached.$gwx_11
+__WXML_GLOBAL__.ops_cached.$gwx_11=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'__e'])
 Z([3,'data-v-6364d745'])
 Z([[4],[[5],[[4],[[5],[[5],[1,'change']],[[4],[[5],[[4],[[5],[[5],[1,'swiperChange']],[[4],[[5],[1,'$event']]]]]]]]]]])
@@ -1159,14 +1165,7 @@ Z([3,'ind'])
 Z([3,'ite'])
 Z([[7],[3,'commentInfo']])
 Z(z[20])
-Z(z[16])
 Z([[2,'&&'],[[2,'!='],[[6],[[7],[3,'ite']],[3,'replyName']],[1,'']],[[2,'!='],[[6],[[7],[3,'ite']],[3,'replyContent']],[1,'']]])
-})(__WXML_GLOBAL__.ops_cached.$gwx_10);return __WXML_GLOBAL__.ops_cached.$gwx_10
-}
-function gz$gwx_11(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_11)return __WXML_GLOBAL__.ops_cached.$gwx_11
-__WXML_GLOBAL__.ops_cached.$gwx_11=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_11);return __WXML_GLOBAL__.ops_cached.$gwx_11
 }
 function gz$gwx_12(){
@@ -1184,6 +1183,12 @@ __WXML_GLOBAL__.ops_cached.$gwx_13=[];
 function gz$gwx_14(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_14)return __WXML_GLOBAL__.ops_cached.$gwx_14
 __WXML_GLOBAL__.ops_cached.$gwx_14=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_14);return __WXML_GLOBAL__.ops_cached.$gwx_14
+}
+function gz$gwx_15(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_15)return __WXML_GLOBAL__.ops_cached.$gwx_15
+__WXML_GLOBAL__.ops_cached.$gwx_15=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'input-group data-v-4e12a2d9'])
 Z([3,'__l'])
@@ -1235,12 +1240,6 @@ Z([3,'申請人聯係方式'])
 Z(z[15])
 Z([[6],[[7],[3,'barInfo']],[3,'userphone']])
 Z([3,'6'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_14);return __WXML_GLOBAL__.ops_cached.$gwx_14
-}
-function gz$gwx_15(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_15)return __WXML_GLOBAL__.ops_cached.$gwx_15
-__WXML_GLOBAL__.ops_cached.$gwx_15=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_15);return __WXML_GLOBAL__.ops_cached.$gwx_15
 }
 function gz$gwx_16(){
@@ -1259,6 +1258,12 @@ function gz$gwx_18(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_18)return __WXML_GLOBAL__.ops_cached.$gwx_18
 __WXML_GLOBAL__.ops_cached.$gwx_18=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_18);return __WXML_GLOBAL__.ops_cached.$gwx_18
+}
+function gz$gwx_19(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_19)return __WXML_GLOBAL__.ops_cached.$gwx_19
+__WXML_GLOBAL__.ops_cached.$gwx_19=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'uni-column'])
 Z([3,'index'])
 Z([3,'message'])
@@ -1273,12 +1278,6 @@ Z([3,'__e'])
 Z(z[10])
 Z([[4],[[5],[[5],[[4],[[5],[[5],[1,'^sendMessage']],[[4],[[5],[[4],[[5],[1,'getInputMessage']]]]]]]],[[4],[[5],[[5],[1,'^focus']],[[4],[[5],[[4],[[5],[1,'inputGetFocus']]]]]]]]])
 Z([3,'2'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_18);return __WXML_GLOBAL__.ops_cached.$gwx_18
-}
-function gz$gwx_19(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_19)return __WXML_GLOBAL__.ops_cached.$gwx_19
-__WXML_GLOBAL__.ops_cached.$gwx_19=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_19);return __WXML_GLOBAL__.ops_cached.$gwx_19
 }
 function gz$gwx_20(){
@@ -1291,6 +1290,20 @@ function gz$gwx_21(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_21)return __WXML_GLOBAL__.ops_cached.$gwx_21
 __WXML_GLOBAL__.ops_cached.$gwx_21=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+Z([[7],[3,'created']])
+Z([3,'僅限前5萬名星球居民'])
+Z([[7],[3,'createImg']])
+Z([3,'注冊送1000原力值'])
+Z([3,'__l'])
+Z([3,'pan-poster data-v-1c621e1e'])
+Z([3,'http://47.100.228.211/images/static/img/poster/poster.svg'])
+Z([3,'1'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_21);return __WXML_GLOBAL__.ops_cached.$gwx_21
+}
+function gz$gwx_22(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_22)return __WXML_GLOBAL__.ops_cached.$gwx_22
+__WXML_GLOBAL__.ops_cached.$gwx_22=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'index'])
 Z([3,'item'])
 Z([[7],[3,'listInfo']])
@@ -1302,11 +1315,11 @@ Z([[2,'=='],[[7],[3,'labelList']],[1,'task']])
 Z([3,'data-v-ce7793d0'])
 Z([[2,'=='],[[6],[[7],[3,'item']],[3,'status']],[1,1]])
 Z([[2,'=='],[[6],[[7],[3,'item']],[3,'status']],[1,0]])
-})(__WXML_GLOBAL__.ops_cached.$gwx_21);return __WXML_GLOBAL__.ops_cached.$gwx_21
+})(__WXML_GLOBAL__.ops_cached.$gwx_22);return __WXML_GLOBAL__.ops_cached.$gwx_22
 }
-function gz$gwx_22(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_22)return __WXML_GLOBAL__.ops_cached.$gwx_22
-__WXML_GLOBAL__.ops_cached.$gwx_22=[];
+function gz$gwx_23(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_23)return __WXML_GLOBAL__.ops_cached.$gwx_23
+__WXML_GLOBAL__.ops_cached.$gwx_23=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'index'])
 Z([3,'item'])
@@ -1319,11 +1332,11 @@ Z([[2,'=='],[[7],[3,'labelList']],[1,'task']])
 Z([3,'data-v-a91d2800'])
 Z([[2,'=='],[[6],[[7],[3,'item']],[3,'status']],[1,1]])
 Z([[2,'=='],[[6],[[7],[3,'item']],[3,'status']],[1,0]])
-})(__WXML_GLOBAL__.ops_cached.$gwx_22);return __WXML_GLOBAL__.ops_cached.$gwx_22
+})(__WXML_GLOBAL__.ops_cached.$gwx_23);return __WXML_GLOBAL__.ops_cached.$gwx_23
 }
-function gz$gwx_23(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_23)return __WXML_GLOBAL__.ops_cached.$gwx_23
-__WXML_GLOBAL__.ops_cached.$gwx_23=[];
+function gz$gwx_24(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_24)return __WXML_GLOBAL__.ops_cached.$gwx_24
+__WXML_GLOBAL__.ops_cached.$gwx_24=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'content'])
 Z([3,'__l'])
@@ -1345,11 +1358,11 @@ Z([3,'請輸入密碼'])
 Z([3,'password'])
 Z([[7],[3,'password']])
 Z([3,'3'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_23);return __WXML_GLOBAL__.ops_cached.$gwx_23
+})(__WXML_GLOBAL__.ops_cached.$gwx_24);return __WXML_GLOBAL__.ops_cached.$gwx_24
 }
-function gz$gwx_24(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_24)return __WXML_GLOBAL__.ops_cached.$gwx_24
-__WXML_GLOBAL__.ops_cached.$gwx_24=[];
+function gz$gwx_25(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_25)return __WXML_GLOBAL__.ops_cached.$gwx_25
+__WXML_GLOBAL__.ops_cached.$gwx_25=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'index'])
 Z([3,'item'])
@@ -1360,12 +1373,6 @@ Z([3,'mine-item topTobottom data-v-f9f2a51e'])
 Z([[7],[3,'index']])
 Z([[6],[[7],[3,'item']],[3,'value']])
 Z([[2,'+'],[1,'1-'],[[7],[3,'index']]])
-})(__WXML_GLOBAL__.ops_cached.$gwx_24);return __WXML_GLOBAL__.ops_cached.$gwx_24
-}
-function gz$gwx_25(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_25)return __WXML_GLOBAL__.ops_cached.$gwx_25
-__WXML_GLOBAL__.ops_cached.$gwx_25=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_25);return __WXML_GLOBAL__.ops_cached.$gwx_25
 }
 function gz$gwx_26(){
@@ -1384,6 +1391,12 @@ function gz$gwx_28(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_28)return __WXML_GLOBAL__.ops_cached.$gwx_28
 __WXML_GLOBAL__.ops_cached.$gwx_28=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_28);return __WXML_GLOBAL__.ops_cached.$gwx_28
+}
+function gz$gwx_29(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_29)return __WXML_GLOBAL__.ops_cached.$gwx_29
+__WXML_GLOBAL__.ops_cached.$gwx_29=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'pages-content data-v-4fdb1a4c'])
 Z([3,'__e'])
 Z([3,'vote data-v-4fdb1a4c'])
@@ -1396,17 +1409,17 @@ Z(z[2])
 Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'vote']],[[4],[[5],[[5],[1,'0']],[1,'$0']]]],[[4],[[5],[1,'voteList.status']]]]]]]]]]])
 Z(z[4])
 Z([[2,'&&'],[[2,'=='],[[6],[[7],[3,'voteList']],[3,'iswell']],[1,0]],[[2,'=='],[[6],[[7],[3,'voteList']],[3,'status']],[1,1]]])
-})(__WXML_GLOBAL__.ops_cached.$gwx_28);return __WXML_GLOBAL__.ops_cached.$gwx_28
-}
-function gz$gwx_29(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_29)return __WXML_GLOBAL__.ops_cached.$gwx_29
-__WXML_GLOBAL__.ops_cached.$gwx_29=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_29);return __WXML_GLOBAL__.ops_cached.$gwx_29
 }
 function gz$gwx_30(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_30)return __WXML_GLOBAL__.ops_cached.$gwx_30
 __WXML_GLOBAL__.ops_cached.$gwx_30=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_30);return __WXML_GLOBAL__.ops_cached.$gwx_30
+}
+function gz$gwx_31(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_31)return __WXML_GLOBAL__.ops_cached.$gwx_31
+__WXML_GLOBAL__.ops_cached.$gwx_31=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'__l'])
 Z([3,'__e'])
@@ -1416,12 +1429,6 @@ Z([[4],[[5],[[4],[[5],[[5],[1,'^click']],[[4],[[5],[[4],[[5],[1,'assetHidden']]]
 Z([3,'20'])
 Z([3,'eye'])
 Z([3,'1'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_30);return __WXML_GLOBAL__.ops_cached.$gwx_30
-}
-function gz$gwx_31(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_31)return __WXML_GLOBAL__.ops_cached.$gwx_31
-__WXML_GLOBAL__.ops_cached.$gwx_31=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_31);return __WXML_GLOBAL__.ops_cached.$gwx_31
 }
 function gz$gwx_32(){
@@ -1433,6 +1440,12 @@ __WXML_GLOBAL__.ops_cached.$gwx_32=[];
 function gz$gwx_33(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_33)return __WXML_GLOBAL__.ops_cached.$gwx_33
 __WXML_GLOBAL__.ops_cached.$gwx_33=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_33);return __WXML_GLOBAL__.ops_cached.$gwx_33
+}
+function gz$gwx_34(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_34)return __WXML_GLOBAL__.ops_cached.$gwx_34
+__WXML_GLOBAL__.ops_cached.$gwx_34=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'content'])
 Z([3,'__l'])
@@ -1471,11 +1484,11 @@ Z([3,'確認您的密碼'])
 Z(z[27])
 Z([[7],[3,'verifyPwd']])
 Z([3,'5'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_33);return __WXML_GLOBAL__.ops_cached.$gwx_33
+})(__WXML_GLOBAL__.ops_cached.$gwx_34);return __WXML_GLOBAL__.ops_cached.$gwx_34
 }
-function gz$gwx_34(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_34)return __WXML_GLOBAL__.ops_cached.$gwx_34
-__WXML_GLOBAL__.ops_cached.$gwx_34=[];
+function gz$gwx_35(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_35)return __WXML_GLOBAL__.ops_cached.$gwx_35
+__WXML_GLOBAL__.ops_cached.$gwx_35=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'content'])
 Z([3,'__l'])
@@ -1517,12 +1530,6 @@ Z([3,'邀請碼(選填)'])
 Z([3,'text'])
 Z([[7],[3,'inviteCode']])
 Z(z[14])
-})(__WXML_GLOBAL__.ops_cached.$gwx_34);return __WXML_GLOBAL__.ops_cached.$gwx_34
-}
-function gz$gwx_35(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_35)return __WXML_GLOBAL__.ops_cached.$gwx_35
-__WXML_GLOBAL__.ops_cached.$gwx_35=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_35);return __WXML_GLOBAL__.ops_cached.$gwx_35
 }
 function gz$gwx_36(){
@@ -1534,6 +1541,12 @@ __WXML_GLOBAL__.ops_cached.$gwx_36=[];
 function gz$gwx_37(){
 if( __WXML_GLOBAL__.ops_cached.$gwx_37)return __WXML_GLOBAL__.ops_cached.$gwx_37
 __WXML_GLOBAL__.ops_cached.$gwx_37=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_37);return __WXML_GLOBAL__.ops_cached.$gwx_37
+}
+function gz$gwx_38(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_38)return __WXML_GLOBAL__.ops_cached.$gwx_38
+__WXML_GLOBAL__.ops_cached.$gwx_38=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'input-group'])
 Z([3,'__l'])
@@ -1574,12 +1587,6 @@ Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'__set
 Z(z[4])
 Z([[6],[[7],[3,'userInfo']],[3,'signature']])
 Z([3,'6'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_37);return __WXML_GLOBAL__.ops_cached.$gwx_37
-}
-function gz$gwx_38(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_38)return __WXML_GLOBAL__.ops_cached.$gwx_38
-__WXML_GLOBAL__.ops_cached.$gwx_38=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_38);return __WXML_GLOBAL__.ops_cached.$gwx_38
 }
 function gz$gwx_39(){
@@ -1588,11 +1595,17 @@ __WXML_GLOBAL__.ops_cached.$gwx_39=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 })(__WXML_GLOBAL__.ops_cached.$gwx_39);return __WXML_GLOBAL__.ops_cached.$gwx_39
 }
+function gz$gwx_40(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_40)return __WXML_GLOBAL__.ops_cached.$gwx_40
+__WXML_GLOBAL__.ops_cached.$gwx_40=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+})(__WXML_GLOBAL__.ops_cached.$gwx_40);return __WXML_GLOBAL__.ops_cached.$gwx_40
+}
 __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./components/barrage.wxml','./components/im-chat/chatinput.wxml','./components/im-chat/messageshow.wxml','./components/logo.wxml','./components/m-icon/m-icon.wxml','./components/m-input.wxml','./components/token.wxml','./pages/auth/auth.wxml','./pages/base/base.wxml','./pages/daily/daily.wxml','./pages/daily/publish.wxml','./pages/daily/userInfo.wxml','./pages/entertain/entertain.wxml','./pages/entertain/entertainApplication.wxml','./pages/entertain/entertainDetail.wxml','./pages/entertain/entertainUpload.wxml','./pages/game/game.wxml','./pages/im-chat/im-chat.wxml','./pages/index/index.wxml','./pages/invite/invite.wxml','./pages/ledger/asset.wxml','./pages/ledger/focus.wxml','./pages/login/login.wxml','./pages/main/main.wxml','./pages/msg/msg.wxml','./pages/nearby/nearby.wxml','./pages/pact/pact.wxml','./pages/pact/pactVoteDetail.wxml','./pages/pan/donateList.wxml','./pages/pan/pan.wxml','./pages/passport/passport.wxml','./pages/purse/purse.wxml','./pages/pwd/pwd.wxml','./pages/reg/reg.wxml','./pages/setting/setting.wxml','./pages/store/store.wxml','./pages/user/update.wxml','./pages/user/user.wxml','./pagesA/settingChat/settingChat.wxml'];d_[x[0]]={}
+var x=['./components/barrage.wxml','./components/im-chat/chatinput.wxml','./components/im-chat/messageshow.wxml','./components/logo.wxml','./components/m-icon/m-icon.wxml','./components/m-input.wxml','./components/token.wxml','./components/wm-poster/wm-poster.wxml','./pages/auth/auth.wxml','./pages/base/base.wxml','./pages/daily/daily.wxml','./pages/daily/publish.wxml','./pages/daily/userInfo.wxml','./pages/entertain/entertain.wxml','./pages/entertain/entertainApplication.wxml','./pages/entertain/entertainDetail.wxml','./pages/entertain/entertainUpload.wxml','./pages/game/game.wxml','./pages/im-chat/im-chat.wxml','./pages/index/index.wxml','./pages/invite/invite.wxml','./pages/ledger/asset.wxml','./pages/ledger/focus.wxml','./pages/login/login.wxml','./pages/main/main.wxml','./pages/msg/msg.wxml','./pages/nearby/nearby.wxml','./pages/pact/pact.wxml','./pages/pact/pactVoteDetail.wxml','./pages/pan/donateList.wxml','./pages/pan/pan.wxml','./pages/passport/passport.wxml','./pages/purse/purse.wxml','./pages/pwd/pwd.wxml','./pages/reg/reg.wxml','./pages/setting/setting.wxml','./pages/store/store.wxml','./pages/user/update.wxml','./pages/user/user.wxml','./pagesA/settingChat/settingChat.wxml'];d_[x[0]]={}
 var m0=function(e,s,r,gg){
 var z=gz$gwx_1()
 return r
@@ -1680,85 +1693,80 @@ e_[x[8]]={f:m8,j:[],i:[],ti:[],ic:[]}
 d_[x[9]]={}
 var m9=function(e,s,r,gg){
 var z=gz$gwx_10()
-var fS=_mz(z,'swiper',['bindchange',0,'class',1,'data-event-opts',1,'vertical',2],[],e,s,gg)
-var cT=_v()
-_(fS,cT)
-var hU=function(cW,oV,oX,gg){
-var aZ=_n('swiper-item')
-_rz(z,aZ,'class',8,cW,oV,gg)
-var t1=_n('view')
-_rz(z,t1,'class',9,cW,oV,gg)
-var e2=_v()
-_(t1,e2)
-if(_oz(z,10,cW,oV,gg)){e2.wxVkey=1
-}
-var b3=_mz(z,'view',['catchchange',11,'class',1,'data-event-opts',2],[],cW,oV,gg)
-var o4=_v()
-_(b3,o4)
-if(_oz(z,14,cW,oV,gg)){o4.wxVkey=1
-}
-o4.wxXCkey=1
-_(t1,b3)
-e2.wxXCkey=1
-_(aZ,t1)
-var x5=_n('view')
-_rz(z,x5,'class',15,cW,oV,gg)
-var o6=_v()
-_(x5,o6)
-if(_oz(z,16,cW,oV,gg)){o6.wxVkey=1
-}
-else{o6.wxVkey=2
-var f7=_v()
-_(o6,f7)
-if(_oz(z,17,cW,oV,gg)){f7.wxVkey=1
-}
-else{f7.wxVkey=2
-var c8=_v()
-_(f7,c8)
-if(_oz(z,18,cW,oV,gg)){c8.wxVkey=1
-}
-else{c8.wxVkey=2
-var h9=_v()
-_(c8,h9)
-if(_oz(z,19,cW,oV,gg)){h9.wxVkey=1
-}
-h9.wxXCkey=1
-}
-c8.wxXCkey=1
-}
-f7.wxXCkey=1
-}
-o6.wxXCkey=1
-_(aZ,x5)
-var o0=_v()
-_(aZ,o0)
-var cAB=function(lCB,oBB,aDB,gg){
-var eFB=_v()
-_(aDB,eFB)
-if(_oz(z,24,lCB,oBB,gg)){eFB.wxVkey=1
-var bGB=_v()
-_(eFB,bGB)
-if(_oz(z,25,lCB,oBB,gg)){bGB.wxVkey=1
-}
-bGB.wxXCkey=1
-}
-eFB.wxXCkey=1
-return aDB
-}
-o0.wxXCkey=2
-_2z(z,22,cAB,cW,oV,gg,o0,'ite','ind','ind')
-_(oX,aZ)
-return oX
-}
-cT.wxXCkey=2
-_2z(z,6,hU,e,s,gg,cT,'item','index','index')
-_(r,fS)
 return r
 }
 e_[x[9]]={f:m9,j:[],i:[],ti:[],ic:[]}
 d_[x[10]]={}
 var m10=function(e,s,r,gg){
 var z=gz$gwx_11()
+var cT=_mz(z,'swiper',['bindchange',0,'class',1,'data-event-opts',1,'vertical',2],[],e,s,gg)
+var hU=_v()
+_(cT,hU)
+var oV=function(oX,cW,lY,gg){
+var t1=_n('swiper-item')
+_rz(z,t1,'class',8,oX,cW,gg)
+var e2=_n('view')
+_rz(z,e2,'class',9,oX,cW,gg)
+var b3=_v()
+_(e2,b3)
+if(_oz(z,10,oX,cW,gg)){b3.wxVkey=1
+}
+var o4=_mz(z,'view',['catchchange',11,'class',1,'data-event-opts',2],[],oX,cW,gg)
+var x5=_v()
+_(o4,x5)
+if(_oz(z,14,oX,cW,gg)){x5.wxVkey=1
+}
+x5.wxXCkey=1
+_(e2,o4)
+b3.wxXCkey=1
+_(t1,e2)
+var o6=_n('view')
+_rz(z,o6,'class',15,oX,cW,gg)
+var f7=_v()
+_(o6,f7)
+if(_oz(z,16,oX,cW,gg)){f7.wxVkey=1
+}
+else{f7.wxVkey=2
+var c8=_v()
+_(f7,c8)
+if(_oz(z,17,oX,cW,gg)){c8.wxVkey=1
+}
+else{c8.wxVkey=2
+var h9=_v()
+_(c8,h9)
+if(_oz(z,18,oX,cW,gg)){h9.wxVkey=1
+}
+else{h9.wxVkey=2
+var o0=_v()
+_(h9,o0)
+if(_oz(z,19,oX,cW,gg)){o0.wxVkey=1
+}
+o0.wxXCkey=1
+}
+h9.wxXCkey=1
+}
+c8.wxXCkey=1
+}
+f7.wxXCkey=1
+_(t1,o6)
+var cAB=_v()
+_(t1,cAB)
+var oBB=function(aDB,lCB,tEB,gg){
+var bGB=_v()
+_(tEB,bGB)
+if(_oz(z,24,aDB,lCB,gg)){bGB.wxVkey=1
+}
+bGB.wxXCkey=1
+return tEB
+}
+cAB.wxXCkey=2
+_2z(z,22,oBB,oX,cW,gg,cAB,'ite','ind','ind')
+_(lY,t1)
+return lY
+}
+hU.wxXCkey=2
+_2z(z,6,oV,e,s,gg,hU,'item','index','index')
+_(r,cT)
 return r
 }
 e_[x[10]]={f:m10,j:[],i:[],ti:[],ic:[]}
@@ -1777,6 +1785,12 @@ e_[x[12]]={f:m12,j:[],i:[],ti:[],ic:[]}
 d_[x[13]]={}
 var m13=function(e,s,r,gg){
 var z=gz$gwx_14()
+return r
+}
+e_[x[13]]={f:m13,j:[],i:[],ti:[],ic:[]}
+d_[x[14]]={}
+var m14=function(e,s,r,gg){
+var z=gz$gwx_15()
 var cLB=_n('view')
 _rz(z,cLB,'class',0,e,s,gg)
 var hMB=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',1,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
@@ -1792,12 +1806,6 @@ _(cLB,lQB)
 var aRB=_mz(z,'m-input',['clearable',-1,'bind:__l',42,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
 _(cLB,aRB)
 _(r,cLB)
-return r
-}
-e_[x[13]]={f:m13,j:[],i:[],ti:[],ic:[]}
-d_[x[14]]={}
-var m14=function(e,s,r,gg){
-var z=gz$gwx_15()
 return r
 }
 e_[x[14]]={f:m14,j:[],i:[],ti:[],ic:[]}
@@ -1816,6 +1824,12 @@ e_[x[16]]={f:m16,j:[],i:[],ti:[],ic:[]}
 d_[x[17]]={}
 var m17=function(e,s,r,gg){
 var z=gz$gwx_18()
+return r
+}
+e_[x[17]]={f:m17,j:[],i:[],ti:[],ic:[]}
+d_[x[18]]={}
+var m18=function(e,s,r,gg){
+var z=gz$gwx_19()
 var xWB=_n('view')
 _rz(z,xWB,'class',0,e,s,gg)
 var oXB=_v()
@@ -1832,12 +1846,6 @@ _(xWB,l5B)
 _(r,xWB)
 return r
 }
-e_[x[17]]={f:m17,j:[],i:[],ti:[],ic:[]}
-d_[x[18]]={}
-var m18=function(e,s,r,gg){
-var z=gz$gwx_19()
-return r
-}
 e_[x[18]]={f:m18,j:[],i:[],ti:[],ic:[]}
 d_[x[19]]={}
 var m19=function(e,s,r,gg){
@@ -1848,127 +1856,135 @@ e_[x[19]]={f:m19,j:[],i:[],ti:[],ic:[]}
 d_[x[20]]={}
 var m20=function(e,s,r,gg){
 var z=gz$gwx_21()
-var b9B=_v()
-_(r,b9B)
-var o0B=function(oBC,xAC,fCC,gg){
-var hEC=_n('view')
-_rz(z,hEC,'class',4,oBC,xAC,gg)
-var oFC=_v()
-_(hEC,oFC)
-if(_oz(z,5,oBC,xAC,gg)){oFC.wxVkey=1
+var e8B=_v()
+_(r,e8B)
+if(_oz(z,0,e,s,gg)){e8B.wxVkey=1
+var b9B=_mz(z,'wm-poster',['OriginalTxt',-1,'PriceTxt',1,'QrSrc',1,'Title',2,'bind:__l',3,'class',4,'imgSrc',5,'vueId',6],[],e,s,gg)
+_(e8B,b9B)
 }
-var cGC=_v()
-_(hEC,cGC)
-if(_oz(z,6,oBC,xAC,gg)){cGC.wxVkey=1
-}
-var oHC=_v()
-_(hEC,oHC)
-if(_oz(z,7,oBC,xAC,gg)){oHC.wxVkey=1
-var lIC=_n('view')
-_rz(z,lIC,'class',8,oBC,xAC,gg)
-var aJC=_v()
-_(lIC,aJC)
-if(_oz(z,9,oBC,xAC,gg)){aJC.wxVkey=1
-}
-var tKC=_v()
-_(lIC,tKC)
-if(_oz(z,10,oBC,xAC,gg)){tKC.wxVkey=1
-}
-aJC.wxXCkey=1
-tKC.wxXCkey=1
-_(oHC,lIC)
-}
-oFC.wxXCkey=1
-cGC.wxXCkey=1
-oHC.wxXCkey=1
-_(fCC,hEC)
-return fCC
-}
-b9B.wxXCkey=2
-_2z(z,2,o0B,e,s,gg,b9B,'item','index','index')
+e8B.wxXCkey=1
+e8B.wxXCkey=3
 return r
 }
 e_[x[20]]={f:m20,j:[],i:[],ti:[],ic:[]}
 d_[x[21]]={}
 var m21=function(e,s,r,gg){
 var z=gz$gwx_22()
+var xAC=_v()
+_(r,xAC)
+var oBC=function(cDC,fCC,hEC,gg){
+var cGC=_n('view')
+_rz(z,cGC,'class',4,cDC,fCC,gg)
+var oHC=_v()
+_(cGC,oHC)
+if(_oz(z,5,cDC,fCC,gg)){oHC.wxVkey=1
+}
+var lIC=_v()
+_(cGC,lIC)
+if(_oz(z,6,cDC,fCC,gg)){lIC.wxVkey=1
+}
+var aJC=_v()
+_(cGC,aJC)
+if(_oz(z,7,cDC,fCC,gg)){aJC.wxVkey=1
+var tKC=_n('view')
+_rz(z,tKC,'class',8,cDC,fCC,gg)
+var eLC=_v()
+_(tKC,eLC)
+if(_oz(z,9,cDC,fCC,gg)){eLC.wxVkey=1
+}
 var bMC=_v()
-_(r,bMC)
-var oNC=function(oPC,xOC,fQC,gg){
-var hSC=_n('view')
-_rz(z,hSC,'class',4,oPC,xOC,gg)
-var oTC=_v()
-_(hSC,oTC)
-if(_oz(z,5,oPC,xOC,gg)){oTC.wxVkey=1
+_(tKC,bMC)
+if(_oz(z,10,cDC,fCC,gg)){bMC.wxVkey=1
 }
-var cUC=_v()
-_(hSC,cUC)
-if(_oz(z,6,oPC,xOC,gg)){cUC.wxVkey=1
+eLC.wxXCkey=1
+bMC.wxXCkey=1
+_(aJC,tKC)
 }
-var oVC=_v()
-_(hSC,oVC)
-if(_oz(z,7,oPC,xOC,gg)){oVC.wxVkey=1
-var lWC=_n('view')
-_rz(z,lWC,'class',8,oPC,xOC,gg)
-var aXC=_v()
-_(lWC,aXC)
-if(_oz(z,9,oPC,xOC,gg)){aXC.wxVkey=1
+oHC.wxXCkey=1
+lIC.wxXCkey=1
+aJC.wxXCkey=1
+_(hEC,cGC)
+return hEC
 }
-var tYC=_v()
-_(lWC,tYC)
-if(_oz(z,10,oPC,xOC,gg)){tYC.wxVkey=1
-}
-aXC.wxXCkey=1
-tYC.wxXCkey=1
-_(oVC,lWC)
-}
-oTC.wxXCkey=1
-cUC.wxXCkey=1
-oVC.wxXCkey=1
-_(fQC,hSC)
-return fQC
-}
-bMC.wxXCkey=2
-_2z(z,2,oNC,e,s,gg,bMC,'item','index','index')
+xAC.wxXCkey=2
+_2z(z,2,oBC,e,s,gg,xAC,'item','index','index')
 return r
 }
 e_[x[21]]={f:m21,j:[],i:[],ti:[],ic:[]}
 d_[x[22]]={}
 var m22=function(e,s,r,gg){
 var z=gz$gwx_23()
-var b1C=_n('view')
-_rz(z,b1C,'class',0,e,s,gg)
-var o2C=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
-_(b1C,o2C)
-var x3C=_n('view')
-_rz(z,x3C,'class',4,e,s,gg)
-var o4C=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',5,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(x3C,o4C)
-var f5C=_mz(z,'m-input',['displayable',-1,'bind:__l',13,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(x3C,f5C)
-_(b1C,x3C)
-_(r,b1C)
+var xOC=_v()
+_(r,xOC)
+var oPC=function(cRC,fQC,hSC,gg){
+var cUC=_n('view')
+_rz(z,cUC,'class',4,cRC,fQC,gg)
+var oVC=_v()
+_(cUC,oVC)
+if(_oz(z,5,cRC,fQC,gg)){oVC.wxVkey=1
+}
+var lWC=_v()
+_(cUC,lWC)
+if(_oz(z,6,cRC,fQC,gg)){lWC.wxVkey=1
+}
+var aXC=_v()
+_(cUC,aXC)
+if(_oz(z,7,cRC,fQC,gg)){aXC.wxVkey=1
+var tYC=_n('view')
+_rz(z,tYC,'class',8,cRC,fQC,gg)
+var eZC=_v()
+_(tYC,eZC)
+if(_oz(z,9,cRC,fQC,gg)){eZC.wxVkey=1
+}
+var b1C=_v()
+_(tYC,b1C)
+if(_oz(z,10,cRC,fQC,gg)){b1C.wxVkey=1
+}
+eZC.wxXCkey=1
+b1C.wxXCkey=1
+_(aXC,tYC)
+}
+oVC.wxXCkey=1
+lWC.wxXCkey=1
+aXC.wxXCkey=1
+_(hSC,cUC)
+return hSC
+}
+xOC.wxXCkey=2
+_2z(z,2,oPC,e,s,gg,xOC,'item','index','index')
 return r
 }
 e_[x[22]]={f:m22,j:[],i:[],ti:[],ic:[]}
 d_[x[23]]={}
 var m23=function(e,s,r,gg){
 var z=gz$gwx_24()
-var h7C=_v()
-_(r,h7C)
-var o8C=function(o0C,c9C,lAD,gg){
-var tCD=_mz(z,'token',['bind:__l',4,'class',1,'index',2,'tokenValue',3,'vueId',4],[],o0C,c9C,gg)
-_(lAD,tCD)
-return lAD
-}
-h7C.wxXCkey=4
-_2z(z,2,o8C,e,s,gg,h7C,'item','index','index')
+var x3C=_n('view')
+_rz(z,x3C,'class',0,e,s,gg)
+var o4C=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
+_(x3C,o4C)
+var f5C=_n('view')
+_rz(z,f5C,'class',4,e,s,gg)
+var c6C=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',5,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
+_(f5C,c6C)
+var h7C=_mz(z,'m-input',['displayable',-1,'bind:__l',13,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(f5C,h7C)
+_(x3C,f5C)
+_(r,x3C)
 return r
 }
 e_[x[23]]={f:m23,j:[],i:[],ti:[],ic:[]}
 d_[x[24]]={}
 var m24=function(e,s,r,gg){
 var z=gz$gwx_25()
+var c9C=_v()
+_(r,c9C)
+var o0C=function(aBD,lAD,tCD,gg){
+var bED=_mz(z,'token',['bind:__l',4,'class',1,'index',2,'tokenValue',3,'vueId',4],[],aBD,lAD,gg)
+_(tCD,bED)
+return tCD
+}
+c9C.wxXCkey=4
+_2z(z,2,o0C,e,s,gg,c9C,'item','index','index')
 return r
 }
 e_[x[24]]={f:m24,j:[],i:[],ti:[],ic:[]}
@@ -1987,43 +2003,43 @@ e_[x[26]]={f:m26,j:[],i:[],ti:[],ic:[]}
 d_[x[27]]={}
 var m27=function(e,s,r,gg){
 var z=gz$gwx_28()
-var oHD=_n('view')
-_rz(z,oHD,'class',0,e,s,gg)
-var fID=_mz(z,'button',['bindtap',1,'class',1,'data-event-opts',2,'disabled',3,'hoverClass',4],[],e,s,gg)
-var cJD=_v()
-_(fID,cJD)
-if(_oz(z,6,e,s,gg)){cJD.wxVkey=1
-}
-cJD.wxXCkey=1
-_(oHD,fID)
-var hKD=_mz(z,'button',['bindtap',7,'class',1,'data-event-opts',2,'disabled',3],[],e,s,gg)
-var oLD=_v()
-_(hKD,oLD)
-if(_oz(z,11,e,s,gg)){oLD.wxVkey=1
-}
-oLD.wxXCkey=1
-_(oHD,hKD)
-_(r,oHD)
 return r
 }
 e_[x[27]]={f:m27,j:[],i:[],ti:[],ic:[]}
 d_[x[28]]={}
 var m28=function(e,s,r,gg){
 var z=gz$gwx_29()
+var cJD=_n('view')
+_rz(z,cJD,'class',0,e,s,gg)
+var hKD=_mz(z,'button',['bindtap',1,'class',1,'data-event-opts',2,'disabled',3,'hoverClass',4],[],e,s,gg)
+var oLD=_v()
+_(hKD,oLD)
+if(_oz(z,6,e,s,gg)){oLD.wxVkey=1
+}
+oLD.wxXCkey=1
+_(cJD,hKD)
+var cMD=_mz(z,'button',['bindtap',7,'class',1,'data-event-opts',2,'disabled',3],[],e,s,gg)
+var oND=_v()
+_(cMD,oND)
+if(_oz(z,11,e,s,gg)){oND.wxVkey=1
+}
+oND.wxXCkey=1
+_(cJD,cMD)
+_(r,cJD)
 return r
 }
 e_[x[28]]={f:m28,j:[],i:[],ti:[],ic:[]}
 d_[x[29]]={}
 var m29=function(e,s,r,gg){
 var z=gz$gwx_30()
-var lOD=_mz(z,'m-icon',['bind:__l',0,'bind:click',1,'class',1,'color',2,'data-event-opts',3,'size',4,'type',5,'vueId',6],[],e,s,gg)
-_(r,lOD)
 return r
 }
 e_[x[29]]={f:m29,j:[],i:[],ti:[],ic:[]}
 d_[x[30]]={}
 var m30=function(e,s,r,gg){
 var z=gz$gwx_31()
+var tQD=_mz(z,'m-icon',['bind:__l',0,'bind:click',1,'class',1,'color',2,'data-event-opts',3,'size',4,'type',5,'vueId',6],[],e,s,gg)
+_(r,tQD)
 return r
 }
 e_[x[30]]={f:m30,j:[],i:[],ti:[],ic:[]}
@@ -2036,67 +2052,67 @@ e_[x[31]]={f:m31,j:[],i:[],ti:[],ic:[]}
 d_[x[32]]={}
 var m32=function(e,s,r,gg){
 var z=gz$gwx_33()
-var bSD=_n('view')
-_rz(z,bSD,'class',0,e,s,gg)
-var oVD=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
-_(bSD,oVD)
-var oTD=_v()
-_(bSD,oTD)
-if(_oz(z,4,e,s,gg)){oTD.wxVkey=1
-var fWD=_n('view')
-_rz(z,fWD,'class',5,e,s,gg)
-var cXD=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',6,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(fWD,cXD)
-var hYD=_mz(z,'m-input',['clearable',-1,'bind:__l',13,'bind:input',1,'data-event-opts',2,'maxlength',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(fWD,hYD)
-_(oTD,fWD)
-}
-var xUD=_v()
-_(bSD,xUD)
-if(_oz(z,21,e,s,gg)){xUD.wxVkey=1
-var oZD=_n('view')
-_rz(z,oZD,'class',22,e,s,gg)
-var c1D=_mz(z,'m-input',['displayable',-1,'bind:__l',23,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(oZD,c1D)
-var o2D=_mz(z,'m-input',['displayable',-1,'bind:__l',30,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(oZD,o2D)
-_(xUD,oZD)
-}
-oTD.wxXCkey=1
-oTD.wxXCkey=3
-xUD.wxXCkey=1
-xUD.wxXCkey=3
-_(r,bSD)
 return r
 }
 e_[x[32]]={f:m32,j:[],i:[],ti:[],ic:[]}
 d_[x[33]]={}
 var m33=function(e,s,r,gg){
 var z=gz$gwx_34()
-var a4D=_n('view')
-_rz(z,a4D,'class',0,e,s,gg)
-var t5D=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
-_(a4D,t5D)
-var e6D=_n('view')
-_rz(z,e6D,'class',4,e,s,gg)
-var b7D=_mz(z,'m-input',['clearable',-1,'bind:__l',5,'bind:input',1,'data-event-opts',2,'placeholder',3,'value',4,'vueId',5],[],e,s,gg)
-_(e6D,b7D)
-var o8D=_mz(z,'m-input',['clearable',-1,'bind:__l',11,'bind:input',1,'data-event-opts',2,'maxlength',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(e6D,o8D)
-var x9D=_mz(z,'m-input',['displayable',-1,'bind:__l',19,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(e6D,x9D)
-var o0D=_mz(z,'m-input',['displayable',-1,'bind:__l',26,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(e6D,o0D)
-var fAE=_mz(z,'m-input',['clearable',-1,'bind:__l',33,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(e6D,fAE)
-_(a4D,e6D)
-_(r,a4D)
+var xUD=_n('view')
+_rz(z,xUD,'class',0,e,s,gg)
+var cXD=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
+_(xUD,cXD)
+var oVD=_v()
+_(xUD,oVD)
+if(_oz(z,4,e,s,gg)){oVD.wxVkey=1
+var hYD=_n('view')
+_rz(z,hYD,'class',5,e,s,gg)
+var oZD=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',6,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(hYD,oZD)
+var c1D=_mz(z,'m-input',['clearable',-1,'bind:__l',13,'bind:input',1,'data-event-opts',2,'maxlength',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
+_(hYD,c1D)
+_(oVD,hYD)
+}
+var fWD=_v()
+_(xUD,fWD)
+if(_oz(z,21,e,s,gg)){fWD.wxVkey=1
+var o2D=_n('view')
+_rz(z,o2D,'class',22,e,s,gg)
+var l3D=_mz(z,'m-input',['displayable',-1,'bind:__l',23,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(o2D,l3D)
+var a4D=_mz(z,'m-input',['displayable',-1,'bind:__l',30,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(o2D,a4D)
+_(fWD,o2D)
+}
+oVD.wxXCkey=1
+oVD.wxXCkey=3
+fWD.wxXCkey=1
+fWD.wxXCkey=3
+_(r,xUD)
 return r
 }
 e_[x[33]]={f:m33,j:[],i:[],ti:[],ic:[]}
 d_[x[34]]={}
 var m34=function(e,s,r,gg){
 var z=gz$gwx_35()
+var e6D=_n('view')
+_rz(z,e6D,'class',0,e,s,gg)
+var b7D=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
+_(e6D,b7D)
+var o8D=_n('view')
+_rz(z,o8D,'class',4,e,s,gg)
+var x9D=_mz(z,'m-input',['clearable',-1,'bind:__l',5,'bind:input',1,'data-event-opts',2,'placeholder',3,'value',4,'vueId',5],[],e,s,gg)
+_(o8D,x9D)
+var o0D=_mz(z,'m-input',['clearable',-1,'bind:__l',11,'bind:input',1,'data-event-opts',2,'maxlength',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
+_(o8D,o0D)
+var fAE=_mz(z,'m-input',['displayable',-1,'bind:__l',19,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(o8D,fAE)
+var cBE=_mz(z,'m-input',['displayable',-1,'bind:__l',26,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(o8D,cBE)
+var hCE=_mz(z,'m-input',['clearable',-1,'bind:__l',33,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(o8D,hCE)
+_(e6D,o8D)
+_(r,e6D)
 return r
 }
 e_[x[34]]={f:m34,j:[],i:[],ti:[],ic:[]}
@@ -2109,27 +2125,27 @@ e_[x[35]]={f:m35,j:[],i:[],ti:[],ic:[]}
 d_[x[36]]={}
 var m36=function(e,s,r,gg){
 var z=gz$gwx_37()
-var cEE=_n('view')
-_rz(z,cEE,'class',0,e,s,gg)
-var oFE=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',1,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
-_(cEE,oFE)
-var lGE=_mz(z,'m-input',['clearable',-1,'bind:__l',7,'bind:input',1,'data-event-opts',2,'maxlength',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(cEE,lGE)
-var aHE=_mz(z,'m-input',['clearable',-1,'bind:__l',14,'bind:input',1,'data-event-opts',2,'maxlength',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(cEE,aHE)
-var tIE=_mz(z,'m-input',['clearable',-1,'bind:__l',21,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
-_(cEE,tIE)
-var eJE=_mz(z,'m-input',['clearable',-1,'bind:__l',27,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
-_(cEE,eJE)
-var bKE=_mz(z,'m-input',['clearable',-1,'bind:__l',33,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
-_(cEE,bKE)
-_(r,cEE)
 return r
 }
 e_[x[36]]={f:m36,j:[],i:[],ti:[],ic:[]}
 d_[x[37]]={}
 var m37=function(e,s,r,gg){
 var z=gz$gwx_38()
+var lGE=_n('view')
+_rz(z,lGE,'class',0,e,s,gg)
+var aHE=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',1,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
+_(lGE,aHE)
+var tIE=_mz(z,'m-input',['clearable',-1,'bind:__l',7,'bind:input',1,'data-event-opts',2,'maxlength',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(lGE,tIE)
+var eJE=_mz(z,'m-input',['clearable',-1,'bind:__l',14,'bind:input',1,'data-event-opts',2,'maxlength',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
+_(lGE,eJE)
+var bKE=_mz(z,'m-input',['clearable',-1,'bind:__l',21,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
+_(lGE,bKE)
+var oLE=_mz(z,'m-input',['clearable',-1,'bind:__l',27,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
+_(lGE,oLE)
+var xME=_mz(z,'m-input',['clearable',-1,'bind:__l',33,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
+_(lGE,xME)
+_(r,lGE)
 return r
 }
 e_[x[37]]={f:m37,j:[],i:[],ti:[],ic:[]}
@@ -2139,6 +2155,12 @@ var z=gz$gwx_39()
 return r
 }
 e_[x[38]]={f:m38,j:[],i:[],ti:[],ic:[]}
+d_[x[39]]={}
+var m39=function(e,s,r,gg){
+var z=gz$gwx_40()
+return r
+}
+e_[x[39]]={f:m39,j:[],i:[],ti:[],ic:[]}
 if(path&&e_[path]){
 return function(env,dd,global){$gwxc=0;var root={"tag":"wx-page"};root.children=[]
 var main=e_[path].f
@@ -2180,6 +2202,9 @@ __wxAppCode__['components/m-input.wxml']=$gwx('./components/m-input.wxml');
 __wxAppCode__['components/token.json']={"usingComponents":{},"component":true};
 __wxAppCode__['components/token.wxml']=$gwx('./components/token.wxml');
 
+__wxAppCode__['components/wm-poster/wm-poster.json']={"usingComponents":{},"component":true};
+__wxAppCode__['components/wm-poster/wm-poster.wxml']=$gwx('./components/wm-poster/wm-poster.wxml');
+
 __wxAppCode__['pages/auth/auth.json']={"navigationBarTitleText":"實名認證","usingComponents":{}};
 __wxAppCode__['pages/auth/auth.wxml']=$gwx('./pages/auth/auth.wxml');
 
@@ -2216,7 +2241,7 @@ __wxAppCode__['pages/im-chat/im-chat.wxml']=$gwx('./pages/im-chat/im-chat.wxml')
 __wxAppCode__['pages/index/index.json']={"navigationBarTitleText":"","titleNView":false,"usingComponents":{}};
 __wxAppCode__['pages/index/index.wxml']=$gwx('./pages/index/index.wxml');
 
-__wxAppCode__['pages/invite/invite.json']={"navigationBarTitleText":"邀請碼","usingComponents":{}};
+__wxAppCode__['pages/invite/invite.json']={"navigationBarTitleText":"我的專屬邀請碼","usingComponents":{"wm-poster":"/components/wm-poster/wm-poster"}};
 __wxAppCode__['pages/invite/invite.wxml']=$gwx('./pages/invite/invite.wxml');
 
 __wxAppCode__['pages/ledger/asset.json']={"navigationBarTitleText":"PAN幣賬本","usingComponents":{}};
@@ -2525,7 +2550,7 @@ define('common/runtime.js',function(require, module, exports, window, document, 
     /******/if (installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
     /******/else if (installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
         /******/promises.push(installedCssChunks[chunkId] = new Promise(function (resolve, reject) {
-          /******/var href = "" + ({ "components/logo": "components/logo", "components/m-input": "components/m-input", "components/im-chat/chatinput": "components/im-chat/chatinput", "components/im-chat/messageshow": "components/im-chat/messageshow", "components/token": "components/token", "components/barrage": "components/barrage", "components/m-icon/m-icon": "components/m-icon/m-icon" }[chunkId] || chunkId) + ".wxss";
+          /******/var href = "" + ({ "components/logo": "components/logo", "components/m-input": "components/m-input", "components/im-chat/chatinput": "components/im-chat/chatinput", "components/im-chat/messageshow": "components/im-chat/messageshow", "components/token": "components/token", "components/barrage": "components/barrage", "components/m-icon/m-icon": "components/m-icon/m-icon", "components/wm-poster/wm-poster": "components/wm-poster/wm-poster" }[chunkId] || chunkId) + ".wxss";
           /******/var fullhref = __webpack_require__.p + href;
           /******/var existingLinkTags = document.getElementsByTagName("link");
           /******/for (var i = 0; i < existingLinkTags.length; i++) {
@@ -2684,6 +2709,18 @@ define('common/runtime.js',function(require, module, exports, window, document, 
 });
 define('common/vendor.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
+
+/***/ "./node_modules/@babel/runtime/regenerator/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime-module.js");
+
+
+/***/ }),
 
 /***/ "./node_modules/@dcloudio/uni-app-plus/dist/index.js":
 /*!***********************************************************!*\
@@ -9825,6 +9862,786 @@ internalMixin(Vue);
 
 /***/ }),
 
+/***/ "./node_modules/regenerator-runtime/runtime-module.js":
+/*!************************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+// This method of obtaining a reference to the global object needs to be
+// kept identical to the way it is obtained in runtime.js
+var g = (function() {
+  return this || (typeof self === "object" && self);
+})() || Function("return this")();
+
+// Use `getOwnPropertyNames` because not all browsers support calling
+// `hasOwnProperty` on the global `self` object in a worker. See #183.
+var hadRuntime = g.regeneratorRuntime &&
+  Object.getOwnPropertyNames(g).indexOf("regeneratorRuntime") >= 0;
+
+// Save the old regeneratorRuntime in case it needs to be restored later.
+var oldRuntime = hadRuntime && g.regeneratorRuntime;
+
+// Force reevalutation of runtime.js.
+g.regeneratorRuntime = undefined;
+
+module.exports = __webpack_require__(/*! ./runtime */ "./node_modules/regenerator-runtime/runtime.js");
+
+if (hadRuntime) {
+  // Restore the original runtime.
+  g.regeneratorRuntime = oldRuntime;
+} else {
+  // Remove the global property added by runtime.js.
+  try {
+    delete g.regeneratorRuntime;
+  } catch(e) {
+    g.regeneratorRuntime = undefined;
+  }
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/regenerator-runtime/runtime.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+!(function(global) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  var inModule = typeof module === "object";
+  var runtime = global.regeneratorRuntime;
+  if (runtime) {
+    if (inModule) {
+      // If regeneratorRuntime is defined globally and we're in a module,
+      // make the exports object identical to regeneratorRuntime.
+      module.exports = runtime;
+    }
+    // Don't bother evaluating the rest of this file if the runtime was
+    // already defined globally.
+    return;
+  }
+
+  // Define the runtime globally (as expected by generated code) as either
+  // module.exports (if we're in a module) or a new, empty object.
+  runtime = global.regeneratorRuntime = inModule ? module.exports : {};
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  runtime.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  IteratorPrototype[iteratorSymbol] = function () {
+    return this;
+  };
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+  GeneratorFunctionPrototype.constructor = GeneratorFunction;
+  GeneratorFunctionPrototype[toStringTagSymbol] =
+    GeneratorFunction.displayName = "GeneratorFunction";
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      prototype[method] = function(arg) {
+        return this._invoke(method, arg);
+      };
+    });
+  }
+
+  runtime.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  runtime.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      if (!(toStringTagSymbol in genFun)) {
+        genFun[toStringTagSymbol] = "GeneratorFunction";
+      }
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  runtime.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return Promise.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return Promise.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function(error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new Promise(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
+    return this;
+  };
+  runtime.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  runtime.async = function(innerFn, outerFn, self, tryLocsList) {
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList)
+    );
+
+    return runtime.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        if (delegate.iterator.return) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  Gp[toStringTagSymbol] = "Generator";
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  Gp[iteratorSymbol] = function() {
+    return this;
+  };
+
+  Gp.toString = function() {
+    return "[object Generator]";
+  };
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  runtime.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  runtime.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+})(
+  // In sloppy mode, unbound `this` refers to the global object, fallback to
+  // Function constructor if we're in global strict mode. That is sadly a form
+  // of indirect eval which violates Content Security Policy.
+  (function() {
+    return this || (typeof self === "object" && self);
+  })() || Function("return this")()
+);
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -10922,15 +11739,17 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.createDyn = exports.upload = exports.getImgTemp = exports.upPicture = exports.upLogo = exports.setBar = exports.getBarList = exports.sysVote = exports.isVote = exports.toTreIndex = exports.checkForTaskList = exports.getForBill = exports.getForBalance = exports.checkTaskList = exports.getBill = exports.getBalance = exports.getPollTop = exports.donate = exports.getIndex = exports.like = exports.concern = exports.addComment = exports.getComment = exports.findAllDyn = exports.getDyn = exports.getInfo = exports.upInfo = exports.getAllSocialInfo = exports.findByID = exports.changePwd = exports.register = exports.sendCode = exports.login = void 0;var Token = uni.getStorageSync('USERS_KEY').token;
-var systemUrl = 'http://printsn.com:8080/v1/system/';
-var fansUrl = 'http://printsn.com:8080/v1/fans/';
-var dynUrl = 'http://printsn.com:8080/v1/dyn/';
-var pollUrl = 'http://printsn.com:8080/v1/poll/';
-var panUrl = 'http://printsn.com:8080/v1/pan/';
-var forceUrl = 'http://printsn.com:8080/v1/force/';
-var treatyUrl = 'http://printsn.com:8080/v1/tre/';
-var barUrl = 'http://printsn.com:8080/v1/bar/';
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.createDyn = exports.upload = exports.getImgTemp = exports.upPicture = exports.getInvCode = exports.upLogo = exports.setBar = exports.getBarList = exports.sysVote = exports.isVote = exports.toTreIndex = exports.checkForTaskList = exports.getForBill = exports.getForBalance = exports.checkTaskList = exports.getBill = exports.getBalance = exports.getPollTop = exports.donate = exports.getIndex = exports.reply = exports.getBullet = exports.like = exports.concern = exports.addComment = exports.getComment = exports.findAllDyn = exports.getDyn = exports.getInfo = exports.upInfo = exports.getAllSocialInfo = exports.findByID = exports.changePwd = exports.register = exports.sendCode = exports.login = void 0;var Token = uni.getStorageSync('USERS_KEY').token;
+var URL = 'http://printsn.com:8080/v1/';
+var systemUrl = URL + 'system/';
+var fansUrl = URL + 'fans/';
+var dynUrl = URL + 'dyn/';
+var pollUrl = URL + 'poll/';
+var panUrl = URL + 'pan/';
+var forceUrl = URL + 'force/';
+var treatyUrl = URL + 'tre/';
+var barUrl = URL + 'bar/';
+var invUrl = URL + 'inv/';
 
 /*********************登录注册***************************/
 // 登录
@@ -11272,7 +12091,7 @@ exports.findAllDyn = findAllDyn;var getComment = function getComment(did) {retur
 
 // 用户评论
 exports.getComment = getComment;var addComment = function addComment(content, did) {return new Promise(function (resolve, reject) {
-    console.log(did, " at api\\api.js:351");
+    // console.log(did);
     uni.request({
       url: dynUrl + 'createCom?did=' + did + '&content=' + content,
       header: {
@@ -11332,7 +12151,7 @@ exports.concern = concern;var like = function like(did, likeNumber) {return new 
         'token': Token },
 
       success: function success(res) {
-        console.log(res.data, " at api\\api.js:411");
+        // console.log(res.data);
         if (res.data.status == 200) resolve(res.data.data);
         if (res.data.status == 404) {
           uni.showToast({
@@ -11352,9 +12171,52 @@ exports.concern = concern;var like = function like(did, likeNumber) {return new 
 
   });};
 
+// 弹幕
+exports.like = like;var getBullet = function getBullet(did) {return new Promise(function (resolve, reject) {
+    uni.request({
+      url: dynUrl + 'getBullet?did=' + did,
+      header: {
+        'token': Token },
+
+      success: function success(res) {
+        // console.log(res.data);
+        if (res.data.status == 200) resolve(res.data.data);
+      },
+      fail: function fail(err) {
+        uni.showToast({
+          icon: 'none',
+          title: '页面加载失败，請稍后重試' });
+
+        reject(err);
+      } });
+
+  });};
+
+// 回复评论
+exports.getBullet = getBullet;var reply = function reply(cid, content) {return new Promise(function (resolve, reject) {
+    uni.request({
+      url: dynUrl + 'reply?cid=' + cid + '&content=' + content,
+      header: {
+        'token': Token },
+
+      success: function success(res) {
+        // console.log(res.data);
+        if (res.data.status == 200) resolve(res.data.data);
+        // else reject(res.data.msg);
+      },
+      fail: function fail(err) {
+        uni.showToast({
+          icon: 'none',
+          title: '页面加载失败，請稍后重試' });
+
+        reject(err);
+      } });
+
+  });};
+
 /*********************PAN***************************/
 // PAN公益首页数据
-exports.like = like;var getIndex = function getIndex() {return new Promise(function (resolve, reject) {
+exports.reply = reply;var getIndex = function getIndex() {return new Promise(function (resolve, reject) {
     uni.request({
       url: pollUrl + 'getIndex',
       header: {
@@ -11646,7 +12508,7 @@ exports.sysVote = sysVote;var getBarList = function getBarList(location) {return
         'token': Token },
 
       success: function success(res) {
-        console.log(res.data, " at api\\api.js:725");
+        console.log(res.data, " at api\\api.js:770");
         if (res.data.status == 200) resolve(res.data.data);
         // else reject(res.data.msg);
       },
@@ -11708,7 +12570,7 @@ exports.setBar = setBar;var upLogo = function upLogo(imgTemp, type) {return new 
         }
       },
       fail: function fail(err) {
-        console.log('uploadImage fail', err, " at api\\api.js:787");
+        console.log('uploadImage fail', err, " at api\\api.js:832");
         uni.showToast({
           icon: 'none',
           title: '上传失败,请勿选择超过4M的图片' });
@@ -11717,9 +12579,22 @@ exports.setBar = setBar;var upLogo = function upLogo(imgTemp, type) {return new 
 
   });};
 
+
+/*********************邀请码***************************/exports.upLogo = upLogo;
+
+var getInvCode = function getInvCode() {return new Promise(function (resolve, reject) {
+    uni.request({
+      url: invUrl + 'getInvCode',
+      header: { token: Token },
+      success: function success(res) {
+        if (res.data.status == 200) resolve(res.data.data);
+      } });
+
+  });};
+
 /*********************上传***************************/
 // 上传头像
-exports.upLogo = upLogo;var upPicture = function upPicture(userId) {return new Promise(function (resolve, reject) {
+exports.getInvCode = getInvCode;var upPicture = function upPicture(userId) {return new Promise(function (resolve, reject) {
     uni.chooseImage({
       count: 1,
       sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
@@ -11731,9 +12606,9 @@ exports.upLogo = upLogo;var upPicture = function upPicture(userId) {return new P
           filePath: tempFilePaths[0],
           name: 'file',
           success: function success(res) {
-            console.log(res.data, " at api\\api.js:810");
+            console.log(res.data, " at api\\api.js:868");
             var jsonObj = JSON.parse(res.data);
-            console.log('uploadImage success, res is:', jsonObj.data, " at api\\api.js:812");
+            console.log('uploadImage success, res is:', jsonObj.data, " at api\\api.js:870");
             uni.showToast({
               title: '上传成功',
               icon: 'success',
@@ -11743,7 +12618,7 @@ exports.upLogo = upLogo;var upPicture = function upPicture(userId) {return new P
             // avatar = jsonObj.data.id;
           },
           fail: function fail(err) {
-            console.log('uploadImage fail', err, " at api\\api.js:822");
+            console.log('uploadImage fail', err, " at api\\api.js:880");
             uni.showToast({
               icon: 'none',
               title: '上传失败,请勿选择超过4M的图片' });
@@ -11751,9 +12626,9 @@ exports.upLogo = upLogo;var upPicture = function upPicture(userId) {return new P
           } });
 
         uploadTask.onProgressUpdate(function (res) {
-          console.log('上传进度' + res.progress, " at api\\api.js:830");
-          console.log('已经上传的数据长度' + res.totalBytesSent, " at api\\api.js:831");
-          console.log('预期需要上传的数据总长度' + res.totalBytesExpectedToSend, " at api\\api.js:832");
+          console.log('上传进度' + res.progress, " at api\\api.js:888");
+          console.log('已经上传的数据长度' + res.totalBytesSent, " at api\\api.js:889");
+          console.log('预期需要上传的数据总长度' + res.totalBytesExpectedToSend, " at api\\api.js:890");
         });
       } });
 
@@ -11786,10 +12661,10 @@ exports.getImgTemp = getImgTemp;var upload = function upload(imgTemp) {return ne
       filePath: imgTemp,
       name: 'file',
       success: function success(res) {
-        console.log(res.data, " at api\\api.js:865");
+        console.log(res.data, " at api\\api.js:923");
         var jsonObj = JSON.parse(res.data);
-        console.log('uploadImage success, res is:', jsonObj.data, " at api\\api.js:867");
-        console.log(jsonObj.data.id, " at api\\api.js:868");
+        console.log('uploadImage success, res is:', jsonObj.data, " at api\\api.js:925");
+        console.log(jsonObj.data.id, " at api\\api.js:926");
         resolve(jsonObj.data.id);
         uni.showToast({
           icon: 'none',
@@ -11800,7 +12675,7 @@ exports.getImgTemp = getImgTemp;var upload = function upload(imgTemp) {return ne
 
       },
       fail: function fail(err) {
-        console.log('uploadImage fail', err, " at api\\api.js:879");
+        console.log('uploadImage fail', err, " at api\\api.js:937");
         uni.showToast({
           icon: 'none',
           title: '上传失败,请勿选择超过4M的图片' });
@@ -11836,6 +12711,187 @@ exports.upload = upload;var createDyn = function createDyn(dynContent) {return n
       } });
 
   });};exports.createDyn = createDyn;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
+
+/***/ }),
+
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\filter.js":
+/*!**************************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/common/js/filter.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var toFixed = function toFixed(input, num) {return Number(input).toFixed(num);};var _default =
+
+{ toFixed: toFixed //默认导出
+};exports.default = _default;
+
+/***/ }),
+
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\image.js":
+/*!*************************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/common/js/image.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.pathToBase64 = pathToBase64;exports.base64ToPath = base64ToPath;function pathToBase64(path) {
+  return new Promise(function (resolve, reject) {
+    if (typeof window === 'object' && 'document' in window) {
+      var canvas = document.createElement('canvas');
+      var c2x = canvas.getContext('2d');
+      var img = new Image();
+      img.onload = function () {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        c2x.drawImage(img, 0, 0);
+        resolve(canvas.toDataURL());
+      };
+      img.onerror = reject;
+      img.src = path;
+      return;
+    }
+    if (typeof plus === 'object') {
+      var bitmap = new plus.nativeObj.Bitmap('bitmap' + Date.now());
+      bitmap.load(path, function () {
+        try {
+          var base64 = bitmap.toBase64Data();
+        } catch (error) {
+          reject(error);
+        }
+        bitmap.clear();
+        resolve(base64);
+      }, function (error) {
+        bitmap.clear();
+        reject(error);
+      });
+      return;
+    }
+    if (typeof wx === 'object' && wx.canIUse('getFileSystemManager')) {
+      wx.getFileSystemManager().readFile({
+        filePath: path,
+        encoding: 'base64',
+        success: function success(res) {
+          resolve('data:image/png;base64,' + res.data);
+        },
+        fail: function fail(error) {
+          reject(error);
+        } });
+
+      return;
+    }
+    reject(new Error('not support'));
+  });
+}
+
+function base64ToPath(base64) {
+  return new Promise(function (resolve, reject) {
+    if (typeof window === 'object' && 'document' in window) {
+      base64 = base64.split(',');
+      var type = base64[0].match(/:(.*?);/)[1];
+      var str = atob(base64[1]);
+      var n = str.length;
+      var array = new Uint8Array(n);
+      while (n--) {
+        array[n] = str.charCodeAt(n);
+      }
+      return resolve((window.URL || window.webkitURL).createObjectURL(new Blob([array], { type: type })));
+    }
+    var extName = base64.match(/data\:\S+\/(\S+);/);
+    if (extName) {
+      extName = extName[1];
+    } else {
+      reject(new Error('base64 error'));
+    }
+    var fileName = Date.now() + '.' + extName;
+    if (typeof plus === 'object') {
+      var bitmap = new plus.nativeObj.Bitmap('bitmap' + Date.now());
+      bitmap.loadBase64Data(base64, function () {
+        var filePath = '_doc/uniapp_temp/' + fileName;
+        bitmap.save(filePath, {}, function () {
+          bitmap.clear();
+          resolve(filePath);
+        }, function (error) {
+          bitmap.clear();
+          reject(error);
+        });
+      }, function (error) {
+        bitmap.clear();
+        reject(error);
+      });
+      return;
+    }
+    if (typeof wx === 'object' && wx.canIUse('getFileSystemManager')) {
+      var filePath = wx.env.USER_DATA_PATH + '/' + fileName;
+      wx.getFileSystemManager().writeFile({
+        filePath: filePath,
+        data: base64.replace(/^data:\S+\/\S+;base64,/, ''),
+        encoding: 'base64',
+        success: function success() {
+          resolve(filePath);
+        },
+        fail: function fail(error) {
+          reject(error);
+        } });
+
+      return;
+    }
+    reject(new Error('not support'));
+  });
+}
+
+/***/ }),
+
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\json.js":
+/*!************************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/common/js/json.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {var URL = "http://47.100.228.211/images/json/";
+
+// 欢迎页幻灯片
+var indexSlider = function indexSlider() {return new Promise(function (resolve, reject) {
+    uni.request({
+      url: URL + "slider.json",
+      success: function success(res) {
+        // console.log(res.data);
+        resolve(res.data.index);
+      } });
+
+  });};
+
+// 首页模块幻灯片
+var mainSlider = function mainSlider() {return new Promise(function (resolve, reject) {
+    uni.request({
+      url: URL + "slider.json",
+      success: function success(res) {
+        // console.log(res.data);
+        resolve(res.data.main);
+      } });
+
+  });};
+
+// 邀请码列表
+var invList = function invList() {return new Promise(function (resolve, reject) {
+    uni.request({
+      url: URL + "user.json",
+      success: function success(res) {
+        // console.log(res.data);
+        resolve(res.data.invList);
+      } });
+
+  });};
+
+module.exports = {
+  indexSlider: indexSlider,
+  mainSlider: mainSlider,
+  invList: invList };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
@@ -12134,6 +13190,1639 @@ exports.userValidate = userValidate;var barValidate = function barValidate(barIn
 
 /***/ }),
 
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\wxqrcode.js":
+/*!****************************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/common/js/wxqrcode.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+ //---------------------------------------------------------------------
+//
+// QR Code Generator for JavaScript
+//
+// Copyright (c) 2009 Kazuhiko Arase
+//
+// URL: [url=http://www.d-project.com/]http://www.d-project.com/[/url]
+//
+// Licensed under the MIT license:
+//        [url=http://www.opensource.org/licenses/mit-license.php]http://www.opensource.org/licenses/mit-license.php[/url]
+//
+// The word 'QR Code' is registered trademark of
+// DENSO WAVE INCORPORATED
+//        [url=http://www.denso-wave.com/qrcode/faqpatent-e.html]http://www.denso-wave.com/qrcode/faqpatent-e.html[/url]
+//
+//---------------------------------------------------------------------
+
+//---------------------------------------------------------------------
+// qrcode
+//代码第1588行为补充代码
+//修改人：chenxing
+//2017-02-27 16:21:32
+//---------------------------------------------------------------------
+
+/**
+ * qrcode
+ * @param typeNumber 1 to 40
+ * @param errorCorrectLevel 'L','M','Q','H'
+ */
+var qrcode = function qrcode(typeNumber, errorCorrectLevel) {
+
+  var PAD0 = 0xEC;
+  var PAD1 = 0x11;
+
+  var _typeNumber = typeNumber;
+  var _errorCorrectLevel = QRErrorCorrectLevel[errorCorrectLevel];
+  var _modules = null;
+  var _moduleCount = 0;
+  var _dataCache = null;
+  var _dataList = new Array();
+
+  var _this = {};
+
+  var makeImpl = function makeImpl(test, maskPattern) {
+
+    _moduleCount = _typeNumber * 4 + 17;
+    _modules = function (moduleCount) {
+      var modules = new Array(moduleCount);
+      for (var row = 0; row < moduleCount; row += 1) {
+        modules[row] = new Array(moduleCount);
+        for (var col = 0; col < moduleCount; col += 1) {
+          modules[row][col] = null;
+        }
+      }
+      return modules;
+    }(_moduleCount);
+
+    setupPositionProbePattern(0, 0);
+    setupPositionProbePattern(_moduleCount - 7, 0);
+    setupPositionProbePattern(0, _moduleCount - 7);
+    setupPositionAdjustPattern();
+    setupTimingPattern();
+    setupTypeInfo(test, maskPattern);
+
+    if (_typeNumber >= 7) {
+      setupTypeNumber(test);
+    }
+
+    if (_dataCache == null) {
+      _dataCache = createData(_typeNumber, _errorCorrectLevel, _dataList);
+    }
+
+    mapData(_dataCache, maskPattern);
+  };
+
+  var setupPositionProbePattern = function setupPositionProbePattern(row, col) {
+
+    for (var r = -1; r <= 7; r += 1) {
+
+      if (row + r <= -1 || _moduleCount <= row + r) continue;
+
+      for (var c = -1; c <= 7; c += 1) {
+
+        if (col + c <= -1 || _moduleCount <= col + c) continue;
+
+        if (0 <= r && r <= 6 && (c == 0 || c == 6) ||
+        0 <= c && c <= 6 && (r == 0 || r == 6) ||
+        2 <= r && r <= 4 && 2 <= c && c <= 4) {
+          _modules[row + r][col + c] = true;
+        } else {
+          _modules[row + r][col + c] = false;
+        }
+      }
+    }
+  };
+
+  var getBestMaskPattern = function getBestMaskPattern() {
+
+    var minLostPoint = 0;
+    var pattern = 0;
+
+    for (var i = 0; i < 8; i += 1) {
+
+      makeImpl(true, i);
+
+      var lostPoint = QRUtil.getLostPoint(_this);
+
+      if (i == 0 || minLostPoint > lostPoint) {
+        minLostPoint = lostPoint;
+        pattern = i;
+      }
+    }
+
+    return pattern;
+  };
+
+  var setupTimingPattern = function setupTimingPattern() {
+
+    for (var r = 8; r < _moduleCount - 8; r += 1) {
+      if (_modules[r][6] != null) {
+        continue;
+      }
+      _modules[r][6] = r % 2 == 0;
+    }
+
+    for (var c = 8; c < _moduleCount - 8; c += 1) {
+      if (_modules[6][c] != null) {
+        continue;
+      }
+      _modules[6][c] = c % 2 == 0;
+    }
+  };
+
+  var setupPositionAdjustPattern = function setupPositionAdjustPattern() {
+
+    var pos = QRUtil.getPatternPosition(_typeNumber);
+
+    for (var i = 0; i < pos.length; i += 1) {
+
+      for (var j = 0; j < pos.length; j += 1) {
+
+        var row = pos[i];
+        var col = pos[j];
+
+        if (_modules[row][col] != null) {
+          continue;
+        }
+
+        for (var r = -2; r <= 2; r += 1) {
+
+          for (var c = -2; c <= 2; c += 1) {
+
+            if (r == -2 || r == 2 || c == -2 || c == 2 ||
+            r == 0 && c == 0) {
+              _modules[row + r][col + c] = true;
+            } else {
+              _modules[row + r][col + c] = false;
+            }
+          }
+        }
+      }
+    }
+  };
+
+  var setupTypeNumber = function setupTypeNumber(test) {
+
+    var bits = QRUtil.getBCHTypeNumber(_typeNumber);
+
+    for (var i = 0; i < 18; i += 1) {
+      var mod = !test && (bits >> i & 1) == 1;
+      _modules[Math.floor(i / 3)][i % 3 + _moduleCount - 8 - 3] = mod;
+    }
+
+    for (var i = 0; i < 18; i += 1) {
+      var mod = !test && (bits >> i & 1) == 1;
+      _modules[i % 3 + _moduleCount - 8 - 3][Math.floor(i / 3)] = mod;
+    }
+  };
+
+  var setupTypeInfo = function setupTypeInfo(test, maskPattern) {
+
+    var data = _errorCorrectLevel << 3 | maskPattern;
+    var bits = QRUtil.getBCHTypeInfo(data);
+
+    // vertical
+    for (var i = 0; i < 15; i += 1) {
+
+      var mod = !test && (bits >> i & 1) == 1;
+
+      if (i < 6) {
+        _modules[i][8] = mod;
+      } else if (i < 8) {
+        _modules[i + 1][8] = mod;
+      } else {
+        _modules[_moduleCount - 15 + i][8] = mod;
+      }
+    }
+
+    // horizontal
+    for (var i = 0; i < 15; i += 1) {
+
+      var mod = !test && (bits >> i & 1) == 1;
+
+      if (i < 8) {
+        _modules[8][_moduleCount - i - 1] = mod;
+      } else if (i < 9) {
+        _modules[8][15 - i - 1 + 1] = mod;
+      } else {
+        _modules[8][15 - i - 1] = mod;
+      }
+    }
+
+    // fixed module
+    _modules[_moduleCount - 8][8] = !test;
+  };
+
+  var mapData = function mapData(data, maskPattern) {
+
+    var inc = -1;
+    var row = _moduleCount - 1;
+    var bitIndex = 7;
+    var byteIndex = 0;
+    var maskFunc = QRUtil.getMaskFunction(maskPattern);
+
+    for (var col = _moduleCount - 1; col > 0; col -= 2) {
+
+      if (col == 6) col -= 1;
+
+      while (true) {
+
+        for (var c = 0; c < 2; c += 1) {
+
+          if (_modules[row][col - c] == null) {
+
+            var dark = false;
+
+            if (byteIndex < data.length) {
+              dark = (data[byteIndex] >>> bitIndex & 1) == 1;
+            }
+
+            var mask = maskFunc(row, col - c);
+
+            if (mask) {
+              dark = !dark;
+            }
+
+            _modules[row][col - c] = dark;
+            bitIndex -= 1;
+
+            if (bitIndex == -1) {
+              byteIndex += 1;
+              bitIndex = 7;
+            }
+          }
+        }
+
+        row += inc;
+
+        if (row < 0 || _moduleCount <= row) {
+          row -= inc;
+          inc = -inc;
+          break;
+        }
+      }
+    }
+  };
+
+  var createBytes = function createBytes(buffer, rsBlocks) {
+
+    var offset = 0;
+
+    var maxDcCount = 0;
+    var maxEcCount = 0;
+
+    var dcdata = new Array(rsBlocks.length);
+    var ecdata = new Array(rsBlocks.length);
+
+    for (var r = 0; r < rsBlocks.length; r += 1) {
+
+      var dcCount = rsBlocks[r].dataCount;
+      var ecCount = rsBlocks[r].totalCount - dcCount;
+
+      maxDcCount = Math.max(maxDcCount, dcCount);
+      maxEcCount = Math.max(maxEcCount, ecCount);
+
+      dcdata[r] = new Array(dcCount);
+
+      for (var i = 0; i < dcdata[r].length; i += 1) {
+        dcdata[r][i] = 0xff & buffer.getBuffer()[i + offset];
+      }
+      offset += dcCount;
+
+      var rsPoly = QRUtil.getErrorCorrectPolynomial(ecCount);
+      var rawPoly = qrPolynomial(dcdata[r], rsPoly.getLength() - 1);
+
+      var modPoly = rawPoly.mod(rsPoly);
+      ecdata[r] = new Array(rsPoly.getLength() - 1);
+      for (var i = 0; i < ecdata[r].length; i += 1) {
+        var modIndex = i + modPoly.getLength() - ecdata[r].length;
+        ecdata[r][i] = modIndex >= 0 ? modPoly.getAt(modIndex) : 0;
+      }
+    }
+
+    var totalCodeCount = 0;
+    for (var i = 0; i < rsBlocks.length; i += 1) {
+      totalCodeCount += rsBlocks[i].totalCount;
+    }
+
+    var data = new Array(totalCodeCount);
+    var index = 0;
+
+    for (var i = 0; i < maxDcCount; i += 1) {
+      for (var r = 0; r < rsBlocks.length; r += 1) {
+        if (i < dcdata[r].length) {
+          data[index] = dcdata[r][i];
+          index += 1;
+        }
+      }
+    }
+
+    for (var i = 0; i < maxEcCount; i += 1) {
+      for (var r = 0; r < rsBlocks.length; r += 1) {
+        if (i < ecdata[r].length) {
+          data[index] = ecdata[r][i];
+          index += 1;
+        }
+      }
+    }
+
+    return data;
+  };
+
+  var createData = function createData(typeNumber, errorCorrectLevel, dataList) {
+
+    var rsBlocks = QRRSBlock.getRSBlocks(typeNumber, errorCorrectLevel);
+
+    var buffer = qrBitBuffer();
+
+    for (var i = 0; i < dataList.length; i += 1) {
+      var data = dataList[i];
+      buffer.put(data.getMode(), 4);
+      buffer.put(data.getLength(), QRUtil.getLengthInBits(data.getMode(), typeNumber));
+      data.write(buffer);
+    }
+
+    // calc num max data.
+    var totalDataCount = 0;
+    for (var i = 0; i < rsBlocks.length; i += 1) {
+      totalDataCount += rsBlocks[i].dataCount;
+    }
+
+    if (buffer.getLengthInBits() > totalDataCount * 8) {
+      throw new Error('code length overflow. (' +
+      buffer.getLengthInBits() +
+      '>' +
+      totalDataCount * 8 +
+      ')');
+    }
+
+    // end code
+    if (buffer.getLengthInBits() + 4 <= totalDataCount * 8) {
+      buffer.put(0, 4);
+    }
+
+    // padding
+    while (buffer.getLengthInBits() % 8 != 0) {
+      buffer.putBit(false);
+    }
+
+    // padding
+    while (true) {
+
+      if (buffer.getLengthInBits() >= totalDataCount * 8) {
+        break;
+      }
+      buffer.put(PAD0, 8);
+
+      if (buffer.getLengthInBits() >= totalDataCount * 8) {
+        break;
+      }
+      buffer.put(PAD1, 8);
+    }
+
+    return createBytes(buffer, rsBlocks);
+  };
+
+  _this.addData = function (data) {
+    var newData = qr8BitByte(data);
+    _dataList.push(newData);
+    _dataCache = null;
+  };
+
+  _this.isDark = function (row, col) {
+    if (row < 0 || _moduleCount <= row || col < 0 || _moduleCount <= col) {
+      throw new Error(row + ',' + col);
+    }
+    return _modules[row][col];
+  };
+
+  _this.getModuleCount = function () {
+    return _moduleCount;
+  };
+
+  _this.make = function () {
+    makeImpl(false, getBestMaskPattern());
+  };
+
+  _this.createTableTag = function (cellSize, margin) {
+
+    cellSize = cellSize || 2;
+    margin = typeof margin == 'undefined' ? cellSize * 4 : margin;
+
+    var qrHtml = '';
+
+    qrHtml += '<table style="';
+    qrHtml += ' border-width: 0px; border-style: none;';
+    qrHtml += ' border-collapse: collapse;';
+    qrHtml += ' padding: 0px; margin: ' + margin + 'px;';
+    qrHtml += '">';
+    qrHtml += '<tbody>';
+
+    for (var r = 0; r < _this.getModuleCount(); r += 1) {
+
+      qrHtml += '<tr>';
+
+      for (var c = 0; c < _this.getModuleCount(); c += 1) {
+        qrHtml += '<td style="';
+        qrHtml += ' border-width: 0px; border-style: none;';
+        qrHtml += ' border-collapse: collapse;';
+        qrHtml += ' padding: 0px; margin: 0px;';
+        qrHtml += ' width: ' + cellSize + 'px;';
+        qrHtml += ' height: ' + cellSize + 'px;';
+        qrHtml += ' background-color: ';
+        qrHtml += _this.isDark(r, c) ? '#000000' : '#ffffff';
+        qrHtml += ';';
+        qrHtml += '"/>';
+      }
+
+      qrHtml += '</tr>';
+    }
+
+    qrHtml += '</tbody>';
+    qrHtml += '</table>';
+
+    return qrHtml;
+  };
+
+  _this.createImgTag = function (cellSize, margin, size) {
+
+    cellSize = cellSize || 2;
+    margin = typeof margin == 'undefined' ? cellSize * 4 : margin;
+
+    var min = margin;
+    var max = _this.getModuleCount() * cellSize + margin;
+
+    return createImgTag(size, size, function (x, y) {
+      if (min <= x && x < max && min <= y && y < max) {
+        var c = Math.floor((x - min) / cellSize);
+        var r = Math.floor((y - min) / cellSize);
+        return _this.isDark(r, c) ? 0 : 1;
+      } else {
+        return 1;
+      }
+    });
+  };
+
+  return _this;
+};
+
+//---------------------------------------------------------------------
+// qrcode.stringToBytes
+//---------------------------------------------------------------------
+
+qrcode.stringToBytes = function (s) {
+  var bytes = new Array();
+  for (var i = 0; i < s.length; i += 1) {
+    var c = s.charCodeAt(i);
+    bytes.push(c & 0xff);
+  }
+  return bytes;
+};
+
+//---------------------------------------------------------------------
+// qrcode.createStringToBytes
+//---------------------------------------------------------------------
+
+/**
+ * @param unicodeData base64 string of byte array.
+ * [16bit Unicode],[16bit Bytes], ...
+ * @param numChars
+ */
+qrcode.createStringToBytes = function (unicodeData, numChars) {
+
+  // create conversion map.
+
+  var unicodeMap = function () {
+
+    var bin = base64DecodeInputStream(unicodeData);
+    var read = function read() {
+      var b = bin.read();
+      if (b == -1) throw new Error();
+      return b;
+    };
+
+    var count = 0;
+    var unicodeMap = {};
+    while (true) {
+      var b0 = bin.read();
+      if (b0 == -1) break;
+      var b1 = read();
+      var b2 = read();
+      var b3 = read();
+      var k = String.fromCharCode(b0 << 8 | b1);
+      var v = b2 << 8 | b3;
+      unicodeMap[k] = v;
+      count += 1;
+    }
+    if (count != numChars) {
+      throw new Error(count + ' != ' + numChars);
+    }
+
+    return unicodeMap;
+  }();
+
+  var unknownChar = '?'.charCodeAt(0);
+
+  return function (s) {
+    var bytes = new Array();
+    for (var i = 0; i < s.length; i += 1) {
+      var c = s.charCodeAt(i);
+      if (c < 128) {
+        bytes.push(c);
+      } else {
+        var b = unicodeMap[s.charAt(i)];
+        if (typeof b == 'number') {
+          if ((b & 0xff) == b) {
+            // 1byte
+            bytes.push(b);
+          } else {
+            // 2bytes
+            bytes.push(b >>> 8);
+            bytes.push(b & 0xff);
+          }
+        } else {
+          bytes.push(unknownChar);
+        }
+      }
+    }
+    return bytes;
+  };
+};
+
+//---------------------------------------------------------------------
+// QRMode
+//---------------------------------------------------------------------
+
+var QRMode = {
+  MODE_NUMBER: 1 << 0,
+  MODE_ALPHA_NUM: 1 << 1,
+  MODE_8BIT_BYTE: 1 << 2,
+  MODE_KANJI: 1 << 3 };
+
+
+//---------------------------------------------------------------------
+// QRErrorCorrectLevel
+//---------------------------------------------------------------------
+
+var QRErrorCorrectLevel = {
+  L: 1,
+  M: 0,
+  Q: 3,
+  H: 2 };
+
+
+//---------------------------------------------------------------------
+// QRMaskPattern
+//---------------------------------------------------------------------
+
+var QRMaskPattern = {
+  PATTERN000: 0,
+  PATTERN001: 1,
+  PATTERN010: 2,
+  PATTERN011: 3,
+  PATTERN100: 4,
+  PATTERN101: 5,
+  PATTERN110: 6,
+  PATTERN111: 7 };
+
+
+//---------------------------------------------------------------------
+// QRUtil
+//---------------------------------------------------------------------
+
+var QRUtil = function () {
+
+  var PATTERN_POSITION_TABLE = [
+  [],
+  [6, 18],
+  [6, 22],
+  [6, 26],
+  [6, 30],
+  [6, 34],
+  [6, 22, 38],
+  [6, 24, 42],
+  [6, 26, 46],
+  [6, 28, 50],
+  [6, 30, 54],
+  [6, 32, 58],
+  [6, 34, 62],
+  [6, 26, 46, 66],
+  [6, 26, 48, 70],
+  [6, 26, 50, 74],
+  [6, 30, 54, 78],
+  [6, 30, 56, 82],
+  [6, 30, 58, 86],
+  [6, 34, 62, 90],
+  [6, 28, 50, 72, 94],
+  [6, 26, 50, 74, 98],
+  [6, 30, 54, 78, 102],
+  [6, 28, 54, 80, 106],
+  [6, 32, 58, 84, 110],
+  [6, 30, 58, 86, 114],
+  [6, 34, 62, 90, 118],
+  [6, 26, 50, 74, 98, 122],
+  [6, 30, 54, 78, 102, 126],
+  [6, 26, 52, 78, 104, 130],
+  [6, 30, 56, 82, 108, 134],
+  [6, 34, 60, 86, 112, 138],
+  [6, 30, 58, 86, 114, 142],
+  [6, 34, 62, 90, 118, 146],
+  [6, 30, 54, 78, 102, 126, 150],
+  [6, 24, 50, 76, 102, 128, 154],
+  [6, 28, 54, 80, 106, 132, 158],
+  [6, 32, 58, 84, 110, 136, 162],
+  [6, 26, 54, 82, 110, 138, 166],
+  [6, 30, 58, 86, 114, 142, 170]];
+
+  var G15 = 1 << 10 | 1 << 8 | 1 << 5 | 1 << 4 | 1 << 2 | 1 << 1 | 1 << 0;
+  var G18 = 1 << 12 | 1 << 11 | 1 << 10 | 1 << 9 | 1 << 8 | 1 << 5 | 1 << 2 | 1 << 0;
+  var G15_MASK = 1 << 14 | 1 << 12 | 1 << 10 | 1 << 4 | 1 << 1;
+
+  var _this = {};
+
+  var getBCHDigit = function getBCHDigit(data) {
+    var digit = 0;
+    while (data != 0) {
+      digit += 1;
+      data >>>= 1;
+    }
+    return digit;
+  };
+
+  _this.getBCHTypeInfo = function (data) {
+    var d = data << 10;
+    while (getBCHDigit(d) - getBCHDigit(G15) >= 0) {
+      d ^= G15 << getBCHDigit(d) - getBCHDigit(G15);
+    }
+    return (data << 10 | d) ^ G15_MASK;
+  };
+
+  _this.getBCHTypeNumber = function (data) {
+    var d = data << 12;
+    while (getBCHDigit(d) - getBCHDigit(G18) >= 0) {
+      d ^= G18 << getBCHDigit(d) - getBCHDigit(G18);
+    }
+    return data << 12 | d;
+  };
+
+  _this.getPatternPosition = function (typeNumber) {
+    return PATTERN_POSITION_TABLE[typeNumber - 1];
+  };
+
+  _this.getMaskFunction = function (maskPattern) {
+
+    switch (maskPattern) {
+
+      case QRMaskPattern.PATTERN000:
+        return function (i, j) {return (i + j) % 2 == 0;};
+      case QRMaskPattern.PATTERN001:
+        return function (i, j) {return i % 2 == 0;};
+      case QRMaskPattern.PATTERN010:
+        return function (i, j) {return j % 3 == 0;};
+      case QRMaskPattern.PATTERN011:
+        return function (i, j) {return (i + j) % 3 == 0;};
+      case QRMaskPattern.PATTERN100:
+        return function (i, j) {return (Math.floor(i / 2) + Math.floor(j / 3)) % 2 == 0;};
+      case QRMaskPattern.PATTERN101:
+        return function (i, j) {return i * j % 2 + i * j % 3 == 0;};
+      case QRMaskPattern.PATTERN110:
+        return function (i, j) {return (i * j % 2 + i * j % 3) % 2 == 0;};
+      case QRMaskPattern.PATTERN111:
+        return function (i, j) {return (i * j % 3 + (i + j) % 2) % 2 == 0;};
+
+      default:
+        throw new Error('bad maskPattern:' + maskPattern);}
+
+  };
+
+  _this.getErrorCorrectPolynomial = function (errorCorrectLength) {
+    var a = qrPolynomial([1], 0);
+    for (var i = 0; i < errorCorrectLength; i += 1) {
+      a = a.multiply(qrPolynomial([1, QRMath.gexp(i)], 0));
+    }
+    return a;
+  };
+
+  _this.getLengthInBits = function (mode, type) {
+
+    if (1 <= type && type < 10) {
+
+      // 1 - 9
+
+      switch (mode) {
+        case QRMode.MODE_NUMBER:return 10;
+        case QRMode.MODE_ALPHA_NUM:return 9;
+        case QRMode.MODE_8BIT_BYTE:return 8;
+        case QRMode.MODE_KANJI:return 8;
+        default:
+          throw new Error('mode:' + mode);}
+
+
+    } else if (type < 27) {
+
+      // 10 - 26
+
+      switch (mode) {
+        case QRMode.MODE_NUMBER:return 12;
+        case QRMode.MODE_ALPHA_NUM:return 11;
+        case QRMode.MODE_8BIT_BYTE:return 16;
+        case QRMode.MODE_KANJI:return 10;
+        default:
+          throw new Error('mode:' + mode);}
+
+
+    } else if (type < 41) {
+
+      // 27 - 40
+
+      switch (mode) {
+        case QRMode.MODE_NUMBER:return 14;
+        case QRMode.MODE_ALPHA_NUM:return 13;
+        case QRMode.MODE_8BIT_BYTE:return 16;
+        case QRMode.MODE_KANJI:return 12;
+        default:
+          throw new Error('mode:' + mode);}
+
+
+    } else {
+      throw new Error('type:' + type);
+    }
+  };
+
+  _this.getLostPoint = function (qrcode) {
+
+    var moduleCount = qrcode.getModuleCount();
+
+    var lostPoint = 0;
+
+    // LEVEL1
+
+    for (var row = 0; row < moduleCount; row += 1) {
+      for (var col = 0; col < moduleCount; col += 1) {
+
+        var sameCount = 0;
+        var dark = qrcode.isDark(row, col);
+
+        for (var r = -1; r <= 1; r += 1) {
+
+          if (row + r < 0 || moduleCount <= row + r) {
+            continue;
+          }
+
+          for (var c = -1; c <= 1; c += 1) {
+
+            if (col + c < 0 || moduleCount <= col + c) {
+              continue;
+            }
+
+            if (r == 0 && c == 0) {
+              continue;
+            }
+
+            if (dark == qrcode.isDark(row + r, col + c)) {
+              sameCount += 1;
+            }
+          }
+        }
+
+        if (sameCount > 5) {
+          lostPoint += 3 + sameCount - 5;
+        }
+      }
+    };
+
+    // LEVEL2
+
+    for (var row = 0; row < moduleCount - 1; row += 1) {
+      for (var col = 0; col < moduleCount - 1; col += 1) {
+        var count = 0;
+        if (qrcode.isDark(row, col)) count += 1;
+        if (qrcode.isDark(row + 1, col)) count += 1;
+        if (qrcode.isDark(row, col + 1)) count += 1;
+        if (qrcode.isDark(row + 1, col + 1)) count += 1;
+        if (count == 0 || count == 4) {
+          lostPoint += 3;
+        }
+      }
+    }
+
+    // LEVEL3
+
+    for (var row = 0; row < moduleCount; row += 1) {
+      for (var col = 0; col < moduleCount - 6; col += 1) {
+        if (qrcode.isDark(row, col) &&
+        !qrcode.isDark(row, col + 1) &&
+        qrcode.isDark(row, col + 2) &&
+        qrcode.isDark(row, col + 3) &&
+        qrcode.isDark(row, col + 4) &&
+        !qrcode.isDark(row, col + 5) &&
+        qrcode.isDark(row, col + 6)) {
+          lostPoint += 40;
+        }
+      }
+    }
+
+    for (var col = 0; col < moduleCount; col += 1) {
+      for (var row = 0; row < moduleCount - 6; row += 1) {
+        if (qrcode.isDark(row, col) &&
+        !qrcode.isDark(row + 1, col) &&
+        qrcode.isDark(row + 2, col) &&
+        qrcode.isDark(row + 3, col) &&
+        qrcode.isDark(row + 4, col) &&
+        !qrcode.isDark(row + 5, col) &&
+        qrcode.isDark(row + 6, col)) {
+          lostPoint += 40;
+        }
+      }
+    }
+
+    // LEVEL4
+
+    var darkCount = 0;
+
+    for (var col = 0; col < moduleCount; col += 1) {
+      for (var row = 0; row < moduleCount; row += 1) {
+        if (qrcode.isDark(row, col)) {
+          darkCount += 1;
+        }
+      }
+    }
+
+    var ratio = Math.abs(100 * darkCount / moduleCount / moduleCount - 50) / 5;
+    lostPoint += ratio * 10;
+
+    return lostPoint;
+  };
+
+  return _this;
+}();
+
+//---------------------------------------------------------------------
+// QRMath
+//---------------------------------------------------------------------
+
+var QRMath = function () {
+
+  var EXP_TABLE = new Array(256);
+  var LOG_TABLE = new Array(256);
+
+  // initialize tables
+  for (var i = 0; i < 8; i += 1) {
+    EXP_TABLE[i] = 1 << i;
+  }
+  for (var i = 8; i < 256; i += 1) {
+    EXP_TABLE[i] = EXP_TABLE[i - 4] ^
+    EXP_TABLE[i - 5] ^
+    EXP_TABLE[i - 6] ^
+    EXP_TABLE[i - 8];
+  }
+  for (var i = 0; i < 255; i += 1) {
+    LOG_TABLE[EXP_TABLE[i]] = i;
+  }
+
+  var _this = {};
+
+  _this.glog = function (n) {
+
+    if (n < 1) {
+      throw new Error('glog(' + n + ')');
+    }
+
+    return LOG_TABLE[n];
+  };
+
+  _this.gexp = function (n) {
+
+    while (n < 0) {
+      n += 255;
+    }
+
+    while (n >= 256) {
+      n -= 255;
+    }
+
+    return EXP_TABLE[n];
+  };
+
+  return _this;
+}();
+
+//---------------------------------------------------------------------
+// qrPolynomial
+//---------------------------------------------------------------------
+
+function qrPolynomial(num, shift) {
+
+  if (typeof num.length == 'undefined') {
+    throw new Error(num.length + '/' + shift);
+  }
+
+  var _num = function () {
+    var offset = 0;
+    while (offset < num.length && num[offset] == 0) {
+      offset += 1;
+    }
+    var _num = new Array(num.length - offset + shift);
+    for (var i = 0; i < num.length - offset; i += 1) {
+      _num[i] = num[i + offset];
+    }
+    return _num;
+  }();
+
+  var _this = {};
+
+  _this.getAt = function (index) {
+    return _num[index];
+  };
+
+  _this.getLength = function () {
+    return _num.length;
+  };
+
+  _this.multiply = function (e) {
+
+    var num = new Array(_this.getLength() + e.getLength() - 1);
+
+    for (var i = 0; i < _this.getLength(); i += 1) {
+      for (var j = 0; j < e.getLength(); j += 1) {
+        num[i + j] ^= QRMath.gexp(QRMath.glog(_this.getAt(i)) + QRMath.glog(e.getAt(j)));
+      }
+    }
+
+    return qrPolynomial(num, 0);
+  };
+
+  _this.mod = function (e) {
+
+    if (_this.getLength() - e.getLength() < 0) {
+      return _this;
+    }
+
+    var ratio = QRMath.glog(_this.getAt(0)) - QRMath.glog(e.getAt(0));
+
+    var num = new Array(_this.getLength());
+    for (var i = 0; i < _this.getLength(); i += 1) {
+      num[i] = _this.getAt(i);
+    }
+
+    for (var i = 0; i < e.getLength(); i += 1) {
+      num[i] ^= QRMath.gexp(QRMath.glog(e.getAt(i)) + ratio);
+    }
+
+    // recursive call
+    return qrPolynomial(num, 0).mod(e);
+  };
+
+  return _this;
+};
+
+//---------------------------------------------------------------------
+// QRRSBlock
+//---------------------------------------------------------------------
+
+var QRRSBlock = function () {
+
+
+  // [1: [L, M, Q, H], ..]
+  var RS_BLOCK_TABLE = [[1, 26, 19], [1, 26, 16], [1, 26, 13], [1, 26, 9], [1, 44, 34], [1, 44, 28], [1, 44, 22], [1, 44, 16], [1, 70, 55], [1, 70, 44], [2, 35, 17], [2, 35, 13], [1, 100, 80], [2, 50, 32], [2, 50, 24], [4, 25, 9], [1, 134, 108], [2, 67, 43], [2, 33, 15, 2, 34, 16], [2, 33, 11, 2, 34, 12], [2, 86, 68], [4, 43, 27], [4, 43, 19], [4, 43, 15], [2, 98, 78], [4, 49, 31], [2, 32, 14, 4, 33, 15], [4, 39, 13, 1, 40, 14], [2, 121, 97], [2, 60, 38, 2, 61, 39], [4, 40, 18, 2, 41, 19], [4, 40, 14, 2, 41, 15], [2, 146, 116], [3, 58, 36, 2, 59, 37], [4, 36, 16, 4, 37, 17], [4, 36, 12, 4, 37, 13], [2, 86, 68, 2, 87, 69], [4, 69, 43, 1, 70, 44], [6, 43, 19, 2, 44, 20], [6, 43, 15, 2, 44, 16], [4, 101, 81], [1, 80, 50, 4, 81, 51], [4, 50, 22, 4, 51, 23], [3, 36, 12, 8, 37, 13], [2, 116, 92, 2, 117, 93], [6, 58, 36, 2, 59, 37], [4, 46, 20, 6, 47, 21], [7, 42, 14, 4, 43, 15], [4, 133, 107], [8, 59, 37, 1, 60, 38], [8, 44, 20, 4, 45, 21], [12, 33, 11, 4, 34, 12], [3, 145, 115, 1, 146, 116], [4, 64, 40, 5, 65, 41], [11, 36, 16, 5, 37, 17], [11, 36, 12, 5, 37, 13], [5, 109, 87, 1, 110, 88], [5, 65, 41, 5, 66, 42], [5, 54, 24, 7, 55, 25], [11, 36, 12], [5, 122, 98, 1, 123, 99], [7, 73, 45, 3, 74, 46], [15, 43, 19, 2, 44, 20], [3, 45, 15, 13, 46, 16], [1, 135, 107, 5, 136, 108], [10, 74, 46, 1, 75, 47], [1, 50, 22, 15, 51, 23], [2, 42, 14, 17, 43, 15], [5, 150, 120, 1, 151, 121], [9, 69, 43, 4, 70, 44], [17, 50, 22, 1, 51, 23], [2, 42, 14, 19, 43, 15], [3, 141, 113, 4, 142, 114], [3, 70, 44, 11, 71, 45], [17, 47, 21, 4, 48, 22], [9, 39, 13, 16, 40, 14], [3, 135, 107, 5, 136, 108], [3, 67, 41, 13, 68, 42], [15, 54, 24, 5, 55, 25], [15, 43, 15, 10, 44, 16], [4, 144, 116, 4, 145, 117], [17, 68, 42], [17, 50, 22, 6, 51, 23], [19, 46, 16, 6, 47, 17], [2, 139, 111, 7, 140, 112], [17, 74, 46], [7, 54, 24, 16, 55, 25], [34, 37, 13], [4, 151, 121, 5, 152, 122], [4, 75, 47, 14, 76, 48], [11, 54, 24, 14, 55, 25], [16, 45, 15, 14, 46, 16], [6, 147, 117, 4, 148, 118], [6, 73, 45, 14, 74, 46], [11, 54, 24, 16, 55, 25], [30, 46, 16, 2, 47, 17], [8, 132, 106, 4, 133, 107], [8, 75, 47, 13, 76, 48], [7, 54, 24, 22, 55, 25], [22, 45, 15, 13, 46, 16], [10, 142, 114, 2, 143, 115], [19, 74, 46, 4, 75, 47], [28, 50, 22, 6, 51, 23], [33, 46, 16, 4, 47, 17], [8, 152, 122, 4, 153, 123], [22, 73, 45, 3, 74, 46], [8, 53, 23, 26, 54, 24], [12, 45, 15, 28, 46, 16], [3, 147, 117, 10, 148, 118], [3, 73, 45, 23, 74, 46], [4, 54, 24, 31, 55, 25], [11, 45, 15, 31, 46, 16], [7, 146, 116, 7, 147, 117], [21, 73, 45, 7, 74, 46], [1, 53, 23, 37, 54, 24], [19, 45, 15, 26, 46, 16], [5, 145, 115, 10, 146, 116], [19, 75, 47, 10, 76, 48], [15, 54, 24, 25, 55, 25], [23, 45, 15, 25, 46, 16], [13, 145, 115, 3, 146, 116], [2, 74, 46, 29, 75, 47], [42, 54, 24, 1, 55, 25], [23, 45, 15, 28, 46, 16], [17, 145, 115], [10, 74, 46, 23, 75, 47], [10, 54, 24, 35, 55, 25], [19, 45, 15, 35, 46, 16], [17, 145, 115, 1, 146, 116], [14, 74, 46, 21, 75, 47], [29, 54, 24, 19, 55, 25], [11, 45, 15, 46, 46, 16], [13, 145, 115, 6, 146, 116], [14, 74, 46, 23, 75, 47], [44, 54, 24, 7, 55, 25], [59, 46, 16, 1, 47, 17], [12, 151, 121, 7, 152, 122], [12, 75, 47, 26, 76, 48], [39, 54, 24, 14, 55, 25], [22, 45, 15, 41, 46, 16], [6, 151, 121, 14, 152, 122], [6, 75, 47, 34, 76, 48], [46, 54, 24, 10, 55, 25], [2, 45, 15, 64, 46, 16], [17, 152, 122, 4, 153, 123], [29, 74, 46, 14, 75, 47], [49, 54, 24, 10, 55, 25], [24, 45, 15, 46, 46, 16], [4, 152, 122, 18, 153, 123], [13, 74, 46, 32, 75, 47], [48, 54, 24, 14, 55, 25], [42, 45, 15, 32, 46, 16], [20, 147, 117, 4, 148, 118], [40, 75, 47, 7, 76, 48], [43, 54, 24, 22, 55, 25], [10, 45, 15, 67, 46, 16], [19, 148, 118, 6, 149, 119], [18, 75, 47, 31, 76, 48], [34, 54, 24, 34, 55, 25], [20, 45, 15, 61, 46, 16]];
+
+  var qrRSBlock = function qrRSBlock(totalCount, dataCount) {
+    var _this = {};
+    _this.totalCount = totalCount;
+    _this.dataCount = dataCount;
+    return _this;
+  };
+
+  var _this = {};
+
+  var getRsBlockTable = function getRsBlockTable(typeNumber, errorCorrectLevel) {
+
+    switch (errorCorrectLevel) {
+      case QRErrorCorrectLevel.L:
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 0];
+      case QRErrorCorrectLevel.M:
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 1];
+      case QRErrorCorrectLevel.Q:
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 2];
+      case QRErrorCorrectLevel.H:
+        return RS_BLOCK_TABLE[(typeNumber - 1) * 4 + 3];
+      default:
+        return undefined;}
+
+  };
+
+  _this.getRSBlocks = function (typeNumber, errorCorrectLevel) {
+
+    var rsBlock = getRsBlockTable(typeNumber, errorCorrectLevel);
+
+    if (typeof rsBlock == 'undefined') {
+      throw new Error('bad rs block [url=home.php?mod=space&uid=5302]@[/url] typeNumber:' + typeNumber +
+      '/errorCorrectLevel:' + errorCorrectLevel);
+    }
+
+    var length = rsBlock.length / 3;
+
+    var list = new Array();
+
+    for (var i = 0; i < length; i += 1) {
+
+      var count = rsBlock[i * 3 + 0];
+      var totalCount = rsBlock[i * 3 + 1];
+      var dataCount = rsBlock[i * 3 + 2];
+
+      for (var j = 0; j < count; j += 1) {
+        list.push(qrRSBlock(totalCount, dataCount));
+      }
+    }
+
+    return list;
+  };
+
+  return _this;
+}();
+
+//---------------------------------------------------------------------
+// qrBitBuffer
+//---------------------------------------------------------------------
+
+var qrBitBuffer = function qrBitBuffer() {
+
+  var _buffer = new Array();
+  var _length = 0;
+
+  var _this = {};
+
+  _this.getBuffer = function () {
+    return _buffer;
+  };
+
+  _this.getAt = function (index) {
+    var bufIndex = Math.floor(index / 8);
+    return (_buffer[bufIndex] >>> 7 - index % 8 & 1) == 1;
+  };
+
+  _this.put = function (num, length) {
+    for (var i = 0; i < length; i += 1) {
+      _this.putBit((num >>> length - i - 1 & 1) == 1);
+    }
+  };
+
+  _this.getLengthInBits = function () {
+    return _length;
+  };
+
+  _this.putBit = function (bit) {
+
+    var bufIndex = Math.floor(_length / 8);
+    if (_buffer.length <= bufIndex) {
+      _buffer.push(0);
+    }
+
+    if (bit) {
+      _buffer[bufIndex] |= 0x80 >>> _length % 8;
+    }
+
+    _length += 1;
+  };
+
+  return _this;
+};
+
+//---------------------------------------------------------------------
+// qr8BitByte
+//---------------------------------------------------------------------
+
+var qr8BitByte = function qr8BitByte(data) {
+
+  var _mode = QRMode.MODE_8BIT_BYTE;
+  var _data = data;
+  var _parsedData = [];
+
+  var _this = {};
+
+
+  // Added to support UTF-8 Characters
+  for (var i = 0, l = _data.length; i < l; i++) {
+    var byteArray = [];
+    var code = _data.charCodeAt(i);
+
+    if (code > 0x10000) {
+      byteArray[0] = 0xF0 | (code & 0x1C0000) >>> 18;
+      byteArray[1] = 0x80 | (code & 0x3F000) >>> 12;
+      byteArray[2] = 0x80 | (code & 0xFC0) >>> 6;
+      byteArray[3] = 0x80 | code & 0x3F;
+    } else if (code > 0x800) {
+      byteArray[0] = 0xE0 | (code & 0xF000) >>> 12;
+      byteArray[1] = 0x80 | (code & 0xFC0) >>> 6;
+      byteArray[2] = 0x80 | code & 0x3F;
+    } else if (code > 0x80) {
+      byteArray[0] = 0xC0 | (code & 0x7C0) >>> 6;
+      byteArray[1] = 0x80 | code & 0x3F;
+    } else {
+      byteArray[0] = code;
+    }
+
+    // Fix Unicode corruption bug
+    _parsedData.push(byteArray);
+  }
+
+  _parsedData = Array.prototype.concat.apply([], _parsedData);
+
+  if (_parsedData.length != _data.length) {
+    _parsedData.unshift(191);
+    _parsedData.unshift(187);
+    _parsedData.unshift(239);
+  }
+
+  var _bytes = _parsedData;
+
+  _this.getMode = function () {
+    return _mode;
+  };
+
+  _this.getLength = function (buffer) {
+    return _bytes.length;
+  };
+
+  _this.write = function (buffer) {
+    for (var i = 0; i < _bytes.length; i += 1) {
+      buffer.put(_bytes[i], 8);
+    }
+  };
+
+  return _this;
+};
+
+//=====================================================================
+// GIF Support etc.
+//
+
+//---------------------------------------------------------------------
+// byteArrayOutputStream
+//---------------------------------------------------------------------
+
+var byteArrayOutputStream = function byteArrayOutputStream() {
+
+  var _bytes = new Array();
+
+  var _this = {};
+
+  _this.writeByte = function (b) {
+    _bytes.push(b & 0xff);
+  };
+
+  _this.writeShort = function (i) {
+    _this.writeByte(i);
+    _this.writeByte(i >>> 8);
+  };
+
+  _this.writeBytes = function (b, off, len) {
+    off = off || 0;
+    len = len || b.length;
+    for (var i = 0; i < len; i += 1) {
+      _this.writeByte(b[i + off]);
+    }
+  };
+
+  _this.writeString = function (s) {
+    for (var i = 0; i < s.length; i += 1) {
+      _this.writeByte(s.charCodeAt(i));
+    }
+  };
+
+  _this.toByteArray = function () {
+    return _bytes;
+  };
+
+  _this.toString = function () {
+    var s = '';
+    s += '[';
+    for (var i = 0; i < _bytes.length; i += 1) {
+      if (i > 0) {
+        s += ',';
+      }
+      s += _bytes[i];
+    }
+    s += ']';
+    return s;
+  };
+
+  return _this;
+};
+
+//---------------------------------------------------------------------
+// base64EncodeOutputStream
+//---------------------------------------------------------------------
+
+var base64EncodeOutputStream = function base64EncodeOutputStream() {
+
+  var _buffer = 0;
+  var _buflen = 0;
+  var _length = 0;
+  var _base64 = '';
+
+  var _this = {};
+
+  var writeEncoded = function writeEncoded(b) {
+    _base64 += String.fromCharCode(encode(b & 0x3f));
+  };
+
+  var encode = function encode(n) {
+    if (n < 0) {
+      // error.
+    } else if (n < 26) {
+      return 0x41 + n;
+    } else if (n < 52) {
+      return 0x61 + (n - 26);
+    } else if (n < 62) {
+      return 0x30 + (n - 52);
+    } else if (n == 62) {
+      return 0x2b;
+    } else if (n == 63) {
+      return 0x2f;
+    }
+    throw new Error('n:' + n);
+  };
+
+  _this.writeByte = function (n) {
+
+    _buffer = _buffer << 8 | n & 0xff;
+    _buflen += 8;
+    _length += 1;
+
+    while (_buflen >= 6) {
+      writeEncoded(_buffer >>> _buflen - 6);
+      _buflen -= 6;
+    }
+  };
+
+  _this.flush = function () {
+
+    if (_buflen > 0) {
+      writeEncoded(_buffer << 6 - _buflen);
+      _buffer = 0;
+      _buflen = 0;
+    }
+
+    if (_length % 3 != 0) {
+      // padding
+      var padlen = 3 - _length % 3;
+      for (var i = 0; i < padlen; i += 1) {
+        _base64 += '=';
+      }
+    }
+  };
+
+  _this.toString = function () {
+    return _base64;
+  };
+
+  return _this;
+};
+
+//---------------------------------------------------------------------
+// base64DecodeInputStream
+//---------------------------------------------------------------------
+
+var base64DecodeInputStream = function base64DecodeInputStream(str) {
+
+  var _str = str;
+  var _pos = 0;
+  var _buffer = 0;
+  var _buflen = 0;
+
+  var _this = {};
+
+  _this.read = function () {
+
+    while (_buflen < 8) {
+
+      if (_pos >= _str.length) {
+        if (_buflen == 0) {
+          return -1;
+        }
+        throw new Error('unexpected end of file./' + _buflen);
+      }
+
+      var c = _str.charAt(_pos);
+      _pos += 1;
+
+      if (c == '=') {
+        _buflen = 0;
+        return -1;
+      } else if (c.match(/^\s$/)) {
+        // ignore if whitespace.
+        continue;
+      }
+
+      _buffer = _buffer << 6 | decode(c.charCodeAt(0));
+      _buflen += 6;
+    }
+
+    var n = _buffer >>> _buflen - 8 & 0xff;
+    _buflen -= 8;
+    return n;
+  };
+
+  var decode = function decode(c) {
+    if (0x41 <= c && c <= 0x5a) {
+      return c - 0x41;
+    } else if (0x61 <= c && c <= 0x7a) {
+      return c - 0x61 + 26;
+    } else if (0x30 <= c && c <= 0x39) {
+      return c - 0x30 + 52;
+    } else if (c == 0x2b) {
+      return 62;
+    } else if (c == 0x2f) {
+      return 63;
+    } else {
+      throw new Error('c:' + c);
+    }
+  };
+
+  return _this;
+};
+
+//---------------------------------------------------------------------
+// gifImage (B/W)
+//---------------------------------------------------------------------
+
+var gifImage = function gifImage(width, height) {
+
+  var _width = width;
+  var _height = height;
+  var _data = new Array(width * height);
+
+  var _this = {};
+
+  _this.setPixel = function (x, y, pixel) {
+    _data[y * _width + x] = pixel;
+  };
+
+  _this.write = function (out) {
+
+    //---------------------------------
+    // GIF Signature
+
+    out.writeString('GIF87a');
+
+    //---------------------------------
+    // Screen Descriptor
+
+    out.writeShort(_width);
+    out.writeShort(_height);
+
+    out.writeByte(0x80); // 2bit
+    out.writeByte(0);
+    out.writeByte(0);
+
+    //---------------------------------
+    // Global Color Map
+
+    // black
+    out.writeByte(0x00);
+    out.writeByte(0x00);
+    out.writeByte(0x00);
+
+    // white
+    out.writeByte(0xff);
+    out.writeByte(0xff);
+    out.writeByte(0xff);
+
+    //---------------------------------
+    // Image Descriptor
+
+    out.writeString(',');
+    out.writeShort(0);
+    out.writeShort(0);
+    out.writeShort(_width);
+    out.writeShort(_height);
+    out.writeByte(0);
+
+    //---------------------------------
+    // Local Color Map
+
+    //---------------------------------
+    // Raster Data
+
+    var lzwMinCodeSize = 2;
+    var raster = getLZWRaster(lzwMinCodeSize);
+
+    out.writeByte(lzwMinCodeSize);
+
+    var offset = 0;
+
+    while (raster.length - offset > 255) {
+      out.writeByte(255);
+      out.writeBytes(raster, offset, 255);
+      offset += 255;
+    }
+
+    out.writeByte(raster.length - offset);
+    out.writeBytes(raster, offset, raster.length - offset);
+    out.writeByte(0x00);
+
+    //---------------------------------
+    // GIF Terminator
+    out.writeString(';');
+  };
+
+  var bitOutputStream = function bitOutputStream(out) {
+
+    var _out = out;
+    var _bitLength = 0;
+    var _bitBuffer = 0;
+
+    var _this = {};
+
+    _this.write = function (data, length) {
+
+      if (data >>> length != 0) {
+        throw new Error('length over');
+      }
+
+      while (_bitLength + length >= 8) {
+        _out.writeByte(0xff & (data << _bitLength | _bitBuffer));
+        length -= 8 - _bitLength;
+        data >>>= 8 - _bitLength;
+        _bitBuffer = 0;
+        _bitLength = 0;
+      }
+
+      _bitBuffer = data << _bitLength | _bitBuffer;
+      _bitLength = _bitLength + length;
+    };
+
+    _this.flush = function () {
+      if (_bitLength > 0) {
+        _out.writeByte(_bitBuffer);
+      }
+    };
+
+    return _this;
+  };
+
+  var getLZWRaster = function getLZWRaster(lzwMinCodeSize) {
+
+    var clearCode = 1 << lzwMinCodeSize;
+    var endCode = (1 << lzwMinCodeSize) + 1;
+    var bitLength = lzwMinCodeSize + 1;
+
+    // Setup LZWTable
+    var table = lzwTable();
+
+    for (var i = 0; i < clearCode; i += 1) {
+      table.add(String.fromCharCode(i));
+    }
+    table.add(String.fromCharCode(clearCode));
+    table.add(String.fromCharCode(endCode));
+
+    var byteOut = byteArrayOutputStream();
+    var bitOut = bitOutputStream(byteOut);
+
+    // clear code
+    bitOut.write(clearCode, bitLength);
+
+    var dataIndex = 0;
+
+    var s = String.fromCharCode(_data[dataIndex]);
+    dataIndex += 1;
+
+    while (dataIndex < _data.length) {
+
+      var c = String.fromCharCode(_data[dataIndex]);
+      dataIndex += 1;
+
+      if (table.contains(s + c)) {
+
+        s = s + c;
+
+      } else {
+
+        bitOut.write(table.indexOf(s), bitLength);
+
+        if (table.size() < 0xfff) {
+
+          if (table.size() == 1 << bitLength) {
+            bitLength += 1;
+          }
+
+          table.add(s + c);
+        }
+
+        s = c;
+      }
+    }
+
+    bitOut.write(table.indexOf(s), bitLength);
+
+    // end code
+    bitOut.write(endCode, bitLength);
+
+    bitOut.flush();
+
+    return byteOut.toByteArray();
+  };
+
+  var lzwTable = function lzwTable() {
+
+    var _map = {};
+    var _size = 0;
+
+    var _this = {};
+
+    _this.add = function (key) {
+      if (_this.contains(key)) {
+        throw new Error('dup key:' + key);
+      }
+      _map[key] = _size;
+      _size += 1;
+    };
+
+    _this.size = function () {
+      return _size;
+    };
+
+    _this.indexOf = function (key) {
+      return _map[key];
+    };
+
+    _this.contains = function (key) {
+      return typeof _map[key] != 'undefined';
+    };
+
+    return _this;
+  };
+
+  return _this;
+};
+
+var createImgTag = function createImgTag(width, height, getPixel, alt) {
+
+  var gif = gifImage(width, height);
+  for (var y = 0; y < height; y += 1) {
+    for (var x = 0; x < width; x += 1) {
+      gif.setPixel(x, y, getPixel(x, y));
+    }
+  }
+
+  var b = byteArrayOutputStream();
+  gif.write(b);
+
+  var base64 = base64EncodeOutputStream();
+  var bytes = b.toByteArray();
+  for (var i = 0; i < bytes.length; i += 1) {
+    base64.writeByte(bytes[i]);
+  }
+  base64.flush();
+
+  var img = '';
+  img += 'data:image/gif;base64,';
+  img += base64;
+
+  return img;
+};
+
+//---------------------------------------------------------------------
+// returns qrcode function.
+
+var createQrCodeImg = function createQrCodeImg(text, options) {
+  options = options || {};
+  var typeNumber = options.typeNumber || 4;
+  var errorCorrectLevel = options.errorCorrectLevel || 'M';
+  var size = options.size || 500;
+
+  var qr;
+
+  try {
+    qr = qrcode(typeNumber, errorCorrectLevel || 'M');
+    qr.addData(text);
+    qr.make();
+  } catch (e) {
+    if (typeNumber >= 40) {
+      throw new Error('Text too long to encode');
+    } else {
+      return gen(text, {
+        size: size,
+        errorCorrectLevel: errorCorrectLevel,
+        typeNumber: typeNumber + 1 });
+
+    }
+  }
+
+  // calc cellsize and margin
+  var cellsize = parseInt(size / qr.getModuleCount());
+  var margin = parseInt((size - qr.getModuleCount() * cellsize) / 2);
+
+  return qr.createImgTag(cellsize, margin, size);
+};
+// var module = {}; 需要注释这一行，否则微信小程序无法使用
+module.exports = {
+  createQrCodeImg: createQrCodeImg };
+
+/***/ }),
+
 /***/ "E:\\Project\\HBuilderProjects\\Pandla\\main.js":
 /*!**************************************************!*\
   !*** E:/Project/HBuilderProjects/Pandla/main.js ***!
@@ -12146,11 +14835,17 @@ exports.userValidate = userValidate;var barValidate = function barValidate(barIn
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "E:\\Project\\HBuilderProjects\\Pandla\\App.vue"));
 
-var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ "E:\\Project\\HBuilderProjects\\Pandla\\store\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ "E:\\Project\\HBuilderProjects\\Pandla\\store\\index.js"));
+var _filter = _interopRequireDefault(__webpack_require__(/*! ./common/js/filter.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\filter.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 _vue.default.config.productionTip = false;
 
 _vue.default.prototype.$store = _store.default;
+
+
+Object.keys(_filter.default).forEach(function (key) {//返回filters对象中属性名组成的数组
+  _vue.default.filter(key, _filter.default[key]);
+});
 
 _App.default.mpType = 'app';
 
@@ -14172,6 +16867,342 @@ define('components/token.js',function(require, module, exports, window, document
 [['components/token-create-component']]]);
 });
 require('components/token.js');
+__wxRoute = 'components/wm-poster/wm-poster';__wxRouteBegin = true;__wxAppCurrentFile__ = 'components/wm-poster/wm-poster.js';
+
+define('components/wm-poster/wm-poster.js',function(require, module, exports, window, document, frames, self, location, navigator, localStorage, history, Caches, screen, alert, confirm, prompt, fetch, XMLHttpRequest, WebSocket, webkit, WeixinJSCore, Reporter, print, WeixinJSBridge){
+"use strict";(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["components/wm-poster/wm-poster"], {
+
+  /***/"./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!E:\\Project\\HBuilderProjects\\Pandla\\components\\wm-poster\\wm-poster.vue?vue&type=script&lang=js&":
+  /*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+                                                                                                                                                                                                                                                                                                                                                        !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!E:/Project/HBuilderProjects/Pandla/components/wm-poster/wm-poster.vue?vue&type=script&lang=js& ***!
+                                                                                                                                                                                                                                                                                                                                                        \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+  /*! no static exports found */
+  /***/function node_modulesBabelLoaderLibIndexJsNode_modulesDcloudioVueCliPluginUniPackagesWebpackPreprocessLoaderIndexJsNode_modulesDcloudioWebpackUniMpLoaderLibScriptJsNode_modulesVueLoaderLibIndexJsEProjectHBuilderProjectsPandlaComponentsWmPosterWmPosterVueVueTypeScriptLangJs(module, exports, __webpack_require__) {
+
+    "use strict";
+    /* WEBPACK VAR INJECTION */(function (uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__( /*! ./node_modules/@babel/runtime/regenerator */"./node_modules/@babel/runtime/regenerator/index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} //
+      //
+      //
+      //
+      //
+      //
+
+      var _this;var _default =
+      {
+        name: 'wm-poster',
+        props: {
+          CanvasID: { //CanvasID 等同于 canvas-id
+            Type: String,
+            default: 'PosterCanvas' },
+
+          imgSrc: { //展示图
+            Type: String,
+            default: '' },
+
+          QrSrc: { //二维码
+            Type: String,
+            default: '' },
+
+          Title: { //文本内容
+            Type: String,
+            default: '' },
+
+          TitleColor: { //标题颜色
+            Type: String,
+            default: '#333333' },
+
+          LineType: { //标题显示行数		（注超出2行显示会导致画布布局絮乱）
+            Type: [String, Boolean],
+            default: true },
+
+          PriceTxt: { //价格值
+            Type: String,
+            default: '99.99' },
+
+          PriceColor: { //价格颜色
+            Type: String,
+            default: '#000000' },
+
+          OriginalTxt: { //原价值
+            Type: String,
+            default: '199.99' },
+
+          OriginalColor: { //默认颜色（如原价与扫描二维码颜色）
+            Type: String,
+            default: '#b8b8b8' },
+
+          Width: { //画布宽度  (高度根据图片比例计算 单位upx)
+            Type: String,
+            default: 750 },
+
+          CanvasBg: { //canvas画布背景色
+            Type: String,
+            default: '#ffffff' },
+
+          Referrer: { //推荐人信息
+            Type: String,
+            default: '潘多拉星球内測1.0歡迎您' },
+
+          ViewDetails: { //描述提示文字
+            Type: String,
+            default: '长按或扫描识别二维码' } },
+
+
+        data: function data() {
+          return {
+            canvasW: 0,
+            canvasH: 0,
+            canvasImgSrc: '',
+            ctx: null };
+
+        },
+        methods: {
+          OnCanvas: function () {var _OnCanvas = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var C_W, C_P, C_Q, _strlineW, _imgInfo, _QrCode, r, q, imgW, _strLastIndex, _strHeight, _num, i;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                      uni.showLoading({
+                        title: '生成海報中' });
+
+                      _this.ctx = uni.createCanvasContext(_this.CanvasID, this);
+                      C_W = uni.upx2px(_this.Width),
+                      C_P = uni.upx2px(30),
+                      C_Q = uni.upx2px(150); //二维码或太阳码宽高
+                      _strlineW = 0; //文本宽度
+                      _context.next = 6;return _this.getImageInfo({ imgSrc: _this.imgSrc });case 6:_imgInfo = _context.sent;_context.next = 9;return (
+                        _this.getImageInfo({ imgSrc: _this.QrSrc }));case 9:_QrCode = _context.sent; //二维码或太阳码
+                      r = [_imgInfo.width, _imgInfo.height];
+                      q = [_QrCode.width, _QrCode.height];
+                      imgW = C_W - C_P * 2;
+                      if (r[0] != imgW) {
+                        r[1] = Math.floor(imgW / r[0] * r[1]);
+                        r[0] = imgW;
+                      }
+                      if (q[0] != C_Q) {
+                        q[1] = Math.floor(C_Q / q[0] * q[1]);
+                        q[0] = C_Q;
+                      }
+                      _this.canvasW = C_W;
+                      _this.canvasH = r[1] + q[1] + 128;
+                      _this.ctx.setFillStyle(_this.CanvasBg); //canvas背景颜色
+                      _this.ctx.fillRect(0, 0, C_W, _this.canvasH); //canvas画布大小
+
+                      //添加图片展示
+                      _this.ctx.drawImage(_imgInfo.path, C_P, C_P, r[0], r[1]);
+                      //添加图片展示 end
+
+                      //设置文本
+                      _this.ctx.setFontSize(uni.upx2px(28)); //设置标题字体大小
+                      _this.ctx.setFillStyle(_this.TitleColor); //设置标题文本颜色
+                      _strLastIndex = 0; //每次开始截取的字符串的索引
+                      _strHeight = r[1] + C_P * 2 + 10; //绘制字体距离canvas顶部的初始高度
+                      _num = 1;
+                      i = 0;case 26:if (!(i < _this.Title.length)) {_context.next = 48;break;}
+                      _strlineW += _this.ctx.measureText(_this.Title[i]).width;if (!(
+                      _strlineW > r[0])) {_context.next = 44;break;}if (!(
+                      _num == 2 && _this.LineType)) {_context.next = 37;break;}
+                      //文字换行数量大于二进行省略号处理
+                      _this.ctx.fillText(_this.Title.substring(_strLastIndex, i - 8) + '...', C_P, _strHeight);
+                      _strlineW = 0;
+                      _strLastIndex = i;
+                      _num++;return _context.abrupt("break", 48);case 37:
+
+
+                      _this.ctx.fillText(_this.Title.substring(_strLastIndex, i), C_P, _strHeight);
+                      _strlineW = 0;
+                      _strHeight += 20;
+                      _strLastIndex = i;
+                      _num++;case 42:_context.next = 45;break;case 44:
+
+                      if (i == _this.Title.length - 1) {
+                        _this.ctx.fillText(_this.Title.substring(_strLastIndex, i + 1), C_P, _strHeight);
+                        _strlineW = 0;
+                      }case 45:i++;_context.next = 26;break;case 48:
+
+                      //设置文本 end
+
+                      //设置价格
+                      _strlineW = C_P;
+                      _strHeight += uni.upx2px(60);
+                      if (_num == 1) {
+                        _strHeight += 20; //单行标题时占位符
+                      }
+
+                      if (_this.PriceTxt != '') {//判断是否有销售价格
+                        _this.ctx.setFillStyle(_this.PriceColor);
+                        _this.ctx.setFontSize(uni.upx2px(38));
+                        _this.ctx.fillText(_this.PriceTxt, _strlineW, _strHeight); //商品价格
+                        _strlineW += _this.ctx.measureText(_this.PriceTxt).width + uni.upx2px(10);
+                      }
+                      if (_this.PriceTxt != '' && _this.OriginalTxt != '') {//判断是否有销售价格且原价
+                        _this.ctx.setFillStyle(_this.OriginalColor);
+                        _this.ctx.setFontSize(uni.upx2px(24));
+                        _this.ctx.fillText(_this.OriginalTxt, _strlineW, _strHeight); //商品原价
+                      }
+                      _this.ctx.strokeStyle = _this.OriginalColor;
+                      _this.ctx.moveTo(_strlineW, _strHeight - uni.upx2px(10)); //起点
+                      _this.ctx.lineTo(_strlineW + _this.ctx.measureText(_this.OriginalTxt).width, _strHeight - uni.upx2px(10)); //终点
+                      _this.ctx.stroke();
+                      //设置价格 end
+
+                      //添加二维码
+                      _strHeight += uni.upx2px(20);
+                      _this.ctx.drawImage(_QrCode.path, r[0] - q[0] + C_P, _strHeight, q[0], q[1]);
+                      //添加二维码 end
+
+                      //添加推荐人与描述
+                      _this.ctx.setFillStyle(_this.TitleColor);
+                      _this.ctx.setFontSize(uni.upx2px(30));
+                      _this.ctx.fillText(_this.Referrer, C_P, _strHeight + q[1] / 2);
+                      _this.ctx.setFillStyle(_this.OriginalColor);
+                      _this.ctx.setFontSize(uni.upx2px(24));
+                      _this.ctx.fillText(_this.ViewDetails, C_P, _strHeight + q[1] / 2 + 20);
+                      //添加推荐人与描述 end
+
+                      //延迟后渲染至canvas上
+                      setTimeout(function () {
+                        _this.ctx.draw(true, function (ret) {
+                          _this.getNewImage();
+                        });
+                      }, 600);case 66:case "end":return _context.stop();}}}, _callee, this);}));function OnCanvas() {return _OnCanvas.apply(this, arguments);}return OnCanvas;}(),
+
+          getImageInfo: function () {var _getImageInfo = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(_ref) {var imgSrc;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:imgSrc = _ref.imgSrc;return _context2.abrupt("return",
+                      new Promise(function (resolve, errs) {
+                        uni.getImageInfo({
+                          src: imgSrc,
+                          success: function success(image) {
+                            resolve(image);
+                          },
+                          fail: function fail(err) {
+                            errs(err);
+                          } });
+
+                      }));case 2:case "end":return _context2.stop();}}}, _callee2, this);}));function getImageInfo(_x) {return _getImageInfo.apply(this, arguments);}return getImageInfo;}(),
+
+          getNewImage: function getNewImage() {
+            uni.canvasToTempFilePath({
+              canvasId: _this.CanvasID,
+              quality: 1,
+              complete: function complete(res) {
+                // console.log(res.tempFilePath);
+                uni.hideLoading();
+                _this.$emit('success', res);
+              } },
+            this);
+          } },
+
+
+        mounted: function mounted() {
+          _this = this;
+          _this.OnCanvas();
+        } };exports.default = _default;
+      /* WEBPACK VAR INJECTION */}).call(this, __webpack_require__( /*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */"./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]);
+
+    /***/},
+
+  /***/"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!E:\\Project\\HBuilderProjects\\Pandla\\components\\wm-poster\\wm-poster.vue?vue&type=template&id=7c5eec63&":
+  /*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+                                                                                                                                                                                                                                                                                                                                                                                !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!E:/Project/HBuilderProjects/Pandla/components/wm-poster/wm-poster.vue?vue&type=template&id=7c5eec63& ***!
+                                                                                                                                                                                                                                                                                                                                                                                \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+  /*! exports provided: render, staticRenderFns */
+  /***/function node_modulesVueLoaderLibLoadersTemplateLoaderJsNode_modulesDcloudioVueCliPluginUniPackagesWebpackPreprocessLoaderIndexJsNode_modulesDcloudioWebpackUniMpLoaderLibTemplateJsNode_modulesVueLoaderLibIndexJsEProjectHBuilderProjectsPandlaComponentsWmPosterWmPosterVueVueTypeTemplateId7c5eec63(module, __webpack_exports__, __webpack_require__) {
+
+    "use strict";
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */__webpack_require__.d(__webpack_exports__, "render", function () {return render;});
+    /* harmony export (binding) */__webpack_require__.d(__webpack_exports__, "staticRenderFns", function () {return staticRenderFns;});
+    var render = function render() {
+      var _vm = this;
+      var _h = _vm.$createElement;
+      var _c = _vm._self._c || _h;
+    };
+    var staticRenderFns = [];
+    render._withStripped = true;
+
+
+
+    /***/},
+
+  /***/"E:\\Project\\HBuilderProjects\\Pandla\\components\\wm-poster\\wm-poster.vue":
+  /*!*****************************************************************************!*\
+                                                                                        !*** E:/Project/HBuilderProjects/Pandla/components/wm-poster/wm-poster.vue ***!
+                                                                                        \*****************************************************************************/
+  /*! no static exports found */
+  /***/function EProjectHBuilderProjectsPandlaComponentsWmPosterWmPosterVue(module, __webpack_exports__, __webpack_require__) {
+
+    "use strict";
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony import */var _wm_poster_vue_vue_type_template_id_7c5eec63___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! ./wm-poster.vue?vue&type=template&id=7c5eec63& */"E:\\Project\\HBuilderProjects\\Pandla\\components\\wm-poster\\wm-poster.vue?vue&type=template&id=7c5eec63&");
+    /* harmony import */var _wm_poster_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__( /*! ./wm-poster.vue?vue&type=script&lang=js& */"E:\\Project\\HBuilderProjects\\Pandla\\components\\wm-poster\\wm-poster.vue?vue&type=script&lang=js&");
+    /* harmony reexport (unknown) */for (var __WEBPACK_IMPORT_KEY__ in _wm_poster_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) {if (__WEBPACK_IMPORT_KEY__ !== 'default') (function (key) {__webpack_require__.d(__webpack_exports__, key, function () {return _wm_poster_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key];});})(__WEBPACK_IMPORT_KEY__);}
+    /* harmony import */var _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__( /*! ./node_modules/vue-loader/lib/runtime/componentNormalizer.js */"./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+    /* normalize component */
+
+    var component = Object(_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+    _wm_poster_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+    _wm_poster_vue_vue_type_template_id_7c5eec63___WEBPACK_IMPORTED_MODULE_0__["render"],
+    _wm_poster_vue_vue_type_template_id_7c5eec63___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+    false,
+    null,
+    null,
+    null);
+
+
+
+    /* hot reload */
+    if (false) {var api;}
+    component.options.__file = "E:/Project/HBuilderProjects/Pandla/components/wm-poster/wm-poster.vue";
+    /* harmony default export */__webpack_exports__["default"] = component.exports;
+
+    /***/},
+
+  /***/"E:\\Project\\HBuilderProjects\\Pandla\\components\\wm-poster\\wm-poster.vue?vue&type=script&lang=js&":
+  /*!******************************************************************************************************!*\
+                                                                                                                 !*** E:/Project/HBuilderProjects/Pandla/components/wm-poster/wm-poster.vue?vue&type=script&lang=js& ***!
+                                                                                                                 \******************************************************************************************************/
+  /*! no static exports found */
+  /***/function EProjectHBuilderProjectsPandlaComponentsWmPosterWmPosterVueVueTypeScriptLangJs(module, __webpack_exports__, __webpack_require__) {
+
+    "use strict";
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony import */var _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_wm_poster_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! -!./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./wm-poster.vue?vue&type=script&lang=js& */"./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!E:\\Project\\HBuilderProjects\\Pandla\\components\\wm-poster\\wm-poster.vue?vue&type=script&lang=js&");
+    /* harmony import */var _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_wm_poster_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_wm_poster_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+    /* harmony reexport (unknown) */for (var __WEBPACK_IMPORT_KEY__ in _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_wm_poster_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) {if (__WEBPACK_IMPORT_KEY__ !== 'default') (function (key) {__webpack_require__.d(__webpack_exports__, key, function () {return _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_wm_poster_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key];});})(__WEBPACK_IMPORT_KEY__);}
+    /* harmony default export */__webpack_exports__["default"] = _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_wm_poster_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a;
+
+    /***/},
+
+  /***/"E:\\Project\\HBuilderProjects\\Pandla\\components\\wm-poster\\wm-poster.vue?vue&type=template&id=7c5eec63&":
+  /*!************************************************************************************************************!*\
+                                                                                                                       !*** E:/Project/HBuilderProjects/Pandla/components/wm-poster/wm-poster.vue?vue&type=template&id=7c5eec63& ***!
+                                                                                                                       \************************************************************************************************************/
+  /*! exports provided: render, staticRenderFns */
+  /***/function EProjectHBuilderProjectsPandlaComponentsWmPosterWmPosterVueVueTypeTemplateId7c5eec63(module, __webpack_exports__, __webpack_require__) {
+
+    "use strict";
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony import */var _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_wm_poster_vue_vue_type_template_id_7c5eec63___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__( /*! -!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./wm-poster.vue?vue&type=template&id=7c5eec63& */"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!E:\\Project\\HBuilderProjects\\Pandla\\components\\wm-poster\\wm-poster.vue?vue&type=template&id=7c5eec63&");
+    /* harmony reexport (safe) */__webpack_require__.d(__webpack_exports__, "render", function () {return _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_wm_poster_vue_vue_type_template_id_7c5eec63___WEBPACK_IMPORTED_MODULE_0__["render"];});
+
+    /* harmony reexport (safe) */__webpack_require__.d(__webpack_exports__, "staticRenderFns", function () {return _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_wm_poster_vue_vue_type_template_id_7c5eec63___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"];});
+
+
+
+    /***/} }]);
+
+
+;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
+'components/wm-poster/wm-poster-create-component',
+{
+  'components/wm-poster/wm-poster-create-component': function componentsWmPosterWmPosterCreateComponent(module, exports, __webpack_require__) {
+    __webpack_require__('./node_modules/@dcloudio/uni-app-plus/dist/index.js')['createComponent'](__webpack_require__("E:\\Project\\HBuilderProjects\\Pandla\\components\\wm-poster\\wm-poster.vue"));
+  } },
+
+[['components/wm-poster/wm-poster-create-component']]]);
+});
+require('components/wm-poster/wm-poster.js');
 
 __wxRoute = 'pages/index/index';__wxRouteBegin = true;__wxAppCurrentFile__ = 'pages/index/index.js';
 
@@ -14229,7 +17260,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _storage = __webpack_require__(/*! ../../common/js/storage.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\storage.js"); //
+
+
+var _storage = __webpack_require__(/*! ../../common/js/storage.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\storage.js");
+var _json = __webpack_require__(/*! ../../common/js/json.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\json.js"); //
 //
 //
 //
@@ -14271,7 +17305,9 @@ var _storage = __webpack_require__(/*! ../../common/js/storage.js */ "E:\\Projec
 //
 //
 //
-var _default = { data: function data() {return { slides: [{ number: 'static/img/slider/indexSlide1.svg' }, { number: 'static/img/slider/indexSlide2.svg' }, { number: 'static/img/slider/indexSlide3.svg' }, { number: 'static/img/slider/indexSlide4.svg' }], indicatorDots: false, autoplay: true, interval: 3000, duration: 1000, circular: true, currentSwiper: 0 };}, onLoad: function onLoad() {(0, _storage.skipIndex)();} };exports.default = _default;
+//
+//
+var _default = { data: function data() {return { slides: '', indicatorDots: false, autoplay: true, interval: 3000, duration: 1000, circular: true, currentSwiper: 0, sliderPercent: 25 };}, methods: { getIndexSlider: function getIndexSlider() {var _this = this;(0, _json.indexSlider)().then(function (data) {_this.slides = data;});}, sliderChange: function sliderChange() {this.sliderPercent == 100 ? this.sliderPercent = 25 : this.sliderPercent += 25;} }, onLoad: function onLoad() {(0, _storage.skipIndex)();this.getIndexSlider();} };exports.default = _default;
 
 /***/ }),
 
@@ -15360,35 +18396,13 @@ define('pages/main/main.js',function(require, module, exports, window, document,
 
 
 
+var _json = __webpack_require__(/*! ../../common/js/json.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\json.js");
 var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");var token = function token() {return __webpack_require__.e(/*! import() | components/token */ "components/token").then(__webpack_require__.bind(null, /*! ../../components/token.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\token.vue"));};var _default =
-
-
 
 {
   data: function data() {
     return {
-      slides: [{
-        number: 'static/img/slider/mainPact.svg',
-        linkTab: '../pact/pact' },
-      {
-        number: 'static/img/slider/mainDaily.svg',
-        linkTab: '../daily/daily' },
-      {
-        number: 'static/img/slider/mainNearby.svg',
-        linkTab: '../nearby/nearby' },
-      {
-        number: 'static/img/slider/mainEntertain.svg',
-        linkTab: '../entertain/entertain' },
-      {
-        number: 'static/img/slider/mainPan.svg',
-        linkTab: '../entertain/entertain' },
-      {
-        number: 'static/img/slider/mainStore.svg',
-        linkTab: '../store/store' },
-      {
-        number: 'static/img/slider/mainGame.svg',
-        linkTab: '../game/game' }],
-
+      slides: '',
       indicatorDots: false,
       autoplay: false,
       interval: 2000,
@@ -15418,7 +18432,16 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
       uni.switchTab({
         url: '../pan/pan' });
 
-    } } };exports.default = _default;
+    },
+    getMainSlider: function getMainSlider() {var _this = this;
+      (0, _json.mainSlider)().then(function (data) {
+        _this.slides = data;
+      });
+    } },
+
+  onLoad: function onLoad() {
+    this.getMainSlider();
+  } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
@@ -16077,7 +19100,19 @@ define('pages/daily/daily.js',function(require, module, exports, window, documen
 
 
 
+
+
+
+
+
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");var barrage = function barrage() {return __webpack_require__.e(/*! import() | components/barrage */ "components/barrage").then(__webpack_require__.bind(null, /*! ../../components/barrage.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\barrage.vue"));};var _default =
+
+
+
+
+
+
+
 
 {
   components: {
@@ -16087,14 +19122,19 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     return {
       dynInfo: '',
       commentInfo: '',
+      bulletList: '',
       following: false,
-      did: 0,
-      uid: 0,
+      did: 0, // 日志id
+      uid: 0, // 用户id
+      cid: 0, // 评论用户id
       beStatus: false,
       commContent: '',
+      commplaceholder: '  添加評論',
+      addType: '', // 发送按钮请求不同接口
       array: ['取消關注', '屏蔽用戶', '舉報用戶'],
       pickIndex: 0,
-      likeNumber: 0 };
+      likeNumber: 0,
+      comClass: 'comment-section' };
 
   },
   methods: {
@@ -16103,20 +19143,21 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       (0, _api.findAllDyn)().then(function (data) {
         _this.dynInfo = data;
         // this.likeNumber = 0; //重置点赞次数
+        // 第一个特殊，因为需要滑动后才能监听到swiperChange，所以第一个直接赋值
         if (loadTime == 1) {
           _this.did = _this.dynInfo[0].id;
           _this.uid = _this.dynInfo[0].uid;
         }
-        // 第一个特殊，因为需要滑动后才能监听到swiperChange，所以第一个直接赋值
-        if (_this.dynInfo[0].isOwn == 1) {
-          (0, _api.getComment)(_this.dynInfo[0].id).then(function (data) {
-            // if(data == 0) this.commentInfo.content = '0';
-            _this.commentInfo = data;
-            // console.log(this.commentInfo);
-          });
-        }
+        // 获取弹幕
+        (0, _api.getBullet)(_this.did).then(function (data) {
+          _this.bulletList = data.content;
+        });
+        (0, _api.getComment)(_this.did).then(function (data) {
+          // if(data == 0) this.commentInfo.content = '0';
+          _this.commentInfo = data;
+          // console.log(this.commentInfo);
+        });
       });
-
     },
     // 返回
     goBack: function goBack() {
@@ -16128,7 +19169,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     publishDyn: function publishDyn() {var _this2 = this;
       (0, _api.getImgTemp)().then(function (data) {
         _this2.$store.commit('setImgTemp', data);
-        console.log(_this2.$store.state.imgTemp, " at pages\\daily\\daily.vue:137");
+        console.log(_this2.$store.state.imgTemp, " at pages\\daily\\daily.vue:155");
         uni.navigateTo({
           url: 'publish' });
 
@@ -16150,7 +19191,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       this.pickIndex = e.target.value;
       if (e.target.value == 0) {//取消关注
         this.following = false;
-        console.log(this.uid, " at pages\\daily\\daily.vue:159");
+        console.log(this.uid, " at pages\\daily\\daily.vue:177");
         (0, _api.concern)(2, this.uid).then(function (data) {
           _this4.findDyn();
         });
@@ -16202,12 +19243,24 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
         title: '结束触摸，点击了' + this.likeNumber + '次' });
 
     },
+    // 改变评论样式表
+    showComm: function showComm() {
+      this.comClass == 'comment-section' ? this.comClass = 'comment-section-details' : this.comClass = 'comment-section';
+    },
     // 获取swiper滚动后日志值
     swiperChange: function swiperChange(e) {var _this5 = this;
-      this.following = false; //重置关注按钮状态
+      this.following = false; // 重置关注按钮状态
+      this.comClass = 'comment-section'; // 重置评论样式
+      this.addType = ''; // 重置发送按钮类型
+      this.commplaceholder = '  添加評論'; // 清除占位符
+
       // console.log(e.detail.current);
       this.did = this.dynInfo[e.detail.current].id;
       this.uid = this.dynInfo[e.detail.current].uid;
+      // 获取弹幕
+      (0, _api.getBullet)(this.did).then(function (data) {
+        _this5.bulletList = data.content;
+      });
       (0, _api.getComment)(this.did).then(function (data) {
         _this5.commentInfo = data;
         // console.log(this.commentInfo);
@@ -16217,19 +19270,47 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     addComm: function addComm() {var _this6 = this;
       // console.log(this.did);
       if (this.commContent != '') {
-        (0, _api.addComment)(this.commContent, this.did).then(function (data) {
-          (0, _api.getComment)(_this6.did).then(function (data) {
-            _this6.commentInfo = data;
-            _this6.commContent = '';
-            // console.log(this.commentInfo);
+        if (this.addType == 'reply') {
+          // console.log('刚刚是回复');
+          // console.log('cid' + this.cid);
+          // console.log('commContent' + this.commContent);
+          (0, _api.reply)(this.cid, this.commContent).then(function (data) {
+            _this6.findDyn(2);
           });
-        });
+        } else {
+          (0, _api.addComment)(this.commContent, this.did).then(function (data) {
+            (0, _api.getComment)(_this6.did).then(function (data) {
+              _this6.commentInfo = data;
+              _this6.commContent = '';
+              // console.log(this.commentInfo);
+            });
+            // 获取弹幕
+            (0, _api.getBullet)(_this6.did).then(function (data) {
+              _this6.bulletList = data.content;
+            });
+          });
+        }
+      }
+    },
+    // 回复评论
+    reply: function reply(cid, name) {
+      if (this.uid != uni.getStorageSync('USERS_KEY').id) {
+        this.commplaceholder = '@' + name;
+        this.addType = 'reply';
+        this.cid = cid;
       }
     } },
 
   onLoad: function onLoad() {
-    var loadTime = 1;
-    this.findDyn(loadTime);
+    this.findDyn(1);
+  },
+  onPullDownRefresh: function onPullDownRefresh() {//监听下拉刷新动作
+    console.log('onPullDownRefresh', " at pages\\daily\\daily.vue:291");
+    // 这里获取数据
+    setTimeout(function () {
+      //初始化数据
+      uni.stopPullDownRefresh(); //停止下拉刷新
+    }, 1000);
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
@@ -18072,27 +21153,6 @@ define('pages/user/user.js',function(require, module, exports, window, document,
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 
@@ -18936,6 +21996,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     getMyIndex: function getMyIndex() {var _this = this;
       (0, _api.getIndex)().then(function (data) {
         _this.propInfo = data;
+        // 限制小数点后为4位
       });
     },
     add: function add() {
@@ -18983,6 +22044,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var f0 = _vm._f("toFixed")(_vm.propInfo.balance, 4)
+
+  var f1 = _vm._f("toFixed")(_vm.propInfo.freeze, 4)
+
+  var f2 = _vm._f("toFixed")(_vm.propInfo.usable, 4)
+
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        f0: f0,
+        f1: f1,
+        f2: f2
+      }
+    }
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -19406,6 +22483,19 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var f0 = _vm._f("toFixed")(_vm.assetInfo.balance, 4)
+
+  var f1 = _vm._f("toFixed")(_vm.assetInfo.freeze, 4)
+
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        f0: f0,
+        f1: f1
+      }
+    }
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -19659,6 +22749,19 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var f0 = _vm._f("toFixed")(_vm.assetInfo.balance, 4)
+
+  var f1 = _vm._f("toFixed")(_vm.assetInfo.notFree, 4)
+
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        f0: f0,
+        f1: f1
+      }
+    }
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -20281,20 +23384,100 @@ define('pages/invite/invite.js',function(require, module, exports, window, docum
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-//
-//
-//
-//
-//
-//
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");
+var _json = __webpack_require__(/*! ../../common/js/json.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\json.js");
+
+
+var _wxqrcode = _interopRequireDefault(__webpack_require__(/*! ../../common/js/wxqrcode.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\wxqrcode.js"));
+var _image = __webpack_require__(/*! ../../common/js/image.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\image.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var wmPoster = function wmPoster() {return Promise.all(/*! import() | components/wm-poster/wm-poster */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/wm-poster/wm-poster")]).then(__webpack_require__.bind(null, /*! ../..//components/wm-poster/wm-poster.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\wm-poster\\wm-poster.vue"));};var _default = { data: function data() {return { assetInfo: '', listInfo: '', inviteCode: '', created: false, createImg: '' };}, components: { wmPoster: wmPoster }, methods: { getInvData: function getInvData() {var _this = this;(0, _json.invList)().then(function (data) {_this.listInfo = data; // console.log(this.listInfo);
+      });(0, _api.getInvCode)().then(function (data) {_this.inviteCode = data;});}, createPoster: function createPoster() {var _this2 = this;var URL = 'http://pandla.io?invCode=' + this.inviteCode;var img = _wxqrcode.default.createQrCodeImg(URL, { size: parseInt(300) //二维码大小  
+      });(0, _image.base64ToPath)(img).then(function (path) {console.log(path, " at pages\\invite\\invite.vue:76");_this2.createImg = path;}).catch(function (error) {console.error(error, " at pages\\invite\\invite.vue:79");});this.created = true;} },
+
+  onLoad: function onLoad() {
+    this.getInvData();
+  } };exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=style&index=0&lang=css&":
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!E:/Project/HBuilderProjects/Pandla/pages/invite/invite.vue?vue&type=style&index=0&lang=css& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/vue-loader/lib/index.js?!E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=style&index=0&id=1c621e1e&lang=scss&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-1!./node_modules/css-loader??ref--8-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/lib/loader.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/vue-loader/lib??vue-loader-options!E:/Project/HBuilderProjects/Pandla/pages/invite/invite.vue?vue&type=style&index=0&id=1c621e1e&lang=scss&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20302,10 +23485,10 @@ define('pages/invite/invite.js',function(require, module, exports, window, docum
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=template&id=1c621e1e&":
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!E:/Project/HBuilderProjects/Pandla/pages/invite/invite.vue?vue&type=template&id=1c621e1e& ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=template&id=1c621e1e&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!E:/Project/HBuilderProjects/Pandla/pages/invite/invite.vue?vue&type=template&id=1c621e1e&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -20334,10 +23517,10 @@ render._withStripped = true
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _invite_vue_vue_type_template_id_1c621e1e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./invite.vue?vue&type=template&id=1c621e1e& */ "E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=template&id=1c621e1e&");
+/* harmony import */ var _invite_vue_vue_type_template_id_1c621e1e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./invite.vue?vue&type=template&id=1c621e1e&scoped=true& */ "E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=template&id=1c621e1e&scoped=true&");
 /* harmony import */ var _invite_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./invite.vue?vue&type=script&lang=js& */ "E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=script&lang=js&");
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _invite_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _invite_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _invite_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./invite.vue?vue&type=style&index=0&lang=css& */ "E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _invite_vue_vue_type_style_index_0_id_1c621e1e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./invite.vue?vue&type=style&index=0&id=1c621e1e&lang=scss&scoped=true& */ "E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=style&index=0&id=1c621e1e&lang=scss&scoped=true&");
 /* harmony import */ var _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -20349,11 +23532,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _invite_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _invite_vue_vue_type_template_id_1c621e1e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _invite_vue_vue_type_template_id_1c621e1e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _invite_vue_vue_type_template_id_1c621e1e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _invite_vue_vue_type_template_id_1c621e1e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "1c621e1e",
   null
   
 )
@@ -20381,35 +23564,35 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=style&index=0&lang=css&":
-/*!***************************************************************************************************!*\
-  !*** E:/Project/HBuilderProjects/Pandla/pages/invite/invite.vue?vue&type=style&index=0&lang=css& ***!
-  \***************************************************************************************************/
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=style&index=0&id=1c621e1e&lang=scss&scoped=true&":
+/*!****************************************************************************************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/pages/invite/invite.vue?vue&type=style&index=0&id=1c621e1e&lang=scss&scoped=true& ***!
+  \****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!./invite.vue?vue&type=style&index=0&lang=css& */ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=style&index=0&lang=css&");
-/* harmony import */ var _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_2_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_style_index_0_id_1c621e1e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-1!./node_modules/css-loader??ref--8-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/lib/loader.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/vue-loader/lib??vue-loader-options!./invite.vue?vue&type=style&index=0&id=1c621e1e&lang=scss&scoped=true& */ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/vue-loader/lib/index.js?!E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=style&index=0&id=1c621e1e&lang=scss&scoped=true&");
+/* harmony import */ var _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_style_index_0_id_1c621e1e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_style_index_0_id_1c621e1e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_style_index_0_id_1c621e1e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_style_index_0_id_1c621e1e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_8_oneOf_1_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_1_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_8_oneOf_1_2_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_sass_loader_lib_loader_js_ref_8_oneOf_1_4_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_8_oneOf_1_5_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_style_index_0_id_1c621e1e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ "E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=template&id=1c621e1e&":
-/*!*************************************************************************************************!*\
-  !*** E:/Project/HBuilderProjects/Pandla/pages/invite/invite.vue?vue&type=template&id=1c621e1e& ***!
-  \*************************************************************************************************/
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=template&id=1c621e1e&scoped=true&":
+/*!*************************************************************************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/pages/invite/invite.vue?vue&type=template&id=1c621e1e&scoped=true& ***!
+  \*************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_template_id_1c621e1e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./invite.vue?vue&type=template&id=1c621e1e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=template&id=1c621e1e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_template_id_1c621e1e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_template_id_1c621e1e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./invite.vue?vue&type=template&id=1c621e1e&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!E:\\Project\\HBuilderProjects\\Pandla\\pages\\invite\\invite.vue?vue&type=template&id=1c621e1e&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_template_id_1c621e1e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_template_id_1c621e1e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_C_IDE_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_invite_vue_vue_type_template_id_1c621e1e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

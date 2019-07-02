@@ -147,6 +147,19 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var f0 = _vm._f("toFixed")(_vm.assetInfo.balance, 4)
+
+  var f1 = _vm._f("toFixed")(_vm.assetInfo.notFree, 4)
+
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        f0: f0,
+        f1: f1
+      }
+    }
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

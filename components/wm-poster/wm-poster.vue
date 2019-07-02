@@ -76,6 +76,9 @@ export default {
 	},
 	methods: {
 		async OnCanvas() {
+			uni.showLoading({
+				title: '生成海報中'
+			});
 			_this.ctx = uni.createCanvasContext(_this.CanvasID,this);
 			const C_W = uni.upx2px(_this.Width), //canvas宽度
 				C_P = uni.upx2px(30), //canvas Paddng 间距
@@ -197,6 +200,7 @@ export default {
 				quality: 1,
 				complete: (res) => {
 					// console.log(res.tempFilePath);
+					uni.hideLoading();
 					_this.$emit('success',res);
 				}
 			},this);

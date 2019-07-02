@@ -1,4 +1,6 @@
 {
-  "navigationBarTitleText": "邀請碼",
-  "usingComponents": {}
+  "navigationBarTitleText": "我的專屬邀請碼",
+  "usingComponents": {
+    "wm-poster": "/components/wm-poster/wm-poster"
+  }
 }
