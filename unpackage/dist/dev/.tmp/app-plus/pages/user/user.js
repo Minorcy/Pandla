@@ -59,6 +59,7 @@
 
 
 
+
 var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 
@@ -67,6 +68,8 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     return {
       userInfo: '',
       socialInfo: '',
+      userId: uni.getStorageSync('USERS_KEY').id,
+      avatar: '../../static/img/user/upload.svg',
       settings: [{
         src: '../../static/img/user/relNameAuth.svg',
         url: '../auth/auth',
@@ -115,6 +118,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     getUserInfo: function getUserInfo() {var _this = this;
       (0, _api.findByID)().then(function (data) {
         _this.userInfo = data;
+        _this.avatar = data.portrait;
       });
     },
     getSocialInfo: function getSocialInfo() {var _this2 = this;
@@ -123,14 +127,9 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       });
     },
     uploadAvatar: function uploadAvatar() {var _this3 = this;
-      (0, _api.upPicture)(uni.getStorageSync('USERS_KEY').id).then(function (data) {
-        if (data == 'success') {
-          (0, _api.findByID)().then(function (data) {
-            _this3.getUserInfo();
-          });
-        }
+      (0, _api.upPicture)(this.userId).then(function (data) {
+        _this3.avatar = data.id;
       });
-
     } }),
 
   onShow: function onShow() {

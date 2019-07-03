@@ -1,5 +1,5 @@
 let Token = uni.getStorageSync('USERS_KEY').token;
-const URL = 'http://printsn.com:8080/v1/';
+const URL = 'http://pandla.io:8080/v1/';
 const systemUrl = URL + 'system/';
 const fansUrl = URL + 'fans/';
 const dynUrl = URL + 'dyn/';
@@ -333,7 +333,7 @@ export const getComment = (did) => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success: (res) => {
-			// console.log(res.data.data);
+			console.log(res.data.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// if(res.data.status == 400) reject(0);
 			// else reject(res.data.msg);
@@ -744,7 +744,7 @@ export const sysVote = (tid, isWell) => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success: (res) => {
-			// console.log(res.data);
+			console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 		},
@@ -877,7 +877,7 @@ export const upPicture = (userId) => new Promise((resolve, reject) => {
 						icon: 'success',
 						duration: 1000
 					});
-					resolve('success');
+					resolve(jsonObj.data);
 					// avatar = jsonObj.data.id;
 				},
 				fail: (err) => {
@@ -926,18 +926,11 @@ export const upload = (imgTemp) => new Promise((resolve, reject) => {
 		filePath: imgTemp,
 		name: 'file',
 		success: (res) => {
-			console.log(res.data);
+			// console.log(res.data);
 			var jsonObj = JSON.parse(res.data);
-			console.log('uploadImage success, res is:', jsonObj.data);
-			console.log(jsonObj.data.id);
+			// console.log('uploadImage success, res is:', jsonObj.data);
+			// console.log(jsonObj.data.id);
 			resolve(jsonObj.data.id);
-			uni.showToast({
-				icon: 'none',
-				title: '發表成功'
-			});
-			uni.navigateBack({
-				delta: 1
-			});
 		},
 		fail: (err) => {
 			console.log('uploadImage fail', err);

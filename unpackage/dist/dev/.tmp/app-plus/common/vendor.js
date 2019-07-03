@@ -505,7 +505,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -6703,7 +6703,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -6724,14 +6724,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -6800,7 +6800,7 @@ var patch = function(oldVnode, vnode) {
         });
         var diffData = diff(data, mpData);
         if (Object.keys(diffData).length) {
-            if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+            if (Object({"VUE_APP_PLATFORM":"app-plus","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
                 console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
                     ']差量更新',
                     JSON.stringify(diffData));
@@ -9030,7 +9030,7 @@ module.exports = g;
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.createDyn = exports.upload = exports.getImgTemp = exports.upPicture = exports.getInvCode = exports.upLogo = exports.setBar = exports.getBarList = exports.sysVote = exports.isVote = exports.toTreIndex = exports.checkForTaskList = exports.getForBill = exports.getForBalance = exports.checkTaskList = exports.getBill = exports.getBalance = exports.getPollTop = exports.donate = exports.getIndex = exports.reply = exports.getBullet = exports.like = exports.concern = exports.addComment = exports.getComment = exports.findAllDyn = exports.getDyn = exports.getInfo = exports.upInfo = exports.getAllSocialInfo = exports.findByID = exports.changePwd = exports.register = exports.sendCode = exports.login = void 0;var Token = uni.getStorageSync('USERS_KEY').token;
-var URL = 'http://printsn.com:8080/v1/';
+var URL = 'http://pandla.io:8080/v1/';
 var systemUrl = URL + 'system/';
 var fansUrl = URL + 'fans/';
 var dynUrl = URL + 'dyn/';
@@ -9364,7 +9364,7 @@ exports.findAllDyn = findAllDyn;var getComment = function getComment(did) {retur
         'token': Token },
 
       success: function success(res) {
-        // console.log(res.data.data);
+        console.log(res.data.data, " at api\\api.js:336");
         if (res.data.status == 200) resolve(res.data.data);
         // if(res.data.status == 400) reject(0);
         // else reject(res.data.msg);
@@ -9775,7 +9775,7 @@ exports.isVote = isVote;var sysVote = function sysVote(tid, isWell) {return new 
         'token': Token },
 
       success: function success(res) {
-        // console.log(res.data);
+        console.log(res.data, " at api\\api.js:747");
         if (res.data.status == 200) resolve(res.data.data);
         // else reject(res.data.msg);
       },
@@ -9908,7 +9908,7 @@ exports.getInvCode = getInvCode;var upPicture = function upPicture(userId) {retu
               icon: 'success',
               duration: 1000 });
 
-            resolve('success');
+            resolve(jsonObj.data);
             // avatar = jsonObj.data.id;
           },
           fail: function fail(err) {
@@ -9957,21 +9957,14 @@ exports.getImgTemp = getImgTemp;var upload = function upload(imgTemp) {return ne
       filePath: imgTemp,
       name: 'file',
       success: function success(res) {
-        console.log(res.data, " at api\\api.js:929");
+        // console.log(res.data);
         var jsonObj = JSON.parse(res.data);
-        console.log('uploadImage success, res is:', jsonObj.data, " at api\\api.js:931");
-        console.log(jsonObj.data.id, " at api\\api.js:932");
+        // console.log('uploadImage success, res is:', jsonObj.data);
+        // console.log(jsonObj.data.id);
         resolve(jsonObj.data.id);
-        uni.showToast({
-          icon: 'none',
-          title: '發表成功' });
-
-        uni.navigateBack({
-          delta: 1 });
-
       },
       fail: function fail(err) {
-        console.log('uploadImage fail', err, " at api\\api.js:943");
+        console.log('uploadImage fail', err, " at api\\api.js:936");
         uni.showToast({
           icon: 'none',
           title: '上传失败,请勿选择超过4M的图片' });
@@ -10375,7 +10368,7 @@ function base64ToPath(base64) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {var URL = "http://47.100.228.211/images/json/";
+/* WEBPACK VAR INJECTION */(function(uni) {var URL = "http://47.244.27.153/images/json/";
 
 // 欢迎页幻灯片
 var indexSlider = function indexSlider() {return new Promise(function (resolve, reject) {
@@ -12878,6 +12871,23 @@ createPage(_store.default);
 
 /***/ }),
 
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\main.js?{\"page\":\"pages%2Fstrategy%2Fstrategy\"}":
+/*!*****************************************************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/main.js?{"page":"pages%2Fstrategy%2Fstrategy"} ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "E:\\Project\\HBuilderProjects\\Pandla\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _strategy = _interopRequireDefault(__webpack_require__(/*! ./pages/strategy/strategy.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\pages\\strategy\\strategy.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_strategy.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
 /***/ "E:\\Project\\HBuilderProjects\\Pandla\\main.js?{\"page\":\"pages%2Fuser%2Fupdate\"}":
 /*!***********************************************************************************!*\
   !*** E:/Project/HBuilderProjects/Pandla/main.js?{"page":"pages%2Fuser%2Fupdate"} ***!
@@ -12908,6 +12918,23 @@ createPage(_update.default);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
 var _user = _interopRequireDefault(__webpack_require__(/*! ./pages/user/user.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\pages\\user\\user.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_user.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "E:\\Project\\HBuilderProjects\\Pandla\\main.js?{\"page\":\"pages%2Fwelfare%2Fwelfare\"}":
+/*!***************************************************************************************!*\
+  !*** E:/Project/HBuilderProjects/Pandla/main.js?{"page":"pages%2Fwelfare%2Fwelfare"} ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "E:\\Project\\HBuilderProjects\\Pandla\\pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _welfare = _interopRequireDefault(__webpack_require__(/*! ./pages/welfare/welfare.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\pages\\welfare\\welfare.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_welfare.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),

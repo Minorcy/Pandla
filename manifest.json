@@ -91,9 +91,9 @@
             },
             "splashscreen" : {
                 "android" : {
-                    "xxhdpi" : "E:/桌面/1080.png",
-                    "xhdpi" : "E:/桌面/720.png",
-                    "hdpi" : "E:/桌面/480.png"
+                    "xxhdpi" : "E:/桌面/A-1080.png",
+                    "xhdpi" : "E:/桌面/A-720.png",
+                    "hdpi" : "E:/桌面/A-480.png"
                 },
                 "ios" : {
                     "iphone" : {
@@ -107,7 +107,7 @@
         },
         "splashscreen" : {
             "waiting" : false,
-            "alwaysShowBeforeRender" : false
+            "alwaysShowBeforeRender" : true
         }
     },
     /* SDK配置 */

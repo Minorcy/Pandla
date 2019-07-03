@@ -108,7 +108,7 @@ var _this;var _default =
                   q[0] = C_Q;
                 }
                 _this.canvasW = C_W;
-                _this.canvasH = r[1] + q[1] + 128;
+                _this.canvasH = r[1] + q[1] + 28;
                 _this.ctx.setFillStyle(_this.CanvasBg); //canvas背景颜色
                 _this.ctx.fillRect(0, 0, C_W, _this.canvasH); //canvas画布大小
 

@@ -61,11 +61,8 @@
 
 
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");
-var _validate = __webpack_require__(/*! ../../common/js/validate.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\validate.js");var mInput = function mInput() {return __webpack_require__.e(/*! import() | components/m-input */ "components/m-input").then(__webpack_require__.bind(null, /*! ../../components/m-input.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\m-input.vue"));};var logo = function logo() {return __webpack_require__.e(/*! import() | components/logo */ "components/logo").then(__webpack_require__.bind(null, /*! ../../components/logo.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\logo.vue"));};
+var _validate = __webpack_require__(/*! ../../common/js/validate.js */ "E:\\Project\\HBuilderProjects\\Pandla\\common\\js\\validate.js");var mInput = function mInput() {return __webpack_require__.e(/*! import() | components/m-input */ "components/m-input").then(__webpack_require__.bind(null, /*! ../../components/m-input.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\m-input.vue"));};var logo = function logo() {return __webpack_require__.e(/*! import() | components/logo */ "components/logo").then(__webpack_require__.bind(null, /*! ../../components/logo.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\logo.vue"));};var _default =
 
-var userId = uni.getStorageSync('USERS_KEY').id;
-// console.log(userId);
-var _default =
 {
   components: {
     mInput: mInput,
@@ -77,6 +74,7 @@ var _default =
       accIndex: 0,
       raceArray: ['亚洲人', '黑人', '拉美人', '中东人', '混血', '白人', '其它'],
       raceIndex: 0,
+      userId: uni.getStorageSync('USERS_KEY').id,
       userInfo: {
         age: '',
         name: '',
@@ -99,10 +97,8 @@ var _default =
       this.raceIndex = e.target.value;
     },
     uploadAvatar: function uploadAvatar() {var _this = this;
-      (0, _api.upPicture)(userId).then(function (data) {
-        if (data == 'success') {
-          _this.findInfo();
-        }
+      (0, _api.upPicture)(this.userId).then(function (data) {
+        _this.avatar = data.id;
       });
     },
     update: function update() {
@@ -111,8 +107,8 @@ var _default =
         this.userInfo.race = this.raceArray[this.raceIndex];
         // console.log('acctType:'+this.accArray[this.accIndex]);
         // console.log(this.userInfo);
-        // console.log(userId);
-        (0, _api.upInfo)(this.userInfo, userId);
+        // console.log(this.userId);
+        (0, _api.upInfo)(this.userInfo, this.userId);
       }
     },
     findInfo: function findInfo() {var _this2 = this;

@@ -2,7 +2,7 @@
     <view class="pages-content">
 		<view class="userInfo">
 			<image class="avatar" src="../../static/img/user/upload.svg" v-if="userInfo.portrait == null"></image>
-			<image class="portrait" :src="userInfo.portrait" v-else/>
+			<image class="portrait" :src="userInfo.portrait" @tap="preview" v-else/>
 			<p>{{userInfo.name}}</p>
 			<p>{{userInfo.age}}/{{userInfo.stature}}cm/{{userInfo.weight}}kg</p>
 			<p>{{userInfo.signature}}</p>
@@ -50,6 +50,21 @@
 					this.dynInfo = data.resp;
 					// console.log(this.dynInfo);
 				});
+			},
+			preview() {
+				const imgUrl = [this.userInfo.portrait];
+				uni.previewImage({
+					urls: imgUrl,
+					longPressActions: {
+						itemList: ['发送给朋友', '保存图片', '收藏'],
+						success: function(data) {
+							console.log('选中了第' + (data.tapIndex + 1) + '个按钮,第' + (data.index + 1) + '张图片');
+						},
+						fail: function(err) {
+							console.log(err.errMsg);
+						}
+					}
+				})
 			}
         },
 		onLoad(option) {

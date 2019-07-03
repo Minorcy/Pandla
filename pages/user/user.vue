@@ -4,11 +4,7 @@
 			<image class="edit" src="../../static/img/user/edit.svg"></image>
 		</navigator>
 		<view class="userInfo">
-			<image
-				class="avatar" 
-				src="../../static/img/user/upload.svg"
-				v-if="userInfo.portrait == null || userInfo.portrait == ''"></image>
-			<image class="portrait" :src="userInfo.portrait" @tap="uploadAvatar()" v-else/>
+			<image class="avatar" :src="avatar" @tap='uploadAvatar()' mode="aspectFill"/>
 			<p>{{userInfo.name}}</p>
 			<p>{{userInfo.age}}/{{userInfo.stature}}cm/{{userInfo.weight}}kg</p>
 			<p>{{userInfo.signature}}</p>
@@ -16,11 +12,11 @@
 		<view class="panInfo">
 			<view class="item-fans">
 				<p>{{socialInfo.fans}}</p>
-				<p>人氣</p>
+				<p>關注</p>
 			</view>|
 			<view class="item-focus">
 				<p>{{socialInfo.conn}}</p>
-				<p>關注</p>
+				<p>人氣</p>
 			</view>|
 			<view class="item-photo">
 				<p>{{socialInfo.dynm}}</p>
@@ -35,6 +31,11 @@
 			<navigator url="../purse/purse"><image src="../../static/img/user/purse.svg"></image></navigator>
 			<navigator url="../passport/passport"><image src="../../static/img/user/passport.svg"></image></navigator>
 		</view>
+		
+		<navigator class="item-strategy" url="../strategy/strategy">
+			<image src="../../static/img/user/strategy.svg"></image>
+			<text>星球攻略</text>
+		</navigator>
 		<view class="option" v-for="(item, index) in settings" :key="index">
 			<navigator class="input-row border" :url="item.url">
 				<image :src="item.src"></image>
@@ -57,6 +58,8 @@
 			return {
 				userInfo: '',
 				socialInfo: '',
+				userId: uni.getStorageSync('USERS_KEY').id,
+				avatar: '../../static/img/user/upload.svg',
 				settings: [{
 					src: '../../static/img/user/relNameAuth.svg',
 					url: '../auth/auth',
@@ -105,6 +108,7 @@
 			getUserInfo() {
 				findByID().then(data => {
 					this.userInfo = data;
+					this.avatar = data.portrait;
 				});
 			},
 			getSocialInfo() {
@@ -113,14 +117,9 @@
 				});
 			},
 			uploadAvatar() {
-				upPicture(uni.getStorageSync('USERS_KEY').id).then(data => {
-					if(data == 'success') {
-						findByID().then(data => {
-							this.getUserInfo();
-						});
-					}
+				upPicture(this.userId).then(data => {
+					this.avatar = data.id;
 				});
-
 			}
         },
 		onShow() {
@@ -150,6 +149,7 @@
 		height: 150upx;
 		margin: 0 auto;
 		margin-bottom: 30upx;
+		border-radius: 50%;
 	}
 	
 	.userInfo p {
@@ -190,6 +190,23 @@
 	.bag image{
 		width: 250upx;
 		height: 100upx;
+	}
+	
+	.item-strategy {
+		font-size: 28upx;
+		border-bottom: 1upx solid;
+		margin: 30upx 0upx 10upx 10upx;
+		padding-bottom: 10upx;
+		border-image: -webkit-linear-gradient(left, #03D5C7, #73AE0F) 50 50;
+		border-image: -o-linear-gradient(right, #03D5C7, #73AE0F);
+		border-image: -moz-linear-gradient(right, #03D5C7, #73AE0F);
+		border-image: liner-linear-gradient(#03D5C7, #73AE0F);
+	}
+	
+	.item-strategy image {
+		width: 40upx;
+		height: 40upx;
+		margin: 0 20upx -10upx 10upx;
 	}
 	
 	.option {

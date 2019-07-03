@@ -1,6 +1,6 @@
 <template>
 	<view class="pages-content">
-		<image src="../../static/img/main/opening.svg"></image>
+		<image src="../../static/img/opening.svg"></image>
 	</view>
 </template>
 

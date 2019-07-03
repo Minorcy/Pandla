@@ -67,6 +67,7 @@
 						title: '已投票'
 					});
 				} else {
+					console.log('投了票')
 					sysVote(this.voteId, isSupport);
 					this.treatyIndex();
 				}

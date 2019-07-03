@@ -30,6 +30,8 @@
     "pages/auth/auth",
     "pages/invite/invite",
     "pages/base/base",
+    "pages/strategy/strategy",
+    "pages/welfare/welfare",
     "pages/setting/setting",
     "pagesA/settingChat/settingChat"
   ],
@@ -76,8 +78,8 @@
   },
   "nvueCompiler": "weex",
   "splashscreen": {
-    "alwaysShowBeforeRender": false,
-    "autoclose": true
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
   },
   "appname": "Pandla",
   "compilerVersion": "2.0.1",

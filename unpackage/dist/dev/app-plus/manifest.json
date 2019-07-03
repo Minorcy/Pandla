@@ -33,8 +33,10 @@
       "concatenate": true
     },
     "splashscreen": {
-      "autoclose": false,
-      "waiting": false
+      "target": "id:1",
+      "autoclose": true,
+      "waiting": false,
+      "delay": 0
     },
     "popGesture": "close",
     "launchwebview": {
@@ -83,9 +85,9 @@
       },
       "splashscreen": {
         "android": {
-          "xxhdpi": "E:/桌面/1080.png",
-          "xhdpi": "E:/桌面/720.png",
-          "hdpi": "E:/桌面/480.png"
+          "xxhdpi": "E:/桌面/A-1080.png",
+          "xhdpi": "E:/桌面/A-720.png",
+          "hdpi": "E:/桌面/A-480.png"
         },
         "ios": {
           "iphone": {
