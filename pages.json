@@ -5,8 +5,7 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
-					"titleNView": false,
-					"bounce": "none"
+					"titleNView": false
 				}
 			}
 		}, 

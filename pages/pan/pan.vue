@@ -75,7 +75,7 @@
 		</view>
 		<view class="description">
 			<p>
-				潘多拉星球將聯合各國公益組織，以及星球居民建設1億枚PAN弊的公益基金池，基金池的資產將用於支持LGBT的公益事業，資金的使用及用處，將以區塊上傳到鏈上，任何人都可以進行查詢，以保證資金的規範使用。
+				潘多拉星球將聯合各國公益組織，以及星球居民建設1億枚PAN弊的公益基金池，基金池的資產將用於支持LGBT的公益事業，資產的使用及用處，將生成區塊上傳到鏈上，任何人都可以進行查詢，以保證資產的規範使用。
 			</p>
 			<p>活動時間：2019年7月3至2019年7月15</p>
 		</view>
@@ -329,6 +329,7 @@
 	.donate button {
 		margin-right: 0;
 		font-size: 23upx;
+		padding-top: 2upx;
 		color: #EFEFF4;
 		border-radius: 50upx;
 		background-color: #CD2626;
