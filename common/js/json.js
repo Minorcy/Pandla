@@ -1,4 +1,4 @@
-const URL = "http://47.100.228.211/images/json/";
+const URL = "http://47.244.27.153/images/json/";
 
 // 欢迎页幻灯片
 const indexSlider = () => new Promise((resolve, reject) => {

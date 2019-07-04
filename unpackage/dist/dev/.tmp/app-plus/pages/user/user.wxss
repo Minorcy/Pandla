@@ -24,6 +24,8 @@
 	height: 150rpx;
 	margin: 0 auto;
 	margin-bottom: 30rpx;
+	-webkit-border-radius: 50%;
+	        border-radius: 50%;
 }
 .userInfo ._p.data-v-049f5804 {
 	font-size: 25rpx;
@@ -77,6 +79,22 @@
 .bag image.data-v-049f5804{
 	width: 250rpx;
 	height: 100rpx;
+}
+.item-strategy.data-v-049f5804 {
+	font-size: 28rpx;
+	border-bottom: 1rpx solid;
+	margin: 30rpx 0rpx 10rpx 10rpx;
+	padding-bottom: 10rpx;
+	-webkit-border-image: -webkit-linear-gradient(left, #03D5C7, #73AE0F) 50 50;
+	        border-image: -webkit-linear-gradient(left, #03D5C7, #73AE0F) 50 50;
+	-o-border-image: -o-linear-gradient(right, #03D5C7, #73AE0F);
+	   border-image: -o-linear-gradient(right, #03D5C7, #73AE0F);
+	border-image: liner-linear-gradient(#03D5C7, #73AE0F);
+}
+.item-strategy image.data-v-049f5804 {
+	width: 40rpx;
+	height: 40rpx;
+	margin: 0 20rpx -10rpx 10rpx;
 }
 .option.data-v-049f5804 {
 	font-size: 28rpx;

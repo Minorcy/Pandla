@@ -302,6 +302,25 @@
 				}
 			}
 		},
+		{
+			"path": "pages/strategy/strategy",
+			"style": {
+				"navigationBarTitleText": "星球攻略",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		
+		{
+			"path": "pages/welfare/welfare",
+			"style": {
+				"navigationBarTitleText": "星球公益",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
 		
 		{
 			"path": "pages/setting/setting",

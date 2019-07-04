@@ -98,7 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -161,8 +161,20 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
 //
 //
 var _default = { data: function data() {return { userInfo: '', dynInfo: '', statusInfo: '', uid: '' };}, methods: { getUserInfo: function getUserInfo() {var _this = this;(0, _api.getInfo)(this.uid).then(function (data) {_this.userInfo = data;});(0, _api.getDyn)(this.uid).then(function (data) {_this.dynInfo = data.resp; // console.log(this.dynInfo);
-      });} }, onLoad: function onLoad(option) {// console.log(option.uid);
-    this.uid = option.uid;}, onShow: function onShow() {this.getUserInfo();} };exports.default = _default;
+      });}, preview: function preview() {var imgUrl = [this.userInfo.portrait];uni.previewImage({ urls: imgUrl, longPressActions: { itemList: ['发送给朋友', '保存图片', '收藏'], success: function success(data) {console.log('选中了第' + (data.tapIndex + 1) + '个按钮,第' + (data.index + 1) + '张图片', " at pages/daily/userInfo.vue:61");}, fail: function fail(err) {console.log(err.errMsg, " at pages/daily/userInfo.vue:64");
+          } } });
+
+
+    } },
+
+  onLoad: function onLoad(option) {
+    // console.log(option.uid);
+    this.uid = option.uid;
+  },
+  onShow: function onShow() {
+    this.getUserInfo();
+  } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
 

@@ -98,7 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -145,7 +145,10 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
 //
 //
 //
-var _default = { data: function data() {return { imgTemp: this.$store.state.imgTemp, dynContent: '', location: '所在位置', showType: '誰可以看', remain: '提醒誰看' };}, onNavigationBarButtonTap: function onNavigationBarButtonTap() {(0, _api.upload)(this.imgTemp);(0, _api.createDyn)(this.dynContent);} };exports.default = _default;
+var _default = { data: function data() {return { imgTemp: this.$store.state.imgTemp, dynContent: '', location: '所在位置', showType: '誰可以看', remain: '提醒誰看' };}, onNavigationBarButtonTap: function onNavigationBarButtonTap() {var _this = this;(0, _api.upload)(this.imgTemp).then(function (data) {if (data != '') {(0, _api.createDyn)(_this.dynContent).then(function (data) {uni.showToast({ icon: 'none', title: '發表成功' });uni.navigateBack({ delta: 1 });});}
+    });
+  } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
 

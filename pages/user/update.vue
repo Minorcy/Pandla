@@ -2,7 +2,7 @@
     <view class="content">
         <view class="input-group">
 		
-		<image :src="avatar" @tap='uploadAvatar()'/>
+		<image :src="avatar" @tap='uploadAvatar()' mode="aspectFill"/>
              <view class="input-row border">
 				 <text class="title">昵称：</text>
                 <m-input type="text" v-model="userInfo.name" focus clearable></m-input>
@@ -52,9 +52,6 @@
 	import logo from '../../components/logo.vue';
 	import {upPicture, upInfo, findByID} from '../../api/api.js';
 	import {userValidate} from '../../common/js/validate.js';
-
-	let userId = uni.getStorageSync('USERS_KEY').id;
-	// console.log(userId);
 	
     export default {
         components: {
@@ -67,6 +64,7 @@
 				accIndex: 0,
 				raceArray: ['亚洲人', '黑人', '拉美人', '中东人', '混血', '白人', '其它'],
 				raceIndex: 0,
+				userId: uni.getStorageSync('USERS_KEY').id,
 				userInfo: {
 					age: '',
 					name: '',
@@ -89,10 +87,8 @@
 				this.raceIndex = e.target.value;
 			},
 			uploadAvatar() {
-				upPicture(userId).then(data => {
-					if(data == 'success') {
-						this.findInfo();
-					}
+				upPicture(this.userId).then(data => {
+					this.avatar = data.id;
 				});
 			},
 			update() {
@@ -101,8 +97,8 @@
 					this.userInfo.race = this.raceArray[this.raceIndex];
 					// console.log('acctType:'+this.accArray[this.accIndex]);
 					// console.log(this.userInfo);
-					// console.log(userId);
-					upInfo(this.userInfo, userId);
+					// console.log(this.userId);
+					upInfo(this.userInfo, this.userId);
 				}
 			},
 			findInfo() {
@@ -146,6 +142,12 @@
 	
 	text {
 		color: #9E9E9E;
+	}
+	
+	picker {
+		width: 100%;
+		margin-left: 30upx;
+		margin-top: 5upx;
 	}
 	
 	.uni-input {

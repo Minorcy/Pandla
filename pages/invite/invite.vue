@@ -24,7 +24,7 @@
 			<text>{{inviteCode}}</text>
 		</view>
 		<wm-poster
-			imgSrc="http://47.100.228.211/images/static/img/poster/poster.svg"
+			imgSrc="http://47.244.27.153/images/static/img/poster/poster.png"
 			:QrSrc="createImg"
 			Title="僅限前5萬名星球居民"
 			PriceTxt="注冊送1000魔法原力"

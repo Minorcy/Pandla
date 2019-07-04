@@ -14,7 +14,7 @@
 		</view>
 		<view class="header-border" style="border:0.1upx solid #8F8F94;">
 			<image src="../../static/img/main/notice.png" class="header-icon" />
-			<text>公益基金池建設中，捐贈10個token星球返回10個</text>
+			<text>公益基金池建設中，首次捐贈10個token星球返回10個</text>
 		</view>
 		<view class="token-area" :style="{'background-image':'url('+bgColor+')'}">
 			<!-- <view class="welfare-content" @tap="toPan">

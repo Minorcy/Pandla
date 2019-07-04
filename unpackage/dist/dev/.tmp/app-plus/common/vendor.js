@@ -9,7 +9,7 @@
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.createDyn = exports.upload = exports.getImgTemp = exports.upPicture = exports.getInvCode = exports.upLogo = exports.setBar = exports.getBarList = exports.sysVote = exports.isVote = exports.toTreIndex = exports.checkForTaskList = exports.getForBill = exports.getForBalance = exports.checkTaskList = exports.getBill = exports.getBalance = exports.getPollTop = exports.donate = exports.getIndex = exports.reply = exports.getBullet = exports.like = exports.concern = exports.addComment = exports.getComment = exports.findAllDyn = exports.getDyn = exports.getInfo = exports.upInfo = exports.getAllSocialInfo = exports.findByID = exports.changePwd = exports.register = exports.sendCode = exports.login = void 0;var Token = uni.getStorageSync('USERS_KEY').token;
-var URL = 'http://printsn.com:8080/v1/';
+var URL = 'http://pandla.io:8080/v1/';
 var systemUrl = URL + 'system/';
 var fansUrl = URL + 'fans/';
 var dynUrl = URL + 'dyn/';
@@ -343,7 +343,7 @@ exports.findAllDyn = findAllDyn;var getComment = function getComment(did) {retur
         'token': Token },
 
       success: function success(res) {
-        // console.log(res.data.data);
+        console.log(res.data.data, " at api/api.js:336");
         if (res.data.status == 200) resolve(res.data.data);
         // if(res.data.status == 400) reject(0);
         // else reject(res.data.msg);
@@ -754,7 +754,7 @@ exports.isVote = isVote;var sysVote = function sysVote(tid, isWell) {return new 
         'token': Token },
 
       success: function success(res) {
-        // console.log(res.data);
+        console.log(res.data, " at api/api.js:747");
         if (res.data.status == 200) resolve(res.data.data);
         // else reject(res.data.msg);
       },
@@ -887,7 +887,7 @@ exports.getInvCode = getInvCode;var upPicture = function upPicture(userId) {retu
               icon: 'success',
               duration: 1000 });
 
-            resolve('success');
+            resolve(jsonObj.data);
             // avatar = jsonObj.data.id;
           },
           fail: function fail(err) {
@@ -936,21 +936,14 @@ exports.getImgTemp = getImgTemp;var upload = function upload(imgTemp) {return ne
       filePath: imgTemp,
       name: 'file',
       success: function success(res) {
-        console.log(res.data, " at api/api.js:929");
+        // console.log(res.data);
         var jsonObj = JSON.parse(res.data);
-        console.log('uploadImage success, res is:', jsonObj.data, " at api/api.js:931");
-        console.log(jsonObj.data.id, " at api/api.js:932");
+        // console.log('uploadImage success, res is:', jsonObj.data);
+        // console.log(jsonObj.data.id);
         resolve(jsonObj.data.id);
-        uni.showToast({
-          icon: 'none',
-          title: '發表成功' });
-
-        uni.navigateBack({
-          delta: 1 });
-
       },
       fail: function fail(err) {
-        console.log('uploadImage fail', err, " at api/api.js:943");
+        console.log('uploadImage fail', err, " at api/api.js:936");
         uni.showToast({
           icon: 'none',
           title: '上传失败,请勿选择超过4M的图片' });
@@ -1354,7 +1347,7 @@ function base64ToPath(base64) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {var URL = "http://47.100.228.211/images/json/";
+/* WEBPACK VAR INJECTION */(function(uni) {var URL = "http://47.244.27.153/images/json/";
 
 // 欢迎页幻灯片
 var indexSlider = function indexSlider() {return new Promise(function (resolve, reject) {
@@ -3857,6 +3850,23 @@ createPage(_store.default);
 
 /***/ }),
 
+/***/ "../../../../../../Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/main.js?{\"page\":\"pages%2Fstrategy%2Fstrategy\"}":
+/*!********************************************************************************************************************!*\
+  !*** /Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/main.js?{"page":"pages%2Fstrategy%2Fstrategy"} ***!
+  \********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _strategy = _interopRequireDefault(__webpack_require__(/*! ./pages/strategy/strategy.vue */ "../../../../../../Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/pages/strategy/strategy.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_strategy.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
 /***/ "../../../../../../Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/main.js?{\"page\":\"pages%2Fuser%2Fupdate\"}":
 /*!**************************************************************************************************************!*\
   !*** /Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/main.js?{"page":"pages%2Fuser%2Fupdate"} ***!
@@ -3887,6 +3897,23 @@ createPage(_update.default);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
 var _user = _interopRequireDefault(__webpack_require__(/*! ./pages/user/user.vue */ "../../../../../../Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/pages/user/user.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_user.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
+
+/***/ }),
+
+/***/ "../../../../../../Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/main.js?{\"page\":\"pages%2Fwelfare%2Fwelfare\"}":
+/*!******************************************************************************************************************!*\
+  !*** /Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/main.js?{"page":"pages%2Fwelfare%2Fwelfare"} ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../../Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/pages.json");
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _welfare = _interopRequireDefault(__webpack_require__(/*! ./pages/welfare/welfare.vue */ "../../../../../../Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/pages/welfare/welfare.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_welfare.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["createPage"]))
 
 /***/ }),

@@ -176,7 +176,8 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
 //
 //
 //
-var _default = { data: function data() {return { labelList: '', voteList: '', voteId: this.$store.state.voteValue.voteId, btnStatus: this.$store.state.voteValue.voteStatus == 0 ? true : false };}, methods: { treatyIndex: function treatyIndex() {var _this = this;(0, _api.toTreIndex)().then(function (data) {_this.labelList = data[0];});(0, _api.isVote)(this.voteId).then(function (data) {_this.voteList = data;_this.voteList.accRatio = Math.round(_this.voteList.accRatio);_this.voteList.noaccRatio = Math.round(_this.voteList.noaccRatio);});}, vote: function vote(isSupport, voStatus) {if (voStatus) {uni.showToast({ icon: 'none', title: '已投票' });} else {(0, _api.sysVote)(this.voteId, isSupport);this.treatyIndex();}} }, onLoad: function onLoad() {this.treatyIndex();}, onReady: function onReady() {uni.setNavigationBarTitle({
+var _default = { data: function data() {return { labelList: '', voteList: '', voteId: this.$store.state.voteValue.voteId, btnStatus: this.$store.state.voteValue.voteStatus == 0 ? true : false };}, methods: { treatyIndex: function treatyIndex() {var _this = this;(0, _api.toTreIndex)().then(function (data) {_this.labelList = data[0];});(0, _api.isVote)(this.voteId).then(function (data) {_this.voteList = data;_this.voteList.accRatio = Math.round(_this.voteList.accRatio);_this.voteList.noaccRatio = Math.round(_this.voteList.noaccRatio);});}, vote: function vote(isSupport, voStatus) {if (voStatus) {uni.showToast({ icon: 'none', title: '已投票' });} else {console.log('投了票', " at pages/pact/pactVoteDetail.vue:70");(0, _api.sysVote)(this.voteId, isSupport);this.treatyIndex();}} }, onLoad: function onLoad() {this.treatyIndex();}, onReady: function onReady() {
+    uni.setNavigationBarTitle({
       title: this.$store.state.voteValue.voteName });
 
     // console.log(this.$store.state.voteValue.voteId);

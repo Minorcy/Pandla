@@ -1,3 +1,4 @@
+<!-- 请配合后端接口重新将日志页面进行组件化，分离所有点赞，评论等功能 -->
 <template>
 	<view class="pages-content">
 		<!-- 顶部导航栏 -->
@@ -64,7 +65,7 @@
 					<!-- 评论 -->
 					<view :class="comClass" v-for="(ite, ind) in commentInfo" :key="ind">
 						<!-- <view v-for="(iteItem, indIndex) in ite" :key="indIndex"> -->
-							<p class="comment-section-comm" @tap="reply(ite.id, ite.name)">
+							<p class="comment-section-comm" @tap="replyComm(ite.id, ite.name, ite.uid)">
 								<text>{{ite.name}}:</text>
 								<text>{{ite.content}}</text>
 							</p>
@@ -236,6 +237,7 @@
 				this.comClass = 'comment-section'; // 重置评论样式
 				this.addType = ''; // 重置发送按钮类型
 				this.commplaceholder = '  添加評論'; // 清除占位符
+				this.commentInfo = '' // 清空评论
 				
 				// console.log(e.detail.current);
 				this.did = this.dynInfo[e.detail.current].id;
@@ -276,15 +278,15 @@
 				}
 			},
 			// 回复评论
-			reply(cid, name) {
-				if(this.uid != uni.getStorageSync('USERS_KEY').id) {
+			replyComm(cid, name, comUid) {
+				if(comUid != uni.getStorageSync('USERS_KEY').id) {
 					this.commplaceholder = '@' + name;
 					this.addType = 'reply';
 					this.cid = cid;
 				}
 			}
 		},
-		onLoad() {
+		onShow() {
 			this.findDyn(1);
 		},
 		onPullDownRefresh() { //监听下拉刷新动作

@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "",
-  "bounce": "none",
-  "usingComponents": {
-    "m-input": "/components/m-input"
-  }
-}

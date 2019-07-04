@@ -188,6 +188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/api/api.js");var barrage = function barrage() {return __webpack_require__.e(/*! import() | components/barrage */ "components/barrage").then(__webpack_require__.bind(null, /*! ../../components/barrage.vue */ "../../../../../../Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/components/barrage.vue"));};var _default =
 
 
@@ -252,7 +253,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
     publishDyn: function publishDyn() {var _this2 = this;
       (0, _api.getImgTemp)().then(function (data) {
         _this2.$store.commit('setImgTemp', data);
-        console.log(_this2.$store.state.imgTemp, " at pages/daily/daily.vue:155");
+        console.log(_this2.$store.state.imgTemp, " at pages/daily/daily.vue:156");
         uni.navigateTo({
           url: 'publish' });
 
@@ -274,7 +275,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
       this.pickIndex = e.target.value;
       if (e.target.value == 0) {//取消关注
         this.following = false;
-        console.log(this.uid, " at pages/daily/daily.vue:177");
+        console.log(this.uid, " at pages/daily/daily.vue:178");
         (0, _api.concern)(2, this.uid).then(function (data) {
           _this4.findDyn();
         });
@@ -336,6 +337,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
       this.comClass = 'comment-section'; // 重置评论样式
       this.addType = ''; // 重置发送按钮类型
       this.commplaceholder = '  添加評論'; // 清除占位符
+      this.commentInfo = ''; // 清空评论
 
       // console.log(e.detail.current);
       this.did = this.dynInfo[e.detail.current].id;
@@ -376,19 +378,19 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
       }
     },
     // 回复评论
-    reply: function reply(cid, name) {
-      if (this.uid != uni.getStorageSync('USERS_KEY').id) {
+    replyComm: function replyComm(cid, name, comUid) {
+      if (comUid != uni.getStorageSync('USERS_KEY').id) {
         this.commplaceholder = '@' + name;
         this.addType = 'reply';
         this.cid = cid;
       }
     } },
 
-  onLoad: function onLoad() {
+  onShow: function onShow() {
     this.findDyn(1);
   },
   onPullDownRefresh: function onPullDownRefresh() {//监听下拉刷新动作
-    console.log('onPullDownRefresh', " at pages/daily/daily.vue:291");
+    console.log('onPullDownRefresh', " at pages/daily/daily.vue:293");
     // 这里获取数据
     setTimeout(function () {
       //初始化数据
