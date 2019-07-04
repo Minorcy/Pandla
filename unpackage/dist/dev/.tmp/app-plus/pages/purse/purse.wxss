@@ -24,13 +24,13 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.pan-group.data-v-2d573cd1 {
+.pan-group.data-v-53120364 {
   margin: 50rpx 50rpx 0 50rpx;
   -webkit-border-radius: 10rpx;
           border-radius: 10rpx;
   overflow: hidden;
 }
-.pan-data.data-v-2d573cd1 {
+.pan-data.data-v-53120364 {
   padding: 20rpx;
   border: 5rpx solid;
   border-bottom: none;
@@ -42,14 +42,14 @@
      border-image: -o-linear-gradient(right, #03D5C7, #73AE0F);
   border-image: liner-linear-gradient(#03D5C7, #73AE0F);
 }
-.pan-data-pan.data-v-2d573cd1 {
+.pan-data-pan.data-v-53120364 {
     font-size: 25rpx;
 }
-.pan-data-bal.data-v-2d573cd1 {
+.pan-data-bal.data-v-53120364 {
     margin: 20rpx 0 40rpx 0;
     font-size: 45rpx;
 }
-.pan-data-link.data-v-2d573cd1 {
+.pan-data-link.data-v-53120364 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -66,24 +66,24 @@
     padding: 0 50rpx;
     font-size: 25rpx;
 }
-.pan-data-link-item.data-v-2d573cd1 {
+.pan-data-link-item.data-v-53120364 {
       color: #007AFF;
       text-decoration: underline;
 }
-.pan-list.data-v-2d573cd1 {
+.pan-list.data-v-53120364 {
   border: 1rpx solid #979797;
   -webkit-border-radius: 10rpx;
           border-radius: 10rpx;
   margin: -5rpx 20rpx;
   font-size: 35rpx;
 }
-.pan-list-label.data-v-2d573cd1 {
+.pan-list-label.data-v-53120364 {
     padding: 20rpx;
 }
-.pan-list-ul.data-v-2d573cd1 {
+.pan-list-ul.data-v-53120364 {
     padding: 0 50rpx;
 }
-.pan-list-li.data-v-2d573cd1 {
+.pan-list-li.data-v-53120364 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -100,18 +100,18 @@
     padding: 20rpx 0;
     border-bottom: 1rpx solid #979797;
 }
-.pan-list-action.data-v-2d573cd1 {
+.pan-list-action.data-v-53120364 {
     font-size: 30rpx;
 }
-.pan-list-time.data-v-2d573cd1 {
+.pan-list-time.data-v-53120364 {
     font-size: 25rpx;
     color: #979797;
 }
-.pan-list-number.data-v-2d573cd1 {
+.pan-list-number.data-v-53120364 {
     color: #EFEFF4;
     font-size: 30rpx;
 }
-.pan-list-load.data-v-2d573cd1 {
+.pan-list-load.data-v-53120364 {
     background-color: transparent;
     color: #EFEFF4;
     text-decoration: underline;
