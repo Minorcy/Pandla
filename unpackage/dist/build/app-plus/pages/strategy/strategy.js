@@ -1,2 +1,0 @@
-setCssToHead([".",[1],"pages-content { font-size: ",[0,30],"; }\n",],undefined,{path:"./pages/strategy/strategy.wxss"})();
-document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/strategy/strategy.wxml') } }));

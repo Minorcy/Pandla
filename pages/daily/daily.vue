@@ -15,16 +15,8 @@
 				<swiper-item v-for="(item, index) in dynInfo" :key="index">
 					<view class="userInfo">
 						<view>
-							<image
-								class="avatar"
-								:src="item.portrait" 
-								@tap="userInfo()"
-								mode="aspectFill"></image>
-							<image 
-								class="folllow"
-								src="../../static/img/main/daily/follow.svg" 
-								@tap="userFollow()" 
-								v-if="item.following == 0 && item.isOwn == 0  && following == false">
+							<image class="avatar" :src="item.portrait" @tap="userInfo()" mode="aspectFill"></image>
+							<image class="folllow" src="../../static/img/main/daily/follow.svg" @tap="userFollow()" v-if="item.following == 0 && item.isOwn == 0  && following == false">
 							</image>
 						</view>
 						<view>
@@ -34,11 +26,11 @@
 						<!-- <image class="img-option" src="../../static/img/main/daily/option.svg"></image> -->
 						<view @change.stop="behaviour()">
 							<picker @change="bindPickerChange" :value="pickIndex" :range="array" v-if="item.isOwn == 0">
-								<image class="btn-behaviour" src="../../static/img/main/daily/option.svg" @tap="behaviour()"/>
+								<image class="btn-behaviour" src="../../static/img/main/daily/option.svg" @tap="behaviour()" />
 								<!-- <view class="uni-input">{{array[index]}}</view> -->
 							</picker>
 						</view>
-						
+
 					</view>
 					<!-- 功能栏 -->
 					<view class="option-section">
@@ -54,7 +46,7 @@
 					<view class="block-bullet">
 						<text v-for="(buItem, buIndex) in bulletList" :key="buIndex">{{buItem}}</text>
 					</view>
-					<!-- 日志图片 -->
+					<!-- 日志图片 -->	
 					<view class="img-hold">
 						<image class="img-daily" :src="item.images" mode="aspectFill" lazy-load="true"></image>
 					</view>
@@ -66,29 +58,28 @@
 						<text class="remind" v-else-if="item.following == 0 && item.isOwn == 0">需要關注才能看到對方的日志内容</text>
 						<text class="remind" v-else-if="item.following == 0">需要關注才能看到對方的日志内容</text>
 					</view>
-					
 				</swiper-item>
 			</swiper>
 		</view>
-		
+
 		<!-- 評論 -->
 		<scroll-view class="comment-section" v-if="showComment">
 			<!-- 评论 -->
 			<view scroll-y="true" class="comment-section-details" v-for="(ite, ind) in commentInfo" :key="ind">
 				<!-- <view v-for="(iteItem, indIndex) in ite" :key="indIndex"> -->
-					<view class="comment-section-comm" @tap="replyComm(ite.id, ite.name, ite.uid)">
-						<image class="ite-portrait" :src="ite.portrait" mode="aspectFill"></image>
-						<view class="ite-name-content">
-							<text class="ite-name">{{ite.name}}：</text>
-							<text class="ite-content">{{ite.content}}</text>
-						</view>
-						
-						<text class="ite-create_time">{{ite.create_time}}</text>
+				<view class="comment-section-comm" @tap="replyComm(ite.id, ite.name, ite.uid)">
+					<image class="ite-portrait" :src="ite.portrait" mode="aspectFill"></image>
+					<view class="ite-name-content">
+						<text class="ite-name">{{ite.name}}：</text>
+						<text class="ite-content">{{ite.content}}</text>
 					</view>
-					<p class="comment-section-comm" v-if="ite.replyName != '' && ite.replyContent != ''">
-						<text>@{{ite.replyName}}:</text>
-						<text>{{ite.replyContent}}</text>
-					</p>
+
+					<text class="ite-create_time">{{ite.create_time}}</text>
+				</view>
+				<p class="comment-section-comm" v-if="ite.replyName != '' && ite.replyContent != ''">
+					<text>@{{ite.replyName}}:</text>
+					<text>{{ite.replyContent}}</text>
+				</p>
 				<!-- </view> -->
 			</view>
 			<!-- 评论栏 -->
@@ -97,21 +88,23 @@
 				<button class="primary" hover-class="hover-primary" @tap="addComm()">發送</button>
 			</view>
 		</scroll-view>
-		
+
 	</view>
 </template>
 
 <script>
 	import barrage from '../../components/barrage.vue';
-	import {findAllDyn,
+	import {
+		findAllDyn,
 		getImgTemp,
 		getComment,
 		addComment,
 		concern,
 		like,
 		getBullet,
-		reply} from '../../api/api.js';
-	
+		reply
+	} from '../../api/api.js';
+
 	export default {
 		components: {
 			barrage
@@ -122,8 +115,8 @@
 				commentInfo: '',
 				bulletList: '',
 				following: false,
-				did: 0,	// 日志id
-				uid: 0,	// 用户id
+				did: 0, // 日志id
+				uid: 0, // 用户id
 				cid: 0, // 评论用户id
 				beStatus: false,
 				commContent: '',
@@ -142,7 +135,7 @@
 					this.dynInfo = data;
 					// this.likeNumber = 0; //重置点赞次数
 					// 第一个特殊，因为需要滑动后才能监听到swiperChange，所以第一个直接赋值
-					if(loadTime == 1) {
+					if (loadTime == 1) {
 						this.did = this.dynInfo[0].id;
 						this.uid = this.dynInfo[0].uid;
 					}
@@ -170,7 +163,7 @@
 			},
 			// 关注用户
 			userFollow() {
-				if(this.following == false) {
+				if (this.following == false) {
 					concern(1, this.uid).then(data => {
 						this.following = true;
 						this.findDyn(2);
@@ -182,7 +175,7 @@
 			bindPickerChange(e) {
 				// console.log('picker发送选择改变，携带值为', e.target.value);
 				this.pickIndex = e.target.value;
-				if(e.target.value == 0) { //取消关注
+				if (e.target.value == 0) { //取消关注
 					this.following = false;
 					console.log(this.uid);
 					concern(2, this.uid).then(data => {
@@ -192,8 +185,8 @@
 			},
 			//
 			behaviour() {
-				if(this.beStatus == false) this.beStatus = true;
-				else if(this.beStatus == true) this.beStatus = false;
+				if (this.beStatus == false) this.beStatus = true;
+				else if (this.beStatus == true) this.beStatus = false;
 				// console.log(this.beStatus);
 			},
 			// 用户详情
@@ -204,7 +197,7 @@
 			},
 			// 点赞
 			likePerson(isOwn) {
-				if(isOwn == 1) {
+				if (isOwn == 1) {
 					uni.showToast({
 						icon: 'none',
 						title: '不可以給自己點贊哦'
@@ -212,7 +205,7 @@
 				} else {
 					like(this.did, 1);
 					this.findDyn(2);
-					// this.likeNumber++;
+					// this.likeNumber++;  
 					// uni.showToast({
 					// 	icon: 'none',
 					// 	title: '點贊了' + this.likeNumber + '次'
@@ -251,7 +244,7 @@
 				this.addType = ''; // 重置发送按钮类型
 				this.commplaceholder = '  為保證用戶隱私，只可以看自己的評論'; // 清除占位符
 				this.commentInfo = '' // 清空评论
-				
+
 				// console.log(e.detail.current);
 				this.did = this.dynInfo[e.detail.current].id;
 				this.uid = this.dynInfo[e.detail.current].uid;
@@ -263,8 +256,8 @@
 			// 评论
 			addComm() {
 				// console.log(this.did);
-				if(this.commContent != '') {
-					if(this.addType == 'reply') {
+				if (this.commContent != '') {
+					if (this.addType == 'reply') {
 						console.log('刚刚是回复');
 						// console.log('cid' + this.cid);
 						// console.log('commContent' + this.commContent);
@@ -291,7 +284,7 @@
 			},
 			// 回复评论
 			replyComm(cid, name, comUid) {
-				if(comUid != uni.getStorageSync('USERS_KEY').id) {
+				if (comUid != uni.getStorageSync('USERS_KEY').id) {
 					this.commplaceholder = '@' + name;
 					this.addType = 'reply';
 					this.cid = cid;
@@ -322,30 +315,32 @@
 	.pages-content {
 		margin-top: -2upx;
 	}
+
 	/* 导航栏 */
 	.header {
 		display: flex;
 		flex-direction: row;
 		margin-top: 80upx;
 	}
+
 	.back {
 		width: 38upx;
 		height: 38upx;
 		margin: 4upx 0 0 20upx;
 	}
-	
+
 	.camera {
 		width: 48upx;
 		height: 48upx;
 		margin: 4upx 20upx 0 0;
 	}
-	
+
 	.logo {
 		justify-content: center;
 		width: 90%;
-		height: 50upx;	
+		height: 50upx;
 	}
-	
+
 	/* 用户功能栏 */
 	.user-section {
 		height: 100%;
@@ -362,48 +357,48 @@
 		font-size: 25upx;
 		text-align: center;
 		z-index: 1500;
-		color: rgba(255,255,255);
-		text-shadow:0 0 5px #696969;
+		color: rgba(255, 255, 255);
+		text-shadow: 0 0 5px #696969;
 	}
-	
+
 	.option-section image {
 		width: 40upx;
 		height: 40upx;
 		margin-top: 50upx;
 	}
-	
+
 	/* 用户信息栏 */
 	.userInfo {
 		display: flex;
 		flex-direction: row;
 		margin: 15upx 0 0 25upx;
 	}
-	
+
 	.avatar {
 		width: 100upx;
 		height: 100upx;
 		border-radius: 100%;
 	}
-	
+
 	.folllow {
 		position: absolute;
 		width: 30upx;
 		height: 150upx;
 		margin: 15upx 0 0 -30upx;
 	}
-	
+
 	.userInfo view {
 		margin: 10upx 15upx;
 		line-height: 32upx;
 		font-size: 30upx;
 	}
-	
+
 	.userInfo p:nth-child(2) {
 		margin-top: 10upx;
 		font-size: 25upx;
-        color: #9E9E9E;
+		color: #9E9E9E;
 	}
-	
+
 	.btn-behaviour {
 		width: 30upx;
 		height: 50upx;
@@ -411,7 +406,7 @@
 		float: right;
 		right: 50upx;
 	}
-	
+
 	ul {
 		position: absolute;
 		right: 20upx;
@@ -420,20 +415,20 @@
 		font-size: 20upx;
 		z-index: 1500;
 	}
-	
+
 	li {
 		list-style: none;
 		margin-top: 20upx;
 		background-color: transperant;
 		color: #FFFFFF;
 	}
-	
+
 	/* 日志图片 */
 	.img-hold {
 		width: 100%;
 		height: 77%;
 	}
-	
+
 	.img-daily {
 		display: flex;
 		flex-direction: column;
@@ -442,7 +437,7 @@
 		width: 100%;
 		height: 100%;
 		z-index: 1000;
-		
+
 	}
 
 	/* 日志内容 */
@@ -452,20 +447,20 @@
 		padding: 20upx;
 		float: left;
 	}
-	
+
 	.remind {
 		font-size: 25upx;
 		line-height: 72upx;
 		color: #888484;
 	}
-	
+
 	.dailyContent {
 		font-size: 25upx;
 		line-height: 72upx;
 		color: #EFEFF4;
 	}
-	
-	
+
+
 	/* 评论内容区域 */
 	.comment-section {
 		position: absolute;
@@ -477,15 +472,15 @@
 		background-color: #000000;
 		border-radius: 50upx;
 	}
-	
+
 	.comment-section-details {
 		padding: 10upx 20upx;
 	}
-	
+
 	button {
 		z-index: 4000;
 	}
-	
+
 	.comment-section-comm {
 		margin-top: 20upx;
 		display: flex;
@@ -493,27 +488,27 @@
 		justify-content: space-between;
 		padding: 0 20upx;
 	}
-	
+
 	.ite-name-content {
 		width: 350upx;
 		overflow: hidden;
 	}
-	
+
 	.ite-name {
 		color: #979797;
 	}
-	
+
 	.ite-portrait {
 		width: 45upx;
 		height: 45upx;
 		border-radius: 50%;
 	}
-	
+
 	.ite-create_time {
 		color: #979797;
 		font-size: 25upx;
 	}
-	
+
 	/* 评论 */
 	.input-section {
 		position: absolute;
@@ -526,14 +521,14 @@
 		border-radius: 50upx;
 		font-size: 30upx;
 	}
-	
+
 	.input-section input {
 		width: 100%;
 		height: 65upx;
 		vertical-align: middle;
 		float: left;
 	}
-	
+
 	.input-section button {
 		position: absolute;
 		margin: 0;
@@ -546,50 +541,51 @@
 		font-size: 35upx;
 		color: #000000;
 	}
-	
+
 	swiper {
 		width: 100%;
 		height: 100%;
 	}
-	
+
 	swiper-item {
 		width: 100%;
 		height: 1200upx;
 	}
-	
+
 	hr {
 		margin-top: 10upx;
 		height: 3upx;
-		border:none;
+		border: none;
 		background-color: #4CD964;
 	}
-	
+
 	/* 弹幕 */
 	.block-bullet {
-		position:absolute;
+		position: absolute;
 		/* other decorate style */
-		animation:barrage 7s infinite linear 0s;
+		animation: barrage 7s infinite linear 0s;
 		width: 120%;
 		font-size: 30upx;
 		opacity: 0;
 		z-index: 1500;
 	}
-	
+
 	.block-bullet>text {
 		margin: 50upx;
 		color: #FFFFFF;
 	}
-	
-	@keyframes barrage{
-	   from {
-		 left:100%;
-		 transform:translate3d(0,50upx,0);
-		 opacity: 1;
-	   }
-	   to {
-		 left:0;
-		 transform:translate3d(-100%,50upx,0);
-		 opacity: 1;
-	   }
+
+	@keyframes barrage {
+		from {
+			left: 100%;
+			transform: translate3d(0, 50upx, 0);
+			opacity: 1;
+		}
+
+		to {
+			left: 0;
+			transform: translate3d(-100%, 50upx, 0);
+			opacity: 1;
+		}
 	}
 </style>

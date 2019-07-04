@@ -189,15 +189,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-<<<<<<< HEAD
 
 
 
 
-var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");var barrage = function barrage() {return __webpack_require__.e(/*! import() | components/barrage */ "components/barrage").then(__webpack_require__.bind(null, /*! ../../components/barrage.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\barrage.vue"));};var _default =
-=======
+
 var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/api/api.js");var barrage = function barrage() {return __webpack_require__.e(/*! import() | components/barrage */ "components/barrage").then(__webpack_require__.bind(null, /*! ../../components/barrage.vue */ "../../../../../../Users/yanleilei/Documents/HBuilderProjects/panApp/xingjueApp/components/barrage.vue"));};var _default =
->>>>>>> bab5b8e21b0a188bc883d8f6060f15802bb36329
+
+
 
 
 
@@ -226,7 +225,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
       array: ['取消關注', '屏蔽用戶', '舉報用戶'],
       pickIndex: 0,
       likeNumber: 0,
-      comClass: 'comment-section' };
+      showComment: false };
 
   },
   methods: {
@@ -244,11 +243,6 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
         (0, _api.getBullet)(_this.did).then(function (data) {
           _this.bulletList = data.content;
         });
-        (0, _api.getComment)(_this.did).then(function (data) {
-          // if(data == 0) this.commentInfo.content = '0';
-          _this.commentInfo = data;
-          // console.log(this.commentInfo);
-        });
       });
     },
     // 返回
@@ -261,11 +255,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
     publishDyn: function publishDyn() {var _this2 = this;
       (0, _api.getImgTemp)().then(function (data) {
         _this2.$store.commit('setImgTemp', data);
-<<<<<<< HEAD
-        console.log(_this2.$store.state.imgTemp, " at pages\\daily\\daily.vue:160");
-=======
-        console.log(_this2.$store.state.imgTemp, " at pages/daily/daily.vue:156");
->>>>>>> bab5b8e21b0a188bc883d8f6060f15802bb36329
+        console.log(_this2.$store.state.imgTemp, " at pages/daily/daily.vue:158");
         uni.navigateTo({
           url: 'publish' });
 
@@ -287,11 +277,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
       this.pickIndex = e.target.value;
       if (e.target.value == 0) {//取消关注
         this.following = false;
-<<<<<<< HEAD
-        console.log(this.uid, " at pages\\daily\\daily.vue:182");
-=======
-        console.log(this.uid, " at pages/daily/daily.vue:178");
->>>>>>> bab5b8e21b0a188bc883d8f6060f15802bb36329
+        console.log(this.uid, " at pages/daily/daily.vue:180");
         (0, _api.concern)(2, this.uid).then(function (data) {
           _this4.findDyn();
         });
@@ -319,7 +305,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
       } else {
         (0, _api.like)(this.did, 1);
         this.findDyn(2);
-        // this.likeNumber++;
+        // this.likeNumber++;  
         // uni.showToast({
         // 	icon: 'none',
         // 	title: '點贊了' + this.likeNumber + '次'
@@ -343,14 +329,18 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
         title: '结束触摸，点击了' + this.likeNumber + '次' });
 
     },
-    // 改变评论样式表
-    showComm: function showComm() {
-      this.comClass == 'comment-section' ? this.comClass = 'comment-section-details' : this.comClass = 'comment-section';
+    // 展示评论
+    showComm: function showComm() {var _this5 = this;
+      this.showComment == true ? this.showComment = false : this.showComment = true;
+      (0, _api.getComment)(this.did).then(function (data) {
+        _this5.commentInfo = data;
+        // console.log(this.commentInfo);
+      });
     },
     // 获取swiper滚动后日志值
-    swiperChange: function swiperChange(e) {var _this5 = this;
+    swiperChange: function swiperChange(e) {var _this6 = this;
       this.following = false; // 重置关注按钮状态
-      this.comClass = 'comment-section'; // 重置评论样式
+      this.showComment = false; // 重置评论样式
       this.addType = ''; // 重置发送按钮类型
       this.commplaceholder = '  為保證用戶隱私，只可以看自己的評論'; // 清除占位符
       this.commentInfo = ''; // 清空评论
@@ -360,36 +350,33 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
       this.uid = this.dynInfo[e.detail.current].uid;
       // 获取弹幕
       (0, _api.getBullet)(this.did).then(function (data) {
-        _this5.bulletList = data.content;
-      });
-      (0, _api.getComment)(this.did).then(function (data) {
-        _this5.commentInfo = data;
-        // console.log(this.commentInfo);
+        _this6.bulletList = data.content;
       });
     },
     // 评论
-    addComm: function addComm() {var _this6 = this;
+    addComm: function addComm() {var _this7 = this;
       // console.log(this.did);
       if (this.commContent != '') {
         if (this.addType == 'reply') {
-          // console.log('刚刚是回复');
+          console.log('刚刚是回复', " at pages/daily/daily.vue:261");
           // console.log('cid' + this.cid);
           // console.log('commContent' + this.commContent);
           (0, _api.reply)(this.cid, this.commContent).then(function (data) {
-            _this6.findDyn(2);
-            _this6.addType = ''; // 重置发送按钮类型
-            _this6.commplaceholder = '  為保證用戶隱私，只可以看自己的評論'; // 清除占位符
+            _this7.findDyn(2);
+            _this7.addType = ''; // 重置发送按钮类型
+            _this7.commplaceholder = '  為保證用戶隱私，只可以看自己的評論'; // 清除占位符
           });
         } else {
+          console.log('刚刚是評論', " at pages/daily/daily.vue:270");
           (0, _api.addComment)(this.commContent, this.did).then(function (data) {
-            (0, _api.getComment)(_this6.did).then(function (data) {
-              _this6.commentInfo = data;
-              _this6.commContent = '';
+            (0, _api.getComment)(_this7.did).then(function (data) {
+              _this7.commentInfo = data;
+              _this7.commContent = '';
               // console.log(this.commentInfo);
             });
             // 获取弹幕
-            (0, _api.getBullet)(_this6.did).then(function (data) {
-              _this6.bulletList = data.content;
+            (0, _api.getBullet)(_this7.did).then(function (data) {
+              _this7.bulletList = data.content;
             });
           });
         }
@@ -401,6 +388,11 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
         this.commplaceholder = '@' + name;
         this.addType = 'reply';
         this.cid = cid;
+      } else {
+        uni.showToast({
+          icon: 'none',
+          title: '不能自己回復自己哦' });
+
       }
     } },
 
@@ -408,11 +400,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "../../../../../../Users/
     this.findDyn(1);
   },
   onPullDownRefresh: function onPullDownRefresh() {//监听下拉刷新动作
-<<<<<<< HEAD
-    console.log('onPullDownRefresh', " at pages\\daily\\daily.vue:299");
-=======
-    console.log('onPullDownRefresh', " at pages/daily/daily.vue:293");
->>>>>>> bab5b8e21b0a188bc883d8f6060f15802bb36329
+    console.log('onPullDownRefresh', " at pages/daily/daily.vue:303");
     // 这里获取数据
     this.findDyn(1);
     setTimeout(function () {
