@@ -3,7 +3,7 @@
 		<view class="pan-group">
 			<view class="pan-data">
 				<p class="pan-data-pan">我的資產(PAN幣)</p>
-				<p class="pan-data-bal">{{assetInfo.balance}}</p>
+				<p class="pan-data-bal">{{assetInfo.balance | toFixed(4)}}</p>
 				<view class="pan-data-link">
 					<text class="pan-data-link-item">區塊鏈地址</text>
 					<text>|</text>
@@ -73,7 +73,7 @@
 			border-image: -webkit-linear-gradient(left, #03D5C7, #73AE0F) 50 50;
 			border-image: -o-linear-gradient(right, #03D5C7, #73AE0F);
 			border-image: -moz-linear-gradient(right, #03D5C7, #73AE0F);
-			border-image: liner-linear-gradient(#03D5C7, #73AE0F);
+			border-image: liner-gradient(#03D5C7, #73AE0F);
 		
 			&-pan {
 				font-size: 25upx;

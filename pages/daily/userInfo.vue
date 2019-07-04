@@ -2,7 +2,11 @@
     <view class="pages-content">
 		<view class="userInfo">
 			<image class="avatar" src="../../static/img/user/upload.svg" v-if="userInfo.portrait == null"></image>
-			<image class="portrait" :src="userInfo.portrait" @tap="preview" v-else/>
+			<image class="portrait"
+				:src="userInfo.portrait"
+				@tap="preview('por')"
+				mode="aspectFill"
+				v-else/>
 			<p>{{userInfo.name}}</p>
 			<p>{{userInfo.age}}/{{userInfo.stature}}cm/{{userInfo.weight}}kg</p>
 			<p>{{userInfo.signature}}</p>
@@ -22,7 +26,12 @@
 			</view>
 		</view>
 		<view class="dynInfo">
-			<image :src="item" mode="aspectFill" v-for="(item, index) in dynInfo" :key="index"></image>
+			<image
+				:src="item"
+				mode="aspectFill"
+				v-for="(item, index) in dynInfo"
+				:key="index"
+				@tap="preview('dyn')"></image>
 		</view>
 		<image class="btn-con" src="../../static/img/main/daily/connect.svg"></image>
     </view>
@@ -51,8 +60,10 @@
 					// console.log(this.dynInfo);
 				});
 			},
-			preview() {
-				const imgUrl = [this.userInfo.portrait];
+			preview(type) {
+				let imgUrl = [];
+				if(type == 'por') imgUrl = [this.userInfo.portrait];
+				if(type == 'dyn') imgUrl = this.dynInfo;
 				uni.previewImage({
 					urls: imgUrl,
 					longPressActions: {
@@ -64,7 +75,7 @@
 							console.log(err.errMsg);
 						}
 					}
-				})
+				});
 			}
         },
 		onLoad(option) {

@@ -126,12 +126,27 @@
 				this.donateValue++;
 			},
 			sub() {
-				this.donateValue--;
+				if(this.donateValue <= 1) {
+					uni.showToast({
+						icon: 'none',
+						title: '不可以捐贈少於1個'
+					});
+				} else {
+					this.donateValue--;
+				}
+				
 			},
 			donatePan() {
-				donate(this.donateValue).then(data=> {
-					this.getMyIndex();
-				});
+				if(this.donateValue <= 1) {
+					uni.showToast({
+						icon: 'none',
+						title: '不可以捐贈少於1個'
+					});
+				} else {
+					donate(this.donateValue).then(data=> {
+						this.getMyIndex();
+					});
+				}
 			}
 		},
 		onLoad() {

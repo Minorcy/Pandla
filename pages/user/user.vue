@@ -99,16 +99,28 @@
         methods: {
             ...mapMutations(['logout']),
             bindLogout() {
-                this.logout();
-				uni.clearStorage('USERS_KEY');
-				uni.reLaunch({
-					url: '../login/login'
+				let _this = this;
+				uni.showModal({
+					title: '確認退出',
+					success(res) {
+						if(res.confirm) {
+							_this.logout();
+							uni.clearStorage('USERS_KEY');
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
 				});
+               
             },
 			getUserInfo() {
 				findByID().then(data => {
 					this.userInfo = data;
 					this.avatar = data.portrait;
+					if(this.userInfo.signature == null || this.userInfo.signature == '') {
+						this.userInfo.signature = '這家夥很懶，還沒有簽名';
+					}
 				});
 			},
 			getSocialInfo() {
@@ -195,12 +207,12 @@
 	.item-strategy {
 		font-size: 28upx;
 		border-bottom: 1upx solid;
-		margin: 30upx 0upx 10upx 10upx;
+		margin: 30upx 0 0 10upx;
 		padding-bottom: 10upx;
 		border-image: -webkit-linear-gradient(left, #03D5C7, #73AE0F) 50 50;
 		border-image: -o-linear-gradient(right, #03D5C7, #73AE0F);
 		border-image: -moz-linear-gradient(right, #03D5C7, #73AE0F);
-		border-image: liner-linear-gradient(#03D5C7, #73AE0F);
+		border-image: linear-gradient(#03D5C7, #73AE0F);
 	}
 	
 	.item-strategy image {

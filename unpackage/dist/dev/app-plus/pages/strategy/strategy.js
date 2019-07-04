@@ -1,2 +1,2 @@
-setCssToHead([".",[1],"pages-content { font-size: ",[0,30],"; }\n",],undefined,{path:"./pages/strategy/strategy.wxss"})();
+setCssToHead([".",[1],"pages-content { font-size: ",[0,30],"; padding: ",[0,20],"; color: #E2E2E3; }\n.",[1],"title { font-size: ",[0,40],"; font-weight: bold; }\n.",[1],"content { display: block; margin-left: ",[0,20],"; }\n",],undefined,{path:"./pages/strategy/strategy.wxss"})();
 document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/strategy/strategy.wxml') } }));

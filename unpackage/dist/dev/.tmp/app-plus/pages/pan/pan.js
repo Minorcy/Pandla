@@ -136,12 +136,27 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       this.donateValue++;
     },
     sub: function sub() {
-      this.donateValue--;
+      if (this.donateValue <= 1) {
+        uni.showToast({
+          icon: 'none',
+          title: '不可以捐贈少於1個' });
+
+      } else {
+        this.donateValue--;
+      }
+
     },
     donatePan: function donatePan() {var _this2 = this;
-      (0, _api.donate)(this.donateValue).then(function (data) {
-        _this2.getMyIndex();
-      });
+      if (this.donateValue <= 1) {
+        uni.showToast({
+          icon: 'none',
+          title: '不可以捐贈少於1個' });
+
+      } else {
+        (0, _api.donate)(this.donateValue).then(function (data) {
+          _this2.getMyIndex();
+        });
+      }
     } },
 
   onLoad: function onLoad() {

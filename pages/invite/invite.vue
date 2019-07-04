@@ -164,7 +164,7 @@
 			border-image: -webkit-linear-gradient(left, #03D5C7, #73AE0F) 50 50;
 			border-image: -o-linear-gradient(right, #03D5C7, #73AE0F);
 			border-image: -moz-linear-gradient(right, #03D5C7, #73AE0F);
-			border-image: liner-linear-gradient(#03D5C7, #73AE0F);
+			border-image: liner-gradient(#03D5C7, #73AE0F);
 		}
 		
 		&-invite-code text:last-child {

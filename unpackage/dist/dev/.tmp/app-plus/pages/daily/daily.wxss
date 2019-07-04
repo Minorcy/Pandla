@@ -124,7 +124,7 @@
 	/* 日志图片 */
 .img-hold.data-v-6364d745 {
 		width: 100%;
-		height: 67%;
+		height: 75%;
 }
 .img-daily.data-v-6364d745 {
 		display: -webkit-box;
@@ -143,7 +143,6 @@
 		-webkit-align-items: center;
 		    -ms-flex-align: center;
 		        align-items: center;
-		margin-top: 50rpx;
 		width: 100%;
 		height: 100%;
 		z-index: 1000;
@@ -172,7 +171,7 @@
 }
 .comment-section-details.data-v-6364d745 {
 		position: absolute;
-		top: 50%;
+		top: 40%;
 		width: 100%;
 		height: 100%;
 		margin: 0;
@@ -204,15 +203,17 @@
 		font-size: 30rpx;
 }
 .input-section input.data-v-6364d745 {
-		width: 70%;
+		width: 100%;
 		height: 65rpx;
 		padding: 0 20rpx;
 		vertical-align: middle;
 		float: left;
 }
 .input-section button.data-v-6364d745 {
+		position: absolute;
 		margin: 0;
 		padding: 0;
+		right: 0;
 		width: 20%;
 		padding-right: 20rpx;
 		float: right;
@@ -222,7 +223,7 @@
 }
 swiper.data-v-6364d745 {
 		width: 100%;
-		height: 1200rpx;
+		height: 100%;
 }
 swiper-item.data-v-6364d745 {
 		width: 100%;

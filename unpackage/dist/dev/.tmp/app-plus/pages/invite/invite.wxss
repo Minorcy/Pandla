@@ -98,7 +98,8 @@
           border-image: -webkit-linear-gradient(left, #03D5C7, #73AE0F) 50 50;
   -o-border-image: -o-linear-gradient(right, #03D5C7, #73AE0F);
      border-image: -o-linear-gradient(right, #03D5C7, #73AE0F);
-  border-image: liner-linear-gradient(#03D5C7, #73AE0F);
+  border-image: -moz-linear-gradient(right, #03D5C7, #73AE0F);
+  border-image: liner-gradient(#03D5C7, #73AE0F);
 }
 .pan-invite-code text.data-v-1c621e1e:last-child {
   color: #007AFF;

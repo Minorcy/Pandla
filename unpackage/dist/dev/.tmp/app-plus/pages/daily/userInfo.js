@@ -39,6 +39,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
 var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js"); //
 //
@@ -70,15 +79,17 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = { data: function data() {return { userInfo: '', dynInfo: '', statusInfo: '', uid: '' };}, methods: { getUserInfo: function getUserInfo() {var _this = this;(0, _api.getInfo)(this.uid).then(function (data) {_this.userInfo = data;});(0, _api.getDyn)(this.uid).then(function (data) {_this.dynInfo = data.resp; // console.log(this.dynInfo);
-      });}, preview: function preview() {var imgUrl = [this.userInfo.portrait];uni.previewImage({ urls: imgUrl, longPressActions: { itemList: ['发送给朋友', '保存图片', '收藏'], success: function success(data) {console.log('选中了第' + (data.tapIndex + 1) + '个按钮,第' + (data.index + 1) + '张图片', " at pages\\daily\\userInfo.vue:61");}, fail: function fail(err) {console.log(err.errMsg, " at pages\\daily\\userInfo.vue:64");
-          } } });
-
-
-    } },
-
-  onLoad: function onLoad(option) {
-    // console.log(option.uid);
+      });}, preview: function preview(type) {var imgUrl = [];if (type == 'por') imgUrl = [this.userInfo.portrait];if (type == 'dyn') imgUrl = this.dynInfo;uni.previewImage({ urls: imgUrl, longPressActions: { itemList: ['发送给朋友', '保存图片', '收藏'], success: function success(data) {console.log('选中了第' + (data.tapIndex + 1) + '个按钮,第' + (data.index + 1) + '张图片', " at pages\\daily\\userInfo.vue:72");}, fail: function fail(err) {console.log(err.errMsg, " at pages\\daily\\userInfo.vue:75");} } });} }, onLoad: function onLoad(option) {// console.log(option.uid);
     this.uid = option.uid;
   },
   onShow: function onShow() {

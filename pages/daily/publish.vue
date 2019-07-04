@@ -37,14 +37,12 @@
 			upload(this.imgTemp).then(data => {
 				if(data != '') {
 					createDyn(this.dynContent).then(data => {
-						uni.showToast({
-							icon: 'none',
-							title: '發表成功'
-						});
-						uni.navigateBack({
-							delta: 1
-						});
-					});	
+						if(data) {
+							uni.navigateBack({
+								delta: 1
+							});
+						}
+					});
 				}
 			});
 		}

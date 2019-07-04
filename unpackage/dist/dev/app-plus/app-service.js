@@ -12148,7 +12148,7 @@ exports.findAllDyn = findAllDyn;var getComment = function getComment(did) {retur
         'token': Token },
 
       success: function success(res) {
-        console.log(res.data.data, " at api\\api.js:336");
+        // console.log(res.data.data);
         if (res.data.status == 200) resolve(res.data.data);
         // if(res.data.status == 400) reject(0);
         // else reject(res.data.msg);
@@ -12323,7 +12323,7 @@ exports.getIndex = getIndex;var donate = function donate(number) {return new Pro
         // console.log(res.data);
         if (res.data.status == 200) {
           uni.showToast({
-            icon: 'success',
+            icon: 'none',
             title: res.data.data });
 
           resolve(res.data.data);
@@ -12625,7 +12625,7 @@ exports.setBar = setBar;var upLogo = function upLogo(imgTemp, type) {return new 
     uni.uploadFile({
       url: barUrl + 'upLogo?type=' + type,
       header: {
-        token: Token },
+        'token': Token },
 
       filePath: imgTemp,
       name: 'file',
@@ -12662,7 +12662,7 @@ var getInvCode = function getInvCode() {return new Promise(function (resolve, re
     uni.request({
       url: invUrl + 'getInvCode',
       header: {
-        token: Token },
+        'token': Token },
 
       success: function success(res) {
         if (res.data.status == 200) resolve(res.data.data);
@@ -12736,7 +12736,7 @@ exports.getImgTemp = getImgTemp;var upload = function upload(imgTemp) {return ne
     uni.uploadFile({
       url: dynUrl + 'upload',
       header: {
-        token: Token },
+        'token': Token },
 
       filePath: imgTemp,
       name: 'file',
@@ -12772,7 +12772,13 @@ exports.upload = upload;var createDyn = function createDyn(dynContent) {return n
 
       success: function success(res) {
         // console.log(res.data);
-        if (res.data.status == 200) resolve(res.data.data);
+        if (res.data.status == 200) {
+          uni.showToast({
+            icon: 'success',
+            title: '發表成功' });
+
+          resolve(res.data.data);
+        }
         // else reject(res.data.msg);
       },
       fail: function fail(err) {
@@ -17312,14 +17318,14 @@ define('components/wm-poster/wm-poster.js',function(require, module, exports, wi
 
                       _this.ctx = uni.createCanvasContext(_this.CanvasID, this);
                       C_W = uni.upx2px(_this.Width),
-                      C_P = uni.upx2px(30),
-                      C_Q = uni.upx2px(200); //二维码或太阳码宽高
+                      C_P = uni.upx2px(0),
+                      C_Q = uni.upx2px(180); //二维码或太阳码宽高
                       _strlineW = 0; //文本宽度
                       _context.next = 6;return _this.getImageInfo({ imgSrc: _this.imgSrc });case 6:_imgInfo = _context.sent;_context.next = 9;return (
                         _this.getImageInfo({ imgSrc: _this.QrSrc }));case 9:_QrCode = _context.sent; //二维码或太阳码
                       r = [_imgInfo.width, _imgInfo.height];
                       q = [_QrCode.width, _QrCode.height];
-                      imgW = C_W - C_P * 2;
+                      imgW = C_W;
                       if (r[0] != imgW) {
                         r[1] = Math.floor(imgW / r[0] * r[1]);
                         r[0] = imgW;
@@ -17392,7 +17398,7 @@ define('components/wm-poster/wm-poster.js',function(require, module, exports, wi
                       //设置价格 end
 
                       //添加二维码
-                      _strHeight -= uni.upx2px(50);
+                      _strHeight -= uni.upx2px(30);
                       _this.ctx.drawImage(_QrCode.path, r[0] - q[0] + C_P, _strHeight, q[0], q[1]);
                       //添加二维码 end
 
@@ -19463,6 +19469,10 @@ define('pages/daily/daily.js',function(require, module, exports, window, documen
 
 
 
+
+
+
+
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");var barrage = function barrage() {return __webpack_require__.e(/*! import() | components/barrage */ "components/barrage").then(__webpack_require__.bind(null, /*! ../../components/barrage.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\barrage.vue"));};var _default =
 
 
@@ -19487,7 +19497,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       cid: 0, // 评论用户id
       beStatus: false,
       commContent: '',
-      commplaceholder: '  添加評論',
+      commplaceholder: '  為保證用戶隱私，只可以看自己的評論',
       addType: '', // 发送按钮请求不同接口
       array: ['取消關注', '屏蔽用戶', '舉報用戶'],
       pickIndex: 0,
@@ -19527,7 +19537,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     publishDyn: function publishDyn() {var _this2 = this;
       (0, _api.getImgTemp)().then(function (data) {
         _this2.$store.commit('setImgTemp', data);
-        console.log(_this2.$store.state.imgTemp, " at pages\\daily\\daily.vue:156");
+        console.log(_this2.$store.state.imgTemp, " at pages\\daily\\daily.vue:160");
         uni.navigateTo({
           url: 'publish' });
 
@@ -19549,7 +19559,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       this.pickIndex = e.target.value;
       if (e.target.value == 0) {//取消关注
         this.following = false;
-        console.log(this.uid, " at pages\\daily\\daily.vue:178");
+        console.log(this.uid, " at pages\\daily\\daily.vue:182");
         (0, _api.concern)(2, this.uid).then(function (data) {
           _this4.findDyn();
         });
@@ -19610,7 +19620,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       this.following = false; // 重置关注按钮状态
       this.comClass = 'comment-section'; // 重置评论样式
       this.addType = ''; // 重置发送按钮类型
-      this.commplaceholder = '  添加評論'; // 清除占位符
+      this.commplaceholder = '  為保證用戶隱私，只可以看自己的評論'; // 清除占位符
       this.commentInfo = ''; // 清空评论
 
       // console.log(e.detail.current);
@@ -19635,6 +19645,8 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
           // console.log('commContent' + this.commContent);
           (0, _api.reply)(this.cid, this.commContent).then(function (data) {
             _this6.findDyn(2);
+            _this6.addType = ''; // 重置发送按钮类型
+            _this6.commplaceholder = '  為保證用戶隱私，只可以看自己的評論'; // 清除占位符
           });
         } else {
           (0, _api.addComment)(this.commContent, this.did).then(function (data) {
@@ -19664,8 +19676,9 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     this.findDyn(1);
   },
   onPullDownRefresh: function onPullDownRefresh() {//监听下拉刷新动作
-    console.log('onPullDownRefresh', " at pages\\daily\\daily.vue:293");
+    console.log('onPullDownRefresh', " at pages\\daily\\daily.vue:299");
     // 这里获取数据
+    this.findDyn(1);
     setTimeout(function () {
       //初始化数据
       uni.stopPullDownRefresh(); //停止下拉刷新
@@ -19862,9 +19875,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
 //
 //
 //
-var _default = { data: function data() {return { imgTemp: this.$store.state.imgTemp, dynContent: '', location: '所在位置', showType: '誰可以看', remain: '提醒誰看' };}, onNavigationBarButtonTap: function onNavigationBarButtonTap() {var _this = this;(0, _api.upload)(this.imgTemp).then(function (data) {if (data != '') {(0, _api.createDyn)(_this.dynContent).then(function (data) {uni.showToast({ icon: 'none', title: '發表成功' });uni.navigateBack({ delta: 1 });});}
-    });
-  } };exports.default = _default;
+var _default = { data: function data() {return { imgTemp: this.$store.state.imgTemp, dynContent: '', location: '所在位置', showType: '誰可以看', remain: '提醒誰看' };}, onNavigationBarButtonTap: function onNavigationBarButtonTap() {var _this = this;(0, _api.upload)(this.imgTemp).then(function (data) {if (data != '') {(0, _api.createDyn)(_this.dynContent).then(function (data) {if (data) {uni.navigateBack({ delta: 1 });}});}});} };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-app-plus/dist/index.js */ "./node_modules/@dcloudio/uni-app-plus/dist/index.js")["default"]))
 
 /***/ }),
@@ -20040,6 +20051,15 @@ define('pages/daily/userInfo.js',function(require, module, exports, window, docu
 
 
 
+
+
+
+
+
+
+
+
+
 var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js"); //
 //
@@ -20071,15 +20091,17 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = { data: function data() {return { userInfo: '', dynInfo: '', statusInfo: '', uid: '' };}, methods: { getUserInfo: function getUserInfo() {var _this = this;(0, _api.getInfo)(this.uid).then(function (data) {_this.userInfo = data;});(0, _api.getDyn)(this.uid).then(function (data) {_this.dynInfo = data.resp; // console.log(this.dynInfo);
-      });}, preview: function preview() {var imgUrl = [this.userInfo.portrait];uni.previewImage({ urls: imgUrl, longPressActions: { itemList: ['发送给朋友', '保存图片', '收藏'], success: function success(data) {console.log('选中了第' + (data.tapIndex + 1) + '个按钮,第' + (data.index + 1) + '张图片', " at pages\\daily\\userInfo.vue:61");}, fail: function fail(err) {console.log(err.errMsg, " at pages\\daily\\userInfo.vue:64");
-          } } });
-
-
-    } },
-
-  onLoad: function onLoad(option) {
-    // console.log(option.uid);
+      });}, preview: function preview(type) {var imgUrl = [];if (type == 'por') imgUrl = [this.userInfo.portrait];if (type == 'dyn') imgUrl = this.dynInfo;uni.previewImage({ urls: imgUrl, longPressActions: { itemList: ['发送给朋友', '保存图片', '收藏'], success: function success(data) {console.log('选中了第' + (data.tapIndex + 1) + '个按钮,第' + (data.index + 1) + '张图片', " at pages\\daily\\userInfo.vue:72");}, fail: function fail(err) {console.log(err.errMsg, " at pages\\daily\\userInfo.vue:75");} } });} }, onLoad: function onLoad(option) {// console.log(option.uid);
     this.uid = option.uid;
   },
   onShow: function onShow() {
@@ -21580,26 +21602,38 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
   methods: _objectSpread({},
   (0, _vuex.mapMutations)(['logout']), {
     bindLogout: function bindLogout() {
-      this.logout();
-      uni.clearStorage('USERS_KEY');
-      uni.reLaunch({
-        url: '../login/login' });
+      var _this = this;
+      uni.showModal({
+        title: '確認退出',
+        success: function success(res) {
+          if (res.confirm) {
+            _this.logout();
+            uni.clearStorage('USERS_KEY');
+            uni.reLaunch({
+              url: '../login/login' });
+
+          }
+        } });
+
 
     },
-    getUserInfo: function getUserInfo() {var _this = this;
+    getUserInfo: function getUserInfo() {var _this2 = this;
       (0, _api.findByID)().then(function (data) {
-        _this.userInfo = data;
-        _this.avatar = data.portrait;
+        _this2.userInfo = data;
+        _this2.avatar = data.portrait;
+        if (_this2.userInfo.signature == null || _this2.userInfo.signature == '') {
+          _this2.userInfo.signature = '這家夥很懶，還沒有簽名';
+        }
       });
     },
-    getSocialInfo: function getSocialInfo() {var _this2 = this;
+    getSocialInfo: function getSocialInfo() {var _this3 = this;
       (0, _api.getAllSocialInfo)().then(function (data) {
-        _this2.socialInfo = data;
+        _this3.socialInfo = data;
       });
     },
-    uploadAvatar: function uploadAvatar() {var _this3 = this;
+    uploadAvatar: function uploadAvatar() {var _this4 = this;
       (0, _api.upPicture)(this.userId).then(function (data) {
-        _this3.avatar = data.id;
+        _this4.avatar = data.id;
       });
     } }),
 
@@ -22374,12 +22408,27 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       this.donateValue++;
     },
     sub: function sub() {
-      this.donateValue--;
+      if (this.donateValue <= 1) {
+        uni.showToast({
+          icon: 'none',
+          title: '不可以捐贈少於1個' });
+
+      } else {
+        this.donateValue--;
+      }
+
     },
     donatePan: function donatePan() {var _this2 = this;
-      (0, _api.donate)(this.donateValue).then(function (data) {
-        _this2.getMyIndex();
-      });
+      if (this.donateValue <= 1) {
+        uni.showToast({
+          icon: 'none',
+          title: '不可以捐贈少於1個' });
+
+      } else {
+        (0, _api.donate)(this.donateValue).then(function (data) {
+          _this2.getMyIndex();
+        });
+      }
     } },
 
   onLoad: function onLoad() {
@@ -23341,6 +23390,16 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var f0 = _vm._f("toFixed")(_vm.assetInfo.balance, 4)
+
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        f0: f0
+      }
+    }
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -24134,6 +24193,14 @@ define('pages/strategy/strategy.js',function(require, module, exports, window, d
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //

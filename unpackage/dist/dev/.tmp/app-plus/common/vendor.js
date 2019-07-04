@@ -9364,7 +9364,7 @@ exports.findAllDyn = findAllDyn;var getComment = function getComment(did) {retur
         'token': Token },
 
       success: function success(res) {
-        console.log(res.data.data, " at api\\api.js:336");
+        // console.log(res.data.data);
         if (res.data.status == 200) resolve(res.data.data);
         // if(res.data.status == 400) reject(0);
         // else reject(res.data.msg);
@@ -9539,7 +9539,7 @@ exports.getIndex = getIndex;var donate = function donate(number) {return new Pro
         // console.log(res.data);
         if (res.data.status == 200) {
           uni.showToast({
-            icon: 'success',
+            icon: 'none',
             title: res.data.data });
 
           resolve(res.data.data);
@@ -9841,7 +9841,7 @@ exports.setBar = setBar;var upLogo = function upLogo(imgTemp, type) {return new 
     uni.uploadFile({
       url: barUrl + 'upLogo?type=' + type,
       header: {
-        token: Token },
+        'token': Token },
 
       filePath: imgTemp,
       name: 'file',
@@ -9878,7 +9878,7 @@ var getInvCode = function getInvCode() {return new Promise(function (resolve, re
     uni.request({
       url: invUrl + 'getInvCode',
       header: {
-        token: Token },
+        'token': Token },
 
       success: function success(res) {
         if (res.data.status == 200) resolve(res.data.data);
@@ -9952,7 +9952,7 @@ exports.getImgTemp = getImgTemp;var upload = function upload(imgTemp) {return ne
     uni.uploadFile({
       url: dynUrl + 'upload',
       header: {
-        token: Token },
+        'token': Token },
 
       filePath: imgTemp,
       name: 'file',
@@ -9988,7 +9988,13 @@ exports.upload = upload;var createDyn = function createDyn(dynContent) {return n
 
       success: function success(res) {
         // console.log(res.data);
-        if (res.data.status == 200) resolve(res.data.data);
+        if (res.data.status == 200) {
+          uni.showToast({
+            icon: 'success',
+            title: '發表成功' });
+
+          resolve(res.data.data);
+        }
         // else reject(res.data.msg);
       },
       fail: function fail(err) {

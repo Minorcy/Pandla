@@ -112,7 +112,7 @@
 			background: -webkit-linear-gradient(left, #033A3A, #032F06);
 			background: -o-linear-gradient(right, #033A3A, #032F06);
 			background: -moz-linear-gradient(right, #033A3A, #032F06);
-			background: liner-linear-gradient(#033A3A, #032F06);
+			background: liner-gradient(#033A3A, #032F06);
 		}
 		
 		&-pic {

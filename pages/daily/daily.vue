@@ -15,7 +15,11 @@
 				<swiper-item v-for="(item, index) in dynInfo" :key="index">
 					<view class="userInfo">
 						<view>
-							<image class="avatar" :src="item.portrait"  @tap="userInfo()"></image>
+							<image
+								class="avatar"
+								:src="item.portrait" 
+								@tap="userInfo()"
+								mode="aspectFill"></image>
 							<image 
 								class="folllow"
 								src="../../static/img/main/daily/follow.svg" 
@@ -41,7 +45,7 @@
 						<image src="../../static/img/main/daily/love.svg" @tap="likePerson(item.isOwn)"></image>
 						<p>{{item.like_count}}</p>
 						<image src="../../static/img/main/logo.svg"></image>
-						<p>{{item.force}}</p>
+						<p>{{item.pan}}</p>
 						<image src="../../static/img/main/daily/comment.svg" @tap="showComm"></image>
 						<p>{{item.com_count}}</p>
 					</view>
@@ -62,28 +66,38 @@
 						<text class="remind" v-else-if="item.following == 0 && item.isOwn == 0">需要關注才能看到對方的日志内容</text>
 						<text class="remind" v-else-if="item.following == 0">需要關注才能看到對方的日志内容</text>
 					</view>
-					<!-- 评论 -->
-					<view :class="comClass" v-for="(ite, ind) in commentInfo" :key="ind">
-						<!-- <view v-for="(iteItem, indIndex) in ite" :key="indIndex"> -->
-							<p class="comment-section-comm" @tap="replyComm(ite.id, ite.name, ite.uid)">
-								<text>{{ite.name}}:</text>
-								<text>{{ite.content}}</text>
-							</p>
-							<p class="comment-section-comm" v-if="ite.replyName != '' && ite.replyContent != ''">
-								<text>@{{ite.replyName}}:</text>
-								<text>{{ite.replyContent}}</text>
-							</p>
-						<!-- </view> -->
-					</view>
+					
 				</swiper-item>
 			</swiper>
-			
 		</view>
-		<!-- 评论栏 -->
-		<view class="input-section">
-			<input v-model="commContent" :placeholder="commplaceholder" />
-			<button class="primary" hover-class="hover-primary" @tap="addComm()">發送</button>
-		</view>
+		
+		<!-- 評論 -->
+		<scroll-view class="comment-section" v-if="showComment">
+			<!-- 评论 -->
+			<view scroll-y="true" class="comment-section-details" v-for="(ite, ind) in commentInfo" :key="ind">
+				<!-- <view v-for="(iteItem, indIndex) in ite" :key="indIndex"> -->
+					<view class="comment-section-comm" @tap="replyComm(ite.id, ite.name, ite.uid)">
+						<image class="ite-portrait" :src="ite.portrait" mode="aspectFill"></image>
+						<view class="ite-name-content">
+							<text class="ite-name">{{ite.name}}：</text>
+							<text class="ite-content">{{ite.content}}</text>
+						</view>
+						
+						<text class="ite-create_time">{{ite.create_time}}</text>
+					</view>
+					<p class="comment-section-comm" v-if="ite.replyName != '' && ite.replyContent != ''">
+						<text>@{{ite.replyName}}:</text>
+						<text>{{ite.replyContent}}</text>
+					</p>
+				<!-- </view> -->
+			</view>
+			<!-- 评论栏 -->
+			<view class="input-section">
+				<input v-model="commContent" :placeholder="commplaceholder" />
+				<button class="primary" hover-class="hover-primary" @tap="addComm()">發送</button>
+			</view>
+		</scroll-view>
+		
 	</view>
 </template>
 
@@ -113,12 +127,12 @@
 				cid: 0, // 评论用户id
 				beStatus: false,
 				commContent: '',
-				commplaceholder: '  添加評論',
+				commplaceholder: '  為保證用戶隱私，只可以看自己的評論',
 				addType: '', // 发送按钮请求不同接口
 				array: ['取消關注', '屏蔽用戶', '舉報用戶'],
 				pickIndex: 0,
 				likeNumber: 0,
-				comClass: 'comment-section'
+				showComment: false
 			}
 		},
 		methods: {
@@ -135,11 +149,6 @@
 					// 获取弹幕
 					getBullet(this.did).then(data => {
 						this.bulletList = data.content;
-					});
-					getComment(this.did).then(data => {
-						// if(data == 0) this.commentInfo.content = '0';
-						this.commentInfo = data;
-						// console.log(this.commentInfo);
 					});
 				});
 			},
@@ -227,16 +236,20 @@
 					title: '结束触摸，点击了' + this.likeNumber + '次'
 				});
 			},
-			// 改变评论样式表
+			// 展示评论
 			showComm() {
-				(this.comClass == 'comment-section') ? (this.comClass = 'comment-section-details') : (this.comClass = 'comment-section')
+				(this.showComment == true) ? (this.showComment = false) : (this.showComment = true);
+				getComment(this.did).then(data => {
+					this.commentInfo = data;
+					// console.log(this.commentInfo);
+				});
 			},
 			// 获取swiper滚动后日志值
 			swiperChange(e) {
 				this.following = false; // 重置关注按钮状态
-				this.comClass = 'comment-section'; // 重置评论样式
+				this.showComment = false; // 重置评论样式
 				this.addType = ''; // 重置发送按钮类型
-				this.commplaceholder = '  添加評論'; // 清除占位符
+				this.commplaceholder = '  為保證用戶隱私，只可以看自己的評論'; // 清除占位符
 				this.commentInfo = '' // 清空评论
 				
 				// console.log(e.detail.current);
@@ -246,23 +259,22 @@
 				getBullet(this.did).then(data => {
 					this.bulletList = data.content;
 				});
-				getComment(this.did).then(data => {
-					this.commentInfo = data;
-					// console.log(this.commentInfo);
-				});
 			},
 			// 评论
 			addComm() {
 				// console.log(this.did);
 				if(this.commContent != '') {
 					if(this.addType == 'reply') {
-						// console.log('刚刚是回复');
+						console.log('刚刚是回复');
 						// console.log('cid' + this.cid);
 						// console.log('commContent' + this.commContent);
 						reply(this.cid, this.commContent).then(data => {
 							this.findDyn(2);
+							this.addType = ''; // 重置发送按钮类型
+							this.commplaceholder = '  為保證用戶隱私，只可以看自己的評論'; // 清除占位符
 						});
 					} else {
+						console.log('刚刚是評論');
 						addComment(this.commContent, this.did).then(data => {
 							getComment(this.did).then(data => {
 								this.commentInfo = data;
@@ -283,6 +295,11 @@
 					this.commplaceholder = '@' + name;
 					this.addType = 'reply';
 					this.cid = cid;
+				} else {
+					uni.showToast({
+						icon: 'none',
+						title: '不能自己回復自己哦'
+					})
 				}
 			}
 		},
@@ -292,6 +309,7 @@
 		onPullDownRefresh() { //监听下拉刷新动作
 			console.log('onPullDownRefresh');
 			// 这里获取数据
+			this.findDyn(1);
 			setTimeout(function() {
 				//初始化数据
 				uni.stopPullDownRefresh(); //停止下拉刷新
@@ -345,6 +363,7 @@
 		text-align: center;
 		z-index: 1500;
 		color: rgba(255,255,255);
+		text-shadow:0 0 5px #696969;
 	}
 	
 	.option-section image {
@@ -412,7 +431,7 @@
 	/* 日志图片 */
 	.img-hold {
 		width: 100%;
-		height: 67%;
+		height: 77%;
 	}
 	
 	.img-daily {
@@ -420,7 +439,6 @@
 		flex-direction: column;
 		align-content: center;
 		align-items: center;
-		margin-top: 50upx;
 		width: 100%;
 		height: 100%;
 		z-index: 1000;
@@ -450,30 +468,50 @@
 	
 	/* 评论内容区域 */
 	.comment-section {
-		font-size: 25upx;
-		margin: 10upx 0 10upx 30upx;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 50%;
+		font-size: 30upx;
+		z-index: 3000;
+		background-color: #000000;
+		border-radius: 50upx;
 	}
 	
 	.comment-section-details {
-		position: absolute;
-		top: 50%;
-		width: 100%;
-		height: 100%;
-		margin: 0;
-		z-index: 2000;
-		background-color: #000000;
-		border-radius: 50upx;
-		padding: 50upx 0;
+		padding: 10upx 20upx;
+	}
+	
+	button {
+		z-index: 4000;
 	}
 	
 	.comment-section-comm {
-		font-size: 25upx;
-		margin-top: 10upx;
+		margin-top: 20upx;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 0 20upx;
 	}
 	
-	.comment-section-comm text:nth-child(1) {
-		margin-right: 10upx;
-		color: #888484;
+	.ite-name-content {
+		width: 350upx;
+		overflow: hidden;
+	}
+	
+	.ite-name {
+		color: #979797;
+	}
+	
+	.ite-portrait {
+		width: 45upx;
+		height: 45upx;
+		border-radius: 50%;
+	}
+	
+	.ite-create_time {
+		color: #979797;
+		font-size: 25upx;
 	}
 	
 	/* 评论 */
@@ -482,7 +520,7 @@
 		width: 100%;
 		height: 65upx;
 		margin: 0 auto;
-		bottom: 10upx;
+		bottom: 0;
 		color: #000000;
 		background: #B7B7B7;
 		border-radius: 50upx;
@@ -490,16 +528,17 @@
 	}
 	
 	.input-section input {
-		width: 70%;
+		width: 100%;
 		height: 65upx;
-		padding: 0 20upx;
 		vertical-align: middle;
 		float: left;
 	}
 	
 	.input-section button {
+		position: absolute;
 		margin: 0;
 		padding: 0;
+		right: 0;
 		width: 20%;
 		padding-right: 20upx;
 		float: right;
@@ -510,7 +549,7 @@
 	
 	swiper {
 		width: 100%;
-		height: 1200upx;
+		height: 100%;
 	}
 	
 	swiper-item {

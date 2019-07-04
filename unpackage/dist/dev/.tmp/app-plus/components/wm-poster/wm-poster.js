@@ -91,14 +91,14 @@ var _this;var _default =
 
                 _this.ctx = uni.createCanvasContext(_this.CanvasID, this);
                 C_W = uni.upx2px(_this.Width),
-                C_P = uni.upx2px(30),
-                C_Q = uni.upx2px(200); //二维码或太阳码宽高
+                C_P = uni.upx2px(0),
+                C_Q = uni.upx2px(180); //二维码或太阳码宽高
                 _strlineW = 0; //文本宽度
                 _context.next = 6;return _this.getImageInfo({ imgSrc: _this.imgSrc });case 6:_imgInfo = _context.sent;_context.next = 9;return (
                   _this.getImageInfo({ imgSrc: _this.QrSrc }));case 9:_QrCode = _context.sent; //二维码或太阳码
                 r = [_imgInfo.width, _imgInfo.height];
                 q = [_QrCode.width, _QrCode.height];
-                imgW = C_W - C_P * 2;
+                imgW = C_W;
                 if (r[0] != imgW) {
                   r[1] = Math.floor(imgW / r[0] * r[1]);
                   r[0] = imgW;
@@ -171,7 +171,7 @@ var _this;var _default =
                 //设置价格 end
 
                 //添加二维码
-                _strHeight -= uni.upx2px(50);
+                _strHeight -= uni.upx2px(30);
                 _this.ctx.drawImage(_QrCode.path, r[0] - q[0] + C_P, _strHeight, q[0], q[1]);
                 //添加二维码 end
 

@@ -99,6 +99,10 @@
 
 
 
+
+
+
+
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");var barrage = function barrage() {return __webpack_require__.e(/*! import() | components/barrage */ "components/barrage").then(__webpack_require__.bind(null, /*! ../../components/barrage.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\barrage.vue"));};var _default =
 
 
@@ -123,7 +127,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       cid: 0, // 评论用户id
       beStatus: false,
       commContent: '',
-      commplaceholder: '  添加評論',
+      commplaceholder: '  為保證用戶隱私，只可以看自己的評論',
       addType: '', // 发送按钮请求不同接口
       array: ['取消關注', '屏蔽用戶', '舉報用戶'],
       pickIndex: 0,
@@ -163,7 +167,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     publishDyn: function publishDyn() {var _this2 = this;
       (0, _api.getImgTemp)().then(function (data) {
         _this2.$store.commit('setImgTemp', data);
-        console.log(_this2.$store.state.imgTemp, " at pages\\daily\\daily.vue:156");
+        console.log(_this2.$store.state.imgTemp, " at pages\\daily\\daily.vue:160");
         uni.navigateTo({
           url: 'publish' });
 
@@ -185,7 +189,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       this.pickIndex = e.target.value;
       if (e.target.value == 0) {//取消关注
         this.following = false;
-        console.log(this.uid, " at pages\\daily\\daily.vue:178");
+        console.log(this.uid, " at pages\\daily\\daily.vue:182");
         (0, _api.concern)(2, this.uid).then(function (data) {
           _this4.findDyn();
         });
@@ -246,7 +250,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       this.following = false; // 重置关注按钮状态
       this.comClass = 'comment-section'; // 重置评论样式
       this.addType = ''; // 重置发送按钮类型
-      this.commplaceholder = '  添加評論'; // 清除占位符
+      this.commplaceholder = '  為保證用戶隱私，只可以看自己的評論'; // 清除占位符
       this.commentInfo = ''; // 清空评论
 
       // console.log(e.detail.current);
@@ -271,6 +275,8 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
           // console.log('commContent' + this.commContent);
           (0, _api.reply)(this.cid, this.commContent).then(function (data) {
             _this6.findDyn(2);
+            _this6.addType = ''; // 重置发送按钮类型
+            _this6.commplaceholder = '  為保證用戶隱私，只可以看自己的評論'; // 清除占位符
           });
         } else {
           (0, _api.addComment)(this.commContent, this.did).then(function (data) {
@@ -300,8 +306,9 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     this.findDyn(1);
   },
   onPullDownRefresh: function onPullDownRefresh() {//监听下拉刷新动作
-    console.log('onPullDownRefresh', " at pages\\daily\\daily.vue:293");
+    console.log('onPullDownRefresh', " at pages\\daily\\daily.vue:299");
     // 这里获取数据
+    this.findDyn(1);
     setTimeout(function () {
       //初始化数据
       uni.stopPullDownRefresh(); //停止下拉刷新

@@ -83,13 +83,14 @@
 .item-strategy.data-v-2063ee9e {
 	font-size: 28rpx;
 	border-bottom: 1rpx solid;
-	margin: 30rpx 0rpx 10rpx 10rpx;
+	margin: 30rpx 0 0 10rpx;
 	padding-bottom: 10rpx;
 	-webkit-border-image: -webkit-linear-gradient(left, #03D5C7, #73AE0F) 50 50;
 	        border-image: -webkit-linear-gradient(left, #03D5C7, #73AE0F) 50 50;
 	-o-border-image: -o-linear-gradient(right, #03D5C7, #73AE0F);
 	   border-image: -o-linear-gradient(right, #03D5C7, #73AE0F);
-	border-image: liner-linear-gradient(#03D5C7, #73AE0F);
+	border-image: -webkit-gradient(linear, left top, left bottom, from(#03D5C7), to(#73AE0F));
+	border-image: linear-gradient(#03D5C7, #73AE0F);
 }
 .item-strategy image.data-v-2063ee9e {
 	width: 40rpx;

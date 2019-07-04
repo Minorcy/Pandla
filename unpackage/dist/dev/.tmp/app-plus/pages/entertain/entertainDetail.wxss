@@ -80,7 +80,8 @@
   padding: 20rpx;
   background: -webkit-linear-gradient(left, #033A3A, #032F06);
   background: -o-linear-gradient(right, #033A3A, #032F06);
-  background: liner-linear-gradient(#033A3A, #032F06);
+  background: -moz-linear-gradient(right, #033A3A, #032F06);
+  background: liner-gradient(#033A3A, #032F06);
 }
 .bar-pic.data-v-c30d5650 {
   width: 100%;

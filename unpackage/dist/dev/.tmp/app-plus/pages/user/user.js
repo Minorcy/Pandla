@@ -109,26 +109,38 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
   methods: _objectSpread({},
   (0, _vuex.mapMutations)(['logout']), {
     bindLogout: function bindLogout() {
-      this.logout();
-      uni.clearStorage('USERS_KEY');
-      uni.reLaunch({
-        url: '../login/login' });
+      var _this = this;
+      uni.showModal({
+        title: '確認退出',
+        success: function success(res) {
+          if (res.confirm) {
+            _this.logout();
+            uni.clearStorage('USERS_KEY');
+            uni.reLaunch({
+              url: '../login/login' });
+
+          }
+        } });
+
 
     },
-    getUserInfo: function getUserInfo() {var _this = this;
+    getUserInfo: function getUserInfo() {var _this2 = this;
       (0, _api.findByID)().then(function (data) {
-        _this.userInfo = data;
-        _this.avatar = data.portrait;
+        _this2.userInfo = data;
+        _this2.avatar = data.portrait;
+        if (_this2.userInfo.signature == null || _this2.userInfo.signature == '') {
+          _this2.userInfo.signature = '這家夥很懶，還沒有簽名';
+        }
       });
     },
-    getSocialInfo: function getSocialInfo() {var _this2 = this;
+    getSocialInfo: function getSocialInfo() {var _this3 = this;
       (0, _api.getAllSocialInfo)().then(function (data) {
-        _this2.socialInfo = data;
+        _this3.socialInfo = data;
       });
     },
-    uploadAvatar: function uploadAvatar() {var _this3 = this;
+    uploadAvatar: function uploadAvatar() {var _this4 = this;
       (0, _api.upPicture)(this.userId).then(function (data) {
-        _this3.avatar = data.id;
+        _this4.avatar = data.id;
       });
     } }),
 

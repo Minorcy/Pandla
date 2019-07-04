@@ -508,7 +508,7 @@ export const donate = (number) => new Promise((resolve, reject) => {
 			// console.log(res.data);
 			if (res.data.status == 200) {
 				uni.showToast({
-					icon: 'success',
+					icon: 'none',
 					title: res.data.data
 				});
 				resolve(res.data.data);
@@ -810,7 +810,7 @@ export const upLogo = (imgTemp, type) => new Promise((resolve, reject) => {
 	uni.uploadFile({
 		url: barUrl + 'upLogo?type=' + type,
 		header: {
-			token: Token
+			'token': Token
 		},
 		filePath: imgTemp,
 		name: 'file',
@@ -847,7 +847,7 @@ export const getInvCode = () => new Promise((resolve, reject) => {
 	uni.request({
 		url: invUrl + 'getInvCode',
 		header: {
-			token: Token
+			'token': Token
 		},
 		success(res) {
 			if (res.data.status == 200) resolve(res.data.data);
@@ -921,7 +921,7 @@ export const upload = (imgTemp) => new Promise((resolve, reject) => {
 	uni.uploadFile({
 		url: dynUrl + 'upload',
 		header: {
-			token: Token
+			'token': Token
 		},
 		filePath: imgTemp,
 		name: 'file',
@@ -957,7 +957,13 @@ export const createDyn = (dynContent) => new Promise((resolve, reject) => {
 		},
 		success: (res) => {
 			// console.log(res.data);
-			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 200) {
+				uni.showToast({
+					icon: 'success',
+					title: '發表成功'
+				});
+				resolve(res.data.data);
+			}
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {

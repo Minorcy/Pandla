@@ -81,14 +81,14 @@ export default {
 			});
 			_this.ctx = uni.createCanvasContext(_this.CanvasID,this);
 			const C_W = uni.upx2px(_this.Width), //canvas宽度
-				C_P = uni.upx2px(30), //canvas Paddng 间距
-				C_Q = uni.upx2px(200); //二维码或太阳码宽高
+				C_P = uni.upx2px(0), //canvas Paddng 间距
+				C_Q = uni.upx2px(180); //二维码或太阳码宽高
 			let _strlineW = 0; //文本宽度
 			let _imgInfo = await _this.getImageInfo({ imgSrc: _this.imgSrc }); //广告图
 			let _QrCode = await _this.getImageInfo({ imgSrc: _this.QrSrc }); //二维码或太阳码
 			let r = [_imgInfo.width, _imgInfo.height];
 			let q = [_QrCode.width, _QrCode.height];
-			let imgW = C_W - C_P * 2;
+			let imgW = C_W;
 			if (r[0] != imgW) {
 				r[1] = Math.floor((imgW / r[0]) * r[1]);
 				r[0] = imgW;
@@ -161,7 +161,7 @@ export default {
 			//设置价格 end
 
 			//添加二维码
-			_strHeight -= uni.upx2px(50);
+			_strHeight -= uni.upx2px(30);
 			_this.ctx.drawImage(_QrCode.path, r[0] - q[0] + C_P, _strHeight, q[0], q[1]);
 			//添加二维码 end
 
