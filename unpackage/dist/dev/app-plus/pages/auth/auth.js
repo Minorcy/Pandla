@@ -1,1 +1,2 @@
+setCssToHead(["wx-image { width: 100%; height: 55%; margin-top: ",[0,20],"; }\n",],undefined,{path:"./pages/auth/auth.wxss"})();
 document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/auth/auth.wxml') } }));

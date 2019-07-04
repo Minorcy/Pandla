@@ -24,18 +24,18 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.btn-primary.data-v-61795f46 {
+.btn-primary.data-v-8b0bcb9a {
   width: 100%;
   text-align: left;
   background-color: transparent;
   color: #EFEFF4;
   margin-top: 20rpx;
 }
-._ul.data-v-61795f46 {
+._ul.data-v-8b0bcb9a {
   margin: 0;
   padding: 0;
 }
-._li.data-v-61795f46 {
+._li.data-v-8b0bcb9a {
   border-bottom: 1rpx #EFEFF4 solid;
 }
 

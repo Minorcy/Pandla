@@ -13,13 +13,18 @@
 
 			例：交易所交易可以兌換現金<br />
 
-			定制商城購物消費<br />
-
-			遊戲消費<br />
-
-			點贊打賞<br />
-
-			公益基金池捐贈<br /><br />
+			<view class="item-content">
+				
+				
+				
+				定制商城購物消費<br />
+				
+				遊戲消費<br />
+				
+				點贊打賞<br />
+				
+				公益基金池捐贈<br /><br />
+			</view>
 		</view>
 
 
@@ -59,7 +64,7 @@
 		</view>
 
 
-		<p class="title">Token獲取管道有哪些</p>
+		<p class="title">Token獲取管道有哪些?</p>
 		<view class="content">
 		1.注册獲得10個token<br />
 
@@ -100,16 +105,22 @@
 	.pages-content {
 		font-size: 30upx;
 		padding: 20upx;
-		color: #E2E2E3;
+		color: #B4B0B0;
 	}
 	
 	.title {
 		font-size: 40upx;
 		font-weight: bold;
+		color: #B4B0B0;
 	}
 	
 	.content {
 		display: block;
 		margin-left: 20upx;
+		color: #B4B0B0;
+	}
+	
+	.item-content {
+		margin-left: 60upx;
 	}
 </style>

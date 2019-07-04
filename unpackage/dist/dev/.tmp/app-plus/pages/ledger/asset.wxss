@@ -24,11 +24,11 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.pages-content.data-v-2a6241e5 {
+.pages-content.data-v-ce7793d0 {
   width: 100%;
   background-color: #EFEFF4;
 }
-.pan-data.data-v-2a6241e5 {
+.pan-data.data-v-ce7793d0 {
   width: 100%;
   background: -webkit-linear-gradient(to right, #000000, #979797);
   /* Safari 5.1 - 6.0 */
@@ -41,12 +41,12 @@
   background: linear-gradient(to right, #000000, #979797);
   /* 标准的语法 */
 }
-.pan-data-num.data-v-2a6241e5 {
+.pan-data-num.data-v-ce7793d0 {
     display: block;
     font-size: 40rpx;
     padding: 20rpx 0 0 20rpx;
 }
-.pan-data-freeze.data-v-2a6241e5 {
+.pan-data-freeze.data-v-ce7793d0 {
     font-size: 25rpx;
     padding: 20rpx;
     clear: both;
@@ -61,25 +61,25 @@
     background: linear-gradient(to right, #424A4D, #979797);
     /* 标准的语法 */
 }
-.pan-label-num.data-v-2a6241e5 {
+.pan-label-num.data-v-ce7793d0 {
   font-size: 30rpx;
   border-bottom: 1rpx solid #FFFFFF;
   padding: 20rpx;
 }
-.pan-label-deal.data-v-2a6241e5 {
+.pan-label-deal.data-v-ce7793d0 {
   float: right;
   margin-right: 20rpx;
   font-size: 30rpx;
 }
-.pan-label-introduction.data-v-2a6241e5 {
+.pan-label-introduction.data-v-ce7793d0 {
   font-size: 35rpx;
   border-bottom: 1rpx solid #979797;
 }
-.pan-label-context.data-v-2a6241e5 {
+.pan-label-context.data-v-ce7793d0 {
   font-size: 25rpx;
   line-height: 45rpx;
 }
-.pan-label-list.data-v-2a6241e5 {
+.pan-label-list.data-v-ce7793d0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -97,21 +97,21 @@
   padding: 50rpx 100rpx;
   color: #000000;
 }
-.pan-notice.data-v-2a6241e5 {
+.pan-notice.data-v-ce7793d0 {
   background-color: #EFEFF4;
   color: #000000;
   padding: 30rpx;
   border-bottom: 1rpx solid #979797;
 }
-.pan-list.data-v-2a6241e5 {
+.pan-list.data-v-ce7793d0 {
   border-top: 1rpx solid #979797;
   font-size: 35rpx;
   color: #000000;
 }
-.pan-list-ul.data-v-2a6241e5 {
+.pan-list-ul.data-v-ce7793d0 {
     padding: 0 50rpx;
 }
-.pan-list-li.data-v-2a6241e5 {
+.pan-list-li.data-v-ce7793d0 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -128,18 +128,18 @@
     padding: 20rpx 0;
     border-bottom: 1rpx solid #979797;
 }
-.pan-list-action.data-v-2a6241e5 {
+.pan-list-action.data-v-ce7793d0 {
     font-size: 30rpx;
 }
-.pan-list-time.data-v-2a6241e5 {
+.pan-list-time.data-v-ce7793d0 {
     font-size: 25rpx;
     color: #979797;
 }
-.pan-list-number.data-v-2a6241e5 {
+.pan-list-number.data-v-ce7793d0 {
     color: #CD2626;
     font-size: 30rpx;
 }
-.pan-img-pan.data-v-2a6241e5 {
+.pan-img-pan.data-v-ce7793d0 {
   width: 50rpx;
   height: 50rpx;
   padding: 15rpx;

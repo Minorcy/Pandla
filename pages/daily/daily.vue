@@ -531,6 +531,7 @@
 		width: 100%;
 		height: 65upx;
 		vertical-align: middle;
+		padding-left: 20upx;
 		float: left;
 	}
 	
@@ -540,7 +541,7 @@
 		padding: 0;
 		right: 0;
 		width: 20%;
-		padding-right: 20upx;
+		padding-right: 40upx;
 		float: right;
 		margin-top: -10upx;
 		font-size: 35upx;

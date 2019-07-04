@@ -2,14 +2,19 @@
 .pages-content {
 	font-size: 30rpx;
 	padding: 20rpx;
-	color: #E2E2E3;
+	color: #B4B0B0;
 }
 .title {
 	font-size: 40rpx;
 	font-weight: bold;
+	color: #B4B0B0;
 }
 .content {
 	display: block;
 	margin-left: 20rpx;
+	color: #B4B0B0;
+}
+.item-content {
+	margin-left: 60rpx;
 }
 
