@@ -1,4 +1,8 @@
 {
   "navigationBarTitleText": "",
+<<<<<<< HEAD
+=======
+  "titleNView": false,
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
   "usingComponents": {}
 }

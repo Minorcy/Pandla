@@ -13,2191 +13,6 @@ if(typeof __WXML_GLOBAL__ !== 'undefined'){
 // var Behavior = Behavior || function() {};
 var $gwx;
   
-/*v0.5vv_20190312_syb_scopedata*/global.__wcc_version__='v0.5vv_20190312_syb_scopedata';global.__wcc_version_info__={"customComponents":true,"fixZeroRpx":true,"propValueDeepCopy":false};
-var $gwxc
-var $gaic={}
-$gwx=function(path,global){
-if(typeof global === 'undefined') global={};if(typeof __WXML_GLOBAL__ === 'undefined') {__WXML_GLOBAL__={};
-}__WXML_GLOBAL__.modules = __WXML_GLOBAL__.modules || {};
-function _(a,b){if(typeof(b)!='undefined')a.children.push(b);}
-function _v(k){if(typeof(k)!='undefined')return {tag:'virtual','wxKey':k,children:[]};return {tag:'virtual',children:[]};}
-function _n(tag){$gwxc++;if($gwxc>=16000){throw 'Dom limit exceeded, please check if there\'s any mistake you\'ve made.'};return {tag:'wx-'+tag,attr:{},children:[],n:[],raw:{},generics:{}}}
-function _p(a,b){b&&a.properities.push(b);}
-function _s(scope,env,key){return typeof(scope[key])!='undefined'?scope[key]:env[key]}
-function _wp(m){console.warn("WXMLRT_$gwx:"+m)}
-function _wl(tname,prefix){_wp(prefix+':-1:-1:-1: Template `' + tname + '` is being called recursively, will be stop.')}
-$gwn=console.warn;
-$gwl=console.log;
-function $gwh()
-{
-function x()
-{
-}
-x.prototype = 
-{
-hn: function( obj, all )
-{
-if( typeof(obj) == 'object' )
-{
-var cnt=0;
-var any1=false,any2=false;
-for(var x in obj)
-{
-any1=any1|x==='__value__';
-any2=any2|x==='__wxspec__';
-cnt++;
-if(cnt>2)break;
-}
-return cnt == 2 && any1 && any2 && ( all || obj.__wxspec__ !== 'm' || this.hn(obj.__value__) === 'h' ) ? "h" : "n";
-}
-return "n";
-},
-nh: function( obj, special )
-{
-return { __value__: obj, __wxspec__: special ? special : true }
-},
-rv: function( obj )
-{
-return this.hn(obj,true)==='n'?obj:this.rv(obj.__value__);
-},
-hm: function( obj )
-{
-if( typeof(obj) == 'object' )
-{
-var cnt=0;
-var any1=false,any2=false;
-for(var x in obj)
-{
-any1=any1|x==='__value__';
-any2=any2|x==='__wxspec__';
-cnt++;
-if(cnt>2)break;
-}
-return cnt == 2 && any1 && any2 && (obj.__wxspec__ === 'm' || this.hm(obj.__value__) );
-}
-return false;
-}
-}
-return new x;
-}
-wh=$gwh();
-function $gstack(s){
-var tmp=s.split('\n '+' '+' '+' ');
-for(var i=0;i<tmp.length;++i){
-if(0==i) continue;
-if(")"===tmp[i][tmp[i].length-1])
-tmp[i]=tmp[i].replace(/\s\(.*\)$/,"");
-else
-tmp[i]="at anonymous function";
-}
-return tmp.join('\n '+' '+' '+' ');
-}
-function $gwrt( should_pass_type_info )
-{
-function ArithmeticEv( ops, e, s, g, o )
-{
-var _f = false;
-var rop = ops[0][1];
-var _a,_b,_c,_d, _aa, _bb;
-switch( rop )
-{
-case '?:':
-_a = rev( ops[1], e, s, g, o, _f );
-_c = should_pass_type_info && ( wh.hn(_a) === 'h' );
-_d = wh.rv( _a ) ? rev( ops[2], e, s, g, o, _f ) : rev( ops[3], e, s, g, o, _f );
-_d = _c && wh.hn( _d ) === 'n' ? wh.nh( _d, 'c' ) : _d;
-return _d;
-break;
-case '&&':
-_a = rev( ops[1], e, s, g, o, _f );
-_c = should_pass_type_info && ( wh.hn(_a) === 'h' );
-_d = wh.rv( _a ) ? rev( ops[2], e, s, g, o, _f ) : wh.rv( _a );
-_d = _c && wh.hn( _d ) === 'n' ? wh.nh( _d, 'c' ) : _d;
-return _d;
-break;
-case '||':
-_a = rev( ops[1], e, s, g, o, _f );
-_c = should_pass_type_info && ( wh.hn(_a) === 'h' );
-_d = wh.rv( _a ) ? wh.rv(_a) : rev( ops[2], e, s, g, o, _f );
-_d = _c && wh.hn( _d ) === 'n' ? wh.nh( _d, 'c' ) : _d;
-return _d;
-break;
-case '+':
-case '*':
-case '/':
-case '%':
-case '|':
-case '^':
-case '&':
-case '===':
-case '==':
-case '!=':
-case '!==':
-case '>=':
-case '<=':
-case '>':
-case '<':
-case '<<':
-case '>>':
-_a = rev( ops[1], e, s, g, o, _f );
-_b = rev( ops[2], e, s, g, o, _f );
-_c = should_pass_type_info && (wh.hn( _a ) === 'h' || wh.hn( _b ) === 'h');
-switch( rop )
-{
-case '+':
-_d = wh.rv( _a ) + wh.rv( _b );
-break;
-case '*':
-_d = wh.rv( _a ) * wh.rv( _b );
-break;
-case '/':
-_d = wh.rv( _a ) / wh.rv( _b );
-break;
-case '%':
-_d = wh.rv( _a ) % wh.rv( _b );
-break;
-case '|':
-_d = wh.rv( _a ) | wh.rv( _b );
-break;
-case '^':
-_d = wh.rv( _a ) ^ wh.rv( _b );
-break;
-case '&':
-_d = wh.rv( _a ) & wh.rv( _b );
-break;
-case '===':
-_d = wh.rv( _a ) === wh.rv( _b );
-break;
-case '==':
-_d = wh.rv( _a ) == wh.rv( _b );
-break;
-case '!=':
-_d = wh.rv( _a ) != wh.rv( _b );
-break;
-case '!==':
-_d = wh.rv( _a ) !== wh.rv( _b );
-break;
-case '>=':
-_d = wh.rv( _a ) >= wh.rv( _b );
-break;
-case '<=':
-_d = wh.rv( _a ) <= wh.rv( _b );
-break;
-case '>':
-_d = wh.rv( _a ) > wh.rv( _b );
-break;
-case '<':
-_d = wh.rv( _a ) < wh.rv( _b );
-break;
-case '<<':
-_d = wh.rv( _a ) << wh.rv( _b );
-break;
-case '>>':
-_d = wh.rv( _a ) >> wh.rv( _b );
-break;
-default:
-break;
-}
-return _c ? wh.nh( _d, "c" ) : _d;
-break;
-case '-':
-_a = ops.length === 3 ? rev( ops[1], e, s, g, o, _f ) : 0;
-_b = ops.length === 3 ? rev( ops[2], e, s, g, o, _f ) : rev( ops[1], e, s, g, o, _f );
-_c = should_pass_type_info && (wh.hn( _a ) === 'h' || wh.hn( _b ) === 'h');
-_d = _c ? wh.rv( _a ) - wh.rv( _b ) : _a - _b;
-return _c ? wh.nh( _d, "c" ) : _d;
-break;
-case '!':
-_a = rev( ops[1], e, s, g, o, _f );
-_c = should_pass_type_info && (wh.hn( _a ) == 'h');
-_d = !wh.rv(_a);
-return _c ? wh.nh( _d, "c" ) : _d;
-case '~':
-_a = rev( ops[1], e, s, g, o, _f );
-_c = should_pass_type_info && (wh.hn( _a ) == 'h');
-_d = ~wh.rv(_a);
-return _c ? wh.nh( _d, "c" ) : _d;
-default:
-$gwn('unrecognized op' + rop );
-}
-}
-function rev( ops, e, s, g, o, newap )
-{
-var op = ops[0];
-var _f = false;
-if ( typeof newap !== "undefined" ) o.ap = newap;
-if( typeof(op)==='object' )
-{
-var vop=op[0];
-var _a, _aa, _b, _bb, _c, _d, _s, _e, _ta, _tb, _td;
-switch(vop)
-{
-case 2:
-return ArithmeticEv(ops,e,s,g,o);
-break;
-case 4: 
-return rev( ops[1], e, s, g, o, _f );
-break;
-case 5: 
-switch( ops.length )
-{
-case 2: 
-_a = rev( ops[1],e,s,g,o,_f );
-return should_pass_type_info?[_a]:[wh.rv(_a)];
-return [_a];
-break;
-case 1: 
-return [];
-break;
-default:
-_a = rev( ops[1],e,s,g,o,_f );
-_b = rev( ops[2],e,s,g,o,_f );
-_a.push( 
-should_pass_type_info ?
-_b :
-wh.rv( _b )
-);
-return _a;
-break;
-}
-break;
-case 6:
-_a = rev(ops[1],e,s,g,o);
-var ap = o.ap;
-_ta = wh.hn(_a)==='h';
-_aa = _ta ? wh.rv(_a) : _a;
-o.is_affected |= _ta;
-if( should_pass_type_info )
-{
-if( _aa===null || typeof(_aa) === 'undefined' )
-{
-return _ta ? wh.nh(undefined, 'e') : undefined;
-}
-_b = rev(ops[2],e,s,g,o,_f);
-_tb = wh.hn(_b) === 'h';
-_bb = _tb ? wh.rv(_b) : _b;
-o.ap = ap;
-o.is_affected |= _tb;
-if( _bb===null || typeof(_bb) === 'undefined' || 
-_bb === "__proto__" || _bb === "prototype" || _bb === "caller" ) 
-{
-return (_ta || _tb) ? wh.nh(undefined, 'e') : undefined;
-}
-_d = _aa[_bb];
-if ( typeof _d === 'function' && !ap ) _d = undefined;
-_td = wh.hn(_d)==='h';
-o.is_affected |= _td;
-return (_ta || _tb) ? (_td ? _d : wh.nh(_d, 'e')) : _d;
-}
-else
-{
-if( _aa===null || typeof(_aa) === 'undefined' )
-{
-return undefined;
-}
-_b = rev(ops[2],e,s,g,o,_f);
-_tb = wh.hn(_b) === 'h';
-_bb = _tb ? wh.rv(_b) : _b;
-o.ap = ap;
-o.is_affected |= _tb;
-if( _bb===null || typeof(_bb) === 'undefined' || 
-_bb === "__proto__" || _bb === "prototype" || _bb === "caller" ) 
-{
-return undefined;
-}
-_d = _aa[_bb];
-if ( typeof _d === 'function' && !ap ) _d = undefined;
-_td = wh.hn(_d)==='h';
-o.is_affected |= _td;
-return _td ? wh.rv(_d) : _d;
-}
-case 7: 
-switch(ops[1][0])
-{
-case 11:
-o.is_affected |= wh.hn(g)==='h';
-return g;
-case 3:
-_s = wh.rv( s );
-_e = wh.rv( e );
-_b = ops[1][1];
-if (g && g.f && g.f.hasOwnProperty(_b) )
-{
-_a = g.f;
-o.ap = true;
-}
-else
-{
-_a = _s && _s.hasOwnProperty(_b) ? 
-s : (_e && _e.hasOwnProperty(_b) ? e : undefined );
-}
-if( should_pass_type_info )
-{
-if( _a )
-{
-_ta = wh.hn(_a) === 'h';
-_aa = _ta ? wh.rv( _a ) : _a;
-_d = _aa[_b];
-_td = wh.hn(_d) === 'h';
-o.is_affected |= _ta || _td;
-_d = _ta && !_td ? wh.nh(_d,'e') : _d;
-return _d;
-}
-}
-else
-{
-if( _a )
-{
-_ta = wh.hn(_a) === 'h';
-_aa = _ta ? wh.rv( _a ) : _a;
-_d = _aa[_b];
-_td = wh.hn(_d) === 'h';
-o.is_affected |= _ta || _td;
-return wh.rv(_d);
-}
-}
-return undefined;
-}
-break;
-case 8: 
-_a = {};
-_a[ops[1]] = rev(ops[2],e,s,g,o,_f);
-return _a;
-break;
-case 9: 
-_a = rev(ops[1],e,s,g,o,_f);
-_b = rev(ops[2],e,s,g,o,_f);
-function merge( _a, _b, _ow )
-{
-var ka, _bbk;
-_ta = wh.hn(_a)==='h';
-_tb = wh.hn(_b)==='h';
-_aa = wh.rv(_a);
-_bb = wh.rv(_b);
-for(var k in _bb)
-{
-if ( _ow || !_aa.hasOwnProperty(k) )
-{
-_aa[k] = should_pass_type_info ? (_tb ? wh.nh(_bb[k],'e') : _bb[k]) : wh.rv(_bb[k]);
-}
-}
-return _a;
-}
-var _c = _a
-var _ow = true
-if ( typeof(ops[1][0]) === "object" && ops[1][0][0] === 10 ) {
-_a = _b
-_b = _c
-_ow = false
-}
-if ( typeof(ops[1][0]) === "object" && ops[1][0][0] === 10 ) {
-var _r = {}
-return merge( merge( _r, _a, _ow ), _b, _ow );
-}
-else
-return merge( _a, _b, _ow );
-break;
-case 10:
-_a = rev(ops[1],e,s,g,o,_f);
-_a = should_pass_type_info ? _a : wh.rv( _a );
-return _a ;
-break;
-case 12:
-var _r;
-_a = rev(ops[1],e,s,g,o);
-if ( !o.ap )
-{
-return should_pass_type_info && wh.hn(_a)==='h' ? wh.nh( _r, 'f' ) : _r;
-}
-var ap = o.ap;
-_b = rev(ops[2],e,s,g,o,_f);
-o.ap = ap;
-_ta = wh.hn(_a)==='h';
-_tb = _ca(_b);
-_aa = wh.rv(_a);	
-_bb = wh.rv(_b); snap_bb=$gdc(_bb,"nv_");
-try{
-_r = typeof _aa === "function" ? $gdc(_aa.apply(null, snap_bb)) : undefined;
-} catch (e){
-e.message = e.message.replace(/nv_/g,"");
-e.stack = e.stack.substring(0,e.stack.indexOf("\n", e.stack.lastIndexOf("at nv_")));
-e.stack = e.stack.replace(/\snv_/g," "); 
-e.stack = $gstack(e.stack);	
-if(g.debugInfo)
-{
-e.stack += "\n "+" "+" "+" at "+g.debugInfo[0]+":"+g.debugInfo[1]+":"+g.debugInfo[2];
-console.error(e);
-}
-_r = undefined;
-}
-return should_pass_type_info && (_tb || _ta) ? wh.nh( _r, 'f' ) : _r;
-}
-}
-else
-{
-if( op === 3 || op === 1) return ops[1];
-else if( op === 11 ) 
-{
-var _a='';
-for( var i = 1 ; i < ops.length ; i++ )
-{
-var xp = wh.rv(rev(ops[i],e,s,g,o,_f));
-_a += typeof(xp) === 'undefined' ? '' : xp;
-}
-return _a;
-}
-}
-}
-function wrapper( ops, e, s, g, o, newap )
-{
-if( ops[0] == '11182016' )
-{
-g.debugInfo = ops[2];
-return rev( ops[1], e, s, g, o, newap );
-}
-else
-{
-g.debugInfo = null;
-return rev( ops, e, s, g, o, newap );
-}
-}
-return wrapper;
-}
-gra=$gwrt(true); 
-grb=$gwrt(false); 
-function TestTest( expr, ops, e,s,g, expect_a, expect_b, expect_affected )
-{
-{
-var o = {is_affected:false};
-var a = gra( ops, e,s,g, o );
-if( JSON.stringify(a) != JSON.stringify( expect_a )
-|| o.is_affected != expect_affected )
-{
-console.warn( "A. " + expr + " get result " + JSON.stringify(a) + ", " + o.is_affected + ", but " + JSON.stringify( expect_a ) + ", " + expect_affected + " is expected" );
-}
-}
-{
-var o = {is_affected:false};
-var a = grb( ops, e,s,g, o );
-if( JSON.stringify(a) != JSON.stringify( expect_b )
-|| o.is_affected != expect_affected )
-{
-console.warn( "B. " + expr + " get result " + JSON.stringify(a) + ", " + o.is_affected + ", but " + JSON.stringify( expect_b ) + ", " + expect_affected + " is expected" );
-}
-}
-}
-
-function wfor( to_iter, func, env, _s, global, father, itemname, indexname, keyname )
-{
-var _n = wh.hn( to_iter ) === 'n'; 
-var scope = wh.rv( _s ); 
-var has_old_item = scope.hasOwnProperty(itemname);
-var has_old_index = scope.hasOwnProperty(indexname);
-var old_item = scope[itemname];
-var old_index = scope[indexname];
-var full = Object.prototype.toString.call(wh.rv(to_iter));
-var type = full[8]; 
-if( type === 'N' && full[10] === 'l' ) type = 'X'; 
-var _y;
-if( _n )
-{
-if( type === 'A' ) 
-{
-var r_iter_item;
-for( var i = 0 ; i < to_iter.length ; i++ )
-{
-scope[itemname] = to_iter[i];
-scope[indexname] = _n ? i : wh.nh(i, 'h');
-r_iter_item = wh.rv(to_iter[i]);
-var key = keyname && r_iter_item ? (keyname==="*this" ? r_iter_item : wh.rv(r_iter_item[keyname])) : undefined;
-_y = _v(key);
-_(father,_y);
-func( env, scope, _y, global );
-}
-}
-else if( type === 'O' ) 
-{
-var i = 0;
-var r_iter_item;
-for( var k in to_iter )
-{
-scope[itemname] = to_iter[k];
-scope[indexname] = _n ? k : wh.nh(k, 'h');
-r_iter_item = wh.rv(to_iter[k]);
-var key = keyname && r_iter_item ? (keyname==="*this" ? r_iter_item : wh.rv(r_iter_item[keyname])) : undefined;
-_y = _v(key);
-_(father,_y);
-func( env,scope,_y,global );
-i++;
-}
-}
-else if( type === 'S' ) 
-{
-for( var i = 0 ; i < to_iter.length ; i++ )
-{
-scope[itemname] = to_iter[i];
-scope[indexname] = _n ? i : wh.nh(i, 'h');
-_y = _v( to_iter[i] + i );
-_(father,_y);
-func( env,scope,_y,global );
-}
-}
-else if( type === 'N' ) 
-{
-for( var i = 0 ; i < to_iter ; i++ )
-{
-scope[itemname] = i;
-scope[indexname] = _n ? i : wh.nh(i, 'h');
-_y = _v( i );
-_(father,_y);
-func(env,scope,_y,global);
-}
-}
-else
-{
-}
-}
-else
-{
-var r_to_iter = wh.rv(to_iter);
-var r_iter_item, iter_item;
-if( type === 'A' ) 
-{
-for( var i = 0 ; i < r_to_iter.length ; i++ )
-{
-iter_item = r_to_iter[i];
-iter_item = wh.hn(iter_item)==='n' ? wh.nh(iter_item,'h') : iter_item;
-r_iter_item = wh.rv( iter_item );
-scope[itemname] = iter_item
-scope[indexname] = _n ? i : wh.nh(i, 'h');
-var key = keyname && r_iter_item ? (keyname==="*this" ? r_iter_item : wh.rv(r_iter_item[keyname])) : undefined;
-_y = _v(key);
-_(father,_y);
-func( env, scope, _y, global );
-}
-}
-else if( type === 'O' ) 
-{
-var i=0;
-for( var k in r_to_iter )
-{
-iter_item = r_to_iter[k];
-iter_item = wh.hn(iter_item)==='n'? wh.nh(iter_item,'h') : iter_item;
-r_iter_item = wh.rv( iter_item );
-scope[itemname] = iter_item;
-scope[indexname] = _n ? k : wh.nh(k, 'h');
-var key = keyname && r_iter_item ? (keyname==="*this" ? r_iter_item : wh.rv(r_iter_item[keyname])) : undefined;
-_y=_v(key);
-_(father,_y);
-func( env, scope, _y, global );
-i++
-}
-}
-else if( type === 'S' ) 
-{
-for( var i = 0 ; i < r_to_iter.length ; i++ )
-{
-iter_item = wh.nh(r_to_iter[i],'h');
-scope[itemname] = iter_item;
-scope[indexname] = _n ? i : wh.nh(i, 'h');
-_y = _v( to_iter[i] + i );
-_(father,_y);
-func( env, scope, _y, global );
-}
-}
-else if( type === 'N' ) 
-{
-for( var i = 0 ; i < r_to_iter ; i++ )
-{
-iter_item = wh.nh(i,'h');
-scope[itemname] = iter_item;
-scope[indexname]= _n ? i : wh.nh(i,'h');
-_y = _v( i );
-_(father,_y);
-func(env,scope,_y,global);
-}
-}
-else
-{
-}
-}
-if(has_old_item)
-{
-scope[itemname]=old_item;
-}
-else
-{
-delete scope[itemname];
-}
-if(has_old_index)
-{
-scope[indexname]=old_index;
-}
-else
-{
-delete scope[indexname];
-}
-}
-
-function _ca(o)
-{ 
-if ( wh.hn(o) == 'h' ) return true;
-if ( typeof o !== "object" ) return false;
-for(var i in o){ 
-if ( o.hasOwnProperty(i) ){
-if (_ca(o[i])) return true;
-}
-}
-return false;
-}
-function _da( node, attrname, opindex, raw, o )
-{
-var isaffected = false;
-var value = $gdc( raw, "", 2 );
-if ( o.ap && value && value.constructor===Function ) 
-{
-attrname = "$wxs:" + attrname; 
-node.attr["$gdc"] = $gdc;
-}
-if ( o.is_affected || _ca(raw) ) 
-{
-node.n.push( attrname );
-node.raw[attrname] = raw;
-}
-node.attr[attrname] = value;
-}
-function _r( node, attrname, opindex, env, scope, global ) 
-{
-global.opindex=opindex;
-var o = {}, _env;
-var a = grb( z[opindex], env, scope, global, o );
-_da( node, attrname, opindex, a, o );
-}
-function _rz( z, node, attrname, opindex, env, scope, global ) 
-{
-global.opindex=opindex;
-var o = {}, _env;
-var a = grb( z[opindex], env, scope, global, o );
-_da( node, attrname, opindex, a, o );
-}
-function _o( opindex, env, scope, global )
-{
-global.opindex=opindex;
-var nothing = {};
-var r = grb( z[opindex], env, scope, global, nothing );
-return (r&&r.constructor===Function) ? undefined : r;
-}
-function _oz( z, opindex, env, scope, global )
-{
-global.opindex=opindex;
-var nothing = {};
-var r = grb( z[opindex], env, scope, global, nothing );
-return (r&&r.constructor===Function) ? undefined : r;
-}
-function _1( opindex, env, scope, global, o )
-{
-var o = o || {};
-global.opindex=opindex;
-return gra( z[opindex], env, scope, global, o );
-}
-function _1z( z, opindex, env, scope, global, o )
-{
-var o = o || {};
-global.opindex=opindex;
-return gra( z[opindex], env, scope, global, o );
-}
-function _2( opindex, func, env, scope, global, father, itemname, indexname, keyname )
-{
-var o = {};
-var to_iter = _1( opindex, env, scope, global );
-wfor( to_iter, func, env, scope, global, father, itemname, indexname, keyname );
-}
-function _2z( z, opindex, func, env, scope, global, father, itemname, indexname, keyname )
-{
-var o = {};
-var to_iter = _1z( z, opindex, env, scope, global );
-wfor( to_iter, func, env, scope, global, father, itemname, indexname, keyname );
-}
-
-
-function _m(tag,attrs,generics,env,scope,global)
-{
-var tmp=_n(tag);
-var base=0;
-for(var i = 0 ; i < attrs.length ; i+=2 )
-{
-if(base+attrs[i+1]<0)
-{
-tmp.attr[attrs[i]]=true;
-}
-else
-{
-_r(tmp,attrs[i],base+attrs[i+1],env,scope,global);
-if(base===0)base=attrs[i+1];
-}
-}
-for(var i=0;i<generics.length;i+=2)
-{
-if(base+generics[i+1]<0)
-{
-tmp.generics[generics[i]]="";
-}
-else
-{
-var $t=grb(z[base+generics[i+1]],env,scope,global);
-if ($t!="") $t="wx-"+$t;
-tmp.generics[generics[i]]=$t;
-if(base===0)base=generics[i+1];
-}
-}
-return tmp;
-}
-function _mz(z,tag,attrs,generics,env,scope,global)
-{
-var tmp=_n(tag);
-var base=0;
-for(var i = 0 ; i < attrs.length ; i+=2 )
-{
-if(base+attrs[i+1]<0)
-{
-tmp.attr[attrs[i]]=true;
-}
-else
-{
-_rz(z, tmp,attrs[i],base+attrs[i+1],env,scope,global);
-if(base===0)base=attrs[i+1];
-}
-}
-for(var i=0;i<generics.length;i+=2)
-{
-if(base+generics[i+1]<0)
-{
-tmp.generics[generics[i]]="";
-}
-else
-{
-var $t=grb(z[base+generics[i+1]],env,scope,global);
-if ($t!="") $t="wx-"+$t;
-tmp.generics[generics[i]]=$t;
-if(base===0)base=generics[i+1];
-}
-}
-return tmp;
-}
-
-var nf_init=function(){
-if(typeof __WXML_GLOBAL__==="undefined"||undefined===__WXML_GLOBAL__.wxs_nf_init){
-nf_init_Object();nf_init_Function();nf_init_Array();nf_init_String();nf_init_Boolean();nf_init_Number();nf_init_Math();nf_init_Date();nf_init_RegExp();
-}
-if(typeof __WXML_GLOBAL__!=="undefined") __WXML_GLOBAL__.wxs_nf_init=true;
-};
-var nf_init_Object=function(){
-Object.defineProperty(Object.prototype,"nv_constructor",{writable:true,value:"Object"})
-Object.defineProperty(Object.prototype,"nv_toString",{writable:true,value:function(){return "[object Object]"}})
-}
-var nf_init_Function=function(){
-Object.defineProperty(Function.prototype,"nv_constructor",{writable:true,value:"Function"})
-Object.defineProperty(Function.prototype,"nv_length",{get:function(){return this.length;},set:function(){}});
-Object.defineProperty(Function.prototype,"nv_toString",{writable:true,value:function(){return "[function Function]"}})
-}
-var nf_init_Array=function(){
-Object.defineProperty(Array.prototype,"nv_toString",{writable:true,value:function(){return this.nv_join();}})
-Object.defineProperty(Array.prototype,"nv_join",{writable:true,value:function(s){
-s=undefined==s?',':s;
-var r="";
-for(var i=0;i<this.length;++i){
-if(0!=i) r+=s;
-if(null==this[i]||undefined==this[i]) r+='';	
-else if(typeof this[i]=='function') r+=this[i].nv_toString();
-else if(typeof this[i]=='object'&&this[i].nv_constructor==="Array") r+=this[i].nv_join();
-else r+=this[i].toString();
-}
-return r;
-}})
-Object.defineProperty(Array.prototype,"nv_constructor",{writable:true,value:"Array"})
-Object.defineProperty(Array.prototype,"nv_concat",{writable:true,value:Array.prototype.concat})
-Object.defineProperty(Array.prototype,"nv_pop",{writable:true,value:Array.prototype.pop})
-Object.defineProperty(Array.prototype,"nv_push",{writable:true,value:Array.prototype.push})
-Object.defineProperty(Array.prototype,"nv_reverse",{writable:true,value:Array.prototype.reverse})
-Object.defineProperty(Array.prototype,"nv_shift",{writable:true,value:Array.prototype.shift})
-Object.defineProperty(Array.prototype,"nv_slice",{writable:true,value:Array.prototype.slice})
-Object.defineProperty(Array.prototype,"nv_sort",{writable:true,value:Array.prototype.sort})
-Object.defineProperty(Array.prototype,"nv_splice",{writable:true,value:Array.prototype.splice})
-Object.defineProperty(Array.prototype,"nv_unshift",{writable:true,value:Array.prototype.unshift})
-Object.defineProperty(Array.prototype,"nv_indexOf",{writable:true,value:Array.prototype.indexOf})
-Object.defineProperty(Array.prototype,"nv_lastIndexOf",{writable:true,value:Array.prototype.lastIndexOf})
-Object.defineProperty(Array.prototype,"nv_every",{writable:true,value:Array.prototype.every})
-Object.defineProperty(Array.prototype,"nv_some",{writable:true,value:Array.prototype.some})
-Object.defineProperty(Array.prototype,"nv_forEach",{writable:true,value:Array.prototype.forEach})
-Object.defineProperty(Array.prototype,"nv_map",{writable:true,value:Array.prototype.map})
-Object.defineProperty(Array.prototype,"nv_filter",{writable:true,value:Array.prototype.filter})
-Object.defineProperty(Array.prototype,"nv_reduce",{writable:true,value:Array.prototype.reduce})
-Object.defineProperty(Array.prototype,"nv_reduceRight",{writable:true,value:Array.prototype.reduceRight})
-Object.defineProperty(Array.prototype,"nv_length",{get:function(){return this.length;},set:function(value){this.length=value;}});
-}
-var nf_init_String=function(){
-Object.defineProperty(String.prototype,"nv_constructor",{writable:true,value:"String"})
-Object.defineProperty(String.prototype,"nv_toString",{writable:true,value:String.prototype.toString})
-Object.defineProperty(String.prototype,"nv_valueOf",{writable:true,value:String.prototype.valueOf})
-Object.defineProperty(String.prototype,"nv_charAt",{writable:true,value:String.prototype.charAt})
-Object.defineProperty(String.prototype,"nv_charCodeAt",{writable:true,value:String.prototype.charCodeAt})
-Object.defineProperty(String.prototype,"nv_concat",{writable:true,value:String.prototype.concat})
-Object.defineProperty(String.prototype,"nv_indexOf",{writable:true,value:String.prototype.indexOf})
-Object.defineProperty(String.prototype,"nv_lastIndexOf",{writable:true,value:String.prototype.lastIndexOf})
-Object.defineProperty(String.prototype,"nv_localeCompare",{writable:true,value:String.prototype.localeCompare})
-Object.defineProperty(String.prototype,"nv_match",{writable:true,value:String.prototype.match})
-Object.defineProperty(String.prototype,"nv_replace",{writable:true,value:String.prototype.replace})
-Object.defineProperty(String.prototype,"nv_search",{writable:true,value:String.prototype.search})
-Object.defineProperty(String.prototype,"nv_slice",{writable:true,value:String.prototype.slice})
-Object.defineProperty(String.prototype,"nv_split",{writable:true,value:String.prototype.split})
-Object.defineProperty(String.prototype,"nv_substring",{writable:true,value:String.prototype.substring})
-Object.defineProperty(String.prototype,"nv_toLowerCase",{writable:true,value:String.prototype.toLowerCase})
-Object.defineProperty(String.prototype,"nv_toLocaleLowerCase",{writable:true,value:String.prototype.toLocaleLowerCase})
-Object.defineProperty(String.prototype,"nv_toUpperCase",{writable:true,value:String.prototype.toUpperCase})
-Object.defineProperty(String.prototype,"nv_toLocaleUpperCase",{writable:true,value:String.prototype.toLocaleUpperCase})
-Object.defineProperty(String.prototype,"nv_trim",{writable:true,value:String.prototype.trim})
-Object.defineProperty(String.prototype,"nv_length",{get:function(){return this.length;},set:function(value){this.length=value;}});
-}
-var nf_init_Boolean=function(){
-Object.defineProperty(Boolean.prototype,"nv_constructor",{writable:true,value:"Boolean"})
-Object.defineProperty(Boolean.prototype,"nv_toString",{writable:true,value:Boolean.prototype.toString})
-Object.defineProperty(Boolean.prototype,"nv_valueOf",{writable:true,value:Boolean.prototype.valueOf})
-}
-var nf_init_Number=function(){
-Object.defineProperty(Number,"nv_MAX_VALUE",{writable:false,value:Number.MAX_VALUE})
-Object.defineProperty(Number,"nv_MIN_VALUE",{writable:false,value:Number.MIN_VALUE})
-Object.defineProperty(Number,"nv_NEGATIVE_INFINITY",{writable:false,value:Number.NEGATIVE_INFINITY})
-Object.defineProperty(Number,"nv_POSITIVE_INFINITY",{writable:false,value:Number.POSITIVE_INFINITY})
-Object.defineProperty(Number.prototype,"nv_constructor",{writable:true,value:"Number"})
-Object.defineProperty(Number.prototype,"nv_toString",{writable:true,value:Number.prototype.toString})
-Object.defineProperty(Number.prototype,"nv_toLocaleString",{writable:true,value:Number.prototype.toLocaleString})
-Object.defineProperty(Number.prototype,"nv_valueOf",{writable:true,value:Number.prototype.valueOf})
-Object.defineProperty(Number.prototype,"nv_toFixed",{writable:true,value:Number.prototype.toFixed})
-Object.defineProperty(Number.prototype,"nv_toExponential",{writable:true,value:Number.prototype.toExponential})
-Object.defineProperty(Number.prototype,"nv_toPrecision",{writable:true,value:Number.prototype.toPrecision})
-}
-var nf_init_Math=function(){
-Object.defineProperty(Math,"nv_E",{writable:false,value:Math.E})
-Object.defineProperty(Math,"nv_LN10",{writable:false,value:Math.LN10})
-Object.defineProperty(Math,"nv_LN2",{writable:false,value:Math.LN2})
-Object.defineProperty(Math,"nv_LOG2E",{writable:false,value:Math.LOG2E})
-Object.defineProperty(Math,"nv_LOG10E",{writable:false,value:Math.LOG10E})
-Object.defineProperty(Math,"nv_PI",{writable:false,value:Math.PI})
-Object.defineProperty(Math,"nv_SQRT1_2",{writable:false,value:Math.SQRT1_2})
-Object.defineProperty(Math,"nv_SQRT2",{writable:false,value:Math.SQRT2})
-Object.defineProperty(Math,"nv_abs",{writable:false,value:Math.abs})
-Object.defineProperty(Math,"nv_acos",{writable:false,value:Math.acos})
-Object.defineProperty(Math,"nv_asin",{writable:false,value:Math.asin})
-Object.defineProperty(Math,"nv_atan",{writable:false,value:Math.atan})
-Object.defineProperty(Math,"nv_atan2",{writable:false,value:Math.atan2})
-Object.defineProperty(Math,"nv_ceil",{writable:false,value:Math.ceil})
-Object.defineProperty(Math,"nv_cos",{writable:false,value:Math.cos})
-Object.defineProperty(Math,"nv_exp",{writable:false,value:Math.exp})
-Object.defineProperty(Math,"nv_floor",{writable:false,value:Math.floor})
-Object.defineProperty(Math,"nv_log",{writable:false,value:Math.log})
-Object.defineProperty(Math,"nv_max",{writable:false,value:Math.max})
-Object.defineProperty(Math,"nv_min",{writable:false,value:Math.min})
-Object.defineProperty(Math,"nv_pow",{writable:false,value:Math.pow})
-Object.defineProperty(Math,"nv_random",{writable:false,value:Math.random})
-Object.defineProperty(Math,"nv_round",{writable:false,value:Math.round})
-Object.defineProperty(Math,"nv_sin",{writable:false,value:Math.sin})
-Object.defineProperty(Math,"nv_sqrt",{writable:false,value:Math.sqrt})
-Object.defineProperty(Math,"nv_tan",{writable:false,value:Math.tan})
-}
-var nf_init_Date=function(){
-Object.defineProperty(Date.prototype,"nv_constructor",{writable:true,value:"Date"})
-Object.defineProperty(Date,"nv_parse",{writable:true,value:Date.parse})
-Object.defineProperty(Date,"nv_UTC",{writable:true,value:Date.UTC})
-Object.defineProperty(Date,"nv_now",{writable:true,value:Date.now})
-Object.defineProperty(Date.prototype,"nv_toString",{writable:true,value:Date.prototype.toString})
-Object.defineProperty(Date.prototype,"nv_toDateString",{writable:true,value:Date.prototype.toDateString})
-Object.defineProperty(Date.prototype,"nv_toTimeString",{writable:true,value:Date.prototype.toTimeString})
-Object.defineProperty(Date.prototype,"nv_toLocaleString",{writable:true,value:Date.prototype.toLocaleString})
-Object.defineProperty(Date.prototype,"nv_toLocaleDateString",{writable:true,value:Date.prototype.toLocaleDateString})
-Object.defineProperty(Date.prototype,"nv_toLocaleTimeString",{writable:true,value:Date.prototype.toLocaleTimeString})
-Object.defineProperty(Date.prototype,"nv_valueOf",{writable:true,value:Date.prototype.valueOf})
-Object.defineProperty(Date.prototype,"nv_getTime",{writable:true,value:Date.prototype.getTime})
-Object.defineProperty(Date.prototype,"nv_getFullYear",{writable:true,value:Date.prototype.getFullYear})
-Object.defineProperty(Date.prototype,"nv_getUTCFullYear",{writable:true,value:Date.prototype.getUTCFullYear})
-Object.defineProperty(Date.prototype,"nv_getMonth",{writable:true,value:Date.prototype.getMonth})
-Object.defineProperty(Date.prototype,"nv_getUTCMonth",{writable:true,value:Date.prototype.getUTCMonth})
-Object.defineProperty(Date.prototype,"nv_getDate",{writable:true,value:Date.prototype.getDate})
-Object.defineProperty(Date.prototype,"nv_getUTCDate",{writable:true,value:Date.prototype.getUTCDate})
-Object.defineProperty(Date.prototype,"nv_getDay",{writable:true,value:Date.prototype.getDay})
-Object.defineProperty(Date.prototype,"nv_getUTCDay",{writable:true,value:Date.prototype.getUTCDay})
-Object.defineProperty(Date.prototype,"nv_getHours",{writable:true,value:Date.prototype.getHours})
-Object.defineProperty(Date.prototype,"nv_getUTCHours",{writable:true,value:Date.prototype.getUTCHours})
-Object.defineProperty(Date.prototype,"nv_getMinutes",{writable:true,value:Date.prototype.getMinutes})
-Object.defineProperty(Date.prototype,"nv_getUTCMinutes",{writable:true,value:Date.prototype.getUTCMinutes})
-Object.defineProperty(Date.prototype,"nv_getSeconds",{writable:true,value:Date.prototype.getSeconds})
-Object.defineProperty(Date.prototype,"nv_getUTCSeconds",{writable:true,value:Date.prototype.getUTCSeconds})
-Object.defineProperty(Date.prototype,"nv_getMilliseconds",{writable:true,value:Date.prototype.getMilliseconds})
-Object.defineProperty(Date.prototype,"nv_getUTCMilliseconds",{writable:true,value:Date.prototype.getUTCMilliseconds})
-Object.defineProperty(Date.prototype,"nv_getTimezoneOffset",{writable:true,value:Date.prototype.getTimezoneOffset})
-Object.defineProperty(Date.prototype,"nv_setTime",{writable:true,value:Date.prototype.setTime})
-Object.defineProperty(Date.prototype,"nv_setMilliseconds",{writable:true,value:Date.prototype.setMilliseconds})
-Object.defineProperty(Date.prototype,"nv_setUTCMilliseconds",{writable:true,value:Date.prototype.setUTCMilliseconds})
-Object.defineProperty(Date.prototype,"nv_setSeconds",{writable:true,value:Date.prototype.setSeconds})
-Object.defineProperty(Date.prototype,"nv_setUTCSeconds",{writable:true,value:Date.prototype.setUTCSeconds})
-Object.defineProperty(Date.prototype,"nv_setMinutes",{writable:true,value:Date.prototype.setMinutes})
-Object.defineProperty(Date.prototype,"nv_setUTCMinutes",{writable:true,value:Date.prototype.setUTCMinutes})
-Object.defineProperty(Date.prototype,"nv_setHours",{writable:true,value:Date.prototype.setHours})
-Object.defineProperty(Date.prototype,"nv_setUTCHours",{writable:true,value:Date.prototype.setUTCHours})
-Object.defineProperty(Date.prototype,"nv_setDate",{writable:true,value:Date.prototype.setDate})
-Object.defineProperty(Date.prototype,"nv_setUTCDate",{writable:true,value:Date.prototype.setUTCDate})
-Object.defineProperty(Date.prototype,"nv_setMonth",{writable:true,value:Date.prototype.setMonth})
-Object.defineProperty(Date.prototype,"nv_setUTCMonth",{writable:true,value:Date.prototype.setUTCMonth})
-Object.defineProperty(Date.prototype,"nv_setFullYear",{writable:true,value:Date.prototype.setFullYear})
-Object.defineProperty(Date.prototype,"nv_setUTCFullYear",{writable:true,value:Date.prototype.setUTCFullYear})
-Object.defineProperty(Date.prototype,"nv_toUTCString",{writable:true,value:Date.prototype.toUTCString})
-Object.defineProperty(Date.prototype,"nv_toISOString",{writable:true,value:Date.prototype.toISOString})
-Object.defineProperty(Date.prototype,"nv_toJSON",{writable:true,value:Date.prototype.toJSON})
-}
-var nf_init_RegExp=function(){
-Object.defineProperty(RegExp.prototype,"nv_constructor",{writable:true,value:"RegExp"})
-Object.defineProperty(RegExp.prototype,"nv_exec",{writable:true,value:RegExp.prototype.exec})
-Object.defineProperty(RegExp.prototype,"nv_test",{writable:true,value:RegExp.prototype.test})
-Object.defineProperty(RegExp.prototype,"nv_toString",{writable:true,value:RegExp.prototype.toString})
-Object.defineProperty(RegExp.prototype,"nv_source",{get:function(){return this.source;},set:function(){}});
-Object.defineProperty(RegExp.prototype,"nv_global",{get:function(){return this.global;},set:function(){}});
-Object.defineProperty(RegExp.prototype,"nv_ignoreCase",{get:function(){return this.ignoreCase;},set:function(){}});
-Object.defineProperty(RegExp.prototype,"nv_multiline",{get:function(){return this.multiline;},set:function(){}});
-Object.defineProperty(RegExp.prototype,"nv_lastIndex",{get:function(){return this.lastIndex;},set:function(v){this.lastIndex=v;}});
-}
-nf_init();
-var nv_getDate=function(){var args=Array.prototype.slice.call(arguments);args.unshift(Date);return new(Function.prototype.bind.apply(Date, args));}
-var nv_getRegExp=function(){var args=Array.prototype.slice.call(arguments);args.unshift(RegExp);return new(Function.prototype.bind.apply(RegExp, args));}
-var nv_console={}
-nv_console.nv_log=function(){var res="WXSRT:";for(var i=0;i<arguments.length;++i)res+=arguments[i]+" ";console.log(res);}
-var nv_parseInt = parseInt, nv_parseFloat = parseFloat, nv_isNaN = isNaN, nv_isFinite = isFinite, nv_decodeURI = decodeURI, nv_decodeURIComponent = decodeURIComponent, nv_encodeURI = encodeURI, nv_encodeURIComponent = encodeURIComponent;
-function $gdc(o,p,r) {
-o=wh.rv(o);
-if(o===null||o===undefined) return o;
-if(o.constructor===String||o.constructor===Boolean||o.constructor===Number) return o;
-if(o.constructor===Object){
-var copy={};
-for(var k in o)
-if(o.hasOwnProperty(k))
-if(undefined===p) copy[k.substring(3)]=$gdc(o[k],p,r);
-else copy[p+k]=$gdc(o[k],p,r);
-return copy;
-}
-if(o.constructor===Array){
-var copy=[];
-for(var i=0;i<o.length;i++) copy.push($gdc(o[i],p,r));
-return copy;
-}
-if(o.constructor===Date){
-var copy=new Date();
-copy.setTime(o.getTime());
-return copy;
-}
-if(o.constructor===RegExp){
-var f="";
-if(o.global) f+="g";
-if(o.ignoreCase) f+="i";
-if(o.multiline) f+="m";
-return (new RegExp(o.source,f));
-}
-if(r&&o.constructor===Function){
-if ( r == 1 ) return $gdc(o(),undefined, 2);
-if ( r == 2 ) return o;
-}
-return null;
-}
-var nv_JSON={}
-nv_JSON.nv_stringify=function(o){
-JSON.stringify(o);
-return JSON.stringify($gdc(o));
-}
-nv_JSON.nv_parse=function(o){
-if(o===undefined) return undefined;
-var t=JSON.parse(o);
-return $gdc(t,'nv_');
-}
-
-function _af(p, a, c){
-p.extraAttr = {"t_action": a, "t_cid": c};
-}
-
-function _ai(i,p,e,me,r,c){var x=_grp(p,e,me);if(x)i.push(x);else{i.push('');_wp(me+':import:'+r+':'+c+': Path `'+p+'` not found from `'+me+'`.')}}
-function _grp(p,e,me){if(p[0]!='/'){var mepart=me.split('/');mepart.pop();var ppart=p.split('/');for(var i=0;i<ppart.length;i++){if( ppart[i]=='..')mepart.pop();else if(!ppart[i]||ppart[i]=='.')continue;else mepart.push(ppart[i]);}p=mepart.join('/');}if(me[0]=='.'&&p[0]=='/')p='.'+p;if(e[p])return p;if(e[p+'.wxml'])return p+'.wxml';}
-function _gd(p,c,e,d){if(!c)return;if(d[p][c])return d[p][c];for(var x=e[p].i.length-1;x>=0;x--){if(e[p].i[x]&&d[e[p].i[x]][c])return d[e[p].i[x]][c]};for(var x=e[p].ti.length-1;x>=0;x--){var q=_grp(e[p].ti[x],e,p);if(q&&d[q][c])return d[q][c]}var ii=_gapi(e,p);for(var x=0;x<ii.length;x++){if(ii[x]&&d[ii[x]][c])return d[ii[x]][c]}for(var k=e[p].j.length-1;k>=0;k--)if(e[p].j[k]){for(var q=e[e[p].j[k]].ti.length-1;q>=0;q--){var pp=_grp(e[e[p].j[k]].ti[q],e,p);if(pp&&d[pp][c]){return d[pp][c]}}}}
-function _gapi(e,p){if(!p)return [];if($gaic[p]){return $gaic[p]};var ret=[],q=[],h=0,t=0,put={},visited={};q.push(p);visited[p]=true;t++;while(h<t){var a=q[h++];for(var i=0;i<e[a].ic.length;i++){var nd=e[a].ic[i];var np=_grp(nd,e,a);if(np&&!visited[np]){visited[np]=true;q.push(np);t++;}}for(var i=0;a!=p&&i<e[a].ti.length;i++){var ni=e[a].ti[i];var nm=_grp(ni,e,a);if(nm&&!put[nm]){put[nm]=true;ret.push(nm);}}}$gaic[p]=ret;return ret;}
-var $ixc={};function _ic(p,ent,me,e,s,r,gg){var x=_grp(p,ent,me);ent[me].j.push(x);if(x){if($ixc[x]){_wp('-1:include:-1:-1: `'+p+'` is being included in a loop, will be stop.');return;}$ixc[x]=true;try{ent[x].f(e,s,r,gg)}catch(e){}$ixc[x]=false;}else{_wp(me+':include:-1:-1: Included path `'+p+'` not found from `'+me+'`.')}}
-function _w(tn,f,line,c){_wp(f+':template:'+line+':'+c+': Template `'+tn+'` not found.');}function _ev(dom){var changed=false;delete dom.properities;delete dom.n;if(dom.children){do{changed=false;var newch = [];for(var i=0;i<dom.children.length;i++){var ch=dom.children[i];if( ch.tag=='virtual'){changed=true;for(var j=0;ch.children&&j<ch.children.length;j++){newch.push(ch.children[j]);}}else { newch.push(ch); } } dom.children = newch; }while(changed);for(var i=0;i<dom.children.length;i++){_ev(dom.children[i]);}} return dom; }
-function _tsd( root )
-{
-if( root.tag == "wx-wx-scope" ) 
-{
-root.tag = "virtual";
-root.wxCkey = "11";
-root['wxScopeData'] = root.attr['wx:scope-data'];
-delete root.n;
-delete root.raw;
-delete root.generics;
-delete root.attr;
-}
-for( var i = 0 ; root.children && i < root.children.length ; i++ )
-{
-_tsd( root.children[i] );
-}
-return root;
-}
-
-var e_={}
-if(typeof(global.entrys)==='undefined')global.entrys={};e_=global.entrys;
-var d_={}
-if(typeof(global.defines)==='undefined')global.defines={};d_=global.defines;
-var f_={}
-if(typeof(global.modules)==='undefined')global.modules={};f_=global.modules || {};
-var p_={}
-__WXML_GLOBAL__.ops_cached = __WXML_GLOBAL__.ops_cached || {}
-__WXML_GLOBAL__.ops_set = __WXML_GLOBAL__.ops_set || {};
-__WXML_GLOBAL__.ops_init = __WXML_GLOBAL__.ops_init || {};
-var z=__WXML_GLOBAL__.ops_set.$gwx || [];
-function gz$gwx_1(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_1)return __WXML_GLOBAL__.ops_cached.$gwx_1
-__WXML_GLOBAL__.ops_cached.$gwx_1=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_1);return __WXML_GLOBAL__.ops_cached.$gwx_1
-}
-function gz$gwx_2(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_2)return __WXML_GLOBAL__.ops_cached.$gwx_2
-__WXML_GLOBAL__.ops_cached.$gwx_2=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_2);return __WXML_GLOBAL__.ops_cached.$gwx_2
-}
-function gz$gwx_3(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_3)return __WXML_GLOBAL__.ops_cached.$gwx_3
-__WXML_GLOBAL__.ops_cached.$gwx_3=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'m-item'])
-Z([[2,'+'],[1,'message'],[[7],[3,'id']]])
-Z([[2,'=='],[[6],[[7],[3,'message']],[3,'user']],[1,'home']])
-Z([[2,'=='],[[6],[[7],[3,'message']],[3,'user']],[1,'customer']])
-})(__WXML_GLOBAL__.ops_cached.$gwx_3);return __WXML_GLOBAL__.ops_cached.$gwx_3
-}
-function gz$gwx_4(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_4)return __WXML_GLOBAL__.ops_cached.$gwx_4
-__WXML_GLOBAL__.ops_cached.$gwx_4=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_4);return __WXML_GLOBAL__.ops_cached.$gwx_4
-}
-function gz$gwx_5(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_5)return __WXML_GLOBAL__.ops_cached.$gwx_5
-__WXML_GLOBAL__.ops_cached.$gwx_5=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_5);return __WXML_GLOBAL__.ops_cached.$gwx_5
-}
-function gz$gwx_6(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_6)return __WXML_GLOBAL__.ops_cached.$gwx_6
-__WXML_GLOBAL__.ops_cached.$gwx_6=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'m-input-view'])
-Z([[2,'&&'],[[2,'&&'],[[7],[3,'clearable_']],[[2,'!'],[[7],[3,'displayable_']]]],[[6],[[7],[3,'value']],[3,'length']]])
-Z([3,'__l'])
-Z([3,'__e'])
-Z([3,'#666666'])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^click']],[[4],[[5],[[4],[[5],[1,'clear']]]]]]]]])
-Z([3,'20'])
-Z([3,'clear'])
-Z([3,'1'])
-Z([[7],[3,'displayable_']])
-Z(z[2])
-Z(z[3])
-Z([[2,'?:'],[[7],[3,'showPassword']],[1,'#cccccc'],[1,'#666666']])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^click']],[[4],[[5],[[4],[[5],[1,'display']]]]]]]]])
-Z(z[6])
-Z([3,'eye'])
-Z([3,'2'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_6);return __WXML_GLOBAL__.ops_cached.$gwx_6
-}
-function gz$gwx_7(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_7)return __WXML_GLOBAL__.ops_cached.$gwx_7
-__WXML_GLOBAL__.ops_cached.$gwx_7=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_7);return __WXML_GLOBAL__.ops_cached.$gwx_7
-}
-function gz$gwx_8(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_8)return __WXML_GLOBAL__.ops_cached.$gwx_8
-__WXML_GLOBAL__.ops_cached.$gwx_8=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_8);return __WXML_GLOBAL__.ops_cached.$gwx_8
-}
-function gz$gwx_9(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_9)return __WXML_GLOBAL__.ops_cached.$gwx_9
-__WXML_GLOBAL__.ops_cached.$gwx_9=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_9);return __WXML_GLOBAL__.ops_cached.$gwx_9
-}
-function gz$gwx_10(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_10)return __WXML_GLOBAL__.ops_cached.$gwx_10
-__WXML_GLOBAL__.ops_cached.$gwx_10=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'pages-content data-v-6364d745'])
-Z([3,'__e'])
-Z([3,'data-v-6364d745'])
-Z([[4],[[5],[[4],[[5],[[5],[1,'change']],[[4],[[5],[[4],[[5],[[5],[1,'swiperChange']],[[4],[[5],[1,'$event']]]]]]]]]]])
-Z([3,'true'])
-Z([3,'index'])
-Z([3,'item'])
-Z([[7],[3,'dynInfo']])
-Z(z[5])
-Z(z[2])
-Z([3,'userInfo data-v-6364d745'])
-Z([[2,'&&'],[[2,'&&'],[[2,'=='],[[6],[[7],[3,'item']],[3,'following']],[1,0]],[[2,'=='],[[6],[[7],[3,'item']],[3,'isOwn']],[1,0]]],[[2,'=='],[[7],[3,'following']],[1,false]]])
-Z(z[1])
-Z(z[2])
-Z([[4],[[5],[[4],[[5],[[5],[1,'change']],[[4],[[5],[[4],[[5],[1,'behaviour']]]]]]]]])
-Z([[2,'=='],[[6],[[7],[3,'item']],[3,'isOwn']],[1,0]])
-Z([3,'daily-seciton data-v-6364d745'])
-Z([[2,'=='],[[6],[[7],[3,'item']],[3,'isOwn']],[1,1]])
-Z([[2,'&&'],[[2,'=='],[[6],[[7],[3,'item']],[3,'isOwn']],[1,0]],[[2,'=='],[[6],[[7],[3,'item']],[3,'following']],[1,1]]])
-Z([[2,'&&'],[[2,'=='],[[6],[[7],[3,'item']],[3,'following']],[1,0]],[[2,'=='],[[6],[[7],[3,'item']],[3,'isOwn']],[1,0]]])
-Z([[2,'=='],[[6],[[7],[3,'item']],[3,'following']],[1,0]])
-Z([[7],[3,'showComment']])
-Z([3,'ind'])
-Z([3,'ite'])
-Z([[7],[3,'commentInfo']])
-Z(z[22])
-Z([[2,'&&'],[[2,'!='],[[6],[[7],[3,'ite']],[3,'replyName']],[1,'']],[[2,'!='],[[6],[[7],[3,'ite']],[3,'replyContent']],[1,'']]])
-})(__WXML_GLOBAL__.ops_cached.$gwx_10);return __WXML_GLOBAL__.ops_cached.$gwx_10
-}
-function gz$gwx_11(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_11)return __WXML_GLOBAL__.ops_cached.$gwx_11
-__WXML_GLOBAL__.ops_cached.$gwx_11=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_11);return __WXML_GLOBAL__.ops_cached.$gwx_11
-}
-function gz$gwx_12(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_12)return __WXML_GLOBAL__.ops_cached.$gwx_12
-__WXML_GLOBAL__.ops_cached.$gwx_12=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_12);return __WXML_GLOBAL__.ops_cached.$gwx_12
-}
-function gz$gwx_13(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_13)return __WXML_GLOBAL__.ops_cached.$gwx_13
-__WXML_GLOBAL__.ops_cached.$gwx_13=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_13);return __WXML_GLOBAL__.ops_cached.$gwx_13
-}
-function gz$gwx_14(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_14)return __WXML_GLOBAL__.ops_cached.$gwx_14
-__WXML_GLOBAL__.ops_cached.$gwx_14=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'input-group data-v-4e12a2d9'])
-Z([3,'__l'])
-Z([3,'__e'])
-Z([3,'data-v-4e12a2d9'])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'$0']],[1,'name']],[1,'$event']],[[4],[[5]]]]]],[[4],[[5],[1,'barInfo']]]]]]]]]]])
-Z([3,'酒吧名稱'])
-Z([3,'text'])
-Z([[6],[[7],[3,'barInfo']],[3,'name']])
-Z([3,'1'])
-Z(z[1])
-Z(z[2])
-Z(z[3])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'$0']],[1,'phone']],[1,'$event']],[[4],[[5]]]]]],[[4],[[5],[1,'barInfo']]]]]]]]]]])
-Z([3,'11'])
-Z([3,'聯係電話'])
-Z([3,'number'])
-Z([[6],[[7],[3,'barInfo']],[3,'phone']])
-Z([3,'2'])
-Z(z[1])
-Z(z[2])
-Z(z[3])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'$0']],[1,'location']],[1,'$event']],[[4],[[5]]]]]],[[4],[[5],[1,'barInfo']]]]]]]]]]])
-Z([3,'詳細地址'])
-Z(z[6])
-Z([[6],[[7],[3,'barInfo']],[3,'location']])
-Z([3,'3'])
-Z(z[1])
-Z(z[2])
-Z(z[3])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'$0']],[1,'intro']],[1,'$event']],[[4],[[5]]]]]],[[4],[[5],[1,'barInfo']]]]]]]]]]])
-Z([3,'酒吧簡介'])
-Z(z[6])
-Z([[6],[[7],[3,'barInfo']],[3,'intro']])
-Z([3,'4'])
-Z(z[1])
-Z(z[2])
-Z(z[3])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'$0']],[1,'username']],[1,'$event']],[[4],[[5]]]]]],[[4],[[5],[1,'barInfo']]]]]]]]]]])
-Z([3,'申請人姓名'])
-Z(z[6])
-Z([[6],[[7],[3,'barInfo']],[3,'username']])
-Z([3,'5'])
-Z(z[1])
-Z(z[2])
-Z(z[3])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'$0']],[1,'userphone']],[1,'$event']],[[4],[[5]]]]]],[[4],[[5],[1,'barInfo']]]]]]]]]]])
-Z([3,'申請人聯係方式'])
-Z(z[15])
-Z([[6],[[7],[3,'barInfo']],[3,'userphone']])
-Z([3,'6'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_14);return __WXML_GLOBAL__.ops_cached.$gwx_14
-}
-function gz$gwx_15(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_15)return __WXML_GLOBAL__.ops_cached.$gwx_15
-__WXML_GLOBAL__.ops_cached.$gwx_15=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_15);return __WXML_GLOBAL__.ops_cached.$gwx_15
-}
-function gz$gwx_16(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_16)return __WXML_GLOBAL__.ops_cached.$gwx_16
-__WXML_GLOBAL__.ops_cached.$gwx_16=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_16);return __WXML_GLOBAL__.ops_cached.$gwx_16
-}
-function gz$gwx_17(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_17)return __WXML_GLOBAL__.ops_cached.$gwx_17
-__WXML_GLOBAL__.ops_cached.$gwx_17=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_17);return __WXML_GLOBAL__.ops_cached.$gwx_17
-}
-function gz$gwx_18(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_18)return __WXML_GLOBAL__.ops_cached.$gwx_18
-__WXML_GLOBAL__.ops_cached.$gwx_18=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'uni-column'])
-Z([3,'index'])
-Z([3,'message'])
-Z([[7],[3,'messages']])
-Z(z[1])
-Z([3,'__l'])
-Z([[7],[3,'index']])
-Z([[7],[3,'message']])
-Z([[2,'+'],[1,'1-'],[[7],[3,'index']]])
-Z(z[5])
-Z([3,'__e'])
-Z(z[10])
-Z([[4],[[5],[[5],[[4],[[5],[[5],[1,'^sendMessage']],[[4],[[5],[[4],[[5],[1,'getInputMessage']]]]]]]],[[4],[[5],[[5],[1,'^focus']],[[4],[[5],[[4],[[5],[1,'inputGetFocus']]]]]]]]])
-Z([3,'2'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_18);return __WXML_GLOBAL__.ops_cached.$gwx_18
-}
-function gz$gwx_19(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_19)return __WXML_GLOBAL__.ops_cached.$gwx_19
-__WXML_GLOBAL__.ops_cached.$gwx_19=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_19);return __WXML_GLOBAL__.ops_cached.$gwx_19
-}
-function gz$gwx_20(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_20)return __WXML_GLOBAL__.ops_cached.$gwx_20
-__WXML_GLOBAL__.ops_cached.$gwx_20=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'pages-content data-v-1c621e1e'])
-Z([[2,'=='],[[7],[3,'created']],[1,false]])
-Z(z[1])
-Z([[7],[3,'created']])
-Z([3,'注冊送1000魔法原力'])
-Z([[7],[3,'createImg']])
-Z([3,'僅限前5萬名星球居民'])
-Z([3,'__l'])
-Z([3,'__e'])
-Z([3,'pan-poster data-v-1c621e1e'])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^tap']],[[4],[[5],[[4],[[5],[1,'preview']]]]]]]]])
-Z([3,'http://47.244.27.153/images/static/img/poster/poster.png'])
-Z([3,'1'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_20);return __WXML_GLOBAL__.ops_cached.$gwx_20
-}
-function gz$gwx_21(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_21)return __WXML_GLOBAL__.ops_cached.$gwx_21
-__WXML_GLOBAL__.ops_cached.$gwx_21=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'index'])
-Z([3,'item'])
-Z([[7],[3,'listInfo']])
-Z(z[0])
-Z([3,'pan-list-ul _ul data-v-ce7793d0'])
-Z([[2,'=='],[[7],[3,'labelList']],[1,'budget']])
-Z([[2,'&&'],[[2,'=='],[[7],[3,'labelList']],[1,'task']],[[2,'=='],[[7],[3,'index']],[1,0]]])
-Z([[2,'=='],[[7],[3,'labelList']],[1,'task']])
-Z([3,'data-v-ce7793d0'])
-Z([[2,'=='],[[6],[[7],[3,'item']],[3,'status']],[1,1]])
-Z([[2,'=='],[[6],[[7],[3,'item']],[3,'status']],[1,0]])
-})(__WXML_GLOBAL__.ops_cached.$gwx_21);return __WXML_GLOBAL__.ops_cached.$gwx_21
-}
-function gz$gwx_22(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_22)return __WXML_GLOBAL__.ops_cached.$gwx_22
-__WXML_GLOBAL__.ops_cached.$gwx_22=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'index'])
-Z([3,'item'])
-Z([[7],[3,'listInfo']])
-Z(z[0])
-Z([3,'focus-list-ul _ul data-v-a91d2800'])
-Z([[2,'=='],[[7],[3,'labelList']],[1,'budget']])
-Z([[2,'&&'],[[2,'=='],[[7],[3,'labelList']],[1,'task']],[[2,'=='],[[7],[3,'index']],[1,0]]])
-Z([[2,'=='],[[7],[3,'labelList']],[1,'task']])
-Z([3,'data-v-a91d2800'])
-Z([[2,'=='],[[6],[[7],[3,'item']],[3,'status']],[1,1]])
-Z([[2,'=='],[[6],[[7],[3,'item']],[3,'status']],[1,0]])
-})(__WXML_GLOBAL__.ops_cached.$gwx_22);return __WXML_GLOBAL__.ops_cached.$gwx_22
-}
-function gz$gwx_23(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_23)return __WXML_GLOBAL__.ops_cached.$gwx_23
-__WXML_GLOBAL__.ops_cached.$gwx_23=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'content'])
-Z([3,'__l'])
-Z([3,'潘多拉星球歡迎您'])
-Z([3,'1'])
-Z([3,'input-group'])
-Z(z[1])
-Z([3,'__e'])
-Z([3,'m-input'])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'']],[1,'account']],[1,'$event']],[[4],[[5]]]]]]]]]]]]])
-Z([3,'使用手機號/郵箱登錄'])
-Z([3,'text'])
-Z([[7],[3,'account']])
-Z([3,'2'])
-Z(z[1])
-Z(z[6])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'']],[1,'password']],[1,'$event']],[[4],[[5]]]]]]]]]]]]])
-Z([3,'請輸入密碼'])
-Z([3,'password'])
-Z([[7],[3,'password']])
-Z([3,'3'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_23);return __WXML_GLOBAL__.ops_cached.$gwx_23
-}
-function gz$gwx_24(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_24)return __WXML_GLOBAL__.ops_cached.$gwx_24
-__WXML_GLOBAL__.ops_cached.$gwx_24=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_24);return __WXML_GLOBAL__.ops_cached.$gwx_24
-}
-function gz$gwx_25(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_25)return __WXML_GLOBAL__.ops_cached.$gwx_25
-__WXML_GLOBAL__.ops_cached.$gwx_25=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_25);return __WXML_GLOBAL__.ops_cached.$gwx_25
-}
-function gz$gwx_26(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_26)return __WXML_GLOBAL__.ops_cached.$gwx_26
-__WXML_GLOBAL__.ops_cached.$gwx_26=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_26);return __WXML_GLOBAL__.ops_cached.$gwx_26
-}
-function gz$gwx_27(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_27)return __WXML_GLOBAL__.ops_cached.$gwx_27
-__WXML_GLOBAL__.ops_cached.$gwx_27=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_27);return __WXML_GLOBAL__.ops_cached.$gwx_27
-}
-function gz$gwx_28(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_28)return __WXML_GLOBAL__.ops_cached.$gwx_28
-__WXML_GLOBAL__.ops_cached.$gwx_28=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'pages-content data-v-4fdb1a4c'])
-Z([3,'__e'])
-Z([3,'vote data-v-4fdb1a4c'])
-Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'vote']],[[4],[[5],[[5],[1,'1']],[1,'$0']]]],[[4],[[5],[1,'voteList.status']]]]]]]]]]])
-Z([[7],[3,'btnStatus']])
-Z([3,'hover-primary'])
-Z([[2,'&&'],[[2,'=='],[[6],[[7],[3,'voteList']],[3,'iswell']],[1,1]],[[2,'=='],[[6],[[7],[3,'voteList']],[3,'status']],[1,1]]])
-Z(z[1])
-Z(z[2])
-Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'vote']],[[4],[[5],[[5],[1,'0']],[1,'$0']]]],[[4],[[5],[1,'voteList.status']]]]]]]]]]])
-Z(z[4])
-Z([[2,'&&'],[[2,'=='],[[6],[[7],[3,'voteList']],[3,'iswell']],[1,0]],[[2,'=='],[[6],[[7],[3,'voteList']],[3,'status']],[1,1]]])
-})(__WXML_GLOBAL__.ops_cached.$gwx_28);return __WXML_GLOBAL__.ops_cached.$gwx_28
-}
-function gz$gwx_29(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_29)return __WXML_GLOBAL__.ops_cached.$gwx_29
-__WXML_GLOBAL__.ops_cached.$gwx_29=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_29);return __WXML_GLOBAL__.ops_cached.$gwx_29
-}
-function gz$gwx_30(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_30)return __WXML_GLOBAL__.ops_cached.$gwx_30
-__WXML_GLOBAL__.ops_cached.$gwx_30=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'__l'])
-Z([3,'__e'])
-Z([3,'eyeIcon data-v-326485cd'])
-Z([[7],[3,'changColor']])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^click']],[[4],[[5],[[4],[[5],[1,'assetHidden']]]]]]]]])
-Z([3,'20'])
-Z([3,'eye'])
-Z([3,'1'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_30);return __WXML_GLOBAL__.ops_cached.$gwx_30
-}
-function gz$gwx_31(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_31)return __WXML_GLOBAL__.ops_cached.$gwx_31
-__WXML_GLOBAL__.ops_cached.$gwx_31=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_31);return __WXML_GLOBAL__.ops_cached.$gwx_31
-}
-function gz$gwx_32(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_32)return __WXML_GLOBAL__.ops_cached.$gwx_32
-__WXML_GLOBAL__.ops_cached.$gwx_32=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_32);return __WXML_GLOBAL__.ops_cached.$gwx_32
-}
-function gz$gwx_33(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_33)return __WXML_GLOBAL__.ops_cached.$gwx_33
-__WXML_GLOBAL__.ops_cached.$gwx_33=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'content'])
-Z([3,'__l'])
-Z([3,'找回或修改密碼'])
-Z([3,'1'])
-Z([[2,'=='],[[7],[3,'succ']],[1,false]])
-Z([3,'input-group'])
-Z(z[1])
-Z([3,'__e'])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'']],[1,'account']],[1,'$event']],[[4],[[5]]]]]]]]]]]]])
-Z([3,'輸入注冊的郵箱/手機'])
-Z([3,'text'])
-Z([[7],[3,'account']])
-Z([3,'2'])
-Z(z[1])
-Z(z[7])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'']],[1,'regCode']],[1,'$event']],[[4],[[5]]]]]]]]]]]]])
-Z([3,'6'])
-Z([3,'輸入驗證碼'])
-Z([3,'number'])
-Z([[7],[3,'regCode']])
-Z([3,'3'])
-Z([[2,'=='],[[7],[3,'succ']],[1,true]])
-Z(z[5])
-Z(z[1])
-Z(z[7])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'']],[1,'password']],[1,'$event']],[[4],[[5]]]]]]]]]]]]])
-Z([3,'6位數以上由字母和數字組成的密碼'])
-Z([3,'password'])
-Z([[7],[3,'password']])
-Z([3,'4'])
-Z(z[1])
-Z(z[7])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'']],[1,'verifyPwd']],[1,'$event']],[[4],[[5]]]]]]]]]]]]])
-Z([3,'確認您的密碼'])
-Z(z[27])
-Z([[7],[3,'verifyPwd']])
-Z([3,'5'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_33);return __WXML_GLOBAL__.ops_cached.$gwx_33
-}
-function gz$gwx_34(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_34)return __WXML_GLOBAL__.ops_cached.$gwx_34
-__WXML_GLOBAL__.ops_cached.$gwx_34=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'content'])
-Z([3,'__l'])
-Z([3,'移民潘多拉星球'])
-Z([3,'1'])
-Z([3,'input-group'])
-Z(z[1])
-Z([3,'__e'])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'']],[1,'account']],[1,'$event']],[[4],[[5]]]]]]]]]]]]])
-Z([[7],[3,'regType']])
-Z([[7],[3,'account']])
-Z([3,'2'])
-Z(z[1])
-Z(z[6])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'']],[1,'regCode']],[1,'$event']],[[4],[[5]]]]]]]]]]]]])
-Z([3,'6'])
-Z([3,'輸入驗證碼'])
-Z([3,'number'])
-Z([[7],[3,'regCode']])
-Z([3,'3'])
-Z(z[1])
-Z(z[6])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'']],[1,'password']],[1,'$event']],[[4],[[5]]]]]]]]]]]]])
-Z([3,'6位數以上由字母和數字組成的密碼'])
-Z([3,'password'])
-Z([[7],[3,'password']])
-Z([3,'4'])
-Z(z[1])
-Z(z[6])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'']],[1,'verifyPwd']],[1,'$event']],[[4],[[5]]]]]]]]]]]]])
-Z([3,'確認您的密碼'])
-Z(z[23])
-Z([[7],[3,'verifyPwd']])
-Z([3,'5'])
-Z(z[1])
-Z(z[6])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'']],[1,'inviteCode']],[1,'$event']],[[4],[[5]]]]]]]]]]]]])
-Z([3,'邀請碼(選填)'])
-Z([3,'text'])
-Z([[7],[3,'inviteCode']])
-Z(z[14])
-})(__WXML_GLOBAL__.ops_cached.$gwx_34);return __WXML_GLOBAL__.ops_cached.$gwx_34
-}
-function gz$gwx_35(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_35)return __WXML_GLOBAL__.ops_cached.$gwx_35
-__WXML_GLOBAL__.ops_cached.$gwx_35=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_35);return __WXML_GLOBAL__.ops_cached.$gwx_35
-}
-function gz$gwx_36(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_36)return __WXML_GLOBAL__.ops_cached.$gwx_36
-__WXML_GLOBAL__.ops_cached.$gwx_36=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_36);return __WXML_GLOBAL__.ops_cached.$gwx_36
-}
-function gz$gwx_37(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_37)return __WXML_GLOBAL__.ops_cached.$gwx_37
-__WXML_GLOBAL__.ops_cached.$gwx_37=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_37);return __WXML_GLOBAL__.ops_cached.$gwx_37
-}
-function gz$gwx_38(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_38)return __WXML_GLOBAL__.ops_cached.$gwx_38
-__WXML_GLOBAL__.ops_cached.$gwx_38=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-Z([3,'input-group'])
-Z([3,'__l'])
-Z([3,'__e'])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'$0']],[1,'name']],[1,'$event']],[[4],[[5]]]]]],[[4],[[5],[1,'userInfo']]]]]]]]]]])
-Z([3,'text'])
-Z([[6],[[7],[3,'userInfo']],[3,'name']])
-Z([3,'1'])
-Z(z[1])
-Z(z[2])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'$0']],[1,'stature']],[1,'$event']],[[4],[[5]]]]]],[[4],[[5],[1,'userInfo']]]]]]]]]]])
-Z([3,'3'])
-Z([3,'number'])
-Z([[6],[[7],[3,'userInfo']],[3,'stature']])
-Z([3,'2'])
-Z(z[1])
-Z(z[2])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'$0']],[1,'weight']],[1,'$event']],[[4],[[5]]]]]],[[4],[[5],[1,'userInfo']]]]]]]]]]])
-Z(z[10])
-Z(z[11])
-Z([[6],[[7],[3,'userInfo']],[3,'weight']])
-Z(z[10])
-Z(z[1])
-Z(z[2])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'$0']],[1,'age']],[1,'$event']],[[4],[[5]]]]]],[[4],[[5],[1,'userInfo']]]]]]]]]]])
-Z(z[11])
-Z([[6],[[7],[3,'userInfo']],[3,'age']])
-Z([3,'4'])
-Z(z[1])
-Z(z[2])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'$0']],[1,'site']],[1,'$event']],[[4],[[5]]]]]],[[4],[[5],[1,'userInfo']]]]]]]]]]])
-Z(z[4])
-Z([[6],[[7],[3,'userInfo']],[3,'site']])
-Z([3,'5'])
-Z(z[1])
-Z(z[2])
-Z([[4],[[5],[[4],[[5],[[5],[1,'^input']],[[4],[[5],[[4],[[5],[[5],[[5],[1,'__set_model']],[[4],[[5],[[5],[[5],[[5],[1,'$0']],[1,'signature']],[1,'$event']],[[4],[[5]]]]]],[[4],[[5],[1,'userInfo']]]]]]]]]]])
-Z(z[4])
-Z([[6],[[7],[3,'userInfo']],[3,'signature']])
-Z([3,'6'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_38);return __WXML_GLOBAL__.ops_cached.$gwx_38
-}
-function gz$gwx_39(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_39)return __WXML_GLOBAL__.ops_cached.$gwx_39
-__WXML_GLOBAL__.ops_cached.$gwx_39=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_39);return __WXML_GLOBAL__.ops_cached.$gwx_39
-}
-function gz$gwx_40(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_40)return __WXML_GLOBAL__.ops_cached.$gwx_40
-__WXML_GLOBAL__.ops_cached.$gwx_40=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_40);return __WXML_GLOBAL__.ops_cached.$gwx_40
-}
-function gz$gwx_41(){
-if( __WXML_GLOBAL__.ops_cached.$gwx_41)return __WXML_GLOBAL__.ops_cached.$gwx_41
-__WXML_GLOBAL__.ops_cached.$gwx_41=[];
-(function(z){var a=11;function Z(ops){z.push(ops)}
-})(__WXML_GLOBAL__.ops_cached.$gwx_41);return __WXML_GLOBAL__.ops_cached.$gwx_41
-}
-__WXML_GLOBAL__.ops_set.$gwx=z;
-__WXML_GLOBAL__.ops_init.$gwx=true;
-var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
-}}}()
-var x=['./components/barrage.wxml','./components/im-chat/chatinput.wxml','./components/im-chat/messageshow.wxml','./components/logo.wxml','./components/m-icon/m-icon.wxml','./components/m-input.wxml','./components/wm-poster/wm-poster.wxml','./pages/auth/auth.wxml','./pages/base/base.wxml','./pages/daily/daily.wxml','./pages/daily/publish.wxml','./pages/daily/userInfo.wxml','./pages/entertain/entertain.wxml','./pages/entertain/entertainApplication.wxml','./pages/entertain/entertainDetail.wxml','./pages/entertain/entertainUpload.wxml','./pages/game/game.wxml','./pages/im-chat/im-chat.wxml','./pages/index/index.wxml','./pages/invite/invite.wxml','./pages/ledger/asset.wxml','./pages/ledger/focus.wxml','./pages/login/login.wxml','./pages/main/main.wxml','./pages/msg/msg.wxml','./pages/nearby/nearby.wxml','./pages/pact/pact.wxml','./pages/pact/pactVoteDetail.wxml','./pages/pan/donateList.wxml','./pages/pan/pan.wxml','./pages/passport/passport.wxml','./pages/purse/purse.wxml','./pages/pwd/pwd.wxml','./pages/reg/reg.wxml','./pages/setting/setting.wxml','./pages/store/store.wxml','./pages/strategy/strategy.wxml','./pages/user/update.wxml','./pages/user/user.wxml','./pages/welfare/welfare.wxml','./pagesA/settingChat/settingChat.wxml'];d_[x[0]]={}
-var m0=function(e,s,r,gg){
-var z=gz$gwx_1()
-return r
-}
-e_[x[0]]={f:m0,j:[],i:[],ti:[],ic:[]}
-d_[x[1]]={}
-var m1=function(e,s,r,gg){
-var z=gz$gwx_2()
-return r
-}
-e_[x[1]]={f:m1,j:[],i:[],ti:[],ic:[]}
-d_[x[2]]={}
-var m2=function(e,s,r,gg){
-var z=gz$gwx_3()
-var oD=_mz(z,'view',['class',0,'id',1],[],e,s,gg)
-var fE=_v()
-_(oD,fE)
-if(_oz(z,2,e,s,gg)){fE.wxVkey=1
-}
-var cF=_v()
-_(oD,cF)
-if(_oz(z,3,e,s,gg)){cF.wxVkey=1
-}
-fE.wxXCkey=1
-cF.wxXCkey=1
-_(r,oD)
-return r
-}
-e_[x[2]]={f:m2,j:[],i:[],ti:[],ic:[]}
-d_[x[3]]={}
-var m3=function(e,s,r,gg){
-var z=gz$gwx_4()
-return r
-}
-e_[x[3]]={f:m3,j:[],i:[],ti:[],ic:[]}
-d_[x[4]]={}
-var m4=function(e,s,r,gg){
-var z=gz$gwx_5()
-return r
-}
-e_[x[4]]={f:m4,j:[],i:[],ti:[],ic:[]}
-d_[x[5]]={}
-var m5=function(e,s,r,gg){
-var z=gz$gwx_6()
-var oJ=_n('view')
-_rz(z,oJ,'class',0,e,s,gg)
-var lK=_v()
-_(oJ,lK)
-if(_oz(z,1,e,s,gg)){lK.wxVkey=1
-var tM=_mz(z,'m-icon',['bind:__l',2,'bind:click',1,'color',2,'data-event-opts',3,'size',4,'type',5,'vueId',6],[],e,s,gg)
-_(lK,tM)
-}
-var aL=_v()
-_(oJ,aL)
-if(_oz(z,9,e,s,gg)){aL.wxVkey=1
-var eN=_mz(z,'m-icon',['bind:__l',10,'bind:click',1,'color',2,'data-event-opts',3,'size',4,'type',5,'vueId',6],[],e,s,gg)
-_(aL,eN)
-}
-lK.wxXCkey=1
-lK.wxXCkey=3
-aL.wxXCkey=1
-aL.wxXCkey=3
-_(r,oJ)
-return r
-}
-e_[x[5]]={f:m5,j:[],i:[],ti:[],ic:[]}
-d_[x[6]]={}
-var m6=function(e,s,r,gg){
-var z=gz$gwx_7()
-return r
-}
-e_[x[6]]={f:m6,j:[],i:[],ti:[],ic:[]}
-d_[x[7]]={}
-var m7=function(e,s,r,gg){
-var z=gz$gwx_8()
-return r
-}
-e_[x[7]]={f:m7,j:[],i:[],ti:[],ic:[]}
-d_[x[8]]={}
-var m8=function(e,s,r,gg){
-var z=gz$gwx_9()
-return r
-}
-e_[x[8]]={f:m8,j:[],i:[],ti:[],ic:[]}
-d_[x[9]]={}
-var m9=function(e,s,r,gg){
-var z=gz$gwx_10()
-var fS=_n('view')
-_rz(z,fS,'class',0,e,s,gg)
-var hU=_mz(z,'swiper',['bindchange',1,'class',1,'data-event-opts',2,'vertical',3],[],e,s,gg)
-var oV=_v()
-_(hU,oV)
-var cW=function(lY,oX,aZ,gg){
-var e2=_n('swiper-item')
-_rz(z,e2,'class',9,lY,oX,gg)
-var b3=_n('view')
-_rz(z,b3,'class',10,lY,oX,gg)
-var o4=_v()
-_(b3,o4)
-if(_oz(z,11,lY,oX,gg)){o4.wxVkey=1
-}
-var x5=_mz(z,'view',['catchchange',12,'class',1,'data-event-opts',2],[],lY,oX,gg)
-var o6=_v()
-_(x5,o6)
-if(_oz(z,15,lY,oX,gg)){o6.wxVkey=1
-}
-o6.wxXCkey=1
-_(b3,x5)
-o4.wxXCkey=1
-_(e2,b3)
-var f7=_n('view')
-_rz(z,f7,'class',16,lY,oX,gg)
-var c8=_v()
-_(f7,c8)
-if(_oz(z,17,lY,oX,gg)){c8.wxVkey=1
-}
-else{c8.wxVkey=2
-var h9=_v()
-_(c8,h9)
-if(_oz(z,18,lY,oX,gg)){h9.wxVkey=1
-}
-else{h9.wxVkey=2
-var o0=_v()
-_(h9,o0)
-if(_oz(z,19,lY,oX,gg)){o0.wxVkey=1
-}
-else{o0.wxVkey=2
-var cAB=_v()
-_(o0,cAB)
-if(_oz(z,20,lY,oX,gg)){cAB.wxVkey=1
-}
-cAB.wxXCkey=1
-}
-o0.wxXCkey=1
-}
-h9.wxXCkey=1
-}
-c8.wxXCkey=1
-_(e2,f7)
-_(aZ,e2)
-return aZ
-}
-oV.wxXCkey=2
-_2z(z,7,cW,e,s,gg,oV,'item','index','index')
-_(fS,hU)
-var cT=_v()
-_(fS,cT)
-if(_oz(z,21,e,s,gg)){cT.wxVkey=1
-var oBB=_v()
-_(cT,oBB)
-var lCB=function(tEB,aDB,eFB,gg){
-var oHB=_v()
-_(eFB,oHB)
-if(_oz(z,26,tEB,aDB,gg)){oHB.wxVkey=1
-}
-oHB.wxXCkey=1
-return eFB
-}
-oBB.wxXCkey=2
-_2z(z,24,lCB,e,s,gg,oBB,'ite','ind','ind')
-}
-cT.wxXCkey=1
-_(r,fS)
-return r
-}
-e_[x[9]]={f:m9,j:[],i:[],ti:[],ic:[]}
-d_[x[10]]={}
-var m10=function(e,s,r,gg){
-var z=gz$gwx_11()
-return r
-}
-e_[x[10]]={f:m10,j:[],i:[],ti:[],ic:[]}
-d_[x[11]]={}
-var m11=function(e,s,r,gg){
-var z=gz$gwx_12()
-return r
-}
-e_[x[11]]={f:m11,j:[],i:[],ti:[],ic:[]}
-d_[x[12]]={}
-var m12=function(e,s,r,gg){
-var z=gz$gwx_13()
-return r
-}
-e_[x[12]]={f:m12,j:[],i:[],ti:[],ic:[]}
-d_[x[13]]={}
-var m13=function(e,s,r,gg){
-var z=gz$gwx_14()
-var hMB=_n('view')
-_rz(z,hMB,'class',0,e,s,gg)
-var oNB=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',1,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(hMB,oNB)
-var cOB=_mz(z,'m-input',['clearable',-1,'bind:__l',9,'bind:input',1,'class',2,'data-event-opts',3,'maxlength',4,'placeholder',5,'type',6,'value',7,'vueId',8],[],e,s,gg)
-_(hMB,cOB)
-var oPB=_mz(z,'m-input',['clearable',-1,'bind:__l',18,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(hMB,oPB)
-var lQB=_mz(z,'m-input',['clearable',-1,'bind:__l',26,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(hMB,lQB)
-var aRB=_mz(z,'m-input',['clearable',-1,'bind:__l',34,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(hMB,aRB)
-var tSB=_mz(z,'m-input',['clearable',-1,'bind:__l',42,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(hMB,tSB)
-_(r,hMB)
-return r
-}
-e_[x[13]]={f:m13,j:[],i:[],ti:[],ic:[]}
-d_[x[14]]={}
-var m14=function(e,s,r,gg){
-var z=gz$gwx_15()
-return r
-}
-e_[x[14]]={f:m14,j:[],i:[],ti:[],ic:[]}
-d_[x[15]]={}
-var m15=function(e,s,r,gg){
-var z=gz$gwx_16()
-return r
-}
-e_[x[15]]={f:m15,j:[],i:[],ti:[],ic:[]}
-d_[x[16]]={}
-var m16=function(e,s,r,gg){
-var z=gz$gwx_17()
-return r
-}
-e_[x[16]]={f:m16,j:[],i:[],ti:[],ic:[]}
-d_[x[17]]={}
-var m17=function(e,s,r,gg){
-var z=gz$gwx_18()
-var oXB=_n('view')
-_rz(z,oXB,'class',0,e,s,gg)
-var fYB=_v()
-_(oXB,fYB)
-var cZB=function(o2B,h1B,c3B,gg){
-var l5B=_mz(z,'message-show',['bind:__l',5,'id',1,'message',2,'vueId',3],[],o2B,h1B,gg)
-_(c3B,l5B)
-return c3B
-}
-fYB.wxXCkey=4
-_2z(z,3,cZB,e,s,gg,fYB,'message','index','index')
-var a6B=_mz(z,'chat-input',['bind:__l',9,'bind:focus',1,'bind:sendMessage',2,'data-event-opts',3,'vueId',4],[],e,s,gg)
-_(oXB,a6B)
-_(r,oXB)
-return r
-}
-e_[x[17]]={f:m17,j:[],i:[],ti:[],ic:[]}
-d_[x[18]]={}
-var m18=function(e,s,r,gg){
-var z=gz$gwx_19()
-return r
-}
-e_[x[18]]={f:m18,j:[],i:[],ti:[],ic:[]}
-d_[x[19]]={}
-var m19=function(e,s,r,gg){
-var z=gz$gwx_20()
-var b9B=_n('view')
-_rz(z,b9B,'class',0,e,s,gg)
-var o0B=_v()
-_(b9B,o0B)
-if(_oz(z,1,e,s,gg)){o0B.wxVkey=1
-}
-var xAC=_v()
-_(b9B,xAC)
-if(_oz(z,2,e,s,gg)){xAC.wxVkey=1
-}
-var oBC=_v()
-_(b9B,oBC)
-if(_oz(z,3,e,s,gg)){oBC.wxVkey=1
-var fCC=_mz(z,'wm-poster',['PriceTxt',4,'QrSrc',1,'Title',2,'bind:__l',3,'bind:tap',4,'class',5,'data-event-opts',6,'imgSrc',7,'vueId',8],[],e,s,gg)
-_(oBC,fCC)
-}
-o0B.wxXCkey=1
-xAC.wxXCkey=1
-oBC.wxXCkey=1
-oBC.wxXCkey=3
-_(r,b9B)
-return r
-}
-e_[x[19]]={f:m19,j:[],i:[],ti:[],ic:[]}
-d_[x[20]]={}
-var m20=function(e,s,r,gg){
-var z=gz$gwx_21()
-var hEC=_v()
-_(r,hEC)
-var oFC=function(oHC,cGC,lIC,gg){
-var tKC=_n('view')
-_rz(z,tKC,'class',4,oHC,cGC,gg)
-var eLC=_v()
-_(tKC,eLC)
-if(_oz(z,5,oHC,cGC,gg)){eLC.wxVkey=1
-}
-var bMC=_v()
-_(tKC,bMC)
-if(_oz(z,6,oHC,cGC,gg)){bMC.wxVkey=1
-}
-var oNC=_v()
-_(tKC,oNC)
-if(_oz(z,7,oHC,cGC,gg)){oNC.wxVkey=1
-var xOC=_n('view')
-_rz(z,xOC,'class',8,oHC,cGC,gg)
-var oPC=_v()
-_(xOC,oPC)
-if(_oz(z,9,oHC,cGC,gg)){oPC.wxVkey=1
-}
-var fQC=_v()
-_(xOC,fQC)
-if(_oz(z,10,oHC,cGC,gg)){fQC.wxVkey=1
-}
-oPC.wxXCkey=1
-fQC.wxXCkey=1
-_(oNC,xOC)
-}
-eLC.wxXCkey=1
-bMC.wxXCkey=1
-oNC.wxXCkey=1
-_(lIC,tKC)
-return lIC
-}
-hEC.wxXCkey=2
-_2z(z,2,oFC,e,s,gg,hEC,'item','index','index')
-return r
-}
-e_[x[20]]={f:m20,j:[],i:[],ti:[],ic:[]}
-d_[x[21]]={}
-var m21=function(e,s,r,gg){
-var z=gz$gwx_22()
-var hSC=_v()
-_(r,hSC)
-var oTC=function(oVC,cUC,lWC,gg){
-var tYC=_n('view')
-_rz(z,tYC,'class',4,oVC,cUC,gg)
-var eZC=_v()
-_(tYC,eZC)
-if(_oz(z,5,oVC,cUC,gg)){eZC.wxVkey=1
-}
-var b1C=_v()
-_(tYC,b1C)
-if(_oz(z,6,oVC,cUC,gg)){b1C.wxVkey=1
-}
-var o2C=_v()
-_(tYC,o2C)
-if(_oz(z,7,oVC,cUC,gg)){o2C.wxVkey=1
-var x3C=_n('view')
-_rz(z,x3C,'class',8,oVC,cUC,gg)
-var o4C=_v()
-_(x3C,o4C)
-if(_oz(z,9,oVC,cUC,gg)){o4C.wxVkey=1
-}
-var f5C=_v()
-_(x3C,f5C)
-if(_oz(z,10,oVC,cUC,gg)){f5C.wxVkey=1
-}
-o4C.wxXCkey=1
-f5C.wxXCkey=1
-_(o2C,x3C)
-}
-eZC.wxXCkey=1
-b1C.wxXCkey=1
-o2C.wxXCkey=1
-_(lWC,tYC)
-return lWC
-}
-hSC.wxXCkey=2
-_2z(z,2,oTC,e,s,gg,hSC,'item','index','index')
-return r
-}
-e_[x[21]]={f:m21,j:[],i:[],ti:[],ic:[]}
-d_[x[22]]={}
-var m22=function(e,s,r,gg){
-var z=gz$gwx_23()
-var h7C=_n('view')
-_rz(z,h7C,'class',0,e,s,gg)
-var o8C=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
-_(h7C,o8C)
-var c9C=_n('view')
-_rz(z,c9C,'class',4,e,s,gg)
-var o0C=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',5,'bind:input',1,'class',2,'data-event-opts',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(c9C,o0C)
-var lAD=_mz(z,'m-input',['displayable',-1,'bind:__l',13,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(c9C,lAD)
-_(h7C,c9C)
-_(r,h7C)
-return r
-}
-e_[x[22]]={f:m22,j:[],i:[],ti:[],ic:[]}
-d_[x[23]]={}
-var m23=function(e,s,r,gg){
-var z=gz$gwx_24()
-return r
-}
-e_[x[23]]={f:m23,j:[],i:[],ti:[],ic:[]}
-d_[x[24]]={}
-var m24=function(e,s,r,gg){
-var z=gz$gwx_25()
-return r
-}
-e_[x[24]]={f:m24,j:[],i:[],ti:[],ic:[]}
-d_[x[25]]={}
-var m25=function(e,s,r,gg){
-var z=gz$gwx_26()
-return r
-}
-e_[x[25]]={f:m25,j:[],i:[],ti:[],ic:[]}
-d_[x[26]]={}
-var m26=function(e,s,r,gg){
-var z=gz$gwx_27()
-return r
-}
-e_[x[26]]={f:m26,j:[],i:[],ti:[],ic:[]}
-d_[x[27]]={}
-var m27=function(e,s,r,gg){
-var z=gz$gwx_28()
-var xGD=_n('view')
-_rz(z,xGD,'class',0,e,s,gg)
-var oHD=_mz(z,'button',['bindtap',1,'class',1,'data-event-opts',2,'disabled',3,'hoverClass',4],[],e,s,gg)
-var fID=_v()
-_(oHD,fID)
-if(_oz(z,6,e,s,gg)){fID.wxVkey=1
-}
-fID.wxXCkey=1
-_(xGD,oHD)
-var cJD=_mz(z,'button',['bindtap',7,'class',1,'data-event-opts',2,'disabled',3],[],e,s,gg)
-var hKD=_v()
-_(cJD,hKD)
-if(_oz(z,11,e,s,gg)){hKD.wxVkey=1
-}
-hKD.wxXCkey=1
-_(xGD,cJD)
-_(r,xGD)
-return r
-}
-e_[x[27]]={f:m27,j:[],i:[],ti:[],ic:[]}
-d_[x[28]]={}
-var m28=function(e,s,r,gg){
-var z=gz$gwx_29()
-return r
-}
-e_[x[28]]={f:m28,j:[],i:[],ti:[],ic:[]}
-d_[x[29]]={}
-var m29=function(e,s,r,gg){
-var z=gz$gwx_30()
-var oND=_mz(z,'m-icon',['bind:__l',0,'bind:click',1,'class',1,'color',2,'data-event-opts',3,'size',4,'type',5,'vueId',6],[],e,s,gg)
-_(r,oND)
-return r
-}
-e_[x[29]]={f:m29,j:[],i:[],ti:[],ic:[]}
-d_[x[30]]={}
-var m30=function(e,s,r,gg){
-var z=gz$gwx_31()
-return r
-}
-e_[x[30]]={f:m30,j:[],i:[],ti:[],ic:[]}
-d_[x[31]]={}
-var m31=function(e,s,r,gg){
-var z=gz$gwx_32()
-return r
-}
-e_[x[31]]={f:m31,j:[],i:[],ti:[],ic:[]}
-d_[x[32]]={}
-var m32=function(e,s,r,gg){
-var z=gz$gwx_33()
-var eRD=_n('view')
-_rz(z,eRD,'class',0,e,s,gg)
-var xUD=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
-_(eRD,xUD)
-var bSD=_v()
-_(eRD,bSD)
-if(_oz(z,4,e,s,gg)){bSD.wxVkey=1
-var oVD=_n('view')
-_rz(z,oVD,'class',5,e,s,gg)
-var fWD=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',6,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(oVD,fWD)
-var cXD=_mz(z,'m-input',['clearable',-1,'bind:__l',13,'bind:input',1,'data-event-opts',2,'maxlength',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(oVD,cXD)
-_(bSD,oVD)
-}
-var oTD=_v()
-_(eRD,oTD)
-if(_oz(z,21,e,s,gg)){oTD.wxVkey=1
-var hYD=_n('view')
-_rz(z,hYD,'class',22,e,s,gg)
-var oZD=_mz(z,'m-input',['displayable',-1,'bind:__l',23,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(hYD,oZD)
-var c1D=_mz(z,'m-input',['displayable',-1,'bind:__l',30,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(hYD,c1D)
-_(oTD,hYD)
-}
-bSD.wxXCkey=1
-bSD.wxXCkey=3
-oTD.wxXCkey=1
-oTD.wxXCkey=3
-_(r,eRD)
-return r
-}
-e_[x[32]]={f:m32,j:[],i:[],ti:[],ic:[]}
-d_[x[33]]={}
-var m33=function(e,s,r,gg){
-var z=gz$gwx_34()
-var l3D=_n('view')
-_rz(z,l3D,'class',0,e,s,gg)
-var a4D=_mz(z,'logo',['bind:__l',1,'slogan',1,'vueId',2],[],e,s,gg)
-_(l3D,a4D)
-var t5D=_n('view')
-_rz(z,t5D,'class',4,e,s,gg)
-var e6D=_mz(z,'m-input',['clearable',-1,'bind:__l',5,'bind:input',1,'data-event-opts',2,'placeholder',3,'value',4,'vueId',5],[],e,s,gg)
-_(t5D,e6D)
-var b7D=_mz(z,'m-input',['clearable',-1,'bind:__l',11,'bind:input',1,'data-event-opts',2,'maxlength',3,'placeholder',4,'type',5,'value',6,'vueId',7],[],e,s,gg)
-_(t5D,b7D)
-var o8D=_mz(z,'m-input',['displayable',-1,'bind:__l',19,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(t5D,o8D)
-var x9D=_mz(z,'m-input',['displayable',-1,'bind:__l',26,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(t5D,x9D)
-var o0D=_mz(z,'m-input',['clearable',-1,'bind:__l',33,'bind:input',1,'data-event-opts',2,'placeholder',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(t5D,o0D)
-_(l3D,t5D)
-_(r,l3D)
-return r
-}
-e_[x[33]]={f:m33,j:[],i:[],ti:[],ic:[]}
-d_[x[34]]={}
-var m34=function(e,s,r,gg){
-var z=gz$gwx_35()
-return r
-}
-e_[x[34]]={f:m34,j:[],i:[],ti:[],ic:[]}
-d_[x[35]]={}
-var m35=function(e,s,r,gg){
-var z=gz$gwx_36()
-return r
-}
-e_[x[35]]={f:m35,j:[],i:[],ti:[],ic:[]}
-d_[x[36]]={}
-var m36=function(e,s,r,gg){
-var z=gz$gwx_37()
-return r
-}
-e_[x[36]]={f:m36,j:[],i:[],ti:[],ic:[]}
-d_[x[37]]={}
-var m37=function(e,s,r,gg){
-var z=gz$gwx_38()
-var cEE=_n('view')
-_rz(z,cEE,'class',0,e,s,gg)
-var oFE=_mz(z,'m-input',['clearable',-1,'focus',-1,'bind:__l',1,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
-_(cEE,oFE)
-var lGE=_mz(z,'m-input',['clearable',-1,'bind:__l',7,'bind:input',1,'data-event-opts',2,'maxlength',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(cEE,lGE)
-var aHE=_mz(z,'m-input',['clearable',-1,'bind:__l',14,'bind:input',1,'data-event-opts',2,'maxlength',3,'type',4,'value',5,'vueId',6],[],e,s,gg)
-_(cEE,aHE)
-var tIE=_mz(z,'m-input',['clearable',-1,'bind:__l',21,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
-_(cEE,tIE)
-var eJE=_mz(z,'m-input',['clearable',-1,'bind:__l',27,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
-_(cEE,eJE)
-var bKE=_mz(z,'m-input',['clearable',-1,'bind:__l',33,'bind:input',1,'data-event-opts',2,'type',3,'value',4,'vueId',5],[],e,s,gg)
-_(cEE,bKE)
-_(r,cEE)
-return r
-}
-e_[x[37]]={f:m37,j:[],i:[],ti:[],ic:[]}
-d_[x[38]]={}
-var m38=function(e,s,r,gg){
-var z=gz$gwx_39()
-return r
-}
-e_[x[38]]={f:m38,j:[],i:[],ti:[],ic:[]}
-d_[x[39]]={}
-var m39=function(e,s,r,gg){
-var z=gz$gwx_40()
-return r
-}
-e_[x[39]]={f:m39,j:[],i:[],ti:[],ic:[]}
-d_[x[40]]={}
-var m40=function(e,s,r,gg){
-var z=gz$gwx_41()
-return r
-}
-e_[x[40]]={f:m40,j:[],i:[],ti:[],ic:[]}
-if(path&&e_[path]){
-return function(env,dd,global){$gwxc=0;var root={"tag":"wx-page"};root.children=[]
-var main=e_[path].f
-if (typeof global==="undefined")global={};global.f=$gdc(f_[path],"",1);
-try{
-main(env,{},root,global);
-_tsd(root)
-}catch(err){
-console.log(err)
-}
-return root;
-}
-}
-}
-
 
 
 __wxAppCode__['app.json']={"pages":["pages/index/index","pages/login/login","pages/reg/reg","pages/pwd/pwd","pages/im-chat/im-chat","pages/main/main","pages/pact/pact","pages/pact/pactVoteDetail","pages/daily/daily","pages/daily/publish","pages/daily/userInfo","pages/store/store","pages/game/game","pages/nearby/nearby","pages/entertain/entertain","pages/entertain/entertainDetail","pages/entertain/entertainApplication","pages/entertain/entertainUpload","pages/user/user","pages/user/update","pages/msg/msg","pages/pan/pan","pages/pan/donateList","pages/ledger/asset","pages/ledger/focus","pages/purse/purse","pages/passport/passport","pages/auth/auth","pages/invite/invite","pages/base/base","pages/strategy/strategy","pages/welfare/welfare","pages/setting/setting","pagesA/settingChat/settingChat"],"subPackages":[],"window":{"navigationBarTextStyle":"white","navigationBarBackgroundColor":"#000000","backgroundColor":"#fbf9fe"},"tabBar":{"color":"#767676","selectedColor":"#EFEFF4","backgroundColor":"#000000","list":[{"pagePath":"pages/main/main","text":"首頁","iconPath":"static/img/tabbar/home.png","selectedIconPath":"static/img/tabbar/homeHL.png"},{"pagePath":"pages/msg/msg","text":"通訊","iconPath":"static/img/tabbar/msg.png","selectedIconPath":"static/img/tabbar/msgHL.png"},{"pagePath":"pages/pan/pan","text":"PAN","iconPath":"static/img/tabbar/PAN.png","selectedIconPath":"static/img/tabbar/PANHL.png"},{"pagePath":"pages/user/user","text":"我的","iconPath":"static/img/tabbar/user.png","selectedIconPath":"static/img/tabbar/userHL.png"}]},"networkTimeout":{"request":6000,"uploadFile":10000},"nvueCompiler":"weex","splashscreen":{"alwaysShowBeforeRender":true,"autoclose":false},"appname":"Pandla","compilerVersion":"2.0.1","usingComponents":{}};
@@ -11540,6 +9355,7 @@ function registerAction (store, type, handler, local) {
   });
 }
 
+<<<<<<< HEAD
 function registerGetter (store, type, rawGetter, local) {
   if (store._wrappedGetters[type]) {
     if (true) {
@@ -11556,6 +9372,20 @@ function registerGetter (store, type, rawGetter, local) {
     )
   };
 }
+=======
+/**
+ * Merge two option objects into a new one.
+ * Core utility used in both instantiation and inheritance.
+ */
+function mergeOptions (
+  parent,
+  child,
+  vm
+) {
+  if (true) {
+    checkComponents(child);
+  }
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
 function enableStrictMode (store) {
   store._vm.$watch(function () { return this._data.$$state }, function () {
@@ -11811,8 +9641,19 @@ var login = function login(account, password) {
       name: account,
       password: password },
 
+<<<<<<< HEAD
     header: {
       'content-type': 'application/json' },
+=======
+function flushCallbacks () {
+  pending = false;
+  var copies = callbacks.slice(0);
+  callbacks.length = 0;
+  for (var i = 0; i < copies.length; i++) {
+    copies[i]();
+  }
+}
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
     success: function success(res) {
       // console.log(res.data.data);
@@ -12115,6 +9956,7 @@ exports.getDyn = getDyn;var findAllDyn = function findAllDyn() {return new Promi
 
   });};
 
+<<<<<<< HEAD
 // 获取日志评论列表
 exports.findAllDyn = findAllDyn;var getComment = function getComment(did) {return new Promise(function (resolve, reject) {
     // console.log(did);
@@ -12122,6 +9964,9 @@ exports.findAllDyn = findAllDyn;var getComment = function getComment(did) {retur
       url: dynUrl + 'getComment?did=' + did,
       header: {
         'token': Token },
+=======
+/*  */
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
       success: function success(res) {
         console.log(res.data.data, " at api\\api.js:336");
@@ -12160,6 +10005,7 @@ exports.getComment = getComment;var addComment = function addComment(content, di
         reject(err);
       } });
 
+<<<<<<< HEAD
   });};
 
 // 关注
@@ -12177,15 +10023,32 @@ exports.addComment = addComment;var concern = function concern(type, gid) {retur
               icon: 'none',
               title: '已取消關注' });
 
+=======
+          if (isSync) {
+            var on = data.on || (data.on = {});
+            on[("update:" + key)] = function ($event) {
+              value[key] = $event;
+            };
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
           }
           resolve(res.data.data);
         }
+<<<<<<< HEAD
         // else reject(res.data.msg);
       },
       fail: function fail(err) {
         uni.showToast({
           icon: 'none',
           title: '页面加载失败，請稍后重試' });
+=======
+      };
+
+      for (var key in value) loop( key );
+    }
+  }
+  return data
+}
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
         reject(err);
       } });
@@ -12242,12 +10105,21 @@ exports.like = like;var getBullet = function getBullet(did) {return new Promise(
 
   });};
 
+<<<<<<< HEAD
 // 回复评论
 exports.getBullet = getBullet;var reply = function reply(cid, content) {return new Promise(function (resolve, reject) {
     uni.request({
       url: dynUrl + 'reply?cid=' + cid + '&content=' + content,
       header: {
         'token': Token },
+=======
+// helper to dynamically append modifier runtime markers to event names.
+// ensure only append when value is already string, otherwise it will be cast
+// to string and cause the type check to miss.
+function prependModifier (value, symbol) {
+  return typeof value === 'string' ? symbol + value : value
+}
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
       success: function success(res) {
         // console.log(res.data);
@@ -12295,6 +10167,7 @@ exports.getIndex = getIndex;var donate = function donate(number) {return new Pro
       header: {
         'token': Token },
 
+<<<<<<< HEAD
       success: function success(res) {
         // console.log(res.data);
         if (res.data.status == 200) {
@@ -12318,6 +10191,30 @@ exports.getIndex = getIndex;var donate = function donate(number) {return new Pro
         uni.showToast({
           icon: 'none',
           title: '页面加载失败，請稍后重試' });
+=======
+  this.data = data;
+  this.props = props;
+  this.children = children;
+  this.parent = parent;
+  this.listeners = data.on || emptyObject;
+  this.injections = resolveInject(options.inject, parent);
+  this.slots = function () {
+    if (!this$1.$slots) {
+      normalizeScopedSlots(
+        data.scopedSlots,
+        this$1.$slots = resolveSlots(children, parent)
+      );
+    }
+    return this$1.$slots
+  };
+
+  Object.defineProperty(this, 'scopedSlots', ({
+    enumerable: true,
+    get: function get () {
+      return normalizeScopedSlots(data.scopedSlots, this.slots())
+    }
+  }));
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
         reject(err);
       } });
@@ -14068,6 +11965,7 @@ var QRMaskPattern = {
   PATTERN111: 7 };
 
 
+<<<<<<< HEAD
 //---------------------------------------------------------------------
 // QRUtil
 //---------------------------------------------------------------------
@@ -14184,6 +12082,124 @@ var QRUtil = function () {
     }
     return a;
   };
+=======
+/*  */
+
+function flushCallbacks$1(vm) {
+    if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+            var mpInstance = vm.$scope;
+            console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
+                ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
+        }
+        var copies = vm.__next_tick_callbacks.slice(0);
+        vm.__next_tick_callbacks.length = 0;
+        for (var i = 0; i < copies.length; i++) {
+            copies[i]();
+        }
+    }
+}
+
+function hasRenderWatcher(vm) {
+    return queue.find(function (watcher) { return vm._watcher === watcher; })
+}
+
+function nextTick$1(vm, cb) {
+    //1.nextTick 之前 已 setData 且 setData 还未回调完成
+    //2.nextTick 之前存在 render watcher
+    if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
+            var mpInstance = vm.$scope;
+            console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
+                ']:nextVueTick');
+        }
+        return nextTick(cb, vm)
+    }else{
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
+            var mpInstance$1 = vm.$scope;
+            console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
+                ']:nextMPTick');
+        }
+    }
+    var _resolve;
+    if (!vm.__next_tick_callbacks) {
+        vm.__next_tick_callbacks = [];
+    }
+    vm.__next_tick_callbacks.push(function () {
+        if (cb) {
+            try {
+                cb.call(vm);
+            } catch (e) {
+                handleError(e, vm, 'nextTick');
+            }
+        } else if (_resolve) {
+            _resolve(vm);
+        }
+    });
+    // $flow-disable-line
+    if (!cb && typeof Promise !== 'undefined') {
+        return new Promise(function (resolve) {
+            _resolve = resolve;
+        })
+    }
+}
+
+/*  */
+
+function cloneWithData(vm) {
+    // 确保当前 vm 所有数据被同步
+    var dataKeys = [].concat(
+        Object.keys(vm._data || {}),
+        Object.keys(vm._computedWatchers || {}));
+
+    var ret = dataKeys.reduce(function(ret, key) {
+        ret[key] = vm[key];
+        return ret
+    }, Object.create(null));
+    //TODO 需要把无用数据处理掉，比如 list=>l0 则 list 需要移除，否则多传输一份数据
+    Object.assign(ret, vm.$mp.data || {});
+    if (
+        Array.isArray(vm.$options.behaviors) &&
+        vm.$options.behaviors.indexOf('uni://form-field') !== -1
+    ) { //form-field
+        ret['name'] = vm.name;
+        ret['value'] = vm.value;
+    }
+    return JSON.parse(JSON.stringify(ret))
+}
+
+var patch = function(oldVnode, vnode) {
+    var this$1 = this;
+
+    if (vnode === null) { //destroy
+        return
+    }
+    if (this.mpType === 'page' || this.mpType === 'component') {
+        var mpInstance = this.$scope;
+        var data = cloneWithData(this);
+        data.__webviewId__ = mpInstance.data.__webviewId__;
+        var mpData = Object.create(null);
+        Object.keys(data).forEach(function (key) { //仅同步 data 中有的数据
+            mpData[key] = mpInstance.data[key];
+        });
+        var diffData = diff(data, mpData);
+        if (Object.keys(diffData).length) {
+            if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+                console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
+                    ']差量更新',
+                    JSON.stringify(diffData));
+            }
+            this.__next_tick_pending = true;
+            mpInstance.setData(diffData, function () {
+                this$1.__next_tick_pending = false;
+                flushCallbacks$1(this$1);
+            });
+        } else {
+            flushCallbacks$1(this);
+        }
+    }
+};
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
   _this.getLengthInBits = function (mode, type) {
 
@@ -14237,6 +12253,7 @@ var QRUtil = function () {
 
     var lostPoint = 0;
 
+<<<<<<< HEAD
     // LEVEL1
 
     for (var row = 0; row < moduleCount; row += 1) {
@@ -14424,6 +12441,197 @@ function qrPolynomial(num, shift) {
   _this.multiply = function (e) {
 
     var num = new Array(_this.getLength() + e.getLength() - 1);
+=======
+/*  */
+
+var MP_METHODS = ['createSelectorQuery', 'createIntersectionObserver', 'selectAllComponents', 'selectComponent'];
+
+function getTarget(obj, path) {
+    var parts = path.split('.');
+    var key = parts[0];
+    if (key.indexOf('__$n') === 0) { //number index
+        key = parseInt(key.replace('__$n', ''));
+    }
+    if (parts.length === 1) {
+        return obj[key]
+    }
+    return getTarget(obj[key], parts.slice(1).join('.'))
+}
+
+function internalMixin(Vue) {
+
+    var oldEmit = Vue.prototype.$emit;
+
+    Vue.prototype.$emit = function(event) {
+        if (this.$scope && event) {
+            this.$scope['triggerEvent'](event, {
+                __args__: toArray(arguments, 1)
+            });
+        }
+        return oldEmit.apply(this, arguments)
+    };
+    
+    Vue.prototype.$nextTick = function (fn) {
+      return nextTick$1(this, fn)
+    };
+
+    MP_METHODS.forEach(function (method) {
+        Vue.prototype[method] = function(args) {
+            if (this.$scope) {
+                return this.$scope[method](args)
+            }
+        };
+    });
+
+    Vue.prototype.__init_provide = initProvide;
+
+    Vue.prototype.__init_injections = initInjections;
+
+    Vue.prototype.__call_hook = function(hook, args) {
+        var vm = this;
+        // #7573 disable dep collection when invoking lifecycle hooks
+        pushTarget();
+        var handlers = vm.$options[hook];
+        var info = hook + " hook";
+        var ret;
+        if (handlers) {
+            for (var i = 0, j = handlers.length; i < j; i++) {
+                ret = invokeWithErrorHandling(handlers[i], vm, args ? [args] : null, vm, info);
+            }
+        }
+        if (vm._hasHookEvent) {
+            vm.$emit('hook:' + hook);
+        }
+        popTarget();
+        return ret
+    };
+
+    Vue.prototype.__set_model = function(target, key, value, modifiers) {
+        if (Array.isArray(modifiers)) {
+            if (modifiers.indexOf('trim') !== -1) {
+                value = value.trim();
+            }
+            if (modifiers.indexOf('number') !== -1) {
+                value = this._n(value);
+            }
+        }
+        if(!target){
+            target = this;
+        }
+        target[key] = value;
+    };
+
+    Vue.prototype.__set_sync = function(target, key, value) {
+        if(!target){
+            target = this;
+        }
+        target[key] = value;
+    };
+
+    Vue.prototype.__get_orig = function(item) {
+        if (isPlainObject(item)) {
+            return item['$orig'] || item
+        }
+        return item
+    };
+
+    Vue.prototype.__get_value = function(dataPath, target) {
+        return getTarget(target || this, dataPath)
+    };
+
+
+    Vue.prototype.__get_class = function(dynamicClass, staticClass) {
+        return renderClass(staticClass, dynamicClass)
+    };
+
+    Vue.prototype.__get_style = function(dynamicStyle, staticStyle) {
+        if (!dynamicStyle && !staticStyle) {
+            return ''
+        }
+        var dynamicStyleObj = normalizeStyleBinding(dynamicStyle);
+        var styleObj = staticStyle ? extend(staticStyle, dynamicStyleObj) : dynamicStyleObj;
+        return Object.keys(styleObj).map(function (name) { return ((hyphenate(name)) + ":" + (styleObj[name])); }).join(';')
+    };
+
+}
+
+/*  */
+
+var LIFECYCLE_HOOKS$1 = [
+    //App
+    'onLaunch',
+    'onShow',
+    'onHide',
+    'onUniNViewMessage',
+    'onError',
+    //Page
+    'onLoad',
+    // 'onShow',
+    'onReady',
+    // 'onHide',
+    'onUnload',
+    'onPullDownRefresh',
+    'onReachBottom',
+    'onTabItemTap',
+    'onShareAppMessage',
+    'onResize',
+    'onPageScroll',
+    'onNavigationBarButtonTap',
+    'onBackPress',
+    'onNavigationBarSearchInputChanged',
+    'onNavigationBarSearchInputConfirmed',
+    'onNavigationBarSearchInputClicked',
+    //Component
+    // 'onReady', // 兼容旧版本，应该移除该事件
+    'onPageShow',
+    'onPageHide',
+    'onPageResize'
+];
+function lifecycleMixin$1(Vue) {
+
+    //fixed vue-class-component
+    var oldExtend = Vue.extend;
+    Vue.extend = function(extendOptions) {
+        extendOptions = extendOptions || {};
+
+        var methods = extendOptions.methods;
+        if (methods) {
+            Object.keys(methods).forEach(function (methodName) {
+                if (LIFECYCLE_HOOKS$1.indexOf(methodName)!==-1) {
+                    extendOptions[methodName] = methods[methodName];
+                    delete methods[methodName];
+                }
+            });
+        }
+
+        return oldExtend.call(this, extendOptions)
+    };
+
+    var strategies = Vue.config.optionMergeStrategies;
+    var mergeHook = strategies.created;
+    LIFECYCLE_HOOKS$1.forEach(function (hook) {
+        strategies[hook] = mergeHook;
+    });
+
+    Vue.prototype.__lifecycle_hooks__ = LIFECYCLE_HOOKS$1;
+}
+
+/*  */
+
+// install platform patch function
+Vue.prototype.__patch__ = patch;
+
+// public mount method
+Vue.prototype.$mount = function(
+    el ,
+    hydrating 
+) {
+    return mountComponent$1(this, el, hydrating)
+};
+
+lifecycleMixin$1(Vue);
+internalMixin(Vue);
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
     for (var i = 0; i < _this.getLength(); i += 1) {
       for (var j = 0; j < e.getLength(); j += 1) {
@@ -19367,6 +17575,7 @@ define('pages/daily/daily.js',function(require, module, exports, window, documen
 
 
 
+
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");var barrage = function barrage() {return __webpack_require__.e(/*! import() | components/barrage */ "components/barrage").then(__webpack_require__.bind(null, /*! ../../components/barrage.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\barrage.vue"));};var _default =
 
 
@@ -19426,7 +17635,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     publishDyn: function publishDyn() {var _this2 = this;
       (0, _api.getImgTemp)().then(function (data) {
         _this2.$store.commit('setImgTemp', data);
-        console.log(_this2.$store.state.imgTemp, " at pages\\daily\\daily.vue:165");
+        console.log(_this2.$store.state.imgTemp, " at pages\\daily\\daily.vue:166");
         uni.navigateTo({
           url: 'publish' });
 
@@ -19448,7 +17657,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       this.pickIndex = e.target.value;
       if (e.target.value == 0) {//取消关注
         this.following = false;
-        console.log(this.uid, " at pages\\daily\\daily.vue:187");
+        console.log(this.uid, " at pages\\daily\\daily.vue:188");
         (0, _api.concern)(2, this.uid).then(function (data) {
           _this4.findDyn();
         });
@@ -19529,7 +17738,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       // console.log(this.did);
       if (this.commContent != '') {
         if (this.addType == 'reply') {
-          console.log('刚刚是回复', " at pages\\daily\\daily.vue:268");
+          console.log('刚刚是回复', " at pages\\daily\\daily.vue:269");
           // console.log('cid' + this.cid);
           // console.log('commContent' + this.commContent);
           (0, _api.reply)(this.cid, this.commContent).then(function (data) {
@@ -19538,7 +17747,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
             _this7.commplaceholder = '  為保證用戶隱私，只可以看自己的評論'; // 清除占位符
           });
         } else {
-          console.log('刚刚是評論', " at pages\\daily\\daily.vue:277");
+          console.log('刚刚是評論', " at pages\\daily\\daily.vue:278");
           (0, _api.addComment)(this.commContent, this.did).then(function (data) {
             (0, _api.getComment)(_this7.did).then(function (data) {
               _this7.commentInfo = data;
@@ -19571,7 +17780,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     this.findDyn(1);
   },
   onPullDownRefresh: function onPullDownRefresh() {//监听下拉刷新动作
-    console.log('onPullDownRefresh', " at pages\\daily\\daily.vue:310");
+    console.log('onPullDownRefresh', " at pages\\daily\\daily.vue:311");
     // 这里获取数据
     this.findDyn(1);
     setTimeout(function () {
@@ -19588,9 +17797,9 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!E:/Project/HBuilderProjects/Pandla/pages/daily/daily.vue?vue&type=style&index=0&id=6364d745&scoped=true&lang=css& ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-// extracted by mini-css-extract-plugin
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/src/index.js):\nSyntaxError\n\n(620:13) Unknown word\n\n  618 | \t\t\t\t\t\t</view>\n  619 | \t\t\t\t\t\t<view>\n> 620 | \t\t\t\t\t\t\t<p>{{item.name}}</p>\n      | \t\t\t\t\t\t\t     ^\n  621 | \t\t\t\t\t\t\t<p>{{item.location}}</p>\n  622 | \t\t\t\t\t\t</view>\n\n    at runLoaders (C:\\IDE\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\webpack\\lib\\NormalModule.js:301:20)\n    at C:\\IDE\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\IDE\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\IDE\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Promise.resolve.then.then.catch (C:\\IDE\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\postcss-loader\\src\\index.js:207:9)\n    at <anonymous>");
 
 /***/ }),
 

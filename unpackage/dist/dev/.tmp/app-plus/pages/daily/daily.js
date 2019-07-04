@@ -113,6 +113,7 @@
 
 
 
+
 var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderProjects\\Pandla\\api\\api.js");var barrage = function barrage() {return __webpack_require__.e(/*! import() | components/barrage */ "components/barrage").then(__webpack_require__.bind(null, /*! ../../components/barrage.vue */ "E:\\Project\\HBuilderProjects\\Pandla\\components\\barrage.vue"));};var _default =
 
 
@@ -172,7 +173,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     publishDyn: function publishDyn() {var _this2 = this;
       (0, _api.getImgTemp)().then(function (data) {
         _this2.$store.commit('setImgTemp', data);
-        console.log(_this2.$store.state.imgTemp, " at pages\\daily\\daily.vue:165");
+        console.log(_this2.$store.state.imgTemp, " at pages\\daily\\daily.vue:166");
         uni.navigateTo({
           url: 'publish' });
 
@@ -194,7 +195,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       this.pickIndex = e.target.value;
       if (e.target.value == 0) {//取消关注
         this.following = false;
-        console.log(this.uid, " at pages\\daily\\daily.vue:187");
+        console.log(this.uid, " at pages\\daily\\daily.vue:188");
         (0, _api.concern)(2, this.uid).then(function (data) {
           _this4.findDyn();
         });
@@ -275,7 +276,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
       // console.log(this.did);
       if (this.commContent != '') {
         if (this.addType == 'reply') {
-          console.log('刚刚是回复', " at pages\\daily\\daily.vue:268");
+          console.log('刚刚是回复', " at pages\\daily\\daily.vue:269");
           // console.log('cid' + this.cid);
           // console.log('commContent' + this.commContent);
           (0, _api.reply)(this.cid, this.commContent).then(function (data) {
@@ -284,7 +285,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
             _this7.commplaceholder = '  為保證用戶隱私，只可以看自己的評論'; // 清除占位符
           });
         } else {
-          console.log('刚刚是評論', " at pages\\daily\\daily.vue:277");
+          console.log('刚刚是評論', " at pages\\daily\\daily.vue:278");
           (0, _api.addComment)(this.commContent, this.did).then(function (data) {
             (0, _api.getComment)(_this7.did).then(function (data) {
               _this7.commentInfo = data;
@@ -317,7 +318,7 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
     this.findDyn(1);
   },
   onPullDownRefresh: function onPullDownRefresh() {//监听下拉刷新动作
-    console.log('onPullDownRefresh', " at pages\\daily\\daily.vue:310");
+    console.log('onPullDownRefresh', " at pages\\daily\\daily.vue:311");
     // 这里获取数据
     this.findDyn(1);
     setTimeout(function () {
@@ -334,9 +335,9 @@ var _api = __webpack_require__(/*! ../../api/api.js */ "E:\\Project\\HBuilderPro
   !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-1!./node_modules/css-loader??ref--6-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!E:/Project/HBuilderProjects/Pandla/pages/daily/daily.vue?vue&type=style&index=0&id=6364d745&scoped=true&lang=css& ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-// extracted by mini-css-extract-plugin
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/src/index.js):\nSyntaxError\n\n(620:13) Unknown word\n\n  618 | \t\t\t\t\t\t</view>\n  619 | \t\t\t\t\t\t<view>\n> 620 | \t\t\t\t\t\t\t<p>{{item.name}}</p>\n      | \t\t\t\t\t\t\t     ^\n  621 | \t\t\t\t\t\t\t<p>{{item.location}}</p>\n  622 | \t\t\t\t\t\t</view>\n\n    at runLoaders (C:\\IDE\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\webpack\\lib\\NormalModule.js:301:20)\n    at C:\\IDE\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\IDE\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\IDE\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Promise.resolve.then.then.catch (C:\\IDE\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\postcss-loader\\src\\index.js:207:9)\n    at <anonymous>");
 
 /***/ }),
 

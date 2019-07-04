@@ -1,2 +1,1 @@
-setCssToHead([".",[1],"pages-content { font-size: ",[0,30],"; padding: ",[0,20],"; color: #B4B0B0; }\n.",[1],"title { font-size: ",[0,40],"; font-weight: bold; color: #B4B0B0; }\n.",[1],"content { display: block; margin-left: ",[0,20],"; color: #B4B0B0; }\n.",[1],"item-content { margin-left: ",[0,60],"; }\n",],undefined,{path:"./pages/strategy/strategy.wxss"})();
 document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/strategy/strategy.wxml') } }));

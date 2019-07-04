@@ -8780,6 +8780,7 @@ function registerAction (store, type, handler, local) {
   });
 }
 
+<<<<<<< HEAD
 function registerGetter (store, type, rawGetter, local) {
   if (store._wrappedGetters[type]) {
     if (true) {
@@ -8796,6 +8797,20 @@ function registerGetter (store, type, rawGetter, local) {
     )
   };
 }
+=======
+/**
+ * Merge two option objects into a new one.
+ * Core utility used in both instantiation and inheritance.
+ */
+function mergeOptions (
+  parent,
+  child,
+  vm
+) {
+  if (true) {
+    checkComponents(child);
+  }
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
 function enableStrictMode (store) {
   store._vm.$watch(function () { return this._data.$$state }, function () {
@@ -9051,8 +9066,19 @@ var login = function login(account, password) {
       name: account,
       password: password },
 
+<<<<<<< HEAD
     header: {
       'content-type': 'application/json' },
+=======
+function flushCallbacks () {
+  pending = false;
+  var copies = callbacks.slice(0);
+  callbacks.length = 0;
+  for (var i = 0; i < copies.length; i++) {
+    copies[i]();
+  }
+}
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
     success: function success(res) {
       // console.log(res.data.data);
@@ -9355,6 +9381,7 @@ exports.getDyn = getDyn;var findAllDyn = function findAllDyn() {return new Promi
 
   });};
 
+<<<<<<< HEAD
 // 获取日志评论列表
 exports.findAllDyn = findAllDyn;var getComment = function getComment(did) {return new Promise(function (resolve, reject) {
     // console.log(did);
@@ -9362,6 +9389,9 @@ exports.findAllDyn = findAllDyn;var getComment = function getComment(did) {retur
       url: dynUrl + 'getComment?did=' + did,
       header: {
         'token': Token },
+=======
+/*  */
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
       success: function success(res) {
         console.log(res.data.data, " at api\\api.js:336");
@@ -9400,6 +9430,7 @@ exports.getComment = getComment;var addComment = function addComment(content, di
         reject(err);
       } });
 
+<<<<<<< HEAD
   });};
 
 // 关注
@@ -9417,15 +9448,32 @@ exports.addComment = addComment;var concern = function concern(type, gid) {retur
               icon: 'none',
               title: '已取消關注' });
 
+=======
+          if (isSync) {
+            var on = data.on || (data.on = {});
+            on[("update:" + key)] = function ($event) {
+              value[key] = $event;
+            };
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
           }
           resolve(res.data.data);
         }
+<<<<<<< HEAD
         // else reject(res.data.msg);
       },
       fail: function fail(err) {
         uni.showToast({
           icon: 'none',
           title: '页面加载失败，請稍后重試' });
+=======
+      };
+
+      for (var key in value) loop( key );
+    }
+  }
+  return data
+}
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
         reject(err);
       } });
@@ -9482,12 +9530,21 @@ exports.like = like;var getBullet = function getBullet(did) {return new Promise(
 
   });};
 
+<<<<<<< HEAD
 // 回复评论
 exports.getBullet = getBullet;var reply = function reply(cid, content) {return new Promise(function (resolve, reject) {
     uni.request({
       url: dynUrl + 'reply?cid=' + cid + '&content=' + content,
       header: {
         'token': Token },
+=======
+// helper to dynamically append modifier runtime markers to event names.
+// ensure only append when value is already string, otherwise it will be cast
+// to string and cause the type check to miss.
+function prependModifier (value, symbol) {
+  return typeof value === 'string' ? symbol + value : value
+}
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
       success: function success(res) {
         // console.log(res.data);
@@ -9535,6 +9592,7 @@ exports.getIndex = getIndex;var donate = function donate(number) {return new Pro
       header: {
         'token': Token },
 
+<<<<<<< HEAD
       success: function success(res) {
         // console.log(res.data);
         if (res.data.status == 200) {
@@ -9558,6 +9616,30 @@ exports.getIndex = getIndex;var donate = function donate(number) {return new Pro
         uni.showToast({
           icon: 'none',
           title: '页面加载失败，請稍后重試' });
+=======
+  this.data = data;
+  this.props = props;
+  this.children = children;
+  this.parent = parent;
+  this.listeners = data.on || emptyObject;
+  this.injections = resolveInject(options.inject, parent);
+  this.slots = function () {
+    if (!this$1.$slots) {
+      normalizeScopedSlots(
+        data.scopedSlots,
+        this$1.$slots = resolveSlots(children, parent)
+      );
+    }
+    return this$1.$slots
+  };
+
+  Object.defineProperty(this, 'scopedSlots', ({
+    enumerable: true,
+    get: function get () {
+      return normalizeScopedSlots(data.scopedSlots, this.slots())
+    }
+  }));
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
         reject(err);
       } });
@@ -11308,6 +11390,7 @@ var QRMaskPattern = {
   PATTERN111: 7 };
 
 
+<<<<<<< HEAD
 //---------------------------------------------------------------------
 // QRUtil
 //---------------------------------------------------------------------
@@ -11424,6 +11507,124 @@ var QRUtil = function () {
     }
     return a;
   };
+=======
+/*  */
+
+function flushCallbacks$1(vm) {
+    if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+            var mpInstance = vm.$scope;
+            console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
+                ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
+        }
+        var copies = vm.__next_tick_callbacks.slice(0);
+        vm.__next_tick_callbacks.length = 0;
+        for (var i = 0; i < copies.length; i++) {
+            copies[i]();
+        }
+    }
+}
+
+function hasRenderWatcher(vm) {
+    return queue.find(function (watcher) { return vm._watcher === watcher; })
+}
+
+function nextTick$1(vm, cb) {
+    //1.nextTick 之前 已 setData 且 setData 还未回调完成
+    //2.nextTick 之前存在 render watcher
+    if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
+            var mpInstance = vm.$scope;
+            console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
+                ']:nextVueTick');
+        }
+        return nextTick(cb, vm)
+    }else{
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG){
+            var mpInstance$1 = vm.$scope;
+            console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
+                ']:nextMPTick');
+        }
+    }
+    var _resolve;
+    if (!vm.__next_tick_callbacks) {
+        vm.__next_tick_callbacks = [];
+    }
+    vm.__next_tick_callbacks.push(function () {
+        if (cb) {
+            try {
+                cb.call(vm);
+            } catch (e) {
+                handleError(e, vm, 'nextTick');
+            }
+        } else if (_resolve) {
+            _resolve(vm);
+        }
+    });
+    // $flow-disable-line
+    if (!cb && typeof Promise !== 'undefined') {
+        return new Promise(function (resolve) {
+            _resolve = resolve;
+        })
+    }
+}
+
+/*  */
+
+function cloneWithData(vm) {
+    // 确保当前 vm 所有数据被同步
+    var dataKeys = [].concat(
+        Object.keys(vm._data || {}),
+        Object.keys(vm._computedWatchers || {}));
+
+    var ret = dataKeys.reduce(function(ret, key) {
+        ret[key] = vm[key];
+        return ret
+    }, Object.create(null));
+    //TODO 需要把无用数据处理掉，比如 list=>l0 则 list 需要移除，否则多传输一份数据
+    Object.assign(ret, vm.$mp.data || {});
+    if (
+        Array.isArray(vm.$options.behaviors) &&
+        vm.$options.behaviors.indexOf('uni://form-field') !== -1
+    ) { //form-field
+        ret['name'] = vm.name;
+        ret['value'] = vm.value;
+    }
+    return JSON.parse(JSON.stringify(ret))
+}
+
+var patch = function(oldVnode, vnode) {
+    var this$1 = this;
+
+    if (vnode === null) { //destroy
+        return
+    }
+    if (this.mpType === 'page' || this.mpType === 'component') {
+        var mpInstance = this.$scope;
+        var data = cloneWithData(this);
+        data.__webviewId__ = mpInstance.data.__webviewId__;
+        var mpData = Object.create(null);
+        Object.keys(data).forEach(function (key) { //仅同步 data 中有的数据
+            mpData[key] = mpInstance.data[key];
+        });
+        var diffData = diff(data, mpData);
+        if (Object.keys(diffData).length) {
+            if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"app-plus","BASE_URL":"/"}).VUE_APP_DEBUG) {
+                console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
+                    ']差量更新',
+                    JSON.stringify(diffData));
+            }
+            this.__next_tick_pending = true;
+            mpInstance.setData(diffData, function () {
+                this$1.__next_tick_pending = false;
+                flushCallbacks$1(this$1);
+            });
+        } else {
+            flushCallbacks$1(this);
+        }
+    }
+};
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
   _this.getLengthInBits = function (mode, type) {
 
@@ -11477,6 +11678,7 @@ var QRUtil = function () {
 
     var lostPoint = 0;
 
+<<<<<<< HEAD
     // LEVEL1
 
     for (var row = 0; row < moduleCount; row += 1) {
@@ -11664,6 +11866,197 @@ function qrPolynomial(num, shift) {
   _this.multiply = function (e) {
 
     var num = new Array(_this.getLength() + e.getLength() - 1);
+=======
+/*  */
+
+var MP_METHODS = ['createSelectorQuery', 'createIntersectionObserver', 'selectAllComponents', 'selectComponent'];
+
+function getTarget(obj, path) {
+    var parts = path.split('.');
+    var key = parts[0];
+    if (key.indexOf('__$n') === 0) { //number index
+        key = parseInt(key.replace('__$n', ''));
+    }
+    if (parts.length === 1) {
+        return obj[key]
+    }
+    return getTarget(obj[key], parts.slice(1).join('.'))
+}
+
+function internalMixin(Vue) {
+
+    var oldEmit = Vue.prototype.$emit;
+
+    Vue.prototype.$emit = function(event) {
+        if (this.$scope && event) {
+            this.$scope['triggerEvent'](event, {
+                __args__: toArray(arguments, 1)
+            });
+        }
+        return oldEmit.apply(this, arguments)
+    };
+    
+    Vue.prototype.$nextTick = function (fn) {
+      return nextTick$1(this, fn)
+    };
+
+    MP_METHODS.forEach(function (method) {
+        Vue.prototype[method] = function(args) {
+            if (this.$scope) {
+                return this.$scope[method](args)
+            }
+        };
+    });
+
+    Vue.prototype.__init_provide = initProvide;
+
+    Vue.prototype.__init_injections = initInjections;
+
+    Vue.prototype.__call_hook = function(hook, args) {
+        var vm = this;
+        // #7573 disable dep collection when invoking lifecycle hooks
+        pushTarget();
+        var handlers = vm.$options[hook];
+        var info = hook + " hook";
+        var ret;
+        if (handlers) {
+            for (var i = 0, j = handlers.length; i < j; i++) {
+                ret = invokeWithErrorHandling(handlers[i], vm, args ? [args] : null, vm, info);
+            }
+        }
+        if (vm._hasHookEvent) {
+            vm.$emit('hook:' + hook);
+        }
+        popTarget();
+        return ret
+    };
+
+    Vue.prototype.__set_model = function(target, key, value, modifiers) {
+        if (Array.isArray(modifiers)) {
+            if (modifiers.indexOf('trim') !== -1) {
+                value = value.trim();
+            }
+            if (modifiers.indexOf('number') !== -1) {
+                value = this._n(value);
+            }
+        }
+        if(!target){
+            target = this;
+        }
+        target[key] = value;
+    };
+
+    Vue.prototype.__set_sync = function(target, key, value) {
+        if(!target){
+            target = this;
+        }
+        target[key] = value;
+    };
+
+    Vue.prototype.__get_orig = function(item) {
+        if (isPlainObject(item)) {
+            return item['$orig'] || item
+        }
+        return item
+    };
+
+    Vue.prototype.__get_value = function(dataPath, target) {
+        return getTarget(target || this, dataPath)
+    };
+
+
+    Vue.prototype.__get_class = function(dynamicClass, staticClass) {
+        return renderClass(staticClass, dynamicClass)
+    };
+
+    Vue.prototype.__get_style = function(dynamicStyle, staticStyle) {
+        if (!dynamicStyle && !staticStyle) {
+            return ''
+        }
+        var dynamicStyleObj = normalizeStyleBinding(dynamicStyle);
+        var styleObj = staticStyle ? extend(staticStyle, dynamicStyleObj) : dynamicStyleObj;
+        return Object.keys(styleObj).map(function (name) { return ((hyphenate(name)) + ":" + (styleObj[name])); }).join(';')
+    };
+
+}
+
+/*  */
+
+var LIFECYCLE_HOOKS$1 = [
+    //App
+    'onLaunch',
+    'onShow',
+    'onHide',
+    'onUniNViewMessage',
+    'onError',
+    //Page
+    'onLoad',
+    // 'onShow',
+    'onReady',
+    // 'onHide',
+    'onUnload',
+    'onPullDownRefresh',
+    'onReachBottom',
+    'onTabItemTap',
+    'onShareAppMessage',
+    'onResize',
+    'onPageScroll',
+    'onNavigationBarButtonTap',
+    'onBackPress',
+    'onNavigationBarSearchInputChanged',
+    'onNavigationBarSearchInputConfirmed',
+    'onNavigationBarSearchInputClicked',
+    //Component
+    // 'onReady', // 兼容旧版本，应该移除该事件
+    'onPageShow',
+    'onPageHide',
+    'onPageResize'
+];
+function lifecycleMixin$1(Vue) {
+
+    //fixed vue-class-component
+    var oldExtend = Vue.extend;
+    Vue.extend = function(extendOptions) {
+        extendOptions = extendOptions || {};
+
+        var methods = extendOptions.methods;
+        if (methods) {
+            Object.keys(methods).forEach(function (methodName) {
+                if (LIFECYCLE_HOOKS$1.indexOf(methodName)!==-1) {
+                    extendOptions[methodName] = methods[methodName];
+                    delete methods[methodName];
+                }
+            });
+        }
+
+        return oldExtend.call(this, extendOptions)
+    };
+
+    var strategies = Vue.config.optionMergeStrategies;
+    var mergeHook = strategies.created;
+    LIFECYCLE_HOOKS$1.forEach(function (hook) {
+        strategies[hook] = mergeHook;
+    });
+
+    Vue.prototype.__lifecycle_hooks__ = LIFECYCLE_HOOKS$1;
+}
+
+/*  */
+
+// install platform patch function
+Vue.prototype.__patch__ = patch;
+
+// public mount method
+Vue.prototype.$mount = function(
+    el ,
+    hydrating 
+) {
+    return mountComponent$1(this, el, hydrating)
+};
+
+lifecycleMixin$1(Vue);
+internalMixin(Vue);
+>>>>>>> accb13a6f75e392a4e96ff7fd343a7b8b3c35bb9
 
     for (var i = 0; i < _this.getLength(); i += 1) {
       for (var j = 0; j < e.getLength(); j += 1) {
