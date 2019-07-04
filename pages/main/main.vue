@@ -157,8 +157,8 @@
 				}
 			},
 			pushToken(item, index, e) { //收取token
-				this.tokenList[index].leftVal = this.targetWidth - this.tokenWidth;
-				this.tokenList[index].topVal = -this.tokenWidth;
+				this.tokenList[index].leftVal = 0;
+				this.tokenList[index].topVal = -this.tokenWidth - 70;
 				setTimeout(() => {
 					this.tokenList[index].display = 'none';
 					this.takePan(item.value);
@@ -214,7 +214,7 @@
 		width: 100%;
 		height: 600upx;
 		position: relative;
-		overflow: hidden;
+		// overflow: hidden;
 		background-repeat: no-repeat;
 		background-position: center;
 
@@ -256,7 +256,7 @@
 			width: 128upx;
 			height: 110upx;
 			text-align: center;
-			z-index: 3;
+			z-index: 66;
 			transition-property: all;
 			transition-duration: 2s;
 			transition-timing-function: ease-out;

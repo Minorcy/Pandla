@@ -257,8 +257,8 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
                 }case 4:case "end":return _context.stop();}}}, _callee, this);}));function getToken() {return _getToken.apply(this, arguments);}return getToken;}(),
 
     pushToken: function pushToken(item, index, e) {var _this3 = this; //收取token
-      this.tokenList[index].leftVal = this.targetWidth - this.tokenWidth;
-      this.tokenList[index].topVal = -this.tokenWidth;
+      this.tokenList[index].leftVal = 0;
+      this.tokenList[index].topVal = -this.tokenWidth - 70;
       setTimeout(function () {
         _this3.tokenList[index].display = 'none';
         _this3.takePan(item.value);
