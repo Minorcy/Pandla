@@ -9,23 +9,23 @@
 		onHide: function() {
 			console.log('App Hide');
 		},
-
 		mounted() {
 			this.$request.interceptors.response(res => {
+				console.log("res", res);
 				if (res) {
 					if (res.data.status && res.data.status.code != 200) {
-						uni.showToast({
-							title: res.data.status.message,
-							icon: "none",
-							duration: 2000
-						});
+						// uni.showToast({
+						// 	title: res.data.status.message,
+						// 	icon: "none",
+						// 	duration: 2000
+						// });
 					}
 					if (res.statusCode != 200) {
-						uni.showToast({
-							title: res.data.status.message,
-							icon: "none",
-							duration: 2000
-						});
+						// uni.showToast({
+						// 	title: res.data.status.message,
+						// 	icon: "none",
+						// 	duration: 2000
+						// });
 					}
 					if (res.statusCode == 401) { //退出登录
 						console.log("token失效");
@@ -188,7 +188,7 @@
 		transform: scaleY(.5);
 		background-color: #c8c7cc;
 	}
-	
+
 	.input-row .title {
 		width: 20%;
 		height: 50upx;

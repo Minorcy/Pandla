@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "發表",
+        "fontSize": "35upx"
+      }
+    ]
+  },
+  "bounce": "none",
+  "usingComponents": {}
+}

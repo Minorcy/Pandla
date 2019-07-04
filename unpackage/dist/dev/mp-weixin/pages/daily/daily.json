@@ -1,7 +1,0 @@
-{
-  "enablePullDownRefresh": true,
-  "navigationBarTitleText": "",
-  "usingComponents": {
-    "barrage": "/components/barrage"
-  }
-}

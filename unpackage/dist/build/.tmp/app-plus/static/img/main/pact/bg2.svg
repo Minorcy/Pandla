@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="124px" viewBox="0 0 375 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>矩形</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="9.10167701%" y1="45.8234317%" x2="75.5344471%" y2="53.2633864%" id="linearGradient-1">
+            <stop stop-color="#03FFEF" offset="0%"></stop>
+            <stop stop-color="#C8FB55" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="星球公约" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.15">
+        <g id="星球公約" transform="translate(0.000000, -238.000000)" fill="url(#linearGradient-1)">
+            <rect id="矩形" x="0" y="238" width="375" height="124"></rect>
+        </g>
+    </g>
+</svg>

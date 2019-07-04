@@ -1,0 +1,9 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "",
+  "titleNView": false,
+  "bounce": "none",
+  "usingComponents": {
+    "barrage": "/components/barrage"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "titleNView": false,
+  "bounce": "none",
+  "usingComponents": {
+    "m-icon": "/components/m-icon/m-icon"
+  }
+}

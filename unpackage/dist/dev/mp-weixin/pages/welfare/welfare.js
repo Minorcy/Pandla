@@ -1,2 +1,0 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/welfare/welfare"],[],[["E:\\Project\\HBuilderProjects\\Pandla\\main.js?{\"page\":\"pages%2Fwelfare%2Fwelfare\"}","common/runtime","common/vendor"]]]);
-//# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/welfare/welfare.js.map

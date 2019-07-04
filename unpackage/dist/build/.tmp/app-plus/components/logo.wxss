@@ -1,0 +1,28 @@
+
+.header.data-v-9dfa49b2 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.logo.data-v-9dfa49b2 {
+	width: 160rpx;
+	height: 150rpx;
+	display: block;
+	margin: 0 auto;
+}
+.slogan.data-v-9dfa49b2 {
+	color: #EFEFF4;
+	font-size: 60rpx;
+	text-align: center;
+}
+
