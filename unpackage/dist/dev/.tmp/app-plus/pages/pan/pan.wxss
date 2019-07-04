@@ -185,6 +185,7 @@ navigator.data-v-5050e440 {
 .donate button.data-v-5050e440 {
 	margin-right: 0;
 	font-size: 23rpx;
+	padding-top: 2rpx;
 	color: #EFEFF4;
 	-webkit-border-radius: 50rpx;
 	        border-radius: 50rpx;

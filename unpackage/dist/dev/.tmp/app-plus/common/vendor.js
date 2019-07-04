@@ -6759,18 +6759,6 @@ function assertObjectType (name, value, vm) {
   }
 }
 
-<<<<<<< HEAD
-      success: function success(res) {
-        // console.log(res.data.data);
-        if (res.data.status == 200) resolve(res.data.data);
-        // if(res.data.status == 400) reject(0);
-        // else reject(res.data.msg);
-      },
-      fail: function fail(err) {
-        uni.showToast({
-          icon: 'none',
-          title: '页面加载失败，請稍后重試' });
-=======
 /**
  * Merge two option objects into a new one.
  * Core utility used in both instantiation and inheritance.
@@ -6783,7 +6771,6 @@ function mergeOptions (
   if (true) {
     checkComponents(child);
   }
->>>>>>> bab5b8e21b0a188bc883d8f6060f15802bb36329
 
   if (typeof child === 'function') {
     child = child.options;
@@ -7165,14 +7152,6 @@ function logError (err, vm, info) {
 var callbacks = [];
 var pending = false;
 
-<<<<<<< HEAD
-      success: function success(res) {
-        // console.log(res.data);
-        if (res.data.status == 200) {
-          uni.showToast({
-            icon: 'none',
-            title: res.data.data });
-=======
 function flushCallbacks () {
   pending = false;
   var copies = callbacks.slice(0);
@@ -7181,7 +7160,6 @@ function flushCallbacks () {
     copies[i]();
   }
 }
->>>>>>> bab5b8e21b0a188bc883d8f6060f15802bb36329
 
 // Here we have async deferring wrappers using microtasks.
 // In 2.5 we used (macro) tasks (in combination with microtasks).
@@ -7935,16 +7913,7 @@ function renderSlot (
   }
 }
 
-<<<<<<< HEAD
-// 上传酒吧相册/营业执照
-exports.setBar = setBar;var upLogo = function upLogo(imgTemp, type) {return new Promise(function (resolve, reject) {
-    uni.uploadFile({
-      url: barUrl + 'upLogo?type=' + type,
-      header: {
-        'token': Token },
-=======
 /*  */
->>>>>>> bab5b8e21b0a188bc883d8f6060f15802bb36329
 
 /**
  * Runtime helper for resolving filters
@@ -8026,13 +7995,6 @@ function bindObjectProps (
         if (!(camelizedKey in hash) && !(hyphenatedKey in hash)) {
           hash[key] = value[key];
 
-<<<<<<< HEAD
-var getInvCode = function getInvCode() {return new Promise(function (resolve, reject) {
-    uni.request({
-      url: invUrl + 'getInvCode',
-      header: {
-        'token': Token },
-=======
           if (isSync) {
             var on = data.on || (data.on = {});
             on[("update:" + key)] = function ($event) {
@@ -8041,7 +8003,6 @@ var getInvCode = function getInvCode() {return new Promise(function (resolve, re
           }
         }
       };
->>>>>>> bab5b8e21b0a188bc883d8f6060f15802bb36329
 
       for (var key in value) loop( key );
     }
@@ -8177,21 +8138,12 @@ function bindDynamicKeys (baseObj, values) {
   return baseObj
 }
 
-<<<<<<< HEAD
-// 上传日志图片视频
-exports.getImgTemp = getImgTemp;var upload = function upload(imgTemp) {return new Promise(function (resolve, reject) {
-    uni.uploadFile({
-      url: dynUrl + 'upload',
-      header: {
-        'token': Token },
-=======
 // helper to dynamically append modifier runtime markers to event names.
 // ensure only append when value is already string, otherwise it will be cast
 // to string and cause the type check to miss.
 function prependModifier (value, symbol) {
   return typeof value === 'string' ? symbol + value : value
 }
->>>>>>> bab5b8e21b0a188bc883d8f6060f15802bb36329
 
 /*  */
 
@@ -8245,23 +8197,6 @@ function FunctionalRenderContext (
   var isCompiled = isTrue(options._compiled);
   var needNormalization = !isCompiled;
 
-<<<<<<< HEAD
-      success: function success(res) {
-        // console.log(res.data);
-        if (res.data.status == 200) {
-          uni.showToast({
-            icon: 'success',
-            title: '發表成功' });
-
-          resolve(res.data.data);
-        }
-        // else reject(res.data.msg);
-      },
-      fail: function fail(err) {
-        uni.showToast({
-          icon: 'none',
-          title: '页面加载失败，請稍后重試' });
-=======
   this.data = data;
   this.props = props;
   this.children = children;
@@ -8277,7 +8212,6 @@ function FunctionalRenderContext (
     }
     return this$1.$slots
   };
->>>>>>> bab5b8e21b0a188bc883d8f6060f15802bb36329
 
   Object.defineProperty(this, 'scopedSlots', ({
     enumerable: true,
