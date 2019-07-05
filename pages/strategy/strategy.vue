@@ -64,7 +64,7 @@
 		</view>
 
 
-		<p class="title">Token獲取管道有哪些?</p>
+		<view class="title">Token獲取管道有哪些?</view>
 		<view class="content">
 		1.注册獲得10個token<br />
 
