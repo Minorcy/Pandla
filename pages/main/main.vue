@@ -89,7 +89,7 @@
 			async getToken() { //获取token
 				let res = await this.api.homeToken().getIndexPan();
 				if (res.data.status == 200) {
-					//res.data.data
+					//
 					this.tokens = [0.12, 0.23, 0.44, 0.33];
 					let num = this.tokens.length;
 					let iconWidth;
@@ -157,12 +157,12 @@
 				}
 			},
 			pushToken(item, index, e) { //收取token
-				this.tokenList[index].leftVal = 0;
-				this.tokenList[index].topVal = -this.tokenWidth - 70;
+				this.tokenList[index].leftVal = 30;
+				this.tokenList[index].topVal = -this.tokenWidth - 60;
 				setTimeout(() => {
 					this.tokenList[index].display = 'none';
 					this.takePan(item.value);
-				}, 2000);
+				}, 1500);
 			},
 			async takePan(token) {
 				let res = await this.api.homeToken().takePan({
@@ -258,7 +258,7 @@
 			text-align: center;
 			z-index: 66;
 			transition-property: all;
-			transition-duration: 2s;
+			transition-duration: 1.5s;
 			transition-timing-function: ease-out;
 
 			.token-icon {
