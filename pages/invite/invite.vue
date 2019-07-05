@@ -29,6 +29,7 @@
 			Title="僅限前5萬名星球居民"
 			PriceTxt="注冊送1000魔法原力"
 			class="pan-poster"
+			@tap="preview"
 			v-if="created">
 		</wm-poster>
 	</view>

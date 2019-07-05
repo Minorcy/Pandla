@@ -24,21 +24,21 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.pan-list.data-v-b7910528 {
+.pan-list.data-v-83915a58 {
   -webkit-border-radius: 10rpx;
           border-radius: 10rpx;
   margin: -5rpx 20rpx;
   font-size: 25rpx;
 }
-.pan-list-label.data-v-b7910528 {
+.pan-list-label.data-v-83915a58 {
     text-align: center;
     margin: 100rpx 0;
     font-size: 35rpx;
 }
-.pan-list-ul.data-v-b7910528 {
+.pan-list-ul.data-v-83915a58 {
     padding: 0 50rpx;
 }
-.pan-list-li.data-v-b7910528 {
+.pan-list-li.data-v-83915a58 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -56,37 +56,37 @@
     margin: 30rpx 0;
     border-bottom: 1rpx solid #979797;
 }
-.pan-list-time.data-v-b7910528 {
+.pan-list-time.data-v-83915a58 {
     font-size: 25rpx;
     color: #979797;
 }
-.pan-list-number.data-v-b7910528 {
+.pan-list-number.data-v-83915a58 {
     color: #EFEFF4;
     font-size: 30rpx;
 }
-.pan-list-load.data-v-b7910528 {
+.pan-list-load.data-v-83915a58 {
     background-color: transparent;
     color: #EFEFF4;
     text-decoration: underline;
     font-size: 25rpx;
     padding-top: 50rpx;
 }
-.pan-list-total.data-v-b7910528 {
+.pan-list-total.data-v-83915a58 {
     text-align: right;
 }
-.pan-list-pan.data-v-b7910528 {
+.pan-list-pan.data-v-83915a58 {
     font-size: 25rpx;
     color: #007AFF;
 }
-.pan-list-tip.data-v-b7910528 {
+.pan-list-tip.data-v-83915a58 {
     margin: 100rpx 50rpx;
     font-size: 25rpx;
 }
-.pan-list-tip text.data-v-b7910528:last-child {
+.pan-list-tip text.data-v-83915a58:last-child {
     color: #007AFF;
     text-decoration: underline;
 }
-.pan-invite-code.data-v-b7910528 {
+.pan-invite-code.data-v-83915a58 {
   margin: 50rpx 100rpx 0 100rpx;
   padding: 20rpx;
   border: 5rpx solid;
@@ -101,7 +101,7 @@
   border-image: -moz-linear-gradient(right, #03D5C7, #73AE0F);
   border-image: liner-gradient(#03D5C7, #73AE0F);
 }
-.pan-invite-code text.data-v-b7910528:last-child {
+.pan-invite-code text.data-v-83915a58:last-child {
   color: #007AFF;
   margin-left: 80rpx;
 }

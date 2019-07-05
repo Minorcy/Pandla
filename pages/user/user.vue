@@ -102,6 +102,7 @@
 				let _this = this;
 				uni.showModal({
 					title: '確認退出',
+					content: '確認退出',
 					success(res) {
 						if(res.confirm) {
 							_this.logout();
