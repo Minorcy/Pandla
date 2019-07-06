@@ -1,12 +1,12 @@
 
-.input-section.data-v-ab2ced86{
+.input-section.data-v-54b893ef{
 	width: 100%;
 	height: 600rpx;
 	margin-top: 40rpx;
 	font-size: 30rpx;
 	padding: 20rpx;
 }
-.option-section.data-v-ab2ced86 {
+.option-section.data-v-54b893ef {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -19,12 +19,12 @@
 	padding: 20rpx;
 	border-top: 1rpx solid #4CD964;
 }
-.option-section image.data-v-ab2ced86 {
+.option-section image.data-v-54b893ef {
 	width: 40rpx;
 	height: 40rpx;
 	margin: 20rpx 10rpx 0 0;
 }
-.primary.data-v-ab2ced86 {
+.primary.data-v-54b893ef {
 	-webkit-box-pack: start;
 	-webkit-justify-content: flex-start;
 	    -ms-flex-pack: start;
@@ -32,7 +32,7 @@
 	margin: 20rpx 0;
 	border-bottom: 1rpx solid #4CD964;
 }
-image.data-v-ab2ced86 {
+image.data-v-54b893ef {
 	width: 350rpx;
 	height: 350rpx;
 	margin-bottom: 50rpx;

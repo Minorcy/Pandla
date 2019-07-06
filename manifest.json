@@ -1,6 +1,6 @@
 {
-    "name" : "Pandla",
-    "appid" : "__UNI__F2A9BD3",
+    "name" : "PandlaApp",
+    "appid" : "__UNI__A69E139",
     "description" : "全球第一款区块链同志社交软件",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -91,17 +91,17 @@
             },
             "splashscreen" : {
                 "android" : {
-                    "xxhdpi" : "E:/桌面/A-1080.png",
-                    "xhdpi" : "E:/桌面/A-720.png",
-                    "hdpi" : "E:/桌面/A-480.png"
+                    "xxhdpi" : "",
+                    "xhdpi" : "",
+                    "hdpi" : ""
                 },
                 "ios" : {
                     "iphone" : {
-                        "retina47" : "E:/桌面/I-750.png",
-                        "portrait-896h@2x" : "E:/桌面/I-828.png",
-                        "portrait-896h@3x" : "E:/桌面/I-1242.png",
-                        "iphonex" : "E:/桌面/I-1242.png",
-                        "retina55" : "E:/桌面/I-1242.png"
+                        "retina47" : "",
+                        "portrait-896h@2x" : "",
+                        "portrait-896h@3x" : "",
+                        "iphonex" : "",
+                        "retina55" : ""
                     }
                 }
             }

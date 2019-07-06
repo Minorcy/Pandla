@@ -81,7 +81,7 @@
     "alwaysShowBeforeRender": true,
     "autoclose": false
   },
-  "appname": "Pandla",
-  "compilerVersion": "2.0.1",
+  "appname": "PandlaApp",
+  "compilerVersion": "2.0.0",
   "usingComponents": {}
 }

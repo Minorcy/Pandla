@@ -1,5 +1,5 @@
 
-.header.data-v-294b52b1 {
+.header.data-v-3e1ca204 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -14,13 +14,13 @@
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
-.logo.data-v-294b52b1 {
+.logo.data-v-3e1ca204 {
 	width: 160rpx;
 	height: 150rpx;
 	display: block;
 	margin: 0 auto;
 }
-.slogan.data-v-294b52b1 {
+.slogan.data-v-3e1ca204 {
 	color: #EFEFF4;
 	font-size: 60rpx;
 	text-align: center;
