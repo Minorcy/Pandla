@@ -122,12 +122,13 @@
 		align-items: center;
 		width: 100%;
 		flex: 1;
-		padding: 0 10rpx;
+		padding: 0 10upx;
 	}
 
 	.m-input-input {
 		flex: 1;
 		width: 100%;
+		padding-left: 10upx;
 	}
 
 	.m-input-icon {

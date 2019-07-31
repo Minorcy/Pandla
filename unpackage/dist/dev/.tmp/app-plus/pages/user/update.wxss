@@ -12,8 +12,7 @@ image {
 	width: 200rpx;
 	height: 200rpx;
 	margin: 0 auto;
-	-webkit-border-radius: 100%;
-	        border-radius: 100%;
+	border-radius: 100%;
 }
 text {
 	color: #9E9E9E;

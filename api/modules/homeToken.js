@@ -11,6 +11,7 @@ const api = function(token) {
 					"token": Token
 				}
 			}).then(respons => {
+				console.log(respons)
 				return respons;
 			}, error => {
 				console.log("error", error);

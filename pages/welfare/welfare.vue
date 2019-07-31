@@ -86,7 +86,7 @@
 	}
 	
 	.entry {
-		width: 150upx;
+		width: 170upx;
 		position: fixed;
 		bottom: 50upx;
 		right: 20upx;
@@ -115,3 +115,5 @@
 		border-top: 3upx solid #000000;
 	}
 </style>
+
+ 

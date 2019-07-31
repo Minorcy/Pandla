@@ -42,12 +42,13 @@
 	.m-right {
 		display: flex;
 		width: 120upx;
-		justify-content: center;
+		justify-content: flex-end;
 		align-items: flex-start;
 	}
 	.head_icon {
 		width: 80upx;
 		height: 80upx;
+		padding-right: 10upx;
 	}
 	.m-content-head {
 		position: relative;

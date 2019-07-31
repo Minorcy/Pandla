@@ -1,5 +1,13 @@
 {
-  "navigationBarTitleText": "我的專屬邀請碼",
+  "navigationBarTitleText": "邀請好友移民星球",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "",
+        "type": "share"
+      }
+    ]
+  },
   "bounce": "none",
   "usingComponents": {
     "wm-poster": "/components/wm-poster/wm-poster"

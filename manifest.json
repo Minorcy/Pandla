@@ -1,15 +1,14 @@
 {
-    "name" : "PandlaApp",
-    "appid" : "__UNI__A69E139",
+    "name" : "Pandla",
+    "appid" : "__UNI__F2A9BD3",
     "description" : "全球第一款区块链同志社交软件",
-    "versionName" : "1.0.0",
-    "versionCode" : "100",
+    "versionName" : "1.0.5",
+    "versionCode" : 105,
     "transformPx" : false,
     "app-plus" : {
         /* 5+App特有相关 */
         "usingComponents" : true,
         "modules" : {
-            "OAuth" : {},
             "Share" : {},
             "Maps" : {}
         },
@@ -53,7 +52,8 @@
                         "appkey_ios" : "222d485136a0afe7700d3018664a6619",
                         "appkey_android" : "7eea4f86166047f2346c437144d228aa"
                     }
-                }
+                },
+                "oauth" : {}
             },
             "icons" : {
                 "android" : {
@@ -107,7 +107,7 @@
             }
         },
         "splashscreen" : {
-            "waiting" : false,
+            "waiting" : true,
             "alwaysShowBeforeRender" : true
         }
     },
@@ -118,7 +118,10 @@
         /* 小程序特有相关 */
         "appid" : "",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "es6" : true,
+            "postcss" : true,
+            "minified" : true
         },
         "usingComponents" : true
     },

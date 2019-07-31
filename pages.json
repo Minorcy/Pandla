@@ -1,11 +1,16 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页,
+
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": false
+				}
 			}
-		}, 
+		},
 		
 		{
 			"path": "pages/login/login",
@@ -34,7 +39,7 @@
 				}
 			}
 		},
-		
+
 		{
 			"path": "pages/im-chat/im-chat",
 			"style": {
@@ -55,7 +60,7 @@
 				}
 			}
 		},
-		
+
 		{
 			"path": "pages/pact/pact",
 			"style": {
@@ -68,16 +73,14 @@
 			"path": "pages/pact/pactVoteDetail",
 			"style": {
 				"navigationBarTitleText": "",
-				"app-plus": {
-					"bounce": "none"
-				}
+				"app-plus": {}
 			}
 		},
 
 		{
 			"path": "pages/daily/daily",
 			"style": {
-				"enablePullDownRefresh": true,
+				"enablePullDownRefresh": false,
 				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false,
@@ -101,7 +104,7 @@
 		}, {
 			"path": "pages/daily/userInfo",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "個人主頁",
 				"app-plus": {
 					"bounce": "none"
 				}
@@ -111,6 +114,7 @@
 		{
 			"path": "pages/store/store",
 			"style": {
+				"enablePullDownRefresh": true,
 				"navigationBarTitleText": "星球特供",
 				"app-plus": {
 					"bounce": "none"
@@ -120,6 +124,7 @@
 		{
 			"path": "pages/game/game",
 			"style": {
+				"enablePullDownRefresh": true,
 				"navigationBarTitleText": "星球游戲",
 				"app-plus": {
 					"bounce": "none"
@@ -130,7 +135,24 @@
 			"path": "pages/nearby/nearby",
 			"style": {
 				"navigationBarTitleText": "附近居民",
+				"onReachBottomDistance":50,
+				"enablePullDownRefresh":true,
 				"app-plus": {
+					 
+				}
+			}
+		},
+		{
+			"path": "pages/publish/publish",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "發布",
+							"fontSize": "35upx"
+						}]
+					},
 					"bounce": "none"
 				}
 			}
@@ -181,7 +203,7 @@
 				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false,
-					"bounce":"none"
+					"bounce": "none"
 				}
 
 			}
@@ -201,6 +223,7 @@
 				"navigationBarTitleText": "通讯",
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": true,
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{
@@ -210,7 +233,7 @@
 							"color": "#999999"
 						}]
 					},
-					"bounce":"none"
+					"bounce": "none"
 				}
 			}
 
@@ -252,7 +275,7 @@
 				}
 			}
 		},
-		
+
 		{
 			"path": "pages/purse/purse",
 			"style": {
@@ -283,8 +306,15 @@
 		{
 			"path": "pages/invite/invite",
 			"style": {
-				"navigationBarTitleText": "我的專屬邀請碼",
+				"navigationBarTitleText": "邀請好友移民星球",
 				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "",
+							"type": "share"
+							// "fontSize": "60upx"
+						}]
+					},
 					"bounce": "none"
 				}
 			}
@@ -307,7 +337,7 @@
 				}
 			}
 		},
-		
+
 		{
 			"path": "pages/welfare/welfare",
 			"style": {
@@ -317,12 +347,53 @@
 				}
 			}
 		},
-		
+
 		{
 			"path": "pages/setting/setting",
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		}, {
+			"path": "pages/user/album",
+			"style": {
+				"navigationBarTitleText": "相冊",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/user/followList",
+			"style": {
+				"navigationBarTitleText": "關注列表",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/user/fansList",
+			"style": {
+				"navigationBarTitleText": "粉絲列表",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		}, {
+			"path": "pages/daily/topicDetails",
+			"style": {
+				"navigationBarTitleText": "话题",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue62d",
+							"fontSrc": "/static/font/iconfont.ttf",
+							"color": " #4CD964"
+						}]
+					},
 					"bounce": "none"
 				}
 			}
@@ -384,8 +455,8 @@
 	"condition": { //编译模式配置，仅开发期间生效  
 		"current": 0, //当前激活的编译模式（list 的索引项）  
 		"list": [{
-			"name": "daily", //模式名称  
-			"pathName": "pages/daily/daily", //启动页面，必选  
+			"name": "index", //模式名称  
+			"pathName": "pages/index/index", //启动页面，必选  
 			"query": "id=1" //启动参数, QueryString 格式  
 		}]
 	}

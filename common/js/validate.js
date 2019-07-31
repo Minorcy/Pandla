@@ -1,5 +1,6 @@
 const pReg = /^[1](([3][0-9])|([4][5-9])|([5][0-3,5-9])|([6][5,6])|([7][0-8])|([8][0-9])|([9][1,8,9]))[0-9]{8}$/;
-const eReg = /^\w+@\w+.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$/;
+const eReg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+
 
 // 手机校验
 export const phoneValidate = (phone) => {
@@ -35,6 +36,7 @@ export const emailValidate = (email) => {
 		return false;
 	} else {
 		if(!eReg.exec(email)) {
+			console.log("郵箱格式正確")
 			uni.showToast({
 				icon: 'none',
 				title: '郵箱格式不正確'
@@ -173,13 +175,13 @@ export const userValidate = (userInfo) => {
 		});
 		return false;
 	}
-	if(userInfo.signature == '') {
-		uni.showToast({
-			icon: 'none',
-			title: '請輸入簽名'
-		});
-		return false;
-	}
+	// if(userInfo.signature == '') {
+	// 	uni.showToast({
+	// 		icon: 'none',
+	// 		title: '請輸入簽名'
+	// 	});
+	// 	return false;
+	// }
 	return true;
 };
 

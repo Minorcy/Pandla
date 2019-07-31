@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "",
+  "bounce": "none",
+  "titleNView": false,
   "usingComponents": {}
 }

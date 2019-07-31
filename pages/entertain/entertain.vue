@@ -50,7 +50,7 @@
 				success(res) {
 					_this.location = res.address.city;
 					console.log('城市' + _this.location);
-					_this.getBarListData();
+					_this.getBarListData(_this.location);
 					// console.log(JSON.stringify(res));
 				}
 			});

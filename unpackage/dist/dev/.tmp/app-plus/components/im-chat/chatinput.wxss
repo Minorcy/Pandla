@@ -84,7 +84,6 @@
 	padding: 10rpx !important;
 	font-family: verdana !important;
 	overflow: hidden;
-	-webkit-border-radius: 15rpx;
-	        border-radius: 15rpx;
+	border-radius: 15rpx;
 }
 

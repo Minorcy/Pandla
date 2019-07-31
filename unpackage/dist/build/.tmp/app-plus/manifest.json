@@ -4,11 +4,11 @@
     "iPhone",
     "iPad"
   ],
-  "id": "__UNI__A69E139",
-  "name": "PandlaApp",
+  "id": "__UNI__F2A9BD3",
+  "name": "Pandla",
   "version": {
-    "name": "1.0.0",
-    "code": "100"
+    "name": "1.0.5",
+    "code": 105
   },
   "description": "全球第一款区块链同志社交软件",
   "launch_path": "__uniapptabbar.html",
@@ -18,7 +18,6 @@
     "url": ""
   },
   "permissions": {
-    "OAuth": {},
     "Share": {},
     "Maps": {
       "coordType": "gcj02"
@@ -35,7 +34,7 @@
     "splashscreen": {
       "target": "id:1",
       "autoclose": true,
-      "waiting": false,
+      "waiting": true,
       "delay": 0
     },
     "popGesture": "close",
@@ -135,6 +134,7 @@
             "appkey_android": "7eea4f86166047f2346c437144d228aa"
           }
         },
+        "oauth": {},
         "audio": {
           "mp3": {
             "description": "Android平台录音支持MP3格式文件"
@@ -150,7 +150,7 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.0.0",
+      "compilerVersion": "2.1.3",
       "control": "v8",
       "nvueCompiler": "weex"
     },

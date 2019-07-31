@@ -3,6 +3,7 @@
 		<view class="userInfo">
 			<image class="avatar" src="../../static/img/user/upload.svg" v-if="userInfo.portrait == null"></image>
 			<image class="portrait"
+			:lazy-load="true"
 				:src="userInfo.portrait"
 				@tap="preview('por')"
 				mode="aspectFill"
@@ -31,7 +32,7 @@
 				mode="aspectFill"
 				v-for="(item, index) in dynInfo"
 				:key="index"
-				@tap="preview('dyn')"></image>
+				@tap="preview('dyn', index)"></image>
 		</view>
 		<image class="btn-con" src="../../static/img/main/daily/connect.svg"></image>
     </view>
@@ -60,14 +61,15 @@
 					// console.log(this.dynInfo);
 				});
 			},
-			preview(type) {
+			preview(type,index) {
 				let imgUrl = [];
 				if(type == 'por') imgUrl = [this.userInfo.portrait];
 				if(type == 'dyn') imgUrl = this.dynInfo;
 				uni.previewImage({
+					current:index,
 					urls: imgUrl,
 					longPressActions: {
-						itemList: [],
+						itemList: ["保存相冊"],
 						success: function(data) {
 							console.log('选中了第' + (data.tapIndex + 1) + '个按钮,第' + (data.index + 1) + '张图片');
 						},
@@ -163,7 +165,7 @@
 	} 
 	
 	.btn-con {
-		position: absolute;
+		position: fixed;
 		width: 400upx;
 		height: 100upx;
 		left: 0;

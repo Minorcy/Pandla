@@ -29,6 +29,9 @@
 		display: block;
 		margin: 0 auto;
 	}
+	.logo image{
+		width: 100%;
+	}
 	
 	.slogan {
 		color: #EFEFF4;

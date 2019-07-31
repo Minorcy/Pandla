@@ -7,8 +7,8 @@
   "id": "__UNI__F2A9BD3",
   "name": "Pandla",
   "version": {
-    "name": "1.0.0",
-    "code": "100"
+    "name": "1.0.5",
+    "code": 105
   },
   "description": "全球第一款区块链同志社交软件",
   "launch_path": "__uniapptabbar.html",
@@ -18,7 +18,6 @@
     "url": ""
   },
   "permissions": {
-    "OAuth": {},
     "Share": {},
     "Maps": {
       "coordType": "gcj02"
@@ -35,7 +34,7 @@
     "splashscreen": {
       "target": "id:1",
       "autoclose": true,
-      "waiting": false,
+      "waiting": true,
       "delay": 0
     },
     "popGesture": "close",
@@ -85,17 +84,17 @@
       },
       "splashscreen": {
         "android": {
-          "xxhdpi": "E:/桌面/A-1080.png",
-          "xhdpi": "E:/桌面/A-720.png",
-          "hdpi": "E:/桌面/A-480.png"
+          "xxhdpi": "",
+          "xhdpi": "",
+          "hdpi": ""
         },
         "ios": {
           "iphone": {
-            "retina47": "E:/桌面/I-750.png",
-            "portrait-896h@2x": "E:/桌面/I-828.png",
-            "portrait-896h@3x": "E:/桌面/I-1242.png",
-            "iphonex": "E:/桌面/I-1242.png",
-            "retina55": "E:/桌面/I-1242.png"
+            "retina47": "",
+            "portrait-896h@2x": "",
+            "portrait-896h@3x": "",
+            "iphonex": "",
+            "retina55": ""
           }
         }
       },
@@ -135,6 +134,7 @@
             "appkey_android": "7eea4f86166047f2346c437144d228aa"
           }
         },
+        "oauth": {},
         "audio": {
           "mp3": {
             "description": "Android平台录音支持MP3格式文件"
@@ -142,7 +142,7 @@
         }
       }
     },
-    "arguments": "{\"name\":\"daily\",\"pathName\":\"pages/daily/daily\",\"query\":\"id=1\",\"id\":0}",
+    "arguments": "{\"name\":\"index\",\"pathName\":\"pages/index/index\",\"query\":\"id=1\",\"id\":0}",
     "allowsInlineMediaPlayback": true,
     "safearea": {
       "background": "#000000",
@@ -151,7 +151,7 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.0.0",
+      "compilerVersion": "2.1.3",
       "control": "v8",
       "nvueCompiler": "weex"
     },

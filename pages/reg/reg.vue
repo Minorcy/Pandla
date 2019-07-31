@@ -80,6 +80,7 @@
 				} else {
 					codeResult = emailValidate(this.account);
 				}
+				this.regCodeBtn.btnStatus = true
 				if (codeResult) {
 					sendCode(this.account, this.regCodeBtn, this.timerId);
 					this.regBtn = false;

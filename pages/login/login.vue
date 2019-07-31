@@ -97,4 +97,8 @@
 		height: 60upx;
 		margin: 20upx;
 	}
+	.primary{
+		line-height: 50px;
+	}
+	
 </style>

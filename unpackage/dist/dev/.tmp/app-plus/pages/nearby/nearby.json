@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "附近居民",
-  "bounce": "none",
+  "onReachBottomDistance": 50,
+  "enablePullDownRefresh": true,
   "usingComponents": {}
 }

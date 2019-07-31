@@ -24,62 +24,58 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.pages-content.data-v-413f6d9b {
+.pages-content.data-v-1768891c {
   background-color: #EFEFF4;
   width: 100%;
 }
-.focus-data.data-v-413f6d9b {
+.focus-data.data-v-1768891c {
   width: 100%;
-  background: -webkit-linear-gradient(to right, #000000, #979797);
   /* Safari 5.1 - 6.0 */
   background: -o-linear-gradient(to right, #000000, #979797);
   /* Opera 11.1 - 12.0 */
   /* Firefox 3.6 - 15 */
   background: -webkit-gradient(linear, left top, right top, from(#000000), to(#979797));
-  background: -webkit-linear-gradient(left, #000000, #979797);
   background: -o-linear-gradient(left, #000000, #979797);
   background: linear-gradient(to right, #000000, #979797);
   /* 标准的语法 */
 }
-.focus-data-num.data-v-413f6d9b {
+.focus-data-num.data-v-1768891c {
     display: block;
     font-size: 40rpx;
     padding: 40rpx 0 40rpx 20rpx;
 }
-.focus-data-freeze.data-v-413f6d9b {
+.focus-data-freeze.data-v-1768891c {
     font-size: 25rpx;
     padding: 20rpx;
     clear: both;
-    background: -webkit-linear-gradient(to right, #424A4D, #979797);
     /* Safari 5.1 - 6.0 */
     background: -o-linear-gradient(to right, #424A4D, #979797);
     /* Opera 11.1 - 12.0 */
     /* Firefox 3.6 - 15 */
     background: -webkit-gradient(linear, left top, right top, from(#424A4D), to(#979797));
-    background: -webkit-linear-gradient(left, #424A4D, #979797);
     background: -o-linear-gradient(left, #424A4D, #979797);
     background: linear-gradient(to right, #424A4D, #979797);
     /* 标准的语法 */
 }
-.focus-label-num.data-v-413f6d9b {
+.focus-label-num.data-v-1768891c {
   font-size: 30rpx;
   border-bottom: 1rpx solid #FFFFFF;
   padding: 20rpx;
 }
-.focus-label-deal.data-v-413f6d9b {
+.focus-label-deal.data-v-1768891c {
   float: right;
   margin-right: 20rpx;
   font-size: 30rpx;
 }
-.focus-label-introduction.data-v-413f6d9b {
+.focus-label-introduction.data-v-1768891c {
   font-size: 35rpx;
   border-bottom: 1rpx solid #979797;
 }
-.focus-label-context.data-v-413f6d9b {
+.focus-label-context.data-v-1768891c {
   font-size: 25rpx;
   line-height: 45rpx;
 }
-.focus-label-list.data-v-413f6d9b {
+.focus-label-list.data-v-1768891c {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -97,21 +93,21 @@
   padding: 50rpx 100rpx;
   color: #000000;
 }
-.focus-notice.data-v-413f6d9b {
+.focus-notice.data-v-1768891c {
   background-color: #EFEFF4;
   color: #000000;
   padding: 30rpx;
   border-bottom: 1rpx solid #979797;
 }
-.focus-list.data-v-413f6d9b {
+.focus-list.data-v-1768891c {
   border-top: 1rpx solid #979797;
   font-size: 35rpx;
   color: #000000;
 }
-.focus-list-ul.data-v-413f6d9b {
+.focus-list-ul.data-v-1768891c {
     padding: 0 50rpx;
 }
-.focus-list-li.data-v-413f6d9b {
+.focus-list-li.data-v-1768891c {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -128,21 +124,88 @@
     padding: 20rpx 0;
     border-bottom: 1rpx solid #979797;
 }
-.focus-list-action.data-v-413f6d9b {
+.focus-list-action.data-v-1768891c {
     font-size: 30rpx;
 }
-.focus-list-time.data-v-413f6d9b {
+.focus-list-time.data-v-1768891c {
     font-size: 25rpx;
     color: #979797;
 }
-.focus-list-number.data-v-413f6d9b {
+.focus-list-number.data-v-1768891c {
     font-size: 25rpx;
     color: #CD2626;
 }
-.focus-img-focus.data-v-413f6d9b {
+.focus-img-focus.data-v-1768891c {
   width: 50rpx;
   height: 50rpx;
   padding: 15rpx;
   float: left;
+}
+.sign.data-v-1768891c {
+  width: 100%;
+  height: 100px;
+}
+.sign .sign-top.data-v-1768891c {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.sign .sign-top .left.data-v-1768891c {
+      margin: 14px;
+      font-size: 15px;
+      color: #8E8E93;
+      line-height: 21px;
+}
+.sign .sign-top .right.data-v-1768891c {
+      margin: 13px 30px 0 0;
+      width: 61px;
+      height: 23px;
+      text-align: center;
+      background: -o-linear-gradient(154deg, #131d21 0%, #747474 100%);
+      background: linear-gradient(296deg, #131d21 0%, #747474 100%);
+      border-radius: 12px;
+      font-size: 15px;
+      line-height: 21px;
+}
+.sign .sign-bottom.data-v-1768891c {
+    margin-top: 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+}
+.sign .sign-bottom view.data-v-1768891c {
+      width: 30px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+}
+.sign .sign-bottom view text.data-v-1768891c:nth-child(1) {
+        width: 30px;
+        height: 30px;
+        background: #131D21;
+        border-radius: 50%;
+        text-align: center;
+}
+.sign .sign-bottom view text.data-v-1768891c:nth-child(2) {
+        margin-top: 10px;
+        font-size: 8px;
+        font-weight: 400;
+        color: #8E8E93;
+        line-height: 11px;
 }
 

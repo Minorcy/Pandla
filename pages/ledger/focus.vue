@@ -10,13 +10,50 @@
 			<p class="focus-label-introduction">{{assetInfo.title}}</p>
 			<p class="focus-label-context">{{assetInfo.context}}</p>
 		</view>
+		<view class="sign">
+			<view class="sign-top">
+				<text class="left">連續7日簽到獲得更多魔法原力</text>
+				<text class="right">簽到</text>
+			</view>
+			<view class="sign-bottom">
+				<view>
+					<text>+1</text>
+					<text>第1天</text>
+				</view>
+				<view>
+					<text>+2</text>
+					<text>第2天</text>
+				</view>
+				<view>
+					<text>+3</text>
+					<text>第3天</text>
+				</view>
+				<view>
+					<text>+5</text>
+					<text>第4天</text>
+				</view>
+
+				<view>
+					<text>+5</text>
+					<text>第5天</text>
+				</view>
+				<view>
+					<text>+10</text>
+					<text>第6天</text>
+				</view>
+				<view>
+					<text>+10</text>
+					<text>第7天</text>
+				</view>
+			</view>
+		</view>
 		<view class="focus-label-list">
 			<text class="pan-label-budget" :style="{color: budgetText}" @tap="changeList('budget')">獲取原力記錄</text>
 			<text>|</text>
 			<text class="pan-label-task" :style="{color: taskText}" @tap="changeList('task')">任務獲取原力</text>
 		</view>
 		<view class="focus-list">
-			<ul class="focus-list-ul"  v-for="(item, index) in listInfo" :key="index">
+			<ul class="focus-list-ul" v-for="(item, index) in listInfo" :key="index">
 				<li class="focus-list-li" v-if="labelList == 'budget'">
 					<view>
 						<p class="focus-list-action">{{item.action}}</p>
@@ -27,7 +64,7 @@
 						<text class="focus-list-time">{{item.loseTime}}</text>
 					</view>
 				</li>
-				<li class="focus-list-li"  v-if="labelList == 'task' && index == 0">
+				<li class="focus-list-li" v-if="labelList == 'task' && index == 0">
 					<view>
 						<p class="focus-list-action">星球注冊</p>
 					</view>
@@ -36,7 +73,7 @@
 						<text class="focus-list-time">已完成</text>
 					</view>
 				</li>
-				<li class="focus-list-li"  v-if="labelList == 'task'">
+				<li class="focus-list-li" v-if="labelList == 'task'">
 					<view>
 						<p class="focus-list-action">{{item.name}}</p>
 					</view>
@@ -47,12 +84,17 @@
 					</view>
 				</li>
 			</ul>
+			<button class="pan-list-load" @tap="loadMore()" v-if="labelList == 'budget'">點擊查看更多</button>
 		</view>
 	</view>
 </template>
 
 <script>
-	import {getForBalance, getForBill, checkForTaskList} from '../../api/api.js';
+	import {
+		getForBalance,
+		getForBill,
+		checkForTaskList
+	} from '../../api/api.js';
 	export default {
 		data() {
 			return {
@@ -60,7 +102,8 @@
 				listInfo: '',
 				labelList: 'budget',
 				budgetText: 'black',
-				taskText: 'gray'
+				taskText: 'gray',
+				pageSize:10
 			}
 		},
 		methods: {
@@ -70,7 +113,7 @@
 				});
 			},
 			getBillData() {
-				getForBill().then(data => {
+				getForBill(0).then(data => {
 					this.listInfo = '';
 					this.listInfo = data;
 					// console.log(this.listInfo);
@@ -84,7 +127,7 @@
 				});
 			},
 			changeList(chooseItem) {
-				if(chooseItem == 'budget') {
+				if (chooseItem == 'budget') {
 					this.labelList = 'budget';
 					this.budgetText = 'black';
 					this.taskText = 'gray';
@@ -95,6 +138,13 @@
 					this.taskText = 'black';
 					this.getTaskData();
 				}
+			},
+			loadMore(){
+				
+				getForBill(this.pageSize).then(data => {
+					this.listInfo = data;
+					this.pageSize+=10
+				});
 			}
 		},
 		onLoad() {
@@ -109,55 +159,64 @@
 		background-color: #EFEFF4;
 		width: 100%;
 	}
-	
+
 	.focus {
 		&-data {
 			width: 100%;
-			background: -webkit-linear-gradient(to right, #000000, #979797); /* Safari 5.1 - 6.0 */
-			background: -o-linear-gradient(to right, #000000, #979797); /* Opera 11.1 - 12.0 */
-			background: -moz-linear-gradient(to right, #000000, #979797); /* Firefox 3.6 - 15 */
-			background: linear-gradient(to right, #000000, #979797); /* 标准的语法 */
-			
+			background: -webkit-linear-gradient(to right, #000000, #979797);
+			/* Safari 5.1 - 6.0 */
+			background: -o-linear-gradient(to right, #000000, #979797);
+			/* Opera 11.1 - 12.0 */
+			background: -moz-linear-gradient(to right, #000000, #979797);
+			/* Firefox 3.6 - 15 */
+			background: linear-gradient(to right, #000000, #979797);
+			/* 标准的语法 */
+
 			&-num {
 				display: block;
 				font-size: 40upx;
 				padding: 40upx 0 40upx 20upx;
 			}
-			
+
 			&-freeze {
 				font-size: 25upx;
 				padding: 20upx;
 				clear: both;
-				background: -webkit-linear-gradient(to right, #424A4D, #979797); /* Safari 5.1 - 6.0 */
-				background: -o-linear-gradient(to right, #424A4D, #979797); /* Opera 11.1 - 12.0 */
-				background: -moz-linear-gradient(to right, #424A4D, #979797); /* Firefox 3.6 - 15 */
-				background: linear-gradient(to right, #424A4D, #979797); /* 标准的语法 */
+				background: -webkit-linear-gradient(to right, #424A4D, #979797);
+				/* Safari 5.1 - 6.0 */
+				background: -o-linear-gradient(to right, #424A4D, #979797);
+				/* Opera 11.1 - 12.0 */
+				background: -moz-linear-gradient(to right, #424A4D, #979797);
+				/* Firefox 3.6 - 15 */
+				background: linear-gradient(to right, #424A4D, #979797);
+				/* 标准的语法 */
 			}
 		}
-		
+
 		&-label {
 			&-num {
 				font-size: 30upx;
 				border-bottom: 1upx solid #FFFFFF;
 				padding: 20upx;
 			}
-			
+
 			&-deal {
 				float: right;
 				margin-right: 20upx;
 				font-size: 30upx;
 			}
-			
+
 			&-introduction {
 				font-size: 35upx;
 				border-bottom: 1upx solid #979797;
 			}
-			
+
 			&-context {
 				font-size: 25upx;
 				line-height: 45upx;
 			}
-			
+
+
 			&-list {
 				display: flex;
 				flex-direction: row;
@@ -165,34 +224,32 @@
 				font-size: 30upx;
 				padding: 50upx 100upx;
 				color: #000000;
-				
+
 			}
-			
-			&-budget {
-				
-			}
-			
-			&-task {
-				
-			}
+
+			&-budget {}
+
+			&-task {}
 		}
-		
+
+
+
 		&-notice {
 			background-color: #EFEFF4;
 			color: #000000;
 			padding: 30upx;
 			border-bottom: 1upx solid #979797;
 		}
-		
+
 		&-list {
 			border-top: 1upx solid #979797;
 			font-size: 35upx;
 			color: #000000;
-			
+
 			&-ul {
 				padding: 0 50upx;
 			}
-			
+
 			&-li {
 				display: flex;
 				flex-direction: row;
@@ -200,27 +257,81 @@
 				padding: 20upx 0;
 				border-bottom: 1upx solid #979797;
 			}
-			
+
 			&-action {
 				font-size: 30upx;
 			}
-			
+
 			&-time {
 				font-size: 25upx;
 				color: #979797;
 			}
-			
+
 			&-number {
 				font-size: 25upx;
 				color: #CD2626;
 			}
 		}
-		
+
 		&-img-focus {
-			width:50upx;
+			width: 50upx;
 			height: 50upx;
 			padding: 15upx;
 			float: left;
+		}
+	}
+
+	.sign {
+		width: 100%;
+		height: 100px;
+
+		.sign-top {
+			display: flex;
+			justify-content: space-between;
+
+			.left {
+				margin: 14px;
+				font-size: 15px;
+				color: #8E8E93;
+				line-height: 21px;
+			}
+
+			.right {
+				margin: 13px 30px 0 0;
+				width: 61px;
+				height: 23px;
+				text-align: center;
+				background: linear-gradient(296deg, rgba(19, 29, 33, 1) 0%, rgba(116, 116, 116, 1) 100%);
+				border-radius: 12px;
+				font-size: 15px;
+				line-height: 21px;
+			}
+		}
+
+		.sign-bottom {
+			margin-top:10px;
+			display: flex;
+			justify-content: space-around; 
+			view {
+				width: 30px;
+				display: flex;
+				flex-direction: column;
+				text:nth-child(1) {
+					width: 30px;
+					height: 30px;
+					background: #131D21;
+					border-radius: 50%;
+					text-align: center
+				}
+
+				text:nth-child(2) {
+					margin-top:10px;
+					font-size: 8px;
+					font-weight: 400;
+					color: #8E8E93;
+					line-height: 11px;
+				}
+			}
 		}
 	}
 </style>

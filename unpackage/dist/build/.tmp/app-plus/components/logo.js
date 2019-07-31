@@ -1,9 +1,9 @@
-(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["components/logo"],{"0255":function(n,t,u){"use strict";var e=function(){var n=this,t=n.$createElement;n._self._c},a=[];u.d(t,"a",function(){return e}),u.d(t,"b",function(){return a})},"300a":function(n,t,u){"use strict";u.r(t);var e=u("0255"),a=u("4dda");for(var r in a)"default"!==r&&function(n){u.d(t,n,function(){return a[n]})}(r);u("82f0");var f=u("2877"),o=Object(f["a"])(a["default"],e["a"],e["b"],!1,null,"5f933258",null);t["default"]=o.exports},"4dda":function(n,t,u){"use strict";u.r(t);var e=u("959b"),a=u.n(e);for(var r in e)"default"!==r&&function(n){u.d(t,n,function(){return e[n]})}(r);t["default"]=a.a},"6f4f":function(n,t,u){},"82f0":function(n,t,u){"use strict";var e=u("6f4f"),a=u.n(e);a.a},"959b":function(n,t,u){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var e={data:function(){return{}},props:["slogan"]};t.default=e}}]);
+(global["webpackJsonp"]=global["webpackJsonp"]||[]).push([["components/logo"],{"00dd":function(n,t,e){"use strict";var u=e("631a"),a=e.n(u);a.a},"0f2e":function(n,t,e){"use strict";e.r(t);var u=e("1c33"),a=e("60a1");for(var r in a)"default"!==r&&function(n){e.d(t,n,function(){return a[n]})}(r);e("00dd");var o=e("2877"),f=Object(o["a"])(a["default"],u["a"],u["b"],!1,null,"4e01e2f4",null);t["default"]=f.exports},"1c33":function(n,t,e){"use strict";var u=function(){var n=this,t=n.$createElement;n._self._c},a=[];e.d(t,"a",function(){return u}),e.d(t,"b",function(){return a})},"60a1":function(n,t,e){"use strict";e.r(t);var u=e("f3b9"),a=e.n(u);for(var r in u)"default"!==r&&function(n){e.d(t,n,function(){return u[n]})}(r);t["default"]=a.a},"631a":function(n,t,e){},f3b9:function(n,t,e){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var u={data:function(){return{}},props:["slogan"]};t.default=u}}]);
 ;(global["webpackJsonp"] = global["webpackJsonp"] || []).push([
     'components/logo-create-component',
     {
         'components/logo-create-component':(function(module, exports, __webpack_require__){
-            __webpack_require__('6e42')['createComponent'](__webpack_require__("300a"))
+            __webpack_require__('6e42')['createComponent'](__webpack_require__("0f2e"))
         })
     },
     [['components/logo-create-component']]

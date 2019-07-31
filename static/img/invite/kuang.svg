@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="720px" height="745px" viewBox="0 0 720 745" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>矩形</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M28,0 L684,0 C703.882251,-3.65231026e-15 720,16.117749 720,36 L720,709 C720,728.882251 703.882251,745 684,745 L36,745 C16.117749,745 2.4348735e-15,728.882251 0,709 L0,28 C-1.8937905e-15,12.536027 12.536027,2.84068575e-15 28,0 Z" id="path-1"></path>
+    </defs>
+    <g id="新修改的图标等" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="矩形">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+            <rect fill="#DBDBDB" mask="url(#mask-2)" x="-83" y="581" width="891" height="164"></rect>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,1 @@
+<view class="pages-content data-v-62af18f3"><view class="text data-v-62af18f3"><textarea maxlength="500" placeholder-style="color:#0087ff" placeholder="{{title}}" data-event-opts="{{[['input',[['__set_model',['','topicContent','$event',[]]]]]]}}" value="{{topicContent}}" bindinput="__e" class="data-v-62af18f3"></textarea></view></view>

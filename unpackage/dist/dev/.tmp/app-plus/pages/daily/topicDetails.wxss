@@ -1,0 +1,280 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开發者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开發整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开發者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.page.data-v-8a65a68c {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+.page.data-v-8a65a68c ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+.page .top.data-v-8a65a68c {
+    margin: 10px;
+    margin-bottom: 30px;
+}
+.page .top .top-item.data-v-8a65a68c {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+}
+.page .top .top-item image.data-v-8a65a68c {
+        width: 100px;
+        height: 100px;
+        -webkit-box-flex: 0;
+        -webkit-flex-grow: 0;
+            -ms-flex-positive: 0;
+                flex-grow: 0;
+}
+.page .top .top-item .content.data-v-8a65a68c {
+        line-height: 35px;
+        -webkit-box-flex: 6;
+        -webkit-flex-grow: 6;
+            -ms-flex-positive: 6;
+                flex-grow: 6;
+}
+.page .top .top-item .content .title.data-v-8a65a68c {
+          font-weight: 700;
+}
+.page .top .top-item .content .text.data-v-8a65a68c {
+          font-size: 14px;
+}
+.page .top .top-item .content .count.data-v-8a65a68c {
+          font-size: 14px;
+}
+.page .top .text.data-v-8a65a68c {
+      color: #ffffff;
+      padding: 5px;
+      font-size: 14px;
+      text-indent: 5px;
+}
+.page .user-section.data-v-8a65a68c {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.page .user-section .user.data-v-8a65a68c {
+      padding: 5px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+}
+.page .user-section .user .left.data-v-8a65a68c {
+        padding: 5px;
+}
+.page .user-section .user .left .avatar.data-v-8a65a68c {
+          width: 50px;
+          height: 50px;
+          border-radius: 100%;
+          display: inline-block;
+          vertical-align: middle;
+}
+.page .user-section .user .left .folllow.data-v-8a65a68c {
+          position: absolute;
+          width: 30rpx;
+          height: 150rpx;
+          margin: 15rpx 0 0 -30rpx;
+}
+.page .user-section .user .left .name.data-v-8a65a68c {
+          padding-left: 5px;
+          font-size: 16px;
+          color: #ffffff;
+          vertical-align: middle;
+}
+.page .user-section .user .right .btn-behaviour.data-v-8a65a68c {
+        margin-top: 15px;
+        right: 10px;
+        width: 15px;
+        height: 25px;
+}
+.page .user-section .content.data-v-8a65a68c {
+      padding: 0;
+}
+.page .user-section .content image.data-v-8a65a68c {
+        width: 100%;
+}
+.page .user-section .content text.data-v-8a65a68c {
+        display: inline-block;
+        padding: 5px;
+        font-size: 16px;
+}
+.page .option.data-v-8a65a68c {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.page .option view.data-v-8a65a68c {
+      width: 30%;
+      text-align: center;
+}
+.page .option view text.data-v-8a65a68c {
+        font-size: 16px;
+        color: #ffffff;
+        text-align: center;
+}
+.scroll.data-v-8a65a68c {
+  width: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+.comment-section.data-v-8a65a68c {
+  position: fixed;
+  bottom: 0;
+  width: 355px;
+  height: 50%;
+  padding: 10px 10px 32px 10px;
+  font-size: 16px;
+  z-index: 300;
+  background-color: #000000;
+  border-radius: 36rpx 36rpx 0 0;
+  overflow: hidden;
+}
+.comment-section.data-v-8a65a68c ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+.comment-section .comment-section-top.data-v-8a65a68c {
+    width: 355px;
+    height: 30px;
+    position: fixed;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+    z-index: 301;
+    background-color: #000000;
+}
+.comment-section .comment-section-top image.data-v-8a65a68c {
+      width: 15px;
+      height: 15px;
+      float: right;
+      right: 5px;
+}
+.comment-section .comment.data-v-8a65a68c {
+    margin-top: 30px;
+    width: 355px;
+    height: 100%;
+}
+.comment-section .comment .comment-section-details.data-v-8a65a68c {
+      width: 355px;
+      height: 100%;
+}
+.comment-section .comment .comment-section-details .comment-section-comm.data-v-8a65a68c {
+        margin-bottom: 10px;
+}
+.comment-section .comment .comment-section-details .comment-section-comm .comm-ite.data-v-8a65a68c {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: end;
+          -webkit-align-items: flex-end;
+              -ms-flex-align: end;
+                  align-items: flex-end;
+}
+.comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-portrait.data-v-8a65a68c {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            -webkit-box-flex: 0;
+            -webkit-flex-grow: 0;
+                -ms-flex-positive: 0;
+                    flex-grow: 0;
+            margin: 5px;
+}
+.comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content.data-v-8a65a68c {
+            padding-left: 5px;
+            color: #ffffff;
+            -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+            -webkit-box-flex: 1;
+            -webkit-flex-grow: 1;
+                -ms-flex-positive: 1;
+                    flex-grow: 1;
+            font-size: 14px;
+}
+.comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-name.data-v-8a65a68c {
+              display: block;
+}
+.comment-section .comment .comment-section-details .comment-section-comm .comment-section-reply.data-v-8a65a68c {
+          padding: 10px;
+          color: #ffffff;
+          font-size: 14px;
+}
+.comment-section .comment .input-section.data-v-8a65a68c {
+      position: fixed;
+      width: 375px;
+      height: 65rpx;
+      margin: 0 auto;
+      bottom: 0;
+      left: 0;
+      color: #000000;
+      background-color: #B7B7B7;
+      border-radius: 50rpx;
+      font-size: 30rpx;
+}
+.comment-section .comment .input-section input.data-v-8a65a68c {
+        width: 77%;
+        height: 65rpx;
+        line-height: 65rpx;
+        vertical-align: middle;
+        float: left;
+        padding-left: 20rpx;
+}
+.comment-section .comment .input-section button.data-v-8a65a68c {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        right: 0;
+        width: 20%;
+        padding-right: 40rpx;
+        float: right;
+        margin-top: -10rpx;
+        font-size: 35rpx;
+        color: #000000;
+}
+

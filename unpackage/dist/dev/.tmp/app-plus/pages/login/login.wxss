@@ -30,8 +30,7 @@
 	width: 100rpx;
 	height: 100rpx;
 	border: 1rpx solid #dddddd;
-	-webkit-border-radius: 100rpx;
-	        border-radius: 100rpx;
+	border-radius: 100rpx;
 	margin: 0 40rpx;
 	background-color: #EFEFF4;
 }
@@ -40,4 +39,8 @@
 	height: 60rpx;
 	margin: 20rpx;
 }
+.primary{
+	line-height: 50px;
+}
+
 

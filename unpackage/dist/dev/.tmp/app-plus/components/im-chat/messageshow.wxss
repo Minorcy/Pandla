@@ -52,10 +52,10 @@
 	display: -ms-flexbox;
 	display: flex;
 	width: 120rpx;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
 	-webkit-box-align: start;
 	-webkit-align-items: flex-start;
 	    -ms-flex-align: start;
@@ -64,6 +64,7 @@
 .head_icon {
 	width: 80rpx;
 	height: 80rpx;
+	padding-right: 10rpx;
 }
 .m-content-head {
 	position: relative;
@@ -82,8 +83,7 @@
 	text-align: left;
 	background: #1482d1;
 	border: 1px #1482d1 solid;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	padding: 20rpx;
 	color: white;
 }
@@ -99,8 +99,7 @@
 .m-content-head-customer {
 	border: 1rpx white solid;
 	background: white;
-	-webkit-border-radius: 20rpx;
-	        border-radius: 20rpx;
+	border-radius: 20rpx;
 	padding: 20rpx;
 }
 .m-content-head-customer:after {

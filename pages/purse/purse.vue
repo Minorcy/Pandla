@@ -24,7 +24,7 @@
 				</li>
 				
 			</ul>
-			<button class="pan-list-load">點擊查看更多</button>
+			<button class="pan-list-load" @tap="loadMore()" v-if="isShow">點擊查看更多</button>
 		</view>
 	</view>
 </template>
@@ -36,6 +36,8 @@
 				return {
 					assetInfo: '',
 					listInfo: '',
+					pageSize:10,
+					isShow:true
 				}
 			},
 			methods: {
@@ -46,9 +48,19 @@
 				},
 				getBillData() {
 					getBill().then(data => {
-						this.listInfo = data;
-						// console.log(this.listInfo);
+						// console.log(data)
+						this.listInfo = data
+						
+						
 					});
+				},
+				loadMore() {
+					getBill(this.pageSize).then(data => {
+						// console.log(data)
+						this.listInfo = this.listInfo.concat(data)
+						this.pageSize += 10
+					});
+					
 				}
 			},
 			onLoad() {

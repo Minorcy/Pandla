@@ -2,6 +2,7 @@
   "navigationBarTitleText": "通讯",
   "navigationBarBackgroundColor": "#E1E1E1",
   "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
   "titleNView": {
     "buttons": [
       {

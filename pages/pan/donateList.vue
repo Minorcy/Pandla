@@ -2,7 +2,7 @@
 	<view class="pages-content">
 		<ul>
 			<li v-for="(item, index) in donateList" :key=index>
-				<image :src="item.portrait" />
+				<image :src="item.portrait" mode="aspectFill" />
 				<text>{{item.name}}</text>
 				<text :style="{color: textColor[index]}">{{item.number}}</text>
 			</li>
