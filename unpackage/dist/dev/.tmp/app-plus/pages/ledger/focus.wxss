@@ -29,15 +29,12 @@
   width: 100%;
 }
 .focus-data.data-v-01f3053a {
-  width: 100%;
-  /* Safari 5.1 - 6.0 */
-  background: -o-linear-gradient(to right, #000000, #979797);
-  /* Opera 11.1 - 12.0 */
-  /* Firefox 3.6 - 15 */
-  background: -webkit-gradient(linear, left top, right top, from(#000000), to(#979797));
-  background: -o-linear-gradient(left, #000000, #979797);
-  background: linear-gradient(to right, #000000, #979797);
-  /* 标准的语法 */
+  width: 99%;
+  border-radius: 8px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: #131D21;
 }
 .focus-data-num.data-v-01f3053a {
     display: block;
@@ -48,14 +45,6 @@
     font-size: 25rpx;
     padding: 20rpx;
     clear: both;
-    /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(to right, #424A4D, #979797);
-    /* Opera 11.1 - 12.0 */
-    /* Firefox 3.6 - 15 */
-    background: -webkit-gradient(linear, left top, right top, from(#424A4D), to(#979797));
-    background: -o-linear-gradient(left, #424A4D, #979797);
-    background: linear-gradient(to right, #424A4D, #979797);
-    /* 标准的语法 */
 }
 .focus-label-num.data-v-01f3053a {
   font-size: 30rpx;

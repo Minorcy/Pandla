@@ -5,16 +5,7 @@
 				<p>總資產</p>
 				<text v-if="!isHidden">{{propInfo.balance | toFixed(4)}}</text>
 				<text v-else>*****</text>
-			</view>
-			<view class="asset-item">
-				<p>凍結</p>
-				<text v-if="!isHidden">{{propInfo.freeze | toFixed(4)}}</text>
-				<text v-else>*****</text>
-			</view>
-			<view class="asset-item">
-				<p>流通</p>
-				<text v-if="!isHidden">{{propInfo.usable | toFixed(4)}}</text>
-				<text v-else>*****</text>
+				<text class="asset-rmb" v-if="!isHidden">≈{{ this.rmb | toFixed(4)}}USTD</text>
 			</view>
 			<m-icon class="eyeIcon" :color="changColor" type="eye" size="20" @click="assetHidden()">
 			</m-icon>
@@ -25,17 +16,22 @@
 				<p>PAN / USTD</p>
 				<p>{{data1}}</p>
 				<p>{{data2}}</p>
-				<p>24H 量 {{data3}}</p>
 			</view>
+			<text class="data-24">24H 量 {{data3}}</text>
 			<view class="bindCurr">
 				<view class="okexCurr">
 					<text>IXX</text>
-					<text>{{noBind}}</text>
+					<text>點擊註冊IXX交易所可以获得10个PAN幣</text>
+					<text @tap="toIXX">註冊</text>
 				</view>
-				<view class="fireCurr">
-					<text></text>
-					<text></text>
-				</view>
+			</view>
+			<view class="pan-box">
+				<text class="pan-text">
+					新加坡IXX數字資產是潘多拉星球戰略合作,也是潘多拉星球的超級節點，用戶可以在IXX交易所查看PAN的價格走勢
+				</text>
+				<text  class="color">
+					當潘多拉星球居民達到200萬時，用戶可以將自己获得的PAN可以在IXX交易所進行流通交易
+				</text>
 			</view>
 		</view>
 		<view class="fundPool">
@@ -97,7 +93,8 @@
 				noBind: '暫未綁定',
 				Bind: '已綁定',
 				panVlaue: '198,878',
-				donateValue: '10'
+				donateValue: '10',
+				rmb: ''
 			}
 		},
 		components: {
@@ -119,6 +116,9 @@
 				getIndex().then(data => {
 					this.propInfo = data;
 					// 限制小数点后为4位
+					console.log(this.propInfo)
+					console.log(this.data2)
+					this.rmb = this.propInfo.balance * this.data2
 				})
 			},
 			add() {
@@ -158,9 +158,17 @@
 					}
 					this.data3 = data.data[0].volume_24h
 					this.data2 = data.data[0].current
+
 				})
+
 			},
-			
+			toIXX(){
+				uni.navigateTo({
+					url:"ixx"
+				})
+				
+				}
+
 		},
 		onLoad() {
 			this.getMyIndex();
@@ -180,21 +188,25 @@
 	}
 
 	.asset-item {
-		width: 80upx;
+		width: 120upx;
 		margin: 20upx 40upx;
+
 	}
 
 	.asset-item>p {
-		font-size: 25upx;
+		font-size: 30upx;
+		line-height: 20px;
 		display: flex;
-		justify-content: center;
+		flex-direction: row;
 	}
 
 	.asset-item>text {
-		display: flex;
-		justify-content: center;
 		font-size: 30upx;
 		margin-top: 5upx;
+	}
+
+	.asset-rmb {
+		font-size: 24upx !important;
 	}
 
 	hr {
@@ -211,28 +223,43 @@
 	}
 
 	.panData {
-		display: flex;
-		flex-direction: row;
 		padding: 20upx;
 		font-size: 35upx;
 	}
 
+	.data {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.data-24 {
+		font-size: 24upx;
+		display: block;
+		margin-bottom: 20upx;
+	}
+
+	.pan-text {
+		color: #C7C7CC;
+		font-size: 14px;
+	}
+	.color{
+		color: #007AFF;
+		font-size: 14px;
+	}
 	.data>p:nth-child(1) {
-		text-align: right;
+		text-align: left;
 		color: #EFEFF4;
 		margin-bottom: 10upx;
 	}
 
 	.data>p:nth-child(2) {
 		color: #4CD964;
-		font-size: 25upx;
 		margin-bottom: 5upx;
 		text-align: right;
 	}
 
 	.data>p:nth-child(3) {
 		color: #4CD964;
-		font-size: 25upx;
 		margin-bottom: 10upx;
 		text-align: right;
 	}
@@ -251,13 +278,33 @@
 	.fireCurr>text:nth-child(2) {
 		float: right;
 	}
-
+	.okexCurr{
+		position: relative;
+	}
 	.okexCurr>text:nth-child(1) {
 		margin-right: 80upx;
+		font-size: 14px;
+		display: block;
 	}
 
 	.okexCurr>text:nth-child(2) {
-		color: #C8C7CC;
+		color:#007AFF;
+		font-size: 14px;
+	}
+
+	.okexCurr>text:nth-child(3) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: #FFFFFFFF;
+		font-size: 14px;
+		
+		width: 60px;
+		height: 20px;
+		text-align: center;
+		border: 1px solid;
+		border-image: linear-gradient(135deg, rgba(3, 255, 239, 1), rgba(2, 245, 43, 1)) 1 1;
+		border-radius: 16px;
 	}
 
 	.fireCurr {

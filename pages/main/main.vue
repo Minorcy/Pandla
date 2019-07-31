@@ -36,6 +36,10 @@
 					<view class="token-num">{{item.value}}</view>
 				</view>
 				<view :class="{ avatar: isActive }">
+					<view class="box1">
+						<view class="box2">
+						</view>
+					</view>
 				</view>
 			</view>
 		</view>
@@ -100,12 +104,13 @@
 			getMainSlider() {
 				mainSlider().then(data => {
 					this.slides = data.slice(0,7);
-					console.log(this.slides)
+					// console.log(this.slides)
 				});
 			},
 			async getToken() { //获取token
 				let res = await this.api.homeToken(Token).getIndexPan();
 				if (res.data.status == 200) {
+					console.log(res.data.data)
 					this.tokens =res.data.data.slice(0,14)
 					if (this.tokens.length == 0) {
 						this.bgColor = this.bgImage1;
@@ -485,7 +490,7 @@
 		margin-left: -27%;
 		margin-top: -27%;
 		border: #6b5e5e solid 8px;
-		opacity: 0;
+		opacity: 0.5;
 		border-radius: 9999px;
 		transform: scale(1.05);
 		animation: pulse 3s linear infinite;

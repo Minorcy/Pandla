@@ -134,7 +134,7 @@
 				})
 			},
 			createPoster() {
-				let URL = 'http://pandla.io?invCode=' + this.inviteCode;
+				let URL = 'http://pandla.io/images/register.html?invCode=' + this.inviteCode;
 				let img = QR.createQrCodeImg(URL, {
 					size: parseInt(300) //二维码大小  
 				});

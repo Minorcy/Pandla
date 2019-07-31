@@ -31,6 +31,24 @@
 			}
 		},
 		{
+			"path": "pages/reg/Privacypolicy",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/reg/termsofservice",
+			"style": {
+				"navigationBarTitleText": "",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
 			"path": "pages/pwd/pwd",
 			"style": {
 				"navigationBarTitleText": "",
@@ -98,7 +116,8 @@
 							"fontSize": "35upx"
 						}]
 					},
-					"bounce": "none"
+					"bounce": "none",
+					"softinputNavBar":"none"
 				}
 			}
 		}, {
@@ -127,7 +146,8 @@
 				"enablePullDownRefresh": true,
 				"navigationBarTitleText": "星球游戲",
 				"app-plus": {
-					"bounce": "none"
+					"bounce": "none",
+					"softinputNavBar":"none"
 				}
 			}
 		},
@@ -138,7 +158,7 @@
 				"onReachBottomDistance":50,
 				"enablePullDownRefresh":true,
 				"app-plus": {
-					 
+					 "softinputNavBar":"none"
 				}
 			}
 		},
@@ -153,7 +173,8 @@
 							"fontSize": "35upx"
 						}]
 					},
-					"bounce": "none"
+					"bounce": "none",
+					"softinputNavBar":"none"
 				}
 			}
 		},
@@ -192,7 +213,8 @@
 							"fontSize": "35upx"
 						}]
 					},
-					"bounce": "none"
+					"bounce": "none",
+					"softinputNavBar":"none"
 				}
 			}
 		},
@@ -212,7 +234,8 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
-					"bounce": "none"
+					"bounce": "none",
+					"softinputNavBar":"none"
 				}
 			}
 		},
@@ -233,7 +256,8 @@
 							"color": "#999999"
 						}]
 					},
-					"bounce": "none"
+					"bounce": "none",
+					"softinputNavBar":"none"
 				}
 			}
 
@@ -245,7 +269,8 @@
 				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false,
-					"bounce": "none"
+					"bounce": "none",
+					"softinputNavBar":"none"
 				}
 			}
 		}, {
@@ -257,6 +282,26 @@
 				}
 			}
 		},
+		{
+			"path": "pages/pan/ixx",
+			"style": {
+				"navigationBarTitleText": "IXX注册",
+				"app-plus": {
+					"bounce": "none",
+					"softinputNavBar":"none"
+				}
+			}
+		},
+		// {
+		// 	"path": "pages/pan/Register",
+		// 	"style": {
+		// 		"navigationBarTitleText": "IXX注册",
+		// 		"app-plus": {
+		// 			"bounce": "none",
+		// 			"softinputNavBar":"none"
+		// 		}
+		// 	}
+		// },
 
 		{
 			"path": "pages/ledger/asset",
@@ -299,7 +344,8 @@
 			"style": {
 				"navigationBarTitleText": "實名認證",
 				"app-plus": {
-					"bounce": "none"
+					"bounce": "none",
+					"softinputNavBar":"none"
 				}
 			}
 		},

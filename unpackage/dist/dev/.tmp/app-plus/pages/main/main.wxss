@@ -275,7 +275,7 @@ text.data-v-07aa6224 {
   margin-left: -27%;
   margin-top: -27%;
   border: #6b5e5e solid 8px;
-  opacity: 0;
+  opacity: 0.5;
   border-radius: 9999px;
   -webkit-transform: scale(1.05);
       -ms-transform: scale(1.05);

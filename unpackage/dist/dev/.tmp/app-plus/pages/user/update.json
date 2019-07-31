@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "",
   "bounce": "none",
+  "softinputNavBar": "none",
   "usingComponents": {
     "m-input": "/components/m-input",
     "logo": "/components/logo"
