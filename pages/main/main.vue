@@ -65,7 +65,7 @@
 		getBalance,
 		getForBalance
 	} from "../../api/api.js";
-
+	let Token = uni.getStorageSync('USERS_KEY').token;
 	export default {
 		data() {
 			return {
@@ -104,7 +104,7 @@
 				});
 			},
 			async getToken() { //获取token
-				let res = await this.api.homeToken().getIndexPan();
+				let res = await this.api.homeToken(Token).getIndexPan();
 				if (res.data.status == 200) {
 					this.tokens =res.data.data.slice(0,14)
 					if (this.tokens.length == 0) {
