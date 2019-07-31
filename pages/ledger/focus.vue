@@ -162,15 +162,12 @@
 
 	.focus {
 		&-data {
-			width: 100%;
-			background: -webkit-linear-gradient(to right, #000000, #979797);
-			/* Safari 5.1 - 6.0 */
-			background: -o-linear-gradient(to right, #000000, #979797);
-			/* Opera 11.1 - 12.0 */
-			background: -moz-linear-gradient(to right, #000000, #979797);
-			/* Firefox 3.6 - 15 */
-			background: linear-gradient(to right, #000000, #979797);
-			/* 标准的语法 */
+			width: 99%;
+			border-radius: 8px;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			margin: 0 auto;
+			background-color: #131D21;
 
 			&-num {
 				display: block;
@@ -182,14 +179,6 @@
 				font-size: 25upx;
 				padding: 20upx;
 				clear: both;
-				background: -webkit-linear-gradient(to right, #424A4D, #979797);
-				/* Safari 5.1 - 6.0 */
-				background: -o-linear-gradient(to right, #424A4D, #979797);
-				/* Opera 11.1 - 12.0 */
-				background: -moz-linear-gradient(to right, #424A4D, #979797);
-				/* Firefox 3.6 - 15 */
-				background: linear-gradient(to right, #424A4D, #979797);
-				/* 标准的语法 */
 			}
 		}
 

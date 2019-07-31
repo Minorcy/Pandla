@@ -1310,7 +1310,7 @@ export const upload = (imgTemp) => new Promise((resolve, reject) => {
 });
 
 // 上传日志内容
-export const createDyn = (dynContent) => new Promise((resolve, reject) => {
+export const createDyn = (dynContent ,path) => new Promise((resolve, reject) => {
 	uni.request({
 		url: dynUrl + 'createDyn',
 		method: 'POST',
@@ -1320,7 +1320,8 @@ export const createDyn = (dynContent) => new Promise((resolve, reject) => {
 		},
 		data: {
 			'content': dynContent,
-			'location': ''
+			'location': '',
+			 'path':path
 		},
 		success: (res) => {
 			// console.log(res.data);

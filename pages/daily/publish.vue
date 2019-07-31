@@ -35,8 +35,9 @@
 		},
 		onNavigationBarButtonTap() {
 			upload(this.imgTemp).then(data => {
+				// console.log(data)
 				if(data != '') {
-					createDyn(this.dynContent).then(data => {
+					createDyn(this.dynContent, data).then(data => {
 						if(data) {
 							uni.navigateBack({
 								delta: 1
@@ -44,6 +45,7 @@
 						}
 					});
 				}
+				
 			});
 		}
 	}

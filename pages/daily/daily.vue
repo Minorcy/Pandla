@@ -91,7 +91,7 @@
 
 				<view class="input-section">
 					<input v-model="commContent" :placeholder="commplaceholder" />
-					<button class="primary" hover-class="hover-primary" @tap="addComm()">發送</button>
+					<button class="primary" hover-class="hover-primary" :disabled="disabled" @tap="addComm()">發送</button>
 				</view>
 			</scroll-view>
 		</view>
@@ -141,7 +141,8 @@
 				count: 10,
 				loading: 1,
 				flog: true,
-				time: ''
+				time: '',
+				disabled:false
 			}
 		},
 		methods: {
@@ -248,11 +249,11 @@
 				} else {
 					// like(this.did, 1);
 					// this.findDyn(2);
-					// this.likeNumber++;
-					// uni.showToast({
-					// 	icon: 'none',
-					// 	title: '點贊了' + this.likeNumber + '次'
-					// });
+					this.likeNumber++;
+					uni.showToast({
+						icon: 'none',
+						title: '點贊了' + this.likeNumber + '次'
+					});
 					// let likeTime = 5;
 					// let timeCount = setInterval(() => {
 					// 	likeTime --;
@@ -264,11 +265,11 @@
 					// 		this.findDyn(2);
 					// 	}
 					// }, 1000);
-					like(this.did, 1);
-					likeCount(this.did).then(data => {
-						this.like = data + 1
-					})
-					console.log(this.like)
+					like(this.did, 1).then(data=>{
+						likeCount(this.did).then(data => {
+							this.like = data 
+						})
+					});	
 				}
 			},
 			// endLike() {
@@ -303,6 +304,7 @@
 				this.commplaceholder = '為保證用戶隱私，只可以看自己的評論'; // 清除占位符
 				this.commentInfo = '' // 清空评论
 				// console.log(e.detail.current);
+				this.likeNumber = 0;
 				this.did = this.dynInfo[e.detail.current].id;
 				this.uid = this.dynInfo[e.detail.current].uid;
 				this.commCount = this.dynInfo[e.detail.current].com_count;
@@ -328,6 +330,7 @@
 			// 评论
 			addComm() {
 				// console.log(this.did);
+				this.disabled = true
 				if (this.commContent != '') {
 					if (this.addType == 'reply') {
 						console.log('刚刚是回复');
@@ -337,6 +340,7 @@
 							this.findDyn(2);
 							this.addType = ''; // 重置发送按钮类型
 							this.commplaceholder = '為保證用戶隱私，只可以看自己的評論'; // 清除占位符
+							this.disabled = false
 						});
 					} else {
 						console.log('刚刚是評論');
@@ -344,16 +348,16 @@
 							getComment(this.did).then(data => {
 								this.commentInfo = data;
 								this.commContent = '';
-								// this.time = formatDate( Date.now());
-
-								// console.log(this.commentInfo);
+								this.addType = ''; // 重置发送按钮类型
+								this.commplaceholder = '為保證用戶隱私，只可以看自己的評論'; // 清除占位符
+								this.disabled = false
 							});
 							// 获取弹幕
 							getBullet(this.did).then(data => {
 								this.bulletList = data.content;
 							});
 							//
-							this.findDyn()
+							this.findDyn(2)
 						});
 					}
 				}
