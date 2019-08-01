@@ -11,7 +11,7 @@
 				}
 			}
 		},
-		
+
 		{
 			"path": "pages/login/login",
 			"style": {
@@ -83,6 +83,7 @@
 				"enablePullDownRefresh": false,
 				"navigationBarTitleText": "",
 				"app-plus": {
+					"animationType": "slide-in-left",
 					"titleNView": false,
 					"bounce": "none"
 				}
@@ -135,10 +136,10 @@
 			"path": "pages/nearby/nearby",
 			"style": {
 				"navigationBarTitleText": "附近居民",
-				"onReachBottomDistance":50,
-				"enablePullDownRefresh":true,
+				"onReachBottomDistance": 50,
+				"enablePullDownRefresh": true,
 				"app-plus": {
-					 
+
 				}
 			}
 		},

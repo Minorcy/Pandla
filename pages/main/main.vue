@@ -1,5 +1,5 @@
 <template>
-	<view class="main-content">
+	<view class="main-content" @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend">
 		<!-- <view v-if="hasLogin" class="hello"></view>
         <view v-if="!hasLogin" class="hello"></view> -->
 		<view id="header" class="header">
@@ -88,10 +88,73 @@
 				panBalance: 0,
 				forceBalance: 0,
 				isActive: false,
-				
+				flag: 0,
+				text: '',
+				lastX: 0,
+				lastY: 0
 			}
 		},
 		methods: {
+			handletouchmove: function(event) {
+				// console.log(event)
+				if (this.flag !== 0) {
+					return;
+				}
+				let currentX = event.touches[0].pageX;
+				let currentY = event.touches[0].pageY;
+				let tx = currentX - this.lastX;
+				let ty = currentY - this.lastY;
+				let text = '';
+				this.mindex = -1;
+				//左右方向滑动
+				if (Math.abs(tx) > Math.abs(ty)) {
+					if (tx < 0) {
+						text = '向左滑动';
+						console.log("向左滑动");
+						uni.navigateTo({
+							url: '/pages/nearby/nearby',
+							animationType: 'pop-in',
+							animationDuration: 200
+						});
+						this.flag = 1;
+						//  this.getList();  //调用列表的方法
+					} else if (tx > 0) {
+						text = '向右滑动';
+						console.log("向右滑动");
+						uni.navigateTo({
+							url: '/pages/daily/daily',
+							animationType: 'pop-out',
+							animationDuration: 200
+						});
+						this.flag = 2;
+					}
+				}
+				//上下方向滑动
+				else {
+					if (ty < 0) {
+						text = '向上滑动';
+						this.flag = 3;
+						//  this.getList();  //调用列表的方法
+					} else if (ty > 0) {
+						text = '向下滑动';
+						this.flag = 4;
+					}
+				}
+
+				//将当前坐标进行保存以进行下一次计算
+				this.lastX = currentX;
+				this.lastY = currentY;
+				this.text = text;
+			},
+			handletouchstart: function(event) {
+				// console.log(event)
+				this.lastX = event.touches[0].pageX;
+				this.lastY = event.touches[0].pageY;
+			},
+			handletouchend: function(event) {
+				this.flag = 0;
+				this.text = '没有滑动';
+			},
 			toPan() {
 				uni.switchTab({
 					url: '../pan/pan'
@@ -99,14 +162,14 @@
 			},
 			getMainSlider() {
 				mainSlider().then(data => {
-					this.slides = data.slice(0,7);
+					this.slides = data.slice(0, 7);
 					console.log(this.slides)
 				});
 			},
 			async getToken() { //获取token
 				let res = await this.api.homeToken(Token).getIndexPan();
 				if (res.data.status == 200) {
-					this.tokens =res.data.data.slice(0,14)
+					this.tokens = res.data.data.slice(0, 14)
 					if (this.tokens.length == 0) {
 						this.bgColor = this.bgImage1;
 						// this.bgColor1 = this.bgImage2;
@@ -141,7 +204,7 @@
 						}
 						let xNum = parseInt(targetWidth / iconWidth, 10); //用浏览器的宽度除以一个元素的宽度可算出浏览器窗口内一行可以放置元素的个数
 						let yNum = parseInt(targetHeight / iconHeight, 10); //用浏览器的高度除以一个元素的高度可算出浏览器窗口内一列可以放置元素的个数
-						let allNum = xNum*yNum; //浏览器窗口内总共可以放置元素的个数
+						let allNum = xNum * yNum; //浏览器窗口内总共可以放置元素的个数
 						//当需要放置的元素的个数超过浏览器窗口内总共可以放置的元素的个数时，则返回
 						if (num >= allNum) {
 							return false;
@@ -153,7 +216,7 @@
 							yStart = 0;
 						let arr = [];
 						while (num) {
-							var pointer = Math.floor(Math.random() * allNum) ; //向下取整取出0到allnum之间的任意一个整数
+							var pointer = Math.floor(Math.random() * allNum); //向下取整取出0到allnum之间的任意一个整数
 							// 如果数组_tmpArray中不存在第pointer值，则继续
 							if (!_tmpArray[pointer]) {
 								continue;
@@ -182,7 +245,7 @@
 			pushToken(item, index, e) { //收取token
 				this.initToken += 1;
 				this.tokenList[index].leftVal = 30;
-				this.tokenList[index].topVal = -this.tokenWidth -100;
+				this.tokenList[index].topVal = -this.tokenWidth - 100;
 				setTimeout(() => {
 					this.tokenList[index].display = 'none';
 					this.takePan(item.value);
@@ -210,7 +273,7 @@
 				getForBalance().then(data => {
 					this.forceBalance = data.balance
 				})
-		}
+			}
 		},
 		onLoad() {
 			this.getMainSlider();

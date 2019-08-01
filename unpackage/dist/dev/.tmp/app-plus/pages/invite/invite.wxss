@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.pages-content.data-v-10dc0bee {
+.pages-content.data-v-d81b4278 {
   position: absolute;
   top: 0;
   right: 0;
@@ -34,11 +34,11 @@
   overflow-scrolling: touch;
   overflow-y: scroll;
 }
-.pages-content .top-section image.data-v-10dc0bee {
+.pages-content .top-section image.data-v-d81b4278 {
     width: 98%;
     padding: 5px;
 }
-.pages-content .invite-section .invite-top.data-v-10dc0bee {
+.pages-content .invite-section .invite-top.data-v-d81b4278 {
     width: 100%;
     margin-top: 10px;
     color: #d1d1d1;
@@ -51,24 +51,24 @@
             justify-content: space-around;
     line-height: 24px;
 }
-.pages-content .invite-section .invite-top text.data-v-10dc0bee {
+.pages-content .invite-section .invite-top text.data-v-d81b4278 {
       font-size: 16px;
       display: block;
       text-align: center;
 }
-.pages-content .invite-section .invite-top .left.data-v-10dc0bee {
+.pages-content .invite-section .invite-top .left.data-v-d81b4278 {
       position: relative;
       width: 25%;
       height: 50px;
       text-align: center;
 }
-.pages-content .invite-section .invite-top .left .count.data-v-10dc0bee {
+.pages-content .invite-section .invite-top .left .count.data-v-d81b4278 {
         font-size: 20px;
 }
-.pages-content .invite-section .invite-top .left .text.data-v-10dc0bee {
+.pages-content .invite-section .invite-top .left .text.data-v-d81b4278 {
         font-size: 14px;
 }
-.pages-content .invite-section .invite-top .left.data-v-10dc0bee::after {
+.pages-content .invite-section .invite-top .left.data-v-d81b4278::after {
       content: '';
       width: 2px;
       height: 40px;
@@ -77,19 +77,19 @@
       right: -12px;
       background-color: #d1d1d1;
 }
-.pages-content .invite-section .invite-top .middle.data-v-10dc0bee {
+.pages-content .invite-section .invite-top .middle.data-v-d81b4278 {
       position: relative;
       width: 25%;
       height: 50px;
       text-align: center;
 }
-.pages-content .invite-section .invite-top .middle .count.data-v-10dc0bee {
+.pages-content .invite-section .invite-top .middle .count.data-v-d81b4278 {
         font-size: 20px;
 }
-.pages-content .invite-section .invite-top .middle .text.data-v-10dc0bee {
+.pages-content .invite-section .invite-top .middle .text.data-v-d81b4278 {
         font-size: 14px;
 }
-.pages-content .invite-section .invite-top .middle.data-v-10dc0bee::after {
+.pages-content .invite-section .invite-top .middle.data-v-d81b4278::after {
       content: '';
       width: 2px;
       height: 40px;
@@ -98,18 +98,18 @@
       right: -22px;
       background-color: #d1d1d1;
 }
-.pages-content .invite-section .invite-top .right.data-v-10dc0bee {
+.pages-content .invite-section .invite-top .right.data-v-d81b4278 {
       width: 25%;
       height: 50px;
       text-align: center;
 }
-.pages-content .invite-section .invite-top .right .count.data-v-10dc0bee {
+.pages-content .invite-section .invite-top .right .count.data-v-d81b4278 {
         font-size: 20px;
 }
-.pages-content .invite-section .invite-top .right .text.data-v-10dc0bee {
+.pages-content .invite-section .invite-top .right .text.data-v-d81b4278 {
         font-size: 14px;
 }
-.pages-content .invite-section .invite.data-v-10dc0bee {
+.pages-content .invite-section .invite.data-v-d81b4278 {
     display: block;
     width: 90%;
     height: 40px;
@@ -118,23 +118,23 @@
     background: url("http://47.244.27.153/images/static/img/Invitation.svg") no-repeat;
     background-size: contain;
 }
-.pages-content .invite-section .invite .invite-title.data-v-10dc0bee {
+.pages-content .invite-section .invite .invite-title.data-v-d81b4278 {
       margin-left: 30px;
       font-size: 16px;
 }
-.pages-content .invite-section .invite .invite-content.data-v-10dc0bee {
+.pages-content .invite-section .invite .invite-content.data-v-d81b4278 {
       margin-left: 65px;
       font-size: 20px;
       line-height: 38px;
 }
-.pages-content .invite-section .invite-text.data-v-10dc0bee {
+.pages-content .invite-section .invite-text.data-v-d81b4278 {
     padding: 0 20px 20px 20px;
     font-size: 14px;
     color: #d1d1d1;
     line-height: 20px;
     letter-spacing: 2px;
 }
-.pages-content .pan-section.data-v-10dc0bee {
+.pages-content .pan-section.data-v-d81b4278 {
     width: 98%;
     margin: 0 auto;
     border-radius: 5%;
@@ -143,50 +143,50 @@
     background: url("http://47.244.27.153/images/static/img/kuang.svg");
     background-position: 100% 82%;
 }
-.pages-content .pan-section .pan-item.data-v-10dc0bee {
+.pages-content .pan-section .pan-item.data-v-d81b4278 {
       display: inline-block;
       width: 44%;
       height: 100px;
       padding: 10px;
 }
-.pages-content .pan-section .pan-item image.data-v-10dc0bee {
+.pages-content .pan-section .pan-item image.data-v-d81b4278 {
         text-align: center;
         width: 50px;
         height: 50px;
         margin-left: 59px;
 }
-.pages-content .pan-section .pan-item text.data-v-10dc0bee {
+.pages-content .pan-section .pan-item text.data-v-d81b4278 {
         display: block;
         font-size: 12px;
         text-align: center;
         color: #000;
 }
-.pages-content .pan-section .pan-text.data-v-10dc0bee {
+.pages-content .pan-section .pan-text.data-v-d81b4278 {
       width: 100%;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       padding: 10px;
 }
-.pages-content .pan-section .pan-text text.data-v-10dc0bee {
+.pages-content .pan-section .pan-text text.data-v-d81b4278 {
         padding: 10px;
         font-size: 15px;
         color: #000;
         line-height: 20px;
         letter-spacing: 2px;
 }
-.pages-content .bottom-section.data-v-10dc0bee {
+.pages-content .bottom-section.data-v-d81b4278 {
     padding: 10px;
 }
-.pages-content .bottom-section text.data-v-10dc0bee {
+.pages-content .bottom-section text.data-v-d81b4278 {
       display: block;
       font-size: 16px;
       line-height: 24px;
       color: #d1d1d1;
 }
-.pages-content .bottom-section .first.data-v-10dc0bee {
+.pages-content .bottom-section .first.data-v-d81b4278 {
       color: #fff;
 }
-.pages-content .bottom-section .color.data-v-10dc0bee {
+.pages-content .bottom-section .color.data-v-d81b4278 {
       display: inline-block;
       color: #007aff;
 }

@@ -24,10 +24,10 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.page.data-v-8db80ae4 {
+.page.data-v-54d12864 {
   width: 100%;
 }
-.page ._hr.data-v-8db80ae4 {
+.page ._hr.data-v-54d12864 {
     position: fixed;
     margin-top: 5px;
     height: 2px;
@@ -37,72 +37,72 @@
     width: 100%;
     z-index: 10;
 }
-.page.data-v-8db80ae4 ::-webkit-scrollbar {
+.page.data-v-54d12864 ::-webkit-scrollbar {
     width: 0;
     height: 0;
     color: transparent;
 }
-.page .top.data-v-8db80ae4 {
+.page .top.data-v-54d12864 {
     margin-top: 1px;
     width: 100%;
     margin-bottom: 10px;
 }
-.page .top .img.data-v-8db80ae4 {
+.page .top .img.data-v-54d12864 {
       width: 100%;
 }
-.page .top .img image.data-v-8db80ae4 {
+.page .top .img image.data-v-54d12864 {
         width: 100%;
 }
-.page .top .top-text.data-v-8db80ae4 {
+.page .top .top-text.data-v-54d12864 {
       color: #cdcdcd;
       padding: 10px;
       font-size: 14px;
       line-height: 25px;
 }
-.page .top .top-text text.data-v-8db80ae4 {
+.page .top .top-text text.data-v-54d12864 {
         display: block;
         letter-spacing: 2px;
         color: #cdcdcd !important;
 }
-.page .top .top-text .right.data-v-8db80ae4 {
+.page .top .top-text .right.data-v-54d12864 {
         position: relative;
         left: 45%;
         color: #067ee8 !important;
         width: 55%;
         text-align: center;
 }
-.page .user-section .user-item.data-v-8db80ae4 {
+.page .user-section .user-item.data-v-54d12864 {
     position: relative;
     background-color: #fff;
     padding: 5px 10px;
     margin-bottom: 5px;
 }
-.page .user-section .user-item .user.data-v-8db80ae4 {
+.page .user-section .user-item .user.data-v-54d12864 {
       background-color: #fff;
       padding: 5px 10px;
 }
-.page .user-section .user-item .user image.data-v-8db80ae4 {
+.page .user-section .user-item .user image.data-v-54d12864 {
         width: 50px;
         height: 50px;
         border-radius: 50%;
         vertical-align: middle;
 }
-.page .user-section .user-item .user text.data-v-8db80ae4 {
+.page .user-section .user-item .user text.data-v-54d12864 {
         color: #000;
         margin-left: 5px;
         font-size: 16px;
         vertical-align: middle;
 }
-.page .user-section .user-item .content.data-v-8db80ae4 {
+.page .user-section .user-item .content.data-v-54d12864 {
       background-color: #fff;
       padding: 5px 10px;
 }
-.page .user-section .user-item .content .content-title.data-v-8db80ae4 {
+.page .user-section .user-item .content .content-title.data-v-54d12864 {
         display: inline-block;
         color: #0087ff;
         font-size: 16px;
 }
-.page .user-section .user-item .content .content-text.data-v-8db80ae4 {
+.page .user-section .user-item .content .content-text.data-v-54d12864 {
         display: inline-block;
         color: #000;
         font-size: 16px;
@@ -110,51 +110,51 @@
         text-justify: newspaper;
         word-break: break-all;
 }
-.page .user-section .user-item .option.data-v-8db80ae4 {
+.page .user-section .user-item .option.data-v-54d12864 {
       height: 30px;
       background-color: #fff;
       padding: 5px 10px;
 }
-.page .user-section .user-item .option .comm-item.data-v-8db80ae4 {
+.page .user-section .user-item .option .comm-item.data-v-54d12864 {
         float: left;
 }
-.page .user-section .user-item .option .comm-item image.data-v-8db80ae4 {
+.page .user-section .user-item .option .comm-item image.data-v-54d12864 {
           width: 25px;
           height: 25px;
           vertical-align: middle;
 }
-.page .user-section .user-item .option .comm-item text.data-v-8db80ae4 {
+.page .user-section .user-item .option .comm-item text.data-v-54d12864 {
           margin-left: 5px;
           font-size: 16px;
           color: #000;
           vertical-align: middle;
 }
-.page .user-section .user-item .option .like-item.data-v-8db80ae4 {
+.page .user-section .user-item .option .like-item.data-v-54d12864 {
         float: right;
 }
-.page .user-section .user-item .option .like-item image.data-v-8db80ae4 {
+.page .user-section .user-item .option .like-item image.data-v-54d12864 {
           width: 25px;
           height: 25px;
           vertical-align: middle;
 }
-.page .user-section .user-item .option .like-item text.data-v-8db80ae4 {
+.page .user-section .user-item .option .like-item text.data-v-54d12864 {
           font-size: 16px;
           color: #000;
           margin: 0 5px;
           vertical-align: middle;
 }
-.page .publish.data-v-8db80ae4 {
+.page .publish.data-v-54d12864 {
     position: fixed;
     bottom: 10px;
     left: 50%;
     margin-left: -20px;
     text-align: center;
 }
-.page .publish image.data-v-8db80ae4 {
+.page .publish image.data-v-54d12864 {
       width: 30px;
       height: 30px;
 }
-.page .comment-section.data-v-8db80ae4 {
+.page .comment-section.data-v-54d12864 {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -168,12 +168,12 @@
     border-radius: 36rpx 36rpx 0 0;
     overflow: hidden;
 }
-.page .comment-section.data-v-8db80ae4 ::-webkit-scrollbar {
+.page .comment-section.data-v-54d12864 ::-webkit-scrollbar {
       width: 0;
       height: 0;
       color: transparent;
 }
-.page .comment-section .comment-section-top.data-v-8db80ae4 {
+.page .comment-section .comment-section-top.data-v-54d12864 {
       width: 95%;
       height: 30px;
       position: fixed;
@@ -185,29 +185,29 @@
       margin: 0 auto;
       background-color: #000000;
 }
-.page .comment-section .comment-section-top image.data-v-8db80ae4 {
+.page .comment-section .comment-section-top image.data-v-54d12864 {
         width: 15px;
         height: 15px;
         float: right;
         right: 10px;
 }
-.page .comment-section .comment.data-v-8db80ae4 {
+.page .comment-section .comment.data-v-54d12864 {
       margin-top: 30px;
       width: 100%;
       height: 100%;
 }
-.page .comment-section .comment .nocomm.data-v-8db80ae4 {
+.page .comment-section .comment .nocomm.data-v-54d12864 {
         margin-left: 70px;
         margin-top: 50px;
         color: #ffffff;
 }
-.page .comment-section .comment .comment-section-details.data-v-8db80ae4 {
+.page .comment-section .comment .comment-section-details.data-v-54d12864 {
         width: 100%;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm.data-v-8db80ae4 {
+.page .comment-section .comment .comment-section-details .comment-section-comm.data-v-54d12864 {
           margin-bottom: 10px;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite.data-v-8db80ae4 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite.data-v-54d12864 {
             display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
@@ -217,7 +217,7 @@
                 -ms-flex-align: end;
                     align-items: flex-end;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-portrait.data-v-8db80ae4 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-portrait.data-v-54d12864 {
               width: 40px;
               height: 40px;
               border-radius: 50%;
@@ -229,7 +229,7 @@
                   -ms-flex-negative: 0;
                       flex-shrink: 0;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content.data-v-8db80ae4 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content.data-v-54d12864 {
               -webkit-box-sizing: border-box;
                       box-sizing: border-box;
               padding: 5px;
@@ -244,27 +244,27 @@
               font-size: 14px;
               line-height: 20px;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-name.data-v-8db80ae4 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-name.data-v-54d12864 {
                 display: block;
                 color: #B7B7B7;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-content.data-v-8db80ae4 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-content.data-v-54d12864 {
                 word-wrap: break-word;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-create_time.data-v-8db80ae4 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-create_time.data-v-54d12864 {
                 float: right;
                 font-size: 12px;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comment-section-reply.data-v-8db80ae4 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comment-section-reply.data-v-54d12864 {
             padding: 5px 5px 5px 30px;
             color: #ffffff;
             font-size: 14px;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comment-section-reply .color.data-v-8db80ae4 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comment-section-reply .color.data-v-54d12864 {
               color: #e64340;
               font-size: 14px;
 }
-.page .comment-section .comment .input-section.data-v-8db80ae4 {
+.page .comment-section .comment .input-section.data-v-54d12864 {
         position: fixed;
         width: 100%;
         height: 65rpx;
@@ -278,7 +278,7 @@
         border-radius: 50rpx;
         font-size: 30rpx;
 }
-.page .comment-section .comment .input-section input.data-v-8db80ae4 {
+.page .comment-section .comment .input-section input.data-v-54d12864 {
           width: 77%;
           height: 65rpx;
           line-height: 65rpx;
@@ -286,7 +286,7 @@
           float: left;
           padding-left: 20rpx;
 }
-.page .comment-section .comment .input-section button.data-v-8db80ae4 {
+.page .comment-section .comment .input-section button.data-v-54d12864 {
           position: absolute;
           margin: 0;
           padding: 0;
@@ -298,7 +298,7 @@
           font-size: 35rpx;
           color: #000000;
 }
-.page .load.data-v-8db80ae4 {
+.page .load.data-v-54d12864 {
     width: 100%;
     height: 20px;
     color: #fff;
