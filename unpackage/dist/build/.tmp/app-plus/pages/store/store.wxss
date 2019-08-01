@@ -24,10 +24,10 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.page.data-v-47565cf8 {
+.page.data-v-ecb70a5e {
   width: 100%;
 }
-.page ._hr.data-v-47565cf8 {
+.page ._hr.data-v-ecb70a5e {
     position: fixed;
     margin-top: 5px;
     height: 2px;
@@ -37,72 +37,72 @@
     width: 100%;
     z-index: 10;
 }
-.page.data-v-47565cf8 ::-webkit-scrollbar {
+.page.data-v-ecb70a5e ::-webkit-scrollbar {
     width: 0;
     height: 0;
     color: transparent;
 }
-.page .top.data-v-47565cf8 {
+.page .top.data-v-ecb70a5e {
     margin-top: 1px;
     width: 100%;
     margin-bottom: 10px;
 }
-.page .top .img.data-v-47565cf8 {
+.page .top .img.data-v-ecb70a5e {
       width: 100%;
 }
-.page .top .img image.data-v-47565cf8 {
+.page .top .img image.data-v-ecb70a5e {
         width: 100%;
 }
-.page .top .top-text.data-v-47565cf8 {
+.page .top .top-text.data-v-ecb70a5e {
       color: #cdcdcd;
       padding: 10px;
       font-size: 14px;
       line-height: 25px;
 }
-.page .top .top-text text.data-v-47565cf8 {
+.page .top .top-text text.data-v-ecb70a5e {
         display: block;
         letter-spacing: 2px;
         color: #cdcdcd !important;
 }
-.page .top .top-text .right.data-v-47565cf8 {
+.page .top .top-text .right.data-v-ecb70a5e {
         position: relative;
         left: 45%;
         color: #067ee8 !important;
         width: 55%;
         text-align: center;
 }
-.page .user-section .user-item.data-v-47565cf8 {
+.page .user-section .user-item.data-v-ecb70a5e {
     position: relative;
     background-color: #fff;
     padding: 5px 10px;
     margin-bottom: 5px;
 }
-.page .user-section .user-item .user.data-v-47565cf8 {
+.page .user-section .user-item .user.data-v-ecb70a5e {
       background-color: #fff;
       padding: 5px 10px;
 }
-.page .user-section .user-item .user image.data-v-47565cf8 {
+.page .user-section .user-item .user image.data-v-ecb70a5e {
         width: 50px;
         height: 50px;
         border-radius: 50%;
         vertical-align: middle;
 }
-.page .user-section .user-item .user text.data-v-47565cf8 {
+.page .user-section .user-item .user text.data-v-ecb70a5e {
         color: #000;
         margin-left: 5px;
         font-size: 16px;
         vertical-align: middle;
 }
-.page .user-section .user-item .content.data-v-47565cf8 {
+.page .user-section .user-item .content.data-v-ecb70a5e {
       background-color: #fff;
       padding: 5px 10px;
 }
-.page .user-section .user-item .content .content-title.data-v-47565cf8 {
+.page .user-section .user-item .content .content-title.data-v-ecb70a5e {
         display: inline-block;
         color: #0087ff;
         font-size: 16px;
 }
-.page .user-section .user-item .content .content-text.data-v-47565cf8 {
+.page .user-section .user-item .content .content-text.data-v-ecb70a5e {
         display: inline-block;
         color: #000;
         font-size: 16px;
@@ -110,51 +110,51 @@
         text-justify: newspaper;
         word-break: break-all;
 }
-.page .user-section .user-item .option.data-v-47565cf8 {
+.page .user-section .user-item .option.data-v-ecb70a5e {
       height: 30px;
       background-color: #fff;
       padding: 5px 10px;
 }
-.page .user-section .user-item .option .comm-item.data-v-47565cf8 {
+.page .user-section .user-item .option .comm-item.data-v-ecb70a5e {
         float: left;
 }
-.page .user-section .user-item .option .comm-item image.data-v-47565cf8 {
+.page .user-section .user-item .option .comm-item image.data-v-ecb70a5e {
           width: 25px;
           height: 25px;
           vertical-align: middle;
 }
-.page .user-section .user-item .option .comm-item text.data-v-47565cf8 {
+.page .user-section .user-item .option .comm-item text.data-v-ecb70a5e {
           margin-left: 5px;
           font-size: 16px;
           color: #000;
           vertical-align: middle;
 }
-.page .user-section .user-item .option .like-item.data-v-47565cf8 {
+.page .user-section .user-item .option .like-item.data-v-ecb70a5e {
         float: right;
 }
-.page .user-section .user-item .option .like-item image.data-v-47565cf8 {
+.page .user-section .user-item .option .like-item image.data-v-ecb70a5e {
           width: 25px;
           height: 25px;
           vertical-align: middle;
 }
-.page .user-section .user-item .option .like-item text.data-v-47565cf8 {
+.page .user-section .user-item .option .like-item text.data-v-ecb70a5e {
           font-size: 16px;
           color: #000;
           margin: 0 5px;
           vertical-align: middle;
 }
-.page .publish.data-v-47565cf8 {
+.page .publish.data-v-ecb70a5e {
     position: fixed;
     bottom: 10px;
     left: 50%;
     margin-left: -20px;
     text-align: center;
 }
-.page .publish image.data-v-47565cf8 {
+.page .publish image.data-v-ecb70a5e {
       width: 30px;
       height: 30px;
 }
-.page .comment-section.data-v-47565cf8 {
+.page .comment-section.data-v-ecb70a5e {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -168,12 +168,12 @@
     border-radius: 36rpx 36rpx 0 0;
     overflow: hidden;
 }
-.page .comment-section.data-v-47565cf8 ::-webkit-scrollbar {
+.page .comment-section.data-v-ecb70a5e ::-webkit-scrollbar {
       width: 0;
       height: 0;
       color: transparent;
 }
-.page .comment-section .comment-section-top.data-v-47565cf8 {
+.page .comment-section .comment-section-top.data-v-ecb70a5e {
       width: 95%;
       height: 30px;
       position: fixed;
@@ -185,30 +185,29 @@
       margin: 0 auto;
       background-color: #000000;
 }
-.page .comment-section .comment-section-top image.data-v-47565cf8 {
+.page .comment-section .comment-section-top image.data-v-ecb70a5e {
         width: 15px;
         height: 15px;
         float: right;
         right: 10px;
 }
-.page .comment-section .comment.data-v-47565cf8 {
+.page .comment-section .comment.data-v-ecb70a5e {
       margin-top: 30px;
       width: 100%;
       height: 100%;
 }
-.page .comment-section .comment .nocomm.data-v-47565cf8 {
+.page .comment-section .comment .nocomm.data-v-ecb70a5e {
         margin-left: 70px;
         margin-top: 50px;
         color: #ffffff;
 }
-.page .comment-section .comment .comment-section-details.data-v-47565cf8 {
+.page .comment-section .comment .comment-section-details.data-v-ecb70a5e {
         width: 100%;
-        height: 100%;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm.data-v-47565cf8 {
+.page .comment-section .comment .comment-section-details .comment-section-comm.data-v-ecb70a5e {
           margin-bottom: 10px;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite.data-v-47565cf8 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite.data-v-ecb70a5e {
             display: -webkit-box;
             display: -webkit-flex;
             display: -ms-flexbox;
@@ -218,7 +217,7 @@
                 -ms-flex-align: end;
                     align-items: flex-end;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-portrait.data-v-47565cf8 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-portrait.data-v-ecb70a5e {
               width: 40px;
               height: 40px;
               border-radius: 50%;
@@ -230,7 +229,7 @@
                   -ms-flex-negative: 0;
                       flex-shrink: 0;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content.data-v-47565cf8 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content.data-v-ecb70a5e {
               -webkit-box-sizing: border-box;
                       box-sizing: border-box;
               padding: 5px;
@@ -245,27 +244,27 @@
               font-size: 14px;
               line-height: 20px;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-name.data-v-47565cf8 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-name.data-v-ecb70a5e {
                 display: block;
                 color: #B7B7B7;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-content.data-v-47565cf8 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-content.data-v-ecb70a5e {
                 word-wrap: break-word;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-create_time.data-v-47565cf8 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-create_time.data-v-ecb70a5e {
                 float: right;
                 font-size: 12px;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comment-section-reply.data-v-47565cf8 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comment-section-reply.data-v-ecb70a5e {
             padding: 5px 5px 5px 30px;
             color: #ffffff;
             font-size: 14px;
 }
-.page .comment-section .comment .comment-section-details .comment-section-comm .comment-section-reply .color.data-v-47565cf8 {
+.page .comment-section .comment .comment-section-details .comment-section-comm .comment-section-reply .color.data-v-ecb70a5e {
               color: #e64340;
               font-size: 14px;
 }
-.page .comment-section .comment .input-section.data-v-47565cf8 {
+.page .comment-section .comment .input-section.data-v-ecb70a5e {
         position: fixed;
         width: 100%;
         height: 65rpx;
@@ -279,7 +278,7 @@
         border-radius: 50rpx;
         font-size: 30rpx;
 }
-.page .comment-section .comment .input-section input.data-v-47565cf8 {
+.page .comment-section .comment .input-section input.data-v-ecb70a5e {
           width: 77%;
           height: 65rpx;
           line-height: 65rpx;
@@ -287,7 +286,7 @@
           float: left;
           padding-left: 20rpx;
 }
-.page .comment-section .comment .input-section button.data-v-47565cf8 {
+.page .comment-section .comment .input-section button.data-v-ecb70a5e {
           position: absolute;
           margin: 0;
           padding: 0;
@@ -299,7 +298,7 @@
           font-size: 35rpx;
           color: #000000;
 }
-.page .load.data-v-47565cf8 {
+.page .load.data-v-ecb70a5e {
     width: 100%;
     height: 20px;
     color: #fff;

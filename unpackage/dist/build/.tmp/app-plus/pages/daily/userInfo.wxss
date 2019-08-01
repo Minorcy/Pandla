@@ -1,5 +1,5 @@
 
-.userInfo.data-v-1c2acc82 {
+.userInfo.data-v-07b60277 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -11,30 +11,30 @@
 	        flex-direction: column;
 	margin-top: 50rpx;
 }
-.portrait.data-v-1c2acc82 {
+.portrait.data-v-07b60277 {
 	width: 150rpx;
 	height: 150rpx;
 	margin: 0 auto;
 	margin-bottom: 30rpx;
 	border-radius: 100%;
 }
-.avatar.data-v-1c2acc82 {
+.avatar.data-v-07b60277 {
 	width: 150rpx;
 	height: 150rpx;
 	margin: 0 auto;
 	margin-bottom: 30rpx;
 }
-.userInfo ._p.data-v-1c2acc82 {
+.userInfo ._p.data-v-07b60277 {
 	font-size: 25rpx;
 	text-align: center;
 	margin: 5rpx 0 5rpx 0;
 }
-.userInfo ._p.data-v-1c2acc82:nth-child(2) {
+.userInfo ._p.data-v-07b60277:nth-child(2) {
 	font-size: 40rpx;
 }
 
 /* 状态 */
-.statusInfo.data-v-1c2acc82 {
+.statusInfo.data-v-07b60277 {
 	display:  -webkit-box;
 	display:  -webkit-flex;
 	display:  -ms-flexbox;
@@ -45,24 +45,24 @@
 	        justify-content: space-between;
 	padding: 40rpx 100rpx;
 }
-.statusInfo view.data-v-1c2acc82 {
+.statusInfo view.data-v-07b60277 {
 	background-color: #8E8E93;
 	border-radius: 5rpx;
 	padding: 5rpx 30rpx;
 }
-.statusInfo image.data-v-1c2acc82 {
+.statusInfo image.data-v-07b60277 {
 	width: 25rpx;
 	height: 25rpx;
 	float: left;
 }
-.statusInfo text.data-v-1c2acc82 {
+.statusInfo text.data-v-07b60277 {
 	font-size: 20rpx;
 	margin-left: 10rpx;
 	float: right;
 }
 
 /* 动态列表 */
-.dynInfo.data-v-1c2acc82 {
+.dynInfo.data-v-07b60277 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -82,13 +82,13 @@
 	margin-top: 50rpx;
 	padding: 1rpx;
 }
-.dynInfo image.data-v-1c2acc82 {
+.dynInfo image.data-v-07b60277 {
 	width: 31%;
 	height: 250rpx;
 	padding: 5rpx;
 	margin: 5rpx;
 }
-.btn-con.data-v-1c2acc82 {
+.btn-con.data-v-07b60277 {
 	position: fixed;
 	width: 400rpx;
 	height: 100rpx;

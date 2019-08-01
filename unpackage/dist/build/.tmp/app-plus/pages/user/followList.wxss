@@ -1,5 +1,5 @@
 
-._ul.data-v-28217ece {
+._ul.data-v-3ed5ed86 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -16,31 +16,31 @@
 	padding: 50rpx;
 	font-size: 30rpx;
 }
-._li.data-v-28217ece {
+._li.data-v-3ed5ed86 {
 	list-style: none;
 	border-bottom: solid 1rpx #4CD964;
 	margin-top: 30rpx;
 }
-._li button.data-v-28217ece {
+._li button.data-v-3ed5ed86 {
 	width: 180rpx;
 	float: right;
 	margin-bottom: 10rpx;
 }
-._li text.data-v-28217ece:nth-child(2) {
+._li text.data-v-3ed5ed86:nth-child(2) {
 	position: absolute;
 }
-text.data-v-28217ece {
+text.data-v-3ed5ed86 {
 	margin: 20rpx 0 0 20rpx;
 }
-image.data-v-28217ece {
+image.data-v-3ed5ed86 {
 	width: 72rpx;
 	height: 72rpx;
 	border-radius: 50%;
 }
-.no-follow.data-v-28217ece{
+.no-follow.data-v-3ed5ed86{
 	text-align: center;
 }
-.todaily.data-v-28217ece{
+.todaily.data-v-3ed5ed86{
 	color:#007AFF ;
 }
 

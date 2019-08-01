@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.text.data-v-62af18f3 {
+.text.data-v-1997f458 {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
@@ -35,7 +35,7 @@
   color: #000000;
   background-color: #FFFFFF;
 }
-.text textarea.data-v-62af18f3 {
+.text textarea.data-v-1997f458 {
     width: 100%;
     height: 100%;
 }

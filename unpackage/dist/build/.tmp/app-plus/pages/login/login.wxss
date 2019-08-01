@@ -39,4 +39,8 @@
 	height: 60rpx;
 	margin: 20rpx;
 }
+.primary{
+	line-height: 50px;
+}
+
 
