@@ -5,9 +5,9 @@
 				<p class="pan-data-pan">我的資產(PAN幣)</p>
 				<p class="pan-data-bal">{{assetInfo.balance | toFixed(4)}}</p>
 				<view class="pan-data-link">
-					<text class="pan-data-link-item">區塊鏈地址</text>
+					<navigator url="blockChain" class="pan-data-link-item">區塊鏈地址</navigator>
 					<text>|</text>
-					<text class="pan-data-link-item">資金密碼</text>
+					<navigator url="password" class="pan-data-link-item">資金密碼</navigator>
 				</view>
 			</view>
 		</view>
@@ -47,7 +47,7 @@
 					});
 				},
 				getBillData() {
-					getBill().then(data => {
+					getBill(0).then(data => {
 						// console.log(data)
 						this.listInfo = data
 						
@@ -57,6 +57,10 @@
 				loadMore() {
 					getBill(this.pageSize).then(data => {
 						// console.log(data)
+						if(data == null ){
+							this.isShow = false
+							return
+						}
 						this.listInfo = this.listInfo.concat(data)
 						this.pageSize += 10
 					});

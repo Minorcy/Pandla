@@ -297,7 +297,6 @@
 
 				text {
 					display: block;
-					letter-spacing: 2px;
 					color: #cdcdcd !important;
 				}
 

@@ -12,7 +12,7 @@
 
 	}
 	image{
-		margin-top: -65px;
+		
 		width: 100%;
 		}
 	

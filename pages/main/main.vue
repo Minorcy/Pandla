@@ -16,7 +16,7 @@
 			<image src="../../static/img/main/notice.png" class="header-icon" />
 			<text>公益基金池建設中，首次捐贈10個token星球返回10個。</text>
 		</view>
-		<view class="token-area" :style="{'background-image':'url('+bgImage1+')'}">
+		<view class="token-area">
 			<!-- <view class="welfare-content" @tap="toPan">
 				<image src="../../static/img/main/welfare.png" class="welfare-icon" />
 				<view class="welfare-text">星球公益</view>
@@ -27,7 +27,7 @@
 					<navigator url='../welfare/welfare' class="planet-text">星球公益</navigator>
 				</view>
 			</view>
-			<view id="content" class="token-content ">
+			<view id="content" class="token-content " :style="{'background-image':'url('+bgImage1+')'}">
 				<!-- <token v-for="(item, index) in tokens" :key="index" class="mine-item topTobottom" :tokenValue="item" :index="index"
 				 @confirm="pushToken" /> -->
 				<view id="token" class="token topTobottom" v-for="(item, index) in tokenList" :style="{'left':item.leftVal+'px','top':item.topVal+'px','display':item.display}"
@@ -36,10 +36,6 @@
 					<view class="token-num">{{item.value}}</view>
 				</view>
 				<view :class="{ avatar: isActive }">
-					<view class="box1">
-						<view class="box2">
-						</view>
-					</view>
 				</view>
 			</view>
 		</view>
@@ -92,7 +88,7 @@
 				panBalance: 0,
 				forceBalance: 0,
 				isActive: false,
-				
+				flog: false,
 			}
 		},
 		methods: {
@@ -103,7 +99,7 @@
 			},
 			getMainSlider() {
 				mainSlider().then(data => {
-					this.slides = data.slice(0,7);
+					this.slides = data.slice(0, 7);
 					// console.log(this.slides)
 				});
 			},
@@ -111,10 +107,10 @@
 				let res = await this.api.homeToken(Token).getIndexPan();
 				if (res.data.status == 200) {
 					console.log(res.data.data)
-					if(res.data.data.length > 14){
-						this.tokens =res.data.data.slice(0,14)
+					if (res.data.data.length > 14) {
+						this.tokens = res.data.data.slice(0, 14)
 					}
-					this.tokens =res.data.data
+					this.tokens = res.data.data
 					if (this.tokens.length == 0) {
 						this.bgColor = this.bgImage1;
 						// this.bgColor1 = this.bgImage2;
@@ -149,7 +145,7 @@
 						}
 						let xNum = parseInt(targetWidth / iconWidth, 10); //用浏览器的宽度除以一个元素的宽度可算出浏览器窗口内一行可以放置元素的个数
 						let yNum = parseInt(targetHeight / iconHeight, 10); //用浏览器的高度除以一个元素的高度可算出浏览器窗口内一列可以放置元素的个数
-						let allNum = xNum*yNum; //浏览器窗口内总共可以放置元素的个数
+						let allNum = xNum * yNum; //浏览器窗口内总共可以放置元素的个数
 						//当需要放置的元素的个数超过浏览器窗口内总共可以放置的元素的个数时，则返回
 						if (num >= allNum) {
 							return false;
@@ -161,7 +157,7 @@
 							yStart = 0;
 						let arr = [];
 						while (num) {
-							var pointer = Math.floor(Math.random() * allNum) ; //向下取整取出0到allnum之间的任意一个整数
+							var pointer = Math.floor(Math.random() * allNum); //向下取整取出0到allnum之间的任意一个整数
 							// 如果数组_tmpArray中不存在第pointer值，则继续
 							if (!_tmpArray[pointer]) {
 								continue;
@@ -188,9 +184,13 @@
 				}
 			},
 			pushToken(item, index, e) { //收取token
+				if (this.flog) {
+					return
+				}
+				this.flog = true
 				this.initToken += 1;
 				this.tokenList[index].leftVal = 30;
-				this.tokenList[index].topVal = -this.tokenWidth -100;
+				this.tokenList[index].topVal = -this.tokenWidth - 60;
 				setTimeout(() => {
 					this.tokenList[index].display = 'none';
 					this.takePan(item.value);
@@ -199,7 +199,7 @@
 						this.bgColor1 = this.bgImage2;
 						this.isActive = true;
 					}
-				}, 1000);
+				}, 800);
 			},
 			async takePan(token) {
 				let res = await this.api.homeToken().takePan({
@@ -208,6 +208,7 @@
 				if (res.data.status == 200) {
 					this.panBalance += Number(token)
 				}
+				this.flog = false
 			},
 			getAllBalance() {
 				getBalance().then(data => {
@@ -218,7 +219,7 @@
 				getForBalance().then(data => {
 					this.forceBalance = data.balance
 				})
-		}
+			}
 		},
 		onLoad() {
 			this.getMainSlider();
@@ -284,7 +285,7 @@
 
 	.token-area {
 		width: 100%;
-		height: 600upx;
+		height: 45%;
 		position: relative;
 		// overflow: hidden;
 		background-repeat: no-repeat;
@@ -320,8 +321,10 @@
 
 	.token-content {
 		width: 100%;
-		height: 500upx;
+		height: 80%;
 		position: relative;
+		background-repeat: no-repeat;
+		background-position: center;
 
 		.token {
 			position: absolute;
@@ -331,7 +334,7 @@
 
 			z-index: 66;
 			transition-property: all;
-			transition-duration: 1.5s;
+			transition-duration: 0.8s;
 			transition-timing-function: ease-out;
 
 			.token-icon {
@@ -488,10 +491,10 @@
 		width: 50%;
 		height: 70%;
 		position: absolute;
-		top: 40%;
+		top: 50%;
 		left: 50%;
-		margin-left: -27%;
-		margin-top: -27%;
+		margin-left: -27.5%;
+		margin-top: -27.5%;
 		border: #6b5e5e solid 8px;
 		opacity: 0.5;
 		border-radius: 9999px;

@@ -40,11 +40,14 @@
 						<p>{{like/10}}</p>
 						<image src="../../static/img/main/daily/comment.svg" @tap.stop="showComm"></image>
 						<p>{{item.com_count}}</p>
+
+						<image src="../../static/img/daily/on.svg" @tap.stop="showComm"></image>
 					</view>
 					<view class="block">{{item.commentContent}}</view>
 					<!-- 弹幕 -->
 					<view class="block-bullet" ref="bullet" @beforeEnter="beforeEnter" @enter='enter'>
-						<text v-for="(buItem, buIndex) in bulletList" :key="buIndex" style="display: block;">{{buItem}}</text>
+						<text v-for="(item, buIndex) in bulletList" :key="buIndex" :style="{'left':item.leftVal+'px','top':item.topVal+'px','display':item.display}"
+						 v-bind:class="{'topTobottom-1':Math.random()>0.4,'topTobottom':Math.random()<0.4}">{{buItem}}</text>
 					</view>
 					<!-- 日志图片 -->
 					<view class="img-hold" ref="img">
@@ -100,7 +103,6 @@
 </template>
 
 <script>
-	
 	import formatDate from '../../common/js/date.js';
 	import throttle from "../../common/js/utils.js"
 	import {
@@ -118,7 +120,7 @@
 	const MAX_DM_COUNT = 6;
 	const CHANNEL_COUNT = 10;
 	export default {
-		
+
 		data() {
 			return {
 				dynInfo: '',
@@ -142,7 +144,8 @@
 				loading: 1,
 				flog: true,
 				time: '',
-				disabled:false
+				disabled: false,
+
 			}
 		},
 		methods: {
@@ -165,9 +168,10 @@
 						this.uid = this.dynInfo[0].uid;
 					}
 					// 获取弹幕
-					getBullet(this.did).then(data => {
-						this.bulletList = data.content;
-					});
+					// getBullet(this.did).then(data => {
+					// 	this.bulletList = data.content;
+					// });
+					this.getAllBullet()
 					likeCount(this.did).then(data => {
 						this.like = data;
 					})
@@ -265,11 +269,11 @@
 					// 		this.findDyn(2);
 					// 	}
 					// }, 1000);
-					like(this.did, 1).then(data=>{
+					like(this.did, 1).then(data => {
 						likeCount(this.did).then(data => {
-							this.like = data 
+							this.like = data
 						})
-					});	
+					});
 				}
 			},
 			// endLike() {
@@ -324,7 +328,7 @@
 				}
 				if (e.detail.current == 0) {
 					this.findDyn(1);
-					
+
 				}
 			},
 			// 评论
@@ -376,6 +380,13 @@
 					})
 				}
 			},
+			//获取弹幕
+			getAllBullet() {
+				getBullet(this.did).then(data => {
+					this.bulletList = data.content;
+				});
+
+			}
 
 		},
 		onLoad() {
@@ -392,7 +403,7 @@
 		},
 		onReachBottom() {
 			console.log("onReachBottom")
-		},   
+		},
 		onPullDownRefresh() {
 			this.loadFindDyn();
 			setTimeout(function() {
@@ -759,7 +770,7 @@
 		color: #FFFFFF;
 	}
 
-	@keyframes barrage1 {
+	@keyframes barrage {
 		from {
 			left: 100%;
 			transform: translate3d(0, 50upx, 0);

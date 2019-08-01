@@ -331,6 +331,24 @@
 			}
 		},
 		{
+			"path": "pages/purse/password",
+			"style": {
+				"navigationBarTitleText": "資金密碼",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/purse/blockChain",
+			"style": {
+				"navigationBarTitleText": "區塊鏈地址",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
 			"path": "pages/passport/passport",
 			"style": {
 				"navigationBarTitleText": "星球護照",

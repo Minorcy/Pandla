@@ -30,10 +30,15 @@
 				dynContent: '',
 				location: '所在位置',
 				showType: '誰可以看',
-				remain: '提醒誰看'
+				remain: '提醒誰看',
+				flog:false
 			}
 		},
 		onNavigationBarButtonTap() {
+			if(this.flog){
+				return
+			}
+			this.flog = true
 			upload(this.imgTemp).then(data => {
 				// console.log(data)
 				if(data != '') {
@@ -43,6 +48,7 @@
 								delta: 1
 							});
 						}
+						this.flog = false
 					});
 				}
 				

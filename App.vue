@@ -148,7 +148,7 @@
 		flex: 1;
 		flex-direction: column;
 		color: #EFEFF4;
-		background: #000000;
+		background: #131D21;
 		border-top: solid;
 		border-width: 2upx;
 		border-top-color: #4CD964;

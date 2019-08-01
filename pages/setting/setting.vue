@@ -40,12 +40,16 @@
 </script>
 
 <style lang="scss" scoped>
+	.pages-content{
+		background-color: #131D21;
+	}
 	.btn-primary {
 		width: 100%;
 		text-align: left;
 		background-color: transparent;
 		color: #EFEFF4;
 		margin-top: 20upx;
+		font-size: 15px;
 	}
 	
 	ul {

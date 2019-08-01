@@ -862,9 +862,9 @@ export const getPollTop = () => new Promise((resolve, reject) => {
 
 /*********************PAN资产账本***************************/
 //PAN币余额
-export const getBalance = (pageSize) => new Promise((resolve, reject) => {
+export const getBalance = () => new Promise((resolve, reject) => {
 	uni.request({
-		url: panUrl + 'getBalance?pageSize='+pageSize,
+		url: panUrl + 'getBalance',
 		header: {
 			'token': Token
 		},
@@ -894,6 +894,13 @@ export const getBill = (pageSize) => new Promise((resolve, reject) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
+			if (res.data.status == 404) {
+				resolve(null)
+				uni.showToast({
+					icon: 'none',
+					title: '暫無更多數據'
+				});
+			};
 		},
 		fail: (err) => {
 			uni.showToast({
@@ -953,9 +960,9 @@ export const getChange_24h = () => new Promise((resolve, reject) => {
 
 /*********************原力账本***************************/
 // 原力余额
-export const getForBalance = (pageSize) => new Promise((resolve, reject) => {
+export const getForBalance = () => new Promise((resolve, reject) => {
 	uni.request({
-		url: forceUrl + 'getBalance?pageSize=' + pageSize,
+		url: forceUrl + 'getBalance' ,
 		header: {
 			'token': Token
 		},
@@ -985,6 +992,13 @@ export const getForBill = (pageSize) => new Promise((resolve, reject) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
+			if (res.data.status == 404) {
+				resolve(null)
+				uni.showToast({
+					icon: 'none',
+					title: '暫無更多數據'
+				});
+			};
 		},
 		fail: (err) => {
 			uni.showToast({

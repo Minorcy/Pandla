@@ -1,7 +1,7 @@
 <template>
 	<view class="page">
 		<view class="logo">
-			<text>IXX.COM 欢迎您</text>
+			<image src="../../static/img/pan/ixxlogo.svg" mode="widthFix"></image>
 		</view>
 		<view class="title-wrap">
 			<text class="panel-title">注册</text>
@@ -95,13 +95,16 @@
 		width: 100%;
 
 		.logo {
-			width: 100%;
+			width: 60%;
 			height: 60px;
 			font-size: 24px;
 			color: aqua;
 			text-align: center;
 			line-height: 60px;
 			margin: 20px auto;
+			image{
+				width: 100%
+			}
 		}
 
 		.title-wrap {

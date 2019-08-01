@@ -84,7 +84,7 @@
 					</view>
 				</li>
 			</ul>
-			<button class="pan-list-load" @tap="loadMore()" v-if="labelList == 'budget'">點擊查看更多</button>
+			<button class="pan-list-load" @tap="loadMore()" v-if="labelList == 'budget' && isShow != true ">點擊查看更多</button>
 		</view>
 	</view>
 </template>
@@ -103,7 +103,8 @@
 				labelList: 'budget',
 				budgetText: 'black',
 				taskText: 'gray',
-				pageSize:10
+				pageSize:10,
+				isShow :false
 			}
 		},
 		methods: {
@@ -140,9 +141,12 @@
 				}
 			},
 			loadMore(){
-				
 				getForBill(this.pageSize).then(data => {
-					this.listInfo = data;
+					if(data == null){
+						this.isShow = true;
+						return 
+					}
+					this.listInfo = this.listInfo.concat(data);
 					this.pageSize+=10
 				});
 			}
@@ -176,7 +180,7 @@
 			}
 
 			&-freeze {
-				font-size: 25upx;
+				font-size: 30upx;
 				padding: 20upx;
 				clear: both;
 			}
@@ -201,7 +205,7 @@
 			}
 
 			&-context {
-				font-size: 25upx;
+				font-size: 30upx;
 				line-height: 45upx;
 			}
 
@@ -252,12 +256,12 @@
 			}
 
 			&-time {
-				font-size: 25upx;
+				font-size: 30upx;
 				color: #979797;
 			}
 
 			&-number {
-				font-size: 25upx;
+				font-size: 30upx;
 				color: #CD2626;
 			}
 		}
@@ -301,6 +305,8 @@
 			margin-top:10px;
 			display: flex;
 			justify-content: space-around; 
+			font-size: 10px;
+			box-sizing: border-box;
 			view {
 				width: 30px;
 				display: flex;
@@ -308,19 +314,25 @@
 				text:nth-child(1) {
 					width: 30px;
 					height: 30px;
+					font-size: 16px;
+					line-height: 30px;
 					background: #131D21;
 					border-radius: 50%;
 					text-align: center
 				}
-
 				text:nth-child(2) {
 					margin-top:10px;
-					font-size: 8px;
+					font-size: 10px;
 					font-weight: 400;
 					color: #8E8E93;
 					line-height: 11px;
+					text-align: center
 				}
+				
 			}
 		}
+	}
+	.pan-list-load{
+		background-color: #EFEFF4;;
 	}
 </style>

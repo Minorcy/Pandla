@@ -307,7 +307,6 @@
 				line-height: 25px;
 				text {
 					display: block;
-					letter-spacing: 2px;
 					color: #cdcdcd !important;
 				}
 

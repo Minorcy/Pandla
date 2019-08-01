@@ -81,7 +81,7 @@
 					</view>
 				</li>
 			</ul>
-			<button class="pan-list-load" @tap="loadMore()" v-if="isShow && labelList == 'budget'">點擊查看更多</button>
+			<button class="pan-list-load" @tap="loadMore()" v-if="isShow && labelList == 'budget' && isShow ==true">點擊查看更多</button>
 		</view>
 
 	</view>
@@ -169,6 +169,10 @@
 			// }
 			loadMore() {
 				getBill(this.loadingType).then(data => {
+					if(data == null){
+						this.isShow = false
+						return
+					}
 					this.listInfo = this.listInfo.concat(data)
 					this.loadingType += 10
 					console.log(this.listInfo)
@@ -410,5 +414,8 @@
 		text-align: center;
 		font-size: 30upx;
 		color: #979797;
+	}
+	.pan-list-load{
+		background-color: #EFEFF4;;
 	}
 </style>
