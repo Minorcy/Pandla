@@ -8,7 +8,7 @@ const api = function(token) {
 		async getIndexPan() {
 			let res = await uniRequest.get('/v1/pan/getIndexPan', {
 				header: {
-					"token": token
+					"token": Token
 				}
 			}).then(respons => {
 				console.log(respons)

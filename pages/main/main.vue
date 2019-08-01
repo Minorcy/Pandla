@@ -111,7 +111,10 @@
 				let res = await this.api.homeToken(Token).getIndexPan();
 				if (res.data.status == 200) {
 					console.log(res.data.data)
-					this.tokens =res.data.data.slice(0,14)
+					if(res.data.data.length > 14){
+						this.tokens =res.data.data.slice(0,14)
+					}
+					this.tokens =res.data.data
 					if (this.tokens.length == 0) {
 						this.bgColor = this.bgImage1;
 						// this.bgColor1 = this.bgImage2;
