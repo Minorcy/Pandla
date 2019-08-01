@@ -1,5 +1,5 @@
 <template>
-	<view class="main-content">
+	<view class="main-content" @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend">
 		<!-- <view v-if="hasLogin" class="hello"></view>
         <view v-if="!hasLogin" class="hello"></view> -->
 		<view id="header" class="header">
@@ -88,10 +88,77 @@
 				panBalance: 0,
 				forceBalance: 0,
 				isActive: false,
+<<<<<<< HEAD
 				flog: false,
+=======
+				flag: 0,
+				text: '',
+				lastX: 0,
+				lastY: 0
+>>>>>>> 154616c587a247ffd1e6bdc470325de5f71e205f
 			}
 		},
 		methods: {
+			handletouchmove: function(event) {
+				// console.log(event)
+				if (this.flag !== 0) {
+					return;
+				}
+				let currentX = event.touches[0].pageX;
+				let currentY = event.touches[0].pageY;
+				let tx = currentX - this.lastX;
+				let ty = currentY - this.lastY;
+				let text = '';
+				this.mindex = -1;
+				//左右方向滑动
+				if (Math.abs(tx) > Math.abs(ty)) {
+					if (tx < 0) {
+						text = '向左滑动';
+						console.log("向左滑动");
+						uni.navigateTo({
+							url: '/pages/nearby/nearby',
+							animationType: 'pop-in',
+							animationDuration: 200
+						});
+						this.flag = 1;
+						//  this.getList();  //调用列表的方法
+					} else if (tx > 0) {
+						text = '向右滑动';
+						console.log("向右滑动");
+						uni.navigateTo({
+							url: '/pages/daily/daily',
+							animationType: 'pop-out',
+							animationDuration: 200
+						});
+						this.flag = 2;
+					}
+				}
+				//上下方向滑动
+				else {
+					if (ty < 0) {
+						text = '向上滑动';
+						this.flag = 3;
+						//  this.getList();  //调用列表的方法
+					} else if (ty > 0) {
+						text = '向下滑动';
+						this.flag = 4;
+					}
+				}
+
+				//将当前坐标进行保存以进行下一次计算
+				this.lastX = currentX;
+				this.lastY = currentY;
+				this.text = text;
+			},
+			handletouchstart: function(event) {
+				// console.log(event)
+				this.lastX = event.touches[0].pageX;
+				this.lastY = event.touches[0].pageY;
+			},
+			handletouchend: function(event) {
+				this.flag = 0;
+				this.text = '没有滑动';
+			},
 			toPan() {
 				uni.switchTab({
 					url: '../pan/pan'
@@ -100,17 +167,25 @@
 			getMainSlider() {
 				mainSlider().then(data => {
 					this.slides = data.slice(0, 7);
+<<<<<<< HEAD
 					// console.log(this.slides)
+=======
+					console.log(this.slides)
+>>>>>>> 154616c587a247ffd1e6bdc470325de5f71e205f
 				});
 			},
 			async getToken() { //获取token
 				let res = await this.api.homeToken(Token).getIndexPan();
 				if (res.data.status == 200) {
+<<<<<<< HEAD
 					console.log(res.data.data)
 					if (res.data.data.length > 14) {
 						this.tokens = res.data.data.slice(0, 14)
 					}
 					this.tokens = res.data.data
+=======
+					this.tokens = res.data.data.slice(0, 14)
+>>>>>>> 154616c587a247ffd1e6bdc470325de5f71e205f
 					if (this.tokens.length == 0) {
 						this.bgColor = this.bgImage1;
 						// this.bgColor1 = this.bgImage2;
@@ -190,7 +265,11 @@
 				this.flog = true
 				this.initToken += 1;
 				this.tokenList[index].leftVal = 30;
+<<<<<<< HEAD
 				this.tokenList[index].topVal = -this.tokenWidth - 60;
+=======
+				this.tokenList[index].topVal = -this.tokenWidth - 100;
+>>>>>>> 154616c587a247ffd1e6bdc470325de5f71e205f
 				setTimeout(() => {
 					this.tokenList[index].display = 'none';
 					this.takePan(item.value);

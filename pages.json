@@ -11,7 +11,7 @@
 				}
 			}
 		},
-		
+
 		{
 			"path": "pages/login/login",
 			"style": {
@@ -23,24 +23,6 @@
 		},
 		{
 			"path": "pages/reg/reg",
-			"style": {
-				"navigationBarTitleText": "",
-				"app-plus": {
-					"bounce": "none"
-				}
-			}
-		},
-		{
-			"path": "pages/reg/Privacypolicy",
-			"style": {
-				"navigationBarTitleText": "",
-				"app-plus": {
-					"bounce": "none"
-				}
-			}
-		},
-		{
-			"path": "pages/reg/termsofservice",
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
@@ -101,6 +83,7 @@
 				"enablePullDownRefresh": false,
 				"navigationBarTitleText": "",
 				"app-plus": {
+					"animationType": "slide-in-left",
 					"titleNView": false,
 					"bounce": "none"
 				}
@@ -116,8 +99,7 @@
 							"fontSize": "35upx"
 						}]
 					},
-					"bounce": "none",
-					"softinputNavBar":"none"
+					"bounce": "none"
 				}
 			}
 		}, {
@@ -146,8 +128,7 @@
 				"enablePullDownRefresh": true,
 				"navigationBarTitleText": "星球游戲",
 				"app-plus": {
-					"bounce": "none",
-					"softinputNavBar":"none"
+					"bounce": "none"
 				}
 			}
 		},
@@ -155,10 +136,10 @@
 			"path": "pages/nearby/nearby",
 			"style": {
 				"navigationBarTitleText": "附近居民",
-				"onReachBottomDistance":50,
-				"enablePullDownRefresh":true,
+				"onReachBottomDistance": 50,
+				"enablePullDownRefresh": true,
 				"app-plus": {
-					 "softinputNavBar":"none"
+
 				}
 			}
 		},
@@ -173,8 +154,7 @@
 							"fontSize": "35upx"
 						}]
 					},
-					"bounce": "none",
-					"softinputNavBar":"none"
+					"bounce": "none"
 				}
 			}
 		},
@@ -213,8 +193,7 @@
 							"fontSize": "35upx"
 						}]
 					},
-					"bounce": "none",
-					"softinputNavBar":"none"
+					"bounce": "none"
 				}
 			}
 		},
@@ -234,8 +213,7 @@
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
-					"bounce": "none",
-					"softinputNavBar":"none"
+					"bounce": "none"
 				}
 			}
 		},
@@ -256,8 +234,7 @@
 							"color": "#999999"
 						}]
 					},
-					"bounce": "none",
-					"softinputNavBar":"none"
+					"bounce": "none"
 				}
 			}
 
@@ -269,8 +246,7 @@
 				"navigationBarTitleText": "",
 				"app-plus": {
 					"titleNView": false,
-					"bounce": "none",
-					"softinputNavBar":"none"
+					"bounce": "none"
 				}
 			}
 		}, {
@@ -282,26 +258,6 @@
 				}
 			}
 		},
-		{
-			"path": "pages/pan/ixx",
-			"style": {
-				"navigationBarTitleText": "IXX注册",
-				"app-plus": {
-					"bounce": "none",
-					"softinputNavBar":"none"
-				}
-			}
-		},
-		// {
-		// 	"path": "pages/pan/Register",
-		// 	"style": {
-		// 		"navigationBarTitleText": "IXX注册",
-		// 		"app-plus": {
-		// 			"bounce": "none",
-		// 			"softinputNavBar":"none"
-		// 		}
-		// 	}
-		// },
 
 		{
 			"path": "pages/ledger/asset",
@@ -331,24 +287,6 @@
 			}
 		},
 		{
-			"path": "pages/purse/password",
-			"style": {
-				"navigationBarTitleText": "資金密碼",
-				"app-plus": {
-					"bounce": "none"
-				}
-			}
-		},
-		{
-			"path": "pages/purse/blockChain",
-			"style": {
-				"navigationBarTitleText": "區塊鏈地址",
-				"app-plus": {
-					"bounce": "none"
-				}
-			}
-		},
-		{
 			"path": "pages/passport/passport",
 			"style": {
 				"navigationBarTitleText": "星球護照",
@@ -362,8 +300,7 @@
 			"style": {
 				"navigationBarTitleText": "實名認證",
 				"app-plus": {
-					"bounce": "none",
-					"softinputNavBar":"none"
+					"bounce": "none"
 				}
 			}
 		},
