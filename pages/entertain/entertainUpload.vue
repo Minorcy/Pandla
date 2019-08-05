@@ -1,67 +1,142 @@
 <template>
 	<view class="pages-content">
-		<view class="btn-label">
-			<button>酒吧相冊</button>
-			<button>營業執照</button>
+		<view class="barImg">
+			<text>營業執照</text>
+			<image :src="barImg" @tap="uploadImg(1)" mode="aspectFit"></image>
 		</view>
-		<view>
-			<image :src= "barImg" @tap="uploadImg(2)"></image>
-			<image :src= "licImg" @tap="uploadImg(3)"></image>
+		<view class="licImg">
+			<text>環境照片</text>
+			<image :src="licImg1" @tap="uploadImg(2)" mode="aspectFit"></image>
+			<image :src="licImg2" @tap="uploadImg(3)" mode="aspectFit"></image>
+			<image :src="licImg3" @tap="uploadImg(4)" mode="aspectFit"></image>
+			<image :src="licImg4" @tap="uploadImg(5)" mode="aspectFit"></image>
 		</view>
 	</view>
 </template>
 
 <script>
-	import {getImgTemp, upLogo} from '../../api/api.js';
+	import {
+		getImgTemp,
+		upload,
+		setBar
+	} from '../../api/api.js';
 	export default {
 		data() {
 			return {
 				barImg: '../../static/img/main/entertain/en-upload.svg',
-				licImg: '../../static/img/main/entertain/en-upload.svg'
+				licImg1: '../../static/img/main/entertain/en-upload.svg',
+				licImg2: '../../static/img/main/entertain/en-upload.svg',
+				licImg3: '../../static/img/main/entertain/en-upload.svg',
+				licImg4: '../../static/img/main/entertain/en-upload.svg',
+				barInfo: {}
 			}
 		},
 		methods: {
 			uploadImg(type) {
 				getImgTemp().then(data => {
-					if(type == 2) this.barImg = data;
-					if(type == 3) this.licImg = data;
-				});
-			}
-		},
-		onNavigationBarButtonTap() {
-			if(this.barImg == '../../static/img/main/entertain/en-upload.svg') {
+						if (type == 1) {
+							upload(data).then(data => {
+								this.barInfo.license = data
+								this.barImg = data;
+							})
+						}
+						if (type == 2) {
+							upload(data).then(data => {
+								this.barInfo.picture = data
+								this.licImg1 = data;
+							})
+
+						}
+						if (type == 3) {
+							upload(data).then(data => {
+								this.barInfo.picture1 = data
+								this.licImg2 = data;
+							})
+						}
+						if (type == 4) {
+							upload(data).then(data => {
+								this.barInfo.picture2 = data								
+								this.licImg3 = data;
+							})
+						}
+						if (type == 5) {
+							
+							upload(data).then(data => {
+								this.barInfo.picture3 = data								
+								this.licImg4 = data;
+							})
+						}
+
+
+					})
+
+				}
+		
+	},
+	onNavigationBarButtonTap() {
+			if (this.barImg == '../../static/img/main/entertain/en-upload.svg') {
 				uni.showToast({
 					icon: 'none',
-					title: '請上傳酒吧相冊圖片'
+					title: '請上傳環境相圖片'
 				});
-			} else if(this.licImg == '../../static/img/main/entertain/en-upload.svg') {
+			} else if (this.licImg == '../../static/img/main/entertain/en-upload.svg') {
 				uni.showToast({
 					icon: 'none',
 					title: '請上傳營業執照圖片'
 				});
 			} else {
-				upLogo(this.barImg, 2);
-				upLogo(this.licImg, 3);
+				console.log(this.barInfo)
+				setBar(this.barInfo).then(data => {
+					uni.showToast({
+						icon: 'none',
+						title: '上传成功,請等待審核'
+					})
+					setTimeout(function() {
+						uni.navigateTo({
+							url: 'entertain'
+						});
+					}, 2000)
+				})
+
 			}
+		},
+
+		onLoad(options) {
+			this.barInfo = JSON.parse(options.barInfo)
+			console.log(this.barInfo)
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.btn-label {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
+	view text {
+		display: block
 	}
-	
-	button {
-		width: 50%;
-		border-radius: 0;
-		background-color: #D1D1D6;
-	}
-	
+
 	image {
 		width: 50%;
 		height: 375upx;
+	}
+
+	.barImg {
+		text {
+			text-align: center;
+			font-size: 18px;
+			margin: 5px;
+		}
+
+		image {
+			width: 100%
+		}
+	}
+
+	.licImg {
+		text {
+			text-align: center;
+			font-size: 18px;
+			margin: 5px;
+		}
+
+		image {}
 	}
 </style>

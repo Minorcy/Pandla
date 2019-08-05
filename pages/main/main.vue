@@ -5,29 +5,29 @@
 		<view id="header" class="header">
 			<navigator class="header-border" url='../ledger/asset'>
 				<image src="../../static/img/main/pan.svg" class="header-icon" style="opacity: 0.7;" />
-				<text>{{panBalance | toFixed(4)}}</text>
+				<text>PAN {{panBalance | toFixed(4)}}</text>
 			</navigator>
 			<navigator class="header-border" url='../ledger/focus'>
 				<image src="../../static/img/main/focus.svg" class="header-icon" />
-				<text>{{forceBalance}}</text>
+				<text>原力 {{forceBalance}}</text>
 			</navigator>
 		</view>
 		<view class="header-border" style="border:0.1upx solid #8F8F94;">
-			<image src="../../static/img/main/notice.png" class="header-icon" />
-			<text>公益基金池建設中，首次捐贈10個token星球返回10個。</text>
+			<image src="../../static/img/main/laba.gif" class="header-icon" />
+			<text>公益基金池建設中，首次捐贈10個PAN星球返回10個</text>
 		</view>
-		<view class="token-area">
+		<view class="token-area" :style="{'background-image':'url('+bgImage1+')'}">
 			<!-- <view class="welfare-content" @tap="toPan">
 				<image src="../../static/img/main/welfare.png" class="welfare-icon" />
 				<view class="welfare-text">星球公益</view>
 			</view> -->
 			<view class="planetPublic">
-				<view class="planetPublic-box">
+				<navigator url='../welfare/welfare' class="planetPublic-box">
 					<image src="../../static/img/main/welfare.png" class="welfare-icon" />
 					<navigator url='../welfare/welfare' class="planet-text">星球公益</navigator>
-				</view>
+				</navigator>
 			</view>
-			<view id="content" class="token-content " :style="{'background-image':'url('+bgImage1+')'}">
+			<view id="content" class="token-content ">
 				<!-- <token v-for="(item, index) in tokens" :key="index" class="mine-item topTobottom" :tokenValue="item" :index="index"
 				 @confirm="pushToken" /> -->
 				<view id="token" class="token topTobottom" v-for="(item, index) in tokenList" :style="{'left':item.leftVal+'px','top':item.topVal+'px','display':item.display}"
@@ -35,8 +35,9 @@
 					<image src="../../static/img/main/token.svg" class="token-icon"></image>
 					<view class="token-num">{{item.value}}</view>
 				</view>
-				<view :class="{ avatar: isActive }">
-				</view>
+
+			</view>
+			<view :class="{ avatar: isActive }">
 			</view>
 		</view>
 		<!-- swiper滑动器 -->
@@ -55,6 +56,7 @@
 
 <script>
 	//import token from '../../components/token.vue';
+	import uniNoticeBar from "../../components/uni-notice-bar/uni-notice-bar.vue"
 	import {
 		mainSlider
 	} from '../../common/js/json.js';
@@ -88,15 +90,15 @@
 				panBalance: 0,
 				forceBalance: 0,
 				isActive: false,
-<<<<<<< HEAD
 				flog: false,
-=======
 				flag: 0,
 				text: '',
 				lastX: 0,
 				lastY: 0
->>>>>>> 154616c587a247ffd1e6bdc470325de5f71e205f
 			}
+		},
+		components: {
+			uniNoticeBar
 		},
 		methods: {
 			handletouchmove: function(event) {
@@ -167,97 +169,98 @@
 			getMainSlider() {
 				mainSlider().then(data => {
 					this.slides = data.slice(0, 7);
-<<<<<<< HEAD
-					// console.log(this.slides)
-=======
-					console.log(this.slides)
->>>>>>> 154616c587a247ffd1e6bdc470325de5f71e205f
+					console.log(this.slides);
+					
 				});
 			},
-			async getToken() { //获取token
+			async getToken(Token) { //获取token
+			console.log(Token)
 				let res = await this.api.homeToken(Token).getIndexPan();
+				// console.log(res.data)
 				if (res.data.status == 200) {
-<<<<<<< HEAD
 					console.log(res.data.data)
 					if (res.data.data.length > 14) {
 						this.tokens = res.data.data.slice(0, 14)
-					}
-					this.tokens = res.data.data
-=======
-					this.tokens = res.data.data.slice(0, 14)
->>>>>>> 154616c587a247ffd1e6bdc470325de5f71e205f
-					if (this.tokens.length == 0) {
-						this.bgColor = this.bgImage1;
-						// this.bgColor1 = this.bgImage2;
-						this.isActive = true
 					} else {
-						// console.log("有")
-						this.bgColor = this.bgImage1;
-						this.isActive = false;
+						this.tokens = res.data.data
 					}
-					let num = this.tokens.length;
-					let iconWidth;
-					let iconHeight;
-					uni.createSelectorQuery().select(".planetPublic-box").fields({
-						size: true,
-					}, (data) => {
-						iconWidth = data.width;
-						this.tokenWidth = iconWidth;
-						iconHeight = data.height;
-					}).exec();
-					uni.createSelectorQuery().select("#content").fields({
-						size: true,
-					}, (data) => {
-						//planetPublic-box
-						let targetHeight = data.height;
-						let targetWidth = data.width;
-						this.targetWidth = targetWidth;
-						let _tmpArray = [];
-						let html = "";
-						//当放置的元素的宽高大于容器的宽高时，直接返回
-						if (targetWidth < iconWidth || targetHeight < iconHeight) {
-							return false;
-						}
-						let xNum = parseInt(targetWidth / iconWidth, 10); //用浏览器的宽度除以一个元素的宽度可算出浏览器窗口内一行可以放置元素的个数
-						let yNum = parseInt(targetHeight / iconHeight, 10); //用浏览器的高度除以一个元素的高度可算出浏览器窗口内一列可以放置元素的个数
-						let allNum = xNum * yNum; //浏览器窗口内总共可以放置元素的个数
-						//当需要放置的元素的个数超过浏览器窗口内总共可以放置的元素的个数时，则返回
-						if (num >= allNum) {
-							return false;
-						}
-						for (let i = 0; i < allNum; i++) {
-							_tmpArray.push(i);
-						}
-						let xStart = 0,
-							yStart = 0;
-						let arr = [];
-						while (num) {
-							var pointer = Math.floor(Math.random() * allNum); //向下取整取出0到allnum之间的任意一个整数
-							// 如果数组_tmpArray中不存在第pointer值，则继续
-							if (!_tmpArray[pointer]) {
-								continue;
-							}
-
-							delete _tmpArray[pointer]; //删除数组_tmpArray中第pointer个值
-							yStart = parseInt(pointer / xNum, 10) * iconWidth;
-							xStart = (pointer % xNum) * iconHeight;
-							let o = {
-								value: this.tokens[num - 1],
-								leftVal: xStart,
-								topVal: yStart,
-								display: "block",
-								styleVal: {
-									'left': xStart + 'px',
-									'top': yStart + 'px'
-								}
-							}
-							arr.push(o);
-							num--;
-						}
-						this.tokenList = arr;
-					}).exec();
+					console.log(this.tokens)
 				}
+				// this.tokens = ["0.221","0.221","0.221","0.221","0.221",]
+				if (this.tokens.length == 0) {
+					this.bgColor = this.bgImage1;
+					// this.bgColor1 = this.bgImage2;
+					this.isActive = true;
+					
+				} else {
+					// console.log("有")
+					this.bgColor = this.bgImage1;
+					this.isActive = false;
+				}
+				let num = this.tokens.length;
+				let iconWidth;
+				let iconHeight;
+				uni.createSelectorQuery().select(".planetPublic-box").fields({
+					size: true,
+				}, (data) => {
+					iconWidth = data.width;
+					this.tokenWidth = iconWidth;
+					iconHeight = data.height;
+				}).exec();
+				uni.createSelectorQuery().select("#content").fields({
+					size: true,
+				}, (data) => {
+					//planetPublic-box
+					let targetHeight = data.height;
+					let targetWidth = data.width;
+					this.targetWidth = targetWidth;
+					let _tmpArray = [];
+					let html = "";
+					//当放置的元素的宽高大于容器的宽高时，直接返回
+					if (targetWidth < iconWidth || targetHeight < iconHeight) {
+						return false;
+					}
+					let xNum = parseInt(targetWidth / iconWidth, 10); //用浏览器的宽度除以一个元素的宽度可算出浏览器窗口内一行可以放置元素的个数
+					let yNum = parseInt(targetHeight / iconHeight, 10); //用浏览器的高度除以一个元素的高度可算出浏览器窗口内一列可以放置元素的个数
+					let allNum = xNum * yNum; //浏览器窗口内总共可以放置元素的个数
+					//当需要放置的元素的个数超过浏览器窗口内总共可以放置的元素的个数时，则返回
+					if (num >= allNum) {
+						return false;
+					}
+					for (let i = 0; i < allNum; i++) {
+						_tmpArray.push(i);
+					}
+					let xStart = 0,
+						yStart = 0;
+					let arr = [];
+					while (num) {
+						var pointer = Math.floor(Math.random() * allNum); //向下取整取出0到allnum之间的任意一个整数
+						// 如果数组_tmpArray中不存在第pointer值，则继续
+						if (!_tmpArray[pointer]) {
+							continue;
+						}
+
+						delete _tmpArray[pointer]; //删除数组_tmpArray中第pointer个值
+						yStart = parseInt(pointer / xNum, 10) * iconWidth;
+						xStart = (pointer % xNum) * iconHeight;
+						let o = {
+							value: this.tokens[num - 1].token,
+							id:this.tokens[num - 1].id,
+							leftVal: xStart,
+							topVal: yStart,
+							display: "block",
+							styleVal: {
+								'left': xStart + 'px',
+								'top': yStart + 'px'
+							}
+						}
+						arr.push(o);
+						num--;
+					}
+					this.tokenList = arr;
+				}).exec();
 			},
+
 			pushToken(item, index, e) { //收取token
 				if (this.flog) {
 					return
@@ -265,24 +268,24 @@
 				this.flog = true
 				this.initToken += 1;
 				this.tokenList[index].leftVal = 30;
-<<<<<<< HEAD
-				this.tokenList[index].topVal = -this.tokenWidth - 60;
-=======
-				this.tokenList[index].topVal = -this.tokenWidth - 100;
->>>>>>> 154616c587a247ffd1e6bdc470325de5f71e205f
+				this.tokenList[index].topVal = -this.tokenWidth - 64;
 				setTimeout(() => {
 					this.tokenList[index].display = 'none';
-					this.takePan(item.value);
+					this.takePan(item.value ,item.id);
 					if (this.initToken >= this.tokens.length) {
 						this.bgColor = this.bgImage1;
 						this.bgColor1 = this.bgImage2;
 						this.isActive = true;
 					}
 				}, 800);
+				if (this.tokenList.length == 1) {
+					this.getToken()
+				}
 			},
-			async takePan(token) {
-				let res = await this.api.homeToken().takePan({
-					numbers: Number(token)
+			async takePan(token ,id) {
+				let res = await this.api.homeToken(Token).takePan({
+					numbers: Number(token),
+					id : id
 				});
 				if (res.data.status == 200) {
 					this.panBalance += Number(token)
@@ -300,11 +303,12 @@
 				})
 			}
 		},
-		onLoad() {
+		onLoad(options) {
 			this.getMainSlider();
-			this.getToken();
 			this.getAllBalance();
 			this.getAllForBalance();
+			let Token = uni.getStorageSync('USERS_KEY').token;
+			this.getToken(Token);
 		},
 		onShow() {
 			this.getAllBalance();
@@ -362,9 +366,15 @@
 		white-space: nowrap; //溢出不换行
 	}
 
+	.text-scroll {
+		margin-top: 6px;
+		font-size: 25upx;
+		z-index: 10
+	}
+
 	.token-area {
 		width: 100%;
-		height: 45%;
+		height: 600upx;
 		position: relative;
 		// overflow: hidden;
 		background-repeat: no-repeat;
@@ -392,7 +402,7 @@
 			}
 
 			.planet-text {
-				font-size: 22upx;
+				font-size: 24upx;
 				color: #4CD964;
 			}
 		}
@@ -400,10 +410,8 @@
 
 	.token-content {
 		width: 100%;
-		height: 80%;
+		height: 500upx;
 		position: relative;
-		background-repeat: no-repeat;
-		background-position: center;
 
 		.token {
 			position: absolute;
@@ -413,7 +421,7 @@
 
 			z-index: 66;
 			transition-property: all;
-			transition-duration: 0.8s;
+			transition-duration: 1s;
 			transition-timing-function: ease-out;
 
 			.token-icon {
@@ -567,18 +575,21 @@
 	}
 
 	.avatar {
-		width: 50%;
-		height: 70%;
+		width: 170px;
+		height: 170px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		margin-left: -27.5%;
-		margin-top: -27.5%;
+		margin-left: -93px;
+		margin-top: -93px;
 		border: #6b5e5e solid 8px;
-		opacity: 0.5;
+		opacity: 0.6;
 		border-radius: 9999px;
+		-webkit-transform: scale(1.05);
+		-ms-transform: scale(1.05);
 		transform: scale(1.05);
-		animation: pulse 3s linear infinite;
+		-webkit-animation: pulse-data-v-592699c8 3s linear infinite;
+		animation: pulse-data-v-592699c8 3s linear infinite;
 	}
 
 	@-webkit-keyframes pulse {

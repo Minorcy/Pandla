@@ -13,7 +13,7 @@
 				</view>
 			</view>
 			<view class="pan-bottom">
-				<text>星球居民达到200万 用户获得的PAN可以在二级市场流通交易</text>
+				<text>星球居民达到200万時用戶獲得的PAN可以在二級市場交易流通</text>
 				<text decode="true">交易&gt;</text>
 			</view>
 		</view>
@@ -317,6 +317,10 @@
 			.invite {
 				
 			}
+			.pan-label-context{
+				font-size: 14px;
+				color: #888;
+			}
 		}
 
 		&-list {
@@ -339,17 +343,18 @@
 			}
 
 			&-action {
-				font-size: 30upx;
+				font-size: 14px;
 			}
 
 			&-time {
-				font-size: 25upx;
+				font-size: 12px;
 				color: #979797;
+				float: right;
 			}
 
 			&-number {
 				color: #CD2626;
-				font-size: 30upx;
+				font-size:14px;
 			}
 		}
 

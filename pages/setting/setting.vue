@@ -1,63 +1,85 @@
 <template>
-    <view class="pages-content">
-		<ul>
-			<li v-for="(item, index) in settings" :key=index>
+	<view class="pages-content">
+		<!-- <ul>
+			<li v-for="(item, index) in settings" :key=index >
 				<button
 					class="btn-primary"
 					hover-class="hover-primary" 
-					:style="{background: item.specColor}">
+					:style="{background: item.specColor}" @tap="toIntroduce(index)">
 					{{item.label}}
 				</button>
 			</li>
+		</ul> -->
+		<ul>
+			<li title="" note="" class="btn-primary" @tap="toIntroduce()">關於PANDLA</li>
+			<li title="" note=" " class="btn-primary">版本更新<text>公測建設1.0</text></li>
+			<li title="" note="" class="btn-primary">清除緩存</li>
+			<li title="" note="" class="btn-primary" @tap="totermsofservice()">服務條款</li>
+			<li title="" note="" class="btn-primary" @tap="toPrivacypolicy()" >隱私政策</li>
+			<li title="" note="" class="btn-primary">聯係我們 <text>media@pandla.io</text></li>
+
 		</ul>
-    </view>
+	</view>
 </template>
 
 <script>
-    export default {
+	export default {
 		data() {
 			return {
-				settings: [{
-					label: '關於PANDLA'
-				}, {
-					label: '版本更新'
-				}, {
-					label: '清除緩存'
-				}, {
-					label: '服務條款'
-				}, {
-					label: '隱私政策'
-				}, {
-					label: '全球招募超級節點',
-					specColor: '-webkit-linear-gradient(left, #033A3A, #032F06)'
-				}, {
-					label: '聯係我們',
-					specColor: '-webkit-linear-gradient(left, #033A3A, #032F06)'
-				}]
+				}
+		},
+		methods: {
+			toIntroduce() {
+				uni.navigateTo({
+					url: "introduce"
+				});
+			},
+			totermsofservice(){
+				uni.navigateTo({
+					url: "/pages/reg/termsofservice"
+				});	
+			},
+			toPrivacypolicy(){
+				uni.navigateTo({
+					url: "/pages/reg/Privacypolicy"
+				});
+				
 			}
+			
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.pages-content{
+	.pages-content {
 		background-color: #131D21;
 	}
+
 	.btn-primary {
-		width: 100%;
+		width: 95%;
 		text-align: left;
+		margin-left: 10px;
 		background-color: transparent;
 		color: #EFEFF4;
 		margin-top: 20upx;
-		font-size: 15px;
+		font-size: 14px;
+		line-height: 35px
 	}
-	
+
+	text {
+		display: inline-block;
+		float: right;
+		color: #007aff
+	}
+
 	ul {
+		box-sizing: border-box;
 		margin: 0;
-		padding: 0;
+		padding: 5px;
 	}
-	
+
 	li {
-		border-bottom:1upx #EFEFF4 solid;
+		padding: 1px;
+		border-bottom: 1upx #EFEFF4 solid;
 	}
 </style>

@@ -1,7 +1,6 @@
 {
   "enablePullDownRefresh": true,
-  "navigationBarTitleText": "星球游戲",
+  "navigationBarTitleText": "星球遊戲",
   "bounce": "none",
-  "softinputNavBar": "none",
   "usingComponents": {}
 }

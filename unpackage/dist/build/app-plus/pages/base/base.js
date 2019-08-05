@@ -1,2 +1,2 @@
-setCssToHead(["wx-image { width: 100%; height: 55%; margin-top: ",[0,20],"; }\n",],undefined,{path:"./pages/base/base.wxss"})();
+setCssToHead([".",[1],"pages-content wx-image{ width: 100%; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 5px; }\n",],undefined,{path:"./pages/base/base.wxss"})();
 document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/base/base.wxml') } }));

@@ -41,7 +41,7 @@
 				<image src="../../static/img/daily/X.svg" @tap.stop="hidComm()"></image>
 			</view>
 			<scroll-view class="comment" scroll-y="true" @touchmove.stop.prevent="moveHandle">
-				<view class="nocomm" v-if="!commList.length"><text>暂无评论和回复,快来抢沙发吧!</text></view>
+				<view class="nocomm" v-if="!commList.length"><text>暫無評論和回复,快來搶沙發吧!</text></view>
 				<view scroll-y="true" class="comment-section-details" v-for="(ite, ind) in commList" :key="ind">
 					<view class="comment-section-comm">
 						<view class="comm-ite">
@@ -53,7 +53,7 @@
 							</view>
 						</view>
 						<p class="comment-section-reply" v-if="ite.reply != ''" v-for="(it,idx) in ite.reply" :key="idx">
-							<text class="color">作者</text>
+							<text class="color">{{it.name}}</text>
 							<text>: {{it.content}}</text>
 						</p>
 					</view>
@@ -65,7 +65,7 @@
 			</scroll-view>
 		</view>
 		<view class="publish" @tap.stop="publishDyn()">
-			<image src="../../static/img/topic/publish.svg" mode=""></image>
+			<image src="../../static/img/topic/publish.svg" mode="widthFix"></image>
 		</view>
 		<view class="load" v-if="showLoadMore">{{loadMoreText}}</view>
 	</view>
@@ -89,7 +89,7 @@
 				commCont: 0,
 				showComment: false,
 				commContent: '',
-				commplaceholder: '為保證用戶隱私，只可以看自己的評論',
+				commplaceholder: '請輸入評論內容',
 				likeimg: "../../static/img/topic/like.svg",
 				unlikeimg: "../../static/img/topic/fabulous.svg",
 				islike: false,
@@ -101,7 +101,7 @@
 				commIndex: '',
 				height: "",
 				pageSize:10,
-				loadMoreText: "上拉加载更多",
+				loadMoreText: "上拉加載更多",
 				showLoadMore: false,
 			}
 		},
@@ -162,7 +162,7 @@
 				if (this.commContent == "") {
 					uni.showToast({
 						icon: 'none',
-						title: '请输入评论'
+						title: '請輸入評論'
 					});
 				} else if (this.addType == 'reply') {
 					topicReply(this.topicRid, this.commContent).then(data => {
@@ -177,7 +177,7 @@
 								icon: 'none',
 								title: '回復成功'
 							})
-							this.commplaceholder = '為保證用戶隱私，只可以看自己的評論'; // 清除占位符
+							this.commplaceholder = '請輸入評論內容'; // 清除占位符
 							this.topicList[this.commIndex].commCount += 1
 						})
 					})
@@ -190,11 +190,11 @@
 					})
 					uni.showToast({
 						icon: 'none',
-						title: '回復成功'
+						title: '評論成功'
 					})
 					this.commContent = ''
 					this.addType = ''; // 重置发送按钮类型
-					this.commplaceholder = '為保證用戶隱私，只可以看自己的評論'; // 清除占位符
+					this.commplaceholder = '請輸入評論內容'; // 清除占位符
 					this.topicList[this.commIndex].commCount += 1
 				}
 
@@ -224,7 +224,7 @@
 				this.pageSize+=10;
 				if(!data){
 					this.showLoadMore= true
-					this.loadMoreText =  "没有更多数据了!"
+					this.loadMoreText =  "暫無更多數據!"
 					return
 				}
 				this.showLoadMore = true;
@@ -361,7 +361,7 @@
 					.content-text {
 						display: inline-block;
 						color: #000;
-						font-size: 16px;
+						font-size: 14px;
 						text-align: justify;
 						text-justify: newspaper;
 						word-break: break-all;
@@ -415,11 +415,11 @@
 			position: fixed;
 			bottom: 10px;
 			left: 50%;
-			margin-left: -20px;
+			margin-left: -60px;
 			text-align: center;
 
 			image {
-				width: 30px;
+				width: 120px;
 				height: 30px;
 			}
 		}
@@ -542,7 +542,7 @@
 					box-sizing: border-box;
 					color: #000000;
 					background-color: #B7B7B7;
-					border-radius: 50upx;
+					
 					font-size: 30upx;
 
 					input {

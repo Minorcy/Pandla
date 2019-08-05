@@ -1,5 +1,5 @@
 
-._ul.data-v-21f43d68 {
+._ul.data-v-36b2076c {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -16,31 +16,31 @@
 	padding: 50rpx;
 	font-size: 30rpx;
 }
-._li.data-v-21f43d68 {
+._li.data-v-36b2076c {
 	list-style: none;
 	border-bottom: solid 1rpx #4CD964;
 	margin-top: 30rpx;
 }
-._li button.data-v-21f43d68 {
+._li button.data-v-36b2076c {
 	width: 180rpx;
 	float: right;
 	margin-bottom: 10rpx;
 }
-._li text.data-v-21f43d68:nth-child(2) {
+._li text.data-v-36b2076c:nth-child(2) {
 	position: absolute;
 }
-text.data-v-21f43d68 {
+text.data-v-36b2076c {
 	margin: 20rpx 0 0 20rpx;
 }
-image.data-v-21f43d68 {
+image.data-v-36b2076c {
 	width: 72rpx;
 	height: 72rpx;
 	border-radius: 50%;
 }
-.no-follow.data-v-21f43d68{
+.no-follow.data-v-36b2076c{
 	text-align: center;
 }
-.todaily.data-v-21f43d68{
+.todaily.data-v-36b2076c{
 	color:#007AFF ;
 }
 

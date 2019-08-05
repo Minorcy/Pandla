@@ -1,6 +1,6 @@
 <template>
 	<view class="pages-content">
-		<image src="../../static/img/strategy/strategy.svg" mode="widthFix"></image>
+		<image src="../../static/img/strategy/strategy.png" mode="widthFix"></image>
 	</view>
 </template>
 
@@ -12,7 +12,8 @@
 
 	}
 	image{
-		
+		box-sizing: border-box;
+		padding: 5px;
 		width: 100%;
 		}
 	

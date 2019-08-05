@@ -1,36 +1,17 @@
 <template>
 	<view class="pages-content">
-		<view class="box">
-			<loading></loading>
-			<text>頁面正在建設中
-				程序員小哥哥正在努力</text>
+		<image src="../../static/img/user/recruit.svg" mode="widthFix"></image>
 		</view>
-	</view>
 </template>
 
 <script>
-	import loading from '../../components/loading8.vue'
-	export default{
-		components:{
-			loading
-		}
-	}
+	
 </script>
 
 <style>
-	.box{
-		position: relative;
-		margin: 10px auto;
+	.pages-content image{
 		width: 100%;
-		height: 40%;
-		
-	}
-	text{
-		position: absolute;
-		top: 70%;
-		left: 50%;
-		transform: translate(-50%,-50%);
-		font-size: 16px;
-		text-align: center;
+		box-sizing: border-box;
+		padding: 5px;
 	}
 </style>

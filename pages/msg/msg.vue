@@ -8,9 +8,9 @@
 			<view class="top-text">
 				<text>
 					#點對點通訊，我們會為星球居民提供兩種通訊方式：
-					一種、是普通免費的即時通訊，類似微信，blued的通訊方式
-					一種、是需要支付兩個EOS的區塊鏈點對點通訊區塊鏈技術的點對點通訊，用戶在自己設備上运行节点接入網絡，點對點實時互聯，通訊內容只有掌握私鑰的人才能查看，平台和第三方不會紀錄，查看、儲存任何信息。作為星球居民妳會選擇哪一種通訊方式請告訴我們
-					<text decode="true" class="right">預計上線時間:&nbsp;&nbsp;建設中</text>
+					一種:是免費的類似微信的即時通訊
+					一種:是需要支付兩個EOS的區塊鏈技術的點對點通訊，用戶在自己設備上运行节点接入網絡，點對點實時互聯，通訊內容只有掌握私鑰的人才能查看，平台和第三方不會紀錄，查看、儲存任何信息。作為星球居民妳會選擇哪一種通訊方式請告訴我們
+					<text decode="true" class="right">預計上線時間:&nbsp;&nbsp;待定</text>
 				</text>
 			</view>
 		</view>
@@ -43,7 +43,7 @@
 				<image src="../../static/img/daily/X.svg" @tap.stop="hidComm()"></image>
 			</view>
 			<scroll-view class="comment" scroll-y="true">
-				<view class="nocomm" v-if="!commList.length"><text>暂无评论和回复,快来抢沙发吧!</text></view>
+				<view class="nocomm" v-if="!commList.length"><text>暫無評論和回复,快來搶沙發吧!</text></view>
 				<view scroll-y="true" class="comment-section-details" v-for="(ite, ind) in commList" :key="ind">
 					<view class="comment-section-comm">
 						<view class="comm-ite">
@@ -55,7 +55,7 @@
 							</view>
 						</view>
 						<p class="comment-section-reply" v-if="ite.reply != ''" v-for="(it,idx) in ite.reply" :key="idx">
-							<text class="color">作者</text>
+							<text class="color">{{it.name}}</text>
 							<text>: {{it.content}}</text>
 						</p>
 					</view>
@@ -67,7 +67,7 @@
 			</scroll-view>
 		</view>
 		<view class="publish" @tap.stop="publishDyn()">
-			<image src="../../static/img/topic/publish.svg" mode=""></image>
+			<image src="../../static/img/topic/publish.svg" mode="widthFix"></image>
 		</view>
 		<view class="load" v-if="showLoadMore">{{loadMoreText}}</view>
 	</view>
@@ -91,7 +91,7 @@
 				commCont: 0,
 				showComment: false,
 				commContent: '',
-				commplaceholder: '為保證用戶隱私，只可以看自己的評論',
+				commplaceholder: '請輸入評論內容',
 				likeimg: "../../static/img/topic/like.svg",
 				unlikeimg: "../../static/img/topic/fabulous.svg",
 				islike: false,
@@ -103,7 +103,7 @@
 				commIndex: '',
 				height: "",
 				pageSize:10,
-				loadMoreText: "上拉加载更多",
+				loadMoreText: "上拉加載更多",
 				showLoadMore: false,
 			}
 		},
@@ -177,7 +177,7 @@
 								icon: 'none',
 								title: '回復成功'
 							})
-							this.commplaceholder = '為保證用戶隱私，只可以看自己的評論'; // 清除占位符
+							this.commplaceholder = '請輸入評論內容'; // 清除占位符
 							this.topicList[this.commIndex].commCount += 1
 						})
 					})
@@ -190,11 +190,11 @@
 					})
 					uni.showToast({
 						icon: 'none',
-						title: '回復成功'
+						title: '評論成功'
 					})
 					this.commContent = ''
 					this.addType = ''; // 重置发送按钮类型
-					this.commplaceholder = '為保證用戶隱私，只可以看自己的評論'; // 清除占位符
+					this.commplaceholder = '請輸入評論內容'; // 清除占位符
 					this.topicList[this.commIndex].commCount += 1
 				}
 			
@@ -225,7 +225,7 @@
 				this.pageSize+=10;
 				if(!data){
 					this.showLoadMore= true
-					this.loadMoreText =  "没有更多数据了!"
+					this.loadMoreText =  "暫無更多數據!"
 					return
 				}
 				this.showLoadMore = true;
@@ -305,9 +305,10 @@
 
 				.right {
 					position: relative;
-					left: 47%;
+					left: 50%;
 					color: #067ee8 !important;
 					width: 55%;
+					margin-top: 5px;
 					text-align: center;
 
 				}
@@ -348,13 +349,13 @@
 					.content-title {
 						display: inline-block;
 						color: #0087ff;
-						font-size: 16px;
+						font-size: 14px;
 					}
 
 					.content-text {
 						display: inline-block;
 						color: #000;
-						font-size: 16px;
+						font-size: 14px;
 						text-align: justify;
 						text-justify: newspaper;
 						word-break: break-all;
@@ -408,11 +409,11 @@
 			position: fixed;
 			bottom: 0px;
 			left: 50%;
-			margin-left: -20px;
+			margin-left: -60px;
 			text-align: center;
 
 			image {
-				width: 30px;
+				width: 120px;
 				height: 30px;
 			}
 		}
@@ -533,13 +534,14 @@
 					margin: 0 auto;
 					bottom: 0;
 					left: 0;
-					box-sizing: border-box;
+					
 					color: #000000;
 					background-color: #B7B7B7;
-					border-radius: 50upx;
+					
 					font-size: 30upx;
 
 					input {
+						
 						width: 77%;
 						height: 65upx;
 						line-height: 65upx;

@@ -1,6 +1,6 @@
 <template>
 	<view class="header">
-		<image class="logo" src="../../static/img/logo.png"></image>
+		<image class="logo" src="../../static/img/login/logo.svg"></image>
 		<text class="slogan">{{slogan}}</text>
 	</view>
 </template>
@@ -24,8 +24,8 @@
 	}
 	
 	.logo {
-		width: 160upx;
-		height: 150upx;
+		width: 70px;
+		height: 65px;
 		display: block;
 		margin: 0 auto;
 	}

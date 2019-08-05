@@ -100,7 +100,7 @@
 				}, {
 					src: '../../static/img/user/plantBase.svg',
 					url: '../base/base',
-					label: '星球基地',
+					label: '招募節點',
 					expla: ''
 				}, {
 					src: '../../static/img/user/option.svg',
@@ -119,11 +119,11 @@
 				let _this = this;
 				uni.showModal({
 					title: '',
-					content: '點擊確認後退出',
+					content: '點擊確定後退出',
 					success(res) {
 						if (res.confirm) {
 							_this.logout();
-							uni.clearStorage('USERS_KEY');
+							uni.clearStorageSync('USERS_KEY');
 							uni.reLaunch({
 								url: '../login/login'
 							});
@@ -197,7 +197,7 @@
 	}
 
 	.userInfo p:nth-child(2) {
-		font-size: 40upx;
+		font-size: 16px;
 	}
 
 	.edit {
@@ -213,7 +213,7 @@
 		flex-direction: row;
 		justify-content: space-between;
 		margin: 30upx;
-		font-size: 25upx;
+		font-size: 12px;
 		text-align: center;
 	}
 

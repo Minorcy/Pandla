@@ -1,17 +1,16 @@
 <script>
 	export default {
-		onLaunch: function() {
-			console.log('App Launch');
-		},
-		onShow: function() {
-			console.log('App Show');
-		},
-		onHide: function() {
-			console.log('App Hide');
-		},
+		// onLaunch: function() {
+		// 	console.log('App Launch');
+		// },
+		// onShow: function() {
+		// 	console.log('App Show');
+		// },
+		// onHide: function() {
+		// 	console.log('App Hide');
+		// },
 		mounted() {
 			this.$request.interceptors.response(res => {
-				console.log("res", res);
 				if (res) {
 					if (res.data.status && res.data.status.code != 200) {
 						// uni.showToast({
@@ -138,6 +137,7 @@
 		padding: 20upx;
 		margin-top: 40upx;
 		background: #131D21;
+		box-sizing: border-box;
 		color: #EFEFF4;
 	}
 
@@ -166,7 +166,7 @@
 	.input-group {
 		padding: 50upx;
 		font-size: 30upx;
-		background-color: #000000;
+		/* background-color: #000000; */
 		margin-top: 40upx;
 		position: relative;
 		color: #EFEFF4;

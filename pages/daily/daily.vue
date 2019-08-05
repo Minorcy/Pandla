@@ -4,7 +4,7 @@
 		<!-- 顶部导航栏 -->
 		<view class="header">
 			<image class="back" src="../../static/img/main/back.svg" @tap="goBack()"></image>
-			<image class="logo" src="../../static/img/main/logo.svg" @tap="gotic()"></image>
+			<image class="logo" src="../../static/img/main/logo.svg" ></image>
 			<image class="camera" src="../../static/img/main/daily/camera.svg" @tap="publishDyn()"></image>
 		</view>
 		<hr>
@@ -34,25 +34,31 @@
 					</view>
 					<!-- 功能栏 -->
 					<view class="option-section">
-						<image src="../../static/img/main/daily/love.svg" @tap="likePerson(item.isOwn)"></image>
+						<view class="filter">
+
+						</view>
+						<image src="../../static/img/main/daily/love.svg" @tap="likePerson(item.isOwn,index)" :class=" animation == true ? 'heartAnimation' : ''"
+						 v-if="item.isLike != 0"></image>
+						<image src="../../static/img/main/daily/unlike.svg" @tap="likePerson(item.isOwn,index)" v-if="item.isLike == 0"></image>
 						<p>{{like}}</p>
-						<image src="../../static/img/main/logo.svg"></image>
+						<image src="../../static/img/main/logo.svg" :class=" animation == true ? 'tada' : ''"></image>
 						<p>{{like/10}}</p>
 						<image src="../../static/img/main/daily/comment.svg" @tap.stop="showComm"></image>
 						<p>{{item.com_count}}</p>
+						<image src="../../static/img/daily/on.svg" v-if="doomm" @tap.stop="showDoomm"></image>
+						<image src="../../static/img/daily/off.svg" v-if="!doomm" @tap.stop="showDoomm"></image>
 
-						<image src="../../static/img/daily/on.svg" @tap.stop="showComm"></image>
 					</view>
 					<view class="block">{{item.commentContent}}</view>
 					<!-- 弹幕 -->
 					<view class="block-bullet" ref="bullet" @beforeEnter="beforeEnter" @enter='enter'>
-						<text v-for="(item, buIndex) in bulletList" :key="buIndex" :style="{'left':item.leftVal+'px','top':item.topVal+'px','display':item.display}"
-						 v-bind:class="{'topTobottom-1':Math.random()>0.4,'topTobottom':Math.random()<0.4}">{{buItem}}</text>
+						<text v-for="(item, buIndex) in bulletList" :key="buIndex" :class="doomm == true ? 'doomm' : ''" :style="{'animation-duration': item.time+'s','top':item.top+'px'}">{{item.text}}</text>
 					</view>
 					<!-- 日志图片 -->
 					<view class="img-hold" ref="img">
 						<image class="img-daily" :src="item.images" mode="aspectFill" lazy-load="true"></image>
 					</view>
+
 					<!-- 日志内容 -->
 					<view class="daily-seciton">
 						<image src="../../static/img/main/daily/tag.svg"></image>
@@ -63,6 +69,7 @@
 					</view>
 				</swiper-item>
 				<!-- <uni-load-more :loadingType="loading"></uni-load-more> -->
+
 			</swiper>
 		</view>
 
@@ -125,7 +132,7 @@
 			return {
 				dynInfo: '',
 				commentInfo: '',
-				bulletList: '',
+				bulletList: [],
 				following: false,
 				did: 0, // 日志id
 				uid: 0, // 用户id
@@ -145,32 +152,25 @@
 				flog: true,
 				time: '',
 				disabled: false,
-
+				isLove: false,
+				animation: false,
+				height: '',
+				doomm: true,
 			}
 		},
 		methods: {
 			// 日志详情
 			findDyn(loadTime) {
 				findAllDyn(0).then(data => {
-					// if (this.dynInfo.length == data.length) {
-					// 	uni.showToast({
-					// 		title: '已是最新',
-					// 		duration: 2000
-					// 	});
-					// }
 					this.dynInfo = data
 					this.commCount = data[0].com_count
-
+					console.log(data)
 					// this.likeNumber = 0; //重置点赞次数
 					// 第一个特殊，因为需要滑动后才能监听到swiperChange，所以第一个直接赋值
 					if (loadTime == 1) {
 						this.did = this.dynInfo[0].id;
 						this.uid = this.dynInfo[0].uid;
 					}
-					// 获取弹幕
-					// getBullet(this.did).then(data => {
-					// 	this.bulletList = data.content;
-					// });
 					this.getAllBullet()
 					likeCount(this.did).then(data => {
 						this.like = data;
@@ -181,11 +181,16 @@
 				}, 800);
 			},
 			//下拉刷新
-			loadFindDyn() {
+			loadFindDyn(num) {
 				findAllDyn(this.count).then(data => {
-					this.count += 10
+					this.count += data.length
 					this.dynInfo = this.dynInfo.concat(data)
-					console.log(this.dynInfo)
+					if(data.length == 0){
+						uni.showToast({
+							icon: 'none',
+							title: '没有更多数据了'
+						});
+					}
 				})
 			},
 			// 返回
@@ -194,12 +199,7 @@
 					url: "../main/main"
 				});
 			},
-			// gotic(){
-			// 	uni.navigateTo({
-			// 		url: "./topicDetails"
-			// 	});
-			// },
-			// 发表日志
+
 			publishDyn() {
 				getImgTemp().then(data => {
 					this.$store.commit('setImgTemp', data);
@@ -244,44 +244,34 @@
 				});
 			},
 			// 点赞
-			likePerson(isOwn) {
+			likePerson(isOwn, index) {
+				// console.log(index)
+				this.dynInfo[index].isLike = 1
 				if (isOwn == 1) {
 					uni.showToast({
 						icon: 'none',
 						title: '不可以給自己點贊哦'
 					});
 				} else {
-					// like(this.did, 1);
-					// this.findDyn(2);
+
 					this.likeNumber++;
 					uni.showToast({
 						icon: 'none',
 						title: '點贊了' + this.likeNumber + '次'
 					});
-					// let likeTime = 5;
-					// let timeCount = setInterval(() => {
-					// 	likeTime --;
-					// 	console.log('likeTime:' + likeTime);
-					// 	if(likeTime < 1) {
-					// 		clearInterval(timeCount);
-					// 		console.log('likeNumber:' + this.likeNumber);
-					// 		like(this.did, this.likeNumber);
-					// 		this.findDyn(2);
-					// 	}
-					// }, 1000);
+
 					like(this.did, 1).then(data => {
+						// console.log(data)
 						likeCount(this.did).then(data => {
 							this.like = data
+							this.animation = true
+
 						})
 					});
+					this.animation = false
+
 				}
 			},
-			// endLike() {
-			// 	uni.showToast({
-			// 		icon: 'none',
-			// 		title: '结束触摸，点击了' + this.likeNumber + '次'
-			// 	});
-			// },
 			hid() {
 				if (!this.flog) {
 					this.showComment = false
@@ -307,8 +297,8 @@
 				this.addType = ''; // 重置发送按钮类型
 				this.commplaceholder = '為保證用戶隱私，只可以看自己的評論'; // 清除占位符
 				this.commentInfo = '' // 清空评论
-				// console.log(e.detail.current);
 				this.likeNumber = 0;
+				this.isLove = false
 				this.did = this.dynInfo[e.detail.current].id;
 				this.uid = this.dynInfo[e.detail.current].uid;
 				this.commCount = this.dynInfo[e.detail.current].com_count;
@@ -317,14 +307,12 @@
 					this.like = data
 				})
 				// 获取弹幕
-				getBullet(this.did).then(data => {
-					this.bulletList = data.content;
-				});
-
+				this.getAllBullet()
+				let mun =  this.dynInfo.length
 				if (e.detail.current + 1 == this.count) {
 					console.log("上拉")
 					this.loading = 2
-					this.loadFindDyn()
+					this.loadFindDyn(mun)
 				}
 				if (e.detail.current == 0) {
 					this.findDyn(1);
@@ -357,9 +345,7 @@
 								this.disabled = false
 							});
 							// 获取弹幕
-							getBullet(this.did).then(data => {
-								this.bulletList = data.content;
-							});
+							this.getAllBullet()
 							//
 							this.findDyn(2)
 						});
@@ -382,17 +368,57 @@
 			},
 			//获取弹幕
 			getAllBullet() {
+				this.bulletList = []
 				getBullet(this.did).then(data => {
-					this.bulletList = data.content;
+					// bulletList = data.content;
+					var len = data.content.length
+					
+					for (let i = 0; i < len; i++) {
+						this.bulletList.push(new Doomm(data.content[i], parseInt(Math.random() * (this.height - 60 + 1) + 60, 10), Math
+							.ceil(Math.random() * 10),
+							this.getRandomColor()));
+					}
 				});
 
+				var i = 0;
+				class Doomm {
+					constructor(text, top, time, color) {
+						this.text = text;
+						this.top = top;
+						this.time = time;
+						this.color = color;
+						this.display = true;
+						this.id = i++;
+
+					}
+				}
+				
+				
+			},
+			getRandomColor() {
+				let rgb = []
+				for (let i = 0; i < 3; ++i) {
+					let color = Math.floor(Math.random() * 256).toString(16)
+					color = color.length == 1 ? '0' + color : color
+					rgb.push(color)
+				}
+				return '#' + rgb.join('')
+			},
+			showDoomm() {
+				(this.doomm == true) ? (this.doomm = false) : (this.doomm = true);
 			}
+
 
 		},
 		onLoad() {
 			this.findDyn(1);
 			uni.showLoading({
 				title: '加载中',
+			});
+			uni.getSystemInfo({
+				success: function(res) {
+					this.height = res.windowHeight
+				}
 			});
 		},
 		onShow() {
@@ -413,6 +439,10 @@
 		},
 	}
 </script>
+
+<style>
+	@import url("../../common/animate.css");
+</style>
 
 <style scoped="true">
 	.page {
@@ -481,6 +511,17 @@
 		text-shadow: 0 0 5px #696969;
 
 	}
+
+	/* .filter{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: rgba(255,255,255,0.3);
+		filter: blur(5px);
+		z-index: -1;
+	} */
 
 	.option-section image {
 		width: 60upx;
@@ -693,6 +734,7 @@
 	}
 
 	.input-section {
+		box-sizing: border-box;
 		position: fixed;
 		width: 100%;
 		height: 65upx;
@@ -701,7 +743,7 @@
 		left: 0;
 		color: #000000;
 		background-color: #B7B7B7;
-		border-radius: 50upx;
+		/* border-radius: 50upx; */
 		font-size: 30upx;
 	}
 
@@ -728,15 +770,6 @@
 		color: #000000;
 	}
 
-
-
-
-
-
-
-
-
-
 	swiper {
 		width: 100%;
 		height: 100%;
@@ -756,31 +789,231 @@
 
 	/* 弹幕 */
 	.block-bullet {
-		position: absolute;
+		position: relative;
 		/* other decorate style */
-		animation: barrage 7s infinite linear 0s;
 		width: 120%;
 		font-size: 30upx;
-		opacity: 0;
+		opacity: 1;
 		z-index: 999;
 	}
 
 	.block-bullet>text {
-		margin: 50upx;
-		color: #FFFFFF;
+		position: absolute;
+		visibility: hidden;
+		white-space:nowrap;
+	}
+
+	.doomm {
+		-webkit-animation-name: barrage;
+		animation-name: barrage;
+		-webkit-animation-iteration-count: 1;
+		animation-iteration-count: 1;
+		animation-timing-function: ease-in
 	}
 
 	@keyframes barrage {
 		from {
-			left: 100%;
-			transform: translate3d(0, 50upx, 0);
-			opacity: 1;
+			
+			 transform: translateX(375px);
+			 visibility:visible;
 		}
 
 		to {
-			left: 0;
-			transform: translate3d(-100%, 50upx, 0);
+			
+			 transform: translateX(-100%);
+			visibility:visible;
+		}
+	}
+
+
+
+	.heartAnimation {
+
+		-webkit-animation-name: rubberBand;
+		animation-name: rubberBand;
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-iteration-count: 1;
+		animation-iteration-count: 1;
+		-webkit-animation-timing-function: steps(28);
+		animation-timing-function: steps(28);
+
+	}
+
+	@keyframes jackInTheBox {
+		from {
+			opacity: 0;
+			-webkit-transform: scale(0.1) rotate(30deg);
+			transform: scale(0.1) rotate(30deg);
+			-webkit-transform-origin: center bottom;
+			transform-origin: center bottom;
+		}
+
+		50% {
+			-webkit-transform: rotate(-10deg);
+			transform: rotate(-10deg);
+		}
+
+		70% {
+			-webkit-transform: rotate(3deg);
+			transform: rotate(3deg);
+		}
+
+		to {
 			opacity: 1;
+			-webkit-transform: scale(1);
+			transform: scale(1);
+		}
+	}
+
+	@-webkit-keyframes tada {
+		from {
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1);
+		}
+
+		10%,
+		20% {
+			-webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+			transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+		}
+
+		30%,
+		50%,
+		70%,
+		90% {
+			-webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+			transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+		}
+
+		40%,
+		60%,
+		80% {
+			-webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+			transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+		}
+
+		to {
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1);
+		}
+	}
+
+	@keyframes tada {
+		from {
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1);
+		}
+
+		10%,
+		20% {
+			-webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+			transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+		}
+
+		30%,
+		50%,
+		70%,
+		90% {
+			-webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+			transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+		}
+
+		40%,
+		60%,
+		80% {
+			-webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+			transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+		}
+
+		to {
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1);
+		}
+	}
+
+	.tada {
+		-webkit-animation-name: tada;
+		animation-name: tada;
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-iteration-count: 1;
+		animation-iteration-count: 1;
+		-webkit-animation-timing-function: steps(28);
+		animation-timing-function: steps(28);
+	}
+
+	@-webkit-keyframes rubberBand {
+		from {
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1);
+		}
+
+		30% {
+			-webkit-transform: scale3d(1.25, 0.75, 1);
+			transform: scale3d(1.25, 0.75, 1);
+		}
+
+		40% {
+			-webkit-transform: scale3d(0.75, 1.25, 1);
+			transform: scale3d(0.75, 1.25, 1);
+		}
+
+		50% {
+			-webkit-transform: scale3d(1.15, 0.85, 1);
+			transform: scale3d(1.15, 0.85, 1);
+		}
+
+		65% {
+			-webkit-transform: scale3d(0.95, 1.05, 1);
+			transform: scale3d(0.95, 1.05, 1);
+		}
+
+		75% {
+			-webkit-transform: scale3d(1.05, 0.95, 1);
+			transform: scale3d(1.05, 0.95, 1);
+		}
+
+		to {
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1);
+		}
+	}
+
+	@keyframes rubberBand {
+		from {
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1);
+		}
+
+		30% {
+			-webkit-transform: scale3d(1.25, 0.75, 1);
+			transform: scale3d(1.25, 0.75, 1);
+		}
+
+		40% {
+			-webkit-transform: scale3d(0.75, 1.25, 1);
+			transform: scale3d(0.75, 1.25, 1);
+		}
+
+		50% {
+			-webkit-transform: scale3d(1.15, 0.85, 1);
+			transform: scale3d(1.15, 0.85, 1);
+		}
+
+		65% {
+			-webkit-transform: scale3d(0.95, 1.05, 1);
+			transform: scale3d(0.95, 1.05, 1);
+		}
+
+		75% {
+			-webkit-transform: scale3d(1.05, 0.95, 1);
+			transform: scale3d(1.05, 0.95, 1);
+		}
+
+		to {
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1);
 		}
 	}
 </style>

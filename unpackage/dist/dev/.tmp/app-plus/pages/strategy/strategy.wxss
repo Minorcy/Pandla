@@ -2,7 +2,9 @@
 .pages-content {
 }
 image{
-	margin-top: -65px;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	padding: 5px;
 	width: 100%;
 }
 

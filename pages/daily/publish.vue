@@ -44,8 +44,8 @@
 				if(data != '') {
 					createDyn(this.dynContent, data).then(data => {
 						if(data) {
-							uni.navigateBack({
-								delta: 1
+							uni.navigateTo({
+								url: 'daily'
 							});
 						}
 						this.flog = false

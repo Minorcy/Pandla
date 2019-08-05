@@ -1,13 +1,14 @@
 
-.scroll.data-v-1f414531{
+.scroll.data-v-570bdfef {
 	height: 100%;
 	width: 100%;
 	-webkit-overflow-scrolling: touch;
 	overflow-scrolling: touch;
 	overflow-y: scroll;
 }
+
 /* 动态列表 */
-.dynInfo.data-v-1f414531 {
+.dynInfo.data-v-570bdfef {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -27,20 +28,20 @@
 	margin-top: 50rpx;
 	padding: 1rpx;
 }
-.dynInfo image.data-v-1f414531 {
+.dynInfo image.data-v-570bdfef {
 	width: 31%;
 	height: 250rpx;
 	padding: 5rpx;
 	margin: 5rpx;
 }
-.btn-con.data-v-1f414531 {
+.btn-con.data-v-570bdfef {
 	position: absolute;
 	width: 400rpx;
 	height: 100rpx;
 	left: 0;
 	right: 0;
-	margin-left: auto; 
-	margin-right: auto; 
+	margin-left: auto;
+	margin-right: auto;
 	bottom: 50rpx;
 }
 

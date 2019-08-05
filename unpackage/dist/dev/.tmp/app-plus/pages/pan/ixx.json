@@ -1,6 +1,7 @@
 {
-  "navigationBarTitleText": "IXX注册",
+  "navigationBarTitleText": "ixx註冊",
   "bounce": "none",
-  "softinputNavBar": "none",
-  "usingComponents": {}
+  "usingComponents": {
+    "loading": "/components/loading8"
+  }
 }

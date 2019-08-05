@@ -3,6 +3,7 @@ const URL = 'http://pandla.io:8080/v1/';
 const systemUrl = URL + 'system/';
 const fansUrl = URL + 'fans/';
 const dynUrl = URL + 'dyn/';
+const benfitUrl = URL + 'benfit/'
 const pollUrl = URL + 'poll/';
 const panUrl = URL + 'pan/';
 const forceUrl = URL + 'force/';
@@ -12,7 +13,7 @@ const invUrl = URL + 'inv/';
 const topicUrl = URL + 'topic/';
 const priceUrl = 'https://q.ixex.io/v1/deal/PAN_USDT?size=1';
 const Change_24h = 'https://q.ixex.io/v1/market/tickers?period=1h&pairs=PAN_USDT';
-
+const map = "https://restapi.amap.com/v3/geocode/geo?"
 
 /*********************登录注册***************************/
 // 登录
@@ -28,13 +29,16 @@ export const login = (account, password) => {
 			'content-type': 'application/json'
 		},
 		success: (res) => {
-			// console.log(res.data.data);
+			console.log(res.data.data);
 			if (res.data.status == 200) {
 				uni.setStorageSync('USERS_KEY', res.data.data);
 				Token = uni.getStorageSync('USERS_KEY').token;
-				uni.reLaunch({
-					url: '../main/main'
-				});
+				console.log(Token)
+				setTimeout(function(){
+					uni.reLaunch({
+						url: '../main/main'
+					});
+				},500)
 			} else {
 				uni.showToast({
 					icon: 'none',
@@ -383,7 +387,7 @@ export const findAllDyn = (count) => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success: (res) => {
-			// console.log(res.data);
+			console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 			if (res.data.status == 404) {
@@ -572,6 +576,27 @@ export const reply = (cid, content) => new Promise((resolve, reject) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+//刪除動態
+export const deleteDyn = (did) => new Promise((resolve, reject) => {
+	uni.request({
+		url: dynUrl + 'deleteDyn?did=' + did,
+		header: {
+			'token': Token
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 200) resolve(res.data.data);
 		},
 		fail: (err) => {
 			uni.showToast({
@@ -780,25 +805,25 @@ export const topicReply = (cid, content) => new Promise((resolve, reject) => {
 // PAN公益首页数据
 export const getIndex = () => new Promise((resolve, reject) => {
 	console.log(Token),
-	uni.request({
-		url: pollUrl + 'getIndex',
-		header: {
-			'token': Token,
-			
-		},
-		success: (res) => {
-			console.log(res.data);
-			if (res.data.status == 200) resolve(res.data.data);
-			// else reject(res.data.msg);
-		},
-		fail: (err) => {
-			uni.showToast({
-				icon: 'none',
-				title: '页面加载失败，請稍后重試'
-			});
-			reject(err);
-		}
-	});
+		uni.request({
+			url: pollUrl + 'getIndex',
+			header: {
+				'token': Token,
+
+			},
+			success: (res) => {
+				console.log(res.data);
+				if (res.data.status == 200) resolve(res.data.data);
+				// else reject(res.data.msg);
+			},
+			fail: (err) => {
+				uni.showToast({
+					icon: 'none',
+					title: '页面加载失败，請稍后重試'
+				});
+				reject(err);
+			}
+		});
 });
 
 // PAN公益捐贈
@@ -962,7 +987,7 @@ export const getChange_24h = () => new Promise((resolve, reject) => {
 // 原力余额
 export const getForBalance = () => new Promise((resolve, reject) => {
 	uni.request({
-		url: forceUrl + 'getBalance' ,
+		url: forceUrl + 'getBalance',
 		header: {
 			'token': Token
 		},
@@ -1031,6 +1056,58 @@ export const checkForTaskList = () => new Promise((resolve, reject) => {
 		}
 	});
 });
+
+
+//簽到
+export const signin = (force, day) => new Promise((resolve, reject) => {
+	uni.request({
+		url: forceUrl + 'signin?force=' + force + "&day=" + day,
+		header: {
+			'token': Token
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+			if (res.data.status == 404) {
+				resolve(null)
+				uni.showToast({
+					icon: 'none',
+					title: '簽到時間未滿24小時'
+				})
+			}
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+export const signinMsg = () => new Promise((resolve, reject) => {
+	uni.request({
+		url: forceUrl + 'signinMsg',
+		header: {
+			'token': Token
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
 
 /*********************公約***************************/
 //公约列表
@@ -1124,15 +1201,47 @@ export const getBarList = (location) => new Promise((resolve, reject) => {
 	});
 });
 
-// 申请酒吧
-export const setBar = (dto) => new Promise((resolve, reject) => {
+//酒吧详情
+export const getBarInfo = (id) => new Promise((resolve, reject) => {
 	uni.request({
-		url: barUrl + 'setBar',
+		url: barUrl + 'getBarInfo?id=' + id  ,
+		header: {
+			'token': Token
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+// 申请酒吧
+export const setBar = (barInfo) => new Promise((resolve, reject) => {
+	uni.request({
+		url: barUrl + 'setBar' ,
 		method: 'POST',
 		header: {
 			'token': Token
 		},
-		data: dto,
+		data: {
+			"intro": barInfo.intro,
+			"license": barInfo.license,
+			"location": barInfo.location,
+			"logo": barInfo.logo,
+			"name": barInfo.name,
+			"phone": barInfo.phone,
+			"picture": barInfo.picture+','+ barInfo.picture1+','+ barInfo.picture2+','+ barInfo.picture3,
+			"userName":barInfo.username,
+			"userPhone": barInfo.userphone
+		},
 		success: (res) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
@@ -1182,6 +1291,114 @@ export const upLogo = (imgTemp, type) => new Promise((resolve, reject) => {
 		}
 	});
 });
+
+//获取酒吧经纬度
+export const  getBarlocation= (address) => new Promise((resolve, reject) => {
+	uni.request({
+		url: map+"key=7378b20d4bff8e0470db31f1b0a83d99&address=" + address,
+		header: {
+			
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 1) resolve(res.data);
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+/*********************公益***************************/
+//公益組織入駐
+
+export const createBenfit = (barInfo) => new Promise((resolve, reject) => {
+	uni.request({
+		url: benfitUrl + 'createBenfit' ,
+		method: 'POST',
+		header: {
+			'token': Token
+		},
+		data: {
+			"intro": barInfo.intro,
+			"license": barInfo.license,
+			"location": barInfo.location,
+			"logo": barInfo.logo,
+			"name": barInfo.name,
+			"phone": barInfo.phone,
+			"picture": barInfo.picture+','+ barInfo.picture1+','+ barInfo.picture2+','+ barInfo.picture3,
+			"userName":barInfo.username,
+			"userPhone": barInfo.userphone
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+//公益組織列表
+
+export const getBenfitList = () => new Promise((resolve, reject) => {
+	uni.request({
+		url: benfitUrl + 'getBenfitList' ,
+		header: {
+			'token': Token
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+//公益組織详情
+export const findById = (id) => new Promise((resolve, reject) => {
+	uni.request({
+		url: benfitUrl + 'findById?id=' + id  ,
+		header: {
+			'token': Token
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '页面加载失败，請稍后重試'
+			});
+			reject(err);
+		}
+	});
+});
+
+/*********************end***************************/
+
+
+
 
 
 /*********************邀请码***************************/
@@ -1324,7 +1541,7 @@ export const upload = (imgTemp) => new Promise((resolve, reject) => {
 });
 
 // 上传日志内容
-export const createDyn = (dynContent ,path) => new Promise((resolve, reject) => {
+export const createDyn = (dynContent, path) => new Promise((resolve, reject) => {
 	uni.request({
 		url: dynUrl + 'createDyn',
 		method: 'POST',
@@ -1335,7 +1552,7 @@ export const createDyn = (dynContent ,path) => new Promise((resolve, reject) => 
 		data: {
 			'content': dynContent,
 			'location': '',
-			 'path':path
+			'path': path
 		},
 		success: (res) => {
 			// console.log(res.data);

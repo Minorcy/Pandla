@@ -34,7 +34,7 @@
 		<view class="footer">
 			注冊即表示你同意
 			<navigator url="/pages/reg/termsofservice">服務協議</navigator>和
-			<navigator href="/pages/reg/Privacypolicy">隱私政策</navigator>
+			<navigator url="/pages/reg/Privacypolicy">隱私政策</navigator>
 		</view>
     </view>
 </template>

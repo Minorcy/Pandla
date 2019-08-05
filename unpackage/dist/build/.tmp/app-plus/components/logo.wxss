@@ -1,5 +1,5 @@
 
-.header.data-v-57a2a03e {
+.header.data-v-e0a46544 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -14,16 +14,16 @@
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
-.logo.data-v-57a2a03e {
-	width: 160rpx;
-	height: 150rpx;
+.logo.data-v-e0a46544 {
+	width: 70px;
+	height: 65px;
 	display: block;
 	margin: 0 auto;
 }
-.logo image.data-v-57a2a03e{
+.logo image.data-v-e0a46544{
 	width: 100%;
 }
-.slogan.data-v-57a2a03e {
+.slogan.data-v-e0a46544 {
 	color: #EFEFF4;
 	font-size: 60rpx;
 	text-align: center;

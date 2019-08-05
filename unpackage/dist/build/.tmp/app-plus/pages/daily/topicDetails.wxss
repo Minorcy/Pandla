@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.page.data-v-03de234a {
+.page.data-v-7a7f93c1 {
   position: absolute;
   top: 0;
   right: 0;
@@ -32,16 +32,16 @@
   left: 0;
   margin: auto;
 }
-.page.data-v-03de234a ::-webkit-scrollbar {
+.page.data-v-7a7f93c1 ::-webkit-scrollbar {
     width: 0;
     height: 0;
     color: transparent;
 }
-.page .top.data-v-03de234a {
+.page .top.data-v-7a7f93c1 {
     margin: 10px;
     margin-bottom: 30px;
 }
-.page .top .top-item.data-v-03de234a {
+.page .top .top-item.data-v-7a7f93c1 {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -52,7 +52,7 @@
           -ms-flex-direction: row;
               flex-direction: row;
 }
-.page .top .top-item image.data-v-03de234a {
+.page .top .top-item image.data-v-7a7f93c1 {
         width: 100px;
         height: 100px;
         -webkit-box-flex: 0;
@@ -60,33 +60,33 @@
             -ms-flex-positive: 0;
                 flex-grow: 0;
 }
-.page .top .top-item .content.data-v-03de234a {
+.page .top .top-item .content.data-v-7a7f93c1 {
         line-height: 35px;
         -webkit-box-flex: 6;
         -webkit-flex-grow: 6;
             -ms-flex-positive: 6;
                 flex-grow: 6;
 }
-.page .top .top-item .content .title.data-v-03de234a {
+.page .top .top-item .content .title.data-v-7a7f93c1 {
           font-weight: 700;
 }
-.page .top .top-item .content .text.data-v-03de234a {
+.page .top .top-item .content .text.data-v-7a7f93c1 {
           font-size: 14px;
 }
-.page .top .top-item .content .count.data-v-03de234a {
+.page .top .top-item .content .count.data-v-7a7f93c1 {
           font-size: 14px;
 }
-.page .top .text.data-v-03de234a {
+.page .top .text.data-v-7a7f93c1 {
       color: #ffffff;
       padding: 5px;
       font-size: 14px;
       text-indent: 5px;
 }
-.page .user-section.data-v-03de234a {
+.page .user-section.data-v-7a7f93c1 {
     width: 100%;
     margin-bottom: 20px;
 }
-.page .user-section .user.data-v-03de234a {
+.page .user-section .user.data-v-7a7f93c1 {
       padding: 5px;
       display: -webkit-box;
       display: -webkit-flex;
@@ -97,46 +97,46 @@
           -ms-flex-pack: justify;
               justify-content: space-between;
 }
-.page .user-section .user .left.data-v-03de234a {
+.page .user-section .user .left.data-v-7a7f93c1 {
         padding: 5px;
 }
-.page .user-section .user .left .avatar.data-v-03de234a {
+.page .user-section .user .left .avatar.data-v-7a7f93c1 {
           width: 50px;
           height: 50px;
           border-radius: 100%;
           display: inline-block;
           vertical-align: middle;
 }
-.page .user-section .user .left .folllow.data-v-03de234a {
+.page .user-section .user .left .folllow.data-v-7a7f93c1 {
           position: absolute;
           width: 30rpx;
           height: 150rpx;
           margin: 15rpx 0 0 -30rpx;
 }
-.page .user-section .user .left .name.data-v-03de234a {
+.page .user-section .user .left .name.data-v-7a7f93c1 {
           padding-left: 5px;
           font-size: 16px;
           color: #ffffff;
           vertical-align: middle;
 }
-.page .user-section .user .right .btn-behaviour.data-v-03de234a {
+.page .user-section .user .right .btn-behaviour.data-v-7a7f93c1 {
         margin-top: 15px;
         right: 10px;
         width: 15px;
         height: 25px;
 }
-.page .user-section .content.data-v-03de234a {
+.page .user-section .content.data-v-7a7f93c1 {
       padding: 0;
 }
-.page .user-section .content image.data-v-03de234a {
+.page .user-section .content image.data-v-7a7f93c1 {
         width: 100%;
 }
-.page .user-section .content text.data-v-03de234a {
+.page .user-section .content text.data-v-7a7f93c1 {
         display: inline-block;
         padding: 5px;
         font-size: 16px;
 }
-.page .option.data-v-03de234a {
+.page .option.data-v-7a7f93c1 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -146,21 +146,21 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
 }
-.page .option view.data-v-03de234a {
+.page .option view.data-v-7a7f93c1 {
       width: 30%;
       text-align: center;
 }
-.page .option view text.data-v-03de234a {
+.page .option view text.data-v-7a7f93c1 {
         font-size: 16px;
         color: #ffffff;
         text-align: center;
 }
-.scroll.data-v-03de234a {
+.scroll.data-v-7a7f93c1 {
   width: 100%;
   height: 100%;
   -webkit-overflow-scrolling: touch;
 }
-.comment-section.data-v-03de234a {
+.comment-section.data-v-7a7f93c1 {
   position: fixed;
   bottom: 0;
   width: 355px;
@@ -172,12 +172,12 @@
   border-radius: 36rpx 36rpx 0 0;
   overflow: hidden;
 }
-.comment-section.data-v-03de234a ::-webkit-scrollbar {
+.comment-section.data-v-7a7f93c1 ::-webkit-scrollbar {
     width: 0;
     height: 0;
     color: transparent;
 }
-.comment-section .comment-section-top.data-v-03de234a {
+.comment-section .comment-section-top.data-v-7a7f93c1 {
     width: 355px;
     height: 30px;
     position: fixed;
@@ -187,25 +187,25 @@
     z-index: 301;
     background-color: #000000;
 }
-.comment-section .comment-section-top image.data-v-03de234a {
+.comment-section .comment-section-top image.data-v-7a7f93c1 {
       width: 15px;
       height: 15px;
       float: right;
       right: 5px;
 }
-.comment-section .comment.data-v-03de234a {
+.comment-section .comment.data-v-7a7f93c1 {
     margin-top: 30px;
     width: 355px;
     height: 100%;
 }
-.comment-section .comment .comment-section-details.data-v-03de234a {
+.comment-section .comment .comment-section-details.data-v-7a7f93c1 {
       width: 355px;
       height: 100%;
 }
-.comment-section .comment .comment-section-details .comment-section-comm.data-v-03de234a {
+.comment-section .comment .comment-section-details .comment-section-comm.data-v-7a7f93c1 {
         margin-bottom: 10px;
 }
-.comment-section .comment .comment-section-details .comment-section-comm .comm-ite.data-v-03de234a {
+.comment-section .comment .comment-section-details .comment-section-comm .comm-ite.data-v-7a7f93c1 {
           display: -webkit-box;
           display: -webkit-flex;
           display: -ms-flexbox;
@@ -215,7 +215,7 @@
               -ms-flex-align: end;
                   align-items: flex-end;
 }
-.comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-portrait.data-v-03de234a {
+.comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-portrait.data-v-7a7f93c1 {
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -225,7 +225,7 @@
                     flex-grow: 0;
             margin: 5px;
 }
-.comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content.data-v-03de234a {
+.comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content.data-v-7a7f93c1 {
             padding-left: 5px;
             color: #ffffff;
             -webkit-flex-wrap: wrap;
@@ -237,15 +237,15 @@
                     flex-grow: 1;
             font-size: 14px;
 }
-.comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-name.data-v-03de234a {
+.comment-section .comment .comment-section-details .comment-section-comm .comm-ite .ite-name-content .ite-name.data-v-7a7f93c1 {
               display: block;
 }
-.comment-section .comment .comment-section-details .comment-section-comm .comment-section-reply.data-v-03de234a {
+.comment-section .comment .comment-section-details .comment-section-comm .comment-section-reply.data-v-7a7f93c1 {
           padding: 10px;
           color: #ffffff;
           font-size: 14px;
 }
-.comment-section .comment .input-section.data-v-03de234a {
+.comment-section .comment .input-section.data-v-7a7f93c1 {
       position: fixed;
       width: 375px;
       height: 65rpx;
@@ -257,7 +257,7 @@
       border-radius: 50rpx;
       font-size: 30rpx;
 }
-.comment-section .comment .input-section input.data-v-03de234a {
+.comment-section .comment .input-section input.data-v-7a7f93c1 {
         width: 77%;
         height: 65rpx;
         line-height: 65rpx;
@@ -265,7 +265,7 @@
         float: left;
         padding-left: 20rpx;
 }
-.comment-section .comment .input-section button.data-v-03de234a {
+.comment-section .comment .input-section button.data-v-7a7f93c1 {
         position: absolute;
         margin: 0;
         padding: 0;

@@ -65,18 +65,23 @@
 				let imgUrl = [];
 				if(type == 'por') imgUrl = [this.userInfo.portrait];
 				if(type == 'dyn') imgUrl = this.dynInfo;
+				// uni.previewImage({
+				// 	current:index,
+				// 	urls: imgUrl,
+				// 	longPressActions: {
+				// 		itemList: ["保存相冊"],
+				// 		success: function(data) {
+				// 			console.log('选中了第' + (data.tapIndex + 1) + '个按钮,第' + (data.index + 1) + '张图片');
+				// 		},
+				// 		fail: function(err) {
+				// 			console.log(err.errMsg);
+				// 		}
+				// 	}
+				// });
+				
 				uni.previewImage({
-					current:index,
+					current: index,
 					urls: imgUrl,
-					longPressActions: {
-						itemList: ["保存相冊"],
-						success: function(data) {
-							console.log('选中了第' + (data.tapIndex + 1) + '个按钮,第' + (data.index + 1) + '张图片');
-						},
-						fail: function(err) {
-							console.log(err.errMsg);
-						}
-					}
 				});
 			}
         },

@@ -328,7 +328,6 @@
 
 
 
-
 /*每个页面公共css */
 /* uni-app默认全局使用flex布局。因为flex布局有利于跨更多平台，尤其是采用原生渲染的平台。如不了解flex布局，请参考http://www.w3.org/TR/css3-flexbox/。如不使用flex布局，请删除或注释掉本行。*/
 page,
@@ -440,6 +439,8 @@ button.hover-primary {
 	padding: 20rpx;
 	margin-top: 40rpx;
 	background: #131D21;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	color: #EFEFF4;
 }
 .pages-content {
@@ -459,7 +460,7 @@ button.hover-primary {
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 	color: #EFEFF4;
-	background: #000000;
+	background: #131D21;
 	border-top: solid;
 	border-width: 2rpx;
 	border-top-color: #4CD964;
@@ -477,7 +478,7 @@ m-input {
 .input-group {
 	padding: 50rpx;
 	font-size: 30rpx;
-	background-color: #000000;
+	/* background-color: #000000; */
 	margin-top: 40rpx;
 	position: relative;
 	color: #EFEFF4;

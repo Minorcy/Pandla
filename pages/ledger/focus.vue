@@ -12,39 +12,15 @@
 		</view>
 		<view class="sign">
 			<view class="sign-top">
-				<text class="left">連續7日簽到獲得更多魔法原力</text>
-				<text class="right">簽到</text>
+				<text class="left">連續簽到獲得更多魔法原力</text>
+				<text class="right" @tap="singIn()">簽到</text>
 			</view>
 			<view class="sign-bottom">
-				<view>
-					<text>+1</text>
-					<text>第1天</text>
-				</view>
-				<view>
-					<text>+2</text>
-					<text>第2天</text>
-				</view>
-				<view>
-					<text>+3</text>
-					<text>第3天</text>
-				</view>
-				<view>
-					<text>+5</text>
-					<text>第4天</text>
+				<view v-for="(item,index) in sing" :key="index">
+					<text :class="item.isShow == true ? 'sing-in' : ' ' ">{{item.value}}</text>
+					<text>{{item.title}}</text>
 				</view>
 
-				<view>
-					<text>+5</text>
-					<text>第5天</text>
-				</view>
-				<view>
-					<text>+10</text>
-					<text>第6天</text>
-				</view>
-				<view>
-					<text>+10</text>
-					<text>第7天</text>
-				</view>
 			</view>
 		</view>
 		<view class="focus-label-list">
@@ -59,7 +35,7 @@
 						<p class="focus-list-action">{{item.action}}</p>
 						<text class="focus-list-time">{{item.createTime}}</text>
 					</view>
-					<view>
+					<view class="list-right">
 						<p class="focus-list-number">{{item.type}} +{{item.number}}</p>
 						<text class="focus-list-time">{{item.loseTime}}</text>
 					</view>
@@ -93,7 +69,9 @@
 	import {
 		getForBalance,
 		getForBill,
-		checkForTaskList
+		checkForTaskList,
+		signinMsg,
+		signin
 	} from '../../api/api.js';
 	export default {
 		data() {
@@ -103,8 +81,46 @@
 				labelList: 'budget',
 				budgetText: 'black',
 				taskText: 'gray',
-				pageSize:10,
-				isShow :false
+				pageSize: 10,
+				isShow: false,
+				sing: [{
+						value: "+1",
+						title: "第一天",
+						isShow: false
+					},
+					{
+						value: "+2",
+						title: "第二天",
+						isShow: false
+					},
+					{
+						value: "+3",
+						title: "第三天",
+						isShow: false
+					},
+					{
+						value: "+5",
+						title: "第四天",
+						isShow: false
+					},
+					{
+						value: "+5",
+						title: "第五天",
+						isShow: false
+					},
+					{
+						value: "+10",
+						title: "第六天",
+						isShow: false
+					},
+					{
+						value: "+10",
+						title: "第七天",
+						isShow: false
+					},
+				],
+				singDay: "",
+				force: ''
 			}
 		},
 		methods: {
@@ -140,20 +156,174 @@
 					this.getTaskData();
 				}
 			},
-			loadMore(){
+			loadMore() {
 				getForBill(this.pageSize).then(data => {
-					if(data == null){
+					if (data == null) {
 						this.isShow = true;
-						return 
+						return
 					}
 					this.listInfo = this.listInfo.concat(data);
-					this.pageSize+=10
+					this.pageSize += 10
 				});
+			},
+			singIn() {
+				if (this.singDay == 7) {
+					this.singDay = 0
+					signin(this.force, this.singDay + 1).then(data => {
+						if (data != null) {
+							console.log(data)
+							this.show();
+							this.getSigninMsg()
+							uni.showToast({
+								icon: 'none',
+								title: '簽到成功'
+							})
+							this.getBillData();
+							this.getBalanceData()
+						}
+					})
+				}
+				signin(this.force, this.singDay + 1).then(data => {
+					if (data != null) {
+						console.log(data)
+						this.show();
+						this.getSigninMsg()
+						uni.showToast({
+							icon: 'none',
+							title: '簽到成功'
+						})
+						this.getBillData();
+						this.getBalanceData()
+					}
+				})
+
+			},
+			getSigninMsg() {
+				signinMsg().then(data => {
+					console.log(data)
+					this.singDay = data
+					switch (data) {
+						case 0:
+							this.force = 1
+							break
+						case 1:
+							this.force = 2
+							break
+						case 2:
+							this.force = 3
+							break
+						case 3:
+							this.force = 5
+							break
+						case 4:
+							this.force = 5
+							break
+						case 5:
+							this.force = 10
+							break
+						case 6:
+							this.force = 10
+							break
+
+					}
+					this.show()
+				})
+			},
+			show() {
+				switch (this.singDay) {
+					case 0:
+						this.sing[0].value = "+1"
+						this.sing[0].isShow = false
+						this.sing[1].value = "+2"
+						this.sing[1].isShow = false
+						this.sing[2].value = "+3"
+						this.sing[2].isShow = false
+						this.sing[3].value = "+5"
+						this.sing[3].isShow = false
+						this.sing[4].value = "+5"
+						this.sing[4].isShow = false
+						this.sing[5].value = "+10"
+						this.sing[5].isShow = false
+						this.sing[6].value = "+10"
+						this.sing[6].isShow = false
+						break
+					case 1:
+						this.sing[0].value = "√"
+						this.sing[0].isShow = true
+						break
+					case 2:
+						this.sing[0].value = "√"
+						this.sing[0].isShow = true
+						this.sing[1].value = "√"
+						this.sing[1].isShow = true
+						break
+					case 3:
+						this.sing[0].value = "√"
+						this.sing[0].isShow = true
+						this.sing[1].value = "√"
+						this.sing[1].isShow = true
+						this.sing[2].value = "√"
+						this.sing[2].isShow = true
+						break
+					case 4:
+						this.sing[0].value = "√"
+						this.sing[0].isShow = true
+						this.sing[1].value = "√"
+						this.sing[1].isShow = true
+						this.sing[2].value = "√"
+						this.sing[2].isShow = true
+						this.sing[3].value = "√"
+						this.sing[3].isShow = true
+						break
+					case 5:
+						this.sing[0].value = "√"
+						this.sing[0].isShow = true
+						this.sing[1].value = "√"
+						this.sing[1].isShow = true
+						this.sing[2].value = "√"
+						this.sing[2].isShow = true
+						this.sing[3].value = "√"
+						this.sing[3].isShow = true
+						this.sing[4].value = "√"
+						this.sing[4].isShow = true
+						break
+					case 6:
+						this.sing[0].value = "√"
+						this.sing[0].isShow = true
+						this.sing[1].value = "√"
+						this.sing[1].isShow = true
+						this.sing[2].value = "√"
+						this.sing[2].isShow = true
+						this.sing[3].value = "√"
+						this.sing[3].isShow = true
+						this.sing[4].value = "√"
+						this.sing[4].isShow = true
+						this.sing[5].value = "√"
+						this.sing[5].isShow = true
+						break
+					case 7:
+						this.sing[0].value = "√"
+						this.sing[0].isShow = true
+						this.sing[1].value = "√"
+						this.sing[1].isShow = true
+						this.sing[2].value = "√"
+						this.sing[2].isShow = true
+						this.sing[3].value = "√"
+						this.sing[3].isShow = true
+						this.sing[4].value = "√"
+						this.sing[4].isShow = true
+						this.sing[5].value = "√"
+						this.sing[5].isShow = true
+						this.sing[6].value = "√"
+						this.sing[6].isShow = true
+						break
+				}
 			}
 		},
 		onLoad() {
 			this.getBalanceData();
 			this.getBillData()
+			this.getSigninMsg()
 		}
 	}
 </script>
@@ -176,19 +346,24 @@
 			&-num {
 				display: block;
 				font-size: 40upx;
-				padding: 40upx 0 40upx 20upx;
+				padding: 40upx 0 0upx 20upx;
 			}
 
 			&-freeze {
-				font-size: 30upx;
+				font-size: 14px;
 				padding: 20upx;
 				clear: both;
 			}
 		}
-
+		&-notice{
+			.focus-label-context{
+				font-size: 14px;
+				color: #888
+			}
+		}
 		&-label {
 			&-num {
-				font-size: 30upx;
+				font-size: 14px;
 				border-bottom: 1upx solid #FFFFFF;
 				padding: 20upx;
 			}
@@ -252,16 +427,17 @@
 			}
 
 			&-action {
-				font-size: 30upx;
+				font-size: 14px;
 			}
 
 			&-time {
-				font-size: 30upx;
+				font-size: 12px;
 				color: #979797;
+				float: right;
 			}
 
 			&-number {
-				font-size: 30upx;
+				font-size: 14px;
 				color: #CD2626;
 			}
 		}
@@ -271,6 +447,13 @@
 			height: 50upx;
 			padding: 15upx;
 			float: left;
+		}
+	}
+	.list-right{
+		
+		p{
+			display: flex;
+			justify-content: flex-end;
 		}
 	}
 
@@ -284,9 +467,9 @@
 
 			.left {
 				margin: 14px;
-				font-size: 15px;
+				font-size: 14px;
 				color: #8E8E93;
-				line-height: 21px;
+				line-height: 24px;
 			}
 
 			.right {
@@ -296,21 +479,23 @@
 				text-align: center;
 				background: linear-gradient(296deg, rgba(19, 29, 33, 1) 0%, rgba(116, 116, 116, 1) 100%);
 				border-radius: 12px;
-				font-size: 15px;
+				font-size: 14px;
 				line-height: 21px;
 			}
 		}
 
 		.sign-bottom {
-			margin-top:10px;
+			margin-top: 10px;
 			display: flex;
-			justify-content: space-around; 
+			justify-content: space-around;
 			font-size: 10px;
 			box-sizing: border-box;
+
 			view {
 				width: 30px;
 				display: flex;
 				flex-direction: column;
+
 				text:nth-child(1) {
 					width: 30px;
 					height: 30px;
@@ -320,19 +505,27 @@
 					border-radius: 50%;
 					text-align: center
 				}
+
 				text:nth-child(2) {
-					margin-top:10px;
+					margin-top: 10px;
 					font-size: 10px;
 					font-weight: 400;
 					color: #8E8E93;
 					line-height: 11px;
 					text-align: center
 				}
-				
+
+			}
+
+			.sing-in {
+				background: #8E8E93 !important;
+
 			}
 		}
 	}
-	.pan-list-load{
-		background-color: #EFEFF4;;
+
+	.pan-list-load {
+		background-color: #EFEFF4;
+		;
 	}
 </style>

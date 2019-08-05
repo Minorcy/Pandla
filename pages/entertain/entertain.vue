@@ -2,7 +2,7 @@
 	<view class="pages-content">
 		<scroll-view scroll-y>
 			<view v-for="(item, index) in barInfo" :key="index">
-				<view class="item-group" :url="'entertainDetail?itemStr=' + itemStr" @tap="navigatorParam(item)">
+				<view class="item-group" @tap="navigatorParam(item.id)" >
 					<image class="logo" :src='item.logo'></image>
 					<p>{{item.name}}</p>
 					<p>
@@ -17,44 +17,55 @@
 		</navigator>
 	</view>
 </template>
- 
+
 <script>
-	import {getBarList, setBar, upLogo} from '../../api/api.js';
-	
+	import {
+		getBarList,
+		setBar,
+		upLogo
+	} from '../../api/api.js';
+
 	export default {
 		data() {
 			return {
 				location: '',
 				barInfo: '',
-				itemStr: ''
+				itemStr: '',
+				picture: ""
 			}
 		},
 		methods: {
 			getBarListData() {
-				getBarList(this.location).then(data => {
+				getBarList("广州市").then(data => {
 					this.barInfo = data;
+					console.log(data)
+					
 				});
 			},
 			navigatorParam(item) {
-				this.itemStr = JSON.stringify(item);
+				console.log(item)
 				uni.navigateTo({
-					url: 'entertainDetail?itemStr=' + this.itemStr
-
+					url: 'entertainDetail?id='+item
 				});
+			},
+			split(str) {
+				var bg 
+				return bg= str.split(",")[0]
+
 			}
 		},
 		onLoad() {
-			let _this = this;
-			uni.getLocation({
-				geocode:true,
-				success(res) {
-					_this.location = res.address.city;
-					console.log('城市' + _this.location);
-					_this.getBarListData(_this.location);
-					// console.log(JSON.stringify(res));
-				}
-			});
-			// this.getBarListData();
+			// let _this = this;
+			// uni.getLocation({
+			// 	geocode:true,
+			// 	success(res) {
+			// 		_this.location = res.address.city;
+			// 		console.log('城市' + _this.location);
+			// 		_this.getBarListData(_this.location);
+			// 		// console.log(JSON.stringify(res));
+			// 	}
+			// });
+			this.getBarListData();
 		}
 	}
 </script>
@@ -65,7 +76,7 @@
 		height: 100%;
 		overflow: hidden;
 	}
-	
+
 	.item-group {
 		width: 100%;
 		height: 350upx;
@@ -73,30 +84,30 @@
 		display: flex;
 		flex-direction: column;
 	}
-	
-	.item-group p:nth-child(2){
+
+	.item-group p:nth-child(2) {
 		font-weight: bold;
 	}
-	
-	.item-group p:nth-child(3){
+
+	.item-group p:nth-child(3) {
 		font-size: 25upx;
 	}
-	
+
 	.logo {
 		width: 100upx;
 		height: 100upx;
 		margin: 50upx auto 20upx auto;
 		border-radius: 50%;
 	}
-	
+
 	.map {
 		width: 30upx;
 		height: 20upx;
 		margin-right: 10upx;
 	}
-	
+
 	.entry {
-		width: 150upx;
+		width: 190upx;
 		position: fixed;
 		bottom: 50upx;
 		right: 20upx;
@@ -105,20 +116,20 @@
 	scroll-view {
 		height: 100%;
 	}
-	
+
 	image {
 		width: 100%;
 		height: 150upx;
 		margin-top: 20upx;
 		justify-content: center;
 	}
-	
+
 	p {
 		width: 100%;
 		margin-top: 10upx;
 		text-align: center;
 	}
-	
+
 	hr {
 		height: 3upx;
 		border: none;

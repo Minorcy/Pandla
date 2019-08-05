@@ -1,5 +1,5 @@
 
-.asset.data-v-10072c69 {
+.asset.data-v-56ef90b9 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -11,11 +11,11 @@
 	        flex-direction: row;
 	color: #EFEFF4;
 }
-.asset-item.data-v-10072c69 {
-	width: 120rpx;
-	margin: 20rpx 40rpx;
+.asset-item.data-v-56ef90b9 {
+	width: 280rpx;
+	margin: 20rpx 20rpx;
 }
-.asset-item>._p.data-v-10072c69 {
+.asset-item>._p.data-v-56ef90b9 {
 	font-size: 30rpx;
 	line-height: 20px;
 	display: -webkit-box;
@@ -28,29 +28,32 @@
 	    -ms-flex-direction: row;
 	        flex-direction: row;
 }
-.asset-item>text.data-v-10072c69 {
+.asset-item>text.data-v-56ef90b9 {
 	font-size: 30rpx;
 	margin-top: 5rpx;
 }
-.asset-rmb.data-v-10072c69 {
+.asset-rmb.data-v-56ef90b9 {
 	font-size: 24rpx !important;
 }
-._hr.data-v-10072c69 {
+._hr.data-v-56ef90b9 {
 	height: 3rpx;
 	border: none;
 	border-top: 3rpx solid #C8C7CC;
 }
-.eyeIcon.data-v-10072c69 {
+.red.data-v-56ef90b9{
+	color: red !important;
+}
+.eyeIcon.data-v-56ef90b9 {
 	position: absolute;
 	right: 0rpx;
 	margin-right: 50rpx;
 	margin-top: 20rpx;
 }
-.panData.data-v-10072c69 {
+.panData.data-v-56ef90b9 {
 	padding: 20rpx;
 	font-size: 35rpx;
 }
-.data.data-v-10072c69 {
+.data.data-v-56ef90b9 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -60,77 +63,75 @@
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 }
-.data-24.data-v-10072c69 {
+.data-24.data-v-56ef90b9 {
 	font-size: 24rpx;
 	display: block;
 	margin-bottom: 20rpx;
 }
-.pan-text.data-v-10072c69 {
+.pan-text.data-v-56ef90b9 {
 	color: #C7C7CC;
 	font-size: 14px;
 }
-.color.data-v-10072c69{
+.color.data-v-56ef90b9{
 	color: #007AFF;
 	font-size: 14px;
 }
-.data>._p.data-v-10072c69:nth-child(1) {
+.data>._p.data-v-56ef90b9:nth-child(1) {
 	text-align: left;
 	color: #EFEFF4;
 	margin-bottom: 10rpx;
 }
-.data>._p.data-v-10072c69:nth-child(2) {
+.data>._p.data-v-56ef90b9:nth-child(2) {
 	color: #4CD964;
 	margin-bottom: 5rpx;
 	text-align: right;
 }
-.data>._p.data-v-10072c69:nth-child(3) {
+.data>._p.data-v-56ef90b9:nth-child(3) {
 	color: #4CD964;
 	margin-bottom: 10rpx;
 	text-align: right;
 }
-.data>._p.data-v-10072c69:nth-child(4) {
+.data>._p.data-v-56ef90b9:nth-child(4) {
 	color: #C8C7CC;
 	font-size: 24rpx;
 	margin-bottom: 10rpx;
 	text-align: right;
 }
-.bindCurr.data-v-10072c69 {
+.bindCurr.data-v-56ef90b9 {
 	margin-left: auto;
 }
-.fireCurr>text.data-v-10072c69:nth-child(2) {
+.fireCurr>text.data-v-56ef90b9:nth-child(2) {
 	float: right;
 }
-.okexCurr.data-v-10072c69{
+.okexCurr.data-v-56ef90b9{
 	position: relative;
 }
-.okexCurr>text.data-v-10072c69:nth-child(1) {
+.okexCurr>text.data-v-56ef90b9:nth-child(1) {
 	margin-right: 80rpx;
-	font-size: 14px;
+	font-size: 17px;
 	display: block;
 }
-.okexCurr>text.data-v-10072c69:nth-child(2) {
+.okexCurr>text.data-v-56ef90b9:nth-child(2) {
 	color:#007AFF;
 	font-size: 14px;
 }
-.okexCurr>text.data-v-10072c69:nth-child(3) {
+.okexCurr>view.data-v-56ef90b9 {
 	position: absolute;
-	top: 0;
+	top: 1px;
 	right: 0;
 	color: #FFFFFFFF;
 	font-size: 14px;
-	
-	width: 60px;
+	width: 80px;
 	height: 20px;
 	text-align: center;
-	border: 1px solid;
-	-o-border-image: -o-linear-gradient(315deg, rgba(3, 255, 239, 1), rgba(2, 245, 43, 1)) 1 1;
-	   border-image: linear-gradient(135deg, rgba(3, 255, 239, 1), rgba(2, 245, 43, 1)) 1 1;
-	border-radius: 16px;
 }
-.fireCurr.data-v-10072c69 {
+.okexCurr>view image.data-v-56ef90b9{
+	width: 100%;
+}
+.fireCurr.data-v-56ef90b9 {
 	margin-top: 65rpx;
 }
-.fundPool.data-v-10072c69 {
+.fundPool.data-v-56ef90b9 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -144,38 +145,38 @@
 	border-radius: 10rpx;
 	padding: 20rpx;
 }
-.left>image.data-v-10072c69 {
-	width: 280rpx;
+.left>image.data-v-56ef90b9 {
+	width: 300rpx;
 	height: 200rpx;
 }
-.left>._p.data-v-10072c69 {
+.left>._p.data-v-56ef90b9 {
 	color: #8F8F8F;
 	font-size: 20rpx;
 }
-._a.data-v-10072c69 {
+._a.data-v-56ef90b9 {
 	color: #007AFF;
 	font-size: 25rpx;
 	float: left;
 	text-decoration: none;
 }
-.right.data-v-10072c69 {
+.right.data-v-56ef90b9 {
 	margin-left: 50rpx;
 	color: #000000;
 }
-.right ._p.data-v-10072c69 {
+.right ._p.data-v-56ef90b9 {
 	font-weight: bold;
 }
-.right ._p.data-v-10072c69:nth-child(2) {
+.right ._p.data-v-56ef90b9:nth-child(2) {
 	margin-top: 30rpx;
 	font-weight: normal;
 	font-size: 25rpx;
 	color: #646464;
 }
-.right ._p:nth-child(2) ._span.data-v-10072c69 {
+.right ._p:nth-child(2) ._span.data-v-56ef90b9 {
 	color: #D0021B;
 	text-decoration: underline;
 }
-.donate.data-v-10072c69 {
+.donate.data-v-56ef90b9 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -187,16 +188,16 @@
 	        flex-direction: row;
 	margin-top: 70rpx;
 }
-navigator.data-v-10072c69 {
+navigator.data-v-56ef90b9 {
 	color: #007AFF;
 	font-size: 25rpx;
 	float: right;
 	margin-top: 15rpx;
 }
-.modifi.data-v-10072c69 {
+.modifi.data-v-56ef90b9 {
 	padding: 0;
 }
-.donate ._li.data-v-10072c69 {
+.donate ._li.data-v-56ef90b9 {
 	width: 40rpx;
 	height: 55rpx;
 	background: #DDDDDD;
@@ -207,11 +208,11 @@ navigator.data-v-10072c69 {
 	line-height: 55rpx;
 	vertical-align: middle;
 }
-.donate ._li.data-v-10072c69:nth-child(2) {
+.donate ._li.data-v-56ef90b9:nth-child(2) {
 	width: 70rpx;
 	margin: 0 10rpx 0 10rpx;
 }
-.donate button.data-v-10072c69 {
+.donate button.data-v-56ef90b9 {
 	margin-right: 0;
 	font-size: 23rpx;
 	padding-top: 2rpx;
@@ -219,32 +220,32 @@ navigator.data-v-10072c69 {
 	border-radius: 50rpx;
 	background-color: #CD2626;
 }
-.donateShow.data-v-10072c69 {
+.donateShow.data-v-56ef90b9 {
 	margin-top: 1rpx;
 	padding: 0 20rpx 10rpx 20rpx;
 	border-radius: 10rpx;
 	background: #FFFFFF;
 }
-.donateShow text.data-v-10072c69 {
+.donateShow text.data-v-56ef90b9 {
 	font-size: 25rpx;
 	color: #000000;
 	margin-bottom: 10rpx;
 }
-.donateShow ._a.data-v-10072c69 {
+.donateShow ._a.data-v-56ef90b9 {
 	margin-top: 15rpx;
 	float: right;
 }
-.poster.data-v-10072c69 {
+.poster.data-v-56ef90b9 {
 	width: 100%;
 	margin-top: 1rpx;
 	border-radius: 10rpx;
 	background: #FFFFFF;
 }
-.poster>image.data-v-10072c69 {
+.poster>image.data-v-56ef90b9 {
 	width: 100%;
 	height: 840rpx;
 }
-.description.data-v-10072c69 {
+.description.data-v-56ef90b9 {
 	padding: 30rpx;
 	margin-top: 1rpx;
 	font-size: 25rpx;
@@ -253,7 +254,7 @@ navigator.data-v-10072c69 {
 	color: #000000;
 	border-radius: 10rpx;
 }
-.description>._p.data-v-10072c69:nth-child(2) {
+.description>._p.data-v-56ef90b9:nth-child(2) {
 	margin-top: 20rpx;
 	float: right;
 }

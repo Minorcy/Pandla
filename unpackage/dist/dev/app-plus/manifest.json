@@ -34,7 +34,7 @@
     "splashscreen": {
       "target": "id:1",
       "autoclose": true,
-      "waiting": true,
+      "waiting": false,
       "delay": 0
     },
     "popGesture": "close",
@@ -84,17 +84,20 @@
       },
       "splashscreen": {
         "android": {
-          "xxhdpi": "",
-          "xhdpi": "",
-          "hdpi": ""
+          "xxhdpi": "static/StartupChart/1080x1882.png",
+          "xhdpi": "static/StartupChart/720x1242.png",
+          "hdpi": "static/StartupChart/480x762.png"
         },
         "ios": {
           "iphone": {
-            "retina47": "",
-            "portrait-896h@2x": "",
+            "retina47": "static/StartupChart/750x1334 copy 2.png",
+            "portrait-896h@2x": "static/StartupChart/828x1792 copy 3.png",
             "portrait-896h@3x": "",
             "iphonex": "",
-            "retina55": ""
+            "retina55": "static/StartupChart/1242x2208 copy 4.png",
+            "landscape-896h@2x": "static/StartupChart/828x1792 copy 3.png",
+            "retina47l": "static/StartupChart/750x1334 copy 2.png",
+            "retina55l": "static/StartupChart/1242x2208 copy 4.png"
           }
         }
       },

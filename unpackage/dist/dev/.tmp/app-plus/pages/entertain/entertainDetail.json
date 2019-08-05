@@ -1,5 +1,13 @@
 {
   "navigationBarTitleText": "",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "編輯",
+        "fontSize": "35upx"
+      }
+    ]
+  },
   "bounce": "none",
   "usingComponents": {}
 }

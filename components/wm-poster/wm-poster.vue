@@ -53,6 +53,10 @@ export default {
 			Type:String,
 			default:750
 		},
+		Height:{
+			Type:String,
+			default:750
+		},
 		CanvasBg:{		//canvas画布背景色
 			Type:String,		
 			default:'#ffffff'
@@ -99,10 +103,10 @@ export default {
 				q[0] = C_Q;
 			}
 			_this.canvasW = C_W;
-			_this.canvasH = r[1] + q[1] + 28;
-			this.canvasH = 650
+			_this.canvasH = r[1];
 			_this.ctx.setFillStyle(_this.CanvasBg); //canvas背景颜色
 			_this.ctx.fillRect(0, 0, C_W, _this.canvasH); //canvas画布大小
+			
 			
 			//添加图片展示
 			_this.ctx.drawImage(_imgInfo.path, C_P, C_P, r[0], r[1]);

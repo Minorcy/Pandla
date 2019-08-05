@@ -2,7 +2,6 @@
   "navigationBarTitleText": "",
   "titleNView": false,
   "bounce": "none",
-  "softinputNavBar": "none",
   "usingComponents": {
     "m-icon": "/components/m-icon/m-icon"
   }

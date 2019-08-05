@@ -3,7 +3,7 @@
         <view class="input-group">
 				<image class="img-avatar" :src="avatar" @tap="upLogoImg"/>
 				 <view class="input-row border">
-				    <m-input type="text" v-model="barInfo.name" placeholder="酒吧名稱" focus clearable></m-input>
+				    <m-input type="text" v-model="barInfo.name" placeholder="酒吧織名稱" focus clearable></m-input>
 				</view>
 				<view class="input-row border">
 				    <m-input type="number" v-model="barInfo.phone" maxlength="11" placeholder="聯係電話" clearable></m-input>
@@ -29,7 +29,7 @@
 
 <script>
     import mInput from '../../components/m-input.vue';
-	import {upLogo, getImgTemp, setBar} from '../../api/api.js';
+	import {upload, getImgTemp, setBar,createBenfit} from '../../api/api.js';
 	import {barValidate} from '../../common/js/validate.js';
 
     export default {
@@ -44,7 +44,8 @@
 					location: '',
 					intro: '',
 					username: '',
-					userphone: ''
+					userphone: '',
+					logo: ""
 				},
 				isUpload: false,
 				avatar: '../../static/img/user/upload.svg',
@@ -54,17 +55,18 @@
 			upLogoImg() {
 				getImgTemp().then(data => {
 					this.avatar = data;
-					upLogo(this.avatar, 1).then(data => {
+					upload(this.avatar).then(data => {
 						this.isUpload = true;
+						this.barInfo.logo = data
 					});
 				});
 			},
 			commitVer() {
 				if(barValidate(this.barInfo, this.isUpload)) {
 					uni.navigateTo({
-						url: 'entertainUpload'
+						url: 'entertainUpload?barInfo=' + JSON.stringify(this.barInfo)
 					});
-					setBar(this.barInfo);
+					
 				}
 			}
 		}

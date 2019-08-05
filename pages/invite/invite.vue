@@ -7,19 +7,19 @@
 			<view class="invite-top">
 				<view class="left">
 					<text class="count">{{inviteCount}}</text>
-					<text class="text">邀请人数</text>
+					<text class="text">邀請人數</text>
 				</view>
 				<view class="middle">
 					<text class="count">{{valiDation}}</text>
-					<text class="text">通过验证人数</text>
+					<text class="text">通過驗證人數</text>
 				</view>
 				<view class="right">
 					<text class="count">{{panCount}}</text>
-					<text class="text">获得PAN币</text>
+					<text class="text">獲得PAN幣</text>
 				</view>
 			</view>
 			<view class="invite"  @tap="createPoster()">
-				<text class="invite-title">邀请码</text>
+				<text class="invite-title">邀請碼</text>
 				<text class="invite-content">{{inviteCode}}</text>
 			</view>
 			<view class="invite-text">
@@ -27,30 +27,7 @@
 			</view>
 		</view>
 		<view class="pan-section" v-if="!created">
-			<view class="pan-item">
-				<image src="../../static/img/invite/PAN.svg" mode=""></image>
-				<text>每邀請1位可獲得10個PAN幣</text>
-				<text>前5位好友</text>
-			</view>
-			<view class="pan-item">
-				<image src="../../static/img/invite/PAN.svg" mode=""></image>
-				<text>每邀請1位可獲得20個PAN幣</text>
-				<text>前6-10位好友</text>
-			</view>
-			<view class="pan-item">
-				<image src="../../static/img/invite/PAN.svg" mode=""></image>
-				<text>每邀請1位可獲得30個PAN幣</text>
-				<text>前11-20位好友</text>
-			</view>
-			<view class="pan-item">
-				<image src="../../static/img/invite/PAN.svg" mode=""></image>
-				<text>每邀請1位可獲得50個PAN幣</text>
-				<text>前21-100位好友</text>
-			</view>
-			<view class="pan-text">
-				<text>越早期的用戶越容易獲得PAN幣,隨著星球用戶的增漲獲取PAN幣的難度會越大,PAN幣的價值也會隨著應用場景和居民增長而上升。
-				</text>
-			</view>
+			<image src="../../static/img/invite/mid.svg" mode="widthFix"></image>
 		</view>
 		<view class="bottom-section" v-if="!created">
 			<text class="first">
@@ -60,15 +37,16 @@
 				首批登陸的星球居民可以通過:
 			</text>
 			<text>
-				<text class="color">尋找軟件BUG，提意見，邀請好友，投票，發日誌</text>等參與星球技術團隊一起建設潘多拉星球
+				<text class="color">尋找軟件BUG，提意見，邀請好友，投票，發日誌</text>等參與星球建設與技術團隊一起打造潘多拉星球
 			</text>
 			<text>您可以通過郵件或者關注我們微信公眾號與我們聯繫</text>
-			<text>郵箱地址:<text class="color">media@pandla.io</text></text>
-			<text>微信公眾號:<text class="color">PANDLA</text></text>
+			<text>郵箱地址:<text class="color"> media@pandla.io</text></text>
+			<text>微信公眾號:<text class="color"> PANDLA</text></text>
 		</view>
 		<view class="poster" v-if="created">
 			<wm-poster imgSrc="http://47.244.27.153/images/static/img/poster/poster.png" :QrSrc="createImg" class="pan-poster"
-			 @success="saveImg" @tap='save'>
+			 @success="saveImg" @tap='save'
+			 :Height="height">
 			</wm-poster>
 		</view>
 	</view>
@@ -101,7 +79,8 @@
 				valiDation: 0,
 				createImg: '',
 				created: false,
-				imgSrc:''
+				imgSrc:'',
+				height:""
 			}
 		},
 		components: {
@@ -189,6 +168,12 @@
 		},
 		onLoad() {
 			this.getInvData()
+			uni.getSystemInfo({
+				success: function(res) {
+					console.log(res.windowHeight);
+					this.height = res.windowHeight
+				}
+			});
 		}
 	}
 </script>
@@ -324,48 +309,52 @@
 		}
 
 		.pan-section {
+			
 			width: 98%;
 			margin: 0 auto;
 			border-radius: 5%;
-			box-sizing: border-box;
-			background: url("http://47.244.27.153/images/static/img/kuang.svg");
-			// background-image: url("~@/static/img/invite/kuang.svg") no-repeat;
-			background-position: 100% 82%;
-
-			.pan-item {
-				display: inline-block;
-				width: 44%;
-				height: 100px;
-				padding: 10px;
-
-				image {
-					text-align: center;
-					width: 50px;
-					height: 50px;
-					margin-left: 59px;
-				}
-
-				text {
-					display: block;
-					font-size: 12px;
-					text-align: center;
-					color: #000
-				}
+			image{
+				width: 100%
 			}
-
-			.pan-text {
-				width: 100%;
-				box-sizing: border-box;
-				padding: 10px;
-
-				text {
-					padding: 10px;
-					font-size: 15px;
-					color: #000;
-					line-height: 20px;
-					letter-spacing: 2px;
-				}
-			}
+// 			box-sizing: border-box;
+// 			background: url("http://47.244.27.153/images/static/img/kuang.svg");
+// 			// background-image: url("~@/static/img/invite/kuang.svg") no-repeat;
+// 			background-position: 100% 82%;
+// 
+// 			.pan-item {
+// 				display: inline-block;
+// 				width: 44%;
+// 				height: 100px;
+// 				padding: 10px;
+// 
+// 				image {
+// 					text-align: center;
+// 					width: 50px;
+// 					height: 50px;
+// 					margin-left: 59px;
+// 				}
+// 
+// 				text {
+// 					display: block;
+// 					font-size: 12px;
+// 					text-align: center;
+// 					color: #000
+// 				}
+// 			}
+// 
+// 			.pan-text {
+// 				width: 100%;
+// 				box-sizing: border-box;
+// 				padding: 10px;
+// 
+// 				text {
+// 					padding: 10px;
+// 					font-size: 15px;
+// 					color: #000;
+// 					line-height: 20px;
+// 					letter-spacing: 2px;
+// 				}
+// 			}
 
 		}
 

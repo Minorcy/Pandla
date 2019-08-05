@@ -5,7 +5,7 @@
 				<p>總資產</p>
 				<text v-if="!isHidden">{{propInfo.balance | toFixed(4)}}</text>
 				<text v-else>*****</text>
-				<text class="asset-rmb" v-if="!isHidden">≈{{ this.rmb | toFixed(4)}}USTD</text>
+				<text class="asset-rmb" v-if="!isHidden">≈{{ this.rmb | toFixed(4)}} USTD</text>
 			</view>
 			<m-icon class="eyeIcon" :color="changColor" type="eye" size="20" @click="assetHidden()">
 			</m-icon>
@@ -14,29 +14,29 @@
 		<view class="panData">
 			<view class="data">
 				<p>PAN / USTD</p>
-				<p>{{data1}}</p>
-				<p>{{data2}}</p>
+				<p :class="red == true ? 'red' : '' ">{{data1}}</p>
+				<p :class="red == true ? 'red' : '' ">${{data2}}</p>
 			</view>
 			<text class="data-24">24H 量 {{data3}}</text>
 			<view class="bindCurr">
 				<view class="okexCurr">
 					<text>IXX</text>
 					<text>點擊註冊IXX交易所可以获得10个PAN幣</text>
-					<text @tap="toIXX">註冊</text>
+					<view @tap="toIXX"><image src="../../static/img/pan/regIXX.svg" mode="widthFix"></image></view>
 				</view>
 			</view>
 			<view class="pan-box">
 				<text class="pan-text">
-					新加坡IXX數字資產是潘多拉星球戰略合作,也是潘多拉星球的超級節點，用戶可以在IXX交易所查看PAN的價格走勢
+					新加坡IXX數字資產交易所是潘多拉星球戰略合作,也是潘多拉星球的超級節點，用戶可以在IXX交易所查看PAN的價格走勢,
 				</text>
 				<text  class="color">
-					當潘多拉星球居民達到200萬時，用戶可以將自己获得的PAN可以在IXX交易所進行流通交易
+					當潘多拉星球居民達到200萬時，用戶可以將自己获得的PAN在IXX交易所進行流通交易
 				</text>
 			</view>
 		</view>
 		<view class="fundPool">
 			<view class="left">
-				<image src="../../static/img/pan/love.svg"></image>
+				<image src="../../static/img/pan/love.svg" mode=""></image>
 				<p>已募集 {{propInfo.pollSum}} 枚PAN幣</p>
 				<a href="#">區塊鏈查詢地址</a>
 			</view>
@@ -66,9 +66,9 @@
 		</view>
 		<view class="description">
 			<p>
-				潘多拉星球將聯合各國公益組織，以及星球居民建設1億枚PAN弊的公益基金池，基金池的資產將用於支持LGBT的公益事業，資產的使用及用處，將生成區塊上傳到鏈上，任何人都可以進行查詢，以保證資產的規範使用。
+				潘多拉星球將聯合各國公益組織，以及星球居民建設1億枚PAN幣的公益基金池，基金池的資產將用於支持LGBT的公益事業，資產的使用及用處，將生成區塊上傳到鏈上，任何人都可以進行查詢，以保證資產的規範使用。
 			</p>
-			<p>活動時間：2019年7月3至2019年7月15</p>
+			<p>活動時間：2019年8月2至2019年10月30</p>
 		</view>
 	</view>
 </template>
@@ -94,7 +94,8 @@
 				Bind: '已綁定',
 				panVlaue: '198,878',
 				donateValue: '10',
-				rmb: ''
+				rmb: '',
+				red:false
 			}
 		},
 		components: {
@@ -116,8 +117,9 @@
 				getIndex().then(data => {
 					this.propInfo = data;
 					// 限制小数点后为4位
-					console.log(this.propInfo)
-					console.log(this.data2)
+					// console.log(this.propInfo)
+					// console.log(this.data2)
+					
 					this.rmb = this.propInfo.balance * this.data2
 				})
 			},
@@ -151,9 +153,11 @@
 				getChange_24h().then(data => {
 					console.log(data.data[0])
 					this.data1 = data.data[0].change_24h
+					console.log(this.data1)
 					if (this.data1 > 0) {
 						this.data1 = "+" + this.data1
 					} else {
+						this.red = true
 						this.data1 = this.data1
 					}
 					this.data3 = data.data[0].volume_24h
@@ -188,8 +192,8 @@
 	}
 
 	.asset-item {
-		width: 120upx;
-		margin: 20upx 40upx;
+		width: 280upx;
+		margin: 20upx 20upx;
 
 	}
 
@@ -214,7 +218,9 @@
 		border: none;
 		border-top: 3upx solid #C8C7CC;
 	}
-
+	.red{
+		color: red !important;
+	}
 	.eyeIcon {
 		position: absolute;
 		right: 0upx;
@@ -283,7 +289,7 @@
 	}
 	.okexCurr>text:nth-child(1) {
 		margin-right: 80upx;
-		font-size: 14px;
+		font-size: 17px;
 		display: block;
 	}
 
@@ -292,21 +298,19 @@
 		font-size: 14px;
 	}
 
-	.okexCurr>text:nth-child(3) {
+	.okexCurr>view {
 		position: absolute;
-		top: 0;
+		top: 1px;
 		right: 0;
 		color: #FFFFFFFF;
 		font-size: 14px;
-		
-		width: 60px;
+		width: 80px;
 		height: 20px;
 		text-align: center;
-		border: 1px solid;
-		border-image: linear-gradient(135deg, rgba(3, 255, 239, 1), rgba(2, 245, 43, 1)) 1 1;
-		border-radius: 16px;
 	}
-
+	.okexCurr>view image{
+		width: 100%;
+	}
 	.fireCurr {
 		margin-top: 65upx;
 	}
@@ -320,7 +324,7 @@
 	}
 
 	.left>image {
-		width: 280upx;
+		width: 300upx;
 		height: 200upx;
 	}
 
