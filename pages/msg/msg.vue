@@ -1,577 +1,330 @@
 <template>
 	<view class="page">
-		<hr>
-		<view class="top">
-			<view class="img">
-				<image src="../../static/img/topic/communication.svg" mode="widthFix"></image>
+		<view class="msg-tab">
+			<view class="msg-communication">
+				<uniBadge text="5" type="error" class= "comm-badge"></uniBadge>
+				<image src="../../static/img/msg/msg.svg"></image>
+				<text>通訊</text>
 			</view>
-			<view class="top-text">
-				<text>
-					#點對點通訊，我們會為星球居民提供兩種通訊方式：
-					一種:是免費的類似微信的即時通訊
-					一種:是需要支付兩個EOS的區塊鏈技術的點對點通訊，用戶在自己設備上运行节点接入網絡，點對點實時互聯，通訊內容只有掌握私鑰的人才能查看，平台和第三方不會紀錄，查看、儲存任何信息。作為星球居民妳會選擇哪一種通訊方式請告訴我們
-					<text decode="true" class="right">預計上線時間:&nbsp;&nbsp;待定</text>
-				</text>
+			<view class="msg-Fabulous">
+				<uniBadge text="5" type="error" class= "fab-badge"></uniBadge>
+				<image src="../../static/img/msg/msg-zan.svg"></image>
+				<text>讚</text>
 			</view>
-		</view>
-		<view class="user-section">
-			<view class="user-item" v-for="(item,index) in topicList" :key="index">
-				<view class="user">
-					<image :src="item.poto" mode="aspectFill" @tap="toUser(item.uid)"></image>
-					<text>{{item.name}}</text>
-				</view>
-				<view class="content">
-					<text class="content-text" decode="true"><text class="content-title" decode="true">#點對點通訊 &nbsp;&nbsp;</text>
-						{{item.content}}</text>
-				</view>
-				<view class="option">
-					<view class="comm-item" @tap="showComm(item.id,index)">
-						<image src="../../static/img/topic/comment.svg" mode=""></image>
-						<text>{{item.commCount}}</text>
-					</view>
-					<view class="like-item" @tap="usTopicLike(item.id,index)">
-						<image :src="item.isLike ==1 ? likeimg :unlikeimg"></image>
-
-						<text>{{item.likeCount}}</text>
-					</view>
-				</view>
+			<view class="msg-fans">
+				<uniBadge text="5" type="error" class= "fans-badge"></uniBadge>
+				<image src="../../static/img/msg/msg-fans.svg"></image>
+				<text>粉絲</text>
+			</view>
+			<view class="msg-comment">
+				<uniBadge text="5" type="error" class= "comment-badge"></uniBadge>
+				<image src="../../static/img/msg/msg-comment.svg"></image>
+				<text>評論和@</text>
 			</view>
 		</view>
-		<view class="comment-section" v-if="showComment">
-			<view class="comment-section-top">
-				<text>{{commCont}}条评论</text>
-				<image src="../../static/img/daily/X.svg" @tap.stop="hidComm()"></image>
+		<view class="msg-search">
+			<view class="input-box">
+				<image src="../../static/img/msg/search.svg"></image>
+				<input type="text" placeholder="查詢" maxlength="200" />
 			</view>
-			<scroll-view class="comment" scroll-y="true">
-				<view class="nocomm" v-if="!commList.length"><text>暫無評論和回复,快來搶沙發吧!</text></view>
-				<view scroll-y="true" class="comment-section-details" v-for="(ite, ind) in commList" :key="ind">
-					<view class="comment-section-comm">
-						<view class="comm-ite">
-							<image class="ite-portrait" :src="ite.portrait" mode="aspectFill" @tap="replyComm(ite.name, ite.uid ,ite.id)"></image>
-							<view class="ite-name-content">
-								<text class="ite-name" @tap="replyComm( ite.name, ite.id)">{{ite.name}}:</text>
-								<text class="ite-content">{{ite.content}}</text>
-								<text class="ite-create_time">{{ite.createTime}}</text>
-							</view>
+		</view>
+		<view class="msg-commlist">
+			<uni-swipe-action :options="options" @tap="bindClick">
+				<view class="list-item">
+					<view class="item-img">
+						<image src="http://47.244.27.153/images/2019/07/30/1564484682777693.JPG" mode="widthFix"></image>
+					</view>
+					<view class="item-content" @tap="enterChat">
+						<view class="user">
+							<text class="user-name">哈哈</text>
+							<text class="user-time">09:20</text>
 						</view>
-						<p class="comment-section-reply" v-if="ite.reply != ''" v-for="(it,idx) in ite.reply" :key="idx">
-							<text class="color">{{it.name}}</text>
-							<text>: {{it.content}}</text>
-						</p>
+						<view class="text">
+							<text class="text-distance">[0.07km]</text>
+							<text class="text-content">通讯功能</text>
+						</view>
 					</view>
 				</view>
-				<view class="input-section">
-					<input v-model="commContent" :placeholder="commplaceholder" />
-					<button class="primary" hover-class="hover-primary" @tap="addComm()">發送</button>
+			</uni-swipe-action>
+
+			<view class="list-item">
+				<view class="item-img">
+					<image src="http://47.244.27.153/images/2019/07/30/1564484682777693.JPG" mode="widthFix"></image>
 				</view>
-			</scroll-view>
+				<view class="item-content">
+					<view class="user">
+						<text class="user-name">哈哈</text>
+						<text class="user-time">09:20</text>
+					</view>
+					<view class="text">
+						<text class="text-distance">[0.07km]</text>
+						<text class="text-content">通讯功能通讯功能通讯功能通讯功能通讯功能通讯功能通讯功能</text>
+					</view>
+				</view>
+			</view>
+
+
+
+			<view class="list-item">
+				<view class="item-img">
+					<image src="http://47.244.27.153/images/2019/07/30/1564484682777693.JPG" mode="widthFix"></image>
+				</view>
+				<view class="item-content">
+					<view class="user">
+						<text class="user-name">哈哈</text>
+						<text class="user-time">09:20</text>
+					</view>
+					<view class="text">
+						<text class="text-distance">[0.07km]</text>
+						<text class="text-content">通讯功能</text>
+					</view>
+				</view>
+			</view>
+
+
 		</view>
-		<view class="publish" @tap.stop="publishDyn()">
-			<image src="../../static/img/topic/publish.svg" mode="widthFix"></image>
-		</view>
-		<view class="load" v-if="showLoadMore">{{loadMoreText}}</view>
+
+
+
 	</view>
 </template>
 
 <script>
-	import {
-		checkTopicList,
-		getLikeNumber,
-		topicLike,
-		topicComment,
-		getAllComment,
-		topicReply,
-		getReply
-	} from '../../api/api.js';
+	import uniSwipeAction from "@/components/uni-swipe-action/uni-swipe-action.vue";
+	import uniBadge from "@/components/uni-badge/uni-badge.vue"
 	export default {
 		data() {
 			return {
-				topicList: '',
-				likeCount: "",
-				commCont: 0,
-				showComment: false,
-				commContent: '',
-				commplaceholder: '請輸入評論內容',
-				likeimg: "../../static/img/topic/like.svg",
-				unlikeimg: "../../static/img/topic/fabulous.svg",
-				islike: false,
-				commList: '',
-				replyList: '',
-				addType: '',
-				topicId: '',
-				topicRid: '',
-				commIndex: '',
-				height: "",
-				pageSize:10,
-				loadMoreText: "上拉加載更多",
-				showLoadMore: false,
+				options: [{
+					text: '刪除',
+					style: {
+						backgroundColor: '#dd524d'
+					}
+				}]
 			}
 		},
+		components: {
+			uniSwipeAction,
+			uniBadge
+		},
 		methods: {
-			toUser(id) {
+			enterChat(e) {
 				uni.navigateTo({
-					url: '/pages/daily/userInfo?uid=' + id
-				});
-			},
-			publishDyn() {
-				uni.navigateTo({
-					url: '../publish/publish?tid=' + 4
-				});
-			},
-			getTopicList() {
-				checkTopicList(4, 0).then(data => {
-					this.topicList = data
-					console.log(data)
+					url: 'chat',
+					success: res => {},
+					fail: () => {},
+					complete: () => {}
 				})
-
 			},
-			usTopicLike(id, index) {
-				if (this.topicList[index].isLike !== 1) {
-					this.topicList[index].isLike = 1
-					this.topicList[index].likeCount += 1
-					console.log(this.topicList[1].isLike)
-					topicLike(id).then(data => {
-						getLikeNumber(id).then(data => {
-							console.log(data)
-							this.likeCount = data.likeCount
-						})
-					});
-					console.log(index)
-
-				}
-
+			bindClick() {
+				console.log('用户点击刪除');
 			},
-			showComm(id, index) {
-				(this.showComment == true) ? (this.showComment = false) : (this.showComment = true);
-				let cid
-				getAllComment(id).then(data => {
-					this.commList = data
-					this.commCont = data.length
-					console.log(data)
-				})
-				this.topicId = id
-				this.commIndex = index
-			},
-			hidComm() {
-				(this.showComment == true) ? (this.showComment = false) : (this.showComment = true);
-				this.commContent = ''
-				this.commList = ''
-				this.commCont = 0
-			},
-			addComm() {
-				if (this.commContent == "") {
-					uni.showToast({
-						icon: 'none',
-						title: '请输入评论'
-					});
-				} else if (this.addType == 'reply') {
-					topicReply(this.topicRid, this.commContent).then(data => {
-						console.log("reply")
-						getAllComment(this.topicId).then(data => {
-							this.commList = data
-							console.log(this.commList)
-							this.commCont = data.length
-							this.addType = ''; // 重置发送按钮类型
-							this.commContent = ''
-							uni.showToast({
-								icon: 'none',
-								title: '回復成功'
-							})
-							this.commplaceholder = '請輸入評論內容'; // 清除占位符
-							this.topicList[this.commIndex].commCount += 1
-						})
-					})
-				} else {
-					topicComment(this.topicId, this.commContent).then(data => {
-						getAllComment(this.topicId).then(data => {
-							this.commList = data
-							this.commCont = data.length
-						})
-					})
-					uni.showToast({
-						icon: 'none',
-						title: '評論成功'
-					})
-					this.commContent = ''
-					this.addType = ''; // 重置发送按钮类型
-					this.commplaceholder = '請輸入評論內容'; // 清除占位符
-					this.topicList[this.commIndex].commCount += 1
-				}
-			
-			},
-			replyComm(name, id,  rid) {
-				if (id != uni.getStorageSync('USERS_KEY').id) {
-					this.commplaceholder = '@' + name;
-					this.addType = 'reply';
-					this.topicRid = rid
-				} else {
-					uni.showToast({
-						icon: 'none',
-						title: '不能自己回復自己哦'
-					})
-				}
-			},
-			
-
+			pickerChange(e) {
+				console.log('picker发送选择改变，携带值为：' + e.target.value)
+			}
 		},
 		onPullDownRefresh() {
 			console.log("onPullDownRefresh")
 			setTimeout(function() {
 				uni.startPullDownRefresh()
-			}, 300)
+			}, 500)
 		},
-		onReachBottom() {
-			checkTopicList(4,this.pageSize).then(data=>{
-				this.pageSize+=10;
-				if(!data){
-					this.showLoadMore= true
-					this.loadMoreText =  "暫無更多數據!"
-					return
-				}
-				this.showLoadMore = true;
-				this.topicList = this.topicList.concat(data)
-			})
-		},
-		
-		onLoad() {
-			this.getTopicList()
-			uni.getSystemInfo({
+		onNavigationBarButtonTap() {
+			uni.showActionSheet({
+				itemList: ['忽略未读提醒', '清空聊天列表', '提醒设置'],
 				success: function(res) {
-					console.log(res.windowHeight);
-					this.height = res.windowHeight
+					console.log('选中了第' + (res.tapIndex) + '个按钮');
+					if (res.tapIndex == 2) {
+						uni.navigateTo({
+							url: '/pagesA/settingChat/settingChat'
+						});
+					}
+					if (res.tapIndex == 0) {
+						uni.showModal({
+							title: '',
+							content: '确定忽略未读提醒',
+							success: function(res) {
+								if (res.confirm) {
+									console.log('用户点击确定');
+								} else if (res.cancel) {
+									console.log('用户点击取消');
+								}
+							}
+						});
+					};
+					if (res.tapIndex == 1) {
+						uni.showModal({
+							title: '',
+							content: '确定清空聊天列表',
+							success: function(res) {
+								if (res.confirm) {
+									console.log('用户点击确定');
+								} else if (res.cancel) {
+									console.log('用户点击取消');
+								}
+							}
+						});
+					}
+				},
+				fail: function(res) {
+					console.log(res.errMsg);
 				}
 			});
+
 		},
-		onShow() {
-			this.getTopicList()
-		}
+
 	}
 </script>
+
 <style lang="scss" scoped>
 	.page {
-		// position: absolute;
-		// top: 0;
-		// right: 0;
-		// bottom: 0;
-		// left: 0;
 		width: 100%;
-	
-		
-		// -webkit-overflow-scrolling: touch;
-		// overflow-scrolling: touch;
-		// overflow-y: scroll;
+		background: #fff;
 
-		hr {
-			position: fixed;
-			margin-top: 5px;
-			height: 2px;
-			border: none;
-			background-color: #4CD964;
-			top: -5px;
-			width: 100%;
-			z-index: 10;
-		
-		}
-
-		::-webkit-scrollbar {
-			width: 0;
-			height: 0;
-			color: transparent;
-		}
-
-		.top {
-			margin-top: 1px;
-			width: 100%;
-			margin-bottom: 10px;
-
-			.img {
-				width: 100%;
-
-				image {
-					width: 100%;
-				}
-			}
-
-			.top-text {
-				color: #cdcdcd;
-				padding: 10px;
-				font-size: 14px;
-				line-height: 25px;
-
-				text {
-					display: block;
-					color: #cdcdcd !important;
-				}
-
-				.right {
-					position: relative;
-					left: 50%;
-					color: #067ee8 !important;
-					width: 55%;
-					margin-top: 5px;
-					text-align: center;
-
-				}
-			}
-
-		}
-
-		.user-section {
-			.user-item {
+		.msg {
+			&-tab {
+				margin-top: 20px;
+				display: flex;
+				justify-content: space-around;
 				position: relative;
-				background-color: #fff;
-				padding: 5px 10px;
-				margin-bottom: 5px;
 
-				.user {
-					background-color: #fff;
-					padding: 5px 10px;
+				// view{
+				// 	position: absolute
+				// }
+				
+				.comm-badge {
+					position: absolute;
+					top: -10px;
+					left: 16%;
+					z-index: 10;
+				}
+				.fab-badge {
+					position: absolute;
+					top: -10px;
+					left: 40%;
+					z-index: 10;
+				}
+				.fans-badge {
+					position: absolute;
+					top: -10px;
+					left: 65%;
+					z-index: 10;
+				}
+				.comment-badge {
+					position: absolute;
+					top: -10px;
+					left: 89%;
+					z-index: 10;
+				}
+
+				view image {
+					width: 40px;
+					height: 40px;
+				}
+
+				view text {
+					font-size: 14px;
+					display: block;
+					text-align: center
+				}
+			}
+
+			&-search {
+				width: 100%;
+				margin: 20px 0 20px 0;
+
+				.input-box {
+					width: 90%;
+					margin: 0 auto;
+					height: 30px;
+					position: relative;
 
 					image {
-						width: 50px;
-						height: 50px;
-						border-radius: 50%;
-						vertical-align: middle;
-					}
-
-					text {
-						color: #000;
-						margin-left: 5px;
-						font-size: 16px;
-						vertical-align: middle;
-					}
-				}
-
-				.content {
-					background-color: #fff;
-					padding: 5px 10px;
-
-					.content-title {
+						width: 20px;
+						height: 20px;
 						display: inline-block;
-						color: #0087ff;
-						font-size: 14px;
+						position: absolute;
+						top: 5px;
+						left: 5px;
 					}
-
-					.content-text {
-						display: inline-block;
-						color: #000;
-						font-size: 14px;
-						text-align: justify;
-						text-justify: newspaper;
-						word-break: break-all;
-
-					}
-				}
-
-				.option {
-					height: 30px;
-					background-color: #fff;
-					padding: 5px 10px;
-
-					.comm-item {
-						float: left;
-
-						image {
-							width: 25px;
-							height: 25px;
-							vertical-align: middle;
-						}
-
-						text {
-							margin-left: 5px;
-							font-size: 16px;
-							color: #000;
-							vertical-align: middle;
-						}
-					}
-
-					.like-item {
-						float: right;
-
-						image {
-							width: 25px;
-							height: 25px;
-							vertical-align: middle;
-						}
-
-						text {
-							font-size: 16px;
-							color: #000;
-							margin: 0 5px;
-							vertical-align: middle;
-						}
-					}
-				}
-			}
-		}
-
-		.publish {
-			position: fixed;
-			bottom: 0px;
-			left: 50%;
-			margin-left: -60px;
-			text-align: center;
-
-			image {
-				width: 120px;
-				height: 30px;
-			}
-		}
-
-		.comment-section {
-			position: fixed;
-			bottom: 0;
-			width: 100%;
-			height: 60%;
-			box-sizing: border-box;
-			padding: 10px 10px 32px 10px;
-			font-size: 16px;
-			z-index: 300;
-			background-color: #000000;
-			border-radius: 36upx 36upx 0 0;
-			overflow: hidden;
-
-			::-webkit-scrollbar {
-				width: 0;
-				height: 0;
-				color: transparent;
-			}
-
-			.comment-section-top {
-				width: 95%;
-				height: 30px;
-				position: fixed;
-				text-align: center;
-				box-sizing: border-box;
-				color: #ffffff;
-				font-size: 14px;
-				margin: 0 auto;
-				background-color: #000000;
-
-				image {
-					width: 15px;
-					height: 15px;
-					float: right;
-					right: 10px;
-				}
-			}
-
-			.comment {
-				margin-top: 30px;
-				width: 100%;
-				height: 100%;
-
-				.nocomm {
-					margin-left: 70px;
-					margin-top: 50px;
-					color: #ffffff;
-
-				}
-
-				.comment-section-details {
-					width: 100%;
-
-
-					.comment-section-comm {
-						margin-bottom: 10px;
-
-						.comm-ite {
-							display: flex;
-							align-items: flex-end;
-
-							.ite-portrait {
-								width: 40px;
-								height: 40px;
-								border-radius: 50%;
-								margin: 5px;
-								align-self: end;
-								flex-shrink: 0;
-							}
-
-							.ite-name-content {
-								box-sizing: border-box;
-								padding: 5px;
-								color: #ffffff;
-								flex-wrap: wrap;
-								flex-grow: 1;
-								font-size: 14px;
-								line-height: 20px;
-
-								.ite-name {
-									display: block;
-									color: #B7B7B7;
-								}
-
-								.ite-content {
-									word-wrap: break-word;
-								}
-
-								.ite-create_time {
-									float: right;
-									font-size: 12px;
-								}
-							}
-						}
-
-						.comment-section-reply {
-							padding: 5px 5px 5px 30px;
-							color: #ffffff;
-							font-size: 14px;
-
-							.color {
-								color: #e64340;
-								font-size: 14px;
-							}
-						}
-					}
-
-				}
-
-				.input-section {
-					position: fixed;
-					width: 100%;
-					height: 65upx;
-					margin: 0 auto;
-					bottom: 0;
-					left: 0;
-					
-					color: #000000;
-					background-color: #B7B7B7;
-					
-					font-size: 30upx;
 
 					input {
-						
-						width: 77%;
-						height: 65upx;
-						line-height: 65upx;
-						vertical-align: middle;
-						float: left;
-						padding-left: 20upx;
+						display: block;
+						height: 30px;
+						background: #e1e1e1;
+						line-height: 30px;
+						padding-left: 30px;
+						font-size: 16px;
+						border-radius: 10px;
+						text-decoration: none;
+						outline: none;
+					}
+				}
+			}
+
+			&-commlist {
+				width: 100%;
+				padding: 10px;
+				box-sizing: border-box;
+
+				.list-item {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+
+					.item-img {
+						flex-grow: 0;
+
+						image {
+							width: 50px;
+							height: 50px;
+							border-radius: 50%;
+						}
 					}
 
-					button {
-						position: absolute;
-						margin: 0;
-						padding: 0;
-						right: 0;
-						width: 20%;
-						padding-right: 40upx;
-						float: right;
-						margin-top: -10upx;
-						font-size: 35upx;
-						color: #000000;
+					.item-content {
+						max-width: 306px;
+						font-size: 16px;
+						padding: 10px;
+						flex-grow: 1;
+						overflow: hidden;
+
+						.user {
+
+							align-items: stretch;
+							color: #777;
+
+							&-name {
+								text-align: left;
+								font-weight: 700;
+								color: #000;
+							}
+
+							&-time {
+								float: right;
+								text-align: right;
+							}
+						}
+
+						.text {
+							margin-top: 5px;
+							color: #777;
+							font-size: 14px;
+							overflow: hidden;
+							text-overflow: ellipsis;
+
+							&-distance {}
+
+							&-content {
+								white-space: nowrap;
+								text-overflow: ellipsis;
+								word-break: break-all;
+								overflow: hidden;
+							}
+						}
 					}
 				}
 			}
 		}
-		.load{
-			width: 100%;
-			height: 20px;
-			color: #fff;
-			font-size: 16px;
-			text-align: center;
-			line-height: 20px;
-			}
 	}
 </style>

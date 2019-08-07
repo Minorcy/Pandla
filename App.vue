@@ -3,9 +3,13 @@
 		// onLaunch: function() {
 		// 	console.log('App Launch');
 		// },
-		// onShow: function() {
-		// 	console.log('App Show');
-		// },
+		onShow: function() {
+			console.log('App Show');
+			uni.setTabBarBadge({
+				index: 1,
+				text: '9'
+			})
+		},
 		// onHide: function() {
 		// 	console.log('App Hide');
 		// },
@@ -161,6 +165,7 @@
 		min-height: 100%;
 		display: flex;
 		padding-left: 10upx;
+		
 	}
 
 	.input-group {
@@ -170,6 +175,7 @@
 		margin-top: 40upx;
 		position: relative;
 		color: #EFEFF4;
+		text-decoration:none
 	}
 
 	.input-row {
@@ -177,6 +183,7 @@
 		flex-direction: row;
 		position: relative;
 		margin-top: 40upx;
+		text-decoration:none
 	}
 
 	.input-row.border::after {

@@ -1,0 +1,29 @@
+
+.p-chat-history.data-v-4e6cde2f {
+.u-msg {
+.msg-link {
+      display: none;
+}
+}
+}
+.p-room-chat-list.data-v-4e6cde2f {
+.u-msg {
+.msg-text {
+      max-width: 80%;
+}
+.msg-link {
+      bottom: 0;
+      right: -4rem;
+      font-size: 0.9rem;
+}
+}
+}
+.msg-unread.data-v-4e6cde2f {
+  position: relative;
+  float: right;
+  top: 0.3rem;
+  right: 0.5rem;
+  font-size: 0.9rem;
+  color: #0091e4;
+}
+

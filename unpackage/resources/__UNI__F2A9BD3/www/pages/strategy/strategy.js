@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"pages-content { }\nwx-image{ -webkit-box-sizing: border-box; box-sizing: border-box; padding: 5px; width: 100%; }\n",],undefined,{path:"./pages/strategy/strategy.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/strategy/strategy.wxml') } }));

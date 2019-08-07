@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<text><text class="title">服务协议</text>
+		<text><text class="title">服務條款</text>
 
 
 			一、總則

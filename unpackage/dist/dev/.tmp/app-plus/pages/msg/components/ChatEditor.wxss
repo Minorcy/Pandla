@@ -1,0 +1,25 @@
+
+.robot.m-chat-editor-main.data-v-5cb752ee {
+  /*.u-editor-input {
+    padding-right: 4.5rem;
+  }
+  .u-editor-icons {
+    width: 4rem;
+  }*/
+}
+.m-chat-robot.data-v-5cb752ee {
+  overflow-y: scroll;
+.weui-cells {
+.weui-cell__hd {
+      margin-right: 0.5rem;
+}
+}
+}
+.u-editor-send.u-editor-receipt.data-v-5cb752ee {
+  background-color: #fefefe;
+  border: #ccc solid 1px;
+  color: black;
+  padding: 0.1rem;
+  margin-left: .1rem;
+}
+

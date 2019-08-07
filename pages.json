@@ -251,10 +251,47 @@
 				"navigationBarTextStyle": "black",
 				"enablePullDownRefresh": true,
 				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue628",
+							"fontSrc": "/static/font/iconfont.ttf",
+							"color": " #000000"
+						}]
+					},
+					"bounce": "none"
+				}
+				
+			}
+
+		},
+		{
+			"path": "pages/msg/chat",
+			"style": {
+				"navigationBarTitleText": "聊天",
+				"navigationBarBackgroundColor": "#E1E1E1",
+				"navigationBarTextStyle": "black",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue608",
+							"fontSrc": "/static/font/iconfont.ttf",
+							"color": " #000000"
+						}]
+					},
 					"bounce": "none"
 				}
 			}
-
+		},
+		{
+			"path": "pages/msg/chatSettings",
+			"style": {
+				"navigationBarTitleText": "聊天设置",
+				"navigationBarBackgroundColor": "#E1E1E1",
+				"navigationBarTextStyle": "black",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
 		},
 
 		{
@@ -437,22 +474,7 @@
 					"bounce": "none"
 				}
 			}
-		}, {
-			"path": "pages/daily/topicDetails",
-			"style": {
-				"navigationBarTitleText": "话题",
-				"app-plus": {
-					"titleNView": {
-						"buttons": [{
-							"text": "\ue62d",
-							"fontSrc": "/static/font/iconfont.ttf",
-							"color": " #4CD964"
-						}]
-					},
-					"bounce": "none"
-				}
-			}
-		}, {
+		},  {
 			"path": "pages/welfare/welfareApplication",
 			"style": {}
 		},

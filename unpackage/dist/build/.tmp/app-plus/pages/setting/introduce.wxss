@@ -1,0 +1,8 @@
+
+.pages-content image{
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	padding: 5px;
+}
+

@@ -421,12 +421,12 @@
 				}
 			});
 		},
-		onShow() {
-			this.findDyn(1);
-			uni.showLoading({
-				title: '加载中',
-			});
-		},
+		// onShow() {
+		// 	this.findDyn(1);
+		// 	uni.showLoading({
+		// 		title: '加载中',
+		// 	});
+		// },
 		onReachBottom() {
 			console.log("onReachBottom")
 		},
@@ -440,9 +440,7 @@
 	}
 </script>
 
-<style>
-	@import url("../../common/animate.css");
-</style>
+
 
 <style scoped="true">
 	.page {

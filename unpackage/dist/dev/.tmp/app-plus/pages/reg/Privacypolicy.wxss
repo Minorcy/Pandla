@@ -1,0 +1,14 @@
+
+view {
+	padding: 5px;
+}
+text {
+	color: #d1d1d1;
+	font-size: 12px;
+}
+.title {
+	text-align: center;
+	font-size: 18px;
+	display: block;
+}
+

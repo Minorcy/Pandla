@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="166px" height="56px" viewBox="0 0 166 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>分组 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="7.92707724%" y1="47.5458009%" x2="88.5017393%" y2="53.7017014%" id="linearGradient-1">
+            <stop stop-color="#03D5C7" offset="0%"></stop>
+            <stop stop-color="#79AC04" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="33.0129277%" y1="46.0271961%" x2="88.5017393%" y2="53.7017014%" id="linearGradient-2">
+            <stop stop-color="#03D5C7" offset="0%"></stop>
+            <stop stop-color="#79AC04" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="我的" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-194.000000, -244.000000)" id="分组-5">
+            <g transform="translate(194.000000, 244.000000)">
+                <rect id="矩形" stroke="url(#linearGradient-2)" stroke-width="1.5" fill-opacity="0.1" fill="url(#linearGradient-1)" x="0.75" y="0.75" width="164.5" height="54.5" rx="5"></rect>
+                <text id="星球護照" font-family="PingFangSC-Semibold, PingFang SC" font-size="22" font-weight="500" letter-spacing="2" fill="#FFFFFF">
+                    <tspan x="32" y="36">星球護照</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

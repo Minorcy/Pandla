@@ -1,0 +1,10 @@
+
+.p-chat-list {
+.u-icon {
+    width: 1.4rem;
+    height: 1.6rem;
+    margin-right: 0.2rem;
+    vertical-align: bottom;
+}
+}
+

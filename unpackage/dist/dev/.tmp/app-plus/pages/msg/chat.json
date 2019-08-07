@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "聊天",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "",
+        "fontSrc": "/static/font/iconfont.ttf",
+        "color": " #000000"
+      }
+    ]
+  },
+  "bounce": "none",
+  "usingComponents": {}
+}

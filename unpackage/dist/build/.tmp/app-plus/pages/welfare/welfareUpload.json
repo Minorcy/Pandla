@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "提交",
+        "fontSize": "35upx"
+      }
+    ]
+  },
+  "bounce": "none",
+  "usingComponents": {}
+}

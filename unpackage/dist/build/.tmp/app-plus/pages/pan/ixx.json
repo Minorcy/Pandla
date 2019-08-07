@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "ixx註冊",
+  "bounce": "none",
+  "usingComponents": {
+    "loading": "/components/loading8"
+  }
+}

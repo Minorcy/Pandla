@@ -3,6 +3,15 @@
   "navigationBarBackgroundColor": "#E1E1E1",
   "navigationBarTextStyle": "black",
   "enablePullDownRefresh": true,
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "",
+        "fontSrc": "/static/font/iconfont.ttf",
+        "color": " #000000"
+      }
+    ]
+  },
   "bounce": "none",
   "usingComponents": {}
 }

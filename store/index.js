@@ -20,8 +20,24 @@ const store = new Vuex.Store({
 		imgTemp: '',
 		
 		// 资产隐藏
-		isHidden: (uni.getStorageSync('ASSET_KEY')) ? true : false
+		isHidden: (uni.getStorageSync('ASSET_KEY')) ? true : false,
+		
+		user: {
+			home: {
+				id: 1,
+				name: 'tax',
+				img: 'static/img/homeHL.png'
+			},
+			customer: {
+				id: 2,
+				name: 'customer',
+				img: 'static/img/customerHL.png'
+			}
+		}
     },
+	updated:function(){
+		console.log('message update:'+ this.scrollTop);
+	},
     mutations: {
 		setBarText(state, voteValue) {
 			state.voteValue = '';

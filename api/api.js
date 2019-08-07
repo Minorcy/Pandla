@@ -1,5 +1,6 @@
 let Token = uni.getStorageSync('USERS_KEY').token;
-const URL = 'http://pandla.io:8080/v1/';
+// const URL = 'http://pandla.io:8080/v1/';
+const URL = "http://apelord.cn:8080/v1/";
 const systemUrl = URL + 'system/';
 const fansUrl = URL + 'fans/';
 const dynUrl = URL + 'dyn/';

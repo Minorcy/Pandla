@@ -7,7 +7,7 @@
 			<p class="focus-data-freeze">未釋放原力: {{assetInfo.notFree | toFixed(4)}}</p>
 		</view>
 		<view class="focus-notice">
-			<p class="focus-label-introduction">{{assetInfo.title}}</p>
+			<p class="focus-label-introduction">原力簡介</p>
 			<p class="focus-label-context">{{assetInfo.context}}</p>
 		</view>
 		<view class="sign">

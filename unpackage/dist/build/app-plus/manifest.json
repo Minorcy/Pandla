@@ -22,6 +22,9 @@
     "Maps": {
       "coordType": "gcj02"
     },
+    "softinput": {
+      "navBar": "none"
+    },
     "UniNView": {
       "description": "UniNView原生渲染"
     }

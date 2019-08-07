@@ -1,2 +1,1 @@
-setCssToHead(["wx-view { padding: 5px; }\nwx-text { color: #d1d1d1; font-size: 12px; }\n.",[1],"title { text-align: center; font-size: 18px; display: block; }\n",],undefined,{path:"./pages/reg/Privacypolicy.wxss"})();
 document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/reg/Privacypolicy.wxml') } }));
