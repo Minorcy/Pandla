@@ -129,7 +129,6 @@
 	padding-left: 100%;
 	white-space: nowrap;
 	display: inline-block;
-	
 	-webkit-transform: translateZ(0);
 	        transform: translateZ(0)
 }

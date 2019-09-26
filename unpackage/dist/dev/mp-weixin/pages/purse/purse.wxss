@@ -24,12 +24,12 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.pan-group.data-v-240e19e4 {
+.pan-group.data-v-09a52130 {
   margin: 50rpx 50rpx 0 50rpx;
   border-radius: 10rpx;
   overflow: hidden;
 }
-.pan-data.data-v-240e19e4 {
+.pan-data.data-v-09a52130 {
   padding: 20rpx;
   border: 5rpx solid;
   border-bottom: none;
@@ -39,14 +39,14 @@
   border-image: -moz-linear-gradient(right, #03D5C7, #73AE0F);
   border-image: liner-gradient(#03D5C7, #73AE0F);
 }
-.pan-data-pan.data-v-240e19e4 {
+.pan-data-pan.data-v-09a52130 {
     font-size: 25rpx;
 }
-.pan-data-bal.data-v-240e19e4 {
+.pan-data-bal.data-v-09a52130 {
     margin: 20rpx 0 40rpx 0;
     font-size: 45rpx;
 }
-.pan-data-link.data-v-240e19e4 {
+.pan-data-link.data-v-09a52130 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -63,23 +63,23 @@
     padding: 0 50rpx;
     font-size: 25rpx;
 }
-.pan-data-link-item.data-v-240e19e4 {
+.pan-data-link-item.data-v-09a52130 {
       color: #007AFF;
       text-decoration: underline;
 }
-.pan-list.data-v-240e19e4 {
+.pan-list.data-v-09a52130 {
   border: 1rpx solid #979797;
   border-radius: 10rpx;
   margin: -5rpx 20rpx;
   font-size: 35rpx;
 }
-.pan-list-label.data-v-240e19e4 {
+.pan-list-label.data-v-09a52130 {
     padding: 20rpx;
 }
-.pan-list-ul.data-v-240e19e4 {
+.pan-list-ul.data-v-09a52130 {
     padding: 0 50rpx;
 }
-.pan-list-li.data-v-240e19e4 {
+.pan-list-li.data-v-09a52130 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -96,18 +96,18 @@
     padding: 20rpx 0;
     border-bottom: 1rpx solid #979797;
 }
-.pan-list-action.data-v-240e19e4 {
+.pan-list-action.data-v-09a52130 {
     font-size: 30rpx;
 }
-.pan-list-time.data-v-240e19e4 {
+.pan-list-time.data-v-09a52130 {
     font-size: 25rpx;
     color: #979797;
 }
-.pan-list-number.data-v-240e19e4 {
+.pan-list-number.data-v-09a52130 {
     color: #EFEFF4;
     font-size: 30rpx;
 }
-.pan-list-load.data-v-240e19e4 {
+.pan-list-load.data-v-09a52130 {
     background-color: transparent;
     color: #EFEFF4;
     text-decoration: underline;

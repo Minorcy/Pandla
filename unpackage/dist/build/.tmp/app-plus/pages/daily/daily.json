@@ -1,8 +1,12 @@
 {
   "enablePullDownRefresh": false,
   "navigationBarTitleText": "",
+  "navigationBarTextStyle": "white",
   "animationType": "slide-in-left",
   "titleNView": false,
+  "softinputNavBar": "none",
   "bounce": "none",
-  "usingComponents": {}
+  "usingComponents": {
+    "chat-input": "/components/chatinput"
+  }
 }

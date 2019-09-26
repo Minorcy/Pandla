@@ -1,24 +1,27 @@
 <template>
-	<view class="pages-content">
-		<!-- <ul>
-			<li v-for="(item, index) in settings" :key=index >
-				<button
-					class="btn-primary"
-					hover-class="hover-primary" 
-					:style="{background: item.specColor}" @tap="toIntroduce(index)">
-					{{item.label}}
-				</button>
-			</li>
-		</ul> -->
-		<ul>
-			<li title="" note="" class="btn-primary" @tap="toIntroduce()">關於PANDLA</li>
-			<li title="" note=" " class="btn-primary">版本更新<text>公測建設1.0</text></li>
-			<li title="" note="" class="btn-primary">清除緩存</li>
-			<li title="" note="" class="btn-primary" @tap="totermsofservice()">服務條款</li>
-			<li title="" note="" class="btn-primary" @tap="toPrivacypolicy()" >隱私政策</li>
-			<li title="" note="" class="btn-primary">聯係我們 <text>media@pandla.io</text></li>
-
-		</ul>
+	<view class="setting">
+		<view class="item" @tap="toIntroduce()">
+			<text>關於PANDLA</text>
+		</view>
+		<view class="item">
+			<text>版本更新</text>
+		</view>
+		<view class="item" @tap="toBlacklist">
+			<text>黑名單</text>
+		</view>
+		<view class="item" @tap="eliminate">
+			<text >清除內存</text>
+		</view>
+		<view class="item" @tap="totermsofservice">
+			<text >服務條款</text>
+		</view>
+		<view class="item" @tap="toPrivacypolicy">
+			<text >隱私政策</text>
+		</view>
+		<view class="item">
+			<text>聯繫我們</text>
+		</view>
+		
 	</view>
 </template>
 
@@ -34,6 +37,11 @@
 					url: "introduce"
 				});
 			},
+			toBlacklist(){
+				uni.navigateTo({
+					url: "blacklist"
+				});
+			},
 			totermsofservice(){
 				uni.navigateTo({
 					url: "/pages/reg/termsofservice"
@@ -44,6 +52,26 @@
 					url: "/pages/reg/Privacypolicy"
 				});
 				
+			},
+			eliminate(){
+				var that = this
+				uni.showModal({
+					title: '',
+					content: '确定清除缓存',
+					success: function(res) {
+						if (res.confirm) {
+							// uni.removeStorage({
+							//     key: 'storage_key',
+							//     success: function (res) {
+							//         console.log('success');
+							//     }
+							// });
+							that.$store.state.nim.deleteAllLocalMsgs()
+						} else if (res.cancel) {
+							console.log('用户点击取消');
+						}
+					}
+				});
 			}
 			
 		}
@@ -51,35 +79,22 @@
 </script>
 
 <style lang="scss" scoped>
-	.pages-content {
-		background-color: #131D21;
+	.setting {
+		width: 100%;
+		background-color: #FFFFFF;
 	}
-
-	.btn-primary {
-		width: 95%;
-		text-align: left;
-		margin-left: 10px;
-		background-color: transparent;
-		color: #EFEFF4;
-		margin-top: 20upx;
-		font-size: 14px;
-		line-height: 35px
-	}
-
-	text {
-		display: inline-block;
-		float: right;
-		color: #007aff
-	}
-
-	ul {
+	.item{
+		width: 100%;
+		height:40px;
+		background-color: #F4F4F4;
+		padding:  5px 10px;
 		box-sizing: border-box;
-		margin: 0;
-		padding: 5px;
+		margin-bottom: 10px;
 	}
-
-	li {
-		padding: 1px;
-		border-bottom: 1upx #EFEFF4 solid;
+	text{
+		font-size: 14px;
+		color: #4A4A4A;
+		line-height: 1.5;
 	}
+	
 </style>

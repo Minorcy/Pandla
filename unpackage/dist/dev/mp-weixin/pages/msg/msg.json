@@ -1,6 +1,10 @@
 {
-  "navigationBarTitleText": "通讯",
+  "navigationBarTitleText": "通訊",
   "navigationBarBackgroundColor": "#E1E1E1",
   "navigationBarTextStyle": "black",
-  "usingComponents": {}
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "uni-swipe-action": "/components/uni-swipe-action/uni-swipe-action",
+    "uni-badge": "/components/uni-badge/uni-badge"
+  }
 }

@@ -1,4 +1,5 @@
 {
-  "navigationBarTitleText": "星球游戲",
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "星球遊戲",
   "usingComponents": {}
 }

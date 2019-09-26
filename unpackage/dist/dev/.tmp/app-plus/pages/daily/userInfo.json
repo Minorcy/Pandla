@@ -1,5 +1,10 @@
 {
   "navigationBarTitleText": "個人主頁",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
+  "onReachBottomDistance": 10,
   "bounce": "none",
-  "usingComponents": {}
+  "usingComponents": {
+    "mescroll-uni": "/components/mescroll-uni/mescroll-uni"
+  }
 }

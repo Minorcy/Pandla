@@ -22,7 +22,7 @@
 				</view>
         </view>
 		<view class="btn-row">
-			<button size="primary" class="primary" hover-class="hover-primary" @tap="commitVer">上傳資料</button>
+			<button class="btn" @tap="commitVer">上傳資料</button>
 		</view>
     </view>
 </template>
@@ -30,7 +30,7 @@
 <script>
     import mInput from '../../components/m-input.vue';
 	import {upload, getImgTemp, setBar,createBenfit} from '../../api/api.js';
-	import {barValidate} from '../../common/js/validate.js';
+	import {welfareValidate} from '../../common/js/validate.js';
 
     export default {
         components: {
@@ -49,7 +49,7 @@
 					
 				},
 				isUpload: false,
-				avatar: '../../static/img/user/upload.svg',
+				avatar: '../../static/img/user/upload.png',
 			}
         },
         methods: {
@@ -63,7 +63,7 @@
 				});
 			},
 			commitVer() {
-				if(barValidate(this.barInfo, this.isUpload)) {
+				if(welfareValidate(this.barInfo, this.isUpload)) {
 					uni.navigateTo({
 						url: 'welfareUpload?barInfo=' + JSON.stringify(this.barInfo)
 					});
@@ -94,20 +94,19 @@
 	
 	.input-row {
 		margin-top: 50upx;
+		padding: 10px;
+		box-sizing: border-box;
 	}
 	
 	.btn-row {
 		padding-top: 0;
 	}
-	
-	.primary {
-		color: #007AFF;
-	}
-	
 	.uni-input {
 		margin-top: 15upx;
 	}
-	
+	.btn{
+		color: #007AFF;
+	}
 	navigator {
 		margin-top: 70upx;
 	}

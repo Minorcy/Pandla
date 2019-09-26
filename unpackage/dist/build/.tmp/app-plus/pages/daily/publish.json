@@ -1,13 +1,16 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "发表动态",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
   "titleNView": {
     "buttons": [
       {
         "text": "發表",
-        "fontSize": "35upx"
+        "fontSize": "16px"
       }
     ]
   },
+  "softinputNavBar": "none",
   "bounce": "none",
   "usingComponents": {}
 }

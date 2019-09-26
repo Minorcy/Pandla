@@ -1,7 +1,8 @@
 
-image {
+.pages-content image{
 	width: 100%;
-	height: 55%;
-	margin-top: 20rpx;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	padding: 5px;
 }
 

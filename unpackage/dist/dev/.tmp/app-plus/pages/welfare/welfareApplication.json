@@ -1,4 +1,8 @@
 {
+  "navigationBarTitleText": "填写资料",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
+  "softinputNavBar": "none",
   "usingComponents": {
     "m-input": "/components/m-input"
   }

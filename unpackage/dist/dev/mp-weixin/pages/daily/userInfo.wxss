@@ -1,5 +1,9 @@
 
-.userInfo.data-v-c5003380 {
+.user-page.data-v-4c52d3a6 {
+	background-color: #FFFFFF;
+	width: 100%;
+}
+.userInfo.data-v-4c52d3a6 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -10,59 +14,62 @@
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 	margin-top: 50rpx;
+	color: #000000;
 }
-.portrait.data-v-c5003380 {
+.portrait.data-v-4c52d3a6 {
 	width: 150rpx;
 	height: 150rpx;
 	margin: 0 auto;
 	margin-bottom: 30rpx;
 	border-radius: 100%;
 }
-.avatar.data-v-c5003380 {
+.avatar.data-v-4c52d3a6 {
 	width: 150rpx;
 	height: 150rpx;
 	margin: 0 auto;
 	margin-bottom: 30rpx;
 }
-.userInfo ._p.data-v-c5003380 {
+.userInfo ._p.data-v-4c52d3a6 {
 	font-size: 25rpx;
 	text-align: center;
 	margin: 5rpx 0 5rpx 0;
 }
-.userInfo ._p.data-v-c5003380:nth-child(2) {
+.userInfo ._p.data-v-4c52d3a6:nth-child(2) {
 	font-size: 40rpx;
 }
 
 /* 状态 */
-.statusInfo.data-v-c5003380 {
-	display:  -webkit-box;
-	display:  -webkit-flex;
-	display:  -ms-flexbox;
-	display:  flex;
+.statusInfo.data-v-4c52d3a6 {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
-	padding: 40rpx 100rpx;
+	padding: 40rpx 60rpx;
 }
-.statusInfo view.data-v-c5003380 {
+.statusInfo view.data-v-4c52d3a6 {
 	background-color: #8E8E93;
 	border-radius: 5rpx;
 	padding: 5rpx 30rpx;
 }
-.statusInfo image.data-v-c5003380 {
+.statusInfo image.data-v-4c52d3a6 {
 	width: 25rpx;
 	height: 25rpx;
 	float: left;
+	top: 2px;
 }
-.statusInfo text.data-v-c5003380 {
-	font-size: 20rpx;
+.statusInfo text.data-v-4c52d3a6 {
+	color: #F0F0F0;
+	font-size: 24rpx;
 	margin-left: 10rpx;
 	float: right;
 }
 
 /* 动态列表 */
-.dynInfo.data-v-c5003380 {
+.dynInfo.data-v-4c52d3a6 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -79,23 +86,37 @@
 	-webkit-justify-content: flex-start;
 	    -ms-flex-pack: start;
 	        justify-content: flex-start;
-	margin-top: 50rpx;
 	padding: 1rpx;
 }
-.dynInfo image.data-v-c5003380 {
+.dynInfo image.data-v-4c52d3a6 {
 	width: 31%;
 	height: 250rpx;
 	padding: 5rpx;
 	margin: 5rpx;
 }
-.btn-con.data-v-c5003380 {
+.btn.data-v-4c52d3a6{
 	position: fixed;
-	width: 400rpx;
+	width: 100%;
 	height: 100rpx;
 	left: 0;
 	right: 0;
-	margin-left: auto; 
-	margin-right: auto; 
+	margin-left: auto;
+	margin-right: auto;
 	bottom: 50rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: space-around;
+	    -ms-flex-pack: distribute;
+	        justify-content: space-around;
 }
+.btn view.data-v-4c52d3a6{
+	display: inline-block;
+	width: 30%;
+	height: 100%;
+	text-align: center;
+	line-height: 50px;
+}
+
 

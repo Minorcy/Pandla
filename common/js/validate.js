@@ -1,5 +1,6 @@
 const pReg = /^[1](([3][0-9])|([4][5-9])|([5][0-3,5-9])|([6][5,6])|([7][0-8])|([8][0-9])|([9][1,8,9]))[0-9]{8}$/;
 const eReg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+const pwd= /^.*(?=.{8,16})(?=.*\d)(?=.*[a-z]{2,}).*$/
 
 
 // 手机校验
@@ -89,6 +90,7 @@ export const codeValidate = (regCode) => {
 
 // 密码校验
 export const pwdValidate = (password, verifyPwd) => {
+	
 	if (password.length == "") {
 		uni.showToast({
 			icon: 'none',
@@ -96,10 +98,17 @@ export const pwdValidate = (password, verifyPwd) => {
 		});
 		return false;
 	} else {
-		if (password.length < 6) {
+		if (password.length < 8) {
 			uni.showToast({
 				icon: 'none',
-				title: '密碼最短為6個字符'
+				title: '密碼最短為8個字符'
+			});
+			return false;
+		}
+		if(!pwd.exec(password)){
+			uni.showToast({
+				icon: 'none',
+				title: '密码强度不够'
 			});
 			return false;
 		}
@@ -249,6 +258,74 @@ export const barValidate = (barInfo, isUpload) => {
 		uni.showToast({
 			icon: 'none',
 			title: '請上傳酒吧LOGO'
+		});
+		return false;
+	}
+	return true;
+};
+export const welfareValidate = (barInfo, isUpload) => {
+	if (barInfo.name == "") {
+		uni.showToast({
+			icon: 'none',
+			title: '請填寫組織名稱'
+		});
+		return false;
+	}
+	if (barInfo.phone.length == "") {
+		uni.showToast({
+			icon: 'none',
+			title: '聯係電話不能爲空'
+		});
+		return false;
+	} else {
+		if (!pReg.exec(barInfo.phone) || barInfo.phone.length < 8) {
+			uni.showToast({
+				icon: 'none',
+				title: '联系电话格式不正確'
+			});
+			return false;
+		}
+	}
+	if (barInfo.location == "") {
+		uni.showToast({
+			icon: 'none',
+			title: '請填寫詳細地址'
+		});
+		return false;
+	}
+	if (barInfo.intro == "") {
+		uni.showToast({
+			icon: 'none',
+			title: '請填寫組織簡介'
+		});
+		return false;
+	}
+	if (barInfo.username == "") {
+		uni.showToast({
+			icon: 'none',
+			title: '請填寫申請人姓名'
+		});
+		return false;
+	}
+	if (barInfo.userphone == "") {
+		uni.showToast({
+			icon: 'none',
+			title: '請填寫申請人聯係方式'
+		});
+		return false;
+	} else {
+		if (!pReg.exec(barInfo.userphone) || barInfo.userphone.length < 8) {
+			uni.showToast({
+				icon: 'none',
+				title: '聯係方式格式不正確'
+			});
+			return false;
+		}
+	}
+	if (isUpload == false) {
+		uni.showToast({
+			icon: 'none',
+			title: '請上傳組織LOGO'
 		});
 		return false;
 	}

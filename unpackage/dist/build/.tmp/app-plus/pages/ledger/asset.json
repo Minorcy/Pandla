@@ -1,5 +1,7 @@
 {
-  "navigationBarTitleText": "資產賬本",
+  "navigationBarTitleText": "PAN幣",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
   "bounce": "none",
   "usingComponents": {}
 }

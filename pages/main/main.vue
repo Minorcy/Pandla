@@ -12,9 +12,19 @@
 				<text>原力 {{forceBalance}}</text>
 			</navigator>
 		</view>
-		<view class="header-border" style="border:0.1upx solid #8F8F94;">
+		<!-- <view class="header-border" style="border:0.1upx solid #8F8F94;">
 			<image src="../../static/img/main/laba.gif" class="header-icon" />
-			<text>公益基金池建設中，首次捐贈10個PAN星球返回10個</text>
+			<text @tap="toNotice()">公益基金池建設中，首次捐贈10個PAN星球返回10個</text>
+		</view> -->
+		<view class="uni-swiper-msg ">
+			<view class="uni-swiper-msg-icon">
+				<image src="../../static/img/main/laba.gif" class="header-icon" />
+			</view>
+			<swiper vertical="true" autoplay="true" circular="true" interval="3000">
+				<swiper-item v-for="(item, index) in noticeMsg" :key="index">
+					<text>{{item}}</text>
+				</swiper-item>
+			</swiper>
 		</view>
 		<view class="token-area" :style="{'background-image':'url('+bgImage1+')'}">
 			<!-- <view class="welfare-content" @tap="toPan">
@@ -23,8 +33,7 @@
 			</view> -->
 			<view class="planetPublic">
 				<navigator url='../welfare/welfare' class="planetPublic-box">
-					<image src="../../static/img/main/welfare.png" class="welfare-icon" />
-					<navigator url='../welfare/welfare' class="planet-text">星球公益</navigator>
+					<image src="../../static/img/main/welfare.svg" class="welfare-icon" />
 				</navigator>
 			</view>
 			<view id="content" class="token-content ">
@@ -56,21 +65,28 @@
 
 <script>
 	//import token from '../../components/token.vue';
-	import uniNoticeBar from "../../components/uni-notice-bar/uni-notice-bar.vue"
+	import storage from "@/common/utils/storage.js"
+	import uniNoticeBar from "@/components/uni-notice-bar/uni-notice-bar.vue"
 	import {
 		mainSlider
 	} from '../../common/js/json.js';
 	import {
-		mapState
+		mapState,
+		mapActions
 	} from 'vuex';
 	import {
 		getBalance,
-		getForBalance
+		getForBalance,
+		registerWyAccount,
+		getWyToken,
+		putWyToken,
+		getIndexBulletin
 	} from "../../api/api.js";
-	let Token = uni.getStorageSync('USERS_KEY').token;
+	let Token
 	export default {
 		data() {
 			return {
+				noticeMsg: [],
 				slides: '',
 				indicatorDots: false,
 				autoplay: false,
@@ -94,12 +110,14 @@
 				flag: 0,
 				text: '',
 				lastX: 0,
-				lastY: 0
+				lastY: 0,
+				tga: true
 			}
 		},
 		components: {
 			uniNoticeBar
 		},
+
 		methods: {
 			handletouchmove: function(event) {
 				// console.log(event)
@@ -114,17 +132,29 @@
 				this.mindex = -1;
 				//左右方向滑动
 				if (Math.abs(tx) > Math.abs(ty)) {
-					if (tx < 0) {
+					if (tx < -30) {
+						console.log(tx)
 						text = '向左滑动';
 						console.log("向左滑动");
-						uni.navigateTo({
-							url: '/pages/nearby/nearby',
-							animationType: 'pop-in',
-							animationDuration: 200
-						});
+						if (this.tga == true) {
+							this.tga = false
+							uni.navigateTo({
+								url: '/pages/nearby/tga',
+								animationType: 'pop-in',
+								animationDuration: 200
+							});
+
+						} else if (this.tga == false) {
+							uni.navigateTo({
+								url: '/pages/nearby/nearby',
+								animationType: 'pop-in',
+								animationDuration: 200
+							});
+						}
+
 						this.flag = 1;
 						//  this.getList();  //调用列表的方法
-					} else if (tx > 0) {
+					} else if (tx > 30) {
 						text = '向右滑动';
 						console.log("向右滑动");
 						uni.navigateTo({
@@ -166,32 +196,24 @@
 					url: '../pan/pan'
 				});
 			},
+			toNotice() {
+				uni.navigateTo({
+					url: "notice"
+				})
+			},
 			getMainSlider() {
 				mainSlider().then(data => {
-					this.slides = data.slice(0, 7);
-					console.log(this.slides);
-					
+					this.slides = data
 				});
 			},
 			async getToken(Token) { //获取token
-			console.log(Token)
 				let res = await this.api.homeToken(Token).getIndexPan();
-				// console.log(res.data)
 				if (res.data.status == 200) {
-					console.log(res.data.data)
-					if (res.data.data.length > 14) {
-						this.tokens = res.data.data.slice(0, 14)
-					} else {
-						this.tokens = res.data.data
-					}
-					console.log(this.tokens)
+					this.tokens = res.data.data
 				}
-				// this.tokens = ["0.221","0.221","0.221","0.221","0.221",]
 				if (this.tokens.length == 0) {
 					this.bgColor = this.bgImage1;
-					// this.bgColor1 = this.bgImage2;
 					this.isActive = true;
-					
 				} else {
 					// console.log("有")
 					this.bgColor = this.bgImage1;
@@ -223,10 +245,12 @@
 					let xNum = parseInt(targetWidth / iconWidth, 10); //用浏览器的宽度除以一个元素的宽度可算出浏览器窗口内一行可以放置元素的个数
 					let yNum = parseInt(targetHeight / iconHeight, 10); //用浏览器的高度除以一个元素的高度可算出浏览器窗口内一列可以放置元素的个数
 					let allNum = xNum * yNum; //浏览器窗口内总共可以放置元素的个数
+					// console.log(allNum,num)
 					//当需要放置的元素的个数超过浏览器窗口内总共可以放置的元素的个数时，则返回
 					if (num >= allNum) {
-						return false;
+						this.tokens = this.tokens.slice(0, allNum-1)
 					}
+					num = this.tokens.length;
 					for (let i = 0; i < allNum; i++) {
 						_tmpArray.push(i);
 					}
@@ -239,13 +263,12 @@
 						if (!_tmpArray[pointer]) {
 							continue;
 						}
-
 						delete _tmpArray[pointer]; //删除数组_tmpArray中第pointer个值
 						yStart = parseInt(pointer / xNum, 10) * iconWidth;
 						xStart = (pointer % xNum) * iconHeight;
 						let o = {
 							value: this.tokens[num - 1].token,
-							id:this.tokens[num - 1].id,
+							id: this.tokens[num - 1].id,
 							leftVal: xStart,
 							topVal: yStart,
 							display: "block",
@@ -259,38 +282,46 @@
 					}
 					this.tokenList = arr;
 				}).exec();
+				// console.log(this.tokenList)
 			},
 
 			pushToken(item, index, e) { //收取token
-				if (this.flog) {
-					return
-				}
-				this.flog = true
 				this.initToken += 1;
 				this.tokenList[index].leftVal = 30;
 				this.tokenList[index].topVal = -this.tokenWidth - 64;
 				setTimeout(() => {
 					this.tokenList[index].display = 'none';
-					this.takePan(item.value ,item.id);
+					this.takePan(item.value, item.id, index);
+					if (this.initToken == this.tokens.length - 1) {
+						this.getToken(Token)
+						// console.log("1")
+						this.initToken = 0
+					}
 					if (this.initToken >= this.tokens.length) {
 						this.bgColor = this.bgImage1;
 						this.bgColor1 = this.bgImage2;
 						this.isActive = true;
+						this.initToken = 0
 					}
 				}, 800);
-				if (this.tokenList.length == 1) {
-					this.getToken()
-				}
+
 			},
-			async takePan(token ,id) {
+			async takePan(token, id, index) {
 				let res = await this.api.homeToken(Token).takePan({
 					numbers: Number(token),
-					id : id
+					id: id
 				});
 				if (res.data.status == 200) {
 					this.panBalance += Number(token)
+					// this.tokenList.splice(index, 1)
+					// if (this.tokenList.length == 1) {
+					// 	this.getToken(Token)
+					// }
+
+					console.log(this.tokenList)
+					console.log(this.initToken)
 				}
-				this.flog = false
+
 			},
 			getAllBalance() {
 				getBalance().then(data => {
@@ -301,14 +332,38 @@
 				getForBalance().then(data => {
 					this.forceBalance = data.balance
 				})
-			}
+			},
+			...mapActions(["connect"])
+		},
+		mounted() {
+			
+			getWyToken().then(data => {
+				
+				let uid = data.uid;
+				let sdktoken = data.wyToken
+				uni.setStorageSync('uid', uid)
+				uni.setStorageSync('sdktoken', sdktoken)
+				
+				this.connect()
+			})
+
 		},
 		onLoad(options) {
+			uni.showLoading({
+				title:"加载中"
+			})
+			Token = uni.getStorageSync('USERS_KEY').token;
 			this.getMainSlider();
 			this.getAllBalance();
 			this.getAllForBalance();
-			let Token = uni.getStorageSync('USERS_KEY').token;
 			this.getToken(Token);
+			getIndexBulletin().then(data => {
+				// console.log(data)
+				this.noticeMsg = data
+			})
+			setTimeout(()=>{
+				uni.hideLoading()
+			},500)
 		},
 		onShow() {
 			this.getAllBalance();
@@ -317,7 +372,12 @@
 	}
 </script>
 
-<style lang="scss" scoped="true">
+<style lang="scss" scoped>
+	body,
+	uni-page-body {
+		background: #131D21;
+	}
+
 	.main-content {
 		position: relative;
 		overflow: hidden;
@@ -338,6 +398,7 @@
 	}
 
 	.header-border {
+		font-size: 12px;
 		height: 48upx;
 		line-height: 48upx;
 		text-align: center;
@@ -349,12 +410,25 @@
 		margin: 10upx;
 	}
 
+	.header-border text {
+		font-size: 12px !important;
+	}
+
 	.header-icon {
 		display: flex;
 		flex-direction: row;
 		width: 32upx;
 		height: 32upx;
 		margin-top: 9upx;
+	}
+
+	.uni-swiper-msg-icon {
+		margin: 0;
+	}
+
+	swiper-item text {
+		font-size: 12px;
+		margin-left: 0;
 	}
 
 	text {
@@ -364,6 +438,23 @@
 		overflow: hidden; //超出的文本隐藏
 		text-overflow: ellipsis; //溢出用省略号显示
 		white-space: nowrap; //溢出不换行
+	}
+
+	.uni-swiper-msg {
+		height: 48upx;
+		line-height: 48upx;
+		border: 2upx solid #C8C7CC !important;
+		border-radius: 30upx;
+		padding: 5upx 20upx 5upx 20upx;
+		margin: 10upx;
+		-webkit-flex-wrap: nowrap;
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		width: 90% !important;
 	}
 
 	.text-scroll {
@@ -376,7 +467,7 @@
 		width: 100%;
 		height: 600upx;
 		position: relative;
-		// overflow: hidden;
+		overflow: hidden;
 		background-repeat: no-repeat;
 		background-position: center;
 
@@ -397,13 +488,8 @@
 			justify-content: center;
 
 			.welfare-icon {
-				width: 45upx;
-				height: 40upx;
-			}
-
-			.planet-text {
-				font-size: 24upx;
-				color: #4CD964;
+				width: 45px;
+				height: 45px;
 			}
 		}
 	}
@@ -419,10 +505,10 @@
 			height: 110upx;
 			text-align: center;
 
-			z-index: 66;
+			z-index: 999;
 			transition-property: all;
-			transition-duration: 1s;
-			transition-timing-function: ease-out;
+			transition-duration: 0.8s;
+			transition-timing-function: ease-in;
 
 			.token-icon {
 				width: 48upx;
@@ -503,7 +589,7 @@
 
 	.topTobottom-1 {
 		animation-name: topTobottom;
-		animation-duration: 3s;
+		animation-duration: 4s;
 		animation-timing-function: linear;
 		animation-delay: 1s;
 		animation-iteration-count: infinite;

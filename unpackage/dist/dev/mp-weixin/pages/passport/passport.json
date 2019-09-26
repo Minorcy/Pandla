@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "星球護照",
-  "usingComponents": {}
+  "usingComponents": {
+    "loading": "/components/loading8"
+  }
 }

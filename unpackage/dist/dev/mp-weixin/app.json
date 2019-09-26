@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/daily/test",
     "pages/login/login",
     "pages/reg/reg",
+    "pages/reg/termsofservice",
+    "pages/reg/Privacypolicy",
     "pages/pwd/pwd",
-    "pages/im-chat/im-chat",
     "pages/main/main",
     "pages/pact/pact",
     "pages/pact/pactVoteDetail",
@@ -15,6 +15,9 @@
     "pages/store/store",
     "pages/game/game",
     "pages/nearby/nearby",
+    "pages/nearby/tga",
+    "pages/nearby/seek",
+    "pages/publish/publish",
     "pages/entertain/entertain",
     "pages/entertain/entertainDetail",
     "pages/entertain/entertainApplication",
@@ -22,11 +25,18 @@
     "pages/user/user",
     "pages/user/update",
     "pages/msg/msg",
+    "pages/msg/chat",
+    "pages/msg/chatSettings",
+    "pages/msg/test",
+    "pages/msg/Receive",
     "pages/pan/pan",
+    "pages/pan/ixx",
     "pages/pan/donateList",
     "pages/ledger/asset",
     "pages/ledger/focus",
     "pages/purse/purse",
+    "pages/purse/blockChain",
+    "pages/purse/password",
     "pages/passport/passport",
     "pages/auth/auth",
     "pages/invite/invite",
@@ -34,9 +44,13 @@
     "pages/strategy/strategy",
     "pages/welfare/welfare",
     "pages/setting/setting",
+    "pages/setting/introduce",
     "pages/user/album",
     "pages/user/followList",
-    "pages/user/fansList"
+    "pages/user/fansList",
+    "pages/welfare/welfareApplication",
+    "pages/welfare/welfareDetail",
+    "pages/welfare/welfareUpload"
   ],
   "subPackages": [
     {
@@ -87,5 +101,5 @@
     "uploadFile": 10000
   },
   "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap81.json"
 }

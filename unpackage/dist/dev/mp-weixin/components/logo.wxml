@@ -1,1 +1,1 @@
-<view class="header data-v-bb2117a4"><image class="logo data-v-bb2117a4" src="../../static/img/logo.png"></image><text class="slogan data-v-bb2117a4">{{slogan}}</text></view>
+<view class="header data-v-012981f0"><image class="logo data-v-012981f0" src="../../static/img/login/logo.svg"></image><text class="slogan data-v-012981f0">{{slogan}}</text></view>

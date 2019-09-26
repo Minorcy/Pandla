@@ -179,10 +179,11 @@
 <style>
 	view {
 		padding: 5px;
+		background-color: #FFFFFF;
 	}
 
 	text {
-		color: #d1d1d1;
+		color: #4A4A4A;
 		font-size: 12px;
 	}
 

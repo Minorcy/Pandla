@@ -1,4 +1,4 @@
-import config from '../../configs'
+import config from '..//configs'
 
 const pageMap = {
   'login': config.loginUrl,
@@ -11,32 +11,32 @@ var page = {
   // 切换页面，并错误提示
   turnPage: (message, url) => {
     if (message) {
-      alert(message)
+      console.log(message)
     }
     if (url) {
       if (pageMap[url]) {
         url = pageMap[url]
       }
-      window.location.href = url
+      // window.location.href = url
     }
   },
   // 确定导航tab页，是否show nav
-  showNav: path => {
-    switch (path) {
-      case '/':
-        return true
-      case '/session':
-        return true
-      case '/contacts':
-        return true
-      case '/room':
-        return true
-      case '/general':
-        return true
-      default:
-        return false
-    }
-  },
+  // showNav: path => {
+  //   switch (path) {
+  //     case '/':
+  //       return true
+  //     case '/session':
+  //       return true
+  //     case '/contacts':
+  //       return true
+  //     case '/room':
+  //       return true
+  //     case '/general':
+  //       return true
+  //     default:
+  //       return false
+  //   }
+  // },
   // 滚动聊天列表到底部
   scrollChatListDown: (pos, initCount) => {
     let dom = document.getElementById('chat-list')

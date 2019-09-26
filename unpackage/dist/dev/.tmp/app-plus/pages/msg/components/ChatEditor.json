@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "chat-emoji": "/pages/msg/components/ChatEmoji"
-  },
-  "component": true
-}

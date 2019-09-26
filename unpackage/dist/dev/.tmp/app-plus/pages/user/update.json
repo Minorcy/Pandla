@@ -1,8 +1,12 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "修改信息",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
   "bounce": "none",
+  "softinputNavBar": "none",
   "usingComponents": {
     "m-input": "/components/m-input",
-    "logo": "/components/logo"
+    "logo": "/components/logo",
+    "link-address": "/components/xuan-linkAddress/xuan-linkAddress"
   }
 }

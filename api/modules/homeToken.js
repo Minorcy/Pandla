@@ -16,13 +16,16 @@ const api = function(token) {
 			}, error => {
 				console.log("error", error);
 			})
-			
+
 			return res;
 		},
 		/*
 		2.收取token
 		*/
-		async takePan({numbers,id}) {
+		async takePan({
+			numbers,
+			id
+		}) {
 			let res = await uniRequest.get('/v1/pan/takePan', {
 				data: {
 					numbers,

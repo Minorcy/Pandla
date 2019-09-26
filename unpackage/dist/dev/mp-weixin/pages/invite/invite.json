@@ -1,7 +1,6 @@
 {
-  "navigationBarTitleText": "我的專屬邀請碼",
+  "navigationBarTitleText": "邀請好友移民星球",
   "usingComponents": {
-    "wm-poster": "/components/wm-poster/wm-poster",
-    "tki-qrcode": "/components/tki-qrcode/tki-qrcode"
+    "wm-poster": "/components/wm-poster/wm-poster"
   }
 }

@@ -20,7 +20,7 @@
   width: 200rpx;
 }
 .wrapper .rainbow.data-v-3e31764e:after {
-  background-color: #131D21;
+  background-color: #FFFFFF;
   bottom: 100rpx;
   content: "";
   left: 0;

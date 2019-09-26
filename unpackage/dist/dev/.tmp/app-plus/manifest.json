@@ -7,8 +7,8 @@
   "id": "__UNI__F2A9BD3",
   "name": "Pandla",
   "version": {
-    "name": "1.0.5",
-    "code": 105
+    "name": "1.0.6",
+    "code": 106
   },
   "description": "全球第一款区块链同志社交软件",
   "launch_path": "__uniapptabbar.html",
@@ -25,6 +25,8 @@
     "softinput": {
       "navBar": "none"
     },
+    "OAuth": {},
+    "SQLite": {},
     "UniNView": {
       "description": "UniNView原生渲染"
     }
@@ -41,9 +43,7 @@
       "delay": 0
     },
     "popGesture": "close",
-    "launchwebview": {
-      "render": "always"
-    },
+    "launchwebview": {},
     "statusbar": {
       "immersed": "supportedDevice",
       "style": "light",
@@ -87,20 +87,22 @@
       },
       "splashscreen": {
         "android": {
-          "xxhdpi": "static/StartupChart/1080x1882.png",
-          "xhdpi": "static/StartupChart/720x1242.png",
-          "hdpi": "static/StartupChart/480x762.png"
+          "xxhdpi": "static/StartupChart/1080-1882.9.png",
+          "xhdpi": "static/StartupChart/720-1244.9.png",
+          "hdpi": "static/StartupChart/480-762.9.png"
         },
         "ios": {
           "iphone": {
-            "retina47": "static/StartupChart/750x1334 copy 2.png",
-            "portrait-896h@2x": "static/StartupChart/828x1792 copy 3.png",
-            "portrait-896h@3x": "",
-            "iphonex": "",
-            "retina55": "static/StartupChart/1242x2208 copy 4.png",
-            "landscape-896h@2x": "static/StartupChart/828x1792 copy 3.png",
-            "retina47l": "static/StartupChart/750x1334 copy 2.png",
-            "retina55l": "static/StartupChart/1242x2208 copy 4.png"
+            "retina47": "static/StartupChart/750-1334.png",
+            "portrait-896h@2x": "static/StartupChart/828X1792.png",
+            "portrait-896h@3x": "static/StartupChart/1242X2688.png",
+            "iphonex": "static/StartupChart/1125X2436.png",
+            "retina55": "static/StartupChart/1242X2208.png",
+            "landscape-896h@2x": "static/StartupChart/828X1792.png",
+            "retina47l": "static/StartupChart/750-1334.png",
+            "retina55l": "static/StartupChart/1242X2208.png",
+            "landscape-896h@3x": "static/StartupChart/1242X2688.png",
+            "iphonexl": "static/StartupChart/1125X2436.png"
           }
         }
       },
@@ -132,7 +134,13 @@
           "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
         ]
       },
-      "apple": {},
+      "apple": {
+        "app-plus": {
+          "softinput": {
+            "navBar": "none"
+          }
+        }
+      },
       "plugins": {
         "maps": {
           "amap": {
@@ -140,13 +148,27 @@
             "appkey_android": "7eea4f86166047f2346c437144d228aa"
           }
         },
-        "oauth": {},
+        "oauth": {
+          "weixin": {
+            "appid": "wx49ad3d65a7c79310",
+            "appsecret": "59b7d766d29bdeba0cf3b7dd671f6f43"
+          }
+        },
+        "share": {
+          "weixin": {
+            "appid": "wx49ad3d65a7c79310"
+          }
+        },
         "audio": {
           "mp3": {
             "description": "Android平台录音支持MP3格式文件"
           }
         }
       }
+    },
+    "softinput": {
+      "navBar": "none",
+      "mode": "adjustResize|adjustPan"
     },
     "arguments": "{\"name\":\"index\",\"pathName\":\"pages/index/index\",\"query\":\"id=1\",\"id\":0}",
     "allowsInlineMediaPlayback": true,
@@ -157,9 +179,10 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.1.3",
+      "compilerVersion": "2.3.3",
       "control": "v8",
-      "nvueCompiler": "weex"
+      "nvueCompiler": "weex",
+      "renderer": "auto"
     },
     "secondwebview": {
       "id": "1",

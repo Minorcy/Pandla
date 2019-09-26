@@ -1,581 +1,380 @@
 <template>
-	<view class="page" ref="page">
-		<hr>
-		<view class="top">
-			<view class="img">
-				<image src="../../static/img/topic/top.svg" mode="widthFix"></image>
-			</view>
-			<view class="top-text">
-				<text>
-					#星球定位社交，為星球居民提供一個更便捷的約會通道，基於現有定位社交的優缺點請告訴我們您對這個模塊的建議。謝謝！
-					<text decode="true" class="right">預計上線時間:&nbsp;&nbsp;9月中旬</text>
-				</text>
+	<view class="seek-page">
+		<view>
+			<luPopupWrapper ref="luPopupWrapper" type="top" top="44px" transition="slider" backgroundColor="#fff" height="auto"
+			 width="100%" popupId="1">
+				<view class="popup-list">
+					<text v-for="(item,index) in array" :key="index" @tap="setScope(item)">{{item}}公里</text>
+				</view>
+			</luPopupWrapper>
+		</view>
+		<view class="search">
+			<view class="input-box">
+				<input type="text" placeholder="請輸入關鍵字" maxlength="200" v-model="searchValue" />
+				<image src="../../static/img/msg/search.svg" @tap="search()"></image>
 			</view>
 		</view>
-		<view class="user-section">
-			<view class="user-item" v-for="(item,index) in topicList" :key="index">
-				<view class="user">
-					<image :src="item.poto" mode="aspectFill" @tap="toUser(item.uid)"></image>
+		<view class="no-nearby" v-if="nearbyInfo.length == 0">
+			<text>附近暫無居民,請點擊右上角擴大範圍</text>
+		</view>
+		<view class="nearby-list">
+			<view class="nearby-item" v-for="(item,index) in nearbyInfo" :key="index">
+				<view class="item-img" @tap="toUserInfo(item.uid,item.scope)">
+					<image :src="item.portrait" mode="aspectFill"></image>
+					<view class="mask">
+						<text>{{item.scope | toFixed(2)}}km</text>
+					</view>
+				</view>
+				<view class="item-name">
 					<text>{{item.name}}</text>
 				</view>
-				<view class="content">
-					<text class="content-text" decode="true"><text class="content-title" decode="true">#星球定位社交 &nbsp;&nbsp;</text>
-						{{item.content}}</text>
-				</view>
-				<view class="option">
-					<view class="comm-item" @tap="showComm(item.id,index)">
-						<image src="../../static/img/topic/comment.svg" mode=""></image>
-						<text>{{item.commCount}}</text>
-					</view>
-					<view class="like-item" @tap="usTopicLike(item.id,index)">
-						<image :src="item.isLike ==1 ? likeimg :unlikeimg"></image>
-
-						<text>{{item.likeCount}}</text>
-					</view>
+				<view class="item-title">
+					<text @tap="updateLab(item.uid)">@{{item.lable}}</text>
 				</view>
 			</view>
 		</view>
-		<view class="comment-section" v-if="showComment">
-			<view class="comment-section-top">
-				<text>{{commCont}}条评论</text>
-				<image src="../../static/img/daily/X.svg" @tap.stop="hidComm()"></image>
-			</view>
-			<scroll-view class="comment" scroll-y="true" @touchmove.stop.prevent="moveHandle">
-				<view class="nocomm" v-if="!commList.length"><text>暫無評論和回复,快來搶沙發吧!</text></view>
-				<view scroll-y="true" class="comment-section-details" v-for="(ite, ind) in commList" :key="ind">
-					<view class="comment-section-comm">
-						<view class="comm-ite">
-							<image class="ite-portrait" :src="ite.portrait" mode="aspectFill" @tap="replyComm(ite.name, ite.uid ,ite.id)"></image>
-							<view class="ite-name-content">
-								<text class="ite-name" @tap="replyComm( ite.name, ite.id)">{{ite.name}}:</text>
-								<text class="ite-content">{{ite.content}}</text>
-								<text class="ite-create_time">{{ite.createTime}}</text>
-							</view>
-						</view>
-						<p class="comment-section-reply" v-if="ite.reply != ''" v-for="(it,idx) in ite.reply" :key="idx">
-							<text class="color">{{it.name}}</text>
-							<text>: {{it.content}}</text>
-						</p>
-					</view>
-				</view>
-				<view class="input-section">
-					<input v-model="commContent" :placeholder="commplaceholder" />
-					<button class="primary" hover-class="hover-primary" @tap="addComm()">發送</button>
-				</view>
-			</scroll-view>
-		</view>
-		<view class="publish" @tap.stop="publishDyn()">
-			<image src="../../static/img/topic/publish.svg" mode="widthFix"></image>
-		</view>
-		<view class="load" v-if="showLoadMore">{{loadMoreText}}</view>
 	</view>
 </template>
 
 <script>
+	import luPopupWrapper from "@/components/lu-popup-wrapper/lu-popup-wrapper.vue";
 	import {
-		checkTopicList,
-		getLikeNumber,
-		topicLike,
-		topicComment,
-		getAllComment,
-		topicReply,
-		getReply
-	} from '../../api/api.js';
+		debounce
+	} from "@/common/js/utils";
+	import {
+		checkNearbyPerson,
+		updateLab
+	} from "@/api/api.js"
 	export default {
+		components: {
+			luPopupWrapper
+		},
 		data() {
 			return {
-				topicList: '',
-				likeCount: "",
-				commCont: 0,
-				showComment: false,
-				commContent: '',
-				commplaceholder: '請輸入評論內容',
-				likeimg: "../../static/img/topic/like.svg",
-				unlikeimg: "../../static/img/topic/fabulous.svg",
-				islike: false,
-				commList: '',
-				replyList: '',
-				addType: '',
-				topicId: '',
-				topicRid: '',
-				commIndex: '',
-				height: "",
-				pageSize:10,
-				loadMoreText: "上拉加載更多",
-				showLoadMore: false,
+				searchValue: '',
+				tga: '',
+				popupWrapper: true,
+				array: ["10", "50", ">100"],
+				scope: 10,
+				longitude: '',
+				latitude: '',
+				nearbyInfo: ''
 			}
 		},
+
 		methods: {
-			toUser(id) {
+			setScope(index) {
+				this.scope = index
+				checkNearbyPerson(this.longitude, this.latitude, this.scope, this.tga).then(data => {
+					this.nearbyInfo = data
+					uni.setStorageSync("nearbyInfo", data)
+					// console.log(data)
+				})
+				this.popupWrapper = true
+				this.close()
+			},
+			toUserInfo(id, distance) {
 				uni.navigateTo({
-					url: '/pages/daily/userInfo?uid=' + id
+					url: '/pages/daily/userInfo?uid=' + id + "&distance=" + distance
 				});
 			},
-			publishDyn() {
-				uni.navigateTo({
-					url: '../publish/publish?tid=' + 1
-				});
-			},
-			getTopicList() {
-				checkTopicList(1, 0).then(data => {
-					this.topicList = data
-					console.log(data)
-				})
-
-			},
-			usTopicLike(id, index) {
-				if (this.topicList[index].isLike !== 1) {
-					this.topicList[index].isLike = 1
-					this.topicList[index].likeCount += 1
-					console.log(this.topicList[1].isLike)
-					topicLike(id).then(data => {
-						getLikeNumber(id).then(data => {
-							console.log(data)
-							this.likeCount = data.likeCount
-						})
-					});
-					console.log(index)
-
-				}
-
-			},
-			showComm(id, index) {
-				(this.showComment == true) ? (this.showComment = false) : (this.showComment = true);
-				let cid
-				getAllComment(id).then(data => {
-					this.commList = data
-					this.commCont = data.length
-					this.replyList = data.reply
-					console.log(data)
-				})
-				this.topicId = id
-				this.commIndex = index
-				
-			},
-			hidComm() {
-				(this.showComment == true) ? (this.showComment = false) : (this.showComment = true);
-				this.commContent = ''
-				this.commList = ''
-				this.commCont = 0
-			},
-			addComm() {
-				if (this.commContent == "") {
-					uni.showToast({
-						icon: 'none',
-						title: '請輸入評論'
-					});
-				} else if (this.addType == 'reply') {
-					topicReply(this.topicRid, this.commContent).then(data => {
-						console.log("reply")
-						getAllComment(this.topicId).then(data => {
-							this.commList = data
-							console.log(this.commList)
-							this.commCont = data.length
-							this.addType = ''; // 重置发送按钮类型
-							this.commContent = ''
-							uni.showToast({
-								icon: 'none',
-								title: '回復成功'
-							})
-							this.commplaceholder = '請輸入評論內容'; // 清除占位符
-							this.topicList[this.commIndex].commCount += 1
-						})
-					})
-				} else {
-					topicComment(this.topicId, this.commContent).then(data => {
-						getAllComment(this.topicId).then(data => {
-							this.commList = data
-							this.commCont = data.length
-						})
-					})
-					uni.showToast({
-						icon: 'none',
-						title: '評論成功'
-					})
-					this.commContent = ''
-					this.addType = ''; // 重置发送按钮类型
-					this.commplaceholder = '請輸入評論內容'; // 清除占位符
-					this.topicList[this.commIndex].commCount += 1
-				}
-
-			},
-			replyComm(name, id,  rid) {
-				if (id != uni.getStorageSync('USERS_KEY').id) {
-					this.commplaceholder = '@' + name;
-					this.addType = 'reply';
-					this.topicRid = rid
-				} else {
-					uni.showToast({
-						icon: 'none',
-						title: '不能自己回復自己哦'
-					})
-				}
-			},
-
-		},
-		onPullDownRefresh() {
-			console.log("onPullDownRefresh")
-			setTimeout(function() {
-				uni.startPullDownRefresh()
-			}, 300)
-		},
-		onReachBottom() {
-			checkTopicList(1,this.pageSize).then(data=>{
-				this.pageSize+=10;
-				if(!data){
-					this.showLoadMore= true
-					this.loadMoreText =  "暫無更多數據!"
+			updateLab(uid) {
+				let myid = uni.getStorageSync("USERS_KEY").id
+				if (myid != uid) {
 					return
 				}
-				this.showLoadMore = true;
-				this.topicList = this.topicList.concat(data)
-			})
+				uni.redirectTo({
+					url: "tga"
+				});
+			},
+			search() {
+				var that = this
+				var list = uni.getStorageSync("nearbyInfo")
+				// console.log(list)
+				var match = new RegExp("(" + that.searchValue + ")", "img");
+				var searchlist = []
+				list.forEach(v => {
+					if (match.test(v.name)) {
+						searchlist.push(v);
+					}
+					if (match.test(v.lable)) {
+						searchlist.push(v);
+					}
+				});
+				if (searchlist.length == 0) {
+					uni.showToast({
+						icon: 'none',
+						title: "暫無搜索結果"
+					});
+					return
+				}
+				that.nearbyInfo = []
+				that.nearbyInfo = that.repeat(searchlist)
+
+
+			},
+			repeat: function(oldArr) {
+				var allArr = []
+				for (var i = 0; i < oldArr.length; i++) {
+					var flag = true;
+					for (var j = 0; j < allArr.length; j++) {
+						if (oldArr[i].uid == allArr[j].uid) {
+							flag = false;
+						};
+					};
+					if (flag) {
+						allArr.push(oldArr[i]);
+					};
+				};
+				return allArr
+			},
+			show: function() {
+				this.$refs.luPopupWrapper.show();
+			},
+			close: function() {
+				this.$refs.luPopupWrapper.close();
+			},
+
 		},
-		onLoad() {
-			this.getTopicList()
-			uni.getSystemInfo({
+		onNavigationBarButtonTap() {
+			if (this.popupWrapper == true) {
+				this.popupWrapper = false
+				this.show()
+
+			} else if (this.popupWrapper == false) {
+				this.popupWrapper = true
+
+				this.close()
+			}
+
+
+		},
+		onLoad(option) {
+			if (option.tga) {
+				this.tga = option.tga
+			}
+
+			if (this.tga != "") {
+				uni.setStorageSync("tga", this.tga)
+			}
+			uni.showLoading({
+			    title: '加载中'
+			});
+			var that = this
+			uni.getLocation({
+				type: 'wgs84',
 				success: function(res) {
-					console.log(res.windowHeight);
-					this.height = res.windowHeight;
-					let view = uni.createSelectorQuery().select(".page")
-					view.boundingClientRect(data=>{
-						console.log(data)
+					console.log('当前位置的经度：' + res.longitude);
+					that.longitude = res.longitude
+					console.log('当前位置的纬度：' + res.latitude);
+					that.latitude = res.latitude
+					
+					checkNearbyPerson(that.longitude, that.latitude, that.scope, that.tga).then(data => {
+						that.nearbyInfo = data
+						uni.setStorageSync("nearbyInfo", data)
+						// console.log(data)
+						uni.hideLoading();
+					})
+				},
+				fail() {
+					uni.showToast({
+						icon: 'none',
+						title: "获取定位权限失败"
+					});
+					uni.hideLoading();
+				}
+			});
+
+			
+		},
+		onPullDownRefresh() {
+			this.nearbyInfo = ""
+			var that = this
+			uni.getLocation({
+				type: 'wgs84',
+				success: function(res) {
+					// console.log('当前位置的经度：' + res.longitude);
+					that.longitude = res.longitude
+					// console.log('当前位置的纬度：' + res.latitude);
+					that.latitude = res.latitude
+					
+					checkNearbyPerson(that.longitude, that.latitude, that.scope, that.tga).then(data => {
+						that.nearbyInfo = data
+						uni.setStorageSync("nearbyInfo", data)
+						// console.log(data)
 					})
 				}
 			});
-			
-		},
-		
-		onReady() {
-			console.log(this.$refs.page)
-		},
-		
-		onShow() {
-			this.getTopicList()
+			setTimeout(function() {
+				uni.stopPullDownRefresh()
+			}, 800)
 		}
 	}
 </script>
+
 <style lang="scss" scoped>
-	.page {
-		// position: absolute;
-		// top: 0;
-		// right: 0;
-		// bottom: 0;
-		// left: 0;
+	.seek-page {
 		width: 100%;
-		// height: 768px;
-		
-		// -webkit-overflow-scrolling: touch;
-		// overflow-scrolling: touch;
-		// overflow-y: scroll;
+		background-color: #FFFFFF;
 
-		hr {
-			position: fixed;
-			margin-top: 5px;
-			height: 2px;
-			border: none;
-			background-color: #4CD964;
-			top: -5px;
+		.popup-list {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
 			width: 100%;
-			z-index: 10;
-
-		}
-
-		::-webkit-scrollbar {
-			width: 0;
-			height: 0;
-			color: transparent;
-		}
-
-		.top {
-			margin-top: 1px;
-			width: 100%;
-			margin-bottom: 10px;
-
-			.img {
-				width: 100%;
-
-				image {
-					width: 100%;
-				}
-			}
-
-			.top-text {
-				color: #cdcdcd;
-				padding: 10px;
-				font-size: 14px;
-				line-height: 25px;
-				text {
-					display: block;
-					color: #cdcdcd !important;
-				}
-
-				.right {
-					position: relative;
-					left: 48%;
-					color: #067ee8 !important;
-					width: 54%;
-					text-align: center;
-
-				}
-			}
-
-		}
-
-		.user-section {
-			.user-item {
-				position: relative;
-				background-color: #fff;
-				padding: 5px 10px;
-				margin-bottom: 5px;
-
-				.user {
-					background-color: #fff;
-					padding: 5px 10px;
-
-					image {
-						width: 50px;
-						height: 50px;
-						border-radius: 50%;
-						vertical-align: middle;
-					}
-
-					text {
-						color: #000;
-						margin-left: 5px;
-						font-size: 16px;
-						vertical-align: middle;
-					}
-				}
-
-				.content {
-					background-color: #fff;
-					padding: 5px 10px;
-
-					.content-title {
-						display: inline-block;
-						color: #0087ff;
-						font-size: 16px;
-					}
-
-					.content-text {
-						display: inline-block;
-						color: #000;
-						font-size: 14px;
-						text-align: justify;
-						text-justify: newspaper;
-						word-break: break-all;
-
-					}
-				}
-
-				.option {
-					height: 30px;
-					background-color: #fff;
-					padding: 5px 10px;
-
-					.comm-item {
-						float: left;
-
-						image {
-							width: 25px;
-							height: 25px;
-							vertical-align: middle;
-						}
-
-						text {
-							margin-left: 5px;
-							font-size: 16px;
-							color: #000;
-							vertical-align: middle;
-						}
-					}
-
-					.like-item {
-						float: right;
-
-						image {
-							width: 25px;
-							height: 25px;
-							vertical-align: middle;
-						}
-
-						text {
-							font-size: 16px;
-							color: #000;
-							margin: 0 5px;
-							vertical-align: middle;
-						}
-					}
-				}
-			}
-		}
-
-		.publish {
-			position: fixed;
-			bottom: 10px;
-			left: 50%;
-			margin-left: -60px;
-			text-align: center;
-
-			image {
-				width: 120px;
-				height: 30px;
-			}
-		}
-
-		.comment-section {
-			position: fixed;
-			bottom: 0;
-			width: 100%;
-			height: 60%;
-			box-sizing: border-box;
-			padding: 10px 10px 32px 10px;
-			font-size: 16px;
-			z-index: 300;
-			background-color: #000000;
-			border-radius: 36upx 36upx 0 0;
-			overflow: hidden;
-
-			::-webkit-scrollbar {
-				width: 0;
-				height: 0;
-				color: transparent;
-			}
-
-			.comment-section-top {
-				width: 95%;
-				height: 30px;
-				position: fixed;
-				text-align: center;
+			z-index:99;
+			text {
 				box-sizing: border-box;
-				color: #ffffff;
+				padding: 5px;
+				width: 100%;
+				display: block;
 				font-size: 14px;
-				margin: 0 auto;
-				background-color: #000000;
+				line-height: 20px;
+				text-align: center;
+				border-bottom: 1px solid #000000;
+				
+			}
+		}
 
+		.search {
+			.input-box {
+				width: 95%;
+				margin: 10px auto;
+				height: 30px;
+				position: relative;
+				line-height: 30px;
+				border:1px solid #CCCCCC;
+				border-radius: 15px;
+				padding: 0 0 0 5px ;
+				overflow:hidden;
 				image {
-					width: 15px;
-					height: 15px;
-					float: right;
+					width: 20px;
+					height: 20px;
+					display: inline-block;
+					position: absolute;
+					top: 5px;
 					right: 10px;
 				}
-			}
 
-			.comment {
-				margin-top: 30px;
-				width: 100%;
-				height: 100%;
-
-				.nocomm {
-					margin-left: 70px;
-					margin-top: 50px;
-					color: #ffffff;
-
+				input {
+					display: inline-block;
+					height: 30px;
+					width: 80%;
+					background: #ffffff;
+					line-height: 30px;
+					margin-left: 10px;
+					font-size: 16px;
+					border-radius: 10px;
+					text-decoration: none;
+					outline: none;
 				}
 
-				.comment-section-details {
-					width: 100%;
-
-					.comment-section-comm {
-						margin-bottom: 10px;
-
-						.comm-ite {
-							display: flex;
-							align-items: flex-end;
-
-							.ite-portrait {
-								width: 40px;
-								height: 40px;
-								border-radius: 50%;
-								margin: 5px;
-								align-self: end;
-								flex-shrink: 0;
-							}
-
-							.ite-name-content {
-								box-sizing: border-box;
-								padding: 5px;
-								color: #ffffff;
-								flex-wrap: wrap;
-								flex-grow: 1;
-								font-size: 14px;
-								line-height: 20px;
-
-								.ite-name {
-									display: block;
-									color: #B7B7B7;
-								}
-
-								.ite-content {
-									word-wrap: break-word;
-								}
-
-								.ite-create_time {
-									float: right;
-									font-size: 12px;
-								}
-							}
-						}
-
-						.comment-section-reply {
-							padding: 5px 5px 5px 30px;
-							color: #ffffff;
-							font-size: 14px;
-
-							.color {
-								color: #e64340;
-								font-size: 14px;
-							}
-						}
-					}
-
-				}
-
-				.input-section {
-					position: fixed;
-					width: 100%;
-					height: 65upx;
-					margin: 0 auto;
-					bottom: 0;
-					left: 0;
-					box-sizing: border-box;
+				text {
+					position: absolute;
+					top: 0;
+					right: 0;
 					color: #000000;
-					background-color: #B7B7B7;
-					
-					font-size: 30upx;
+					font-size: 16px;
+					line-height: 30px;
+					width: 35px;
+					text-align: center;
+					height: 30px;
+				}
+			}
+		}
 
-					input {
-						width: 77%;
-						height: 65upx;
-						line-height: 65upx;
-						vertical-align: middle;
-						float: left;
-						padding-left: 20upx;
+		.no-nearby {
+			margin: 100px auto;
+			text-align: center;
+
+			text {
+
+				font-size: 16px;
+				line-height: 30px;
+			}
+		}
+
+		.nearby-list {
+			width: 100%;
+			padding: 10px;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			box-sizing: border-box;
+			display: flex;
+			flex-wrap: wrap;
+
+			.nearby-item {
+				width: 50%;
+				padding: 10px;
+				box-sizing: border-box;
+				border: 1px solid #979797;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+
+				.item-img {
+					margin: 0px auto;
+					position: relative;
+					border-radius: 50%;
+					overflow: hidden;
+
+					image {
+						width: 120px;
+						height: 120px;
+						border-radius: 50%;
+						overflow: hidden;
+						display: block;
 					}
 
-					button {
+					.mask {
 						position: absolute;
-						margin: 0;
-						padding: 0;
-						right: 0;
-						width: 20%;
-						padding-right: 40upx;
-						float: right;
-						margin-top: -10upx;
-						font-size: 35upx;
-						color: #000000;
+						bottom: 0;
+						left: 50%;
+						margin-left: -50%;
+						width: 100%;
+						height: 40px;
+						background-color: rgba(0, 0, 0, 0.6);
+						text-align: center;
+
+						text {
+							font-size: 14px;
+							color: #FFFFFF;
+							text-align: center;
+							line-height: 40px;
+						}
+					}
+				}
+
+				.item-name {
+					display: block;
+					color: #000000;
+					font-size: 14px;
+					line-height: 22px;
+
+					text {
+						display: block;
+						text-align: center;
+					}
+				}
+
+				.item-title {
+					display: block;
+					font-size: 12px;
+					color: #8E8E93;
+					line-height: 22px;
+
+					text {
+						display: block;
+						text-align: center;
 					}
 				}
 			}
 		}
-		.load{
-			width: 100%;
-			height: 20px;
-			color: #fff;
-			font-size: 16px;
-			text-align: center;
-			line-height: 20px;
-			}
+	}
+	.nearby-list .nearby-item{
+		// border-bottom: none;
+		// border-right: none;
+		 margin:0px -1px -1px 0px;
+
 	}
 </style>

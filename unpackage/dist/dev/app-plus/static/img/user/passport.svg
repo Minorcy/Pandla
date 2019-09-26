@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="166px" height="56px" viewBox="0 0 166 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-    <title>分组 5</title>
+<svg width="25px" height="24px" viewBox="0 0 25 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>编组</title>
     <desc>Created with Sketch.</desc>
-    <defs>
-        <linearGradient x1="7.92707724%" y1="47.5458009%" x2="88.5017393%" y2="53.7017014%" id="linearGradient-1">
-            <stop stop-color="#03D5C7" offset="0%"></stop>
-            <stop stop-color="#79AC04" offset="100%"></stop>
-        </linearGradient>
-        <linearGradient x1="33.0129277%" y1="46.0271961%" x2="88.5017393%" y2="53.7017014%" id="linearGradient-2">
-            <stop stop-color="#03D5C7" offset="0%"></stop>
-            <stop stop-color="#79AC04" offset="100%"></stop>
-        </linearGradient>
-    </defs>
     <g id="我的" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g transform="translate(-194.000000, -244.000000)" id="分组-5">
-            <g transform="translate(194.000000, 244.000000)">
-                <rect id="矩形" stroke="url(#linearGradient-2)" stroke-width="1.5" fill-opacity="0.1" fill="url(#linearGradient-1)" x="0.75" y="0.75" width="164.5" height="54.5" rx="5"></rect>
-                <text id="星球護照" font-family="PingFangSC-Semibold, PingFang SC" font-size="22" font-weight="500" letter-spacing="2" fill="#FFFFFF">
-                    <tspan x="32" y="36">星球護照</tspan>
-                </text>
+        <g transform="translate(-272.000000, -274.000000)" id="编组" stroke="#FFFFFF" stroke-width="0.8">
+            <g transform="translate(272.000000, 274.000000)">
+                <path d="M3,0.4 C1.56405965,0.4 0.4,1.56405965 0.4,3 L0.4,19 C0.4,20.4359403 1.56405965,21.6 3,21.6 L10.4860863,21.6 L10.5958167,21.6881242 C11.4449677,22.3700749 12.0935091,22.7016748 12.5,22.7016748 C12.921648,22.7016748 13.7005241,22.3584189 14.7837746,21.6633448 L14.8824954,21.6 L14.9997914,21.6 L22,21.6 C23.4359403,21.6 24.6,20.4359403 24.6,19 L24.6,3 C24.6,1.56405965 23.4359403,0.4 22,0.4 L3,0.4 Z" id="矩形"></path>
+                <path d="M12.5,1.22980659 L12.5,14.829533" id="直线-12" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M4.5,5.5 L8.69382633,5.5" id="直线-13" stroke-linecap="round"></path>
+                <path d="M16.5,5.5 L20.6938263,5.5" id="直线-13复制-3" stroke-linecap="round"></path>
+                <path d="M4.5,9.5 L8.69382633,9.5" id="直线-13复制" stroke-linecap="round"></path>
+                <path d="M16.5,9.5 L20.6938263,9.5" id="直线-13复制-4" stroke-linecap="round"></path>
+                <path d="M4.5,13.5 L8.69382633,13.5" id="直线-13复制-2" stroke-linecap="round"></path>
+                <path d="M16.5,13.5 L20.6938263,13.5" id="直线-13复制-5" stroke-linecap="round"></path>
             </g>
         </g>
     </g>

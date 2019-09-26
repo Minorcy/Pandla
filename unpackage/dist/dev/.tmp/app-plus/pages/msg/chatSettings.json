@@ -1,7 +1,10 @@
 {
-  "navigationBarTitleText": "聊天设置",
+  "navigationBarTitleText": "通訊设置",
   "navigationBarBackgroundColor": "#E1E1E1",
   "navigationBarTextStyle": "black",
   "bounce": "none",
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-list": "/components/uni-list/uni-list",
+    "uni-list-item": "/components/uni-list-item/uni-list-item"
+  }
 }

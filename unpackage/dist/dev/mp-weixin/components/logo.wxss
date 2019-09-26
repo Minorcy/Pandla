@@ -1,5 +1,5 @@
 
-.header.data-v-bb2117a4 {
+.header.data-v-012981f0 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -14,16 +14,16 @@
 	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
-.logo.data-v-bb2117a4 {
-	width: 160rpx;
-	height: 150rpx;
+.logo.data-v-012981f0 {
+	width: 70px;
+	height: 65px;
 	display: block;
 	margin: 0 auto;
 }
-.logo image.data-v-bb2117a4{
+.logo image.data-v-012981f0{
 	width: 100%;
 }
-.slogan.data-v-bb2117a4 {
+.slogan.data-v-012981f0 {
 	color: #EFEFF4;
 	font-size: 60rpx;
 	text-align: center;

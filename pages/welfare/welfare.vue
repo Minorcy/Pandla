@@ -1,19 +1,29 @@
 <template>
 	<view class="pages-content">
-		<scroll-view scroll-y>
-			<view v-for="(item, index) in barInfo" :key="index">
-				<view class="item-group" @tap="navigatorParam(item.id)" >
+		<view class="introduce" v-if="isShow">
+			<image src="../../static/img/login/back.png" mode="widthFix" class="back" @tap="remove()"></image>
+			<image src="../../static/img/welfare/welfare-bg.png" mode="widthFix"></image>
+		</view>
+		<view class="no-list" v-if="!isShow && !barInfo.length">
+			<text>暫無公益組織入駐</text>
+		</view>
+		<scroll-view scroll-y v-if="!isShow">
+			<view v-for="(item, index) in barInfo" :key="index" class="lits-item">
+				<view class="bg" :style="{backgroundImage: 'url('+item.picture+')'}" ></view>
+				<view class="item-group"  @tap="navigatorParam(item.id)">
 					<image class="logo" :src='item.logo'></image>
-					<p>{{item.name}}</p>
-					<p>
-						<image class="map" src="../../static/img/main/entertain/map.svg" />
-						{{item.location}}</p>
+					<text>{{item.name}}</text>
+					<view class="location">
+						<image class="map" src="../../static/img/welfare/map.svg" />
+						<text>{{item.location}}</text>
+					</view>
 				</view>
-				<hr>
+				
 			</view>
 		</scroll-view>
+		
 		<navigator url="welfareApplication">
-			<image class="entry" src="../../static/img/main/entertain/entry.svg" />
+			<image class="entry" src="../../static/img/welfare/entry.svg" />
 		</navigator>
 	</view>
 </template>
@@ -28,6 +38,7 @@
 	export default {
 		data() {
 			return {
+				isShow:true,
 				location: '',
 				barInfo: '',
 				itemStr: '',
@@ -35,12 +46,17 @@
 			}
 		},
 		methods: {
+			remove(){
+				this.isShow = false
+			},
 			getBenfitListData() {
 				getBenfitList().then(data => {
 					this.barInfo = data;
-					console.log(data)
-					// var arr=data.picture.split(",")
-					// this.picture = arr
+					
+					this.barInfo.map(item=>{
+						item.picture = item.picture.split(",")[0]
+					})
+					console.log(this.barInfo)
 				});
 			},
 			navigatorParam(item) {
@@ -49,10 +65,12 @@
 					url: 'welfareDetail?id='+item
 				});
 			},
-			split(str) {
-				var bg 
-				return bg= str.split(",")[0]
-
+			
+		},
+		filters:{
+			splitImg(picture){
+				var arr = ''
+				return arr[0] = picture.split(",")
 			}
 		},
 		onLoad() {
@@ -74,33 +92,71 @@
 <style scoped>
 	.pages-content {
 		width: 100%;
-		height: 100%;
-		overflow: hidden;
 	}
-
-	.item-group {
+	.introduce{
 		width: 100%;
-		height: 350upx;
-		background-color: #777777;
+		position: relative;
+	}
+	.back{
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		width: 50px;
+		height: 50px;
+		z-index: 10;
+	}
+	.no-list{
+		margin: 30px auto 0;
+		width: 100%;
+		text-align: center;
+		line-height: 1.5;
+		font-size: 16px;
+		color: #4A4A4A;
+		font-weight: 700;
+		}
+	.lits-item{
+		position: relative;
+		width: 100%;
+		height: 122px;
+		color: #FFFFFF;
+		margin-top: 10px;
+	}
+	.item-group {
+		position: relative;
+		width: 100%;
+		height: 100%;
 		display: flex;
 		flex-direction: column;
+		z-index: 9;
+		background-color: rgba(0,0,0,.5);
 	}
-
-	.item-group p:nth-child(2) {
-		font-weight: bold;
+	.item-group text{
+		font-size: 14px;
+		color: #FFFFFF;
+		line-height: 1.5;
+		text-align: center;
 	}
-
-	.item-group p:nth-child(3) {
-		font-size: 25upx;
+	.item-group .location{
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
-
+	.bg{
+		border: 1px solid #000000;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		filter: blur(3px);
+		z-index: 1;
+	}
 	.logo {
 		width: 100upx;
 		height: 100upx;
-		margin: 50upx auto 20upx auto;
+		margin: 20upx auto 20upx auto;
 		border-radius: 50%;
 	}
-
 	.map {
 		width: 30upx;
 		height: 20upx;
@@ -108,10 +164,12 @@
 	}
 
 	.entry {
-		width: 190upx;
+		width: 100px;
+		height: 100px;
 		position: fixed;
 		bottom: 50upx;
 		right: 20upx;
+		z-index: 10;
 	}
 
 	scroll-view {
@@ -120,20 +178,9 @@
 
 	image {
 		width: 100%;
-		height: 150upx;
-		margin-top: 20upx;
-		justify-content: center;
 	}
 
-	p {
-		width: 100%;
-		margin-top: 10upx;
-		text-align: center;
-	}
+	
 
-	hr {
-		height: 3upx;
-		border: none;
-		border-top: 3upx solid #000000;
-	}
+	
 </style>

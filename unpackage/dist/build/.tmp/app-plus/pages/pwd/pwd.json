@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "",
   "bounce": "none",
+  "titleNView": false,
   "usingComponents": {
     "m-input": "/components/m-input",
     "logo": "/components/logo"

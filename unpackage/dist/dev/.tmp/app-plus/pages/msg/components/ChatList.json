@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "chat-item": "/pages/msg/components/ChatItem"
-  },
-  "component": true
-}

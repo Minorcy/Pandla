@@ -6,12 +6,19 @@
   "titleNView": {
     "buttons": [
       {
-        "text": "",
-        "fontSrc": "/static/font/iconfont.ttf",
-        "color": " #000000"
+        "text": "",
+        "color": "#999999",
+        "fontSize": "20px",
+        "fontSrc": "/static/font/iconfont.ttf"
       }
     ]
   },
+  "animationType": "slide-in-left",
   "bounce": "none",
-  "usingComponents": {}
+  "softinputNavBar": "none",
+  "softinputMode": "adjustResize",
+  "usingComponents": {
+    "uni-swipe-action": "/components/uni-swipe-action/uni-swipe-action",
+    "uni-badge": "/components/uni-badge/uni-badge"
+  }
 }

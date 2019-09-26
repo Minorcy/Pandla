@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "邀請好友移民星球",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
   "titleNView": {
     "buttons": [
       {

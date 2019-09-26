@@ -1,5 +1,8 @@
 {
   "navigationBarTitleText": "捐贈榜單",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
+  "onReachBottomDistance": 50,
   "bounce": "none",
   "usingComponents": {}
 }

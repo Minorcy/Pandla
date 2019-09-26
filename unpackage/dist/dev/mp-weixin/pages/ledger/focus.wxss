@@ -24,58 +24,51 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.pages-content.data-v-01f3053a {
+.pages-content.data-v-cf3ce76e {
   background-color: #EFEFF4;
   width: 100%;
 }
-.focus-data.data-v-01f3053a {
-  width: 100%;
-  /* Safari 5.1 - 6.0 */
-  background: -o-linear-gradient(to right, #000000, #979797);
-  /* Opera 11.1 - 12.0 */
-  /* Firefox 3.6 - 15 */
-  background: -webkit-gradient(linear, left top, right top, from(#000000), to(#979797));
-  background: -o-linear-gradient(left, #000000, #979797);
-  background: linear-gradient(to right, #000000, #979797);
-  /* 标准的语法 */
+.focus-data.data-v-cf3ce76e {
+  width: 99%;
+  border-radius: 8px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: #131D21;
 }
-.focus-data-num.data-v-01f3053a {
+.focus-data-num.data-v-cf3ce76e {
     display: block;
     font-size: 40rpx;
-    padding: 40rpx 0 40rpx 20rpx;
+    padding: 40rpx 0 0rpx 20rpx;
 }
-.focus-data-freeze.data-v-01f3053a {
-    font-size: 25rpx;
+.focus-data-freeze.data-v-cf3ce76e {
+    font-size: 14px;
     padding: 20rpx;
     clear: both;
-    /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(to right, #424A4D, #979797);
-    /* Opera 11.1 - 12.0 */
-    /* Firefox 3.6 - 15 */
-    background: -webkit-gradient(linear, left top, right top, from(#424A4D), to(#979797));
-    background: -o-linear-gradient(left, #424A4D, #979797);
-    background: linear-gradient(to right, #424A4D, #979797);
-    /* 标准的语法 */
 }
-.focus-label-num.data-v-01f3053a {
-  font-size: 30rpx;
+.focus-notice .focus-label-context.data-v-cf3ce76e {
+  font-size: 14px;
+  color: #888;
+}
+.focus-label-num.data-v-cf3ce76e {
+  font-size: 14px;
   border-bottom: 1rpx solid #FFFFFF;
   padding: 20rpx;
 }
-.focus-label-deal.data-v-01f3053a {
+.focus-label-deal.data-v-cf3ce76e {
   float: right;
   margin-right: 20rpx;
   font-size: 30rpx;
 }
-.focus-label-introduction.data-v-01f3053a {
+.focus-label-introduction.data-v-cf3ce76e {
   font-size: 35rpx;
   border-bottom: 1rpx solid #979797;
 }
-.focus-label-context.data-v-01f3053a {
-  font-size: 25rpx;
+.focus-label-context.data-v-cf3ce76e {
+  font-size: 30rpx;
   line-height: 45rpx;
 }
-.focus-label-list.data-v-01f3053a {
+.focus-label-list.data-v-cf3ce76e {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,21 +86,21 @@
   padding: 50rpx 100rpx;
   color: #000000;
 }
-.focus-notice.data-v-01f3053a {
+.focus-notice.data-v-cf3ce76e {
   background-color: #EFEFF4;
   color: #000000;
   padding: 30rpx;
   border-bottom: 1rpx solid #979797;
 }
-.focus-list.data-v-01f3053a {
+.focus-list.data-v-cf3ce76e {
   border-top: 1rpx solid #979797;
   font-size: 35rpx;
   color: #000000;
 }
-.focus-list-ul.data-v-01f3053a {
+.focus-list-ul.data-v-cf3ce76e {
     padding: 0 50rpx;
 }
-.focus-list-li.data-v-01f3053a {
+.focus-list-li.data-v-cf3ce76e {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -124,21 +117,111 @@
     padding: 20rpx 0;
     border-bottom: 1rpx solid #979797;
 }
-.focus-list-action.data-v-01f3053a {
-    font-size: 30rpx;
+.focus-list-action.data-v-cf3ce76e {
+    font-size: 14px;
 }
-.focus-list-time.data-v-01f3053a {
-    font-size: 25rpx;
+.focus-list-time.data-v-cf3ce76e {
+    font-size: 12px;
     color: #979797;
+    float: right;
 }
-.focus-list-number.data-v-01f3053a {
-    font-size: 25rpx;
+.focus-list-number.data-v-cf3ce76e {
+    font-size: 14px;
     color: #CD2626;
 }
-.focus-img-focus.data-v-01f3053a {
+.focus-img-focus.data-v-cf3ce76e {
   width: 50rpx;
   height: 50rpx;
   padding: 15rpx;
   float: left;
+}
+.list-right ._p.data-v-cf3ce76e {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.sign.data-v-cf3ce76e {
+  width: 100%;
+  height: 100px;
+}
+.sign .sign-top.data-v-cf3ce76e {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.sign .sign-top .left.data-v-cf3ce76e {
+      margin: 14px;
+      font-size: 14px;
+      color: #8E8E93;
+      line-height: 24px;
+}
+.sign .sign-top .right.data-v-cf3ce76e {
+      margin: 13px 30px 0 0;
+      width: 61px;
+      height: 23px;
+      text-align: center;
+      background: -o-linear-gradient(154deg, #131d21 0%, #747474 100%);
+      background: linear-gradient(296deg, #131d21 0%, #747474 100%);
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 21px;
+}
+.sign .sign-bottom.data-v-cf3ce76e {
+    margin-top: 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    font-size: 10px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.sign .sign-bottom view.data-v-cf3ce76e {
+      width: 30px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+}
+.sign .sign-bottom view text.data-v-cf3ce76e:nth-child(1) {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        line-height: 30px;
+        background: #131D21;
+        border-radius: 50%;
+        text-align: center;
+}
+.sign .sign-bottom view text.data-v-cf3ce76e:nth-child(2) {
+        margin-top: 10px;
+        font-size: 10px;
+        font-weight: 400;
+        color: #8E8E93;
+        line-height: 11px;
+        text-align: center;
+}
+.sign .sign-bottom .sing-in.data-v-cf3ce76e {
+      background: #8E8E93 !important;
+}
+.pan-list-load.data-v-cf3ce76e {
+  background-color: #EFEFF4;
 }
 

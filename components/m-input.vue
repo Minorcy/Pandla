@@ -4,6 +4,7 @@
 			:focus="focus_"
 			:type="inputType"
 			:value="value"
+			:style="{color:color}"
 			class="m-input-input"
 			:placeholder="placeholder"
 			:password="type==='password'&&!showPassword"
@@ -12,10 +13,10 @@
 			@blur="onBlur" />
 		<!-- 优先显示密码可见按钮 -->
 		<view v-if="clearable_&&!displayable_&&value.length" class="m-input-icon">
-			<m-icon color="#666666" type="clear" size="20" @click="clear"></m-icon>
+			<m-icon color="#999" type="clear" size="20" @click="clear"></m-icon>
 		</view>
 		<view v-if="displayable_" class="m-input-icon">
-			<m-icon :color="showPassword?'#cccccc':'#666666'" type="eye" size="20" @click="display"></m-icon>
+			<m-icon :color="showPassword?'#999':'#333'" type="eye" size="20" @click="display"></m-icon>
 		</view>
 	</view>
 </template>
@@ -28,6 +29,7 @@
 			mIcon
 		},
 		props: {
+			color:String,
 			/**
 			 * 输入类型
 			 */
@@ -129,6 +131,7 @@
 		flex: 1;
 		width: 100%;
 		padding-left: 10upx;
+		
 	}
 
 	.m-input-icon {

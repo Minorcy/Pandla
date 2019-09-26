@@ -31,13 +31,13 @@
 		</view>
 		<hr>
 		<view class="facebook-link">
-			使用<a href="#"><navigator url="../reg/reg">邮箱/手机</navigator></a>注册
+			使用<navigator class="color" url="../reg/reg">邮箱/手机</navigator>注册
 		</view>
 		<view class="facebook-link">
-			使用<a href="#">Facebook</a>帳號注冊
+			使用<text @tap="fecebook" class="color">Facebook</text>帳號注冊
 		</view>
 		<view class="lang-link">
-			<a class="ch">繁體中文</a><text>|</text><a class="en">English</a>
+			<text class="ch">繁體中文</text><text>|</text><text class="en">English</text>
 		</view>
 	</view>
 </template>
@@ -67,6 +67,12 @@
 			},
 			sliderChange() {
 				(this.sliderPercent == 100) ? (this.sliderPercent = 25) : (this.sliderPercent += 25);
+			},
+			fecebook(){
+				uni.showToast({
+					icon:"none",
+					title:"暫不支持"
+				})
 			}
 		},
 		onLoad() {
@@ -78,12 +84,17 @@
 
 <style scoped="true">
 	.content{
-		color: #EFEFF4;
+		width: 100%;
+		color: #4A4A4A;
 		padding: 0;
-		background: #000000;
+		background: #FFFFFF;
 	}
 	
 	/* 滑动器 */
+	.uni-padding-wrap{
+		width: 100%;
+		padding: 0;
+	}
 	.swiper {
 		width: 100%;
 		height: 750upx;
@@ -106,12 +117,14 @@
 		display: -webkit-flex;
 		align-items: center;
 	    justify-content: center;
-		font-size: 30upx;
+		font-size: 16px;
 	}
-	
+	.color{
+		color: #007AFF;
+	}
 	.facebook-link>a {
 		margin: 0 5upx 0 5upx;
-		color: #EFEFF4;
+		
 		text-decoration: underline;
 		
 	}
@@ -119,14 +132,14 @@
 	.lang-link {
 		display: flex;
 		flex-direction: row;
-		font-size: 25upx;
+		font-size: 14px;
 		position: fixed;
 		bottom: 0;
 		right: 0;
 		padding: 20upx;
 	}
 	.en {
-		color: #EFEFF4;
+		
 		margin-left: 10upx;
 	}
 	

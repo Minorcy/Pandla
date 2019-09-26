@@ -1,5 +1,8 @@
 {
-  "navigationBarTitleText": "關注列表",
+  "enablePullDownRefresh": false,
+  "navigationBarTitleText": "",
+  "animationType": "slide-in-left",
+  "titleNView": false,
   "bounce": "none",
   "usingComponents": {}
 }

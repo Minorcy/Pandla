@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "聊天",
-  "usingComponents": {
-    "chat-input": "/components/im-chat/chatinput",
-    "message-show": "/components/im-chat/messageshow"
-  }
-}

@@ -1,13 +1,95 @@
 
-.action-row navigator {
-	color: #007aff;
-	padding-top: 38rpx;
+.login-page{
+	width: 100%;
+
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-position: center;
 }
-.action-row text {
-	color: #EFEFF4;
-	padding: 38rpx 10rpx;
+.logo{
+	margin-top:40px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	position: relative;
 }
-.oauth-row {
+.logo .back{
+	position: absolute;
+	top: 0px ;
+	left: 10px;
+	width: 44px;
+	height: 44px;
+}
+.logo image{
+	width: 65px;
+	height: 65px;
+}
+.input-wrapper{
+	margin: 100px 0 50px 0;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.input-box{
+	width: 300px;
+	height: 40px;
+	padding: 10px 10px 0px 10px;
+	border-bottom: 1px solid #FFFFFF;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	margin: 10px auto;
+}
+m-input{
+	display: block;
+	
+	color: #F4F4F4 !important;
+}
+.login-btn{
+	width: 300px;
+	height: 60px;
+	margin: 0 auto;
+	border: 1px solid#FFFFFF;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.login-btn text{
+	text-align: center;
+	line-height: 60px;
+	color: #F4F4F4;
+	font-size: 16px;
+}
+.content{
+	width: 100%;
+}
+.btn-row{
+	margin: 0 auto;
+}
+.action{
+	margin-top: 100px;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -21,26 +103,18 @@
 	-webkit-justify-content: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
+	font-size: 14px;
 }
-.oauth-image {
-	width: 100rpx;
-	height: 100rpx;
-	border: 1rpx solid #dddddd;
-	border-radius: 100rpx;
-	margin: 0 40rpx;
-	background-color: #EFEFF4;
+.action navigator {
+	color: #D3D3D3;
+	padding-top: 38rpx;
 }
-.oauth-image image {
-	width: 60rpx;
-	height: 60rpx;
-	margin: 20rpx;
+.action text {
+	color: #D3D3D3;
+	padding: 38rpx 10rpx;
 }
-.primary{
-	line-height: 50px;
-}
+
+
+
 
 

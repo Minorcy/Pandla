@@ -1,111 +1,402 @@
 <template>
-	<view class="pages-content">
-		<ul>
-			<li v-for="(item, index) in fnasList" :key=index>
-				<image :src="item.portrait" mode="aspectFill" />
-				<text @tap="userInfo(item.id)">{{item.name}}</text>
-				<text :style="{color: textColor[index]}">{{item.number}}</text>
-				<button>{{butText}}</button>
-			</li>
-		</ul>
+	<view class="fans-page">
+		<view class="status_bar">
+		</view>
+		<view class="tabbar">
+			<view class="back" @tap="goBack()">
+				<image src="../../static/img/user/follow/back.svg" mode=""></image>
+			</view>
+			<view id="tab-bar" class="uni-swiper-tab" scroll-x :scroll-left="scrollLeft">
+				<view v-for="(tab,index) in tabBars" :key="tab.id" class="swiper-tab-list" :class="tabIndex==index ? 'active' : ''"
+				 :id="tab.id" :data-current="index" @click="tapTab">{{tab.name}}</view>
+			</view>
+		</view>
+		<swiper :current="tabIndex" class="swiper-box" :duration="300" @change="changeTab">
+			<swiper-item>
+				<scroll-view scroll-y class="folllow-list">
+					<view class="list-item" v-for="(item,index) in followList " :key="item.id">
+						<image :src="item.portrait" mode="aspectFill" class="item-img" @tap="userInfo(item.id)"></image>
+						<view class="list-item-right">
+							<view class="item-userInfo">
+								<text class="name">{{item.name}}</text>
+								<text class="circles">{{item.age}}/{{item.stature}}/{{item.weight}}/{{item.status}}</text>
+								<text class="address">{{item.site}}</text>
+							</view>
+							<view class="item-btn">
+								<image src="../../static/img/user/follow/cancel.svg" mode="" @tap="unFollow(item.id,index)"></image>
+							</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+			<swiper-item>
+				<scroll-view scroll-y class="folllow-list">
+					<view class="list-item" v-for="(item,index) in fnasList " :key="item.id">
+						<image :src="item.portrait" mode="aspectFill" class="item-img" @tap="userInfo(item.id)"></image>
+						<view class="list-item-right">
+							<view class="item-userInfo">
+								<text class="name">{{item.name}}</text>
+								<text class="circles">{{item.age}}/{{item.stature}}/{{item.weight}}/{{item.status}}</text>
+								<text class="address">{{item.site}}</text>
+							</view>
+							<view class="item-btn">
+								<image src="../../static/img/user/follow/follow.svg" mode="" @tap="follow(item.id,index)"></image>
+							</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+			<swiper-item>
+				<scroll-view scroll-y class="folllow-list">
+					<view class="list-item" v-for="(item,index) in friendList " :key="item.id">
+						<image :src="item.portrait" mode="aspectFill" class="item-img" @tap="userInfo(item.id)"></image>
+						<view class="list-item-right">
+							<view class="item-userInfo">
+								<text class="name">{{item.name}}</text>
+								<text class="circles">{{item.age}}/{{item.stature}}/{{item.weight}}/{{item.status}}</text>
+								<text class="address">{{item.site}}</text>
+							</view>
+							<view class="item-btn">
+								<image src="../../static/img/user/follow/mutual.svg" mode="" @tap="unMutual(item.id,index)"></image>
+							</view>
+						</view>
+					</view>
+				</scroll-view>
+			</swiper-item>
+		</swiper>
 	</view>
 </template>
-
 <script>
-	
-	import {getFans, getFollow} from '../../api/api.js';
+	import {
+		getFollow,
+		concern,
+		getFans,
+		upStatus
+	} from '../../api/api.js';
 	export default {
+
 		data() {
 			return {
+				scrollLeft: 0,
+				isClickChange: false,
+				tabIndex: 1,
+				newsitems: [],
+				tabBars: [{
+					name: '關注',
+					id: 'guanzhu'
+				}, {
+					name: '粉絲',
+					id: 'tuijian'
+				}, {
+					name: '好友',
+					id: 'tiyu'
+				}],
+				followList: '',
 				fnasList: '',
-				butText:'',
-				allFollow:[],
-				list:[],
-				textColor: ['#4CD964', '#4CD964', '#4CD964']
+				friendList: [],
 			}
 		},
-		
+		onLoad() {
+			this.changeStatus(4)
+			this.getInfo()
+		},
 		methods: {
-			getAllFans() {
-				getFans().then(data => {
-					this.fnasList = data;
-					// console.log(data);
-				});
-				uni.hideLoading();
+			changeStatus(type) {
+				upStatus(type).then(data => {
+					console.log(data)
+				})
 			},
-			// 用户详情
+			goBack() {
+				uni.navigateBack({
+					delta: 1
+				})
+			},
+
+			getInfo() {
+				getFollow().then(data => {
+					this.followList = data;
+					console.log(this.followList)
+					getFans().then(data => {
+						this.fnasList = data;
+
+						console.log(data);
+						this.getFriend()
+					});
+				});
+
+
+			},
+			getFriend() {
+				var arr1 = this.followList
+				var arr2 = this.fnasList
+				this.friendList = this.repeat(arr1, arr2)
+				var arr3 = this.friendList
+
+				this.fnasList = arr2.filter(item => {
+					let idList = arr3.map(v => v.id)
+					return !idList.includes(item.id)
+				})
+			},
+			repeat(arr1, arr2) {
+				return arr1.filter(element1 => arr2.some(element2 => element1.id === element2.id))
+			},
+
 			userInfo(id) {
 				uni.navigateTo({
 					url: '/pages/daily/userInfo?uid=' + id
 				});
 			},
-			getAllFollow(){
-				getFollow().then(data => {
-					this.allFollow = data;
-					for(let i = 0 ; i<this.allFollow.length;i++){	
-							this.list.push(this.allFollow[i].id);
-						};
-					});
-					this.follow()
-			},
-			follow(){
-				for(let i = 0 ; i < this.fnasList.length; i++){
-					console.log('1')
-					if(this.list.indexOf(this.fnasList[i].id) != -1 ){
-						console.log('2')
+			unFollow(id, index) {
+				var that = this
+				uni.showModal({
+					title: '',
+					content: '确定不在关注对方',
+					success: function(res) {
+						if (res.confirm) {
+							concern(2, id).then(data => {
+								that.followList.splice(index, 1)
+							});
+						} else if (res.cancel) {
+							console.log('用户点击取消');
+						}
 					}
+				});
+
+			},
+			unMutual(id, index) {
+				var that = this
+				uni.showModal({
+					title: '',
+					content: '确定不在关注对方',
+					success: function(res) {
+						if (res.confirm) {
+							concern(2, id).then(data => {
+								that.friendList.splice(index, 1)
+							});
+						} else if (res.cancel) {
+							console.log('用户点击取消');
+						}
+					}
+				});
+			},
+			follow(id, index) {
+				concern(1, id).then(data => {
+					this.fnasList.splice(index, 1)
+					this.getInfo()
+				});
+			},
+			loadMore(e) {
+				setTimeout(() => {
+					this.addData(e);
+				}, 1200);
+			},
+			addData(e) {
+				if (this.newsitems[e].data.length > 30) {
+					this.newsitems[e].loadingText = '没有更多了';
+					return;
 				}
-			}
-			
-			
-		},
-		onLoad() {
-			uni.showLoading({
-				title: '加载中'
-			});
-			this.getAllFans();
-			this.getAllFollow();
+				for (let i = 1; i <= 10; i++) {
+					this.newsitems[e].data.push(tpl['data' + Math.floor(Math.random() * 5)]);
+				}
+			},
+			async changeTab(e) {
+				let index = e.target.current;
+
+				if (this.isClickChange) {
+					this.tabIndex = index;
+					this.isClickChange = false;
+					return;
+				}
+				let tabBar = await this.getElSize("tab-bar"),
+					tabBarScrollLeft = tabBar.scrollLeft;
+				let width = 0;
+
+				for (let i = 0; i < index; i++) {
+					let result = await this.getElSize(this.tabBars[i].id);
+					width += result.width;
+				}
+				let winWidth = uni.getSystemInfoSync().windowWidth,
+					nowElement = await this.getElSize(this.tabBars[index].id),
+					nowWidth = nowElement.width;
+				if (width + nowWidth - tabBarScrollLeft > winWidth) {
+					this.scrollLeft = width + nowWidth - winWidth;
+				}
+				if (width < tabBarScrollLeft) {
+					this.scrollLeft = width;
+				}
+				this.isClickChange = false;
+				this.tabIndex = index; //一旦访问data就会出问题
+			},
+			getElSize(id) { //得到元素的size
+				return new Promise((res, rej) => {
+					uni.createSelectorQuery().select("#" + id).fields({
+						size: true,
+						scrollOffset: true
+					}, (data) => {
+						res(data);
+					}).exec();
+				})
+			},
+			async tapTab(e) { //点击tab-bar
+				let tabIndex = e.target.dataset.current;
+
+				if (this.tabIndex === tabIndex) {
+					return false;
+				} else {
+					let tabBar = await this.getElSize("tab-bar"),
+						tabBarScrollLeft = tabBar.scrollLeft; //点击的时候记录并设置scrollLeft
+					this.scrollLeft = tabBarScrollLeft;
+					this.isClickChange = true;
+					this.tabIndex = tabIndex;
+				}
+			},
+
 		}
-		
 	}
 </script>
 
-<style scoped>
-	ul {
+<style>
+	.fans-page {
+		width: 100%;
+		background-color: #FFFFFF;
+	}
+
+	.status_bar {
+		position: fixed;
+		top: 0;
+		height: var(--status-bar-height);
+		width: 100%;
+		z-index: 99;
+		background-color: #E1E1E1;
+	}
+
+	.tabbar {
+		position: sticky;
+		top:var(--status-bar-height);
+		left: 0;
+		width: 100%;
+		white-space: nowrap;
+		background-color: #E1E1E1;
+		border-bottom: 1px solid #c8c7cc;
+		line-height: 44px;
+		height: 44px;
+		z-index: 999;
+	}
+
+	.back {
+		position: absolute;
+		top: 15px;
+		left: 25px;
+		width: 15px;
+		height: 15px;
+		color: #000000;
+		display: inline-block;
+
+	}
+
+	.back image {
+		width: 15px;
+		height: 15px;
+		display: block;
+	}
+
+	.uni-swiper-tab {
+		margin: 0 auto;
+		width: 70%;
+		display: flex !important;
+		justify-content: space-between !important;
+		height: 44px !important;
+		border: none;
+
+	}
+	.active {
+		color: #007AFF !important;
+	}
+
+	.swiper-tab-list {
+		font-size: 15px;
+		width: 75px;
+		display: inline-block;
+		text-align: center;
+		color: #555;
+		line-height: 44px;
+	}
+	.swiper-box {
+		padding-top: var(--status-bar-height);
+		flex: 1;
+		box-sizing: border-box;
+		width: 100%;
+		height: calc(100% - 44px);
+
+	}
+
+	.folllow-list {
+		width: 100%;
+		height: 100%;
+		padding: 0px 10px 0 10px;
+		box-sizing: border-box;
+		background-color: #fff;
+		box-sizing: border-box
+	}
+
+	.list-item {
+		width: 100%;
+		height: 80px;
+		padding: 10px;
+		box-sizing: border-box;
+		display: flex;
+
+	}
+
+	.item-img {
+		width: 100rpx;
+		height: 100rpx;
+		margin-right: 30px;
+		box-sizing: border-box;
+		display: flex;
+		align-self: center;
+		border-radius: 100%;
+	}
+
+	.list-item-right {
+		flex: 1;
+		border-bottom: 1px solid rgba(220, 220, 220, 0.5);
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.item-userInfo {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		padding: 50upx;
-		font-size: 30upx;
+		justify-content: space-around;
 	}
-	
-	li {
-		list-style: none;
-		border-bottom: solid 1upx #4CD964;
-		margin-top: 30upx;
+
+	.item-userInfo .name {
+		font-size: 14px;
+		color: #4A4A4A;
+		line-height: 20px;
 	}
-	li button {
-		width: 180upx;
-		float: right;
-		margin-bottom: 10upx;
+
+	.item-userInfo .circles {
+		font-size: 12px;
+		color: #9B9B9B;
+		line-height: 17px;
 	}
-	
-	li text:nth-child(3) {
-		float: right;
-		
+
+	.item-userInfo .address {
+		font-size: 14px;
+		color: #4A4A4A;
+		line-height: 20px;
 	}
-	
-	li text:nth-child(2) {
-		position: absolute;
+
+	.item-btn {
+		width: 75px;
+		display: flex;
+		align-items: center;
 	}
-	
-	text {
-		margin: 20upx 0 0 20upx;
-	}
-	
-	image {
-		width: 72upx;
-		height: 72upx;
-		border-radius: 50%;
+
+	.item-btn image {
+		width: 75px;
+		height: 35px;
 	}
 </style>

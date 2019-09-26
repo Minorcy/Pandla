@@ -22,7 +22,7 @@
 				</view>
         </view>
 		<view class="btn-row">
-			<button size="primary" class="primary" hover-class="hover-primary" @tap="commitVer">上傳資料</button>
+			<button class="btn" @tap="commitVer">上傳資料</button>
 		</view>
     </view>
 </template>
@@ -48,7 +48,7 @@
 					logo: ""
 				},
 				isUpload: false,
-				avatar: '../../static/img/user/upload.svg',
+				avatar: '../../static/img/user/upload.png',
 			}
         },
         methods: {
@@ -93,20 +93,19 @@
 	
 	.input-row {
 		margin-top: 50upx;
+		padding: 10px;
+		box-sizing: border-box;
 	}
 	
 	.btn-row {
 		padding-top: 0;
 	}
-	
-	.primary {
-		color: #007AFF;
-	}
-	
 	.uni-input {
 		margin-top: 15upx;
 	}
-	
+	.btn{
+		color: #007AFF;
+	}
 	navigator {
 		margin-top: 70upx;
 	}

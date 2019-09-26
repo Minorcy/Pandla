@@ -1,5 +1,8 @@
 {
   "navigationBarTitleText": "位置 | 活動",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
   "bounce": "none",
+  "softinputNavBar": "none",
   "usingComponents": {}
 }

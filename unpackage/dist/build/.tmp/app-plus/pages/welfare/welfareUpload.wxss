@@ -24,22 +24,22 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-view text.data-v-a3b2ade6 {
+view text.data-v-fb7eab94 {
   display: block;
 }
-image.data-v-a3b2ade6 {
+image.data-v-fb7eab94 {
   width: 50%;
   height: 375rpx;
 }
-.barImg text.data-v-a3b2ade6 {
+.barImg text.data-v-fb7eab94 {
   text-align: center;
   font-size: 18px;
   margin: 5px;
 }
-.barImg image.data-v-a3b2ade6 {
+.barImg image.data-v-fb7eab94 {
   width: 100%;
 }
-.licImg text.data-v-a3b2ade6 {
+.licImg text.data-v-fb7eab94 {
   text-align: center;
   font-size: 18px;
   margin: 5px;

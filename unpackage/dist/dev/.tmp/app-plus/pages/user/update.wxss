@@ -1,4 +1,11 @@
 
+.update-page {
+	width: 100%;
+	padding: 10px;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	background-color: #FFFFFF;
+}
 image {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -15,7 +22,7 @@ image {
 	border-radius: 100%;
 }
 text {
-	color: #9E9E9E;
+	color: #4A4A4A;
 }
 picker {
 	width: 100%;
@@ -24,5 +31,16 @@ picker {
 }
 .uni-input {
 	margin-top: 15rpx;
+	color: #4a4a4a;
+}
+m-input {
+	color: #4a4a4a;
+}
+.btn {
+	float: right;
+}
+.popup-btn {
+	margin-top: 9px;
+	color: #4a4a4a;
 }
 

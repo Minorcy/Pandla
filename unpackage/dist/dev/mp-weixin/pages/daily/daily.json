@@ -1,8 +1,5 @@
 {
-  "enablePullDownRefresh": true,
+  "enablePullDownRefresh": false,
   "navigationBarTitleText": "",
-  "usingComponents": {
-    "barrage": "/components/barrage",
-    "scroll-list": "/pages/daily/scroll"
-  }
+  "usingComponents": {}
 }

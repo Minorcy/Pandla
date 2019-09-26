@@ -1,27 +1,34 @@
 <template>
 	<view class="pages-content" scroll-y="true">
-		<view class="pan-data">
-			<view class="pan-top">
-				<view class="pan-left">
-					<text>我的資產PAN</text>
-					<text>{{assetInfo.balance | toFixed(4)}}</text>
-					<text>≈</text>
+		<view class="top-wrapper">
+			<view class="asset">
+				<view class="asset-left">
+					<p>我的資產PAN幣</p>
+					<text class="balance">{{propInfo.balance | toFixed(4)}}</text>
+					<text class="asset-rmb">≈{{ this.rmb | toFixed(4)}} USTD</text>
 				</view>
-				<view class="pan-right">
-					<text>冻结資產PAN</text>
-					<text>{{assetInfo.freeze | toFixed(4)}}</text>
+				<view class="asset-right">
+					<p>冻结PAN幣</p>
 				</view>
 			</view>
-			<view class="pan-bottom">
-				<text>星球居民达到200万時用戶獲得的PAN可以在二級市場交易流通</text>
-				<text decode="true">交易&gt;</text>
+			<view class="panData">
+				<view class="data">
+					<p>PAN/USTD</p>
+					<p :class="red == true ? 'red' : '' ">{{data1}}</p>
+					<p :class="red == true ? 'red' : '' ">{{data2}}</p>
+					<text class="data-24">24H{{data3}}</text>
+				</view>
+				<view class="bottom">
+					<image src="../../static/img/pan/IXX.svg" mode="" @tap="toIxx()"></image>
+				</view>
 			</view>
 		</view>
-		<view class="pan-notice">
-			<p class="pan-label-introduction">{{assetInfo.title}}</p>
-			<p class="pan-label-context">{{assetInfo.context}}</p>
-			<view class="invite">
-				
+		<view class="text-wrapper">
+			<view class="title">
+				<text>點擊註冊IXX交易所可以获得10个PAN幣</text>
+			</view>
+			<view class="text">
+				<text>新加坡IXX數字資產交易所是潘多拉星球戰，也是潘多拉星球的超節點，用戶可以在IXX交易所查看PAN的價格走勢，<text class="black">當潘多拉星球居民達到200萬時，用戶可以將自己獲得的PAN在IXX交易所進行流通交易</text></text>
 			</view>
 		</view>
 		<!-- <view class="pan-label-list">
@@ -40,8 +47,6 @@
 		</scroll-view>
 
 		<view class="pan-list">
-
-
 			<ul class="pan-list-ul" v-for="(item, index) in listInfo" :key="index">
 				<li class="pan-list-li" v-if="labelList == 'budget'">
 					<view>
@@ -91,17 +96,26 @@
 	import {
 		getBalance,
 		getBill,
-		checkTaskList
+		checkTaskList,
+		getIndex,
+		donate,
+		getChange_24h
 	} from '../../api/api.js';
 
 	export default {
 		data() {
 			return {
+				propInfo: '',
+				data1: '+0.91%',
+				data2: '0.082',
+				data3: '89,893,708',
+				panVlaue: '198,878',
+				donateValue: '10',
+				rmb: '',
+				red: false,
 				assetInfo: '',
 				listInfo: '',
 				labelList: 'budget',
-				// budgetText: 'black',
-				// taskText: 'gray',
 				menuTabs: [{
 					name: '收支記錄'
 				}, {
@@ -113,8 +127,35 @@
 				loadingType: 10
 			}
 		},
-		
+
 		methods: {
+			getMyIndex() {
+				getIndex().then(data => {
+					this.propInfo = data;
+					// 限制小数点后为4位
+					// console.log(this.propInfo)
+					// console.log(this.data2)
+
+					this.rmb = this.propInfo.balance * this.data2
+				})
+			},
+			getChang() {
+				getChange_24h().then(data => {
+					// console.log(data.data[0])
+					this.data1 = data.data[0].change_24h
+					// console.log(this.data1)
+					if (this.data1 > 0) {
+						this.data1 = "+" + this.data1
+					} else {
+						this.red = true
+						this.data1 = this.data1
+					}
+					this.data3 = data.data[0].volume_24h
+					this.data2 = data.data[0].current
+
+				})
+
+			},
 			getBalanceData() {
 				getBalance(0).then(data => {
 					this.assetInfo = data;
@@ -169,7 +210,7 @@
 			// }
 			loadMore() {
 				getBill(this.loadingType).then(data => {
-					if(data == null){
+					if (data == null) {
 						this.isShow = false
 						return
 					}
@@ -177,11 +218,19 @@
 					this.loadingType += 10
 					console.log(this.listInfo)
 				});
+			},
+			toIxx() {
+				uni.navigateTo({
+					url: "ixx"
+				})
+
 			}
 		},
 		onLoad() {
 			this.getBalanceData();
 			this.getBillData();
+			this.getMyIndex();
+			this.getChang()
 		}
 	}
 </script>
@@ -189,6 +238,7 @@
 <style lang="scss" scoped>
 	.pages-content {
 		width: 100%;
+
 		background-color: #EFEFF4;
 		-webkit-overflow-scrolling: touch;
 		overflow-scrolling: touch;
@@ -197,7 +247,7 @@
 
 	.pan {
 		&-data {
-			width: 99%;
+			width: 95%;
 			border-radius: 8px;
 			box-sizing: border-box;
 			margin: 0 auto;
@@ -210,7 +260,7 @@
 				display: flex;
 				justify-content: space-between;
 
-				
+
 
 				.pan-left {
 					text:nth-child(1) {
@@ -314,10 +364,10 @@
 			color: #000000;
 			padding: 30upx;
 			border-bottom: 1upx solid #979797;
-			.invite {
-				
-			}
-			.pan-label-context{
+
+			.invite {}
+
+			.pan-label-context {
 				font-size: 14px;
 				color: #888;
 			}
@@ -330,6 +380,7 @@
 			-webkit-overflow-scrolling: touch;
 			overflow-scrolling: touch;
 			overflow-y: scroll;
+
 			&-ul {
 				padding: 0 50upx;
 			}
@@ -354,7 +405,7 @@
 
 			&-number {
 				color: #CD2626;
-				font-size:14px;
+				font-size: 14px;
 			}
 		}
 
@@ -384,8 +435,9 @@
 		height: 112upx;
 		line-height: 112upx;
 		/* 在这里设置导航条高度 */
-		border-bottom: 2upx solid #eee;
-		color: #000000
+		border-bottom: 2upx solid #979797;
+		color: #000000;
+		border-top: 2upx solid #979797;
 	}
 
 	.top-menu-view .menu-one-view {
@@ -402,7 +454,7 @@
 		height: 10px;
 		// background-color: #000000;
 		right: 49%;
-		top: 0;
+		top: 14px;
 	}
 
 	.top-menu-view .menu-one-view .menu-one {
@@ -420,7 +472,125 @@
 		font-size: 30upx;
 		color: #979797;
 	}
-	.pan-list-load{
-		background-color: #EFEFF4;;
+
+	.pan-list-load {
+		background-color: #EFEFF4;
+		;
+	}
+
+	.top-wrapper {
+		width: 97%;
+		padding: 10px;
+		margin: 0 auto;
+		margin-top: 5px;
+		box-sizing: border-box;
+		height: 185px;
+		background: rgba(19, 29, 33, 1);
+		border-radius: 5px;
+		color: #FFFFFF;
+		font-size: 14px;
+	}
+
+	.asset {
+		width: 100%;
+		height: 53%;
+		display: flex;
+		justify-content: space-between;
+		align-content: flex-start;
+	}
+
+	.asset-left {
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		line-height: 20px;
+	}
+
+	.asset-left .balance {
+		font-size: 20px;
+		line-height: 30px;
+	}
+
+	.asset-right {
+		padding: 5px;
+		margin-right: 65px;
+	}
+
+	.panData {
+		width: 100%;
+		height: 40%;
+	}
+
+	.data {
+		display: flex;
+		justify-content: space-between;
+		padding: 5px 10px;
+	}
+
+	.data>p:nth-child(2) {
+		color: #4CD964;
+		margin-bottom: 5upx;
+		text-align: right;
+	}
+
+	.data>p:nth-child(3) {
+		color: #4CD964;
+		margin-bottom: 10upx;
+		text-align: right;
+	}
+
+	.red {
+		color: red !important;
+	}
+
+	.bottom {
+		border-top: 1px solid #4A4A4A;
+		display: flex;
+		flex-direction: row-reverse;
+	}
+
+	.bottom image {
+		margin-top: 10px;
+		width: 94px;
+		height: 30px;
+		padding: 0 5px;
+		border-radius: 15px;
+	
+
+	}
+
+	.text-wrapper {
+
+		width: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+		line-height: 1.5;
+	}
+
+	.text-wrapper .title {
+		width: 100%;
+		padding-bottom: 6px;
+		border-bottom: 1px solid #979797;
+	}
+
+	.text-wrapper .title text {
+		font-size: 16px;
+		font-weight: 400;
+		color: #000000;
+	}
+
+	.text-wrapper .text {
+		width: 100%;
+		padding-bottom: 10px;
+	}
+
+	.text-wrapper text {
+		font-size: 12px;
+		color: #9B9B9B;
+	}
+
+	.text-wrapper .black {
+		color: #000000;
 	}
 </style>

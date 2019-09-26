@@ -1,5 +1,6 @@
 {
-  "navigationBarTitleText": "",
-  "bounce": "none",
+  "navigationBarTitleText": "關於PANDLA",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
   "usingComponents": {}
 }

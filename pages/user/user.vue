@@ -1,60 +1,67 @@
 <template>
-	<view class="main-content">
-		<navigator url="update">
-			<image class="edit" src="../../static/img/user/edit.svg"></image>
-		</navigator>
-		<view class="userInfo">
-			<image class="avatar" :src="avatar" @tap='uploadAvatar()' mode="aspectFill" />
-			<p @tap="touserInfo(userInfo.id)">{{userInfo.name}}</p>
-			<p>{{userInfo.age}}/{{userInfo.stature}}cm/{{userInfo.weight}}kg</p>
-			<p>{{userInfo.signature}}</p>
+	<view class="no-tabbar">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
 		</view>
-		<view class="panInfo">
-			<view class="item-fans">
-				<navigator url="followList">
-					<p>{{socialInfo.fans}}</p>
-					<p>關注</p>
-				</navigator>
-			</view>|
-			<view class="item-focus">
-				<navigator url="fansList">
-					<p>{{socialInfo.conn}}</p>
-					<p>人氣</p>
-				</navigator>
-			</view>|
-			<view class="item-photo">
-				<navigator url="album">
-					<p>{{socialInfo.dynm}}</p>
-					<p>相冊</p>
-				</navigator>
-			</view>|
-			<view class="item-commune">
-				<p>0</p>
-				<p>公社</p>
+		<view class="user-page">
+			<navigator url="update">
+				<image class="edit" src="../../static/img/user/edit.svg"></image>
+			</navigator>
+			<view class="userInfo">
+				<image class="avatar" :src="avatar" @tap='uploadAvatar()' mode="aspectFill" />
+				<p>{{userInfo.name}}</p>
+				<p>{{userInfo.age}}/{{userInfo.stature}}cm/{{userInfo.weight}}kg</p>
+				<p>{{userInfo.signature}}</p>
 			</view>
-		</view>
-		<view class="bag">
-			<navigator url="../purse/purse">
-				<image src="../../static/img/user/purse.svg"></image>
-			</navigator>
-			<navigator url="../passport/passport">
-				<image src="../../static/img/user/passport.svg"></image>
-			</navigator>
-		</view>
+			<view class="panInfo">
+				<view class="item-fans">
+					<navigator url="followList">
+						<p>{{socialInfo.fans}}</p>
+						<p>關注</p>
+					</navigator>
+				</view>|
+				<view class="item-focus">
+					<navigator url="fansList">
+						<p>{{socialInfo.conn}}</p>
+						<p>人氣</p>
+					</navigator>
+				</view>|
+				<view class="item-photo">
+					<view @tap="touserInfo(userInfo.id)">
+						<p>{{socialInfo.dynm}}</p>
+						<p>相冊</p>
+					</view>
+				</view>|
+				<view class="item-commune">
+					<p>0</p>
+					<p>公社</p>
+				</view>
+			</view>
+			<view class="bag">
+				<view @tap="toPurse" class="left">
+					<image src="../../static/img/user/wallet.svg" mode=""></image>
+					<text>錢包</text>
+				</view>
+				<view @tap="toPassport">
+					<image src="../../static/img/user/passport.svg" mode=""></image>
+					<text>護照</text>
+				</view>
+			</view>
 
-		<navigator class="item-strategy" url="../strategy/strategy">
-			<image src="../../static/img/user/strategy.svg"></image>
-			<text>星球攻略</text>
-		</navigator>
-		<view class="option" v-for="(item, index) in settings" :key="index">
-			<navigator class="input-row border" :url="item.url">
-				<image :src="item.src"></image>
-				<text>{{item.label}}</text>
-				<text>{{item.expla}}</text>
+			<navigator class="item-strategy" url="../strategy/strategy">
+				<image src="../../static/img/user/strategy.svg"></image>
+				<text>星球攻略</text>
 			</navigator>
-		</view>
-		<view class="btn-row">
-			<button class="primary" hover-class="hover-primary" @tap="bindLogout">退出登錄</button>
+			<view class="option" v-for="(item, index) in settings" :key="index">
+				<navigator class="input-row border" :url="item.url">
+					<image :src="item.src"></image>
+					<text>{{item.label}}</text>
+					<text>{{item.expla}}</text>
+				</navigator>
+			</view>
+			<view class="btn-row">
+				<view class="btn" @tap="bindLogout">退出登錄</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -62,6 +69,7 @@
 <script>
 	import {
 		mapState,
+		mapActions,
 		mapMutations
 	} from 'vuex';
 	import {
@@ -69,7 +77,6 @@
 		getAllSocialInfo,
 		upPicture
 	} from '../../api/api.js';
-
 	export default {
 		data() {
 			return {
@@ -78,36 +85,23 @@
 				userId: uni.getStorageSync('USERS_KEY').id,
 				avatar: '../../static/img/user/upload.svg',
 				settings: [{
-					src: '../../static/img/user/relNameAuth.svg',
-					url: '../auth/auth',
-					label: '實名認證',
-					expla: 'PAN幣綫上交易所交易需要實名認證'
-				}, {
-					src: '../../static/img/user/invCode.svg',
-					url: '../invite/invite',
-					label: '我的邀請碼',
-					expla: '獲得PAN幣和原力'
-				}, {
-					src: '../../static/img/user/assetLedger.svg',
-					url: '../ledger/asset',
-					label: '資產賬本',
-					expla: ''
-				}, {
-					src: '../../static/img/user/focusLedger.svg',
-					url: '../ledger/focus',
-					label: '原力賬本',
-					expla: ''
-				}, {
-					src: '../../static/img/user/plantBase.svg',
-					url: '../base/base',
-					label: '招募節點',
-					expla: ''
-				}, {
-					src: '../../static/img/user/option.svg',
-					url: '../setting/setting',
-					label: '設置',
-					expla: ''
-				}]
+						src: '../../static/img/user/plantBase.svg',
+						url: '../base/base',
+						label: '招募節點',
+						expla: ''
+					}, {
+						src: '../../static/img/user/relNameAuth.svg',
+						url: '../auth/auth',
+						label: '實名認證',
+						expla: 'PAN幣綫上交易所交易需要實名認證'
+					},
+					{
+						src: '../../static/img/user/option.svg',
+						url: '../setting/setting',
+						label: '設置',
+						expla: ''
+					}
+				]
 			}
 		},
 		computed: {
@@ -115,6 +109,7 @@
 		},
 		methods: {
 			...mapMutations(['logout']),
+			...mapActions(["logoutnim"]),
 			bindLogout() {
 				let _this = this;
 				uni.showModal({
@@ -124,9 +119,11 @@
 						if (res.confirm) {
 							_this.logout();
 							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uni-storage-keys');
 							uni.reLaunch({
 								url: '../login/login'
 							});
+							_this.logoutnim()
 						}
 					}
 				});
@@ -153,9 +150,21 @@
 			},
 			touserInfo(id) {
 				uni.navigateTo({
-					url: '/pages/daily/userInfo?uid=' + id
+					url: 'album?uid=' + id
 				});
-			}
+			},
+			toPurse() {
+				uni.navigateTo({
+					url: '/pages/purse/purse'
+				});
+			},
+			toPassport() {
+				uni.navigateTo({
+					url: '/pages/passport/passport'
+				});
+			},
+			
+
 		},
 		onShow() {
 			this.getUserInfo();
@@ -168,6 +177,28 @@
 </script>
 
 <style scoped="true">
+	.no-tabbar {
+		width: 100%;
+		background-color: #FFFFFF;
+		z-index: 99;
+	}
+
+	.status_bar {
+		padding: 10px;
+		height: var(--status-bar-height);
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.user-page {
+		width: 100%;
+		background-color: #FFFFFF;
+		display: flex;
+		flex: 1;
+		box-sizing: border-box;
+		flex-direction: column;
+		padding: 20upx;
+	}
+
 	.userInfo {
 		display: flex;
 		flex-direction: column;
@@ -211,23 +242,53 @@
 	.panInfo {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
-		margin: 30upx;
+		justify-content: space-around;
+		margin: 30upx 80upx;
 		font-size: 12px;
 		text-align: center;
 	}
 
 
 	.bag {
+		background-color: #131D21;
+		height: 100px;
 		display: flex;
-		flex-direction: row;
+		color: #FFFFFF;
 		justify-content: space-between;
-		margin: 20upx 40upx;
+		padding: 10px;
+		box-sizing: border-box;
+		border-radius: 5px;
+	}
+
+	.bag view {
+		width: 40%;
+		height: 100%;
+		position: relative;
+	}
+
+	.bag .left::after {
+		content: "";
+		height: 40px;
+		width: 1px;
+		position: absolute;
+		top: 18px;
+		right: -32px;
+		background-color: #FFFFFF;
+	}
+
+	.bag text {
+		display: block;
+		text-align: center;
+		font-size: 16px;
 	}
 
 	.bag image {
-		width: 250upx;
-		height: 100upx;
+
+		display: block;
+		margin: 0 auto;
+		width: 30px;
+		height: 30px;
+		margin-top: 15px;
 	}
 
 	.item-strategy {
@@ -275,14 +336,24 @@
 		margin-left: auto;
 		margin-top: 10upx;
 		font-size: 25upx;
-		color: #007AFF;
+		color: #9B9B9B;
 	}
 
 	.btn-row {
-		margin: 0 auto;
+		margin: 20px auto;
+		width: 35%;
+		color: #000000;
+		margin-bottom: 0;
 	}
 
-	.primary {
+	.btn {
 		padding: 0;
+		font-size: 14px;
+		border: 1px solid #CCCCCC;
+		border-radius: 5px;
+		line-height: 30px;
+		color: #000000;
+		background-color: #FFFFFF;
+		text-align: center;
 	}
 </style>

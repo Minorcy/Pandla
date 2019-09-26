@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import store from '../store'
+import store from '@/store'
 
 if(!Function.prototype.bind){
   Function.prototype.bind = function(){

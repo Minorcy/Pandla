@@ -21,7 +21,7 @@
 	color: #EFEFF4;
 	margin-top: 50rpx;
 }
-.footer>._a {
+.footer>navigator {
 	color: #007AFF;
 }
 

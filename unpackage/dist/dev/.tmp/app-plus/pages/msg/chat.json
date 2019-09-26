@@ -7,10 +7,16 @@
       {
         "text": "",
         "fontSrc": "/static/font/iconfont.ttf",
-        "color": " #000000"
+        "fontSize": "18px",
+        "color": "#999999"
       }
     ]
   },
-  "bounce": "none",
-  "usingComponents": {}
+  "animationType": "slide-in-left",
+  "softinputNavBar": "none",
+  "softinputMode": "adjustResize",
+  "usingComponents": {
+    "chat-input": "/pages/msg/yszyun-imchat-emoji/chatinput",
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar"
+  }
 }

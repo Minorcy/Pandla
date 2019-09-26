@@ -1,6 +1,19 @@
 {
-  "navigationBarTitleText": "附近居民",
-  "onReachBottomDistance": 50,
+  "navigationBarTitleText": "星球居民",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
   "enablePullDownRefresh": true,
-  "usingComponents": {}
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "",
+        "color": "#000000",
+        "fontSrc": "/static/font/iconfont.ttf"
+      }
+    ]
+  },
+  "softinputMode": "adjustResize",
+  "usingComponents": {
+    "lu-popup-wrapper": "/components/lu-popup-wrapper/lu-popup-wrapper"
+  }
 }

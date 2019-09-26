@@ -2,88 +2,89 @@
 	<view class="page">
 		<view class="msg-tab">
 			<view class="msg-communication">
-				<uniBadge text="5" type="error" class= "comm-badge"></uniBadge>
+				<uniBadge :text="msgNum" type="error" class="comm-badge" v-if="msgNum!='0'"></uniBadge>
 				<image src="../../static/img/msg/msg.svg"></image>
 				<text>通訊</text>
 			</view>
 			<view class="msg-Fabulous">
-				<uniBadge text="5" type="error" class= "fab-badge"></uniBadge>
-				<image src="../../static/img/msg/msg-zan.svg"></image>
+				<uniBadge :text="likeNum" type="error" class="fab-badge" v-if="likeNum!='0'"></uniBadge>
+				<image src="../../static/img/msg/msg-zan.svg" @tap="toLikeMsg()"></image>
 				<text>讚</text>
 			</view>
 			<view class="msg-fans">
-				<uniBadge text="5" type="error" class= "fans-badge"></uniBadge>
-				<image src="../../static/img/msg/msg-fans.svg"></image>
+				<uniBadge :text="fnasNum" type="error" class="fans-badge" v-if="fnasNum!='0'"></uniBadge>
+				<image src="../../static/img/msg/msg-fans.svg" @tap="toFans()"></image>
 				<text>粉絲</text>
 			</view>
 			<view class="msg-comment">
-				<uniBadge text="5" type="error" class= "comment-badge"></uniBadge>
-				<image src="../../static/img/msg/msg-comment.svg"></image>
+				<uniBadge :text="connNum" type="error" class="comment-badge" v-if="connNum!='0'"></uniBadge>
+				<image src="../../static/img/msg/msg-comment.svg" @tap="toConnMsg()"></image>
 				<text>評論和@</text>
 			</view>
 		</view>
-		<view class="msg-search">
+		<!-- <view class="msg-search">
 			<view class="input-box">
 				<image src="../../static/img/msg/search.svg"></image>
 				<input type="text" placeholder="查詢" maxlength="200" />
 			</view>
-		</view>
-		<view class="msg-commlist">
-			<uni-swipe-action :options="options" @tap="bindClick">
-				<view class="list-item">
-					<view class="item-img">
-						<image src="http://47.244.27.153/images/2019/07/30/1564484682777693.JPG" mode="widthFix"></image>
-					</view>
-					<view class="item-content" @tap="enterChat">
-						<view class="user">
-							<text class="user-name">哈哈</text>
-							<text class="user-time">09:20</text>
+		</view> -->
+		<view class="system-message" v-if="systemList.length">
+			<uni-swipe-action class="swipedelete-wrapper" :options="options" @tap="deleteSystem()">
+				<view class="recentchat-item" hover-class="recentchat-item-hover" @tap="toSystem()">
+					<image class="recentchat-img" src="../../static/img/msg/system.svg" role="img">
+					</image>
+					<view class="recentchat-item-right">
+						<view class="recentchat-item-top">
+							<text class="recentchat-item-title">
+								星球总部
+							</text>
+							<text class="recentchat-item-time">
+								{{systemTime}}
+							</text>
 						</view>
-						<view class="text">
-							<text class="text-distance">[0.07km]</text>
-							<text class="text-content">通讯功能</text>
+						<view class="recentchat-item-bottom">
+							<view style="display:flex;align-items:center;">
+								<text class="recentchat-item-desc max-desc">
+									{{systemList[0].context}}
+								</text>
+							</view>
+							<view class="recentchat-item-unread">{{systemList.length}}</view>
+						</view>
+					</view>
+				</view>
+			</uni-swipe-action>
+		</view>
+		<view class="recentchat-wrapper">
+			<uni-swipe-action class="swipedelete-wrapper" :options="options" @tap="bindClick(item.id)" v-for="(item,index) in sessionlist"
+			 :key="index">
+				<view class="recentchat-item" hover-class="recentchat-item-hover" @tap="enterChat(item.id)">
+					<image class="recentchat-item-img" :src="item.avatar" role="img">
+					</image>
+					<view class="recentchat-item-right">
+						<view class="recentchat-item-top">
+							<text class="recentchat-item-title">
+								{{item.name}}
+							</text>
+							<text class="recentchat-item-time">
+								{{item.updateTimeShow}}
+							</text>
+						</view>
+						<view class="recentchat-item-bottom">
+							<view style="display:flex;align-items:center;">
+								<text class="recentchat-item-status">
+									<!-- [距离] -->
+								</text>
+								<text class="recentchat-item-desc">
+									{{item.lastMsgShow}}
+								</text>
+							</view>
+							<view class="recentchat-item-unread" v-if="item.unread != 0">{{item.unread || ''}}</view>
 						</view>
 					</view>
 				</view>
 			</uni-swipe-action>
 
-			<view class="list-item">
-				<view class="item-img">
-					<image src="http://47.244.27.153/images/2019/07/30/1564484682777693.JPG" mode="widthFix"></image>
-				</view>
-				<view class="item-content">
-					<view class="user">
-						<text class="user-name">哈哈</text>
-						<text class="user-time">09:20</text>
-					</view>
-					<view class="text">
-						<text class="text-distance">[0.07km]</text>
-						<text class="text-content">通讯功能通讯功能通讯功能通讯功能通讯功能通讯功能通讯功能</text>
-					</view>
-				</view>
-			</view>
-
-
-
-			<view class="list-item">
-				<view class="item-img">
-					<image src="http://47.244.27.153/images/2019/07/30/1564484682777693.JPG" mode="widthFix"></image>
-				</view>
-				<view class="item-content">
-					<view class="user">
-						<text class="user-name">哈哈</text>
-						<text class="user-time">09:20</text>
-					</view>
-					<view class="text">
-						<text class="text-distance">[0.07km]</text>
-						<text class="text-content">通讯功能</text>
-					</view>
-				</view>
-			</view>
-
-
 		</view>
-
 
 
 	</view>
@@ -92,44 +93,216 @@
 <script>
 	import uniSwipeAction from "@/components/uni-swipe-action/uni-swipe-action.vue";
 	import uniBadge from "@/components/uni-badge/uni-badge.vue"
+	import util from '@/common/utils'
+	import config from '@/common/configs'
+	import {
+		mapState,
+		mapActions,
+		mapMutations
+	} from 'vuex';
+	import {
+		registerWyAccount,
+		getInfo
+	} from "@/api/api.js"
 	export default {
 		data() {
 			return {
+				// msgNum: '0',
+				// connNum:0,
+				// fnasNum:0,
+				// likeNum:0,
+				delSessionId: null,
 				options: [{
 					text: '刪除',
 					style: {
 						backgroundColor: '#dd524d'
 					}
-				}]
+				}],
+				targetId: '', // 你要给谁发送消息 目标ID
+				showDatas: [], // 初始化信息
+				convrList: "",
+				systemTime: ''
 			}
 		},
 		components: {
 			uniSwipeAction,
 			uniBadge
 		},
+		computed: {
+			msgNum(){
+				var msgNum = 0
+				let sessionlist = this.$store.state.sessionlist.filter(item=>{
+						msgNum += item.unread
+				})
+				var num = this.$store.state.pushMsg.pushSystemMsg.filter(function(item) {
+					return item.isRed == "0";
+				})
+				num = num.length
+				msgNum = Number(msgNum) + Number(num)
+				return msgNum.toString();
+				
+			},
+			connNum() {
+				if (this.$store.state.pushMsg.pushConnMsg.length == 0) {
+					return "0"
+				}
+				var num = this.$store.state.pushMsg.pushConnMsg.filter(function(item) {
+					return item.status == "1";
+				})
+				num = num.length
+
+				return num.toString()
+			},
+			fnasNum() {
+
+				if (this.$store.state.pushMsg.pushFansMsg.length == 0) {
+					return "0"
+				}
+				var num = this.$store.state.pushMsg.pushFansMsg.filter(function(item) {
+					return item.status == "1";
+				})
+				num = num.length
+				return num.toString()
+			},
+			likeNum() {
+				if (this.$store.state.pushMsg.pushLikeMsg.length == 0) {
+					return "0"
+				}
+				var num = this.$store.state.pushMsg.pushLikeMsg.filter(function(item) {
+					return item.status == "1";
+				})
+				num = num.length
+				return num.toString()
+			},
+			systemList() {
+				var num = this.$store.state.pushMsg.pushSystemMsg.filter(function(item) {
+					return item.isRed == "0";
+				})
+				return num
+			},
+			userInfos() {
+				return this.$store.state.userInfos
+			},
+			myInfo() {
+				return this.$store.state.myInfo
+			},
+			myPhoneId() {
+				return `${this.$store.state.userUID}`
+			},
+			sessionlist() {
+				let sessionlist = this.$store.state.sessionlist.filter(item => {
+					item.name = '';
+					item.avatar = '';
+					if (item.scene === 'p2p') {
+						let userInfo = null
+						if (item.to !== this.myPhoneId) {
+							userInfo = this.userInfos[item.to]
+						} else {
+							return false
+						}
+						if (userInfo) {
+							item.name = util.getFriendAlias(userInfo)
+							item.avatar = userInfo.avatar
+						}
+					}
+
+					let lastMsg = item.lastMsg || {}
+					if (lastMsg.type === 'text') {
+						item.lastMsgShow = lastMsg.text || ''
+					} else if (lastMsg.type === 'custom') {
+						item.lastMsgShow = util.parseCustomMsg(lastMsg)
+					} else if (lastMsg.scene === 'team' && lastMsg.type === 'notification') {
+						item.lastMsgShow = util.generateTeamSysmMsg(lastMsg)
+					} else if (util.mapMsgType(lastMsg)) {
+						item.lastMsgShow = `[${util.mapMsgType(lastMsg)}]`
+					} else {
+						item.lastMsgShow = ''
+					}
+					if (item.updateTime) {
+						item.updateTimeShow = util.formatDate(item.updateTime, true)
+					}
+					return item
+				})
+				return sessionlist
+			}
+		},
+
 		methods: {
 			enterChat(e) {
 				uni.navigateTo({
-					url: 'chat',
+					url: 'chat?id=' + e,
+					animationType: 'pop-in',
+					animationDuration: 500,
 					success: res => {},
 					fail: () => {},
 					complete: () => {}
 				})
 			},
-			bindClick() {
+			toSystem() {
+				uni.navigateTo({
+					url: "./news/system"
+				})
+			},
+			queryInfo(id) {
+				getInfo(id).then(data => {
+					return data
+				})
+
+			},
+			bindClick(id) {
 				console.log('用户点击刪除');
+				this.$store.dispatch('deleteSession',id)
+			},
+			deleteSystem() {
+
 			},
 			pickerChange(e) {
 				console.log('picker发送选择改变，携带值为：' + e.target.value)
-			}
+			},
+			toTset() {
+				uni.navigateTo({
+					url: "test"
+				})
+			},
+			toReceive() {
+				uni.navigateTo({
+					url: "Receive"
+				})
+			},
+			toConnMsg() {
+				uni.navigateTo({
+					url: "./news/connMsg"
+				})
+			},
+			toFans() {
+				uni.navigateTo({
+					url: "./news/fansMsg"
+				})
+			},
+			toLikeMsg() {
+				uni.navigateTo({
+					url: "./news/likeMsg"
+				})
+			},
+			deleteAllLocalMsgsDone(error, obj) {
+			    console.log(error);
+			    console.log(obj);
+			    console.log('删除所有本地消息' + (!error?'成功':'失败'));
+			},
+			...mapActions(["searchUsers", "getConnMsg", "getFansMsg", "getLikeMsg"]),
+
 		},
 		onPullDownRefresh() {
-			console.log("onPullDownRefresh")
+			this.$store.dispatch('connect')
+			this.$store.dispatch('getConnMsg')
+			this.$store.dispatch('getFansMsg')
+			this.$store.dispatch('getLikeMsg')
 			setTimeout(function() {
-				uni.startPullDownRefresh()
-			}, 500)
+				uni.stopPullDownRefresh()
+			}, 800)
 		},
 		onNavigationBarButtonTap() {
+			var that = this
 			uni.showActionSheet({
 				itemList: ['忽略未读提醒', '清空聊天列表', '提醒设置'],
 				success: function(res) {
@@ -159,6 +332,9 @@
 							success: function(res) {
 								if (res.confirm) {
 									console.log('用户点击确定');
+									that.$store.state.nim.deleteAllLocalMsgs({
+										done:that.deleteAllLocalMsgsDone
+									})
 								} else if (res.cancel) {
 									console.log('用户点击取消');
 								}
@@ -172,6 +348,18 @@
 			});
 
 		},
+		onLoad() {
+			this.systemTime = util.formatDate(new Date, true)
+		},
+		onShow() {
+			uni.removeTabBarBadge({
+				index: 1,
+			})
+			if(!this.sessionlist.length){
+				return
+			}
+			this.$store.dispatch('resetCurrSession')
+		}
 
 	}
 </script>
@@ -186,43 +374,47 @@
 				margin-top: 20px;
 				display: flex;
 				justify-content: space-around;
-				position: relative;
 
-				// view{
-				// 	position: absolute
-				// }
-				
+				view {
+					position: relative;
+					width: 60px;
+				}
 				.comm-badge {
 					position: absolute;
 					top: -10px;
-					left: 16%;
+					right: -5px;
 					z-index: 10;
+					
 				}
+
 				.fab-badge {
 					position: absolute;
 					top: -10px;
-					left: 40%;
-					z-index: 10;
-				}
-				.fans-badge {
-					position: absolute;
-					top: -10px;
-					left: 65%;
-					z-index: 10;
-				}
-				.comment-badge {
-					position: absolute;
-					top: -10px;
-					left: 89%;
+					right: -5px;
 					z-index: 10;
 				}
 
-				view image {
+				.fans-badge {
+					position: absolute;
+					top: -10px;
+					right: -5px;
+					z-index: 10;
+				}
+
+				.comment-badge {
+					position: absolute;
+					top: -10px;
+					right: -5px;
+					z-index: 10;
+				}
+
+				image {
+					margin-left: 10px;
 					width: 40px;
 					height: 40px;
 				}
 
-				view text {
+				text {
 					font-size: 14px;
 					display: block;
 					text-align: center
@@ -261,70 +453,158 @@
 					}
 				}
 			}
-
-			&-commlist {
-				width: 100%;
-				padding: 10px;
-				box-sizing: border-box;
-
-				.list-item {
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-
-					.item-img {
-						flex-grow: 0;
-
-						image {
-							width: 50px;
-							height: 50px;
-							border-radius: 50%;
-						}
-					}
-
-					.item-content {
-						max-width: 306px;
-						font-size: 16px;
-						padding: 10px;
-						flex-grow: 1;
-						overflow: hidden;
-
-						.user {
-
-							align-items: stretch;
-							color: #777;
-
-							&-name {
-								text-align: left;
-								font-weight: 700;
-								color: #000;
-							}
-
-							&-time {
-								float: right;
-								text-align: right;
-							}
-						}
-
-						.text {
-							margin-top: 5px;
-							color: #777;
-							font-size: 14px;
-							overflow: hidden;
-							text-overflow: ellipsis;
-
-							&-distance {}
-
-							&-content {
-								white-space: nowrap;
-								text-overflow: ellipsis;
-								word-break: break-all;
-								overflow: hidden;
-							}
-						}
-					}
-				}
-			}
 		}
+	}
+
+	.system-message {
+		border-top: 1px solid #CCCCCC;
+			margin-top: 20px;
+		width: 100%;
+		padding: 0 22rpx;
+		box-sizing: border-box;
+		background-color: #fff;
+		// min-height: 100%;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		box-sizing: border-box
+	}
+
+	.recentchat-wrapper {
+		border-top: 1px solid #CCCCCC;
+		margin-top: 20px;
+		width: 100%;
+		padding: 0 22rpx;
+		box-sizing: border-box;
+		background-color: #fff;
+		// min-height: 100%;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		box-sizing: border-box
+	}
+
+	.recentchat-wrapper:first-child {
+		border-top: 1px solid rgba(220, 220, 220, 0.5);
+	}
+
+	.no-recent {
+		width: 100%;
+		position: fixed;
+		top: 20%;
+		color: #ccc;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-left: -20rpx;
+	}
+
+	.no-recent-image {
+		width: 550rpx;
+		height: 200rpx;
+		margin-bottom: 40rpx;
+	}
+
+	.no-recent-text {
+		width: 100%;
+		text-align: center;
+	}
+
+	.recentchat-item {
+		width: 100%;
+		height: 132rpx;
+		padding: 20rpx 28rpx 20rpx 0;
+		box-sizing: border-box;
+		display: flex;
+		border-bottom: 1px solid rgba(220, 220, 220, 0.5);
+	}
+
+	.recentchat-img {
+		width: 100rpx;
+		height: 100rpx;
+		margin-right: 24rpx;
+		box-sizing: border-box;
+		display: flex;
+		align-self: center;
+	}
+
+	.recentchat-item-img {
+		width: 100rpx;
+		height: 100rpx;
+		margin-right: 24rpx;
+		box-sizing: border-box;
+		display: flex;
+		align-self: center;
+		border-radius: 100%;
+	}
+
+	.recentchat-item-right {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		justify-content: space-around;
+	}
+
+	.recentchat-item-right .recentchat-item-message {
+		font-size: 28rpx;
+		color: #ccc;
+		word-break: break-all;
+	}
+
+	.recentchat-item-top {
+		align-self: flex-start;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+		height: 44rpx;
+		line-height: 44rpx;
+		font-size: 36rpx;
+	}
+
+	.recentchat-item-bottom {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		font-size: 28rpx;
+		color: #9B9B9B;
+		height: 44rpx;
+		line-height: 44rpx;
+	}
+
+	.recentchat-item-bottom .recentchat-item-desc {
+		max-width: 400rpx;
+		overflow: hidden;
+		display: inline-block;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	.max-desc {
+		max-width: 243px !important;
+	}
+
+	.recentchat-item-bottom .recentchat-item-unread {
+		background: #F43530;
+		border-radius: 18rpx;
+		width: 52rpx;
+		height: 36rpx;
+		line-height: 36rpx;
+		text-align: center;
+		font-size: 22rpx;
+		color: #fff;
+	}
+
+	.recentchat-item-top .recentchat-item-title {
+		overflow: hidden;
+		max-width: 330rpx;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		font-size: 32rpx;
+	}
+
+	.recentchat-item-top .recentchat-item-time {
+		font-size: 24rpx;
+		color: #9B9B9B;
 	}
 </style>

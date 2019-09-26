@@ -42,7 +42,7 @@
   width: 200upx;
 }
 .wrapper .rainbow:after {
-  background-color: #131D21;
+  background-color: #FFFFFF;
   bottom: 100upx;
   content: "";
   left: 0;

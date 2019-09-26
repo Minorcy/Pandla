@@ -24,11 +24,15 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.main-content.data-v-8ef4b116 {
+page.data-v-1daf07e6,
+uni-page-body.data-v-1daf07e6 {
+  background: #131D21;
+}
+.main-content.data-v-1daf07e6 {
   position: relative;
   overflow: hidden;
 }
-.header.data-v-8ef4b116 {
+.header.data-v-1daf07e6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -40,14 +44,15 @@
           flex-direction: row;
   margin-left: 0;
 }
-.main-content.data-v-8ef4b116 {
+.main-content.data-v-1daf07e6 {
   width: 100%;
   min-height: 100%;
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
-.header-border.data-v-8ef4b116 {
+.header-border.data-v-1daf07e6 {
+  font-size: 12px;
   height: 48rpx;
   line-height: 48rpx;
   text-align: center;
@@ -65,7 +70,10 @@
   padding: 5rpx 20rpx 5rpx 20rpx;
   margin: 10rpx;
 }
-.header-icon.data-v-8ef4b116 {
+.header-border text.data-v-1daf07e6 {
+  font-size: 12px !important;
+}
+.header-icon.data-v-1daf07e6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -79,7 +87,14 @@
   height: 32rpx;
   margin-top: 9rpx;
 }
-text.data-v-8ef4b116 {
+.uni-swiper-msg-icon.data-v-1daf07e6 {
+  margin: 0;
+}
+swiper-item text.data-v-1daf07e6 {
+  font-size: 12px;
+  margin-left: 0;
+}
+text.data-v-1daf07e6 {
   font-size: 25rpx;
   margin-left: 15rpx;
   margin-bottom: 5rpx;
@@ -88,19 +103,36 @@ text.data-v-8ef4b116 {
      text-overflow: ellipsis;
   white-space: nowrap;
 }
-.text-scroll.data-v-8ef4b116 {
+.uni-swiper-msg.data-v-1daf07e6 {
+  height: 48rpx;
+  line-height: 48rpx;
+  border: 2rpx solid #C8C7CC !important;
+  border-radius: 30rpx;
+  padding: 5rpx 20rpx 5rpx 20rpx;
+  margin: 10rpx;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90% !important;
+}
+.text-scroll.data-v-1daf07e6 {
   margin-top: 6px;
   font-size: 25rpx;
   z-index: 10;
 }
-.token-area.data-v-8ef4b116 {
+.token-area.data-v-1daf07e6 {
   width: 100%;
   height: 600rpx;
   position: relative;
+  overflow: hidden;
   background-repeat: no-repeat;
   background-position: center;
 }
-.token-area .planetPublic.data-v-8ef4b116 {
+.token-area .planetPublic.data-v-1daf07e6 {
     width: 100%;
     height: 100rpx;
     display: -webkit-box;
@@ -116,7 +148,7 @@ text.data-v-8ef4b116 {
         -ms-flex-align: center;
             align-items: center;
 }
-.token-area .planetPublic-box.data-v-8ef4b116 {
+.token-area .planetPublic-box.data-v-1daf07e6 {
     width: 128rpx;
     height: 128rpx;
     display: -webkit-box;
@@ -137,44 +169,40 @@ text.data-v-8ef4b116 {
         -ms-flex-pack: center;
             justify-content: center;
 }
-.token-area .planetPublic-box .welfare-icon.data-v-8ef4b116 {
-      width: 45rpx;
-      height: 40rpx;
+.token-area .planetPublic-box .welfare-icon.data-v-1daf07e6 {
+      width: 45px;
+      height: 45px;
 }
-.token-area .planetPublic-box .planet-text.data-v-8ef4b116 {
-      font-size: 24rpx;
-      color: #4CD964;
-}
-.token-content.data-v-8ef4b116 {
+.token-content.data-v-1daf07e6 {
   width: 100%;
   height: 500rpx;
   position: relative;
 }
-.token-content .token.data-v-8ef4b116 {
+.token-content .token.data-v-1daf07e6 {
     position: absolute;
     width: 128rpx;
     height: 110rpx;
     text-align: center;
-    z-index: 66;
+    z-index: 999;
     -webkit-transition-property: all;
     -o-transition-property: all;
     transition-property: all;
-    -webkit-transition-duration: 1s;
-         -o-transition-duration: 1s;
-            transition-duration: 1s;
-    -webkit-transition-timing-function: ease-out;
-         -o-transition-timing-function: ease-out;
-            transition-timing-function: ease-out;
+    -webkit-transition-duration: 0.8s;
+         -o-transition-duration: 0.8s;
+            transition-duration: 0.8s;
+    -webkit-transition-timing-function: ease-in;
+         -o-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
 }
-.token-content .token .token-icon.data-v-8ef4b116 {
+.token-content .token .token-icon.data-v-1daf07e6 {
       width: 48rpx;
       height: 48rpx;
       opacity: 0.7;
 }
-.token-content .token .token-num.data-v-8ef4b116 {
+.token-content .token .token-num.data-v-1daf07e6 {
       font-size: 25rpx;
 }
-.lottie.data-v-8ef4b116 {
+.lottie.data-v-1daf07e6 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -182,7 +210,7 @@ text.data-v-8ef4b116 {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-.welfare-content.data-v-8ef4b116 {
+.welfare-content.data-v-1daf07e6 {
   position: absolute;
   top: 25rpx;
   right: 30rpx;
@@ -191,37 +219,37 @@ text.data-v-8ef4b116 {
   width: 120rpx;
   text-align: center;
 }
-.welfare-content .welfare-icon.data-v-8ef4b116 {
+.welfare-content .welfare-icon.data-v-1daf07e6 {
     margin: 0 auto;
     display: block;
 }
-.welfare-content .welfare-text.data-v-8ef4b116 {
+.welfare-content .welfare-text.data-v-1daf07e6 {
     text-align: center;
 }
-.welfare-icon.data-v-8ef4b116 {
+.welfare-icon.data-v-1daf07e6 {
   width: 55rpx;
   height: 48rpx;
   margin-bottom: 8rpx;
 }
-.welfare-text.data-v-8ef4b116 {
+.welfare-text.data-v-1daf07e6 {
   margin-left: -22rpx;
   font-size: 25rpx;
   color: #4CD964;
 }
-.swiper.data-v-8ef4b116 {
+.swiper.data-v-1daf07e6 {
   position: absolute;
   bottom: 40rpx;
   width: 100%;
   height: 450rpx;
   overflow: hidden;
 }
-.swiper-item > ._img.data-v-8ef4b116 {
+.swiper-item > ._img.data-v-1daf07e6 {
   width: 300rpx;
 }
 /* 动画 */
-.topTobottom.data-v-8ef4b116 {
-  -webkit-animation-name: topTobottom-data-v-8ef4b116;
-          animation-name: topTobottom-data-v-8ef4b116;
+.topTobottom.data-v-1daf07e6 {
+  -webkit-animation-name: topTobottom-data-v-1daf07e6;
+          animation-name: topTobottom-data-v-1daf07e6;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-timing-function: linear;
@@ -229,11 +257,11 @@ text.data-v-8ef4b116 {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
-.topTobottom-1.data-v-8ef4b116 {
-  -webkit-animation-name: topTobottom-data-v-8ef4b116;
-          animation-name: topTobottom-data-v-8ef4b116;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+.topTobottom-1.data-v-1daf07e6 {
+  -webkit-animation-name: topTobottom-data-v-1daf07e6;
+          animation-name: topTobottom-data-v-1daf07e6;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-delay: 1s;
@@ -241,7 +269,7 @@ text.data-v-8ef4b116 {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
-@keyframes topTobottom-data-v-8ef4b116 {
+@keyframes topTobottom-data-v-1daf07e6 {
 0% {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
@@ -255,7 +283,7 @@ text.data-v-8ef4b116 {
             transform: translate(0, 0);
 }
 }
-@-webkit-keyframes topTobottom-data-v-8ef4b116
+@-webkit-keyframes topTobottom-data-v-1daf07e6
 
 /* Safari 和 Chrome */ {
 0% {
@@ -271,7 +299,7 @@ text.data-v-8ef4b116 {
             transform: translate(0, 0);
 }
 }
-.avatar.data-v-8ef4b116 {
+.avatar.data-v-1daf07e6 {
   width: 170px;
   height: 170px;
   position: absolute;
@@ -288,23 +316,23 @@ text.data-v-8ef4b116 {
   -webkit-animation: pulse-data-v-592699c8 3s linear infinite;
   animation: pulse-data-v-592699c8 3s linear infinite;
 }
-@-webkit-keyframes pulse-data-v-8ef4b116 {
+@-webkit-keyframes pulse-data-v-1daf07e6 {
 to {
     opacity: 0;
     -webkit-transform: scale(1.1);
 }
 }
-@keyframes pulse-data-v-8ef4b116 {
+@keyframes pulse-data-v-1daf07e6 {
 to {
     opacity: 0;
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
 }
 }
-.avatar.data-v-8ef4b116::before,
-.avatar.data-v-8ef4b116::after {
-  -webkit-animation: pulse-data-v-8ef4b116 3s linear infinite;
-  animation: pulse-data-v-8ef4b116 3s linear infinite;
+.avatar.data-v-1daf07e6::before,
+.avatar.data-v-1daf07e6::after {
+  -webkit-animation: pulse-data-v-1daf07e6 3s linear infinite;
+  animation: pulse-data-v-1daf07e6 3s linear infinite;
   border: #6b5e5e solid 8px;
   border-radius: 9999px;
   -webkit-box-sizing: border-box;
@@ -321,7 +349,7 @@ to {
   width: 140%;
   z-index: 1;
 }
-.avatar.data-v-8ef4b116::after {
+.avatar.data-v-1daf07e6::after {
   -webkit-animation-delay: 2s;
   animation-delay: 2s;
 }

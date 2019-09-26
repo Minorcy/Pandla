@@ -1,19 +1,124 @@
 <script>
+	import {
+		getWyToken
+	} from "@/api/api.js"
+	import {
+		mapState,
+		mapActions
+	} from "vuex"
 	export default {
-		// onLaunch: function() {
-		// 	console.log('App Launch');
-		// },
-		onShow: function() {
-			console.log('App Show');
-			uni.setTabBarBadge({
-				index: 1,
-				text: '9'
-			})
+		data() {
+			return {
+				connNumber: 0,
+				fnsNumber: 0,
+				likeNumber: 0,
+				systemNumber: 0,
+				msgNumber: 0
+			}
 		},
-		// onHide: function() {
-		// 	console.log('App Hide');
-		// },
+		watch: {
+			'$store.state.pushMsg.pushFansMsg': function() {
+				if (this.$store.state.pushMsg.pushFansMsg.length == 0) {
+					return
+				}
+				var num = this.$store.state.pushMsg.pushFansMsg.filter(function(item) {
+					return item.status == "1";
+				})
+				num = num.length
+				this.fnsNumber = num.toString()
+				this.setTabBarBadge()
+			},
+			'$store.state.pushMsg.pushConnMsg': function() {
+				if (this.$store.state.pushMsg.pushConnMsg.length == 0) {
+					return
+				}
+				var num = this.$store.state.pushMsg.pushConnMsg.filter(function(item) {
+					return item.status == "1";
+				})
+				num = num.length
+				this.connNumber = num.toString()
+				this.setTabBarBadge()
+			},
+			'$store.state.pushMsg.pushSystemMsg': function() {
+				if (this.$store.state.pushMsg.pushSystemMsg.length == 0) {
+					return
+				}
+				var num = this.$store.state.pushMsg.pushSystemMsg.filter(function(item) {
+					return item.isRed == "0";
+				})
+				num = num.length
+				this.systemNumber = num.toString()
+				this.setTabBarBadge()
+			},
+			'$store.state.pushMsg.pushLikeMsg': function() {
+				if (this.$store.state.pushMsg.pushLikeMsg.length == 0) {
+					return
+				}
+				var num = this.$store.state.pushMsg.pushLikeMsg.filter(function(item) {
+					return item.status == "1";
+				})
+				num = num.length
+				this.likeNumber = num.toString()
+				this.setTabBarBadge()
+			},
+
+			'$store.state.sessionlist': function() {
+				var msgNum = 0
+				let sessionlist = this.$store.state.sessionlist.filter(item => {
+					msgNum += item.unread
+				})
+				this.msgNumber = msgNum
+				this.setTabBarBadge()
+			}
+
+		},
+
+
+		onLaunch: function() {
+			var users_key = uni.getStorageSync("USERS_KEY").token
+			if (users_key) {
+				this.checkOpenGPSServiceByAndroid()
+				this.$store.dispatch('getConnMsg')
+				this.$store.dispatch('getFansMsg')
+				this.$store.dispatch('getLikeMsg')
+				this.$store.dispatch('getSystemMsg')
+				setInterval(() => {
+					this.$store.dispatch('getConnMsg')
+					this.$store.dispatch('getFansMsg')
+					this.$store.dispatch('getLikeMsg')
+					this.$store.dispatch('getSystemMsg')
+				}, 2000)
+				getWyToken().then(data => {
+					let uid = data.uid;
+					let sdktoken = data.wyToken
+					uni.setStorageSync('uid', uid)
+					uni.setStorageSync('sdktoken', sdktoken)
+					this.connect()
+				})
+			}
+
+		},
+		updated() {
+			// 提交sdk连接请求
+			var users_key = uni.getStorageSync("USERS_KEY").token
+			if (users_key) {
+				this.$store.dispatch('connect')
+				this.$store.dispatch('updateRefreshState')
+			}
+		},
+		onShow: function() {
+			// uni.setTabBarBadge({
+			// 	index: 1,
+			// 	text: '9'
+			// })
+
+		},
+		onHide: function() {
+			// console.log('App Hide');
+
+		},
 		mounted() {
+
 			this.$request.interceptors.response(res => {
 				if (res) {
 					if (res.data.status && res.data.status.code != 200) {
@@ -36,12 +141,70 @@
 				}
 				return res;
 			})
+		},
+		methods: {
+			...mapActions(["connect"]),
+			checkOpenGPSServiceByAndroid() {
+				let system = uni.getSystemInfoSync(); // 获取系统信息
+				if (system.platform === 'android') { // 判断平台
+					var context = plus.android.importClass("android.content.Context");
+					var locationManager = plus.android.importClass("android.location.LocationManager");
+					var main = plus.android.runtimeMainActivity();
+					var mainSvr = main.getSystemService(context.LOCATION_SERVICE);
+					if (!mainSvr.isProviderEnabled(locationManager.GPS_PROVIDER)) {
+						uni.showModal({
+							title: '提示',
+							content: '请打开定位服务功能',
+							showCancel: false, // 不显示取消按钮
+							success() {
+								if (!mainSvr.isProviderEnabled(locationManager.GPS_PROVIDER)) {
+									var Intent = plus.android.importClass('android.content.Intent');
+									var Settings = plus.android.importClass('android.provider.Settings');
+									var intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+									main.startActivity(intent); // 打开系统设置GPS服务页面
+								} else {
+									console.log('GPS功能已开启');
+								}
+							}
+						});
+					}
+				}
+			},
+			setTabBarBadge() {
+				var num = 0
+				num = Number(this.fnsNumber) + Number(this.connNumber) + Number(this.likeNumber) + Number(this.systemNumber) + this
+					.msgNumber
+				num = num.toString()
+				if (num == 0) {
+					return
+				}
+				if (num == 'NaN') {
+					return
+				}
+				uni.setTabBarBadge({
+					index: 1,
+					text: num
+				})
+				const innerAudioContext = uni.createInnerAudioContext();
+				innerAudioContext.autoplay = true;
+				innerAudioContext.src = 'http://pandla.io/images/static/bell.mp3';
+				innerAudioContext.onPlay(() => {
+					console.log('开始播放');
+				});
+				innerAudioContext.onError((res) => {
+					console.log(res.errMsg);
+					console.log(res.errCode);
+				});
+			},
+			...mapActions(["getConnMsg", "getFansMsg", "getLikeMsg"])
 		}
-
 	}
 </script>
 <style>
 	@import url("./components/m-icon/m-icon.css");
+</style>
+<style>
+	@import './common/uni.css';
 </style>
 <style>
 	/*每个页面公共css */
@@ -81,13 +244,13 @@
 	}
 
 	button {
-		font-size: 30upx;
+		font-size: 14px;
 	}
 
 
 	button[disabled] {
 		color: #9E9E9E !important;
-		background: #000000 !important;
+		/* background: #000000 !important; */
 	}
 
 	button.primary {
@@ -125,16 +288,24 @@
 	}
 
 	/* 原生组件模式下需要注意组件外部样式 */
-	.content {
+	/* .content {
 		display: flex;
 		flex: 1;
 		flex-direction: column;
 		background-color: #000000;
 		padding: 20upx;
 		color: #EFEFF4;
+	} */
+	.page {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 10px;
+		background-color: #FFFFFF;
+		display: block;
 	}
 
 	.main-content {
+		width: 100%;
 		display: flex;
 		flex: 1;
 		flex-direction: column;
@@ -147,15 +318,14 @@
 
 	.pages-content {
 		width: 100%;
-		overflow: hidden;
+		box-sizing: border-box;
+		padding: 10PX;
 		display: flex;
 		flex: 1;
 		flex-direction: column;
-		color: #EFEFF4;
-		background: #131D21;
-		border-top: solid;
-		border-width: 2upx;
-		border-top-color: #4CD964;
+		color: #4A4A4A;
+		background: #FFFFFF;
+
 
 	}
 
@@ -165,7 +335,7 @@
 		min-height: 100%;
 		display: flex;
 		padding-left: 10upx;
-		
+
 	}
 
 	.input-group {
@@ -174,8 +344,8 @@
 		/* background-color: #000000; */
 		margin-top: 40upx;
 		position: relative;
-		color: #EFEFF4;
-		text-decoration:none
+		color: #4A4A4A;
+		text-decoration: none
 	}
 
 	.input-row {
@@ -183,7 +353,7 @@
 		flex-direction: row;
 		position: relative;
 		margin-top: 40upx;
-		text-decoration:none
+		text-decoration: none
 	}
 
 	.input-row.border::after {

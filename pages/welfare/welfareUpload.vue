@@ -23,11 +23,11 @@
 	export default {
 		data() {
 			return {
-				barImg: '../../static/img/main/entertain/en-upload.svg',
-				licImg1: '../../static/img/main/entertain/en-upload.svg',
-				licImg2: '../../static/img/main/entertain/en-upload.svg',
-				licImg3: '../../static/img/main/entertain/en-upload.svg',
-				licImg4: '../../static/img/main/entertain/en-upload.svg',
+				barImg: '../../static/img/welfare/en-upload.svg',
+				licImg1: '../../static/img/welfare/en-upload.svg',
+				licImg2: '../../static/img/welfare/en-upload.svg',
+				licImg3: '../../static/img/welfare/en-upload.svg',
+				licImg4: '../../static/img/welfare/en-upload.svg',
 				barInfo: {}
 			}
 		},
@@ -92,7 +92,7 @@
 						title: '上传成功,請等待審核'
 					})
 					setTimeout(function() {
-						uni.navigateTo({
+						uni.redirectTo({
 							url: 'welfare'
 						});
 					}, 2000)

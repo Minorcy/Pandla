@@ -1,18 +1,98 @@
 
-.box{
-	position: relative;
-	margin: 10px auto;
+.passport {
 	width: 100%;
-	height: 40%;
+	background-color: white;
 }
-text{
-	position: absolute;
-	top: 70%;
-	left: 50%;
-	-webkit-transform: translate(-50%,-50%);
-	    -ms-transform: translate(-50%,-50%);
-	        transform: translate(-50%,-50%);
-	font-size: 16px;
+.passport-wrapper {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	width: 97%;
+	margin: 0 auto;
+	height: 220px;
+	border-radius: 10px;
+	border: 2px solid rgba(19, 29, 33, 1);
+}
+.top {
+	width: 100%;
+	height: 51px;
+	background: rgba(19, 29, 33, 1);
 	text-align: center;
+	overflow: hidden;
+}
+.top text {
+	margin: 10px 20px;
+	display: block;
+	width: 342px;
+	height: 28px;
+	font-size: 20px;
+	font-weight: 300;
+	color: rgba(255, 255, 255, 1);
+	line-height: 28px;
+	letter-spacing: 18px;
+}
+.passport-content {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	height: 161px;
+	padding: 10px;
+}
+.passport-content image {
+	width: 105px;
+	height: 138px;
+	margin-right: 20px;
+}
+.content-right {
+	height: 90px;
+	width: 55%;
+}
+.info {
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+.info text {
+	display: block;
+	font-size: 14px;
+	line-height: 1.5;
+}
+.info-left text:nth-child(2) {
+	margin-bottom: 10px;
+}
+.info-left text:nth-child(2n+1) {
+	color: #9B9B9B;
+	font-size: 12px;
+}
+.info-right text:nth-child(2n+1) {
+	color: #9B9B9B;
+	font-size: 12px;
+}
+.info-right {
+	margin-left: 20px;
+}
+.info-right text {
+	text-align: center;
+}
+.card {
+	padding: 10px 10px 10px 0;
+}
+.card text:nth-child(1) {
+	font-size: 14px;
+	color: #9B9B9B;
+}
+.bar-code {
+	width: 100%;
+	height: 20px;
+	overflow: hidden;
 }
 

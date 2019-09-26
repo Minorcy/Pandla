@@ -4,10 +4,11 @@
     "buttons": [
       {
         "text": "發布",
-        "fontSize": "35upx"
+        "fontSize": "16px"
       }
     ]
   },
   "bounce": "none",
+  "softinputNavBar": "none",
   "usingComponents": {}
 }
