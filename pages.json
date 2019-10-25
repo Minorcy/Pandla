@@ -1,16 +1,5 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页,
-
-		// {
-		// 	"path": "pages/tabbar/index",
-		// 	"style": {
-		// 		"navigationBarTitleText": "",
-		// 		"app-plus": {
-		// 			"bounce": "none",
-		// 			"titleNView": false
-		// 		}
-		// 	}
-		// },
 		{
 			"path": "pages/index/index",
 			"style": {
@@ -46,15 +35,6 @@
 		},
 		{
 			"path": "pages/reg/reg",
-			"style": {
-				"navigationBarTitleText": "",
-				"app-plus": {
-					"bounce": "none",
-					"titleNView": false
-				}
-			}
-		}, {
-			"path": "pages/reg/regs",
 			"style": {
 				"navigationBarTitleText": "",
 				"app-plus": {
@@ -108,7 +88,7 @@
 			}
 		},
 		{
-			"path": "pages/main/notice",
+			"path": "pages/notice/notice",
 			"style": {
 				"navigationBarTitleText": "星球公告",
 				"navigationBarBackgroundColor": "#E1E1E1",
@@ -146,7 +126,8 @@
 					"animationType": "slide-in-left",
 					"titleNView": false,
 					"softinputNavBar": "none",
-					"bounce": "none"
+					"bounce": "none",
+					"softinputMode": "adjustPan"
 				}
 			}
 		}, {
@@ -226,7 +207,8 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "\ue611",
-							"color":"#000000",
+							"color": "#999999",
+							"fontSize": "20px",
 							"fontSrc": "/static/font/iconfont.ttf"
 
 						}]
@@ -242,6 +224,7 @@
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
+					"bounce": "none",
 					"softinputNavBar": "none"
 				}
 			}
@@ -257,7 +240,7 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "\ue611",
-							"color":"#000000",
+							"color": "#000000",
 							"fontSrc": "/static/font/iconfont.ttf"
 
 						}]
@@ -307,8 +290,8 @@
 		}, {
 			"path": "pages/entertain/entertainApplication",
 			"style": {
-			
-				"navigationBarTitleText": "填写资料",
+
+				"navigationBarTitleText": "填寫資料",
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
@@ -344,7 +327,7 @@
 					"titleNView": false,
 					"bounce": "none",
 					"scrollIndicator": "none"
-					
+
 				}
 
 			}
@@ -372,8 +355,8 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "\ue611",
-							"color":"#999999",
-							"fontSize":"20px",
+							"color": "#999999",
+							"fontSize": "20px",
 							"fontSrc": "/static/font/iconfont.ttf"
 
 						}]
@@ -394,12 +377,13 @@
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
+					"bounce": "none",
 					"titleNView": {
 						"buttons": [{
 							"text": "\ue608",
 							"fontSrc": "/static/font/iconfont.ttf",
-							"fontSize":"18px",
-							"color":"#999999"
+							"fontSize": "18px",
+							"color": "#999999"
 						}]
 					},
 					"animationType": "slide-in-left",
@@ -412,28 +396,6 @@
 			"path": "pages/msg/chatSettings",
 			"style": {
 				"navigationBarTitleText": "通訊设置",
-				"navigationBarBackgroundColor": "#E1E1E1",
-				"navigationBarTextStyle": "black",
-				"app-plus": {
-					"bounce": "none"
-				}
-			}
-		},
-		{
-			"path": "pages/msg/test",
-			"style": {
-				"navigationBarTitleText": "聊天测试",
-				"navigationBarBackgroundColor": "#E1E1E1",
-				"navigationBarTextStyle": "black",
-				"app-plus": {
-					"bounce": "none"
-				}
-			}
-		},
-		{
-			"path": "pages/msg/Receive",
-			"style": {
-				"navigationBarTitleText": "聊天测试",
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
@@ -491,8 +453,7 @@
 			"path": "pages/msg/news/details",
 			"style": {
 				"navigationBarTitleText": "",
-				"navigationBarBackgroundColor": "#E1E1E1",
-				"navigationBarTextStyle": "black",
+				"navigationBarTextStyle": "white",
 				"app-plus": {
 					"animationType": "slide-in-left",
 					"titleNView": false,
@@ -520,7 +481,8 @@
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
-					"softinputNavBar": "none"
+					"softinputNavBar": "none",
+					"bounce": "none"
 				}
 			}
 		},
@@ -542,7 +504,7 @@
 				"navigationBarTitleText": "捐贈榜單",
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
-				"onReachBottomDistance":50,
+				"onReachBottomDistance": 50,
 				"app-plus": {
 					"bounce": "none"
 				}
@@ -574,7 +536,7 @@
 		{
 			"path": "pages/purse/purse",
 			"style": {
-				"navigationBarTitleText": "我的錢包",
+				"navigationBarTitleText": "錢包",
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
@@ -625,7 +587,7 @@
 		{
 			"path": "pages/invite/invite",
 			"style": {
-				"navigationBarTitleText": "邀請好友移民星球",
+				"navigationBarTitleText": "邀請好友",
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
@@ -687,32 +649,54 @@
 			}
 		},
 		{
+			"path": "pages/setting/contactUs",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#E1E1E1",
+				"navigationBarTextStyle": "black",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
 			"path": "pages/setting/introduce",
 			"style": {
 				"navigationBarTitleText": "關於PANDLA",
 				"navigationBarBackgroundColor": "#E1E1E1",
-				"navigationBarTextStyle": "black"
-				
+				"navigationBarTextStyle": "black",
+				"app-plus": {
+					"bounce": "none"
+				}
+
 			}
-		},{
+		}, {
 			"path": "pages/setting/blacklist",
 			"style": {
 				"navigationBarTitleText": "黑名單",
 				"navigationBarBackgroundColor": "#E1E1E1",
-				"navigationBarTextStyle": "black"
+				"navigationBarTextStyle": "black",
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
-		},{
+		}, {
 			"path": "pages/user/album",
 			"style": {
 				"navigationBarBackgroundColor": "#E1E1E1",
+				"navigationBarTitleText":"相冊",
 				"navigationBarTextStyle": "black",
-				"onReachBottomDistance": 50
+				"onReachBottomDistance": 50,
+				"app-plus": {
+					"bounce": "none"
+				}
 			}
 		},
 		{
 			"path": "pages/user/followList",
 			"style": {
 				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
 				"navigationBarTitleText": "",
 				"app-plus": {
 					"animationType": "slide-in-left",
@@ -725,7 +709,8 @@
 			"path": "pages/user/fansList",
 			"style": {
 				"navigationBarTitleText": "",
-				"navigationBarBackgroundColor":"#E1E1E1",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#E1E1E1",
 				"app-plus": {
 					"bounce": "none",
 					"titleNView": false,
@@ -734,13 +719,14 @@
 			}
 		}, {
 			"path": "pages/welfare/welfareApplication",
-			
+
 			"style": {
 				"navigationBarTitleText": "填写资料",
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
-				"app-plus":{
-					"softinputNavBar": "none"
+				"app-plus": {
+					"softinputNavBar": "none",
+					"bounce": "none"
 				}
 			}
 		},
@@ -749,13 +735,14 @@
 			"style": {
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
-				"app-plus":{
+				"app-plus": {
+					"bounce": "none",
 					"softinputNavBar": "none"
 				}
 			}
 		}, {
 			"path": "pages/welfare/welfareUpload",
-			
+
 			"style": {
 				"navigationBarTitleText": "",
 				"navigationBarBackgroundColor": "#E1E1E1",
@@ -769,7 +756,7 @@
 					},
 					"bounce": "none",
 					"softinputNavBar": "none"
-					
+
 				}
 			}
 		}
@@ -783,6 +770,7 @@
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
+					"bounce": "none",
 					"titleNView": {
 						// "buttons": [{
 						// 	"text": "\ue668",

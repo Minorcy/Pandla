@@ -1,5 +1,5 @@
 
-.pan-page.data-v-2ab05b76 {
+.pan-page.data-v-c50fe91e {
 	width: 100%;
 	background-color: #FFFFFF;
 	-webkit-box-sizing: border-box;
@@ -9,12 +9,12 @@
 	overflow-scrolling: touch;
 	overflow-y: scroll;
 }
-.status_bar.data-v-2ab05b76 {
+.status_bar.data-v-c50fe91e {
 	padding: 10px;
 	height: var(--status-bar-height);
 	width: 100%;
 }
-.top-text.data-v-2ab05b76 {
+.top-text.data-v-c50fe91e {
 	width: 100%;
 		-webkit-box-sizing: border-box;
 		        box-sizing: border-box;
@@ -25,14 +25,14 @@
 	padding: 10px;
 	font-weight: 700;
 }
-.pan-content.data-v-2ab05b76 {
+.pan-content.data-v-c50fe91e {
 	width: 100%;
 	background: #FFFFFF;
 	margin-top: 10px;
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 }
-.fundPool.data-v-2ab05b76 {
+.fundPool.data-v-c50fe91e {
 	padding: 10px;
 	height: 170px;
 	-webkit-box-sizing: border-box;
@@ -41,7 +41,7 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
-.top.data-v-2ab05b76 {
+.top.data-v-c50fe91e {
 	width: 55%;
 	height: 70px;
 	margin: 0 auto;
@@ -53,22 +53,24 @@
 	    -ms-flex-pack: distribute;
 	        justify-content: space-around;
 }
-.top>image.data-v-2ab05b76 {
+.top>image.data-v-c50fe91e {
 	display: inline-block;
 	width: 60px;
 	height: 60px;
 }
-.top>text.data-v-2ab05b76 {
-	/* display: block; */
+.top>view.data-v-c50fe91e{
+	margin: 8px;
+}
+.top>view>text.data-v-c50fe91e {
+	display: block;
 	color: #FFFFFF;
 	font-size: 18px;
 	line-height: 1.5;
-	margin: 8px;
 }
-.bottom.data-v-2ab05b76 {
+.bottom.data-v-c50fe91e {
 	width: 100%;
 }
-.bottom .title.data-v-2ab05b76 {
+.bottom .title.data-v-c50fe91e {
 	display: block;
 	font-size: 12px;
 	color: rgba(244, 244, 244, 1);
@@ -78,25 +80,25 @@
 	margin: 10px auto;
 	position: relative;
 }
-.bottom .title.data-v-2ab05b76::before,
-.bottom .title.data-v-2ab05b76::after {
+.bottom .title.data-v-c50fe91e::before,
+.bottom .title.data-v-c50fe91e::after {
 	content: "";
 	width: 40px;
 	height: 1px;
 	background-color: #FFFFFF;
 }
-.bottom .title.data-v-2ab05b76::before {
+.bottom .title.data-v-c50fe91e::before {
 	position: absolute;
 	top: 6px;
 	left: 10px;
 }
-.bottom .title.data-v-2ab05b76::after {
+.bottom .title.data-v-c50fe91e::after {
 
 	position: absolute;
 	top: 6px;
 	right: 20px;
 }
-.donate.data-v-2ab05b76 {
+.donate.data-v-c50fe91e {
 	width: 65%;
 	margin: 0 auto;
 	display: -webkit-box;
@@ -107,7 +109,7 @@
 	    -ms-flex-pack: distribute;
 	        justify-content: space-around;
 }
-.donate .btn.data-v-2ab05b76 {
+.donate .btn.data-v-c50fe91e {
 	display: inline-block;
 	width: 67px;
 	height: 30px;
@@ -119,7 +121,7 @@
 	font-size: 12px;
 	border: 2px solid rgba(19, 29, 33, 1);
 }
-.modifi.data-v-2ab05b76 {
+.modifi.data-v-c50fe91e {
 	width: 140px;
 	height: 30px;
 	border-radius: 5px;
@@ -135,7 +137,7 @@
 	        flex-direction: row;
 	margin-right: 5px;
 }
-.modifi text.data-v-2ab05b76:nth-child(2n+1) {
+.modifi text.data-v-c50fe91e:nth-child(2n+1) {
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	/* padding-left: 10px; */
@@ -147,14 +149,14 @@
 	background: #000000;
 	color: #FFFFFF;
 }
-.modifi input.data-v-2ab05b76 {
+.modifi input.data-v-c50fe91e {
 	display: inline-block;
 	width: 80px;
 	height: 30px;
 	color: #FFFFFF;
 	text-align: center;
 }
-.panShow.data-v-2ab05b76 {
+.panShow.data-v-c50fe91e {
 	margin: 10px 0 10px 10px;
 	height: 20px;
 	font-size: 14px;
@@ -164,7 +166,7 @@
 	line-height: 20px;
 	letter-spacing: 1px;
 }
-.donateShow.data-v-2ab05b76 {
+.donateShow.data-v-c50fe91e {
 	padding: 0 10px;
 	margin: 10px 0px;
 	display: -webkit-box;
@@ -176,26 +178,26 @@
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 }
-.donateShow text.data-v-2ab05b76 {
+.donateShow text.data-v-c50fe91e {
 	font-size: 14px;
 	line-height: 1.5;
 	color: #000000;
 }
-navigator.data-v-2ab05b76 {
+navigator.data-v-c50fe91e {
 	color: #D0021B;
 	font-size: 28rpx;
 	line-height: 1.5;
 }
-.poster.data-v-2ab05b76 {
+.poster.data-v-c50fe91e {
 	width: 100%;
 	margin-top: 1rpx;
 	border-radius: 10rpx;
 	background: #FFFFFF;
 }
-.poster>image.data-v-2ab05b76 {
+.poster>image.data-v-c50fe91e {
 	width: 100%;
 }
-.description.data-v-2ab05b76 {
+.description.data-v-c50fe91e {
 	padding: 10px 10px 0 10px;
 
 	font-size: 25rpx;
@@ -205,7 +207,7 @@ navigator.data-v-2ab05b76 {
 	border-radius: 10rpx;
 	overflow: hidden;
 }
-.description>text.data-v-2ab05b76:nth-child(2) {
+.description>text.data-v-c50fe91e:nth-child(2) {
 	margin-top: 20rpx;
 	float: right;
 }

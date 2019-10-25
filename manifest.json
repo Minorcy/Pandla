@@ -2,8 +2,8 @@
     "name" : "Pandla",
     "appid" : "__UNI__F2A9BD3",
     "description" : "全球第一款区块链同志社交软件",
-    "versionName" : "1.0.6",
-    "versionCode" : 106,
+    "versionName" : "1.0.8",
+    "versionCode" : 108,
     "transformPx" : false,
     "debug" : false,
     "app-plus" : {
@@ -13,10 +13,19 @@
             "Share" : {},
             "Maps" : {},
             "softinput" : {
-                "navBar" : "none" // 是否显示软键盘上的导航条  
+                "navBar" : "none" ,// 是否显示软键盘上的导航条  
+				"bottom": {  
+				        "offset": "auto"  
+				    }  
             },
             "OAuth" : {},
-            "SQLite" : {}
+            "SQLite" : {},
+            "permissions" : {
+                "XMLHttpRequest" : {
+                    "description" : "跨域网络连接"
+                }
+            },
+			"contentAdjust":false 
         },
         /* 模块配置 */
         "distribute" : {
@@ -53,8 +62,17 @@
             "ios" : {
                 "app-plus" : {
                     "softinput" : {
-                        "navBar" : "none" // 是否显示软键盘上的导航条  
+                        "navBar" : "none" ,// 是否显示软键盘上的导航条  
+						"bottom": {  
+						        "offset": "auto"  
+						    }  
                     }
+                },
+                "privacyDescription" : {
+                    "NSPhotoLibraryUsageDescription" : "獲取您的相冊，用於發表動態",
+                    "NSCameraUsageDescription" : "獲取您的相機，拍照並上傳，用於發表",
+                    "NSLocationWhenInUseUsageDescription" : "獲取您的位置，用同城相關服務",
+                    "NSLocationAlwaysAndWhenInUseUsageDescription" : "獲取您的位置，用同城相關服務"
                 }
             },
             /* ios打包配置 */
@@ -68,12 +86,14 @@
                 "oauth" : {
                     "weixin" : {
                         "appid" : "wx49ad3d65a7c79310",
-                        "appsecret" : "59b7d766d29bdeba0cf3b7dd671f6f43"
+                        "appsecret" : "59b7d766d29bdeba0cf3b7dd671f6f43",
+                        "UniversalLinks" : "https://pandla.io/"
                     }
                 },
                 "share" : {
                     "weixin" : {
-                        "appid" : "wx49ad3d65a7c79310"
+                        "appid" : "wx49ad3d65a7c79310",
+                        "UniversalLinks" : "https://pandla.io/"
                     }
                 }
             },
@@ -113,9 +133,9 @@
             },
             "splashscreen" : {
                 "android" : {
-                    "xxhdpi" : "static/StartupChart/1080-1882.9.png",
-                    "xhdpi" : "static/StartupChart/720-1244.9.png",
-                    "hdpi" : "static/StartupChart/480-762.9.png"
+                    "xxhdpi" : "static/StartupChart/1080X1882.9.png",
+                    "xhdpi" : "static/StartupChart/720X1244.9.png",
+                    "hdpi" : "static/StartupChart/480X762.9.png"
                 },
                 "ios" : {
                     "iphone" : {
@@ -128,20 +148,26 @@
                         "retina47l" : "static/StartupChart/750-1334.png",
                         "retina55l" : "static/StartupChart/1242X2208.png",
                         "landscape-896h@3x" : "static/StartupChart/1242X2688.png",
-                        "iphonexl" : "static/StartupChart/1125X2436.png"
+                        "iphonexl" : "static/StartupChart/1125X2436.png",
+                        "retina40" : "static/StartupChart/640X1136.png",
+                        "retina40l" : "static/StartupChart/640X1136.png",
+                        "retina35" : "static/StartupChart/640X960.png"
                     }
                 }
             }
         },
         "splashscreen" : {
             "waiting" : false,
-            "alwaysShowBeforeRender" : true
+            "alwaysShowBeforeRender" : false
         },
         "softinput" : {
-            "navBar" : "none", //是否显示iOS软键盘上的“完成”导航条
-            "mode" : "adjustResize|adjustPan" //软键盘弹出模式，
+            "navBar" : "none" ,//是否显示iOS软键盘上的“完成”导航条
+			"bottom": {  
+			        "offset": "auto"  
+			    }  
         }
     },
+    // "mode" : "adjustResize" //软键盘弹出模式，
     /* SDK配置 */
     "quickapp" : {},
     /* 快应用特有相关 */
@@ -162,7 +188,7 @@
     },
     "h5" : {
         "devServer" : {
-            "port" : 8000,
+            "port" : 8080,
             "disableHostCheck" : true,
             "proxy" : {
                 "/dpc" : {
@@ -174,6 +200,3 @@
         }
     }
 }
-// 是否显示软键盘上的导航条  
-/* ios打包配置 */
-

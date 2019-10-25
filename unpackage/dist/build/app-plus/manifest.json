@@ -7,11 +7,11 @@
   "id": "__UNI__F2A9BD3",
   "name": "Pandla",
   "version": {
-    "name": "1.0.6",
-    "code": 106
+    "name": "1.0.8",
+    "code": 108
   },
   "description": "全球第一款区块链同志社交软件",
-  "launch_path": "__uniapptabbar.html",
+  "launch_path": "__uniappview.html",
   "developer": {
     "name": "",
     "email": "",
@@ -23,27 +23,38 @@
       "coordType": "gcj02"
     },
     "softinput": {
-      "navBar": "none"
+      "navBar": "none",
+      "bottom": {
+        "offset": "auto"
+      }
     },
     "OAuth": {},
     "SQLite": {},
+    "permissions": {
+      "XMLHttpRequest": {
+        "description": "跨域网络连接"
+      }
+    },
+    "contentAdjust": false,
     "UniNView": {
       "description": "UniNView原生渲染"
     }
   },
   "plus": {
     "useragent": {
-      "value": "uni-app appservice",
+      "value": "uni-app",
       "concatenate": true
     },
     "splashscreen": {
-      "target": "id:1",
-      "autoclose": true,
-      "waiting": false,
-      "delay": 0
+      "autoclose": false,
+      "waiting": false
     },
     "popGesture": "close",
-    "launchwebview": {},
+    "launchwebview": {
+      "id": "1",
+      "kernel": "WKWebview",
+      "uni-app": "auto"
+    },
     "statusbar": {
       "immersed": "supportedDevice",
       "style": "light",
@@ -87,9 +98,9 @@
       },
       "splashscreen": {
         "android": {
-          "xxhdpi": "static/StartupChart/1080-1882.9.png",
-          "xhdpi": "static/StartupChart/720-1244.9.png",
-          "hdpi": "static/StartupChart/480-762.9.png"
+          "xxhdpi": "static/StartupChart/1080X1882.9.png",
+          "xhdpi": "static/StartupChart/720X1244.9.png",
+          "hdpi": "static/StartupChart/480X762.9.png"
         },
         "ios": {
           "iphone": {
@@ -102,7 +113,10 @@
             "retina47l": "static/StartupChart/750-1334.png",
             "retina55l": "static/StartupChart/1242X2208.png",
             "landscape-896h@3x": "static/StartupChart/1242X2688.png",
-            "iphonexl": "static/StartupChart/1125X2436.png"
+            "iphonexl": "static/StartupChart/1125X2436.png",
+            "retina40": "static/StartupChart/640X1136.png",
+            "retina40l": "static/StartupChart/640X1136.png",
+            "retina35": "static/StartupChart/640X960.png"
           }
         }
       },
@@ -137,8 +151,17 @@
       "apple": {
         "app-plus": {
           "softinput": {
-            "navBar": "none"
+            "navBar": "none",
+            "bottom": {
+              "offset": "auto"
+            }
           }
+        },
+        "privacyDescription": {
+          "NSPhotoLibraryUsageDescription": "獲取您的相冊，用於發表動態",
+          "NSCameraUsageDescription": "獲取您的相機，拍照並上傳，用於發表",
+          "NSLocationWhenInUseUsageDescription": "獲取您的位置，用同城相關服務",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "獲取您的位置，用同城相關服務"
         }
       },
       "plugins": {
@@ -151,12 +174,14 @@
         "oauth": {
           "weixin": {
             "appid": "wx49ad3d65a7c79310",
-            "appsecret": "59b7d766d29bdeba0cf3b7dd671f6f43"
+            "appsecret": "59b7d766d29bdeba0cf3b7dd671f6f43",
+            "UniversalLinks": "https://pandla.io/"
           }
         },
         "share": {
           "weixin": {
-            "appid": "wx49ad3d65a7c79310"
+            "appid": "wx49ad3d65a7c79310",
+            "UniversalLinks": "https://pandla.io/"
           }
         },
         "audio": {
@@ -168,7 +193,9 @@
     },
     "softinput": {
       "navBar": "none",
-      "mode": "adjustResize|adjustPan"
+      "bottom": {
+        "offset": "auto"
+      }
     },
     "allowsInlineMediaPlayback": true,
     "safearea": {
@@ -178,15 +205,43 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.3.3",
+      "compilerVersion": "2.3.6",
       "control": "v8",
       "nvueCompiler": "weex",
       "renderer": "auto"
     },
-    "secondwebview": {
-      "id": "1",
-      "launch_path": "__uniappview.html",
-      "kernel": "WKWebview"
+    "tabBar": {
+      "color": "#767676",
+      "selectedColor": "#EFEFF4",
+      "backgroundColor": "#000000",
+      "list": [
+        {
+          "pagePath": "pages/main/main",
+          "text": "首頁",
+          "iconPath": "static/img/tabbar/home.png",
+          "selectedIconPath": "static/img/tabbar/homeHL.png"
+        },
+        {
+          "pagePath": "pages/msg/msg",
+          "text": "通訊",
+          "iconPath": "static/img/tabbar/msg.png",
+          "selectedIconPath": "static/img/tabbar/msgHL.png"
+        },
+        {
+          "pagePath": "pages/pan/pan",
+          "text": "公益",
+          "iconPath": "static/img/tabbar/PAN.png",
+          "selectedIconPath": "static/img/tabbar/PANHL.png"
+        },
+        {
+          "pagePath": "pages/user/user",
+          "text": "我的",
+          "iconPath": "static/img/tabbar/user.png",
+          "selectedIconPath": "static/img/tabbar/userHL.png"
+        }
+      ],
+      "borderStyle": "rgba(0,0,0,0.4)",
+      "height": "50px"
     }
   }
 }

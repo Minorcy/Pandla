@@ -58,12 +58,14 @@
 	width: 60px;
 	height: 60px;
 }
-.top>text.data-v-17719be4 {
-	/* display: block; */
+.top>view.data-v-17719be4{
+	margin: 8px;
+}
+.top>view>text.data-v-17719be4 {
+	display: block;
 	color: #FFFFFF;
 	font-size: 18px;
 	line-height: 1.5;
-	margin: 8px;
 }
 .bottom.data-v-17719be4 {
 	width: 100%;

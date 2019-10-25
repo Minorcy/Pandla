@@ -24,11 +24,11 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.setting.data-v-34340007 {
+.setting.data-v-023fa89b {
   width: 100%;
   background-color: #FFFFFF;
 }
-.item.data-v-34340007 {
+.item.data-v-023fa89b {
   width: 100%;
   height: 40px;
   background-color: #F4F4F4;
@@ -37,7 +37,7 @@
           box-sizing: border-box;
   margin-bottom: 10px;
 }
-text.data-v-34340007 {
+text.data-v-023fa89b {
   font-size: 14px;
   color: #4A4A4A;
   line-height: 1.5;

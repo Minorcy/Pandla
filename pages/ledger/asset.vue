@@ -5,7 +5,7 @@
 				<view class="asset-left">
 					<p>我的資產PAN幣</p>
 					<text class="balance">{{propInfo.balance | toFixed(4)}}</text>
-					<text class="asset-rmb">≈{{ this.rmb | toFixed(4)}} USTD</text>
+					<text class="asset-rmb">≈{{ this.rmb | toFixed(4)}} USTD<text class="dollar"> (美元)</text></text>
 				</view>
 				<view class="asset-right">
 					<p>冻结PAN幣</p>
@@ -25,7 +25,7 @@
 		</view>
 		<view class="text-wrapper">
 			<view class="title">
-				<text>點擊註冊IXX交易所可以获得10个PAN幣</text>
+				<text>點擊註冊IXX交易所可以獲得10个PAN幣</text>
 			</view>
 			<view class="text">
 				<text>新加坡IXX數字資產交易所是潘多拉星球戰，也是潘多拉星球的超節點，用戶可以在IXX交易所查看PAN的價格走勢，<text class="black">當潘多拉星球居民達到200萬時，用戶可以將自己獲得的PAN在IXX交易所進行流通交易</text></text>
@@ -164,17 +164,17 @@
 			getBillData() {
 				getBill("0").then(data => {
 					this.listInfo = '';
-					console.log(this.listInfo)
+					// 、console.log(this.listInfo)
 					this.listInfo = data.splice(0, 10);
-					console.log(this.listInfo);
+					// console.log(this.listInfo);
 				});
 			},
 			getTaskData() {
 				checkTaskList().then(data => {
 					this.listInfo = '';
-					console.log(this.listInfo)
+					// console.log(this.listInfo)
 					this.listInfo = data;
-					console.log(this.listInfo);
+					// console.log(this.listInfo);
 				});
 			},
 			swichMenu: async function(current) {
@@ -186,13 +186,13 @@
 					this.labelList = 'task';
 					this.listInfo = '';
 					this.getTaskData();
-					console.log(current)
+					// console.log(current)
 				} else {
 					this.currentTab = current;
 					this.labelList = 'budget';
 					this.listInfo = '';
 					this.getBillData();
-					console.log(current)
+					// console.log(current)
 				}
 			},
 			// changeList(chooseItem) {
@@ -216,7 +216,7 @@
 					}
 					this.listInfo = this.listInfo.concat(data)
 					this.loadingType += 10
-					console.log(this.listInfo)
+					// console.log(this.listInfo)
 				});
 			},
 			toIxx() {
@@ -253,74 +253,7 @@
 			margin: 0 auto;
 			background-color: #131D21;
 
-			.pan-top {
-				width: 100%;
-				height: 85px;
-				padding: 10px 8px 8px 8px;
-				display: flex;
-				justify-content: space-between;
-
-
-
-				.pan-left {
-					text:nth-child(1) {
-						font-size: 14px;
-						line-height: 20px;
-					}
-
-					text:nth-child(2) {
-						font-size: 20px;
-						line-height: 27px;
-					}
-
-					text-align: center;
-
-					text {
-						margin-left: 21px;
-						display: block;
-						line-height: 20px;
-					}
-				}
-
-				.pan-right {
-					margin-right: 51px;
-
-					text:nth-child(1) {
-						font-size: 14px;
-						line-height: 20px;
-					}
-
-					text:nth-child(2) {
-						font-size: 20px;
-						line-height: 27px;
-					}
-
-					text-align: center;
-
-					text {
-						display: block;
-						line-height: 20px;
-					}
-				}
 			}
-
-			.pan-bottom {
-				width: 100%;
-				height: 30px;
-				background: rgba(255, 255, 255, 0.2);
-				text-align: center;
-
-				text:nth-child(1) {
-					font-size: 12px;
-					color: #B6B6B6;
-				}
-
-				text:nth-child(2) {
-					font-size: 14px;
-					margin-left: 5px;
-				}
-			}
-		}
 
 		&-label {
 			&-num {
@@ -500,13 +433,17 @@
 	}
 
 	.asset-left {
-		padding: 10px;
+		padding: 5px;
 		display: flex;
 		flex-direction: column;
 		text-align: center;
 		line-height: 20px;
 	}
-
+	.dollar{
+		font-size: 12px;
+		color: #CCCCCC;
+		display: inline-block !important;
+	}
 	.asset-left .balance {
 		font-size: 20px;
 		line-height: 30px;
@@ -514,7 +451,11 @@
 
 	.asset-right {
 		padding: 5px;
-		margin-right: 65px;
+		width: 40%;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		
 	}
 
 	.panData {

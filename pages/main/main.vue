@@ -1,7 +1,5 @@
 <template>
 	<view class="main-content" @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend">
-		<!-- <view v-if="hasLogin" class="hello"></view>
-        <view v-if="!hasLogin" class="hello"></view> -->
 		<view id="header" class="header">
 			<navigator class="header-border" url='../ledger/asset'>
 				<image src="../../static/img/main/pan.svg" class="header-icon" style="opacity: 0.7;" />
@@ -12,17 +10,15 @@
 				<text>原力 {{forceBalance}}</text>
 			</navigator>
 		</view>
-		<!-- <view class="header-border" style="border:0.1upx solid #8F8F94;">
-			<image src="../../static/img/main/laba.gif" class="header-icon" />
-			<text @tap="toNotice()">公益基金池建設中，首次捐贈10個PAN星球返回10個</text>
-		</view> -->
 		<view class="uni-swiper-msg ">
 			<view class="uni-swiper-msg-icon">
 				<image src="../../static/img/main/laba.gif" class="header-icon" />
 			</view>
 			<swiper vertical="true" autoplay="true" circular="true" interval="3000">
-				<swiper-item v-for="(item, index) in noticeMsg" :key="index">
-					<text>{{item}}</text>
+				<swiper-item v-for="(item, index) in noticeMsg" :key="index"  @tap="toNotice(index)">
+					<text>{{item.context}}</text>
+					<view class="dot" v-if="index == 0 && dotShow == true">
+					</view>
 				</swiper-item>
 			</swiper>
 		</view>
@@ -49,16 +45,14 @@
 			<view :class="{ avatar: isActive }">
 			</view>
 		</view>
-		<!-- swiper滑动器 -->
-		<view class="swiper-wrapper">
-			<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration"
-			 :circular="circular" next-margin="1upx" display-multiple-items=2>
-				<swiper-item v-for="(i, ind) in slides" :key="ind">
-					<navigator class="swiper-item" :url="i.linkTab">
+		<view class="scroll-wraaper">
+			<scroll-view class="scroll" scroll-x='true'>
+				<view class="scroll-item" v-for="(i, ind) in slides" :key="ind">
+					<navigator :url="i.linkTab">
 						<img :src="i.number" alt="加载失败">
 					</navigator>
-				</swiper-item>
-			</swiper>
+				</view>
+			</scroll-view>
 		</view>
 	</view>
 </template>
@@ -86,7 +80,7 @@
 	export default {
 		data() {
 			return {
-				noticeMsg: [],
+				noticeMsg: ["星球公益基金池建設中，首次捐贈10PAN星球將返還10PAN."],
 				slides: '',
 				indicatorDots: false,
 				autoplay: false,
@@ -111,13 +105,22 @@
 				text: '',
 				lastX: 0,
 				lastY: 0,
-				tga: true
+				tga: true,
+				dotShow: ''
 			}
 		},
 		components: {
 			uniNoticeBar
 		},
-
+		watch: {
+			'tokens': function() {
+				if (this.tokens.length == 0) {
+					this.bgColor = this.bgImage1;
+					this.bgColor1 = this.bgImage2;
+					this.isActive = true;
+				}
+			}
+		},
 		methods: {
 			handletouchmove: function(event) {
 				// console.log(event)
@@ -196,9 +199,13 @@
 					url: '../pan/pan'
 				});
 			},
-			toNotice() {
+			toNotice(index) {
+				if (index == 0) {
+					this.dotShow = false
+					uni.setStorageSync('dotShow_key', 1);
+				}
 				uni.navigateTo({
-					url: "notice"
+					url: "../notice/notice"
 				})
 			},
 			getMainSlider() {
@@ -209,13 +216,21 @@
 			async getToken(Token) { //获取token
 				let res = await this.api.homeToken(Token).getIndexPan();
 				if (res.data.status == 200) {
+					// console.log(this.tokens.length, res.data.data.length)
+					// if (this.tokens.length == res.data.data.length) {
+					// 	if (this.tokens.length == 0) {
+					// 		this.bgColor = this.bgImage1;
+					// 		this.isActive = true;
+					// 	}
+					// 	return
+					// }
 					this.tokens = res.data.data
+					// console.log(res.data.data)
 				}
 				if (this.tokens.length == 0) {
 					this.bgColor = this.bgImage1;
 					this.isActive = true;
 				} else {
-					// console.log("有")
 					this.bgColor = this.bgImage1;
 					this.isActive = false;
 				}
@@ -248,7 +263,7 @@
 					// console.log(allNum,num)
 					//当需要放置的元素的个数超过浏览器窗口内总共可以放置的元素的个数时，则返回
 					if (num >= allNum) {
-						this.tokens = this.tokens.slice(0, allNum-1)
+						this.tokens = this.tokens.slice(0, allNum - 1)
 					}
 					num = this.tokens.length;
 					for (let i = 0; i < allNum; i++) {
@@ -282,29 +297,24 @@
 					}
 					this.tokenList = arr;
 				}).exec();
-				// console.log(this.tokenList)
 			},
 
 			pushToken(item, index, e) { //收取token
-				this.initToken += 1;
 				this.tokenList[index].leftVal = 30;
 				this.tokenList[index].topVal = -this.tokenWidth - 64;
 				setTimeout(() => {
 					this.tokenList[index].display = 'none';
 					this.takePan(item.value, item.id, index);
-					if (this.initToken == this.tokens.length - 1) {
-						this.getToken(Token)
-						// console.log("1")
+					if (this.initToken > this.tokens.length) {
+						this.tokens = []
 						this.initToken = 0
-					}
-					if (this.initToken >= this.tokens.length) {
 						this.bgColor = this.bgImage1;
 						this.bgColor1 = this.bgImage2;
 						this.isActive = true;
-						this.initToken = 0
 					}
 				}, 800);
-
+				
+				
 			},
 			async takePan(token, id, index) {
 				let res = await this.api.homeToken(Token).takePan({
@@ -312,16 +322,41 @@
 					id: id
 				});
 				if (res.data.status == 200) {
+					var that = this
+					var voice = this.$store.state.defaultSettings.voice	
+					if (voice) {
+						if (this.flog) {
+							return
+						}
+						this.flog = true
+						const innerAudioContext = uni.createInnerAudioContext();
+						innerAudioContext.autoplay = true;
+						innerAudioContext.obeyMuteSwitch = true
+						innerAudioContext.src = 'http://pandla.io/images/static/pan.mp3';
+						innerAudioContext.onPlay(() => {
+							console.log('开始播放');
+						});
+						innerAudioContext.onError((res) => {
+							console.log(res.errMsg);
+							console.log(res.errCode);
+						});
+						innerAudioContext.onEnded(() => {
+							that.flog = false
+						})
+					}
+					this.initToken += 1;
 					this.panBalance += Number(token)
-					// this.tokenList.splice(index, 1)
-					// if (this.tokenList.length == 1) {
-					// 	this.getToken(Token)
-					// }
-
-					console.log(this.tokenList)
-					console.log(this.initToken)
+					if (this.initToken == this.tokens.length) {
+						this.initToken = 0
+						this.getToken(Token)
+					}
+				} 
+				if (res.data.status == 404) {
+					uni.showToast({
+						icon: 'none',
+						title: res.data.msg
+					});
 				}
-
 			},
 			getAllBalance() {
 				getBalance().then(data => {
@@ -333,24 +368,22 @@
 					this.forceBalance = data.balance
 				})
 			},
+
 			...mapActions(["connect"])
 		},
 		mounted() {
-			
 			getWyToken().then(data => {
-				
 				let uid = data.uid;
 				let sdktoken = data.wyToken
 				uni.setStorageSync('uid', uid)
 				uni.setStorageSync('sdktoken', sdktoken)
-				
 				this.connect()
 			})
 
 		},
 		onLoad(options) {
 			uni.showLoading({
-				title:"加载中"
+				title: "加载中"
 			})
 			Token = uni.getStorageSync('USERS_KEY').token;
 			this.getMainSlider();
@@ -358,16 +391,53 @@
 			this.getAllForBalance();
 			this.getToken(Token);
 			getIndexBulletin().then(data => {
-				// console.log(data)
+
 				this.noticeMsg = data
 			})
-			setTimeout(()=>{
+			setTimeout(() => {
 				uni.hideLoading()
-			},500)
+			}, 500)
+			var show = uni.getStorageSync('dotShow_key')
+			if (show == "") {
+				this.dotShow = true
+			} else if (show == 1) {
+				this.dotShow = false
+			}
 		},
 		onShow() {
+			var that = this
+			var token = uni.getStorageSync("USERS_KEY").token
+			if (!token) {	
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+							that.$store.dispatch('logoutnim')
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
+				});
+			}
+			if (this.tokens.length == 0) {
+				this.getToken(Token);
+			}
+			if (this.initToken > this.tokens.length) {
+				this.tokens = ""
+				this.initToken = 0
+				this.bgColor = this.bgImage1;
+				this.bgColor1 = this.bgImage2;
+				this.isActive = true;
+			}
 			this.getAllBalance();
 			this.getAllForBalance();
+			
 		}
 	}
 </script>
@@ -429,6 +499,7 @@
 	swiper-item text {
 		font-size: 12px;
 		margin-left: 0;
+		position: relative;
 	}
 
 	text {
@@ -438,6 +509,16 @@
 		overflow: hidden; //超出的文本隐藏
 		text-overflow: ellipsis; //溢出用省略号显示
 		white-space: nowrap; //溢出不换行
+	}
+
+	.dot {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color: red;
 	}
 
 	.uni-swiper-msg {
@@ -561,23 +642,42 @@
 		color: #4CD964;
 	}
 
-	// .swiper-wrapper{
-	// 	widows: 100%;
-	// 	overflow:hidden;
-	// 	overflow-y:auto
-	// 	
-	// }
-	.swiper {
-		position: absolute;
-		bottom: 40upx;
+
+
+	.scroll-wraaper {
 		width: 100%;
 		height: 450upx;
-		overflow: hidden;
+		box-sizing: border-box;
+		position: absolute;
+		bottom: 40upx;
+		white-space: nowrap;
 	}
 
-	.swiper-item>img {
+	.scroll {
+		width: 100%;
+		height: 450upx;
+		white-space: nowrap;
+	}
+
+	.scroll view {
+		display: inline-block;
+		margin-right: 40px;
+	}
+
+	.scroll .scroll-item:nth-child(5) {
+		margin-right: 20px;
+	}
+
+	.scroll-item {
 		width: 300upx;
 	}
+
+
+	navigator img {
+		width: 300upx;
+	}
+
+
 
 	/* 动画 */
 	.topTobottom {

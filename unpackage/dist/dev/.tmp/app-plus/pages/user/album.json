@@ -1,6 +1,8 @@
 {
   "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTitleText": "相冊",
   "navigationBarTextStyle": "black",
   "onReachBottomDistance": 50,
+  "bounce": "none",
   "usingComponents": {}
 }

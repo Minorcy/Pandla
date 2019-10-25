@@ -89,12 +89,13 @@
 						url: '../base/base',
 						label: '招募節點',
 						expla: ''
-					}, {
-						src: '../../static/img/user/relNameAuth.svg',
-						url: '../auth/auth',
-						label: '實名認證',
-						expla: 'PAN幣綫上交易所交易需要實名認證'
-					},
+					}, 
+					// {
+					// 	src: '../../static/img/user/relNameAuth.svg',
+					// 	url: '../auth/auth',
+					// 	label: '實名認證',
+					// 	expla: 'PAN幣綫上交易所交易需要實名認證'
+					// },
 					{
 						src: '../../static/img/user/option.svg',
 						url: '../setting/setting',
@@ -118,12 +119,11 @@
 					success(res) {
 						if (res.confirm) {
 							_this.logout();
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uni-storage-keys');
+							_this.logoutnim()
+							uni.clearStorage();
 							uni.reLaunch({
 								url: '../login/login'
 							});
-							_this.logoutnim()
 						}
 					}
 				});

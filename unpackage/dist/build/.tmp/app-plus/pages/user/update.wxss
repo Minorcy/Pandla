@@ -30,7 +30,7 @@ picker {
 	margin-top: 5rpx;
 }
 .uni-input {
-	margin-top: 15rpx;
+	
 	color: #4a4a4a;
 }
 m-input {
@@ -40,7 +40,9 @@ m-input {
 	float: right;
 }
 .popup-btn {
+	
 	margin-top: 9px;
+	margin-left: 10px;
 	color: #4a4a4a;
 }
 

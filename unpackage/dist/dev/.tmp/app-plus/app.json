@@ -4,12 +4,11 @@
     "pages/login/login",
     "pages/login/Verification",
     "pages/reg/reg",
-    "pages/reg/regs",
     "pages/reg/termsofservice",
     "pages/reg/Privacypolicy",
     "pages/pwd/pwd",
     "pages/main/main",
-    "pages/main/notice",
+    "pages/notice/notice",
     "pages/pact/pact",
     "pages/pact/pactVoteDetail",
     "pages/daily/daily",
@@ -31,8 +30,6 @@
     "pages/msg/msg",
     "pages/msg/chat",
     "pages/msg/chatSettings",
-    "pages/msg/test",
-    "pages/msg/Receive",
     "pages/msg/report",
     "pages/msg/news/connMsg",
     "pages/msg/news/system",
@@ -54,6 +51,7 @@
     "pages/strategy/strategy",
     "pages/welfare/welfare",
     "pages/setting/setting",
+    "pages/setting/contactUs",
     "pages/setting/introduce",
     "pages/setting/blacklist",
     "pages/user/album",
@@ -108,10 +106,10 @@
   "nvueCompiler": "weex",
   "renderer": "auto",
   "splashscreen": {
-    "alwaysShowBeforeRender": true,
-    "autoclose": false
+    "alwaysShowBeforeRender": false,
+    "autoclose": true
   },
   "appname": "Pandla",
-  "compilerVersion": "2.3.3",
+  "compilerVersion": "2.3.6",
   "usingComponents": {}
 }

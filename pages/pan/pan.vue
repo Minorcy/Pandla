@@ -5,11 +5,12 @@
 			<view class="fundPool" :style="{backgroundImage: 'url('+bgImg+')'}">
 				<view class="top">
 					<image src="../../static/img/pan/love.svg" mode=""></image>
-					<text>潘多拉星球
-						公益基金池</text>
+					<view class="">
+						<text>潘多拉星球</text><text>公益基金池</text>
+					</view>
 				</view>
 				<view class="bottom">
-					<text class="title">让我們的爱更有力量</text>
+					<text class="title">让我們的愛更有力量</text>
 					<view class="donate">
 						<view class="modifi">
 							<text @click="sub">-</text>
@@ -21,7 +22,7 @@
 				</view>
 			</view>
 			<view class="panShow">
-				<text>已籌集枚{{propInfo.pollSum|toFixed(0) }}PAN幣</text>
+				<text>已籌集{{propInfo.pollSum|toFixed(0) }}枚PAN幣</text>
 			</view>
 			<view class="donateShow">
 				<text>您捐贈的數量：{{propInfo.oneself}}枚</text>
@@ -141,6 +142,8 @@
 						this.getMyIndex();
 					});
 				}
+				// var token = uni.getStorageSync('USERS_KEY').token;
+				// plus.runtime.openURL('http://pandla.io/images/html/index.html?token='+token)
 			},
 			getChang() {
 				getChange_24h().then(data => {
@@ -170,6 +173,10 @@
 		onLoad() {
 			this.getMyIndex();
 			this.getChang()
+			uni.hideTabBarRedDot({
+				index:2
+			})
+			uni.setStorageSync('tabDot_KEY', 1);
 		},
 		onShow() {
 			this.getMyIndex();
@@ -234,13 +241,15 @@
 		width: 60px;
 		height: 60px;
 	}
-
-	.top>text {
-		/* display: block; */
+	.top>view{
+		margin: 8px;
+	}
+	.top>view>text {
+		display: block;
 		color: #FFFFFF;
 		font-size: 18px;
 		line-height: 1.5;
-		margin: 8px;
+
 	}
 
 

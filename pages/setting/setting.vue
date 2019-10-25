@@ -18,7 +18,7 @@
 		<view class="item" @tap="toPrivacypolicy">
 			<text >隱私政策</text>
 		</view>
-		<view class="item">
+		<view class="item" @tap="toContactUS">
 			<text>聯繫我們</text>
 		</view>
 		
@@ -52,6 +52,11 @@
 					url: "/pages/reg/Privacypolicy"
 				});
 				
+			},
+			toContactUS(){
+				uni.navigateTo({
+					url: "contactUs"
+				});
 			},
 			eliminate(){
 				var that = this

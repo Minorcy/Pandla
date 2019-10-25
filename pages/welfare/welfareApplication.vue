@@ -9,6 +9,14 @@
 				    <m-input type="number" v-model="barInfo.phone" maxlength="11" placeholder="聯係電話" clearable></m-input>
 				</view>
 				<view class="input-row border">
+					<text class="title">位置</text>
+					<!-- 用于弹出底部框-->
+					<view class="popup-btn" @tap="popup_bottom()">{{barInfo.address}}</view>
+					<!-- 选择组件 -->
+					<linkAddress ref="linkAddress" :height="height" @confirmCallback="confirmCallback">
+					</linkAddress>
+				</view>
+				<view class="input-row border">
 					<m-input type="text" v-model="barInfo.location" placeholder="詳細地址" clearable></m-input>
 				</view>
 				<view class="input-row border">
@@ -28,17 +36,21 @@
 </template>
 
 <script>
+	import linkAddress from '@/components/xuan-linkAddress/xuan-linkAddress.vue'
     import mInput from '../../components/m-input.vue';
 	import {upload, getImgTemp, setBar,createBenfit} from '../../api/api.js';
 	import {welfareValidate} from '../../common/js/validate.js';
 
     export default {
         components: {
-            mInput
+            mInput,
+			linkAddress
         },
         data() {
 			return {
+				height: '550rpx',
 				barInfo: {
+					address:'請選擇',
 					name: '',
 					phone: '',
 					location: '',
@@ -53,6 +65,21 @@
 			}
         },
         methods: {
+			// <!-- 点击弹出-->
+			popup_bottom: function() {
+				this.height = '550rpx';
+				//显示
+				this.show_popup();
+			},
+			// <!-- 显示弹窗-->
+			show_popup: function() {
+				this.$refs.linkAddress.show();
+			},
+			// <!-- 回掉-->
+			confirmCallback: function(address) {
+				console.log(address)
+				this.barInfo.address = address;
+			},
 			upLogoImg() {
 				getImgTemp().then(data => {
 					this.avatar = data;
@@ -63,6 +90,13 @@
 				});
 			},
 			commitVer() {
+				if(this.barInfo.address == "請選擇"){
+					uni.showToast({
+						icon:'none',
+						title:"請選擇位置"
+					})
+					return
+				}
 				if(welfareValidate(this.barInfo, this.isUpload)) {
 					uni.navigateTo({
 						url: 'welfareUpload?barInfo=' + JSON.stringify(this.barInfo)
@@ -97,9 +131,19 @@
 		padding: 10px;
 		box-sizing: border-box;
 	}
-	
+	.input-row .title{
+		color: grey;
+		    width: 20%;
+		    height: 25px;
+		    min-height: 25px;
+		    padding: 7px 0;
+		    padding-left: 7px;
+		    line-height: 30px;
+			font-size: 16px;
+	}
 	.btn-row {
 		padding-top: 0;
+		
 	}
 	.uni-input {
 		margin-top: 15upx;
@@ -109,5 +153,9 @@
 	}
 	navigator {
 		margin-top: 70upx;
+	}
+	.popup-btn {
+		margin-top: 9px;
+		color: #4a4a4a;
 	}
 </style>

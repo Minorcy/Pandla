@@ -19,7 +19,7 @@ const nimURL = URL + 'wy/';
 const nearbyUrl = URL + 'nearby/'
 const reportUrl = URL + 'sys/report/';
 const pushUrl = URL + 'push/'
-const ixxUrl = 'https://www.ixex.pro/'
+const ixxUrl = URL + 'ixx/'
 const mapUrl = URL + 'map/'
 
 /*********************登录注册***************************/
@@ -40,11 +40,10 @@ export const login = (account, password) => {
 				uni.setStorageSync('USERS_KEY', res.data.data);
 				Token = uni.getStorageSync('USERS_KEY').token;
 				registerWyAccount()
-				setTimeout(function() {
-					uni.reLaunch({
-						url: '../login/Verification'
-					});
-				}, 500)
+				uni.reLaunch({
+					url: '../login/Verification'
+				});
+
 			}
 			if (res.data.status == 404) {
 				uni.showToast({
@@ -69,26 +68,39 @@ export const login = (account, password) => {
 };
 
 // 验证码
-export const sendCode = (account) => {
+export const sendCode = (account, type) => new Promise((resolve, reject) => {
 	uni.request({
 		url: systemUrl + 'sendCode',
 		data: {
 			parame: account,
+			type: type
 		},
-		success() {
-			uni.showToast({
-				icon: 'none',
-				title: '發送成功'
-			})
+		success(res) {
+			if (res.data.status == 200) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.data
+				})
+				resolve(res.data.data)
+			}
+			if (res.data.status == 400) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
+				})
+				resolve(null)
+			}
+
 		},
 		fail() {
 			uni.showToast({
 				icon: 'none',
 				title: '發送失败了，请稍后重试'
 			});
+			
 		}
 	});
-};
+});
 
 // 注册
 export const register = (password, account, regCode, inviteCode) => {
@@ -266,6 +278,24 @@ export const getAllSocialInfo = () => new Promise((resolve, reject) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
+			if (res.data.status == 500) {
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
@@ -338,6 +368,24 @@ export const getInfo = (uid) => new Promise((resolve, reject) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
+			if (res.data.status == 500) {
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
@@ -367,7 +415,25 @@ export const getDyn = (uid, pageSize) => new Promise((resolve, reject) => {
 					icon: 'none',
 					title: '暫無更多相片'
 				});
+				resolve(null)
+			}
+			if (res.data.status == 500) {
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
 
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
+				});
 			}
 		},
 		fail: (err) => {
@@ -392,6 +458,24 @@ export const getAlbum = () => new Promise((resolve, reject) => {
 			// console.log(res.data.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
+			if (res.data.status == 500) {
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
@@ -482,13 +566,31 @@ export const findAllDyn = (count) => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success: (res) => {
-			console.log(res.data);
+			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
 			if (res.data.status == 404) {
 				uni.showToast({
 					icon: 'none',
 					title: '没有更多数据了'
+				});
+			}
+			if (res.data.status == 500) {
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
 				});
 			}
 		},
@@ -935,7 +1037,24 @@ export const checkNearbyPerson = (lng, lat, scope, info) => new Promise((resolve
 		},
 		success: (res) => {
 			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 500) {
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
 
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
@@ -1004,6 +1123,24 @@ export const getIndex = () => new Promise((resolve, reject) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
+			if (res.data.status == 500) {
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
@@ -1108,6 +1245,24 @@ export const getBalance = () => new Promise((resolve, reject) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
+			if (res.data.status == 500) {
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
@@ -1137,6 +1292,24 @@ export const getBill = (pageSize) => new Promise((resolve, reject) => {
 					title: '暫無更多數據'
 				});
 			};
+			if (res.data.status == 500) {
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
@@ -1159,6 +1332,24 @@ export const checkTaskList = () => new Promise((resolve, reject) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
+			if (res.data.status == 500) {
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
@@ -1329,6 +1520,24 @@ export const signinMsg = () => new Promise((resolve, reject) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
+			if (res.data.status == 500) {
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
@@ -1466,7 +1675,7 @@ export const setBar = (barInfo) => new Promise((resolve, reject) => {
 		data: {
 			"intro": barInfo.intro,
 			"license": barInfo.license,
-			"location": barInfo.location,
+			"location": barInfo.address + barInfo.location,
 			"logo": barInfo.logo,
 			"name": barInfo.name,
 			"phone": barInfo.phone,
@@ -1559,7 +1768,7 @@ export const createBenfit = (barInfo) => new Promise((resolve, reject) => {
 		data: {
 			"intro": barInfo.intro,
 			"license": barInfo.license,
-			"location": barInfo.location,
+			"location": barInfo.address + barInfo.location,
 			"logo": barInfo.logo,
 			"name": barInfo.name,
 			"phone": barInfo.phone,
@@ -1737,7 +1946,8 @@ export const getImgTemp = () => new Promise((resolve, reject) => {
 			const tempFilePaths = chooseImageRes.tempFilePaths;
 			resolve(tempFilePaths[0]);
 		},
-		fail() {
+		fail(res) {
+			console.log(res)
 			uni.showToast({
 				icon: 'none',
 				title: '出錯了，請稍後重試'
@@ -1899,6 +2109,24 @@ export const getPushLikeMsg = () => new Promise((resolve, reject) => {
 		},
 		success(res) {
 			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 500) {
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
+				});
+			}
 		}
 	});
 });
@@ -1912,6 +2140,24 @@ export const getPushSystemMsg = () => new Promise((resolve, reject) => {
 		},
 		success(res) {
 			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 500) {
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
+				});
+			}
 		}
 	});
 });
@@ -1925,6 +2171,24 @@ export const upStatus = (type) => new Promise((resolve, reject) => {
 		},
 		success(res) {
 			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 500) {
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+
+							uni.clearStorageSync('USERS_KEY');
+							uni.clearStorageSync('uid');
+							uni.clearStorageSync('sdktoken')
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					}
+				});
+			}
 		}
 	});
 });
@@ -1957,7 +2221,8 @@ export const getCoordinate = (location) => new Promise((resolve, reject) => {
 //getDistance获得两个经纬度之间的距离
 export const getDistance = (lat1Str, lng1Str, lat2Str, lng2Str) => new Promise((resolve, reject) => {
 	uni.request({
-		url: mapUrl + 'getDistance?lat1Str=' + lat1Str + '&lng1Str=' + lng1Str +'&lat2Str=' + lat2Str + '&lng2Str=' + lng2Str,
+		url: mapUrl + 'getDistance?lat1Str=' + lat1Str + '&lng1Str=' + lng1Str + '&lat2Str=' + lat2Str + '&lng2Str=' +
+			lng2Str,
 		header: {
 			'token': Token
 		},
@@ -1968,20 +2233,132 @@ export const getDistance = (lat1Str, lng1Str, lat2Str, lng2Str) => new Promise((
 });
 /****************************ixx********************************/
 //获取验邮箱证码
-export const sendECode = (email) => new Promise((resolve, reject) => {
+export const sendEmailCode = (email) => new Promise((resolve, reject) => {
 	uni.request({
 		url: "https://i.ixex.io/user/register/email/code",
 		header: {
-			'content-type': 'text/plain',
+			'content-type': 'application/json',
 			'FROM': 'ix',
-			'Origin': 'https://www.ixex.io',
+			'LANG': 'zh-cn',
+			'ORIGIN': 'https://www.ixex.io',
 		},
-		data:{
-			'email':email
+		data: {
+			'email': email
 		},
 		method: 'POST',
 		success(res) {
+			console.log(res)
+			resolve(res.data);
+		},
+		fail(err) {
+			console.log(err)
+		}
+	});
+});
+
+//获取验手機证码
+export const sendPhoneCode = (phone, region) => new Promise((resolve, reject) => {
+	uni.request({
+		url: "https://i.ixex.io/user/register/phone/code",
+		header: {
+			'content-type': 'application/json',
+			'FROM': 'ix',
+			'LANG': 'zh-cn',
+			'ORIGIN': 'https://www.ixex.io',
+		},
+		data: {
+			'phone': phone,
+			'region': region
+		},
+		method: 'POST',
+		success(res) {
+			console.log(res)
+			resolve(res.data);
+		},
+		fail(err) {
+			console.log(err)
+		}
+	});
+});
+
+
+//郵箱注册
+export const ixxEmailRegister = (params) => new Promise((resolve, reject) => {
+	var id = uni.getStorageSync('USERS_KEY').id;
+	uni.request({
+		url: "https://i.ixex.io/user/register/email",
+		header: {
+			'content-type': 'application/json',
+			'FROM': 'ix',
+			'LANG': 'zh-cn',
+			'ORIGIN': 'https://www.ixex.io',
+		},
+		data: {
+			'email': params.email,
+			'code': params.code,
+			'password': params.password,
+			'invitor_id': "199754",
+			'utm_source': "",
+			'pan': id
+		},
+		method: 'POST',
+		success(res) {
+			console.log(res)
+			resolve(res.data);
+		},
+		fail(err) {
+			console.log(err)
+		}
+	});
+});
+
+//手機註冊
+export const ixxPhoneRegister = (params) => new Promise((resolve, reject) => {
+	var id = uni.getStorageSync('USERS_KEY').id;
+	uni.request({
+		url: "https://i.ixex.io/user/register/phone",
+		header: {
+			'content-type': 'application/json',
+			'FROM': 'ix',
+			'LANG': 'zh-cn',
+			'ORIGIN': 'https://www.ixex.io',
+		},
+		data: {
+			'phone': params.phone,
+			'region': params.region,
+			'code': params.code,
+			'password': params.password,
+			'invitor_id': "199754",
+			'utm_source': "",
+			'pan': id
+		},
+		method: 'POST',
+		success(res) {
+			console.log(res)
+			resolve(res.data);
+		},
+		fail(err) {
+			console.log(err)
+		}
+	});
+});
+
+//GET regIxxAccount注册成功给予奖励
+export const regIxxAccount = (ixxId) => new Promise((resolve, reject) => {
+	uni.request({
+		url: ixxUrl + 'regIxxAccount?ixxId=' + ixxId,
+		header: {
+			'token': Token
+		},
+		success(res) {
 			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					duration: 2000,
+					title: "該用戶已註冊"
+				})
+			};
 		}
 	});
 });

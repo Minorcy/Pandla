@@ -569,11 +569,11 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.page.data-v-4667b0bd {
+.page.data-v-24eae460 {
   width: 100%;
   background: #fff;
 }
-.page .msg-tab.data-v-4667b0bd {
+.page .msg-tab.data-v-24eae460 {
     margin-top: 20px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -583,55 +583,55 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
         -ms-flex-pack: distribute;
             justify-content: space-around;
 }
-.page .msg-tab view.data-v-4667b0bd {
+.page .msg-tab view.data-v-24eae460 {
       position: relative;
       width: 60px;
 }
-.page .msg-tab .comm-badge.data-v-4667b0bd {
+.page .msg-tab .comm-badge.data-v-24eae460 {
       position: absolute;
       top: -10px;
       right: -5px;
       z-index: 10;
 }
-.page .msg-tab .fab-badge.data-v-4667b0bd {
+.page .msg-tab .fab-badge.data-v-24eae460 {
       position: absolute;
       top: -10px;
       right: -5px;
       z-index: 10;
 }
-.page .msg-tab .fans-badge.data-v-4667b0bd {
+.page .msg-tab .fans-badge.data-v-24eae460 {
       position: absolute;
       top: -10px;
       right: -5px;
       z-index: 10;
 }
-.page .msg-tab .comment-badge.data-v-4667b0bd {
+.page .msg-tab .comment-badge.data-v-24eae460 {
       position: absolute;
       top: -10px;
       right: -5px;
       z-index: 10;
 }
-.page .msg-tab image.data-v-4667b0bd {
+.page .msg-tab image.data-v-24eae460 {
       margin-left: 10px;
       width: 40px;
       height: 40px;
 }
-.page .msg-tab text.data-v-4667b0bd {
+.page .msg-tab text.data-v-24eae460 {
       font-size: 14px;
       display: block;
       text-align: center;
 }
-.page .msg-search.data-v-4667b0bd {
+.page .msg-search.data-v-24eae460 {
     width: 100%;
     margin: 20px 0 20px 0;
 }
-.page .msg-search .input-box.data-v-4667b0bd {
+.page .msg-search .input-box.data-v-24eae460 {
       width: 90%;
       margin: 0 auto;
       height: 30px;
       position: relative;
 }
-.page .msg-search .input-box image.data-v-4667b0bd {
+.page .msg-search .input-box image.data-v-24eae460 {
         width: 20px;
         height: 20px;
         display: inline-block;
@@ -639,7 +639,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
         top: 5px;
         left: 5px;
 }
-.page .msg-search .input-box input.data-v-4667b0bd {
+.page .msg-search .input-box input.data-v-24eae460 {
         display: block;
         height: 30px;
         background: #e1e1e1;
@@ -650,7 +650,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
         text-decoration: none;
         outline: none;
 }
-.system-message.data-v-4667b0bd {
+.recentchat-wrapper.data-v-24eae460 {
   border-top: 1px solid #CCCCCC;
   margin-top: 20px;
   width: 100%;
@@ -662,22 +662,10 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
   overflow-y: scroll;
   box-sizing: border-box;
 }
-.recentchat-wrapper.data-v-4667b0bd {
-  border-top: 1px solid #CCCCCC;
-  margin-top: 20px;
-  width: 100%;
-  padding: 0 22rpx;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: #fff;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  box-sizing: border-box;
-}
-.recentchat-wrapper.data-v-4667b0bd:first-child {
+.recentchat-wrapper.data-v-24eae460:first-child {
   border-top: 1px solid rgba(220, 220, 220, 0.5);
 }
-.no-recent.data-v-4667b0bd {
+.no-recent.data-v-24eae460 {
   width: 100%;
   position: fixed;
   top: 20%;
@@ -701,16 +689,16 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
           align-items: center;
   margin-left: -20rpx;
 }
-.no-recent-image.data-v-4667b0bd {
+.no-recent-image.data-v-24eae460 {
   width: 550rpx;
   height: 200rpx;
   margin-bottom: 40rpx;
 }
-.no-recent-text.data-v-4667b0bd {
+.no-recent-text.data-v-24eae460 {
   width: 100%;
   text-align: center;
 }
-.recentchat-item.data-v-4667b0bd {
+.recentchat-item.data-v-24eae460 {
   width: 100%;
   height: 132rpx;
   padding: 20rpx 28rpx 20rpx 0;
@@ -722,21 +710,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
   display: flex;
   border-bottom: 1px solid rgba(220, 220, 220, 0.5);
 }
-.recentchat-img.data-v-4667b0bd {
-  width: 100rpx;
-  height: 100rpx;
-  margin-right: 24rpx;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-self: center;
-      -ms-flex-item-align: center;
-          align-self: center;
-}
-.recentchat-item-img.data-v-4667b0bd {
+.recentchat-item-img.data-v-24eae460 {
   width: 100rpx;
   height: 100rpx;
   margin-right: 24rpx;
@@ -751,7 +725,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
           align-self: center;
   border-radius: 100%;
 }
-.recentchat-item-right.data-v-4667b0bd {
+.recentchat-item-right.data-v-24eae460 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -769,12 +743,12 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
       -ms-flex-pack: distribute;
           justify-content: space-around;
 }
-.recentchat-item-right .recentchat-item-message.data-v-4667b0bd {
+.recentchat-item-right .recentchat-item-message.data-v-24eae460 {
   font-size: 28rpx;
   color: #ccc;
   word-break: break-all;
 }
-.recentchat-item-top.data-v-4667b0bd {
+.recentchat-item-top.data-v-24eae460 {
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
           align-self: flex-start;
@@ -796,7 +770,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
   line-height: 44rpx;
   font-size: 36rpx;
 }
-.recentchat-item-bottom.data-v-4667b0bd {
+.recentchat-item-bottom.data-v-24eae460 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -815,7 +789,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
   height: 44rpx;
   line-height: 44rpx;
 }
-.recentchat-item-bottom .recentchat-item-desc.data-v-4667b0bd {
+.recentchat-item-bottom .recentchat-item-desc.data-v-24eae460 {
   max-width: 400rpx;
   overflow: hidden;
   display: inline-block;
@@ -823,10 +797,10 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
 }
-.max-desc.data-v-4667b0bd {
+.max-desc.data-v-24eae460 {
   max-width: 243px !important;
 }
-.recentchat-item-bottom .recentchat-item-unread.data-v-4667b0bd {
+.recentchat-item-bottom .recentchat-item-unread.data-v-24eae460 {
   background: #F43530;
   border-radius: 18rpx;
   width: 52rpx;
@@ -836,7 +810,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
   font-size: 22rpx;
   color: #fff;
 }
-.recentchat-item-top .recentchat-item-title.data-v-4667b0bd {
+.recentchat-item-top .recentchat-item-title.data-v-24eae460 {
   overflow: hidden;
   max-width: 330rpx;
   -o-text-overflow: ellipsis;
@@ -844,7 +818,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
   white-space: nowrap;
   font-size: 32rpx;
 }
-.recentchat-item-top .recentchat-item-time.data-v-4667b0bd {
+.recentchat-item-top .recentchat-item-time.data-v-24eae460 {
   font-size: 24rpx;
   color: #9B9B9B;
 }

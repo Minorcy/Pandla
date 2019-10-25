@@ -7,13 +7,15 @@
     "buttons": [
       {
         "text": "",
-        "color": "#000000",
+        "color": "#999999",
+        "fontSize": "20px",
         "fontSrc": "/static/font/iconfont.ttf"
       }
     ]
   },
   "softinputMode": "adjustResize",
   "usingComponents": {
-    "lu-popup-wrapper": "/components/lu-popup-wrapper/lu-popup-wrapper"
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "uni-tag": "/components/uni-tag/uni-tag"
   }
 }

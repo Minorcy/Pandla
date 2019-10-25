@@ -2,20 +2,20 @@
 	<view class="passport">
 		<view class="passport-wrapper">
 			<view class="top">
-				<text>潘多拉星球永久居民</text>
+				<text>PASSPORT</text>
 			</view>
 			<view class="passport-content">
 				<image :src="userInfo.portrait" mode="aspectFill"></image>
 				<view class="content-right">
 					<view class="info">
 						<view class="info-left">
-							<text>昵称</text>
+							<text>昵稱</text>
 							<text>{{userInfo.name}}</text>
 							<text>
 								移民星球日期
 							</text>
 							<text>
-								{{userInfo.createTime | formatDate }}
+								{{userInfo.createTime }}
 							</text>
 						</view>
 						<view class="info-right">
@@ -28,17 +28,18 @@
 							<tki-barcode ref="barcode" :val="val" format="code39" />
 						</view>
 						<text>ID:</text>
-						<text>u{{userInfo.id}}</text>
+						<text>U{{userInfo.id}}</text>
 					</view>
 				</view>
+				<image src="../../static/img/passport/passport.png"  class="seal"></image>
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import {findByID} from '@/api/api.js'
 	import tkiBarcode from "@/components/tki-barcode/tki-barcode.vue"
-	import dateFormat from '@/common/utils/Date.js'
 	export default {
 		components: {
 			tkiBarcode
@@ -47,10 +48,6 @@
 			return {
 				userInfo: '',
 				val: "",
-				// opations: {
-				// 	height: 8,
-				// 	displayValue: false
-				// },
 				opations: {
 					width: 4,
 					height: 4,
@@ -59,27 +56,14 @@
 				}
 			}
 		},
-		filters: {
-			formatDate(time) {
-				// let date = new Date(time);
-				// console.log(date)
-				// return dateFormat.formatDate(date, "yyyy.MM.dd");
-				// formatDate
-				// console.log(time)
-				// var now = new Date(time),
-				// 	y = now.getFullYear(),
-				// 	m = now.getMonth() + 1,
-				// 	d = now.getDate();
-				// return y + "-" + (m < 10 ? "0" + m : m) + "-" + (d < 10 ? "0" + d : d) ;
-				// // + now.toTimeString().substr(0, 8);
-				return time.substr(0,10)
-			}
-
-		},
-
 		onLoad() {
-			this.userInfo = uni.getStorageSync('USERS_KEY')
-			this.val = this.userInfo.id.toString()
+			this.val = uni.getStorageSync('USERS_KEY').id.toString()
+			findByID().then(data => {
+				console.log(data)
+				data.createTime = data.createTime.substr(0,10)
+				this.userInfo = data
+				
+			})
 		}
 
 	}
@@ -104,30 +88,38 @@
 		width: 100%;
 		height: 51px;
 		background: rgba(19, 29, 33, 1);
-		text-align: center;
 		overflow: hidden;
+		display: flex;
+		flex-direction: row-reverse;
+		box-sizing: border-box;
+		padding: 5px 10px;
 	}
-
 	.top text {
-		margin: 10px 20px;
 		display: block;
-		width: 342px;
-		height: 28px;
-		font-size: 20px;
+		height: 40px;
+		font-size: 34px;
 		font-weight: 300;
 		color: rgba(255, 255, 255, 1);
-		line-height: 28px;
-		letter-spacing: 18px;
+		line-height: 40px;
+		letter-spacing: 2px;
 	}
 
 	.passport-content {
+		position: relative;
 		box-sizing: border-box;
 		display: flex;
 		width: 100%;
 		height: 161px;
 		padding: 10px;
 	}
-
+.passport-content .seal{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	bottom: 5px;
+	right: 0px;
+	z-index: 9;
+}
 	.passport-content image {
 		width: 105px;
 		height: 138px;

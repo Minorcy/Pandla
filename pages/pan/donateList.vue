@@ -1,32 +1,26 @@
 <template>
-	<view class="donate-page">
-		<!-- <view>
-			<li v-for="(item, index) in donateList" :key='index'>
-				<text>{{index+1}}</text>
-				<image :src="item.portrait" mode="aspectFill" />
-				<text>{{item.name}}</text>
-				<text :style="{color: textColor[index]}">{{item.number|toFixed(0)}}</text>
-			</li>
-		</view> -->
-		<view class="ranking" v-if="!isShow">
-			<text>您的捐赠数量: {{meRanking.number|toFixed(0)}}</text>
-			<text>排名:{{meRanking.rownum}}</text>
-		</view>
-		<view class="ranking-none" v-if="isShow">
-			<text>您还未捐赠，赶紧去捐赠吧！</text>
-		</view>
-		<scroll-view class="list">
-			<view class="list-item" v-for="(item, index) in donateList" :key='index'>
-				<view class="item-info">
-					<text :style="{color: textColor[index]}">{{index+1}}</text>
-					<image :src="item.portrait" mode="aspectFill" />
-					<text :style="{color: textColor[index]}" class="name">{{item.name}}</text>
+	<view class="donate-page" >
+			<scroll-view scroll-y="true"  class="scroll" enable-back-to-top="true">
+				<view class="ranking" v-if="!isShow">
+					<text>您的捐贈數量: {{meRanking.number|toFixed(0)}}</text>
+					<text>排名:{{meRanking.rownum}}</text>
 				</view>
-				<view class="number">
-					<text :style="{color: textColor[index]}">{{item.number|toFixed(0)}}</text>
+				<view class="ranking-none" v-if="isShow">
+					<text>您的捐贈數量您還未捐贈，趕緊去捐贈吧！</text> 
 				</view>
-			</view>
-		</scroll-view>
+				<view class="list">
+					<view class="list-item" v-for="(item, index) in donateList" :key='index'>
+						<view class="item-info">
+							<text :style="{color: textColor[index]}">{{index+1}}</text>
+							<image :src="item.portrait" mode="aspectFill" />
+							<text :style="{color: textColor[index]}" class="name">{{item.name}}</text>
+						</view>
+						<view class="number">
+							<text :style="{color: textColor[index]}">{{item.number|toFixed(0)}}</text>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
 	</view>
 </template>
 
@@ -42,20 +36,18 @@
 				textColor: ['#ff0000', '#ff0000', '#ff0000'],
 				meRanking: {},
 				isShow: false,
-				flag:true
+				flag: true,
+				maxHeight: ""
 			}
 		},
 		methods: {
 			getDonateList() {
 				getPollTop().then(data => {
-
-					this.donateList = data.slice(0, 20);
+					this.donateList = data;
 				});
 				getMeRanking().then(data => {
-
 					if (!data) {
 						this.isShow = true
-						console.log("1")
 						return
 					}
 					this.meRanking = data
@@ -63,17 +55,9 @@
 				})
 			}
 		},
-		onReachBottom() {
-			if(!this.flag){
-				return
-			}
-			getPollTop().then(data => {
-				this.donateList = this.donateList.concat(data.slice(20));
-				this.flag = false
-			});
-		},
 		onLoad() {
 			this.getDonateList();
+			
 		}
 	}
 </script>
@@ -84,13 +68,22 @@
 		padding: 10px;
 		box-sizing: border-box;
 		background-color: #FFFFFF;
-		-webkit-overflow-scrolling: touch;
+		/* -webkit-overflow-scrolling: touch;
 		overflow-scrolling: touch;
-		overflow-y: scroll;
+		overflow-y: scroll; */
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
 	}
-
+	.scroll{
+		width: 100%;
+		height: 100%;
+	}
 	.ranking {
-		position: sticky;
+		position: relative;
 		top: 0px;
 		width: 100%;
 		padding: 10px 20px;
@@ -122,7 +115,7 @@
 	.list {
 		box-sizing: border-box;
 		width: 100%;
-		padding: 10px;
+		padding: 10px 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

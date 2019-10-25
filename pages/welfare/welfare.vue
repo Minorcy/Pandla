@@ -85,6 +85,11 @@
 			// 	}
 			// });
 			this.getBenfitListData();
+		},
+		onBackPress() {
+			uni.switchTab({
+				url: '/pages/main/main'
+			});
 		}
 	}
 </script>

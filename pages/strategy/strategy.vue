@@ -10,9 +10,7 @@
 			<text>PAN幣有什麼用處?</text>
 		</view>
 		<view class="constant-text">
-			<text>PAN幣是潘多拉星球唯一權益證明，用於紀戶價值與貢獻，用戶根據自己持有PAN的數量獲得分潤
-
-				PAN幣可以用於流通交易，消費，打賞，兌換，公益捐贈等</text>
+			<text>PAN幣是潘多拉星球唯一權益證明，用於記錄用戶價值與貢獻，用戶根據自己持有PAN的數量獲得分潤PAN幣可以用於流通交易，消費，打賞，兌換，公益捐贈等</text>
 		</view>
 		<view class="title">
 			<text>如何獲取原力?</text>
@@ -88,11 +86,11 @@
 				<text>共獲得100PAN幣</text>
 			</view>
 			<view class="force">
-				<text>邀請11-20位有效用戶</text>
+				<text>邀請第11-20位有效用戶</text>
 				<text>共獲得300個PAN幣</text>
 			</view>
 			<view class="force">
-				<text>邀請21-100位有效用戶</text>
+				<text>邀請第21-100位有效用戶</text>
 				<text>共獲得4000個PAN幣</text>
 			</view>
 		</view>

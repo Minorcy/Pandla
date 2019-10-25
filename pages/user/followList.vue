@@ -19,7 +19,7 @@
 						<view class="list-item-right">
 							<view class="item-userInfo">
 								<text class="name">{{item.name}}</text>
-								<text class="circles">{{item.age}}/{{item.stature}}/{{item.weight}}/{{item.status}}</text>
+								<text class="circles">{{item.age}}/{{item.stature}}/{{item.weight}}/{{item.acctType}}</text>
 								<text class="address">{{item.site}}</text>
 							</view>
 							<view class="item-btn">
@@ -36,7 +36,7 @@
 						<view class="list-item-right">
 							<view class="item-userInfo">
 								<text class="name">{{item.name}}</text>
-								<text class="circles">{{item.age}}/{{item.stature}}/{{item.weight}}/{{item.status}}</text>
+								<text class="circles">{{item.age}}/{{item.stature}}/{{item.weight}}/{{item.acctType}}</text>
 								<text class="address">{{item.site}}</text>
 							</view>
 							<view class="item-btn">
@@ -53,7 +53,7 @@
 						<view class="list-item-right">
 							<view class="item-userInfo">
 								<text class="name">{{item.name}}</text>
-								<text class="circles">{{item.age}}/{{item.stature}}/{{item.weight}}/{{item.status}}</text>
+								<text class="circles">{{item.age}}/{{item.stature}}/{{item.weight}}/{{item.acctType}}</text>
 								<text class="address">{{item.site}}</text>
 							</view>
 							<view class="item-btn">
@@ -150,7 +150,8 @@
 				var that = this
 				uni.showModal({
 					title: '',
-					content: '确定不在关注对方',
+					content: '確定不再關注對方',
+					confirmText: "確定",
 					success: function(res) {
 						if (res.confirm) {
 							concern(2, id).then(data => {
@@ -167,7 +168,8 @@
 				var that = this
 				uni.showModal({
 					title: '',
-					content: '确定不在关注对方',
+					content: '確定不再關注對方',
+					confirmText: "確定",
 					success: function(res) {
 						if (res.confirm) {
 							concern(2, id).then(data => {
@@ -272,7 +274,7 @@
 
 	.tabbar {
 		position: sticky;
-		top:var(--status-bar-height);
+		top: var(--status-bar-height);
 		left: 0;
 		width: 100%;
 		white-space: nowrap;
@@ -309,6 +311,7 @@
 		border: none;
 
 	}
+
 	.active {
 		color: #007AFF !important;
 	}
@@ -321,6 +324,7 @@
 		color: #555;
 		line-height: 44px;
 	}
+
 	.swiper-box {
 		padding-top: var(--status-bar-height);
 		flex: 1;
@@ -372,21 +376,33 @@
 	}
 
 	.item-userInfo .name {
+		max-width: 150px;
 		font-size: 14px;
 		color: #4A4A4A;
 		line-height: 20px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 
 	.item-userInfo .circles {
+		max-width: 150px;
 		font-size: 12px;
 		color: #9B9B9B;
 		line-height: 17px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 
 	.item-userInfo .address {
+		max-width: 150px;
 		font-size: 14px;
 		color: #4A4A4A;
 		line-height: 20px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 	}
 
 	.item-btn {

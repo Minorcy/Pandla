@@ -6,6 +6,7 @@
   "titleNView": false,
   "softinputNavBar": "none",
   "bounce": "none",
+  "softinputMode": "adjustPan",
   "usingComponents": {
     "chat-input": "/components/chatinput"
   }

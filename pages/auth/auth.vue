@@ -27,7 +27,7 @@
 	}
 	text{
 		position: absolute;
-		top: 70%;
+		top: 75%;
 		left: 50%;
 		transform: translate(-50%,-50%);
 		font-size: 16px;

@@ -4,7 +4,7 @@
 			<view @tap="back()">
 				<image class="back" src="../../static/img/login/back.png" mode=""></image>
 			</view>
-			<image src="../../static/img/login/star.png" mode=""></image>
+			<image src="../../static/img/login/star.svg" mode=""></image>
 		</view>
 		<view v-if="succ==false">
 			<view class="input-wrapper">
@@ -104,19 +104,24 @@
 			getRegCode() {
 				var that = this
 				if (joinValidate(this.account)) {
-					sendCode(this.account);
-					var time = 60
-					var timer = setInterval(() => {
-						if (time <= 0) {
-							that.regCodeBtn.text = "发送验证码";
-							clearInterval(timer);
-							that.regCodeBtn.btnStatus = false
-							time = null;
-						} else {
-							that.regCodeBtn.text = --time + "s后重發";
-							that.regCodeBtn.btnStatus = true;
+					sendCode(this.account,2).then((data)=>{
+						if(data == null){
+							return
 						}
-					}, 1000);
+						var time = 60
+						var timer = setInterval(() => {
+							if (time <= 0) {
+								that.regCodeBtn.text = "发送验证码";
+								clearInterval(timer);
+								that.regCodeBtn.btnStatus = false
+								time = null;
+							} else {
+								that.regCodeBtn.text = --time + "s后重發";
+								that.regCodeBtn.btnStatus = true;
+							}
+						}, 1000);
+					});
+					
 				}
 			},
 			nextChange() {

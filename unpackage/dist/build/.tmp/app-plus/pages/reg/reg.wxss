@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.reg-page.data-v-f612f372 {
+.reg-page.data-v-5a15b5ce {
   width: 100%;
   padding: 10px;
   -webkit-box-sizing: border-box;
@@ -32,7 +32,7 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-.reg-page .logo.data-v-f612f372 {
+.reg-page .logo.data-v-5a15b5ce {
     margin-top: 40px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -44,18 +44,18 @@
             justify-content: center;
     position: relative;
 }
-.reg-page .logo .back.data-v-f612f372 {
+.reg-page .logo .back.data-v-5a15b5ce {
     position: absolute;
     top: 0px;
     left: 10px;
     width: 44px;
     height: 44px;
 }
-.reg-page .logo image.data-v-f612f372 {
+.reg-page .logo image.data-v-5a15b5ce {
     width: 65px;
     height: 65px;
 }
-.reg-page .title-wrap.data-v-f612f372 {
+.reg-page .title-wrap.data-v-5a15b5ce {
     width: 200px;
     height: 36px;
     margin-left: 48px;
@@ -63,7 +63,7 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
-.reg-page .title-wrap .by-link.data-v-f612f372 {
+.reg-page .title-wrap .by-link.data-v-5a15b5ce {
       line-height: 36px;
       font-size: 18px;
       float: left;
@@ -72,31 +72,31 @@
       color: #FFFFFF;
       display: inline-block;
 }
-.reg-page .title-wrap .sp-line.data-v-f612f372 {
+.reg-page .title-wrap .sp-line.data-v-5a15b5ce {
       color: #FFFFFF;
       line-height: 32px;
       float: left;
       margin: 0 5px;
 }
-.reg-page .title-wrap .link.data-v-f612f372 {
+.reg-page .title-wrap .link.data-v-5a15b5ce {
       font-size: 18px;
       color: #9B9B9B;
 }
-.reg-page .from .field.data-v-f612f372 {
+.reg-page .from .field.data-v-5a15b5ce {
     position: relative;
     min-height: 60px;
 }
-.reg-page .from .field .input-box.data-v-f612f372 {
+.reg-page .from .field .input-box.data-v-5a15b5ce {
       width: 100%;
       height: 60px;
       margin: 0 auto;
       top: 0;
       left: 0;
 }
-.reg-page .from .field .input-box .uni-input.data-v-f612f372 {
+.reg-page .from .field .input-box .uni-input.data-v-5a15b5ce {
         background: transparent !important;
 }
-.reg-page .from .field .input-box picker.data-v-f612f372 {
+.reg-page .from .field .input-box picker.data-v-5a15b5ce {
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         padding-right: 20px;
@@ -111,7 +111,7 @@
         left: 0px;
         outline: none;
 }
-.reg-page .from .field .input-box .input-container.data-v-f612f372 {
+.reg-page .from .field .input-box .input-container.data-v-5a15b5ce {
         height: 60px;
         width: 280px;
         -webkit-box-sizing: border-box;
@@ -120,14 +120,14 @@
         margin: 0 auto;
         border-bottom: 1px solid #fff;
 }
-.reg-page .from .field .input-box .input-container image.data-v-f612f372 {
+.reg-page .from .field .input-box .input-container image.data-v-5a15b5ce {
           position: absolute;
           left: 0;
           bottom: 6px;
           width: 25px;
           height: 25px;
 }
-.reg-page .from .field .input-box .input-container .ipt.data-v-f612f372 {
+.reg-page .from .field .input-box .input-container .ipt.data-v-5a15b5ce {
           -webkit-box-sizing: border-box;
           box-sizing: border-box;
           padding-right: 20px;
@@ -142,7 +142,7 @@
           left: 35px;
           outline: none;
 }
-.reg-page .from .field .input-box .input-container .cod-btn.data-v-f612f372 {
+.reg-page .from .field .input-box .input-container .cod-btn.data-v-5a15b5ce {
           width: 100px;
           height: 30px;
           line-height: 30px;
@@ -157,17 +157,17 @@
           background: transparent;
           z-index: 99;
 }
-.reg-page .from .field .input-box .input-container .cod-btn.data-v-f612f372:after {
+.reg-page .from .field .input-box .input-container .cod-btn.data-v-5a15b5ce:after {
           border: none;
 }
-.reg-page .submit.data-v-f612f372 {
+.reg-page .submit.data-v-5a15b5ce {
     padding: 40px 26px;
     height: 66px;
     border-bottom: none;
     position: relative;
     min-height: 60px;
 }
-.reg-page .submit .btn-box.data-v-f612f372 {
+.reg-page .submit .btn-box.data-v-5a15b5ce {
       height: 40px;
       line-height: 38px;
       border-radius: 5px;
@@ -176,7 +176,7 @@
       margin: 10px 0 20px 0;
       border: 1px solid white;
 }
-.reg-page .submit .btn-box .btn.data-v-f612f372 {
+.reg-page .submit .btn-box .btn.data-v-5a15b5ce {
         display: block;
         color: #fff;
         text-align: center;
@@ -186,18 +186,18 @@
         height: 30px;
         border-radius: 5px;
 }
-.reg-page .submit .agreement.data-v-f612f372 {
+.reg-page .submit .agreement.data-v-5a15b5ce {
       font-size: 12px;
       margin: 21px 0;
       color: #fff;
 }
-.reg-page .submit .agreement text.data-v-f612f372 {
+.reg-page .submit .agreement text.data-v-5a15b5ce {
         color: #fff;
 }
-.reg-page .submit .agreement radio-group.data-v-f612f372 {
+.reg-page .submit .agreement radio-group.data-v-5a15b5ce {
         display: inline-block;
 }
-.reg-page .submit .agreement .checked.data-v-f612f372 {
+.reg-page .submit .agreement .checked.data-v-5a15b5ce {
         margin-left: 18px;
         resize: none;
         border: none;
@@ -206,7 +206,7 @@
         box-shadow: none;
         border-radius: 0;
 }
-.reg-page .submit .agreement navigator.data-v-f612f372 {
+.reg-page .submit .agreement navigator.data-v-5a15b5ce {
         color: #4A90E2;
         display: inline-block;
 }

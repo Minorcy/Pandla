@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "",
+  "navigationBarTextStyle": "black",
   "navigationBarBackgroundColor": "#E1E1E1",
   "bounce": "none",
   "titleNView": false,

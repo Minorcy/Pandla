@@ -28,10 +28,11 @@
 				<input type="text" placeholder="查詢" maxlength="200" />
 			</view>
 		</view> -->
-		<view class="system-message" v-if="systemList.length">
-			<uni-swipe-action class="swipedelete-wrapper" :options="options" @tap="deleteSystem()">
-				<view class="recentchat-item" hover-class="recentchat-item-hover" @tap="toSystem()">
-					<image class="recentchat-img" src="../../static/img/msg/system.svg" role="img">
+		
+		<view class="recentchat-wrapper">
+			<uni-swipe-action class="swipedelete-wrapper" :options="options" @tap="deleteSystem()" v-if="systemList.length">
+				<view class="recentchat-item" hover-class="recentchat-item-hover" @tap="toSystem">
+					<image class="recentchat-item-img" src="../../static/img/msg/system.svg" role="img" mode="aspectFill">
 					</image>
 					<view class="recentchat-item-right">
 						<view class="recentchat-item-top">
@@ -44,21 +45,21 @@
 						</view>
 						<view class="recentchat-item-bottom">
 							<view style="display:flex;align-items:center;">
-								<text class="recentchat-item-desc max-desc">
+								<text class="recentchat-item-status"> 
+								</text>
+								<text class="recentchat-item-desc">
 									{{systemList[0].context}}
 								</text>
 							</view>
-							<view class="recentchat-item-unread">{{systemList.length}}</view>
+							<view class="recentchat-item-unread" v-if="systemList.unread != 0">{{systemList.unread || ''}}</view>
 						</view>
 					</view>
 				</view>
 			</uni-swipe-action>
-		</view>
-		<view class="recentchat-wrapper">
 			<uni-swipe-action class="swipedelete-wrapper" :options="options" @tap="bindClick(item.id)" v-for="(item,index) in sessionlist"
 			 :key="index">
 				<view class="recentchat-item" hover-class="recentchat-item-hover" @tap="enterChat(item.id)">
-					<image class="recentchat-item-img" :src="item.avatar" role="img">
+					<image class="recentchat-item-img" :src="item.avatar" role="img" mode="aspectFill">
 					</image>
 					<view class="recentchat-item-right">
 						<view class="recentchat-item-top">
@@ -107,10 +108,6 @@
 	export default {
 		data() {
 			return {
-				// msgNum: '0',
-				// connNum:0,
-				// fnasNum:0,
-				// likeNum:0,
 				delSessionId: null,
 				options: [{
 					text: '刪除',
@@ -130,6 +127,9 @@
 		},
 		computed: {
 			msgNum(){
+				if(!this.$store.state.pushMsg){
+					return "0"
+				}
 				var msgNum = 0
 				let sessionlist = this.$store.state.sessionlist.filter(item=>{
 						msgNum += item.unread
@@ -143,6 +143,9 @@
 				
 			},
 			connNum() {
+				if(!this.$store.state.pushMsg){
+					return "0"
+				}
 				if (this.$store.state.pushMsg.pushConnMsg.length == 0) {
 					return "0"
 				}
@@ -154,7 +157,9 @@
 				return num.toString()
 			},
 			fnasNum() {
-
+				if(!this.$store.state.pushMsg){
+					return "0"
+				}
 				if (this.$store.state.pushMsg.pushFansMsg.length == 0) {
 					return "0"
 				}
@@ -165,6 +170,9 @@
 				return num.toString()
 			},
 			likeNum() {
+				if(!this.$store.state.pushMsg){
+					return "0"
+				}
 				if (this.$store.state.pushMsg.pushLikeMsg.length == 0) {
 					return "0"
 				}
@@ -175,9 +183,23 @@
 				return num.toString()
 			},
 			systemList() {
-				var num = this.$store.state.pushMsg.pushSystemMsg.filter(function(item) {
+				if(!this.$store.state.pushMsg){
+					return "0"
+				}
+				var num = []
+				num = this.$store.state.pushMsg.pushSystemMsg.filter(function(item) {
 					return item.isRed == "0";
 				})
+				var length = num.length
+				var list = []
+				list = this.$store.state.pushMsg.pushSystemMsg
+				list.unread = length
+				if(num == ''){
+					return list
+				}
+				if(length != 0){
+					num.unread = length
+				}
 				return num
 			},
 			userInfos() {
@@ -304,7 +326,7 @@
 		onNavigationBarButtonTap() {
 			var that = this
 			uni.showActionSheet({
-				itemList: ['忽略未读提醒', '清空聊天列表', '提醒设置'],
+				itemList: ['忽略未讀提醒', '清空聊天列表', '提醒設置'],
 				success: function(res) {
 					console.log('选中了第' + (res.tapIndex) + '个按钮');
 					if (res.tapIndex == 2) {
@@ -315,7 +337,8 @@
 					if (res.tapIndex == 0) {
 						uni.showModal({
 							title: '',
-							content: '确定忽略未读提醒',
+							content: '確定忽略未讀提醒',
+							confirmText:"確定",
 							success: function(res) {
 								if (res.confirm) {
 									console.log('用户点击确定');
@@ -328,7 +351,8 @@
 					if (res.tapIndex == 1) {
 						uni.showModal({
 							title: '',
-							content: '确定清空聊天列表',
+							content: '確定清空聊天列表',
+							confirmText:"確定",
 							success: function(res) {
 								if (res.confirm) {
 									console.log('用户点击确定');
@@ -456,18 +480,18 @@
 		}
 	}
 
-	.system-message {
-		border-top: 1px solid #CCCCCC;
-			margin-top: 20px;
-		width: 100%;
-		padding: 0 22rpx;
-		box-sizing: border-box;
-		background-color: #fff;
-		// min-height: 100%;
-		overflow-x: hidden;
-		overflow-y: scroll;
-		box-sizing: border-box
-	}
+	// .system-message {
+	// 	border-top: 1px solid #CCCCCC;
+	// 		margin-top: 20px;
+	// 	width: 100%;
+	// 	padding: 0 22rpx;
+	// 	box-sizing: border-box;
+	// 	background-color: #fff;
+	// 	// min-height: 100%;
+	// 	overflow-x: hidden;
+	// 	overflow-y: scroll;
+	// 	box-sizing: border-box
+	// }
 
 	.recentchat-wrapper {
 		border-top: 1px solid #CCCCCC;
@@ -518,14 +542,14 @@
 		border-bottom: 1px solid rgba(220, 220, 220, 0.5);
 	}
 
-	.recentchat-img {
-		width: 100rpx;
-		height: 100rpx;
-		margin-right: 24rpx;
-		box-sizing: border-box;
-		display: flex;
-		align-self: center;
-	}
+	// .recentchat-img {
+	// 	width: 100rpx;
+	// 	height: 100rpx;
+	// 	margin-right: 24rpx;
+	// 	box-sizing: border-box;
+	// 	display: flex;
+	// 	align-self: center;
+	// }
 
 	.recentchat-item-img {
 		width: 100rpx;

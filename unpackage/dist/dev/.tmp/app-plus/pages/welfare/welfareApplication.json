@@ -3,7 +3,9 @@
   "navigationBarBackgroundColor": "#E1E1E1",
   "navigationBarTextStyle": "black",
   "softinputNavBar": "none",
+  "bounce": "none",
   "usingComponents": {
-    "m-input": "/components/m-input"
+    "m-input": "/components/m-input",
+    "link-address": "/components/xuan-linkAddress/xuan-linkAddress"
   }
 }

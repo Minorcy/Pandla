@@ -1,11 +1,6 @@
 <template>
 	<view class="chat-page">
-	<!-- 	<view class="tabbar">
-			
-		</view>
-		<uni-nav-bar  left-icon="back" right-icon="bars" :title="title" fixed="true" color="000000"
-		 background-color="#E1E1E1" @click-left="clickLeft()" @click-right="clickRight()"></uni-nav-bar> -->
-		<view class="message-wrapper chat-list" :scroll-with-animation="true">
+		<view class="message-wrapper chat-list" :scroll-with-animation="true" :style="{paddingBottom:paddingBottom+'px'}">
 			<view class="message-item chat-list" id="chat-list" v-for="(msg,index) in msglist" :key="index">
 				<view class="message-time" v-if="msg.type==='timeTag'"><text>{{msg.text}}</text></view>
 				<view v-if="msg.type!='timeTag'">
@@ -17,7 +12,7 @@
 						<view class="message-text-your" :class="[msg.type =='image' ? 'nobg' : '']">
 							<rich-text :nodes="msg.text|generateRichTextNode()" :class="[msg.type==='timeTag' ? 'user-time':'user-msg']"></rich-text>
 							<view class="message-img your-img" v-if="msg.type =='image'" @tap="previewImage(msg.file.url)">
-								<image :src="msg.file.url" v-if="msg.type =='image'" mode="aspectFill"></image>
+								<image :src="msg.file.url" v-if="msg.type =='image'" mode="widthFix"></image>
 							</view>
 						</view>
 
@@ -26,7 +21,7 @@
 						<view class="message-text" :class="[msg.type =='image' ? 'nobg' : '']">
 							<rich-text :nodes="msg.text|generateRichTextNode()" :class="[msg.type==='timeTag' ? 'user-time':'user-msg']"></rich-text>
 							<view class="message-img" v-if="msg.type =='image'" @tap="previewImage(msg.file.url)">
-								<image :src="msg.file.url" v-if="msg.type =='image'" mode="aspectFill"></image>
+								<image :src="msg.file.url" v-if="msg.type =='image'" mode="widthFix"></image>
 							</view>
 						</view>
 
@@ -41,14 +36,14 @@
 		<!-- </view> -->
 
 		<view class="foot">
-			<chat-input @send-message="getInputMessage" @show="setScrollH" @foc="setScrollH" @sendImg="sendImg()" :to="to"></chat-input>
+			<chat-input @send-message="getInputMessage" @show="show" @foc="setScrollH" @sendImg="sendImg()"
+			 :to="to"></chat-input>
 		</view>
 	</view>
 </template>
 
 <script>
 	import uniNavBar from "@/components/uni-nav-bar/uni-nav-bar.vue"
-	
 	import EmojiObj from '@/common/utils/emojimap.js';
 	import chatInput from './yszyun-imchat-emoji/chatinput.vue';
 	import util from '@/common/utils';
@@ -71,7 +66,8 @@
 				scrollTop: 0,
 				sessionId: '',
 				currSessionMsgs: '',
-				title: ""
+				title: "",
+				paddingBottom:50
 			}
 		},
 		components: {
@@ -121,13 +117,13 @@
 			if (user.alias) {
 				this.title = user.alias
 				uni.setNavigationBarTitle({
-					title:user.alias
+					title: user.alias
 				})
 				return
 			}
 			this.title = user.nick
 			uni.setNavigationBarTitle({
-				title:user.nick
+				title: user.nick
 			})
 		},
 		created() {
@@ -136,12 +132,12 @@
 			this.style.contentViewHeight = res.windowHeight - uni.getSystemInfoSync().screenWidth / 750 * (100); //像素
 		},
 		methods: {
-			clickLeft(){
+			clickLeft() {
 				uni.navigateBack({
 					delta: 1
 				})
 			},
-			clickRight(){
+			clickRight() {
 				uni.navigateTo({
 					url: "chatSettings?id=" + this.to
 				})
@@ -150,16 +146,14 @@
 				this.sendTextMsg(message)
 			},
 			sendTextMsg(message) {
+				this.paddingBottom = 50
 				this.$store.dispatch('sendMsg', {
 					type: 'text',
 					scene: "p2p",
 					to: this.to,
 					text: message.content
 				})
-				setTimeout(() => {
-					this.scrollEnd()
-				}, 500)
-				uni.hideKeyboard()
+
 			},
 			sendImg() {
 				var that = this
@@ -178,18 +172,34 @@
 						})
 					}
 				});
-				uni.hideKeyboard()
+
 			},
 			scrollEnd: function() {
+				
+				setTimeout(() => {
+					uni.pageScrollTo({
+						scrollTop: 9999999999,
+						duration: 0
+					});
+				}, 300)
+			},
+			show(){
+				this.paddingBottom = 300
+				setTimeout(() => {
+					uni.pageScrollTo({
+						scrollTop: 9999999999,
+						duration: 0
+					});
+				}, 200)
+			},
+			setScrollH: function() {
+				this.paddingBottom = 50
 				setTimeout(() => {
 					uni.pageScrollTo({
 						scrollTop: 9999999999,
 						duration: 0
 					});
 				}, 500)
-
-			},
-			setScrollH: function() {
 				var query = uni.createSelectorQuery();
 				let footh = query.select('.foot');
 				//console.log('fh',footh);
@@ -203,9 +213,7 @@
 						// console.log('fh', data.height);
 						this.style.contentViewHeight = res.windowHeight - footh; //像素
 					}).exec();
-					// console.log('contentViewHeight', this.style.contentViewHeight);
 				})
-
 			},
 			toUser() {
 				uni.navigateTo({
@@ -217,7 +225,6 @@
 				this.msglist.filter(item => {
 					if (item.file) {
 						imgSrc.push(item.file.url)
-						return item
 					}
 				})
 				var index = imgSrc.indexOf(url)
@@ -308,9 +315,6 @@
 				url: "chatSettings?id=" + this.to
 			})
 		},
-		onHide() {
-			uni.hideKeyboard()
-		},
 		onBackPress() {
 			uni.hideKeyboard()
 		},
@@ -393,7 +397,8 @@
 		box-sizing: border-box;
 		background-color: #F3F4F6;
 	}
-	.tabbar{
+
+	.tabbar {
 		height: var(--status-bar-height);
 		width: 100%;
 		box-sizing: border-box;
@@ -402,12 +407,12 @@
 		top: 0;
 		background-color: #E1E1E1;
 	}
+
 	.foot {
 		position: fixed;
-		left: 0upx;
-		bottom: -1px;
+		left: 0px;
+		bottom: 0px;
 		width: 100%;
-
 	}
 
 	.record-chatting-item-img {
@@ -480,7 +485,7 @@
 	.message-text {
 		max-width: 70%;
 		border-radius: 8rpx;
-		background-color: #3387FF;
+		background-color: #24b82f;
 		padding: 16rpx;
 		box-sizing: border-box;
 		word-wrap: break-word;
@@ -493,12 +498,13 @@
 	.message-img {}
 
 	.message-img image {
-		max-width: 100%;
-		max-height: 100%;
+		max-width: 100% !important;
+		max-height: 300px !important;
+		/* max-height: 100%; */
 
 	}
 
-	.your-img {
+	.your-img image {
 		border: 5px solid #CCCCCC;
 	}
 
@@ -520,7 +526,7 @@
 		width: 0px;
 		border-width: 20rpx;
 		border-style: solid;
-		border-color: transparent transparent transparent #3387FF;
+		border-color: transparent transparent transparent #24b82f;
 		margin-top: 20rpx;
 
 	}

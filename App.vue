@@ -18,6 +18,9 @@
 		},
 		watch: {
 			'$store.state.pushMsg.pushFansMsg': function() {
+				if (!this.$store.state.pushMsg) {
+					return
+				}
 				if (this.$store.state.pushMsg.pushFansMsg.length == 0) {
 					return
 				}
@@ -29,6 +32,9 @@
 				this.setTabBarBadge()
 			},
 			'$store.state.pushMsg.pushConnMsg': function() {
+				if (!this.$store.state.pushMsg) {
+					return
+				}
 				if (this.$store.state.pushMsg.pushConnMsg.length == 0) {
 					return
 				}
@@ -40,6 +46,9 @@
 				this.setTabBarBadge()
 			},
 			'$store.state.pushMsg.pushSystemMsg': function() {
+				if (!this.$store.state.pushMsg) {
+					return
+				}
 				if (this.$store.state.pushMsg.pushSystemMsg.length == 0) {
 					return
 				}
@@ -51,6 +60,9 @@
 				this.setTabBarBadge()
 			},
 			'$store.state.pushMsg.pushLikeMsg': function() {
+				if (!this.$store.state.pushMsg) {
+					return
+				}
 				if (this.$store.state.pushMsg.pushLikeMsg.length == 0) {
 					return
 				}
@@ -73,44 +85,56 @@
 
 		},
 
-
 		onLaunch: function() {
-			var users_key = uni.getStorageSync("USERS_KEY").token
-			if (users_key) {
-				this.checkOpenGPSServiceByAndroid()
+			var defaultSettings = uni.getStorageSync('defaultSettings_key')
+			// console.log(defaultSettings)
+			if (defaultSettings != '') {
+				this.$store.state.defaultSettings = defaultSettings
+			}
+			this.checkOpenGPSServiceByAndroid()
+			setInterval(() => {
+				var users_key = uni.getStorageSync("USERS_KEY").token
+				if (!users_key) {
+					return
+				}
 				this.$store.dispatch('getConnMsg')
 				this.$store.dispatch('getFansMsg')
 				this.$store.dispatch('getLikeMsg')
 				this.$store.dispatch('getSystemMsg')
-				setInterval(() => {
-					this.$store.dispatch('getConnMsg')
-					this.$store.dispatch('getFansMsg')
-					this.$store.dispatch('getLikeMsg')
-					this.$store.dispatch('getSystemMsg')
-				}, 2000)
-				getWyToken().then(data => {
-					let uid = data.uid;
-					let sdktoken = data.wyToken
-					uni.setStorageSync('uid', uid)
-					uni.setStorageSync('sdktoken', sdktoken)
-					this.connect()
+			}, 2000)
+			var showDot = uni.getStorageSync("tabDot_KEY")
+			if (showDot == "") {
+				uni.showTabBarRedDot({
+					index: 2
 				})
+			} else if (showDot == 1) {
+
 			}
+
 
 		},
 		updated() {
 			// 提交sdk连接请求
+			var that = this
 			var users_key = uni.getStorageSync("USERS_KEY").token
 			if (users_key) {
-				this.$store.dispatch('connect')
-				this.$store.dispatch('updateRefreshState')
+				var sdktoken = uni.getStorageSync("sdktoken")
+				if (sdktoken) {  
+					this.$store.dispatch('connect')
+					this.$store.dispatch('updateRefreshState')
+				}
 			}
+			
 		},
 		onShow: function() {
-			// uni.setTabBarBadge({
-			// 	index: 1,
-			// 	text: '9'
-			// })
+			// var users_key = uni.getStorageSync("USERS_KEY").token
+			// if (users_key) {
+			// 	var sdktoken = uni.getStorageSync("sdktoken")
+			// 	if (sdktoken) {
+			// 		this.$store.dispatch('connect')
+			// 		this.$store.dispatch('updateRefreshState')
+			// 	}
+			// }
 
 		},
 		onHide: function() {
@@ -171,10 +195,15 @@
 				}
 			},
 			setTabBarBadge() {
+				var users_key = uni.getStorageSync("USERS_KEY").token
+				if (!users_key) {
+					return
+				}
 				var num = 0
 				num = Number(this.fnsNumber) + Number(this.connNumber) + Number(this.likeNumber) + Number(this.systemNumber) + this
 					.msgNumber
 				num = num.toString()
+				// console.log(num)
 				if (num == 0) {
 					return
 				}
@@ -185,6 +214,10 @@
 					index: 1,
 					text: num
 				})
+				var voice = this.$store.state.defaultSettings.voice
+				if (!voice) {
+					return
+				}
 				const innerAudioContext = uni.createInnerAudioContext();
 				innerAudioContext.autoplay = true;
 				innerAudioContext.src = 'http://pandla.io/images/static/bell.mp3';
@@ -216,6 +249,10 @@
 		display: flex;
 		background: #131D21;
 		/* overflow: hidden; */
+	}
+
+	uni-tabbar {
+		border: none;
 	}
 
 	/* #ifdef MP-BAIDU */

@@ -1,5 +1,6 @@
 <template>
-	<view class="daliy-page" @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend" :style="{position:position}">
+	<view class="daliy-page" @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend" @tap="double"
+	 :style="{position:position}">
 		<view class="top">
 			<image class="camera" @tap="publishDyn()" src="../../static/img/main/daily/camera.svg"></image>
 			<image class="btn-behaviour" @tap="behaviour()" src="../../static/img/main/daily/option.svg"></image>
@@ -8,6 +9,9 @@
 			<swiper vertical="true" @change="swiperChange" @transition="transitioning" touchable="false" :current="currentIndex">
 				<swiper-item v-for="(item,index) in dynInfo" :key="index" :style="{backgroundImage: 'url('+item.images+')'}">
 					<view class="swiper-item">
+						<view class="header" v-if="heartAnimation.display"  :style="{top:heartAnimation.top+'px',left:heartAnimation.left+'px'}">
+							<image :animation="animationData" src="../../static/img/main/daily/like.svg" mode=""></image>
+						</view>
 						<view class="item-user">
 							<view class="user-img">
 								<image class="img-avatar" @tap="userInfo(item.uid)" :src="item.portrait" mode="aspectFill"></image>
@@ -34,6 +38,8 @@
 								 mode=""></image>
 								<image src="../../static/img/main/daily/like.svg" :class=" animation == true ? 'heartAnimation' : ''" @tap="likePerson(item.isOwn,item.id,index)"
 								 v-if="item.isLike!=0" mode=""></image>
+								<!-- <view class="header" :class=" animation == true ? 'is-active' : ''" @tap="likePerson(item.isOwn,item.id,index)"
+								  v-if="item.isLike!=0" mode=""></view> -->
 								<text>{{item.like_count}}</text>
 							</view>
 							<view class="option-conn">
@@ -50,6 +56,7 @@
 								<image src="../../static/img/main/daily/PAN.svg" mode=""></image>
 								<text>{{item.pan}}</text>
 							</view>
+
 						</view>
 					</view>
 				</swiper-item>
@@ -58,7 +65,7 @@
 		<!-- 評論 -->
 		<view class="comment-section" v-if="showComment" @touchmove.stop.prevent="moveHandle" :style="{height: height}">
 			<view class="comment-section-top">
-				<text>{{commCount}}条评论</text>
+				<text>{{commCount}}条評論</text>
 				<image src="../../static/img/daily/X.svg" @tap.stop="hidComm()"></image>
 			</view>
 			<scroll-view class="comment" scroll-y="true">
@@ -77,15 +84,11 @@
 							<text>: {{ite.replyContent}}</text>
 						</p>
 					</view>
-
-
 				</view>
-
-			
 			</scroll-view>
 			<view class="input-section">
 				<input v-model="commContent" :placeholder="commplaceholder" @blur="blur" @focus="focus" adjust-position="false" />
-				<button  :disabled="disabled" @tap="addComm()">發送</button>
+				<button :disabled="disabled" @tap="addComm()">發送</button>
 				<!-- <chatInput @sendMessge="addComm"></chatInput> -->
 			</view>
 		</view>
@@ -120,7 +123,7 @@
 				animation: false,
 				showComment: false,
 				bulletList: [],
-				doomm:true,
+				doomm: true,
 				commCount: 0,
 				commentInfo: '',
 				commplaceholder: '為保證用戶隱私，只可以看自己的評論',
@@ -129,18 +132,58 @@
 				addType: "",
 				count: 10,
 				height: "60%",
-				position:"absolute",
+				position: "absolute",
 				flag: 0,
 				text: '',
 				lastX: 0,
 				lastY: 0,
-
+				click: 0,
+				heartAnimation: {
+					active: false,
+					top: '',
+					left: '',
+					display: false
+				},
+				animationData: ""
 			}
 		},
-		components:{
+		components: {
 			chatInput
 		},
 		methods: {
+			heart() {
+
+			},
+			double(e) {
+				this.click += 1
+				// console.log(this.click)
+				setTimeout(() => {
+					this.click = 0
+				}, 350)
+				if (this.click == 2) {
+					console.log('双击', e)
+					this.heartAnimation.display = true
+					this.heartAnimation.top = e.detail.y -50
+					this.heartAnimation.left = e.detail.x -50
+					var animationMiddleHeaderItem = wx.createAnimation({
+						duration: 400, // 以毫秒为单位  
+						timingFunction: 'ease-out'
+					});
+					// animationMiddleHeaderItem.opacity(0.5).scale(0.9).step()
+					animationMiddleHeaderItem.opacity(0.6).scale(0.6).step()
+					// animationMiddleHeaderItem.opacity(0.5).scale(0.9).step()
+					animationMiddleHeaderItem.opacity(0).scale(0.4).step()
+					
+					// animationMiddleHeaderItem.opacity(0.6).scale(0.5,0.5).step();
+					this.animationData = animationMiddleHeaderItem.export()
+					setTimeout(() => {
+						this.heartAnimation.display = false
+					}, 1000);
+					console.log(this.dynInfo[this.index].isOwn,this.did,this.index)
+					this.likePerson(this.dynInfo[this.index].isOwn,this.did,this.index)
+
+				}
+			},
 			handletouchmove: function(event) {
 				// console.log(event)
 				if (this.flag !== 0) {
@@ -156,22 +199,21 @@
 				if (Math.abs(tx) > Math.abs(ty)) {
 					if (tx < 0) {
 						text = '向左滑动';
-						console.log("向左滑动");
+						// console.log("向左滑动");
 
 						this.flag = 1;
 						//  this.getList();  //调用列表的方法
 					} else if (tx > 30) {
-						console.log(tx)
 						text = '向右滑动';
-						console.log("向右滑动");
+						// console.log("向右滑动");
 						// uni.navigateTo({
 						// 	url: '/pages/daily/daily',
 						// 	animationType: 'pop-out',
 						// 	animationDuration: 200
 						// });
-						uni.navigateBack({
-							delta: 1,
-						})
+						uni.switchTab({
+							url: '/pages/main/main'
+						});
 						this.flag = 2;
 					}
 				}
@@ -231,9 +273,9 @@
 					this.uid = data[0].uid
 					this.index = 0
 					this.did = data[0].id
-				})
-				this.getAllBullet()
 
+					this.getAllBullet()
+				})
 			},
 			loadFindDyn() {
 				findAllDyn(this.count).then(data => {
@@ -259,6 +301,7 @@
 				});
 			},
 			likePerson(isOwn, did, index) {
+				console.log(isOwn, did, index)
 				if (isOwn == 1) {
 					uni.showToast({
 						icon: 'none',
@@ -289,12 +332,12 @@
 				getBullet(this.did).then(data => {
 					// bulletList = data.content;
 					var len = data.content.length
-					if(len == 0){
+					if (len == 0) {
 						return
 					}
 					for (let i = 0; i < len; i++) {
 						this.bulletList.push(new Doomm(data.content[i], parseInt(Math.random() * 500, 10), Math
-							.ceil(Math.random() * 10),
+							.ceil(Math.random() * (10 - 3 + 1) + 3),
 						));
 					}
 				});
@@ -311,7 +354,7 @@
 
 					}
 				}
-				console.log(this.bulletList)
+				// console.log(this.bulletList)
 
 			},
 			showDoomm() {
@@ -322,7 +365,7 @@
 				getComment(did).then(data => {
 					this.commentInfo = data;
 					this.commCount = data.length
-					console.log(this.commentInfo);
+					// console.log(this.commentInfo);
 				});
 				// this.flog = false
 			},
@@ -352,7 +395,7 @@
 					if (this.addType == 'reply') {
 						console.log('刚刚是回复');
 						reply(this.cid, this.commContent).then(data => {
-							console.log(data)
+							// console.log(data)
 							if (data == null) {
 								uni.showToast({
 									icon: 'none',
@@ -387,23 +430,20 @@
 								this.dynInfo[this.index].com_count = data.length
 							});
 							// // 获取弹幕
-							// this.getAllBullet()
-							// //
-							// this.findDyn(2)
+							this.getAllBullet()
 						});
 					}
 				}
 				uni.hideKeyboard()
-				
+
 			},
 			publishDyn() {
 				getImgTemp().then(data => {
 					this.$store.commit('setImgTemp', data);
-					console.log(this.$store.state.imgTemp);
+					// console.log(this.$store.state.imgTemp);
 					uni.navigateTo({
 						url: 'publish'
 					});
-					this.findDyn(1);
 				});
 			},
 			moveHandle() {},
@@ -423,21 +463,21 @@
 				})
 				this.getAllBullet()
 				if (e.detail.current + 1 == this.count) {
-					setTimeout(()=>{
+					setTimeout(() => {
 						uni.showLoading({
 							title: "加载中"
 						})
 						this.loadFindDyn()
-					},500)
-					
-					setTimeout(()=>{
+					}, 500)
+
+					setTimeout(() => {
 						uni.hideLoading()
-					},1500)
+					}, 1500)
 				}
 				if (e.detail.current == 0) {
-					setTimeout(()=>{
+					setTimeout(() => {
 						this.findDyn();
-					},2000)
+					}, 2000)
 				}
 			},
 			goChange() {
@@ -448,7 +488,7 @@
 				uni.showActionSheet({
 					itemList: ['取消關注', '屏蔽用戶', '舉報用戶'],
 					success: function(res) {
-						console.log('选中了第' + (res.tapIndex) + '个按钮');
+						// console.log('选中了第' + (res.tapIndex) + '个按钮');
 						if (res.tapIndex == 0) {
 							if (that.dynInfo[that.index].following == 0) {
 								uni.showToast({
@@ -459,14 +499,15 @@
 							}
 							uni.showModal({
 								title: '',
-								content: '确定取消關注',
+								content: '確定取消關注',
+								confirmText: "確定",
 								success: function(res) {
 									if (res.confirm) {
 										concern(2, that.uid).then(data => {
 											that.dynInfo[that.index].following = 0
 										})
 									} else if (res.cancel) {
-										console.log('用户点击取消');
+										// console.log('用户点击取消');
 									}
 								}
 							});
@@ -475,11 +516,12 @@
 							uni.showModal({
 								title: '',
 								content: '屏蔽用戶',
+								confirmText: "確定",
 								success: function(res) {
 									if (res.confirm) {
-										console.log('用户点击确定');
+										// console.log('用户点击确定');
 									} else if (res.cancel) {
-										console.log('用户点击取消');
+										// console.log('用户点击取消');
 									}
 								}
 							});
@@ -494,14 +536,15 @@
 							uni.showModal({
 								title: '',
 								content: '舉報用戶',
+								confirmText: "確定",
 								success: function(res) {
 									if (res.confirm) {
-										console.log('用户点击确定');
+										// console.log('用户点击确定');
 										uni.navigateTo({
 											url: "/pages/msg/report?userInfo=" + JSON.stringify(userInfo)
 										})
 									} else if (res.cancel) {
-										console.log('用户点击取消');
+										// console.log('用户点击取消');
 									}
 								}
 							});
@@ -520,21 +563,33 @@
 				return util.formatDate(datetime, true)
 			}
 		},
-
+		onBackPress() {
+			uni.switchTab({
+				url: '/pages/main/main'
+			});
+		},
 		onLoad() {
 			this.cid = uni.getStorageSync('USERS_KEY').id
 			this.findDyn()
 		}
+		// onShow() {
+		// 	this.cid = uni.getStorageSync('USERS_KEY').id
+		// 	this.findDyn()
+		// }
 	}
 </script>
 
+
+<style>
+	@import './icons.css'
+</style>
 <style lang="scss" scoped>
 	body,
 	page {
 		background-color: #000000;
 	}
 
-	
+
 	.daliy-page {
 		position: absolute;
 		top: 0;
@@ -583,11 +638,23 @@
 		background-size: 100%;
 	}
 
+	.header {
+		position: absolute;
+		width: 100px;
+		height: 100px;
+	}
+
+	.header image {
+		width: 100px;
+		height: 100px;
+		
+	}
+
 	.item-user {
 		position: absolute;
 		width: 65%;
 		height: 50px;
-		top: 5px;
+		top: 6px;
 		left: 20px;
 		box-sizing: border-box;
 		display: flex;
@@ -693,6 +760,7 @@
 
 	.block-bullet>text {
 		color: #FFFFFF;
+		font-size: 18px;
 		position: absolute;
 		visibility: hidden;
 		white-space: nowrap;
@@ -716,14 +784,14 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		background: rgba(0,0,0,0.6);
+		background: rgba(0, 0, 0, 0.6);
 		z-index: -1;
 	}
 
 	.option-section view {
 		width: 30px;
 		height: 50px;
-		margin: 5px;
+		margin: 5px 10px;
 		z-index: 1;
 		display: flex;
 		flex-direction: column;
@@ -768,7 +836,7 @@
 		font-size: 16px;
 		z-index: 300;
 		background-color: #000000;
-		border-radius: 18px 18px 0 0 ;
+		border-radius: 18px 18px 0 0;
 		overflow: hidden;
 	}
 
@@ -875,7 +943,7 @@
 		padding: 5px 5px;
 		background-color: #FFFFFF;
 		font-size: 14px;
-		overflow:hidden;
+		overflow: hidden;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -887,7 +955,7 @@
 		line-height: 40px !important;
 		box-sizing: border-box;
 		color: #4A4A4A;
-		test-align:left;
+		test-align: left;
 		vertical-align: middle;
 		border: 1px solid #999;
 		border-radius: 30upx;
@@ -932,6 +1000,24 @@
 			visibility: visible;
 		}
 	}
+
+
+	/* .option-like .header{
+		width: 100px!important;
+		    height: 100px !important;
+		    background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+		    background-position: 0 0;
+		    cursor: pointer;
+		    -webkit-transition: background-position 1s steps(28);
+		    transition: background-position 1s steps(28);
+		    -webkit-transition-duration: 0s;
+		    transition-duration: 0s;
+		}
+	.is-active {
+	    -webkit-transition-duration: 1s;
+	    transition-duration: 1s;
+	    background-position: -2800px 0;
+	} */
 
 	.heartAnimation {
 
@@ -1018,5 +1104,25 @@
 			-webkit-transform: scale3d(1, 1, 1);
 			transform: scale3d(1, 1, 1);
 		}
+	}
+
+
+	.heart {
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+		background-position: 0 0;
+		cursor: pointer;
+		-webkit-transition: background-position 1s steps(28);
+		transition: background-position 1s steps(28);
+		-webkit-transition-duration: 0s;
+		transition-duration: 0s;
+	}
+
+	.heart.active {
+		-webkit-transition-duration: 1s;
+		transition-duration: 1s;
+		background-position: -2800px 0;
 	}
 </style>

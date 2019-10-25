@@ -42,8 +42,8 @@
 		</view>
 		<view class="bottom">
 			<text>郵箱：<text class="blue">doc@pandla.io</text></text>
-			<text>Facebook: <text class="blue">Pandla Planet</text></text>
-			<text>微信公眾號: <text class="blue">PANDLA</text></text>
+			<text>Facebook： <text class="blue">Pandla Planet</text></text>
+			<text>微信公眾號：<text class="blue">PANDLA</text></text>
 		</view>
 	</view>
 

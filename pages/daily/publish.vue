@@ -1,7 +1,9 @@
 <template>
 	<view class="publish-page">
-		<view class="input-section">
-			<input v-model="dynContent" placeholder="写下你这刻的想法~~~" />
+		<view class="textarea">
+			<textarea v-model="dynContent" placeholder="写下你这刻的想法~~~" maxlength="-1" auto-height='true' />
+			</view>
+		<view class="img">
 			<image :src="imgTemp" mode="aspectFill" />
 		</view>
 		<view class="option-section">
@@ -17,6 +19,9 @@
 				<image src="../../static/img/daily/publish/aite.svg"></image>
 				<text>{{remain}}</text>
 			</view>
+		</view>
+		<view class="bottom">
+			<text>不允許發裸露和涉及政治的內容，搬運內容被原創者舉報將會被降級</text>
 		</view>
 	</view>
 </template>
@@ -42,9 +47,6 @@
 		},
 		methods: {
 			toLocation() {
-				// uni.navigateTo({
-				// 	url:"location"
-				// })
 				var that = this
 				uni.chooseLocation({
 					success: function(res) {
@@ -72,7 +74,7 @@
 				if (data != '') {
 					createDyn(this.dynContent, data,this.address,this.latitude,this.longitude).then(data => {
 						if (data) {
-							uni.redirectTo({
+							uni.reLaunch({
 								url: 'daily'
 							});
 						}
@@ -92,19 +94,21 @@
 		box-sizing: border-box;
 		background-color: #FFFFFF;
 	}
-	.input-section {
+	.textarea {
 		width: 100%;
 		box-sizing: border-box;
-		height: 600upx;
+		min-height: 100px;
 		font-size: 30upx;
 		padding: 20upx;
 		position: relative;
 	}
-
-	.input-section image {
-		position: absolute;
-		bottom: 0;
-		left: 10px;
+textarea{
+	width: 100%;
+	height: 100%;
+}
+	.img image {
+		width: 175px;
+		height: 175px;
 	}
 
 	.option-section {
@@ -145,5 +149,14 @@
 		width: 350upx;
 		height: 350upx;
 		margin-bottom: 50upx;
+	}
+	.bottom{
+		width: 100%;
+		margin-top: 100rpx;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.bottom text{
+		color: #CCCCCC;
 	}
 </style>

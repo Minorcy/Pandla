@@ -2,6 +2,7 @@
   "navigationBarTitleText": "提醒设置",
   "navigationBarBackgroundColor": "#E1E1E1",
   "navigationBarTextStyle": "black",
+  "bounce": "none",
   "titleNView": {},
   "usingComponents": {}
 }

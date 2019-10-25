@@ -5,7 +5,8 @@
 				<view class="asset-left">
 					<p>我的資產PAN幣</p>
 					<text class="balance">{{propInfo.balance | toFixed(4)}}</text>
-					<text class="asset-rmb">≈{{ this.rmb | toFixed(4)}} USTD</text>
+					<text class="asset-rmb">≈{{ this.rmb | toFixed(4)}} USTD<text class="dollar"> (美元)</text></text>
+					
 				</view>
 				<view class="asset-right">
 					<p>冻结PAN幣</p>
@@ -19,16 +20,19 @@
 					<text class="data-24">24H{{data3}}</text>
 				</view>
 				<view class="bottom">
-					<text>提幣</text>
+					<!-- <text>提幣</text>
 					<text>|</text>
-					<text>充幣</text>
+					<text>充幣</text> -->
 				</view>
 			</view>
 		</view>
 		<view class="introduce">
 			<text class="introduce-title">星球用戶達到200萬時開啟提幣和充幣功能</text>
+			
 			<text class="introduce-content">
-				<text>【PAN】是潘多拉星球發行的數字貨幣，也是潘多拉星球 唯一權益證明，基於EOS公鏈發行，恆定20億永不增發</text>
+				<text>【PAN】是潘多拉星球發行的數字貨幣，也是潘多拉星球唯一權益證明，基於EOS公鏈發行，恆定20億永不增發</text>
+				
+				<text class="black">星球居民達到200萬時將開啟二級市場流通，為保障二級市場正常秩序，星球居民每增加100萬，解鎖您總資10%，到二級市場流通</text>
 
 				<text>用戶行為即挖礦，越早起參與星球建設的用戶更容易獲得PAN幣，PAN幣的價值也會隨著星球居民和應用場景的增加而上升</text>
 
@@ -105,7 +109,7 @@
 		padding: 10px;
 		margin: 0 auto;
 		box-sizing: border-box;
-		height: 212px;
+		height: 180px;
 		background: rgba(19, 29, 33, 1);
 		border-radius: 5px;
 		color: #FFFFFF;
@@ -133,14 +137,26 @@
 		line-height: 30px;
 	}
 
+	.dollar{
+		font-size: 12px;
+		color: #CCCCCC;
+		display: inline-block !important;
+	}
+
 	.asset-right {
+		width: 40%;
 		padding: 5px;
-		margin-right: 65px;
+		
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		line-height: 20px;
 	}
 
 	.panData {
+		margin-top: 20px;
 		width: 100%;
-		height: 40%;
+		height: 20%;
 	}
 
 	.data {
@@ -195,8 +211,12 @@
 		font-size: 14px;
 		color: #9B9B9B;
 	}
-	.introduce-content text{
+
+	.introduce-content text {
 		display: block;
 		padding: 5px;
+	}
+	.introduce-content .black{
+		color: #000000;
 	}
 </style>

@@ -24,7 +24,7 @@
 			<view class="back" @tap="back()">
 				<image class="back" src="../../static/img/login/back.png" mode=""></image>
 			</view>
-			<image src="../../static/img/login/star.png" mode=""></image>
+			<image src="../../static/img/login/star.svg" mode=""></image>
 			
 		</view>
 		<view class="input-wrapper">
@@ -85,8 +85,8 @@
 
 			},
 			back(){
-				uni.navigateBack({
-					delta: 1
+				uni.navigateTo({
+					url:"../index/index"
 				})
 			}
 		},

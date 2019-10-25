@@ -66,8 +66,12 @@ class Request {
 						let resInterceptors = _this.resInterceptors(res);
 						res = resInterceptors;
             reject(res);
+			console.log(res)
             return;
           } 
+		  // if(res.statusCode == 200){
+			 //  console.log(res)
+		  // }
           if (_this.resInterceptors && typeof _this.resInterceptors === 'function') {
             let resInterceptors = _this.resInterceptors(res);
             if (!resInterceptors) {

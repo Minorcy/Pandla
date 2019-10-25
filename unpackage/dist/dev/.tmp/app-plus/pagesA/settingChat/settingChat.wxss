@@ -30,7 +30,6 @@
 }
 .padTop.data-v-6ab7adca {
   padding-top: 20rpx;
-  margin-bottom: 20rpx;
 }
 .padTop .settingChat-item.data-v-6ab7adca:nth-last-of-type(1) {
     border: none;
@@ -40,7 +39,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-left: 28rpx;
-  padding-bottom: 100rpx;
   background-color: #ffffff;
 }
 .settingChat-wrapper .settingChat-item.data-v-6ab7adca {

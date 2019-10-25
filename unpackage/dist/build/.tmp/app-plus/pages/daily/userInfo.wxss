@@ -544,18 +544,18 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
 
 
 
-page.data-v-1b50d04a,page.data-v-1b50d04a{
+page.data-v-8c2e2aa0,page.data-v-8c2e2aa0{
 	background-color: #FFFFFF;
 	width: 100%;
 }
-.user-page.data-v-1b50d04a {
+.user-page.data-v-8c2e2aa0 {
 	background-color: #FFFFFF;
 	width: 100%;
 	/* -webkit-overflow-scrolling: touch;
 	overflow-scrolling: touch;
  overflow-y: scroll; */
 }
-.userInfo.data-v-1b50d04a {
+.userInfo.data-v-8c2e2aa0 {
 	height: 172px;
 	position: relative;
 	display: -webkit-box;
@@ -570,7 +570,7 @@ page.data-v-1b50d04a,page.data-v-1b50d04a{
 	margin-top: 50rpx;
 	color: #000000;
 }
-.no-dyInfo.data-v-1b50d04a {
+.no-dyInfo.data-v-8c2e2aa0 {
 	width: 80%;
 	display: block;
 	font-size: 16px;
@@ -580,14 +580,14 @@ page.data-v-1b50d04a,page.data-v-1b50d04a{
 	margin: auto;
 	text-align: center;
 }
-.portrait.data-v-1b50d04a {
+.portrait.data-v-8c2e2aa0 {
 	width: 80px;
 	height: 80px;
 	margin: 0 auto;
 	border-radius: 50%;
 	overflow: hidden;
 }
-.avatar.data-v-1b50d04a {
+.avatar.data-v-8c2e2aa0 {
 	width: 80px;
 	height: 80px;
 	margin: 0 auto;
@@ -606,16 +606,16 @@ page.data-v-1b50d04a,page.data-v-1b50d04a{
 	border: 1px solid#CCCCCC;
 	border-radius: 50%;
 } */
-.userInfo text.data-v-1b50d04a {
+.userInfo text.data-v-8c2e2aa0 {
 	font-size: 14px;
 	text-align: center;
 	margin: 5rpx 0 5rpx 0;
 }
-.userInfo .user-name.data-v-1b50d04a {
+.userInfo .user-name.data-v-8c2e2aa0 {
 	font-size: 12px;
 }
 /* 状态 */
-.statusInfo.data-v-1b50d04a {
+.statusInfo.data-v-8c2e2aa0 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -627,7 +627,7 @@ page.data-v-1b50d04a,page.data-v-1b50d04a{
 	margin: 40rpx 5px;
 	background-color: #8E8E93;
 }
-.statusInfo view.data-v-1b50d04a {
+.statusInfo view.data-v-8c2e2aa0 {
 	/* height: 30px; */
 	background-color: #8E8E93;
 	border-radius: 5rpx;
@@ -643,21 +643,21 @@ page.data-v-1b50d04a,page.data-v-1b50d04a{
 	    -ms-flex-align: center;
 	        align-items: center;
 }
-.statusInfo image.data-v-1b50d04a {
+.statusInfo image.data-v-8c2e2aa0 {
 	width: 25rpx;
 	height: 25rpx;
 
 	/* float: left;
 	top: 2px; */
 }
-.statusInfo text.data-v-1b50d04a {
+.statusInfo text.data-v-8c2e2aa0 {
 	color: #F0F0F0;
 	font-size: 24rpx;
 	/* margin-left: 10upx;
 	 float: right; */
 }
 /* 动态列表 */
-.dynInfo.data-v-1b50d04a {
+.dynInfo.data-v-8c2e2aa0 {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -678,7 +678,7 @@ page.data-v-1b50d04a,page.data-v-1b50d04a{
 	padding-top: 10px;
 	padding-bottom: 100px;
 }
-.more.data-v-1b50d04a {
+.more.data-v-8c2e2aa0 {
 	display: block;
 	margin: 10px auto;
 	padding: 5px;
@@ -690,20 +690,20 @@ page.data-v-1b50d04a,page.data-v-1b50d04a{
 	border: 1px solid #CCCCCC;
 	border-radius: 10px;
 }
-.dynInfo-item.data-v-1b50d04a {
+.dynInfo-item.data-v-8c2e2aa0 {
 	width: 31%;
 	height: 250rpx;
 	padding: 5rpx;
 	margin: 5rpx;
 	position: relative;
 }
-.dynInfo-item image.data-v-1b50d04a {
+.dynInfo-item image.data-v-8c2e2aa0 {
 	width: 100%;
 	height: 250rpx;
 	/* padding: 5upx;
 	margin: 5upx; */
 }
-.dynInfo-item .delete.data-v-1b50d04a {
+.dynInfo-item .delete.data-v-8c2e2aa0 {
 	position: absolute;
 	width: 16px;
 	height: 16px;
@@ -716,7 +716,7 @@ page.data-v-1b50d04a,page.data-v-1b50d04a{
 	color: #000000;
 	background-color: rgba(255, 255, 255, 0.5);
 }
-.btn.data-v-1b50d04a {
+.btn.data-v-8c2e2aa0 {
 	position: fixed;
 	width: 100%;
 	height: 80rpx;
@@ -733,12 +733,12 @@ page.data-v-1b50d04a,page.data-v-1b50d04a{
 	    -ms-flex-pack: distribute;
 	        justify-content: space-around;
 }
-.btn view.data-v-1b50d04a {
+.btn view.data-v-8c2e2aa0 {
 	display: inline-block;
 	width: 30%;
 	height: 100%;
 }
-.btn view image.data-v-1b50d04a {
+.btn view image.data-v-8c2e2aa0 {
 	width: 100%;
 }
 

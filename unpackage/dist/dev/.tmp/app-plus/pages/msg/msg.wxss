@@ -650,18 +650,6 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
         text-decoration: none;
         outline: none;
 }
-.system-message.data-v-109f58a8 {
-  border-top: 1px solid #CCCCCC;
-  margin-top: 20px;
-  width: 100%;
-  padding: 0 22rpx;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background-color: #fff;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  box-sizing: border-box;
-}
 .recentchat-wrapper.data-v-109f58a8 {
   border-top: 1px solid #CCCCCC;
   margin-top: 20px;
@@ -721,20 +709,6 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
   display: -ms-flexbox;
   display: flex;
   border-bottom: 1px solid rgba(220, 220, 220, 0.5);
-}
-.recentchat-img.data-v-109f58a8 {
-  width: 100rpx;
-  height: 100rpx;
-  margin-right: 24rpx;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-self: center;
-      -ms-flex-item-align: center;
-          align-self: center;
 }
 .recentchat-item-img.data-v-109f58a8 {
   width: 100rpx;

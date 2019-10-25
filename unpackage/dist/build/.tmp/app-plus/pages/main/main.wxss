@@ -24,15 +24,15 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-page.data-v-1daf07e6,
-uni-page-body.data-v-1daf07e6 {
+page.data-v-5cc1e33c,
+uni-page-body.data-v-5cc1e33c {
   background: #131D21;
 }
-.main-content.data-v-1daf07e6 {
+.main-content.data-v-5cc1e33c {
   position: relative;
   overflow: hidden;
 }
-.header.data-v-1daf07e6 {
+.header.data-v-5cc1e33c {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -44,14 +44,14 @@ uni-page-body.data-v-1daf07e6 {
           flex-direction: row;
   margin-left: 0;
 }
-.main-content.data-v-1daf07e6 {
+.main-content.data-v-5cc1e33c {
   width: 100%;
   min-height: 100%;
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
-.header-border.data-v-1daf07e6 {
+.header-border.data-v-5cc1e33c {
   font-size: 12px;
   height: 48rpx;
   line-height: 48rpx;
@@ -70,10 +70,10 @@ uni-page-body.data-v-1daf07e6 {
   padding: 5rpx 20rpx 5rpx 20rpx;
   margin: 10rpx;
 }
-.header-border text.data-v-1daf07e6 {
+.header-border text.data-v-5cc1e33c {
   font-size: 12px !important;
 }
-.header-icon.data-v-1daf07e6 {
+.header-icon.data-v-5cc1e33c {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -87,14 +87,15 @@ uni-page-body.data-v-1daf07e6 {
   height: 32rpx;
   margin-top: 9rpx;
 }
-.uni-swiper-msg-icon.data-v-1daf07e6 {
+.uni-swiper-msg-icon.data-v-5cc1e33c {
   margin: 0;
 }
-swiper-item text.data-v-1daf07e6 {
+swiper-item text.data-v-5cc1e33c {
   font-size: 12px;
   margin-left: 0;
+  position: relative;
 }
-text.data-v-1daf07e6 {
+text.data-v-5cc1e33c {
   font-size: 25rpx;
   margin-left: 15rpx;
   margin-bottom: 5rpx;
@@ -103,7 +104,16 @@ text.data-v-1daf07e6 {
      text-overflow: ellipsis;
   white-space: nowrap;
 }
-.uni-swiper-msg.data-v-1daf07e6 {
+.dot.data-v-5cc1e33c {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+}
+.uni-swiper-msg.data-v-5cc1e33c {
   height: 48rpx;
   line-height: 48rpx;
   border: 2rpx solid #C8C7CC !important;
@@ -119,12 +129,12 @@ text.data-v-1daf07e6 {
   display: flex;
   width: 90% !important;
 }
-.text-scroll.data-v-1daf07e6 {
+.text-scroll.data-v-5cc1e33c {
   margin-top: 6px;
   font-size: 25rpx;
   z-index: 10;
 }
-.token-area.data-v-1daf07e6 {
+.token-area.data-v-5cc1e33c {
   width: 100%;
   height: 600rpx;
   position: relative;
@@ -132,7 +142,7 @@ text.data-v-1daf07e6 {
   background-repeat: no-repeat;
   background-position: center;
 }
-.token-area .planetPublic.data-v-1daf07e6 {
+.token-area .planetPublic.data-v-5cc1e33c {
     width: 100%;
     height: 100rpx;
     display: -webkit-box;
@@ -148,7 +158,7 @@ text.data-v-1daf07e6 {
         -ms-flex-align: center;
             align-items: center;
 }
-.token-area .planetPublic-box.data-v-1daf07e6 {
+.token-area .planetPublic-box.data-v-5cc1e33c {
     width: 128rpx;
     height: 128rpx;
     display: -webkit-box;
@@ -169,16 +179,16 @@ text.data-v-1daf07e6 {
         -ms-flex-pack: center;
             justify-content: center;
 }
-.token-area .planetPublic-box .welfare-icon.data-v-1daf07e6 {
+.token-area .planetPublic-box .welfare-icon.data-v-5cc1e33c {
       width: 45px;
       height: 45px;
 }
-.token-content.data-v-1daf07e6 {
+.token-content.data-v-5cc1e33c {
   width: 100%;
   height: 500rpx;
   position: relative;
 }
-.token-content .token.data-v-1daf07e6 {
+.token-content .token.data-v-5cc1e33c {
     position: absolute;
     width: 128rpx;
     height: 110rpx;
@@ -194,15 +204,15 @@ text.data-v-1daf07e6 {
          -o-transition-timing-function: ease-in;
             transition-timing-function: ease-in;
 }
-.token-content .token .token-icon.data-v-1daf07e6 {
+.token-content .token .token-icon.data-v-5cc1e33c {
       width: 48rpx;
       height: 48rpx;
       opacity: 0.7;
 }
-.token-content .token .token-num.data-v-1daf07e6 {
+.token-content .token .token-num.data-v-5cc1e33c {
       font-size: 25rpx;
 }
-.lottie.data-v-1daf07e6 {
+.lottie.data-v-5cc1e33c {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -210,7 +220,7 @@ text.data-v-1daf07e6 {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-.welfare-content.data-v-1daf07e6 {
+.welfare-content.data-v-5cc1e33c {
   position: absolute;
   top: 25rpx;
   right: 30rpx;
@@ -219,37 +229,54 @@ text.data-v-1daf07e6 {
   width: 120rpx;
   text-align: center;
 }
-.welfare-content .welfare-icon.data-v-1daf07e6 {
+.welfare-content .welfare-icon.data-v-5cc1e33c {
     margin: 0 auto;
     display: block;
 }
-.welfare-content .welfare-text.data-v-1daf07e6 {
+.welfare-content .welfare-text.data-v-5cc1e33c {
     text-align: center;
 }
-.welfare-icon.data-v-1daf07e6 {
+.welfare-icon.data-v-5cc1e33c {
   width: 55rpx;
   height: 48rpx;
   margin-bottom: 8rpx;
 }
-.welfare-text.data-v-1daf07e6 {
+.welfare-text.data-v-5cc1e33c {
   margin-left: -22rpx;
   font-size: 25rpx;
   color: #4CD964;
 }
-.swiper.data-v-1daf07e6 {
-  position: absolute;
-  bottom: 40rpx;
+.scroll-wraaper.data-v-5cc1e33c {
   width: 100%;
   height: 450rpx;
-  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  bottom: 40rpx;
+  white-space: nowrap;
 }
-.swiper-item > ._img.data-v-1daf07e6 {
+.scroll.data-v-5cc1e33c {
+  width: 100%;
+  height: 450rpx;
+  white-space: nowrap;
+}
+.scroll view.data-v-5cc1e33c {
+  display: inline-block;
+  margin-right: 40px;
+}
+.scroll .scroll-item.data-v-5cc1e33c:nth-child(5) {
+  margin-right: 20px;
+}
+.scroll-item.data-v-5cc1e33c {
+  width: 300rpx;
+}
+navigator ._img.data-v-5cc1e33c {
   width: 300rpx;
 }
 /* 动画 */
-.topTobottom.data-v-1daf07e6 {
-  -webkit-animation-name: topTobottom-data-v-1daf07e6;
-          animation-name: topTobottom-data-v-1daf07e6;
+.topTobottom.data-v-5cc1e33c {
+  -webkit-animation-name: topTobottom-data-v-5cc1e33c;
+          animation-name: topTobottom-data-v-5cc1e33c;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-timing-function: linear;
@@ -257,9 +284,9 @@ text.data-v-1daf07e6 {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
-.topTobottom-1.data-v-1daf07e6 {
-  -webkit-animation-name: topTobottom-data-v-1daf07e6;
-          animation-name: topTobottom-data-v-1daf07e6;
+.topTobottom-1.data-v-5cc1e33c {
+  -webkit-animation-name: topTobottom-data-v-5cc1e33c;
+          animation-name: topTobottom-data-v-5cc1e33c;
   -webkit-animation-duration: 4s;
           animation-duration: 4s;
   -webkit-animation-timing-function: linear;
@@ -269,7 +296,7 @@ text.data-v-1daf07e6 {
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
 }
-@keyframes topTobottom-data-v-1daf07e6 {
+@keyframes topTobottom-data-v-5cc1e33c {
 0% {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
@@ -283,7 +310,7 @@ text.data-v-1daf07e6 {
             transform: translate(0, 0);
 }
 }
-@-webkit-keyframes topTobottom-data-v-1daf07e6
+@-webkit-keyframes topTobottom-data-v-5cc1e33c
 
 /* Safari 和 Chrome */ {
 0% {
@@ -299,7 +326,7 @@ text.data-v-1daf07e6 {
             transform: translate(0, 0);
 }
 }
-.avatar.data-v-1daf07e6 {
+.avatar.data-v-5cc1e33c {
   width: 170px;
   height: 170px;
   position: absolute;
@@ -316,23 +343,23 @@ text.data-v-1daf07e6 {
   -webkit-animation: pulse-data-v-592699c8 3s linear infinite;
   animation: pulse-data-v-592699c8 3s linear infinite;
 }
-@-webkit-keyframes pulse-data-v-1daf07e6 {
+@-webkit-keyframes pulse-data-v-5cc1e33c {
 to {
     opacity: 0;
     -webkit-transform: scale(1.1);
 }
 }
-@keyframes pulse-data-v-1daf07e6 {
+@keyframes pulse-data-v-5cc1e33c {
 to {
     opacity: 0;
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
 }
 }
-.avatar.data-v-1daf07e6::before,
-.avatar.data-v-1daf07e6::after {
-  -webkit-animation: pulse-data-v-1daf07e6 3s linear infinite;
-  animation: pulse-data-v-1daf07e6 3s linear infinite;
+.avatar.data-v-5cc1e33c::before,
+.avatar.data-v-5cc1e33c::after {
+  -webkit-animation: pulse-data-v-5cc1e33c 3s linear infinite;
+  animation: pulse-data-v-5cc1e33c 3s linear infinite;
   border: #6b5e5e solid 8px;
   border-radius: 9999px;
   -webkit-box-sizing: border-box;
@@ -349,7 +376,7 @@ to {
   width: 140%;
   z-index: 1;
 }
-.avatar.data-v-1daf07e6::after {
+.avatar.data-v-5cc1e33c::after {
   -webkit-animation-delay: 2s;
   animation-delay: 2s;
 }
