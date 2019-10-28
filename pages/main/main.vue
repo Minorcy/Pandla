@@ -302,6 +302,7 @@
 			pushToken(item, index, e) { //收取token
 				this.tokenList[index].leftVal = 30;
 				this.tokenList[index].topVal = -this.tokenWidth - 64;
+				this.initToken += 1;
 				setTimeout(() => {
 					this.tokenList[index].display = 'none';
 					this.takePan(item.value, item.id, index);
@@ -321,9 +322,16 @@
 					numbers: Number(token),
 					id: id
 				});
+				
 				if (res.data.status == 200) {
 					var that = this
 					var voice = this.$store.state.defaultSettings.voice	
+					this.panBalance += Number(token)
+					console.log(this.initToken ,this.tokens)
+					if (this.initToken == this.tokens.length) {
+						this.initToken = 0
+						this.getToken(Token)
+					}
 					if (voice) {
 						if (this.flog) {
 							return
@@ -344,12 +352,8 @@
 							that.flog = false
 						})
 					}
-					this.initToken += 1;
-					this.panBalance += Number(token)
-					if (this.initToken == this.tokens.length) {
-						this.initToken = 0
-						this.getToken(Token)
-					}
+					
+					
 				} 
 				if (res.data.status == 404) {
 					uni.showToast({
@@ -451,6 +455,7 @@
 	.main-content {
 		position: relative;
 		overflow: hidden;
+		background: #131D21
 	}
 
 	.header {
@@ -646,11 +651,12 @@
 
 	.scroll-wraaper {
 		width: 100%;
-		height: 450upx;
+		height: 500upx;
 		box-sizing: border-box;
 		position: absolute;
-		bottom: 40upx;
+		bottom:0px;
 		white-space: nowrap;
+		background: #131D21
 	}
 
 	.scroll {

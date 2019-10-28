@@ -1,15 +1,15 @@
 <template>
-	<view class="daliy-page" @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend" @tap="double"
+	<view class="daliy-page" @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend" 
 	 :style="{position:position}">
 		<view class="top">
 			<image class="camera" @tap="publishDyn()" src="../../static/img/main/daily/camera.svg"></image>
 			<image class="btn-behaviour" @tap="behaviour()" src="../../static/img/main/daily/option.svg"></image>
 		</view>
 		<view class="swiper-wrapper">
-			<swiper vertical="true" @change="swiperChange" @transition="transitioning" touchable="false" :current="currentIndex">
+			<swiper vertical="true" @change="swiperChange" @transition="transitioning"  :current="currentIndex">
 				<swiper-item v-for="(item,index) in dynInfo" :key="index" :style="{backgroundImage: 'url('+item.images+')'}">
-					<view class="swiper-item">
-						<view class="header" v-if="heartAnimation.display"  :style="{top:heartAnimation.top+'px',left:heartAnimation.left+'px'}">
+					<view class="swiper-item" @tap="double">
+						<view class="header" v-if="heartAnimation.display" :style="{top:heartAnimation.top+'px',left:heartAnimation.left+'px'}">
 							<image :animation="animationData" src="../../static/img/main/daily/like.svg" mode=""></image>
 						</view>
 						<view class="item-user">
@@ -32,6 +32,11 @@
 							<text class="remind" v-else-if="item.following == 0 && item.isOwn == 0">需要關注才能看到對方的日志内容</text>
 							<text class="remind" v-else-if="item.following == 0">需要關注才能看到對方的日志内容</text>
 						</view>
+						<!-- <view >
+							<canvas canvas-id="mycanvas" class="canvas" />
+							<image src="../../static/images/heart_button.png" class="heart" @tap="onClickImage" :style="style_img"></image>
+						</view> -->
+
 						<view class="option-section">
 							<view class="option-like">
 								<image src="../../static/img/main/daily/unlike.svg" @tap="likePerson(item.isOwn,item.id,index)" v-if="item.isLike==0"
@@ -92,11 +97,13 @@
 				<!-- <chatInput @sendMessge="addComm"></chatInput> -->
 			</view>
 		</view>
+		 <image-cropper :src="tempFilePath" @confirm.stop="confirm" @cancel.stop="cancel"></image-cropper>
 	</view>
 </template>
 
 <script>
 	import chatInput from "@/components/chatinput.vue"
+	import ImageCropper from "@/components/invinbg-image-cropper/invinbg-image-cropper.vue";
 	import util from '@/common/utils'
 	import {
 		findAllDyn,
@@ -144,11 +151,13 @@
 					left: '',
 					display: false
 				},
-				animationData: ""
+				animationData: "",
+				tempFilePath: '',
 			}
 		},
 		components: {
-			chatInput
+			chatInput,
+			ImageCropper
 		},
 		methods: {
 			heart() {
@@ -163,8 +172,8 @@
 				if (this.click == 2) {
 					console.log('双击', e)
 					this.heartAnimation.display = true
-					this.heartAnimation.top = e.detail.y -50
-					this.heartAnimation.left = e.detail.x -50
+					this.heartAnimation.top = e.detail.y - 50
+					this.heartAnimation.left = e.detail.x - 50
 					var animationMiddleHeaderItem = wx.createAnimation({
 						duration: 400, // 以毫秒为单位  
 						timingFunction: 'ease-out'
@@ -173,14 +182,14 @@
 					animationMiddleHeaderItem.opacity(0.6).scale(0.6).step()
 					// animationMiddleHeaderItem.opacity(0.5).scale(0.9).step()
 					animationMiddleHeaderItem.opacity(0).scale(0.4).step()
-					
+
 					// animationMiddleHeaderItem.opacity(0.6).scale(0.5,0.5).step();
 					this.animationData = animationMiddleHeaderItem.export()
 					setTimeout(() => {
 						this.heartAnimation.display = false
 					}, 1000);
-					console.log(this.dynInfo[this.index].isOwn,this.did,this.index)
-					this.likePerson(this.dynInfo[this.index].isOwn,this.did,this.index)
+					console.log(this.dynInfo[this.index].isOwn, this.did, this.index)
+					this.likePerson(this.dynInfo[this.index].isOwn, this.did, this.index)
 
 				}
 			},
@@ -439,16 +448,28 @@
 			},
 			publishDyn() {
 				getImgTemp().then(data => {
-					this.$store.commit('setImgTemp', data);
-					// console.log(this.$store.state.imgTemp);
-					uni.navigateTo({
-						url: 'publish'
-					});
+					this.tempFilePath = data
+					
+					// this.$store.commit('setImgTemp', data);
+					// // console.log(this.$store.state.imgTemp);
+					
 				});
+			},
+			confirm(e) {
+			    this.tempFilePath = ''
+				this.$store.commit('setImgTemp', e.detail.tempFilePath);
+			     uni.navigateTo({
+			     	url: 'publish'
+			     });
+			},
+			cancel(){
+				this.tempFilePath = ''
 			},
 			moveHandle() {},
 			swiperChange(e) {
 				// console.log(e)
+				 this.tempFilePath = ''
+				
 				this.did = this.dynInfo[e.detail.current].id
 				this.likeNumber = 0
 				this.index = e.detail.current
@@ -555,6 +576,7 @@
 					}
 				});
 			}
+			
 
 		},
 		filters: {
@@ -571,6 +593,7 @@
 		onLoad() {
 			this.cid = uni.getStorageSync('USERS_KEY').id
 			this.findDyn()
+			this.ctx = uni.createCanvasContext('mycanvas')
 		}
 		// onShow() {
 		// 	this.cid = uni.getStorageSync('USERS_KEY').id
@@ -647,7 +670,7 @@
 	.header image {
 		width: 100px;
 		height: 100px;
-		
+
 	}
 
 	.item-user {
@@ -1107,7 +1130,7 @@
 	}
 
 
-	.heart {
+	/* .heart {
 		position: absolute;
 		width: 100px;
 		height: 100px;
@@ -1124,5 +1147,35 @@
 		-webkit-transition-duration: 1s;
 		transition-duration: 1s;
 		background-position: -2800px 0;
+	} */
+
+	.canvas {
+		background: transparent;
+		width: 90px;
+		height: 400px;
+		position: fixed;
+		right: 20px;
+		bottom: 60px;
+		z-index: 99;
+	}
+	.canvas image{
+		width: 100%;
+		height: 100%;
+	}
+	/* transform下面的属性是为了让动画看上去更自然 */
+	.heart {
+		position: fixed;
+		right: 45px;
+		bottom: 30px;
+		width: 40px;
+		height: 40px;
+		transform: scale(1);
+		-webkit-transform: scale(1);
+		-webkit-transition: ease all;
+		-moz-transition: ease all;
+		transition: ease all;
+		-webkit-transition-duration: 700ms;
+		-moz-transition-duration: 700ms;
+		transition-duration: 700ms;
 	}
 </style>

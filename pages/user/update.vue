@@ -71,7 +71,7 @@
 		data() {
 			return {
 				height: '550rpx',
-				accArray: ['1', '0', '0.5', '0.5偏0',"0.5偏1",'S','M','其它'],
+				accArray: ['1', '0', '0.5', '0.5偏0', "0.5偏1", 'S', 'M', '其它'],
 				accIndex: 0,
 				raceArray: ['亚洲人', '黑人', '拉美人', '中东人', '混血', '白人', '其它'],
 				raceIndex: 0,
@@ -80,7 +80,7 @@
 					age: '',
 					name: '',
 					signature: '',
-					site: '请选择',
+					site: '請選擇',
 					stature: '',
 					weight: '',
 					acctType: '',
@@ -106,11 +106,14 @@
 				this.userInfo.site = address;
 			},
 			bindAcc(e) {
+
 				this.accIndex = e.target.value;
-				// console.log(this.acctType);
+				// console.log(this.accIndex);
+				this.userInfo.acctType = this.accArray[this.accIndex];
 			},
 			bindRace(e) {
 				this.raceIndex = e.target.value;
+
 			},
 			uploadAvatar() {
 				upPicture(this.userId).then(data => {
@@ -118,8 +121,27 @@
 				});
 			},
 			update() {
+				if (this.avatar == '../../static/img/user/upload.png') {
+					uni.showToast({
+						icon: 'none',
+						title: '請上傳头像'
+					});
+				}
+
+				if (this.userInfo.site == "請選擇") {
+					uni.showToast({
+						icon: 'none',
+						title: "請選擇位置"
+					})
+					return
+				}
+				this.userInfo.acctType = this.accArray[this.accIndex];
+				this.userInfo.race = this.raceArray[this.raceIndex];
 				console.log(this.userInfo)
-				if(!this.userInfo.name  || !this.userInfo.age|| !this.userInfo.portrait|| !this.userInfo.acctType|| !this.userInfo.status|| !this.userInfo.weight){
+				console.log(!this.userInfo.name, !this.userInfo.age, !this.userInfo.portrait, !this.userInfo.acctType, !this.userInfo
+					.status, !this.userInfo.weight)
+				if ((!this.userInfo.name) || (!this.userInfo.age) || (!this.userInfo.acctType) ||
+					 (!this.userInfo.stature)||  (!this.userInfo.weight)) {
 					uni.showToast({
 						icon: 'none',
 						title: '請完善信息'
@@ -127,22 +149,22 @@
 					return
 				}
 				if (userValidate(this.userInfo)) {
-					this.userInfo.acctType = this.accArray[this.accIndex];
-					this.userInfo.race = this.raceArray[this.raceIndex];
+
 					// console.log('acctType:'+this.accArray[this.accIndex]);
 					// console.log(this.userInfo);
 					// console.log(this.userId);
-					// upInfo(this.userInfo, this.userId)
+					upInfo(this.userInfo, this.userId)
 				}
 			},
 			findInfo() {
 				findByID().then(data => {
 					// this.userInfo = data;
 					// // console.log(data);
-					if(!data.name){
+					if (data.portrait != null && data.portrait != "") this.avatar = data.portrait;
+					if (!data.name) {
 						return
 					}
-					console.log(1)
+
 					if (data.race == '亚洲人') this.raceIndex = 0;
 					if (data.race == '黑人') this.raceIndex = 1;
 					if (data.race == '拉美人') this.raceIndex = 2;
@@ -159,11 +181,11 @@
 					if (data.acctType == 'S') this.accIndex = 5;
 					if (data.acctType == 'M') this.accIndex = 6;
 					if (data.acctType == '其它') this.accIndex = 7;
-					if (data.portrait != null && data.portrait != "") this.avatar = data.portrait;
+
 					this.userInfo.age = '' + data.age;
 					this.userInfo.stature = '' + data.stature;
 					this.userInfo.weight = '' + data.weight;
-					this.userInfo.site ='请选择'
+					this.userInfo.site = '请选择'
 				});
 			}
 		},
@@ -203,7 +225,7 @@
 	}
 
 	.uni-input {
-		
+
 		color: #4a4a4a;
 	}
 
@@ -216,7 +238,7 @@
 	}
 
 	.popup-btn {
-		
+
 		margin-top: 9px;
 		margin-left: 10px;
 		color: #4a4a4a;

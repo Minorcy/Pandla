@@ -398,7 +398,7 @@
 
 <!-- :class="{'active':item.active}" -->
 <template>
-	<view>
+	<view class="album-page">
 		<view class="list-box">
 			<view v-for="(item,index) in dynInfo" :key="index" :class="{'active':item.active}" :data-index="index" @tap="previewPhoto(index)">
 				<image :src="item.images" mode="aspectFill" lazy-load="true">
@@ -465,7 +465,7 @@
 							mask: true
 						})
 						getDyn(this.uid, 0).then(data => {
-							this.dynInfo = data;
+							// this.dynInfo = data;
 							console.log(data)
 							success(data);
 						});
@@ -476,7 +476,7 @@
 								this.loadTxt = "已加载全部相片";
 								return
 							}
-							this.dynInfo = this.dynInfo.concat(data);
+							// this.dynInfo = this.dynInfo.concat(data);
 							this.loadingCount += 9
 							success(data);
 							console.log(data)
@@ -488,8 +488,7 @@
 					if (this.page == 1) {
 						uni.hideLoading();
 					}
-					
-					// this.photoList=[...this.photoList,...res];
+					this.dynInfo=[...this.dynInfo,...res];
 					this.showImages();
 				})
 			},
@@ -553,7 +552,7 @@
 </script>
 
 <style lang="scss">
-	page {
+	.album-page {
 		background-color: #eee;
 	}
 

@@ -615,6 +615,15 @@ swiper-item.data-v-313b09dc {
   background-position: 100% center;
   background-size: 100%;
 }
+.header.data-v-313b09dc {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+.header image.data-v-313b09dc {
+  width: 100px;
+  height: 100px;
+}
 .item-user.data-v-313b09dc {
   position: absolute;
   width: 65%;
@@ -754,7 +763,7 @@ swiper-item.data-v-313b09dc {
 .option-section view.data-v-313b09dc {
   width: 30px;
   height: 50px;
-  margin: 5px;
+  margin: 5px 10px;
   z-index: 1;
   display: -webkit-box;
   display: -webkit-flex;
@@ -989,6 +998,22 @@ to {
     visibility: visible;
 }
 }
+/* .option-like .header{
+	width: 100px!important;
+	    height: 100px !important;
+	    background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+	    background-position: 0 0;
+	    cursor: pointer;
+	    -webkit-transition: background-position 1s steps(28);
+	    transition: background-position 1s steps(28);
+	    -webkit-transition-duration: 0s;
+	    transition-duration: 0s;
+	}
+.is-active {
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+    background-position: -2800px 0;
+} */
 .heartAnimation.data-v-313b09dc {
   -webkit-animation-name: rubberBand-data-v-313b09dc;
   animation-name: rubberBand-data-v-313b09dc;
@@ -1059,24 +1084,52 @@ to {
     transform: scale3d(1, 1, 1);
 }
 }
-.heart.data-v-313b09dc {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
-  background-position: 0 0;
-  cursor: pointer;
-  -webkit-transition: background-position 1s steps(28);
-  -o-transition: background-position 1s steps(28);
-  transition: background-position 1s steps(28);
-  -webkit-transition-duration: 0s;
-  -o-transition-duration: 0s;
-     transition-duration: 0s;
+/* .heart {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+	background-position: 0 0;
+	cursor: pointer;
+	-webkit-transition: background-position 1s steps(28);
+	transition: background-position 1s steps(28);
+	-webkit-transition-duration: 0s;
+	transition-duration: 0s;
 }
-.heart.active.data-v-313b09dc {
-  -webkit-transition-duration: 1s;
-  -o-transition-duration: 1s;
-     transition-duration: 1s;
-  background-position: -2800px 0;
+
+.heart.active {
+	-webkit-transition-duration: 1s;
+	transition-duration: 1s;
+	background-position: -2800px 0;
+} */
+.canvas.data-v-313b09dc {
+  background: transparent;
+  width: 90px;
+  height: 400px;
+  position: fixed;
+  right: 20px;
+  bottom: 60px;
+  z-index: 99;
+}
+.canvas image.data-v-313b09dc {
+  width: 100%;
+  height: 100%;
+}
+/* transform下面的属性是为了让动画看上去更自然 */
+.heart.data-v-313b09dc {
+  position: fixed;
+  right: 45px;
+  bottom: 30px;
+  width: 40px;
+  height: 40px;
+  -ms-transform: scale(1);
+      transform: scale(1);
+  -webkit-transform: scale(1);
+  -webkit-transition: ease all;
+  -o-transition: ease all;
+  transition: ease all;
+  -webkit-transition-duration: 700ms;
+  -o-transition-duration: 700ms;
+     transition-duration: 700ms;
 }
 

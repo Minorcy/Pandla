@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "#131D21",
   "titleNView": false,
   "bounce": "none",
   "usingComponents": {

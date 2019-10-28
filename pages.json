@@ -81,6 +81,7 @@
 			"path": "pages/main/main",
 			"style": {
 				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#131D21",
 				"app-plus": {
 					"titleNView": false,
 					"bounce": "none"
