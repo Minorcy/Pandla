@@ -368,7 +368,7 @@
 		height: 112upx;
 		line-height: 112upx;
 		/* 在这里设置导航条高度 */
-		border-bottom: 2upx solid #979797;
+		// border-bottom: 2upx solid #979797;
 		color: #000000;
 		border-top: 2upx solid #979797;
 	}
@@ -408,7 +408,6 @@
 
 	.pan-list-load {
 		background-color: #EFEFF4;
-		;
 	}
 
 	.top-wrapper {

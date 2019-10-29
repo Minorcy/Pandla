@@ -66,7 +66,7 @@
 							</view> -->
 							<view class="slider-box">
 								<text>18</text>
-								<slider name="slider" block-size='20' value="18" @change="sliderChange1" min="18" max="70" show-value block-color="#CCCCCC" />
+								<slider name="slider" block-size='20' value="70" @change="sliderChange1" min="18" max="70" show-value block-color="#CCCCCC" />
 							</view>
 						</view>
 						<view class="popup-item">
@@ -78,7 +78,7 @@
 							</view> -->
 							<view class="slider-box">
 								<text>40</text>
-								<slider  name="slider" block-size='20' value='40' @change="sliderChange2" min="40" max="200" show-value block-color="#CCCCCC" />
+								<slider  name="slider" block-size='20' value='200' @change="sliderChange2" min="40" max="200" show-value block-color="#CCCCCC" />
 							</view>
 						</view>
 						<view class="popup-item">
@@ -90,7 +90,7 @@
 							</view> -->
 							<view class="slider-box">
 								<text>150</text>
-								<slider  name="slider" block-size='20' value="150" @change="sliderChange3" min="150" max="220" show-value block-color="#CCCCCC" />
+								<slider  name="slider" block-size='20' value="220" @change="sliderChange3" min="150" max="220" show-value block-color="#CCCCCC" />
 							</view>
 						</view>
 						<view class="popup-item">

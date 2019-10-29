@@ -1,5 +1,5 @@
 <template>
-	<view class="main-content" @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend">
+	<view class="main-content" @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend" :style="{height:pageHeight+'px'}">
 		<view id="header" class="header">
 			<navigator class="header-border" url='../ledger/asset'>
 				<image src="../../static/img/main/pan.svg" class="header-icon" style="opacity: 0.7;" />
@@ -106,7 +106,8 @@
 				lastX: 0,
 				lastY: 0,
 				tga: true,
-				dotShow: ''
+				dotShow: '',
+				pageHeight:''
 			}
 		},
 		components: {
@@ -383,9 +384,21 @@
 				uni.setStorageSync('sdktoken', sdktoken)
 				this.connect()
 			})
+			// uni.getSystemInfo({
+			// 	success: function(res) {
+			// 		this.pageHeight = res.windowHeight
+			// 		console.log("====>",this.pageHeight)
+			// 	}
+			// });
+			 
 
 		},
+		onReady() {
+			const res = uni.getSystemInfoSync();
+			this.pageHeight = res.windowHeight -20
+		},
 		onLoad(options) {
+			console.log(this.pageHeight)
 			uni.showLoading({
 				title: "加载中"
 			})
@@ -395,7 +408,6 @@
 			this.getAllForBalance();
 			this.getToken(Token);
 			getIndexBulletin().then(data => {
-
 				this.noticeMsg = data
 			})
 			setTimeout(() => {
@@ -453,23 +465,17 @@
 	}
 
 	.main-content {
+		width: 100%;
 		position: relative;
 		overflow: hidden;
-		background: #131D21
+		background: #131D21;
+		box-sizing:border-box;
 	}
 
 	.header {
 		display: flex;
 		flex-direction: row;
 		margin-left: 0;
-	}
-
-	.main-content {
-		width: 100%;
-		min-height: 100%;
-		background-size: 100%;
-		background-position: center;
-		background-repeat: no-repeat;
 	}
 
 	.header-border {
@@ -651,12 +657,12 @@
 
 	.scroll-wraaper {
 		width: 100%;
-		height: 500upx;
+		height: 450upx;
 		box-sizing: border-box;
 		position: absolute;
-		bottom:0px;
+		bottom:10px;
 		white-space: nowrap;
-		background: #131D21
+					
 	}
 
 	.scroll {

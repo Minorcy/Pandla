@@ -5,10 +5,10 @@
 			<image class="camera" @tap="publishDyn()" src="../../static/img/main/daily/camera.svg"></image>
 			<image class="btn-behaviour" @tap="behaviour()" src="../../static/img/main/daily/option.svg"></image>
 		</view>
-		<view class="swiper-wrapper">
-			<swiper vertical="true" @change="swiperChange" @transition="transitioning"  :current="currentIndex">
+		<view class="swiper-wrapper" >
+			<swiper vertical="true" @change="swiperChange" @transition="transitioning"  :current="currentIndex" @tap="double">
 				<swiper-item v-for="(item,index) in dynInfo" :key="index" :style="{backgroundImage: 'url('+item.images+')'}">
-					<view class="swiper-item" @tap="double">
+					<view class="swiper-item" >
 						<view class="header" v-if="heartAnimation.display" :style="{top:heartAnimation.top+'px',left:heartAnimation.left+'px'}">
 							<image :animation="animationData" src="../../static/img/main/daily/like.svg" mode=""></image>
 						</view>
