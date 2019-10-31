@@ -97,7 +97,7 @@
 				<!-- <chatInput @sendMessge="addComm"></chatInput> -->
 			</view>
 		</view>
-		 <image-cropper :src="tempFilePath" @confirm.stop="confirm" @cancel.stop="cancel"></image-cropper>
+		 <image-cropper :src="tempFilePath" @confirm.stop="confirm" @cancel.stop="cancel" ></image-cropper>
 	</view>
 </template>
 

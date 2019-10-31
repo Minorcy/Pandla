@@ -402,7 +402,7 @@
 		<view class="list-box">
 			<view v-for="(item,index) in dynInfo" :key="index" :class="{'active':item.active}" :data-index="index" @tap="previewPhoto(index)">
 				<image :src="item.images" mode="aspectFill" lazy-load="true">
-					<image src="../../static/img/user/delete.svg" mode="" class="delete" @tap.stop="deleteDyn(item.id,index)">
+					<image src="../../static/img/user/delete.svg" mode="" class="delete" @tap.stop="deleteDyn(item.id,index)" >
 				</image>
 				<view v-if="item.content==''">第{{index+1}}图片</view>
 				<view v-if="item.content!=''">{{item.content}}</view>
@@ -554,6 +554,7 @@
 <style lang="scss">
 	.album-page {
 		background-color: #eee;
+		width: 100%;
 	}
 
 	.list-box {

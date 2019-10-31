@@ -51,7 +51,7 @@
 									{{systemList[0].context}}
 								</text>
 							</view>
-							<view class="recentchat-item-unread" v-if="systemList.unread != 0">{{systemList.unread || ''}}</view>
+							<view class="recentchat-item-unread" v-if="systemList.unread != 0">{{systemList.unread}}</view>
 						</view>
 					</view>
 				</view>

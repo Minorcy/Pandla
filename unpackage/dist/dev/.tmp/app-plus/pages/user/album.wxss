@@ -26,6 +26,7 @@
 /* 文章场景相关 */
 .album-page {
   background-color: #eee;
+  width: 100%;
 }
 .list-box {
   display: -webkit-box;

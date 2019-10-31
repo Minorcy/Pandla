@@ -29,9 +29,12 @@ uni-page-body.data-v-592699c8 {
   background: #131D21;
 }
 .main-content.data-v-592699c8 {
+  width: 100%;
   position: relative;
   overflow: hidden;
   background: #131D21;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .header.data-v-592699c8 {
   display: -webkit-box;
@@ -44,13 +47,6 @@ uni-page-body.data-v-592699c8 {
       -ms-flex-direction: row;
           flex-direction: row;
   margin-left: 0;
-}
-.main-content.data-v-592699c8 {
-  width: 100%;
-  min-height: 100%;
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 .header-border.data-v-592699c8 {
   font-size: 12px;
@@ -249,13 +245,12 @@ text.data-v-592699c8 {
 }
 .scroll-wraaper.data-v-592699c8 {
   width: 100%;
-  height: 500rpx;
+  height: 450rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: absolute;
-  bottom: 0px;
+  bottom: 10px;
   white-space: nowrap;
-  background: #131D21;
 }
 .scroll.data-v-592699c8 {
   width: 100%;

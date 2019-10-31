@@ -1984,6 +1984,8 @@ export const upload = (imgTemp) => new Promise((resolve, reject) => {
 
 // 上传日志内容
 export const createDyn = (dynContent, path, location, lat, lng) => new Promise((resolve, reject) => {
+	var id = uni.getStorageSync('USERS_KEY').id 
+	console.log(id)
 	uni.request({
 		url: dynUrl + 'createDyn',
 		method: 'POST',
@@ -1997,6 +1999,7 @@ export const createDyn = (dynContent, path, location, lat, lng) => new Promise((
 			'path': path,
 			"lat": lat,
 			"lng": lng,
+			"uid": id
 		},
 		success: (res) => {
 			// console.log(res.data);

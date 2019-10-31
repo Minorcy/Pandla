@@ -151,7 +151,6 @@
   height: 112rpx;
   line-height: 112rpx;
   /* 在这里设置导航条高度 */
-  border-bottom: 2rpx solid #979797;
   color: #000000;
   border-top: 2rpx solid #979797;
 }
