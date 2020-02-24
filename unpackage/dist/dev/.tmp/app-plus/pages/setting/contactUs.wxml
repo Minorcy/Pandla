@@ -1,0 +1,1 @@
+<view class="page"><view class="top"><text>郵箱：<text class="blue">doc@pandla.io</text></text><text>Facebook：<text class="blue">Pandla Planet</text></text><text>微信公眾號：<text class="blue">PANDLA</text></text></view><view class="img"><image src="../../static/img/user/contact.png" mode="widthFix"></image></view></view>

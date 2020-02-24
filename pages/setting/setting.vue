@@ -3,7 +3,7 @@
 		<view class="item" @tap="toIntroduce()">
 			<text>關於PANDLA</text>
 		</view>
-		<view class="item">
+		<view class="item" @tap="toApple()">
 			<text>版本更新</text>
 		</view>
 		<view class="item" @tap="toBlacklist">
@@ -18,10 +18,6 @@
 		<view class="item" @tap="toPrivacypolicy">
 			<text >隱私政策</text>
 		</view>
-		<view class="item" @tap="toContactUS">
-			<text>聯繫我們</text>
-		</view>
-		
 	</view>
 </template>
 
@@ -32,9 +28,12 @@
 				}
 		},
 		methods: {
+			toApple(){
+				plus.runtime.openURL('https://apps.apple.com/us/app/pandla/id1473219750?l=zh&ls=1')
+			},
 			toIntroduce() {
 				uni.navigateTo({
-					url: "introduce"
+					url: "aboutPandla"
 				});
 			},
 			toBlacklist(){
@@ -62,18 +61,13 @@
 				var that = this
 				uni.showModal({
 					title: '',
-					content: '确定清除缓存',
+					content: '確定清除緩存',
+					confirmText: "確定",
 					success: function(res) {
 						if (res.confirm) {
-							// uni.removeStorage({
-							//     key: 'storage_key',
-							//     success: function (res) {
-							//         console.log('success');
-							//     }
-							// });
-							that.$store.state.nim.deleteAllLocalMsgs()
+							
 						} else if (res.cancel) {
-							console.log('用户点击取消');
+							
 						}
 					}
 				});

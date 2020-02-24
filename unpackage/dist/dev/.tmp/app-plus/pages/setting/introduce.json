@@ -1,7 +1,10 @@
 {
-  "navigationBarTitleText": "關於PANDLA",
+  "navigationBarTitleText": "關於我們",
   "navigationBarBackgroundColor": "#E1E1E1",
   "navigationBarTextStyle": "black",
+  "titleNView": {
+    "type": "transparent"
+  },
   "bounce": "none",
   "usingComponents": {}
 }

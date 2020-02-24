@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"starry-sky.",[1],"data-v-31dd2ccd { width:100%; height:100% }\nwx-canvas.",[1],"data-v-31dd2ccd { width:100%; height:100% }\n",],undefined,{path:"./pages/base/test.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/base/test.wxml') } }));

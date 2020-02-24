@@ -24,33 +24,30 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.img-avatar.data-v-efb8c344 {
+.img-avatar.data-v-168ed01a {
   display: -webkit-box;
   display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-      -ms-flex-direction: column;
           flex-direction: column;
   width: 200rpx;
   height: 200rpx;
   margin: 0 auto;
   border-radius: 100%;
 }
-.img-text.data-v-efb8c344 {
+.img-text.data-v-168ed01a {
   margin-left: 10rpx;
   font-size: 28rpx;
   color: #007AFF;
 }
-.input-row.data-v-efb8c344 {
+.input-row.data-v-168ed01a {
   margin-top: 50rpx;
   padding: 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
-.input-row .title.data-v-efb8c344 {
+.input-row .title.data-v-168ed01a {
   color: grey;
   width: 20%;
   height: 25px;
@@ -60,19 +57,19 @@
   line-height: 30px;
   font-size: 16px;
 }
-.btn-row.data-v-efb8c344 {
+.btn-row.data-v-168ed01a {
   padding-top: 0;
 }
-.uni-input.data-v-efb8c344 {
+.uni-input.data-v-168ed01a {
   margin-top: 15rpx;
 }
-.btn.data-v-efb8c344 {
+.btn.data-v-168ed01a {
   color: #007AFF;
 }
-navigator.data-v-efb8c344 {
+navigator.data-v-168ed01a {
   margin-top: 70rpx;
 }
-.popup-btn.data-v-efb8c344 {
+.popup-btn.data-v-168ed01a {
   margin-top: 9px;
   color: #4a4a4a;
 }

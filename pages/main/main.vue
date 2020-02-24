@@ -1,9 +1,11 @@
 <template>
-	<view class="main-content" @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend" :style="{height:pageHeight+'px'}">
+	<view class="main-content" @touchmove="handletouchmove" @touchstart="handletouchstart" @touchend="handletouchend"
+	 :style="{height:pageHeight+'px'}">
 		<view id="header" class="header">
 			<navigator class="header-border" url='../ledger/asset'>
 				<image src="../../static/img/main/pan.svg" class="header-icon" style="opacity: 0.7;" />
 				<text>PAN {{panBalance | toFixed(4)}}</text>
+				<view class="header-border-dot" v-if="tokens.length != 0 "></view>
 			</navigator>
 			<navigator class="header-border" url='../ledger/focus'>
 				<image src="../../static/img/main/focus.svg" class="header-icon" />
@@ -15,7 +17,7 @@
 				<image src="../../static/img/main/laba.gif" class="header-icon" />
 			</view>
 			<swiper vertical="true" autoplay="true" circular="true" interval="3000">
-				<swiper-item v-for="(item, index) in noticeMsg" :key="index"  @tap="toNotice(index)">
+				<swiper-item v-for="(item, index) in noticeMsg" :key="index" @tap="toNotice(index)">
 					<text>{{item.context}}</text>
 					<view class="dot" v-if="index == 0 && dotShow == true">
 					</view>
@@ -58,6 +60,7 @@
 </template>
 
 <script>
+	import sockect from "@/common/websocket.js"
 	//import token from '../../components/token.vue';
 	import storage from "@/common/utils/storage.js"
 	import uniNoticeBar from "@/components/uni-notice-bar/uni-notice-bar.vue"
@@ -72,8 +75,6 @@
 		getBalance,
 		getForBalance,
 		registerWyAccount,
-		getWyToken,
-		putWyToken,
 		getIndexBulletin
 	} from "../../api/api.js";
 	let Token
@@ -107,21 +108,21 @@
 				lastY: 0,
 				tga: true,
 				dotShow: '',
-				pageHeight:''
+				pageHeight: ''
 			}
 		},
 		components: {
 			uniNoticeBar
 		},
-		watch: {
-			'tokens': function() {
-				if (this.tokens.length == 0) {
-					this.bgColor = this.bgImage1;
-					this.bgColor1 = this.bgImage2;
-					this.isActive = true;
-				}
-			}
-		},
+		// watch: {
+		// 	'tokens': function() {
+		// 		if (this.tokens.length == 0) {
+		// 			this.bgColor = this.bgImage1;
+		// 			this.bgColor1 = this.bgImage2;
+		// 			this.isActive = true;
+		// 		}
+		// 	}
+		// },
 		methods: {
 			handletouchmove: function(event) {
 				// console.log(event)
@@ -206,12 +207,12 @@
 					uni.setStorageSync('dotShow_key', 1);
 				}
 				uni.navigateTo({
-					url: "../notice/notice"
+					url: "../notice/notice?index=" + index
 				})
 			},
 			getMainSlider() {
 				mainSlider().then(data => {
-					this.slides = data
+					this.slides = data.slice(1)
 				});
 			},
 			async getToken(Token) { //获取token
@@ -226,8 +227,9 @@
 					// 	return
 					// }
 					this.tokens = res.data.data
-					// console.log(res.data.data)
+					console.log(this.tokens)
 				}
+				return
 				if (this.tokens.length == 0) {
 					this.bgColor = this.bgImage1;
 					this.isActive = true;
@@ -235,6 +237,7 @@
 					this.bgColor = this.bgImage1;
 					this.isActive = false;
 				}
+
 				let num = this.tokens.length;
 				let iconWidth;
 				let iconHeight;
@@ -280,8 +283,15 @@
 							continue;
 						}
 						delete _tmpArray[pointer]; //删除数组_tmpArray中第pointer个值
-						yStart = parseInt(pointer / xNum, 10) * iconWidth;
-						xStart = (pointer % xNum) * iconHeight;
+						var random = Math.floor(Math.random() * 50)
+						yStart = parseInt(pointer / xNum, 10) * iconWidth + random;
+						xStart = (pointer % xNum) * iconHeight + random;
+						if (yStart > data.height - 50) {
+							yStart = yStart - 50
+						}
+						if (xStart > data.width - 50) {
+							xStart = xStart - 50
+						}
 						let o = {
 							value: this.tokens[num - 1].token,
 							id: this.tokens[num - 1].id,
@@ -315,20 +325,20 @@
 						this.isActive = true;
 					}
 				}, 800);
-				
-				
+
+
 			},
 			async takePan(token, id, index) {
 				let res = await this.api.homeToken(Token).takePan({
 					numbers: Number(token),
 					id: id
 				});
-				
+
 				if (res.data.status == 200) {
 					var that = this
-					var voice = this.$store.state.defaultSettings.voice	
+					var voice = this.$store.state.defaultSettings.voice
 					this.panBalance += Number(token)
-					console.log(this.initToken ,this.tokens)
+					console.log(this.initToken, this.tokens)
 					if (this.initToken == this.tokens.length) {
 						this.initToken = 0
 						this.getToken(Token)
@@ -353,10 +363,11 @@
 							that.flog = false
 						})
 					}
-					
-					
-				} 
+
+
+				}
 				if (res.data.status == 404) {
+					this.getToken(Token)
 					uni.showToast({
 						icon: 'none',
 						title: res.data.msg
@@ -374,35 +385,43 @@
 				})
 			},
 
-			...mapActions(["connect"])
+		
 		},
 		mounted() {
-			getWyToken().then(data => {
-				let uid = data.uid;
-				let sdktoken = data.wyToken
-				uni.setStorageSync('uid', uid)
-				uni.setStorageSync('sdktoken', sdktoken)
-				this.connect()
-			})
-			// uni.getSystemInfo({
-			// 	success: function(res) {
-			// 		this.pageHeight = res.windowHeight
-			// 		console.log("====>",this.pageHeight)
-			// 	}
-			// });
-			 
+			uni.getLocation({
+				type: 'wgs84',
+				success: function(res) {
+					// console.log('当前位置的经度：' + res.longitude);
+					// console.log('当前位置的纬度：' + res.latitude);
+					checkNearbyPerson(res.longitude,res.latitude,10).then(data => {
+					
+					})
+				},
+				fail() {
+					uni.showToast({
+						icon: 'none',
+						title: "获取定位权限失败"
+					})
+				}
+			});
+
 
 		},
 		onReady() {
 			const res = uni.getSystemInfoSync();
-			this.pageHeight = res.windowHeight -20
+			this.pageHeight = res.windowHeight - 20
+			if (uni.getSystemInfoSync().platform === 'android') {
+				this.pageHeight = res.windowHeight - 20
+			} else {
+				if (res.windowHeight > 780) {
+					this.pageHeight = res.windowHeight - 55
+				} else {
+					this.pageHeight = res.windowHeight - 20
+				}
+			}
 		},
 		onLoad(options) {
-			console.log(this.pageHeight)
-			uni.showLoading({
-				title: "加载中"
-			})
-			Token = uni.getStorageSync('USERS_KEY').token;
+			Token = uni.getStorageSync('TOKEN_KEY');
 			this.getMainSlider();
 			this.getAllBalance();
 			this.getAllForBalance();
@@ -410,9 +429,6 @@
 			getIndexBulletin().then(data => {
 				this.noticeMsg = data
 			})
-			setTimeout(() => {
-				uni.hideLoading()
-			}, 500)
 			var show = uni.getStorageSync('dotShow_key')
 			if (show == "") {
 				this.dotShow = true
@@ -422,38 +438,20 @@
 		},
 		onShow() {
 			var that = this
-			var token = uni.getStorageSync("USERS_KEY").token
-			if (!token) {	
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
-							that.$store.dispatch('logoutnim')
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
-					}
-				});
-			}
-			if (this.tokens.length == 0) {
-				this.getToken(Token);
-			}
-			if (this.initToken > this.tokens.length) {
-				this.tokens = ""
-				this.initToken = 0
-				this.bgColor = this.bgImage1;
-				this.bgColor1 = this.bgImage2;
-				this.isActive = true;
-			}
+			
+		
+			this.getToken(Token);
+		
+			// if (this.initToken > this.tokens.length) {
+			// 	this.tokens = ""
+			// 	this.initToken = 0
+			// 	this.bgColor = this.bgImage1;
+			// 	this.bgColor1 = this.bgImage2;
+			// 	this.isActive = true;
+			// }
 			this.getAllBalance();
 			this.getAllForBalance();
-			
+
 		}
 	}
 </script>
@@ -462,6 +460,9 @@
 	body,
 	uni-page-body {
 		background: #131D21;
+		padding-bottom: 0;
+		padding-bottom: constant(safe-area-inset-bottom);
+		padding-bottom: env(safe-area-inset-bottom);
 	}
 
 	.main-content {
@@ -469,7 +470,11 @@
 		position: relative;
 		overflow: hidden;
 		background: #131D21;
-		box-sizing:border-box;
+		box-sizing: border-box;
+		padding-bottom: 10px;
+		padding-bottom: constant(safe-area-inset-bottom);
+		padding-bottom: env(safe-area-inset-bottom);
+		transition: all 0.5s linear;
 	}
 
 	.header {
@@ -479,6 +484,7 @@
 	}
 
 	.header-border {
+		position: relative;
 		font-size: 12px;
 		height: 48upx;
 		line-height: 48upx;
@@ -489,6 +495,16 @@
 		flex-direction: row;
 		padding: 5upx 20upx 5upx 20upx;
 		margin: 10upx;
+	}
+
+	.header-border-dot {
+		position: relative;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color: red;
+		top: 5px;
+		left: 5px;
 	}
 
 	.header-border text {
@@ -609,7 +625,8 @@
 			}
 
 			.token-num {
-				font-size: 25upx;
+				font-size: 22upx;
+				line-height: 1;
 			}
 		}
 	}
@@ -660,9 +677,9 @@
 		height: 450upx;
 		box-sizing: border-box;
 		position: absolute;
-		bottom:10px;
+		bottom: 10px;
 		white-space: nowrap;
-					
+
 	}
 
 	.scroll {

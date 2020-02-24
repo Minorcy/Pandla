@@ -31,26 +31,20 @@
 .list-box {
   display: -webkit-box;
   display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
-      -ms-flex-direction: row;
           flex-direction: row;
   -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
-      -ms-flex-align: start;
           align-items: flex-start;
   -webkit-align-content: flex-start;
-      -ms-flex-line-pack: start;
           align-content: flex-start;
   padding: 20rpx 20rpx 0 20rpx;
   line-height: 30rpx;
@@ -61,20 +55,16 @@
     width: 345rpx;
     padding: 20rpx;
     margin-bottom: 20rpx;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     opacity: 0;
     -webkit-transform: translateY(40rpx);
-        -ms-transform: translateY(40rpx);
             transform: translateY(40rpx);
     -webkit-transition: all 0.3s ease-in-out 0s;
-    -o-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
 }
 .list-box > view.active {
       opacity: 1;
       -webkit-transform: translateY(0);
-          -ms-transform: translateY(0);
               transform: translateY(0);
 }
 .list-box image {

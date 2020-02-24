@@ -1,0 +1,101 @@
+
+.conn-page.data-v-d75e9c4e {
+		width: 100%;
+		background-color: #FFFFFF;
+		padding: 10px;
+		box-sizing: border-box;
+}
+.no-list.data-v-d75e9c4e {
+		font-size: 16px;
+		    text-align: center;
+		    line-height: 1.5;
+		    color: #4A4A4A;
+		    display: block;
+		    margin: 80px auto;
+}
+.folllow-list.data-v-d75e9c4e {
+		width: 100%;
+		padding: 64px 10px 0 10px;
+		box-sizing: border-box;
+		background-color: #fff;
+		/* min-height: 100%; */
+		overflow-x: hidden;
+		overflow-y: scroll;
+		box-sizing: border-box
+}
+.list-item.data-v-d75e9c4e {
+		width: 100%;
+		sheight: 120px;
+		box-sizing: border-box;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		margin-bottom: 10px;
+}
+.item-img.data-v-d75e9c4e {
+		width: 100rpx;
+		height: 100rpx;
+		margin-right: 20px;
+		box-sizing: border-box;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-align-self: center;
+		        align-self: center;
+}
+.list-item-right.data-v-d75e9c4e {
+		-webkit-box-flex: 1;
+		-webkit-flex: 1;
+		        flex: 1;
+		border-bottom: 1px solid rgba(220, 220, 220, 0.5);
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-pack: justify;
+		-webkit-justify-content: space-between;
+		        justify-content: space-between;
+}
+.item-userInfo.data-v-d75e9c4e {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		        flex-direction: column;
+		line-height: 1.5;
+		padding: 5px 0;
+}
+.item-userInfo .name.data-v-d75e9c4e {
+		display: block;
+		font-weight: 700;
+		font-size: 16px;
+		color: #4A4A4A;
+		line-height: 1.5;
+}
+.item-userInfo .content.data-v-d75e9c4e {
+		display: block;
+		font-size: 14px;
+		color: #9B9B9B;
+		line-height: 1.5;
+}
+.item-userInfo .time.data-v-d75e9c4e {
+		display: block;
+		font-size: 12px;
+		color: #4A4A4A;
+		line-height: 1.5;
+}
+.item-log.data-v-d75e9c4e {
+		width: 75px;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		        align-items: center;
+}
+.item-log image.data-v-d75e9c4e {
+		width: 71px;
+		height: 71px;
+}
+

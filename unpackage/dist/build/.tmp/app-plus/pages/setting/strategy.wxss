@@ -1,0 +1,15 @@
+
+.strategy {
+	width: 100%;
+	background-color: #000000!important;
+}
+.strategy-img{
+	width: 100%;
+}
+image{
+	width: 100%;
+	height: 100%;
+	line-height: 0;
+	vertical-align:bottom
+}
+

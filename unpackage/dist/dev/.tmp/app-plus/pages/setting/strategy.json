@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "星球攻略",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
+  "titleNView": {
+    "type": "transparent"
+  },
+  "bounce": "none",
+  "usingComponents": {}
+}

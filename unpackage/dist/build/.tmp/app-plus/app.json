@@ -12,22 +12,21 @@
     "pages/pact/pact",
     "pages/pact/pactVoteDetail",
     "pages/daily/daily",
-    "pages/daily/talk",
+    "pages/daily/userDyn",
     "pages/daily/publish",
+    "pages/daily/crop",
     "pages/daily/userInfo",
     "pages/store/store",
     "pages/game/game",
     "pages/nearby/nearby",
     "pages/nearby/tga",
-    "pages/nearby/seek",
-    "pages/publish/publish",
     "pages/entertain/entertain",
     "pages/entertain/entertainDetail",
     "pages/entertain/entertainApplication",
     "pages/entertain/entertainUpload",
     "pages/user/user",
     "pages/user/update",
-    "pages/msg/msg",
+    "pages/msg/sessionList",
     "pages/msg/chat",
     "pages/msg/chatSettings",
     "pages/msg/report",
@@ -45,15 +44,17 @@
     "pages/purse/blockChain",
     "pages/purse/password",
     "pages/passport/passport",
-    "pages/auth/auth",
     "pages/invite/invite",
     "pages/base/base",
+    "pages/base/test",
     "pages/strategy/strategy",
     "pages/welfare/welfare",
     "pages/setting/setting",
     "pages/setting/contactUs",
     "pages/setting/introduce",
+    "pages/setting/strategy",
     "pages/setting/blacklist",
+    "pages/setting/aboutPandla",
     "pages/user/album",
     "pages/user/followList",
     "pages/user/fansList",
@@ -73,28 +74,28 @@
     "backgroundColor": "#000000",
     "list": [
       {
-        "pagePath": "pages/main/main",
-        "text": "首頁",
-        "iconPath": "static/img/tabbar/home.png",
-        "selectedIconPath": "static/img/tabbar/homeHL.png"
+        "pagePath": "pages/nearby/nearby",
+        "text": "約會",
+        "iconPath": "static/img/tabbar/dingweian.png",
+        "selectedIconPath": "static/img/tabbar/dingwei.png"
       },
       {
-        "pagePath": "pages/msg/msg",
+        "pagePath": "pages/msg/sessionList",
         "text": "通訊",
-        "iconPath": "static/img/tabbar/msg.png",
-        "selectedIconPath": "static/img/tabbar/msgHL.png"
+        "iconPath": "static/img/tabbar/tonxunan.png",
+        "selectedIconPath": "static/img/tabbar/tonxun.png"
       },
       {
-        "pagePath": "pages/pan/pan",
-        "text": "公益",
-        "iconPath": "static/img/tabbar/PAN.png",
-        "selectedIconPath": "static/img/tabbar/PANHL.png"
+        "pagePath": "pages/daily/daily",
+        "text": "相冊",
+        "iconPath": "static/img/tabbar/logan.png",
+        "selectedIconPath": "static/img/tabbar/log.png"
       },
       {
         "pagePath": "pages/user/user",
         "text": "我的",
-        "iconPath": "static/img/tabbar/user.png",
-        "selectedIconPath": "static/img/tabbar/userHL.png"
+        "iconPath": "static/img/tabbar/wodean.png",
+        "selectedIconPath": "static/img/tabbar/wode.png"
       }
     ]
   },
@@ -103,13 +104,13 @@
     "uploadFile": 10000
   },
   "debug": false,
-  "nvueCompiler": "weex",
+  "nvueCompiler": "uni-app",
   "renderer": "auto",
   "splashscreen": {
     "alwaysShowBeforeRender": false,
     "autoclose": true
   },
   "appname": "Pandla",
-  "compilerVersion": "2.3.7",
+  "compilerVersion": "2.4.6",
   "usingComponents": {}
 }

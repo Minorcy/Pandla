@@ -24,48 +24,43 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.settingChat.data-v-6ab7adca {
+.settingChat.data-v-8f2ecc52 {
   width: 100%;
   background-color: #E1E1E1;
 }
-.padTop.data-v-6ab7adca {
+.padTop.data-v-8f2ecc52 {
   padding-top: 20rpx;
 }
-.padTop .settingChat-item.data-v-6ab7adca:nth-last-of-type(1) {
+.padTop .settingChat-item.data-v-8f2ecc52:nth-last-of-type(1) {
     border: none;
 }
-.settingChat-wrapper.data-v-6ab7adca {
+.settingChat-wrapper.data-v-8f2ecc52 {
   width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding-left: 28rpx;
   background-color: #ffffff;
 }
-.settingChat-wrapper .settingChat-item.data-v-6ab7adca {
+.settingChat-wrapper .settingChat-item.data-v-8f2ecc52 {
     width: 100%;
     height: 90rpx;
     display: -webkit-box;
     display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
             justify-content: space-between;
     -webkit-box-align: center;
     -webkit-align-items: center;
-        -ms-flex-align: center;
             align-items: center;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     padding-right: 28rpx;
     border-bottom: 1rpx solid #C7C7CC;
 }
-.settingChat-wrapper .settingChat-item .setting-text.data-v-6ab7adca {
+.settingChat-wrapper .settingChat-item .setting-text.data-v-8f2ecc52 {
       font-size: 30rpx;
       color: #5F5F5F;
 }
-.settingChat-wrapper .settingChat-item .borderNone.data-v-6ab7adca {
+.settingChat-wrapper .settingChat-item .borderNone.data-v-8f2ecc52 {
       border: none;
 }
 

@@ -2,8 +2,8 @@
     "name" : "Pandla",
     "appid" : "__UNI__F2A9BD3",
     "description" : "全球第一款区块链同志社交软件",
-    "versionName" : "1.0.8",
-    "versionCode" : 108,
+    "versionName" : "1.1.8",
+    "versionCode" : 118,
     "transformPx" : false,
     "debug" : false,
     "app-plus" : {
@@ -13,10 +13,10 @@
             "Share" : {},
             "Maps" : {},
             "softinput" : {
-                "navBar" : "none" ,// 是否显示软键盘上的导航条  
-				"bottom": {  
-				        "offset": "auto"  
-				    }  
+                "navBar" : "none", // 是否显示软键盘上的导航条  
+                "bottom" : {
+                    "offset" : "auto"
+                }
             },
             "OAuth" : {},
             "SQLite" : {},
@@ -25,7 +25,7 @@
                     "description" : "跨域网络连接"
                 }
             },
-			"contentAdjust":false 
+            "contentAdjust" : false
         },
         /* 模块配置 */
         "distribute" : {
@@ -62,10 +62,10 @@
             "ios" : {
                 "app-plus" : {
                     "softinput" : {
-                        "navBar" : "none" ,// 是否显示软键盘上的导航条  
-						"bottom": {  
-						        "offset": "auto"  
-						    }  
+                        "navBar" : "none", // 是否显示软键盘上的导航条  
+                        "bottom" : {
+                            "offset" : "auto"
+                        }
                     }
                 },
                 "privacyDescription" : {
@@ -73,7 +73,22 @@
                     "NSCameraUsageDescription" : "獲取您的相機，拍照並上傳，用於發表",
                     "NSLocationWhenInUseUsageDescription" : "獲取您的位置，用同城相關服務",
                     "NSLocationAlwaysAndWhenInUseUsageDescription" : "獲取您的位置，用同城相關服務"
-                }
+                },
+                "idfa" : false,
+                "shortcuts" : [
+                    {
+                        "type" : "share",
+                        "title" : "二维码",
+                        "icontype" : "UIApplicationShortcutIconTypeShare"
+                    },
+                    {
+                        "type" : "about",
+                        "title" : "关 于",
+                        "userinfo" : {
+                            "key3" : "value3"
+                        }
+                    }
+                ]
             },
             /* ios打包配置 */
             "sdkConfigs" : {
@@ -161,10 +176,7 @@
             "alwaysShowBeforeRender" : false
         },
         "softinput" : {
-            "navBar" : "none" ,//是否显示iOS软键盘上的“完成”导航条
-			"bottom": {  
-			        "offset": "auto"  
-			    }  
+            "navBar" : "none" //是否显示iOS软键盘上的“完成”导航条
         }
     },
     // "mode" : "adjustResize" //软键盘弹出模式，
@@ -190,13 +202,7 @@
         "devServer" : {
             "port" : 8080,
             "disableHostCheck" : true,
-            "proxy" : {
-                "/dpc" : {
-                    "target" : "https://i.ixex.io",
-                    "changeOrigin" : true,
-                    "secure" : false
-                }
-            }
+            "https" : false
         }
     }
 }

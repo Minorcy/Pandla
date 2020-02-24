@@ -16,6 +16,8 @@
   "softinputMode": "adjustResize",
   "usingComponents": {
     "uni-popup": "/components/uni-popup/uni-popup",
-    "uni-tag": "/components/uni-tag/uni-tag"
+    "uni-tag": "/components/uni-tag/uni-tag",
+    "slider-range": "/components/slider-range/index",
+    "uni-search-bar": "/components/uni-search-bar/uni-search-bar"
   }
 }

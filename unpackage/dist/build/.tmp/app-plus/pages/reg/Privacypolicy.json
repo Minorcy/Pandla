@@ -1,7 +1,10 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "隱私條款",
   "navigationBarBackgroundColor": "#E1E1E1",
   "navigationBarTextStyle": "black",
   "bounce": "none",
+  "titleNView": {
+    "type": "transparent"
+  },
   "usingComponents": {}
 }

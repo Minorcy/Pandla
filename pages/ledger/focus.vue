@@ -7,8 +7,8 @@
 					<text class="num">{{assetInfo.balance | toFixed(4)}}</text>
 				</view>
 				<view class="btn" @tap="singIn()" :class="signed == true ? 'signed' : ' ' ">
-					<text v-if="!signed">签到</text>
-					<text v-if="signed" class="color">已签到</text>
+					<text v-if="!signed">簽到</text>
+					<text v-if="signed" class="color">已簽到</text>
 				</view>
 			</view>
 			<view class="focus-bottom">
@@ -474,7 +474,7 @@
 		&-notice {
 			.focus-label-context {
 				font-size: 14px;
-				color: #888
+				color: #9B9B9B
 			}
 		}
 

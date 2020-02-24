@@ -1,120 +1,119 @@
 <template>
 	<view class="seek-page">
 		<view>
-			<uni-popup ref="popup" type="top">
+			<uni-popup ref="popup" type="top" padding="10px">
 				<form @reset="reset">
 					<view class="popup-item">
-							<view class="example-title">距离</view>
-							<view class="tag-view">
-								<view class="">
-									<uni-tag :inverted="distance[0].inverted" text="10km" type="default" @click="setDistance(0)" />
-								</view>
-								<view class="">
-									<uni-tag :inverted="distance[1].inverted" text="50km" type="default" @click="setDistance(1)" />
-								</view>
-								<view class="">
-									<uni-tag :inverted="distance[2].inverted" text=">100km" type="default" @click="setDistance(2)" />
-								</view>
+						<view class="example-title">距離</view>
+						<view class="tag-view">
+							<view class="">
+								<uni-tag :inverted="distance[0].inverted" text="10km" type="default" @click="setDistance(0)" />
+							</view>
+							<view class="">
+								<uni-tag :inverted="distance[1].inverted" text="50km" type="default" @click="setDistance(1)" />
+							</view>
+							<view class="">
+								<uni-tag :inverted="distance[2].inverted" text=">100km" type="default" @click="setDistance(2)" />
 							</view>
 						</view>
-						<view class="popup-item">
-							<view class="example-title">排列方式</view>
-							<view class="tag-view">
-								<view class="">
-									<uni-tag :inverted="arrangement" text="列表模式" type="default" @click="setArrangement" />
-								</view>
-								<view class="">
-									<uni-tag :inverted="!arrangement" text="单图模式" type="default" @click="setArrangement" />
-								</view>
+					</view>
+					<view class="popup-item">
+						<view class="example-title">排列方式</view>
+						<view class="tag-view">
+							<view class="">
+								<uni-tag :inverted="arrangement" text="列表模式" type="default" @click="setArrangement" />
+							</view>
+							<view class="">
+								<uni-tag :inverted="!arrangement" text="单图模式" type="default" @click="setArrangement" />
 							</view>
 						</view>
-						<view class="popup-item">
-							<view class="example-title">角色</view>
-							<view class="tag-view role">
-								<view class="">
-									<uni-tag :inverted="character[0].inverted" text="0" type="default" @click="setCharacter(0)" />
-								</view>
-								<view class="">
-									<uni-tag :inverted="character[1].inverted" text="0.5" type="default" @click="setCharacter(1)" />
-								</view>
-								<view class="">
-									<uni-tag :inverted="character[2].inverted" text="1" type="default" @click="setCharacter(2)" />
-								</view>
-								<view class="">
-									<uni-tag :inverted="character[3].inverted" text="0.5偏0" type="default" @click="setCharacter(3)" />
-								</view>
-								<view class="">
-									<uni-tag :inverted="character[4].inverted" text="0.5偏1" type="default" @click="setCharacter(4)" />
-								</view>
-								<view class="">
-									<uni-tag :inverted="character[5].inverted" text="S" type="default" @click="setCharacter(5)" />
-								</view>
-								<view class="">
-									<uni-tag :inverted="character[6].inverted" text="M" type="default" @click="setCharacter(6)" />
-								</view>
-								<view class="">
-									<uni-tag :inverted="character[7].inverted" text="其他" type="default" @click="setCharacter(7)" />
-								</view>
+					</view>
+					<view class="popup-item">
+						<view class="example-title">角色</view>
+						<view class="tag-view role">
+							<view class="">
+								<uni-tag :inverted="character[0].inverted" text="0" type="default" @click="setCharacter(0)" />
+							</view>
+							<view class="">
+								<uni-tag :inverted="character[1].inverted" text="0.5" type="default" @click="setCharacter(1)" />
+							</view>
+							<view class="">
+								<uni-tag :inverted="character[2].inverted" text="1" type="default" @click="setCharacter(2)" />
+							</view>
+							<view class="">
+								<uni-tag :inverted="character[3].inverted" text="0.5偏0" type="default" @click="setCharacter(3)" />
+							</view>
+							<view class="">
+								<uni-tag :inverted="character[4].inverted" text="0.5偏1" type="default" @click="setCharacter(4)" />
+							</view>
+							<view class="">
+								<uni-tag :inverted="character[5].inverted" text="S" type="default" @click="setCharacter(5)" />
+							</view>
+							<view class="">
+								<uni-tag :inverted="character[6].inverted" text="M" type="default" @click="setCharacter(6)" />
+							</view>
+							<view class="">
+								<uni-tag :inverted="character[7].inverted" text="其他" type="default" @click="setCharacter(7)" />
 							</view>
 						</view>
-						<view class="popup-item">
-							<view class="example-title">年龄</view>
-							<!-- <view class="input-box">
-								<input value="" type="number" v-model="ageRange.min" />
-								<text>－</text>
-								<input value="" type="number" v-model="ageRange.max" @blur="reasonable(1)" />
-							</view> -->
-							<view class="slider-box">
-								<text>18</text>
-								<slider name="slider" block-size='20' value="70" @change="sliderChange1" min="18" max="70" show-value block-color="#CCCCCC" />
-							</view>
+					</view>
+					<view class="popup-item">
+						<view class="example-title">年齡</view>
+
+						<view class="slider-box">
+							<!-- 	<text>18</text> -->
+							<!-- <slider name="slider" block-size='20' value="70" @change="sliderChange1" min="18" max="70" show-value block-color="#CCCCCC" /> -->
+							<slider-range class="slider" :value="ageRange.rangevalue" :min="ageRange.min" :max="ageRange.max" :step="1"
+							 :bar-height="3" :block-size="20" background-color="#cccccc" active-color="#007aff" :decorationVisible="true"
+							 @change="sliderChange1" :format="format"></slider-range>
 						</view>
-						<view class="popup-item">
-							<view class="example-title">体重(kg)</view>
-							<!-- <view class="input-box">
-								<input value="" type="number" v-model="weightRange.min" />
-								<text>－</text>
-								<input value="" type="number" v-model="weightRange.max" @blur="reasonable(2)" />
-							</view> -->
-							<view class="slider-box">
-								<text>40</text>
+					</view>
+					<view class="popup-item">
+						<view class="example-title">體重(kg)</view>
+
+						<view class="slider-box">
+							<!-- <text>40</text>
 								<slider  name="slider" block-size='20' value='200' @change="sliderChange2" min="40" max="200" show-value block-color="#CCCCCC" />
-							</view>
+							 -->
+							<slider-range class="slider" :value="weightRange.rangevalue" :min="weightRange.min" :max="weightRange.max" :step="1"
+							 :bar-height="3" :block-size="20" background-color="#cccccc" active-color="#007aff" :decorationVisible="true"
+							 @change="sliderChange2" :format="format1"></slider-range>
 						</view>
-						<view class="popup-item">
-							<view class="example-title">身高(cm)</view>
-							<!-- <view class="input-box">
-								<input value="" type="number" v-model="heightRange.min" />
-								<text>－</text>
-								<input value="" type="number" v-model="heightRange.max" @blur="reasonable(3) " />
-							</view> -->
-							<view class="slider-box">
-								<text>150</text>
-								<slider  name="slider" block-size='20' value="220" @change="sliderChange3" min="150" max="220" show-value block-color="#CCCCCC" />
-							</view>
+					</view>
+					<view class="popup-item">
+						<view class="example-title">身高(cm)</view>
+
+						<view class="slider-box">
+							<!-- <text>150</text>
+								<slider  name="slider" block-size='20' value="220" @change="sliderChange3" min="150" max="220" show-value block-color="#CCCCCC" /> -->
+							<slider-range class="slider" :value="heightRange.rangevalue" :min="heightRange.min" :max="heightRange.max" :step="1"
+							 :bar-height="3" :block-size="20" background-color="#cccccc" active-color="#007aff" :decorationVisible="true"
+							 @change="sliderChange3" :format="format2"></slider-range>
 						</view>
-						<view class="popup-item">
-							<view class="determine">
-								<button type="default" form-type="reset" class="reset">重置</button>
-								<button @click="closePopup" class="confirm">确定</button>
-							</view>
+					</view>
+					<view class="popup-item">
+						<view class="determine">
+							<button type="default" form-type="reset" class="reset">重置</button>
+							<button @click="closePopup" class="confirm">確定</button>
 						</view>
-					
+					</view>
+
 				</form>
-				</uni-popup>
+			</uni-popup>
 		</view>
 		<view class="search">
-			<view class="input-box">
-				<input type="text" placeholder="請輸入關鍵字" maxlength="200" v-model="searchValue" />
-				<image src="../../static/img/msg/search.svg" @tap="search()"></image>
-			</view>
+			<uni-search-bar radius="100" clearButton="always"  v-model="searchValue"  @confirm="search" />
 		</view>
 		<view class="no-nearby" v-if="nearbyInfo.length == 0">
 			<text>{{remind}}</text>
 		</view>
 		<view :class="[arrangement?'column-list':'palace-list']">
 			<view class="nearby-item" v-for="(item,index) in nearbyInfo" :key="index">
+				<view class="dot" :class="[item.online == 1 ? 'red':'']">
+					
+				</view>
 				<view class="item-img" @tap="toUserInfo(item.uid,item.scope)">
+					
 					<image :src="item.portrait" mode="aspectFill"></image>
 					<view class="mask">
 						<text>{{item.scope | toFixed(2)}}km</text>
@@ -133,20 +132,27 @@
 </template>
 
 <script>
+	import sockect from "@/common/websocket.js"
 	import uniTag from "@/components/uni-tag/uni-tag.vue"
 	import uniPopup from "@/components/uni-popup/uni-popup.vue"
+	import SliderRange from '@/components/slider-range/index.vue'
+	import uniSearchBar from "@/components/uni-search-bar/uni-search-bar.vue"
+	
 	import {
 		debounce
 	} from "@/common/js/utils";
 	import {
 		checkNearbyPerson,
 		updateLab,
-		getInfo
+		getInfo,
+		chaeckOnlineByUid
 	} from "@/api/api.js"
 	export default {
 		components: {
 			uniPopup,
-			uniTag
+			uniTag,
+			SliderRange,
+			uniSearchBar
 		},
 		data() {
 			return {
@@ -198,19 +204,23 @@
 				],
 				ageRange: {
 					max: 70,
-					min: 18
+					min: 18,
+					rangevalue: [18, 70],
+					selectedvalue: [18, 70]
 				},
 				weightRange: {
 					max: 200,
-					min: 40
+					min: 40,
+					rangevalue: [40, 200],
+					selectedvalue: [40, 200]
 				},
 				heightRange: {
 					max: 220,
-					min: 150
-					
+					min: 150,
+					rangevalue: [150,220],
+					selectedvalue: [150, 220]
 				},
-				
-
+				flag:false
 			}
 		},
 
@@ -225,15 +235,15 @@
 				if (myid != uid) {
 					return
 				}
-				uni.redirectTo({
+				uni.navigateTo({
 					url: "tga"
-				});
+				})
 			},
 			search() {
+				uni.hideKeyboard()
 				var that = this
 				var list = uni.getStorageSync("nearbyInfo")
-				// console.log(list)
-				var match = new RegExp("(" + that.searchValue + ")", "img");
+				var match = new RegExp("(" + that.searchValue.value + ")", "img");
 				var searchlist = []
 				list.forEach(v => {
 					if (match.test(v.name)) {
@@ -243,6 +253,7 @@
 						searchlist.push(v);
 					}
 				});
+				console.log(searchlist)
 				if (searchlist.length == 0) {
 					uni.showToast({
 						icon: 'none',
@@ -270,50 +281,17 @@
 				};
 				return allArr
 			},
-			reasonable(idx) {
-				if (idx == 1) {
-					this.ageRange.min = Number(this.ageRange.min)
-					this.ageRange.max = Number(this.ageRange.max)
-					if (this.ageRange.min < 18 || this.ageRange.max > 70 || this.ageRange.min > this.ageRange.max) {
-						uni.showToast({
-							icon: 'none',
-							title: "请输入合理的年龄范围（18~70）"
-						});
-					}
-				}
-				if (idx == 2) {
-					this.weightRange.min = Number(this.weightRange.min)
-					this.weightRange.max = Number(this.weightRange.max)
-					if (this.weightRange.min < 40 || this.weightRange.max > 200 || this.weightRange.min > this.weightRange.max) {
-						uni.showToast({
-							icon: 'none',
-							title: "请输入合理的体重范围（40~200kg）"
-						});
-					}
-				}
-				if (idx == 3) {
-					this.heightRange.min = Number(this.heightRange.min)
-					this.heightRange.max = Number(this.heightRange.max)
-					if (this.heightRange.min < 150 || this.heightRange.max > 220 || this.heightRange.min > this.heightRange.max) {
-						uni.showToast({
-							icon: 'none',
-							title: "请输入合理的年龄范围（150~220cm）"
-						});
-					}
-				}
-			},
 			sliderChange1(e) {
 
-				this.ageRange.max = e.detail.value
-				console.log(this.ageRange)
+				this.ageRange.selectedvalue = e
 			},
 			sliderChange2(e) {
 
-				this.weightRange.max = e.detail.value
+				this.weightRange.selectedvalue = e
 			},
 			sliderChange3(e) {
 
-				this.heightRange.max = e.detail.value
+				this.heightRange.selectedvalue = e
 			},
 			reset() {
 				this.distance = [{
@@ -357,30 +335,38 @@
 					],
 					this.ageRange = {
 						max: 70,
-						min: 18
-						
+						min: 18,
+						rangevalue: [18, 70],
+						selectedvalue: [18, 70]
 					},
 					this.weightRange = {
 						max: 200,
-						min: 40
-						
+						min: 40,
+						rangevalue: [40, 200],
+						selectedvalue: [40, 200]
 					},
 					this.heightRange = {
 						max: 220,
-						min: 150
-					
+						min: 150,
+						rangevalue: [150, 220],
+						selectedvalue: [150, 220]
 					}
-				
+
 			},
 			openPopup() {
+				
 				this.$refs.popup.open()
 			},
 			closePopup() {
+				this.remind = ""
 				this.nearbyInfo = []
 				var chooses = []
 				uni.showLoading({
 					title: '加载中'
 				});
+				setTimeout(() => {
+					uni.hideLoading();
+				}, 2000);
 				this.$refs.popup.close()
 				for (var i = 0; i < this.character.length; i++) {
 					if (!this.character[i].inverted) {
@@ -429,18 +415,18 @@
 				let Conditions = {
 					ranges: [{
 							type: 'age',
-							max: this.ageRange.max,
-							min: this.ageRange.min
+							max: this.ageRange.selectedvalue[1],
+							min: this.ageRange.selectedvalue[0]
 						},
 						{
 							type: 'stature',
-							max: this.heightRange.max,
-							min: this.heightRange.min
+							max: this.heightRange.selectedvalue[1],
+							min: this.heightRange.selectedvalue[0]
 						},
 						{
 							type: 'weight',
-							max: this.weightRange.max,
-							min: this.weightRange.min
+							max: this.weightRange.selectedvalue[1],
+							min: this.weightRange.selectedvalue[0]
 						}
 					],
 					chooses: chooses
@@ -457,6 +443,10 @@
 					}
 					return products;
 				}
+				if(!this.longitude||this.latitude.length ==0){
+					this.remind = "獲取定位權限失敗"
+					return
+				}
 				checkNearbyPerson(this.longitude, this.latitude, this.scope, this.tga).then(data => {
 					if (data.length == 0) {
 						this.remind = "附近暫無居民,請點擊右上角擴大範圍"
@@ -470,6 +460,9 @@
 							item.weight = data.weight
 							item.acctType = data.acctType
 
+						})
+						chaeckOnlineByUid(item.uid).then(data=>{
+							item.online = data
 						})
 					})
 					setTimeout(() => {
@@ -497,23 +490,39 @@
 			setCharacter(index) {
 				this.character[index].inverted = !this.character[index].inverted
 			},
-
+			format(val) {
+				return val
+			},
+			format1(val) {
+				return val
+			},
+			format2(val) {
+				return val
+			}
 
 		},
 		onNavigationBarButtonTap() {
-			this.$refs.popup.open()
+			this.flag = !this.flag
+			if(this.flag){
+				this.$refs.popup.open()
+			}else {
+				this.$refs.popup.close()
+			}
+			
 
 		},
 		onLoad(option) {
-			if (option.tga) {
-				this.tga = option.tga
-			}
-			if (this.tga != "") {
-				uni.setStorageSync("tga", this.tga)
+			var open = this.$store.state.is_open_socket
+			if (!open) {
+				sockect.connectSocketInit()
 			}
 			uni.showLoading({
-				title: '加载中'
+				title: '加載中'
 			});
+			setTimeout(() => {
+				uni.hideLoading();
+				this.remind = "獲取定位權限失敗"
+			},4000)
 			var that = this
 			uni.getLocation({
 				type: 'wgs84',
@@ -537,60 +546,31 @@
 								item.weight = data.weight
 								item.acctType = data.acctType
 							})
+							chaeckOnlineByUid(item.uid).then(data=>{
+								item.online = data
+							})
 						})
 						setTimeout(() => {
 							that.nearbyInfo = data
 							uni.setStorageSync("nearbyInfo", data)
-							console.log(data)
 							uni.hideLoading();
 						}, 500)
 					})
 				},
 				fail() {
 					uni.hideLoading();
-					// uni.showToast({
-					// 	icon: 'none',
-					// 	title: "获取定位权限失败"
-					// });
-					that.remind = "获取定位权限失败"
-					// checkNearbyPerson(113.3352184296, 22.9913456029, that.scope, that.tga).then(data => {
-					// 	if (data.length == 0) {
-					// 		that.remind = "附近暫無居民,請點擊右上角擴大範圍"
-
-					// 	}
-					// 	data.filter(item => {
-					// 		getInfo(item.uid).then(data => {
-					// 			var info = data.age + '/' + data.stature + '/' + data.weight + '/' + data.acctType
-					// 			item.info = info
-					// 			item.age = data.age
-					// 			item.stature = data.stature
-					// 			item.weight = data.weight
-					// 			item.acctType = data.acctType
-					// 		})
-					// 	})
-					// 	setTimeout(() => {
-					// 		that.nearbyInfo = data
-					// 		uni.setStorageSync("nearbyInfo", data)
-					// 		console.log(data)
-					// 		uni.hideLoading();
-					// 	}, 500)
-					// })
+					that.remind = "獲取定位權限失敗"
 				}
 			});
-
-
 		},
 		onPullDownRefresh() {
-			this.nearbyInfo = ""
 			var that = this
+			that.remind = ""
 			uni.getLocation({
 				type: 'wgs84',
 				success: function(res) {
-					// console.log('当前位置的经度：' + res.longitude);
 					that.longitude = res.longitude
-					// console.log('当前位置的纬度：' + res.latitude);
 					that.latitude = res.latitude
-
 					checkNearbyPerson(that.longitude, that.latitude, that.scope, that.tga).then(data => {
 						data.filter(item => {
 							getInfo(item.uid).then(data => {
@@ -601,17 +581,65 @@
 								item.weight = data.weight
 								item.acctType = data.acctType
 							})
+							chaeckOnlineByUid(item.uid).then(data=>{
+								item.online = data
+							})
 						})
 						setTimeout(() => {
 							that.nearbyInfo = data
 							uni.setStorageSync("nearbyInfo", data)
 						}, 500)
 					})
+				},
+				fail() {
+					uni.stopPullDownRefresh()
+					that.remind = "獲取定位權限失敗"
 				}
 			});
 			setTimeout(function() {
 				uni.stopPullDownRefresh()
 			}, 800)
+		},
+		onShow() {
+			var that = this
+			uni.getLocation({
+				type: 'wgs84',
+				success: function(res) {
+					// console.log('当前位置的经度：' + res.longitude);
+					that.longitude = res.longitude
+					// console.log('当前位置的纬度：' + res.latitude);
+					that.latitude = res.latitude
+			
+					checkNearbyPerson(that.longitude, that.latitude, that.scope, that.tga).then(data => {
+						if (data.length == 0) {
+							that.remind = "附近暫無居民,請點擊右上角擴大範圍"
+			
+						}
+						data.filter(item => {
+							getInfo(item.uid).then(data => {
+								var info = data.age + '/' + data.stature + '/' + data.weight + '/' + data.acctType
+								item.info = info
+								item.age = data.age
+								item.stature = data.stature
+								item.weight = data.weight
+								item.acctType = data.acctType
+							})
+							chaeckOnlineByUid(item.uid).then(data=>{
+								item.online = data
+							})
+						})
+						setTimeout(() => {
+							that.nearbyInfo = data
+							uni.setStorageSync("nearbyInfo", data)
+							uni.hideLoading();
+						}, 500)
+					})
+				},
+				fail() {
+					uni.hideLoading();
+					that.remind = "獲取定位權限失敗"
+				}
+			});
 		}
 	}
 </script>
@@ -680,19 +708,23 @@
 					text-align: center;
 				}
 			}
-		
-			.slider-box{
+
+			.slider-box {
+				width: 100%;
+				box-sizing: border-box;
 				padding: 0 5px;
 				display: flex;
 				justify-content: space-between;
-				slider{
-					width: 85%;
+
+				.slider {
+					width: 90%;
 				}
-				text{
-					color: #888888;
+
+				text {
+					color: #000;
 					padding: 10px 0px;
 					line-height: 1.5;
-					
+
 				}
 			}
 		}
@@ -724,51 +756,54 @@
 
 
 		.search {
-			.input-box {
-				width: 95%;
-				margin: 10px auto;
-				height: 30px;
-				position: relative;
-				line-height: 30px;
-				border: 1px solid #CCCCCC;
-				border-radius: 15px;
-				padding: 0 0 0 5px;
-				overflow: hidden;
+			width: 100%;
+			padding: 0 20rpx;
+			box-sizing: border-box;
+			// .input-box {
+			// 	width: 95%;
+			// 	margin: 10px auto;
+			// 	height: 30px;
+			// 	position: relative;
+			// 	line-height: 30px;
+			// 	border: 1px solid #CCCCCC;
+			// 	border-radius: 15px;
+			// 	padding: 0 0 0 5px;
+			// 	overflow: hidden;
 
-				image {
-					width: 20px;
-					height: 20px;
-					display: inline-block;
-					position: absolute;
-					top: 5px;
-					right: 10px;
-				}
+			// 	image {
+			// 		width: 20px;
+			// 		height: 20px;
+			// 		display: inline-block;
+			// 		position: absolute;
+			// 		top: 5px;
+			// 		right: 10px;
+			// 	}
 
-				input {
-					display: inline-block;
-					height: 30px;
-					width: 80%;
-					background: #ffffff;
-					line-height: 30px;
-					margin-left: 10px;
-					font-size: 16px;
-					border-radius: 10px;
-					text-decoration: none;
-					outline: none;
-				}
+			// 	input {
+			// 		display: inline-block;
+			// 		height: 30px;
+			// 		width: 80%;
+			// 		background: #ffffff;
+			// 		line-height: 30px;
+			// 		margin-left: 10px;
+			// 		font-size: 16px;
+			// 		border-radius: 10px;
+			// 		text-decoration: none;
+			// 		outline: none;
+			// 	}
 
-				text {
-					position: absolute;
-					top: 0;
-					right: 0;
-					color: #000000;
-					font-size: 16px;
-					line-height: 30px;
-					width: 35px;
-					text-align: center;
-					height: 30px;
-				}
-			}
+			// 	text {
+			// 		position: absolute;
+			// 		top: 0;
+			// 		right: 0;
+			// 		color: #000000;
+			// 		font-size: 16px;
+			// 		line-height: 30px;
+			// 		width: 35px;
+			// 		text-align: center;
+			// 		height: 30px;
+			// 	}
+			// }
 		}
 
 		.no-nearby {
@@ -790,7 +825,12 @@
 			box-sizing: border-box;
 			display: flex;
 			flex-wrap: wrap;
-
+			.nearby-item:nth-child(2n+2){
+				margin-left: -1px !important
+			}
+			.nearby-item:nth-child(n+3){
+				margin-top: -1px !important
+			}
 			.nearby-item {
 				width: 50%;
 				padding: 10px;
@@ -799,13 +839,26 @@
 				display: flex;
 				justify-content: center;
 				flex-direction: column;
-
+				position: relative;
+				
+				.dot{
+					position: absolute;
+					top: 10px;
+					right: 10px;
+					width: 10px;
+					height: 10px;
+					background-color: #999;
+					border-radius: 50%;
+				}
+				.red{
+					background-color: #20de38!important;
+				}
 				.item-img {
 					margin: 0px auto;
 					position: relative;
 					border-radius: 50%;
 					overflow: hidden;
-
+					
 					image {
 						width: 120px;
 						height: 120px;
@@ -813,14 +866,15 @@
 						overflow: hidden;
 						display: block;
 					}
-
+					
+				
 					.mask {
 						position: absolute;
 						bottom: 0;
 						left: 50%;
 						margin-left: -50%;
 						width: 100%;
-						height: 40px;
+						height: 30px;
 						background-color: rgba(0, 0, 0, 0.6);
 						text-align: center;
 
@@ -828,7 +882,7 @@
 							font-size: 14px;
 							color: #FFFFFF;
 							text-align: center;
-							line-height: 40px;
+							line-height: 30px;
 						}
 					}
 				}
@@ -868,7 +922,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			padding-top: 0;
-
+			
 			.nearby-item {
 				width: 100%;
 				box-sizing: border-box;
@@ -878,6 +932,19 @@
 				flex-direction: column;
 				position: relative;
 				margin-bottom: 10px;
+				.dot{
+					position: absolute;
+					top: 10px;
+					right: 10px;
+					width: 10px;
+					height: 10px;
+					background-color: #999;
+					border-radius: 50%;
+					z-index: 10;
+				}
+				.red{
+					background-color: #20de38 !important;
+				}
 
 				.item-img {
 					margin: 0px auto;
@@ -895,7 +962,7 @@
 						left: 50%;
 						margin-left: -50%;
 						width: 100%;
-						height: 30%;
+						height: 20%;
 						background-color: rgba(0, 0, 0, 0.6);
 
 						text {
@@ -903,7 +970,7 @@
 							color: #FFFFFF;
 							float: right;
 							margin-right: 10px;
-							line-height: 40px;
+							line-height: 30px;
 						}
 					}
 				}
@@ -911,7 +978,7 @@
 				.item-name {
 					position: absolute;
 					left: 10px;
-					bottom: 15%;
+					bottom: 10%;
 					display: block;
 					color: #FFFFFF;
 					font-size: 14px;
@@ -926,12 +993,11 @@
 				.item-title {
 					position: absolute;
 					left: 10px;
-					bottom: 5%;
+					bottom: 0%;
 					display: block;
-					font-size: 12px;
-					color: #8E8E93;
+					font-size: 14px;
+					color: #999;
 					line-height: 22px;
-
 					text {
 						display: block;
 						text-align: center;

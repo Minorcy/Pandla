@@ -1,4 +1,11 @@
 
+uni-view{
+	line-height: 0 !important;
+}
+.qrcode-page{
+width: 100%;
+background-color: #FFFFFF;
+}
 .strategy {
 	width: 100%;
 	background-color: #FFFFFF;
@@ -7,8 +14,7 @@
 	width: 100%;
 	height: 40px;
 	background: rgba(232, 232, 232, 1);
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	padding: 5px 10px;
 }
 .title text {
@@ -19,8 +25,7 @@
 }
 .constant-text {
 	width: 100%;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	padding: 10px;
 	background-color: #FFFFFF;
 }
@@ -31,11 +36,9 @@
 .force {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	margin: 10px 0;
 }

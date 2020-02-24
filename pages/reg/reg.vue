@@ -8,9 +8,9 @@
 		</view>
 		<view class="title-wrap">
 
-			<text class="by-link" @tap="linkE" :class="[isColor == false ? 'link' : ' ']">邮箱</text>
+			<text class="by-link" @tap="linkE" :class="[isColor == false ? 'link' : ' ']">郵箱</text>
 			<text class="sp-line">|</text>
-			<text class="by-link" @tap="linkP" :class="[isColor == true ? 'link' : ' ']">手机号</text>
+			<text class="by-link" @tap="linkP" :class="[isColor == true ? 'link' : ' ']">手機號</text>
 		</view>
 		<view class="from">
 			<view class="field" v-if="!isColor">
@@ -35,7 +35,7 @@
 				<view class="input-box">
 					<view class="input-container">
 						<image src="../../static/img/reg/yanzheng.svg" mode=""></image>
-						<input type="text" placeholder="验证码" class="ipt" v-model="regCode" />
+						<input type="text" placeholder="驗證碼" class="ipt" v-model="regCode" />
 						<button class="cod-btn" @tap="getRegCode" :disabled="regCodeBtn.btnStatus">{{regCodeBtn.text}}</button>
 					</view>
 				</view>
@@ -44,7 +44,7 @@
 				<view class="input-box">
 					<view class="input-container">
 						<image src="../../static/img/reg/pwd.svg" mode=""></image>
-						<input type="password" placeholder="密码至少8个字母和数组组合" v-model="pwd" class="ipt" />
+						<input type="password" placeholder="密碼至少8個字母和數字組合" v-model="pwd" class="ipt" />
 					</view>
 				</view>
 			</view>
@@ -52,7 +52,7 @@
 				<view class="input-box">
 					<view class="input-container">
 						<image src="../../static/img/reg/pwds.svg" mode=""></image>
-						<input type="password" placeholder="确认密码" class="ipt" v-model="pwds" />
+						<input type="password" placeholder="確認密碼" class="ipt" v-model="pwds" />
 					</view>
 				</view>
 			</view>
@@ -60,19 +60,19 @@
 				<view class="input-box">
 					<view class="input-container">
 						<image src="../../static/img/reg/invite.svg" mode=""></image>
-						<input type="text" placeholder="填写邀请码(选填)" class="ipt" v-model="inviteCode" />
+						<input type="text" placeholder="填寫邀請碼(選填)" class="ipt" v-model="inviteCode" />
 					</view>
 				</view>
 			</view>
 		</view>
 		<view class="submit">
 			<view class="btn-box">
-				<view class="btn" @tap="bindRegister">注册</view>
+				<button class="btn" @tap="bindRegister">註冊</button>
 			</view>
 
 			<view class="agreement">
-				
-				<text>注冊即表示你同意</text>
+
+				<text>註冊即表示你同意</text>
 				<navigator url="/pages/reg/termsofservice">服務條款</navigator>和
 				<navigator url="/pages/reg/Privacypolicy">隱私政策</navigator>
 			</view>
@@ -131,13 +131,13 @@
 					btnStatus: false,
 					codeTime: 60
 				},
-				flag:false
+				flag: false
 			}
 		},
 		methods: {
-			back(){
+			back() {
 				uni.navigateTo({
-					url:"../index/index"
+					url: "../index/index"
 				})
 			},
 			bindPickerChange: function(e) {
@@ -161,14 +161,14 @@
 					codeResult = phoneValidate(this.account);
 				}
 				if (codeResult) {
-					sendCode(this.account,1).then((data)=>{
-						if(data == null){
+					sendCode(this.account, 1).then((data) => {
+						if (data == null) {
 							return
 						}
 						var time = 60
 						var timer = setInterval(() => {
 							if (time <= 0) {
-								that.regCodeBtn.text = "发送验证码";
+								that.regCodeBtn.text = "發送驗證碼";
 								clearInterval(timer);
 								that.regCodeBtn.btnStatus = false
 								time = null;
@@ -183,10 +183,14 @@
 			},
 			bindRegister() {
 				if (codeValidate(this.regCode) && pwdValidate(this.pwd, this.pwds)) {
-					register(this.pwd, this.account, this.regCode, this.inviteCode);
+					register(this.pwd, this.account, this.regCode, this.inviteCode).then(data => {
+						uni.reLaunch({
+							url: '../user/update'
+						});
+					});
 				}
 			},
-			
+
 		}
 	}
 </script>
@@ -249,7 +253,7 @@
 				color: #9B9B9B;
 			}
 		}
-		
+
 		.from {
 			.field {
 				position: relative;
@@ -261,9 +265,11 @@
 					margin: 0 auto;
 					top: 0;
 					left: 0;
-					.uni-input{
+
+					.uni-input {
 						background: transparent !important;
 					}
+
 					picker {
 						-webkit-box-sizing: border-box;
 						box-sizing: border-box;
@@ -330,7 +336,8 @@
 							background: transparent;
 							z-index: 99;
 						}
-						.cod-btn:after{
+
+						.cod-btn:after {
 							border: none;
 						}
 					}
@@ -355,16 +362,23 @@
 				border: 1px solid rgba(255, 255, 255, 1);
 
 				.btn {
-					display: block;
+					width: 100%;
+					height: 100%;
 					color: #fff;
 					text-align: center;
 					width: 100%;
 					line-height: 40px;
 					font-size: 14px;
-					height: 30px;
 					border-radius: 5px;
+					background-color: transparent;
+				}
 
+				.btn::after {
+					border-radius: 5px;
+				}
 
+				.btn:active {
+					background-color: rgba(0, 0, 0, 0.1);
 				}
 			}
 
@@ -376,9 +390,11 @@
 				text {
 					color: #fff;
 				}
-				radio-group{
+
+				radio-group {
 					display: inline-block;
 				}
+
 				.checked {
 					margin-left: 18px;
 					resize: none;
@@ -389,7 +405,7 @@
 					border-radius: 0;
 				}
 
-				
+
 				navigator {
 
 					color: #4A90E2;

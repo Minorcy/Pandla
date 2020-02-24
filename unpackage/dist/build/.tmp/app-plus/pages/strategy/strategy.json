@@ -1,7 +1,17 @@
 {
-  "navigationBarTitleText": "星球攻略",
+  "navigationBarTitleText": "我的二維碼",
   "navigationBarBackgroundColor": "#E1E1E1",
   "navigationBarTextStyle": "black",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "",
+        "type": "share"
+      }
+    ]
+  },
   "bounce": "none",
-  "usingComponents": {}
+  "usingComponents": {
+    "wm-poster": "/components/wm-poster/wm-poster"
+  }
 }

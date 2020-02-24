@@ -1,0 +1,20 @@
+
+.top text .blue {
+	color: #4A90E2;
+	display: inline-block;
+}
+.top {
+	margin-top: 20px;
+}
+.top text {
+	display: block;
+	font-size: 14px;
+}
+.img{
+	width: 50%;
+	margin: 30px 0;
+}
+.img image{
+	width: 150px;
+}
+

@@ -1,0 +1,30 @@
+
+.aon.data-v-b18d0c44{
+	font-size: 16px;
+position: fixed;
+white-space:nowrap;
+
+-webkit-animation: mymove-data-v-b18d0c44 5s linear forwards;
+
+        animation: mymove-data-v-b18d0c44 5s linear forwards;
+animation-timing-function: linear;
+-webkit-animation-timing-function: linear;
+-webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+}
+.l-barrage.data-v-b18d0c44{
+  z-index: 3;
+  width: 100%;
+  position: fixed;
+}
+@keyframes mymove-data-v-b18d0c44
+{
+from{left: 100%;}
+to{left: -200%;}
+}
+@-webkit-keyframes mymove-data-v-b18d0c44 /* Safari and Chrome */
+{
+from{left: 100%;}
+to{left: -200%;}
+}
+

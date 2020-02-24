@@ -1,0 +1,17 @@
+{
+  "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "完成",
+        "fontSize": "16px",
+        "width": "50px"
+      }
+    ]
+  },
+  "softinputNavBar": "none",
+  "bounce": "none",
+  "usingComponents": {}
+}

@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"strategy { width: 100%; background-color: #000000!important; }\n.",[1],"strategy-img{ width: 100%; }\nwx-image{ width: 100%; height: 100%; line-height: 0; vertical-align:bottom }\n",],undefined,{path:"./pages/setting/strategy.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/setting/strategy.wxml') } }));

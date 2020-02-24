@@ -1,5 +1,6 @@
 import uniRequest from "../request/request.js";
-
+import store from '@/store/'
+import {logout} from '@/api/api.js';
 const api = function(token) {
 	return {
 		/*
@@ -14,11 +15,28 @@ const api = function(token) {
 				// console.log(respons)
 				return respons;
 			}, error => {
-				console.log("error", error);
+				uni.showModal({
+					title: '',
+					content: "登入失效，請重新登入",
+					confirmText: "確定",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+							uni.reLaunch({
+								url: '../login/login'
+							});
+							logout()
+							uni.removeStorageSync('USERS_KEY');
+							uni.removeStorageSync('TOKEN_KEY');
+							store.commit('openSocket', false)
+						}
+					}
+				});
+				return error
 			})
-
-			return res;
+			return res
 		},
+
 		/*
 		2.收取token
 		*/

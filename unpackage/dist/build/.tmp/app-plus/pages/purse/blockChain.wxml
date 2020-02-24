@@ -1,2 +1,2 @@
-<view class="pages-content"><view class="box"><loading vue-id="1" bind:__l="__l"></loading><text>頁面正在建設中
+<view class="pages-content"><view class="box"><text>頁面正在建設中
 			程序員小哥哥正在努力</text></view></view>

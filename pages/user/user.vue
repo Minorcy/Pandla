@@ -1,72 +1,83 @@
 <template>
-	<view class="no-tabbar">
-		<view class="status_bar">
-			<!-- 这里是状态栏 -->
+	<view class="user-page">
+		<view class="userInfo">
+			<image class="avatar" :src="avatar" @tap='uploadAvatar()' mode="aspectFill" @error="imgError()" />
+			<p>{{userInfo.name}}</p>
+			<p>{{userInfo.age}}/{{userInfo.stature}}cm/{{userInfo.weight}}kg/{{userInfo.acctType}}</p>
+			<p>{{userInfo.signature}}</p>
 		</view>
-		<view class="user-page">
-			<navigator url="update">
-				<image class="edit" src="../../static/img/user/edit.svg"></image>
-			</navigator>
-			<view class="userInfo">
-				<image class="avatar" :src="avatar" @tap='uploadAvatar()' mode="aspectFill" />
-				<p>{{userInfo.name}}</p>
-				<p>{{userInfo.age}}/{{userInfo.stature}}cm/{{userInfo.weight}}kg</p>
-				<p>{{userInfo.signature}}</p>
-			</view>
-			<view class="panInfo">
-				<view class="item-fans">
-					<navigator url="followList">
-						<p>{{socialInfo.fans}}</p>
-						<p>關注</p>
-					</navigator>
-				</view>|
-				<view class="item-focus">
-					<navigator url="fansList">
-						<p>{{socialInfo.conn}}</p>
-						<p>人氣</p>
-					</navigator>
-				</view>|
-				<view class="item-photo">
-					<view @tap="touserInfo(userInfo.id)">
-						<p>{{socialInfo.dynm}}</p>
-						<p>相冊</p>
-					</view>
-				</view>|
-				<view class="item-commune">
-					<p>0</p>
-					<p>公社</p>
+		<view class="panInfo">
+			<view class="item-fans">
+				<navigator url="followList">
+					<p>{{socialInfo.fans}}</p>
+					<p>關注</p>
+				</navigator>
+			</view>|
+			<view class="item-focus">
+				<navigator url="fansList">
+					<p>{{socialInfo.conn}}</p>
+					<p>人氣</p>
+				</navigator>
+			</view>|
+			<view class="item-photo">
+				<view @tap="touserInfo(userInfo.id)">
+					<p>{{socialInfo.dynm}}</p>
+					<p>相冊</p>
 				</view>
+			</view>|
+			<view class="item-commune">
+				<p>0</p>
+				<p>公社</p>
 			</view>
-			<view class="bag">
-				<view @tap="toPurse" class="left">
-					<image src="../../static/img/user/wallet.svg" mode=""></image>
-					<text>錢包</text>
+		</view>
+		<view class="bag">
+			<view @tap="toAsset()" class="left">
+				<view class="dot" v-if="tokens.length>0">
 				</view>
-				<view @tap="toPassport">
-					<image src="../../static/img/user/passport.svg" mode=""></image>
-					<text>護照</text>
-				</view>
+				<image src="../../static/img/user/wallet.svg" mode=""></image>
+				<text>星球資產</text>
 			</view>
+			<view @tap="toPan()">
+				<image src="../../static/img/user/gonyi1.svg" mode=""></image>
+				<text>星球公益</text>
+			</view>
+		</view>
+		<view class="invite">
+			<view @click="toStrategy()">
+				<image src="../../static/img/user/QR.svg" mode=""></image>
+				<text>邀請好友移民星球</text>
+			</view>
+		</view>
+		<view class="organization">
+			<view @tap="toEntertain()" class="left">
+				<image src="../../static/img/user/jiuba.svg" mode=""></image>
+				<text>酒吧</text>
+			</view>
+			<view @tap="toWelfare()">
+				<image src="../../static/img/user/gonyi.svg" mode=""></image>
+				<text>公益組織</text>
+			</view>
+		</view>
 
-			<navigator class="item-strategy" url="../strategy/strategy">
-				<image src="../../static/img/user/strategy.svg"></image>
-				<text>星球攻略</text>
-			</navigator>
-			<view class="option" v-for="(item, index) in settings" :key="index">
-				<navigator class="input-row border" :url="item.url">
+
+		<view class="option" v-for="(item, index) in settings" :key="index">
+			<navigator  :url="item.url">
+				<view class="option-item">
 					<image :src="item.src"></image>
 					<text>{{item.label}}</text>
-					<text>{{item.expla}}</text>
-				</navigator>
-			</view>
-			<view class="btn-row">
-				<view class="btn" @tap="bindLogout">退出登錄</view>
-			</view>
+					<text v-if="item.expla" class="dot"></text>
+				</view>
+			</navigator>
+		</view>
+		<view class="btn-row">
+			<view class="btn" @tap="bindLogout">退出登錄</view>
 		</view>
 	</view>
+
 </template>
 
 <script>
+	import sockect from "@/common/websocket.js"
 	import {
 		mapState,
 		mapActions,
@@ -75,27 +86,38 @@
 	import {
 		findByID,
 		getAllSocialInfo,
-		upPicture
+		upPicture,
+		logout
 	} from '../../api/api.js';
 	export default {
 		data() {
 			return {
+				tokens: [],
 				userInfo: '',
 				socialInfo: '',
 				userId: uni.getStorageSync('USERS_KEY').id,
-				avatar: '../../static/img/user/upload.svg',
+				avatar: '../../static/img/user/upload.png',
 				settings: [{
+						src: '../../static/img/user/introduce.svg',
+						url: '../setting/introduce',
+						label: '關於我們',
+						expla: true
+					}, {
+						src: '../../static/img/user/strategy.svg',
+						url: '../setting/strategy',
+						label: '星球攻略',
+						expla: ''
+					},{
 						src: '../../static/img/user/plantBase.svg',
 						url: '../base/base',
 						label: '招募節點',
 						expla: ''
-					}, 
-					// {
-					// 	src: '../../static/img/user/relNameAuth.svg',
-					// 	url: '../auth/auth',
-					// 	label: '實名認證',
-					// 	expla: 'PAN幣綫上交易所交易需要實名認證'
-					// },
+					},
+					{
+						src: '../../static/img/user/lianxi.svg',
+						url: '../setting/contactUs',
+						label: '聯繫我們',
+					},
 					{
 						src: '../../static/img/user/option.svg',
 						url: '../setting/setting',
@@ -110,20 +132,31 @@
 		},
 		methods: {
 			...mapMutations(['logout']),
-			...mapActions(["logoutnim"]),
+			imgError() {
+				this.avatar = '../../static/img/error/defaultAvatar.png'
+				uni.showModal({
+					title: '',
+					content: '頭像加載失敗，請重新上傳頭像',
+					confirmText: "確定"
+				})
+			},
 			bindLogout() {
 				let _this = this;
 				uni.showModal({
 					title: '',
 					content: '點擊確定後退出',
+					confirmText: "確定",
 					success(res) {
 						if (res.confirm) {
-							_this.logout();
-							_this.logoutnim()
-							uni.clearStorage();
 							uni.reLaunch({
 								url: '../login/login'
 							});
+							_this.logout();
+							logout()
+							uni.removeStorageSync('USERS_KEY');
+							uni.removeStorageSync('TOKEN_KEY');
+							uni.removeStorageSync('USERS_DOT');
+							sockect.closeSocket()
 						}
 					}
 				});
@@ -144,8 +177,11 @@
 				});
 			},
 			uploadAvatar() {
+				var myInfo = uni.getStorageSync('USERS_KEY')
 				upPicture(this.userId).then(data => {
 					this.avatar = data.id;
+					myInfo.portrait = data.id
+					uni.setStorageSync('USERS_KEY', myInfo)
 				});
 			},
 			touserInfo(id) {
@@ -153,42 +189,69 @@
 					url: 'album?uid=' + id
 				});
 			},
-			toPurse() {
+			toAsset() {
 				uni.navigateTo({
-					url: '/pages/purse/purse'
+					url: '/pages/ledger/asset'
 				});
 			},
-			toPassport() {
+			toPan() {
 				uni.navigateTo({
-					url: '/pages/passport/passport'
+					url: '/pages/pan/pan'
 				});
 			},
-			
-
+			toStrategy() {
+				uni.navigateTo({
+					url: '/pages/strategy/strategy'
+				});
+			},
+			toEntertain() {
+				uni.navigateTo({
+					url: '/pages/entertain/entertain'
+				});
+			},
+			toWelfare() {
+				uni.navigateTo({
+					url: '/pages/welfare/welfare'
+				});
+			},
+			async getToken(Token) { //获取token
+				let res = await this.api.homeToken(Token).getIndexPan();
+				// console.log(res)
+				if (res.data.status == 200) {
+					this.tokens = res.data.data
+				}else if(res.data.status == 404){
+					this.tokens = ''
+				}
+			},
+			noDot(){
+				this.settings[0].expla = false
+			}
+		},
+		onNavigationBarButtonTap() {
+			uni.navigateTo({
+				url:"update"
+			})
+		},
+		onLoad() {
+			var dot = uni.getStorageSync('USERS_DOT')
+			if(dot){
+				this.settings[0].expla = false
+			}
 		},
 		onShow() {
 			this.getUserInfo();
 			this.getSocialInfo();
-		},
-		godynm() {
-
+			var Token = uni.getStorageSync("TOKEN_KEY")
+			this.getToken(Token);
+			var dot = uni.getStorageSync('USERS_DOT')
+			if(dot){
+				this.settings[0].expla = false
+			}
 		}
 	}
 </script>
 
 <style scoped="true">
-	.no-tabbar {
-		width: 100%;
-		background-color: #FFFFFF;
-		z-index: 99;
-	}
-
-	.status_bar {
-		padding: 10px;
-		height: var(--status-bar-height);
-		width: 100%;
-		box-sizing: border-box;
-	}
 	.user-page {
 		width: 100%;
 		background-color: #FFFFFF;
@@ -196,7 +259,7 @@
 		flex: 1;
 		box-sizing: border-box;
 		flex-direction: column;
-		padding: 20upx;
+		padding: 60upx 20upx;
 	}
 
 	.userInfo {
@@ -237,19 +300,36 @@
 		position: absolute;
 		right: 10upx;
 		margin-right: 30upx;
+		z-index: 1010;
+	}
+	.edit::after {
+	
+		content: "";
+	
+		position: absolute;
+	
+		top: -10px;
+	
+		left: -10px;
+	
+		right: -10px;
+	
+		bottom: -10px;
+	
 	}
 
 	.panInfo {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
-		margin: 30upx 80upx;
+		margin: 20rpx 80rpx;
 		font-size: 12px;
 		text-align: center;
 	}
 
 
 	.bag {
+		position: relative;
 		background-color: #131D21;
 		height: 100px;
 		display: flex;
@@ -258,6 +338,16 @@
 		padding: 10px;
 		box-sizing: border-box;
 		border-radius: 5px;
+	}
+
+	.bag .dot {
+		position: absolute;
+		top: 15px;
+		right: 40px;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color: red;
 	}
 
 	.bag view {
@@ -291,11 +381,76 @@
 		margin-top: 15px;
 	}
 
+	.invite {
+		margin: 10px 0;
+		background-color: #131D21;
+		height: 80px;
+		display: flex;
+		color: #FFFFFF;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
+		box-sizing: border-box;
+		border-radius: 5px;
+
+	}
+
+	.invite image {
+
+		display: block;
+		margin: 0 auto;
+		width: 30px;
+		height: 30px;
+		margin-top: 15px;
+	}
+
+	.organization {
+		color: #000000;
+		height: 100px;
+		display: flex;
+		color: #FFFFFF;
+		justify-content: space-between;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+
+	.organization view {
+		width: 40%;
+		height: 100%;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+	}
+
+	.organization .left::after {
+		content: "";
+		height: 40px;
+		width: 1px;
+		position: absolute;
+		top: 18px;
+		right: -32px;
+		background-color: #D3D3D3;
+	}
+
+	.organization text {
+		font-size: 16px;
+		color: #000000;
+	}
+
+
+	.organization image {
+		margin: 0 20rpx;
+		width: 30px;
+		height: 30px;
+	}
+
 	.item-strategy {
 		position: relative;
 		font-size: 28upx;
 		/* border-bottom: 1upx solid; */
-		margin: 30upx 0 0 10upx;
+		margin: 20px 0 0 10upx;
 		padding-bottom: 10upx;
 		/* border-image: -webkit-linear-gradient(left, #03D5C7, #73AE0F) 50 50;
 		border-image: -o-linear-gradient(right, #03D5C7, #73AE0F);
@@ -324,19 +479,32 @@
 
 	.option {
 		font-size: 28upx;
+		position: relative;
+		
 	}
-
+	.option-item{
+		margin-top: 10px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		line-height:40px;
+		border-bottom: 1px solid #979797;
+	}
 	.option image {
 		width: 40upx;
 		height: 40upx;
-		margin: 0 20upx 10upx 20upx;
+		margin: auto 20upx;
 	}
+	
 
 	.option text:nth-child(3) {
-		margin-left: auto;
-		margin-top: 10upx;
-		font-size: 25upx;
-		color: #9B9B9B;
+		position: absolute;
+		top: 20px;
+		right: 0;
+		width: 10px;
+		height: 10px;
+		background-color: red;
+		border-radius: 50%;
 	}
 
 	.btn-row {

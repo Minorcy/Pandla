@@ -90,7 +90,7 @@ export default {
 			let _strlineW = 0; //文本宽度
 			let _imgInfo = await _this.getImageInfo({ imgSrc: _this.imgSrc }); //广告图
 			let _QrCode = await _this.getImageInfo({ imgSrc: _this.QrSrc }); //二维码或太阳码
-			this.canvasH = _imgInfo.height
+			this.canvasH  =  this.Height
 			let r = [_imgInfo.width, _imgInfo.height];
 			let q = [_QrCode.width, _QrCode.height];
 			let imgW = C_W;
@@ -104,6 +104,7 @@ export default {
 			}
 			_this.canvasW = C_W;
 			_this.canvasH = r[1];
+			console.log(r[1])
 			_this.ctx.setFillStyle(_this.CanvasBg); //canvas背景颜色
 			_this.ctx.fillRect(0, 0, C_W, _this.canvasH); //canvas画布大小
 			
@@ -168,7 +169,7 @@ export default {
 
 			//添加二维码
 			// _strHeight -= uni.upx2px(30);
-			_this.ctx.drawImage(_QrCode.path, (this.canvasW/2)-50, (_imgInfo.height/3)+50, q[0], q[1]);
+			_this.ctx.drawImage(_QrCode.path, (this.canvasW/2)-(q[1]/2), (this.canvasH*0.75), q[0], q[1]);
 			//添加二维码 end
 
 			//添加推荐人与描述

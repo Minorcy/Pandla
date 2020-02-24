@@ -1,12 +1,12 @@
 
-.pages-content.data-v-67ab2757 {
+.pages-content.data-v-a94b2710 {
 	width: 100%;
 }
-.introduce.data-v-67ab2757{
+.introduce.data-v-a94b2710{
 	width: 100%;
 	position: relative;
 }
-.back.data-v-67ab2757{
+.back.data-v-a94b2710{
 	position: absolute;
 	top: 5px;
 	left: 5px;
@@ -14,7 +14,7 @@
 	height: 50px;
 	z-index: 10;
 }
-.no-list.data-v-67ab2757{
+.no-list.data-v-a94b2710{
 	margin: 30px auto 0;
 	width: 100%;
 	text-align: center;
@@ -23,50 +23,45 @@
 	color: #4A4A4A;
 	font-weight: 700;
 }
-.lits-item.data-v-67ab2757{
+.lits-item.data-v-a94b2710{
 	position: relative;
 	width: 100%;
 	height: 122px;
 	color: #FFFFFF;
 	margin-top: 10px;
 }
-.item-group.data-v-67ab2757 {
+.item-group.data-v-a94b2710 {
 	position: relative;
 	width: 100%;
 	height: 100%;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 	z-index: 9;
 	background-color: rgba(0,0,0,.5);
 }
-.item-group text.data-v-67ab2757{
+.item-group text.data-v-a94b2710{
 	font-size: 14px;
 	color: #FFFFFF;
 	line-height: 1.5;
 	text-align: center;
 }
-.item-group .location.data-v-67ab2757{
+.item-group .location.data-v-a94b2710{
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 }
-.bg.data-v-67ab2757{
+.bg.data-v-a94b2710{
 	border: 1px solid #000000;
 	position: absolute;
 	width: 100%;
@@ -77,18 +72,18 @@
 	        filter: blur(3px);
 	z-index: 1;
 }
-.logo.data-v-67ab2757 {
+.logo.data-v-a94b2710 {
 	width: 100rpx;
 	height: 100rpx;
 	margin: 20rpx auto 20rpx auto;
 	border-radius: 50%;
 }
-.map.data-v-67ab2757 {
+.map.data-v-a94b2710 {
 	width: 30rpx;
 	height: 20rpx;
 	margin-right: 10rpx;
 }
-.entry.data-v-67ab2757 {
+.entry.data-v-a94b2710 {
 	width: 100px;
 	height: 100px;
 	position: fixed;
@@ -96,10 +91,10 @@
 	right: 20rpx;
 	z-index: 10;
 }
-scroll-view.data-v-67ab2757 {
+scroll-view.data-v-a94b2710 {
 	height: 100%;
 }
-image.data-v-67ab2757 {
+image.data-v-a94b2710 {
 	width: 100%;
 }
 

@@ -24,28 +24,43 @@
 				</view>
 				<view class="right">
 					<text class="count">{{panCount}}</text>
-					<text class="text">獲得PAN幣</text>
+					<text class="text">獲得PAN</text>
 				</view>
 			</view>
 			<view class="constant-text">
 				<view class="force">
 					<text>邀請5位有效用戶</text>
-					<text>共獲得50個PAN幣</text>
+					<text>共獲得50個PAN</text>
 				</view>
 				<view class="force">
 					<text>邀請第6-10位有效用戶</text>
-					<text>共獲得100PAN幣</text>
+					<text>共獲得100PAN</text>
 				</view>
 				<view class="force">
 					<text>邀請第11-20位有效用戶</text>
-					<text>共獲得300個PAN幣</text>
+					<text>共獲得300個PAN</text>
 				</view>
 				<view class="force">
 					<text>邀請第21-100位有效用戶</text>
-					<text>共獲得4000個PAN幣</text>
+					<text>共獲得4000個PAN</text>
 				</view>
-				<view class="invite-text">
-					<text>為防止惡意註冊,用戶需要完成公益捐贈以及關注10個用戶,點讚數達到100系統才會判斷為真實用戶</text>
+				<view class="invite-rule">
+					<text class="title">為防止惡意註冊:</text>
+					<text>用戶需要完成以下任务才會判斷為真實用戶</text>
+					<view class="rule-box">
+						<view class="item">
+							<image src="../../static/img/invite/welfare.svg" mode=""></image>
+							<text>完成公益捐贈</text>
+						</view>
+						<view class="item">
+							<image src="../../static/img/invite/friend.svg" mode=""></image>
+							<text>關注10位好友</text>
+						</view>
+						<view class="item">
+							<image src="../../static/img/invite/heart.svg" mode=""></image>
+							<text>點讚達到100</text>
+						</view>
+					</view>
 				</view>
 			</view>
 
@@ -473,7 +488,7 @@
 					size: parseInt(300) //二维码大小  
 				});
 				base64ToPath(img).then(path => {
-					// console.log(path);
+					console.log(path);
 					this.createImg = path;
 				}).catch(error => {
 					console.error("error===>", error)
@@ -731,6 +746,8 @@
 			box-sizing: border-box;
 			padding: 20px;
 			background-color: #FFFFFF;
+			color: #999999;
+			
 		}
 
 		.constant-text text {
@@ -741,12 +758,37 @@
 		.force {
 			display: flex;
 			justify-content: space-between;
-			margin: 10px 0;
+			margin: 20rpx 0;
 		}
 
-		.invite-text {
-			margin-top: 30px;
-			color: #999;
+		.invite-rule{
+			.title{
+				color: #000000;
+				font-weight: 700;
+				margin: 50rpx 0 20rpx 0;
+			}
+			text{
+				display: block;
+			}
+			.rule-box{
+				margin: 50rpx 0;
+				display: flex;
+				justify-content:space-between;
+			}
+			.item{
+				width: 30%;
+				display: flex;
+				text-align: center;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				image{
+					margin: 20rpx;
+					width: 30px;
+					height: 30px;
+				}
+				
+			}
 		}
 	}
 </style>

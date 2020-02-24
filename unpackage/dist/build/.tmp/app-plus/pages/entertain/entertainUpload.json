@@ -6,7 +6,8 @@
     "buttons": [
       {
         "text": "提交",
-        "fontSize": "16px"
+        "fontSize": "16px",
+        "width": "50px"
       }
     ]
   },

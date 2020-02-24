@@ -1,24 +1,4 @@
 <template>
-<!-- 	<view class="content">
-		<logo slogan="潘多拉星球歡迎您"></logo>
-		<view class="input-group">
-			<view class="input-row border">
-				<m-input class="m-input" type="text" v-model="account" placeholder="使用手機號/郵箱登錄" clearable focus></m-input>
-			</view>
-			<view class="input-row border">
-				<m-input type="password" v-model="password" placeholder="請輸入密碼" displayable></m-input>
-			</view>
-		</view>
-		<view class="btn-row">
-			<view class="action-row">
-				<navigator url="../reg/reg">注冊賬號</navigator>
-				<text>|</text>
-				<navigator url="../pwd/pwd">忘記密碼</navigator>
-				<button class="primary" hover-class="hover-primary" @tap="bindLogin">登錄</button>
-			</view>
-		</view>
-		
-	</view> -->
 	<view class="login-page" :style="{backgroundImage: 'url('+bgImg+')'}">
 		<view class="logo">
 			<view class="back" @tap="back()">
@@ -37,7 +17,7 @@
 			
 		</view>
 		<view class="login-btn" @tap="bindLogin">
-			<text>登陸</text>
+			<button>登陸</button>
 		</view>
 		<view class="btn-row">
 			<view class="action">
@@ -91,7 +71,7 @@
 			}
 		},
 		onLoad() {
-			uni.clearStorageSync('USERS_KEY');
+			
 		}
 	}
 </script>
@@ -99,7 +79,6 @@
 <style>
 	.login-page{
 		width: 100%;
-	
 		padding: 10px;
 		box-sizing: border-box;
 		background-repeat: no-repeat;
@@ -150,11 +129,22 @@
 		justify-content: center;
 		align-items: center;
 	}
-	.login-btn text{
+	.login-btn button{
+		width: 100%;
+		height: 100%;
+		border: none;
 		text-align: center;
 		line-height: 60px;
 		color: #F4F4F4;
 		font-size: 16px;
+		border-radius: 5px;
+		background-color: transparent;
+	}
+	.login-btn button::after{
+		border-radius: 5px;
+	}
+	.login-btn button:active{
+		background-color: rgba(0,0,0,0.1);
 	}
 	.content{
 		width: 100%;

@@ -3,13 +3,13 @@
 		<view class="top-wrapper">
 			<view class="asset">
 				<view class="asset-left">
-					<p>我的資產PAN幣</p>
+					<p>我的資產PAN</p>
 					<text class="balance">{{propInfo.balance | toFixed(4)}}</text>
 					<text class="asset-rmb">≈{{ this.rmb | toFixed(4)}} USTD<text class="dollar"> (美元)</text></text>
 					
 				</view>
 				<view class="asset-right">
-					<p>冻结PAN幣</p>
+					<p>冻结PAN</p>
 				</view>
 			</view>
 			<view class="panData">
@@ -27,16 +27,16 @@
 			</view>
 		</view>
 		<view class="introduce">
-			<text class="introduce-title">星球用戶達到200萬時開啟提幣和充幣功能</text>
+			<text class="introduce-title">星球用戶達到200萬時開啟提取PAN和充值PAN功能</text>
 			
 			<text class="introduce-content">
-				<text>【PAN】是潘多拉星球發行的數字貨幣，也是潘多拉星球唯一權益證明，基於EOS公鏈發行，恆定20億永不增發</text>
+				<text>【PAN】是潘多拉星球發行的數字資產，也是潘多拉星球唯一權益證明，基於EOS公鏈發行，恆定20億永不增發</text>
 				
-				<text class="black">星球居民達到200萬時將開啟二級市場流通，為保障二級市場正常秩序，星球居民每增加100萬，解鎖您總資10%，到二級市場流通</text>
+				<text class="black">星球居民達到200萬時將開啟二級市場流通，為保障二級市場正常秩序，星球居民每增加100萬，解鎖您總資產10%，到二級市場流通</text>
 
-				<text>用戶行為即挖礦，越早起參與星球建設的用戶更容易獲得PAN幣，PAN幣的價值也會隨著星球居民和應用場景的增加而上升</text>
+				<text>用戶行為即挖礦，越早參與星球建設的用戶更容易獲得PAN，PAN的價值也會隨著星球居民和應用場景的增加而上升</text>
 
-				<text>潘多拉星球居民可以根據自己持有PAN幣數量獲得星球盈利分潤</text>
+				<text>潘多拉星球居民可以根據自己持有PAN數量獲得星球盈利分潤</text>
 			</text>
 		</view>
 	</view>

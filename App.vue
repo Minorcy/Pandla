@@ -1,11 +1,6 @@
 <script>
-	import {
-		getWyToken
-	} from "@/api/api.js"
-	import {
-		mapState,
-		mapActions
-	} from "vuex"
+	import store from '@/store/'
+	import sockect from "@/common/websocket.js"
 	export default {
 		data() {
 			return {
@@ -13,7 +8,8 @@
 				fnsNumber: 0,
 				likeNumber: 0,
 				systemNumber: 0,
-				msgNumber: 0
+				msgNumber: 0,
+				interval: ''
 			}
 		},
 		watch: {
@@ -84,17 +80,27 @@
 			}
 
 		},
-
-		onLaunch: function() {
-			var defaultSettings = uni.getStorageSync('defaultSettings_key')
-			// console.log(defaultSettings)
-			if (defaultSettings != '') {
-				this.$store.state.defaultSettings = defaultSettings
+		onLaunch() {
+			this.checkArguments(); // 检测启动参数 // 这是默认的监听参数 也就是应用初始化的时候监听  
+			var users_key = uni.getStorageSync("TOKEN_KEY");
+			if (!users_key) {
+				return
 			}
-			this.checkOpenGPSServiceByAndroid()
-			setInterval(() => {
-				var users_key = uni.getStorageSync("USERS_KEY").token
+			// 监听后台恢复 这是利用5+的方式 处理 APP进入后台后 再进入到APP前台时参数监听  
+			plus.globalEvent.addEventListener('newintent', (e)=>{  
+			            this.checkArguments(); // 检测启动参数  
+			});
+		},
+		onShow() {
+			var id = uni.getStorageSync("USERS_KEY").id;
+			var open = this.$store.state.is_open_socket;
+			if (!open && id) {
+				sockect.connectSocketInit()
+			}
+			this.interval = setInterval(() => {
+				var users_key = uni.getStorageSync("TOKEN_KEY");
 				if (!users_key) {
+					clearInterval(this.interval);
 					return
 				}
 				this.$store.dispatch('getConnMsg')
@@ -102,100 +108,18 @@
 				this.$store.dispatch('getLikeMsg')
 				this.$store.dispatch('getSystemMsg')
 			}, 2000)
-			var showDot = uni.getStorageSync("tabDot_KEY")
-			if (showDot == "") {
-				uni.showTabBarRedDot({
-					index: 2
-				})
-			} else if (showDot == 1) {
-
+		},
+		onHide() {
+			var open = this.$store.state.is_open_socket;
+			if (open) {
+				sockect.closeSocket()
 			}
-
-
-		},
-		updated() {
-			// 提交sdk连接请求
-			var that = this
-			var users_key = uni.getStorageSync("USERS_KEY").token
-			if (users_key) {
-				var sdktoken = uni.getStorageSync("sdktoken")
-				if (sdktoken) {  
-					this.$store.dispatch('connect')
-					this.$store.dispatch('updateRefreshState')
-				}
-			}
-			
-		},
-		onShow: function() {
-			// var users_key = uni.getStorageSync("USERS_KEY").token
-			// if (users_key) {
-			// 	var sdktoken = uni.getStorageSync("sdktoken")
-			// 	if (sdktoken) {
-			// 		this.$store.dispatch('connect')
-			// 		this.$store.dispatch('updateRefreshState')
-			// 	}
-			// }
-
-		},
-		onHide: function() {
-			// console.log('App Hide');
-
-		},
-		mounted() {
-
-			this.$request.interceptors.response(res => {
-				if (res) {
-					if (res.data.status && res.data.status.code != 200) {
-						// uni.showToast({
-						// 	title: res.data.status.message,
-						// 	icon: "none",
-						// 	duration: 2000
-						// });
-					}
-					if (res.statusCode != 200) {
-						// uni.showToast({
-						// 	title: res.data.status.message,
-						// 	icon: "none",
-						// 	duration: 2000
-						// });
-					}
-					if (res.statusCode == 401) { //退出登录
-						console.log("token失效");
-					}
-				}
-				return res;
-			})
+			clearInterval(this.interval);
 		},
 		methods: {
-			...mapActions(["connect"]),
-			checkOpenGPSServiceByAndroid() {
-				let system = uni.getSystemInfoSync(); // 获取系统信息
-				if (system.platform === 'android') { // 判断平台
-					var context = plus.android.importClass("android.content.Context");
-					var locationManager = plus.android.importClass("android.location.LocationManager");
-					var main = plus.android.runtimeMainActivity();
-					var mainSvr = main.getSystemService(context.LOCATION_SERVICE);
-					if (!mainSvr.isProviderEnabled(locationManager.GPS_PROVIDER)) {
-						uni.showModal({
-							title: '提示',
-							content: '请打开定位服务功能',
-							showCancel: false, // 不显示取消按钮
-							success() {
-								if (!mainSvr.isProviderEnabled(locationManager.GPS_PROVIDER)) {
-									var Intent = plus.android.importClass('android.content.Intent');
-									var Settings = plus.android.importClass('android.provider.Settings');
-									var intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-									main.startActivity(intent); // 打开系统设置GPS服务页面
-								} else {
-									console.log('GPS功能已开启');
-								}
-							}
-						});
-					}
-				}
-			},
+			
 			setTabBarBadge() {
-				var users_key = uni.getStorageSync("USERS_KEY").token
+				var users_key = uni.getStorageSync("TOKEN_KEY")
 				if (!users_key) {
 					return
 				}
@@ -225,18 +149,45 @@
 					console.log('开始播放');
 				});
 				innerAudioContext.onError((res) => {
-					console.log(res.errMsg);
-					console.log(res.errCode);
+					console.log(res);
 				});
 			},
-			...mapActions(["getConnMsg", "getFansMsg", "getLikeMsg"])
+			checkArguments() {  
+			            if (plus.runtime.launcher == 'shortcut') {  
+			                // 通过快捷方式启动，iOS平台表示通过3D Touch快捷方式，Android平台表示通过桌面快捷方式启动  
+			                try {  
+			                    var cmd = JSON.parse(plus.runtime.arguments);  
+			                    console.log('Shortcut-plus.runtime.arguments: ' + plus.runtime.arguments);  
+			                    var type = cmd && cmd.type;  
+			                    // 可以自行根据type 处理 你的业务逻辑  
+			
+			                    setTimeout(r => {  
+			                        switch (type) {  
+			                            case 'share':  
+			                                uni.navigateTo({
+			                                    url: '/pages/strategy/strategy'  
+			                                });  
+			                                break;  
+			                            case 'about':  
+			                                uni.navigateTo({
+			                                    url: '/pages/setting/introduce'  
+			                                });  
+			                                break;  
+			                 
+			                        }  
+			                    }, 800);  
+			
+			                    console.log(JSON.stringify(cmd));  
+			                } catch (e) {  
+			                    console.log('Shortcut-exception: ' + e);  
+			                }  
+			            }  
+			        },  
 		}
 	}
 </script>
 <style>
 	@import url("./components/m-icon/m-icon.css");
-</style>
-<style>
 	@import './common/uni.css';
 </style>
 <style>
@@ -247,12 +198,24 @@
 		max-width: 100%;
 		min-height: 100%;
 		display: flex;
-		background: #131D21;
+		/* background: #131D21; */
 		/* overflow: hidden; */
 	}
 
 	uni-tabbar {
 		border: none;
+	}
+
+	.uni-modal {
+		border-radius: 15px;
+	}
+
+	.uni-modal__ft {
+		color: #007AFF !important;
+	}
+
+	.gray {
+		color: #9B9B9B !important;
 	}
 
 	/* #ifdef MP-BAIDU */
@@ -346,11 +309,14 @@
 		display: flex;
 		flex: 1;
 		flex-direction: column;
-		padding: 20upx;
+		padding: 10px 10px 0 10px;
 		margin-top: 40upx;
-		background: #131D21;
+		/* background: #131D21; */
 		box-sizing: border-box;
 		color: #EFEFF4;
+		padding-bottom: 0;
+		padding-bottom: constant(safe-area-inset-bottom);
+		padding-bottom: env(safe-area-inset-bottom);
 	}
 
 	.pages-content {
@@ -412,5 +378,204 @@
 		padding: 15upx 0;
 		padding-left: 15upx;
 		line-height: 50upx;
+	}
+
+	.comment-section {
+		bottom: 0;
+		width: 100%;
+		box-sizing: border-box;
+		font-size: 16px;
+		z-index: 999;
+		background-color: #000000;
+		border-radius: 18px 18px 0 0;
+		overflow: hidden;
+	}
+	.noComm{
+		margin-left: 20rpx;
+		margin-top: 20rpx;
+		width: 100%;
+		font-size: 12px;
+		color: #808080;
+		line-height: 1.5;
+	}
+	
+	 .comment-section-top {
+		width: 95%;
+		height: 30px;
+		box-sizing: border-box;
+		text-align: center;
+		display: block;
+		margin: 0 auto;
+		margin-top: 10px;
+		color: #ffffff;
+		font-size: 14px;
+		line-height: 30px;
+		background-color: #000000;
+	}
+	.img-box{
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		width: 20px;
+		height: 20px;
+	}
+	.img-box .img{
+		width: 15px;
+		height: 15px;
+	}
+	.img-box .img::after{
+		content: "";
+		position: absolute;
+		top: -10px;
+		left: -10px;
+		right: -10px;
+		bottom: -10px;
+	}
+	.comment {
+		width: 100%;
+		height: 90%;
+		padding: 10px 10px 40px 10px;
+		box-sizing: border-box;
+	}
+	.comment-section-details {
+		width: 100%;
+	
+	}
+	.comment-section-comm {
+		margin-bottom: 10px;
+	}
+	.comm-ite {
+		display: flex;
+		align-items: flex-end;
+	}
+	.ite-portrait {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		flex-shrink: 0;
+		margin: 5px;
+		align-self: end;
+	}
+	.ite-name-content {
+		max-width: 90%;
+		box-sizing: border-box;
+		padding: 5px;
+		color: #ffffff;
+		flex-wrap: wrap;
+		flex-grow: 1;
+		font-size: 12px;
+	}
+	.ite-name {
+		display: block
+	}
+	.ite-content {
+		word-wrap: break-word;
+		font-size: 14px;
+	}
+	.ite-create_time {
+		float: right;
+		font-size: 12px;
+	}
+	.more{
+		margin: 5px 0px 5px 55px;
+		font-size: 12px;
+		padding: 5px 0;
+		color: #FFFFFF;
+	}
+	.more text{
+		text-indent:0.5em;
+		display: inline-block;
+		text-decoration: underline;
+	}
+	.read-more{
+		width: 100%;
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	.more-iem{
+		width: 89%;
+		display: flex;
+		align-items: flex-end;
+	}
+	.more-iem image{
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		flex-shrink: 0;
+		margin: 5px;
+		align-self: end;
+	}
+	.more-info{
+		max-width: 91%;
+		box-sizing: border-box;
+		padding: 5px 5px 0 5px;
+		color: #ffffff;
+		flex-wrap: wrap;
+		flex-grow: 1;
+		font-size: 12px;
+	}
+	.info-name{
+		display: block
+	}
+	.info-content{
+		word-wrap: break-word;
+		font-size: 14px;
+	}
+	.info-content-name{
+		color: #999;
+	}
+	.info-createTime{
+		float: right;
+		font-size: 12px;
+	}
+	.input-section {
+		box-sizing: border-box;
+		position: fixed;
+		width: 100%;
+		height: 100rpx;
+		padding: 10upx !important;
+		bottom: 0px;
+		left: 0;
+		color: #4A4A4A;
+		background-color: #FFFFFF;
+		font-size: 14px;
+		overflow: hidden;
+		display: flex;
+		justify-content: space-between;
+	
+	}
+	.input-section-input {
+		width: 82%;
+		height: 40px;
+		line-height: 40px !important;
+		box-sizing: border-box;
+		color: #4A4A4A;
+		test-align: left;
+		vertical-align: middle;
+		border: 1px solid #999;
+		border-radius: 15upx;
+		padding: 5px 5px 5px 10px;
+	}
+	.input-section-button {
+		display: block;
+		width: 15%;
+		font-size: 16px;
+		color: #4A4A4A;
+		height: 40px;
+		padding: 5px 0 5px 5px;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.fade-enter-active{
+		transition: opacity .5s
+		}
+	.fade-leave-active {
+		transition: opacity .5s;
+		opacity: 0
+	}
+	.fade-enter{
+		opacity: 0
 	}
 </style>

@@ -3,7 +3,7 @@
 		<view class="input-group">
 			<image :src="avatar" @tap='uploadAvatar()' mode="aspectFill" />
 			<view class="input-row border">
-				<text class="title">昵称：</text>
+				<text class="title">暱稱：</text>
 				<m-input type="text" v-model="userInfo.name" focus clearable></m-input>
 			</view>
 			<view class="input-row border">
@@ -44,9 +44,9 @@
 			</view>
 		</view>
 
-		<view class="btn-row">
+		<!-- <view class="btn-row">
 			<view class="btn" @tap="update">完成</view>
-		</view>
+		</view> -->
 	</view>
 </template>
 
@@ -127,8 +127,7 @@
 						title: '請上傳头像'
 					});
 				}
-
-				if (this.userInfo.site == "請選擇") {
+				if (this.userInfo.site == "請選擇" || this.userInfo.site == "请选择") {
 					uni.showToast({
 						icon: 'none',
 						title: "請選擇位置"
@@ -138,10 +137,8 @@
 				this.userInfo.acctType = this.accArray[this.accIndex];
 				this.userInfo.race = this.raceArray[this.raceIndex];
 				console.log(this.userInfo)
-				console.log(!this.userInfo.name, !this.userInfo.age, !this.userInfo.portrait, !this.userInfo.acctType, !this.userInfo
-					.status, !this.userInfo.weight)
 				if ((!this.userInfo.name) || (!this.userInfo.age) || (!this.userInfo.acctType) ||
-					 (!this.userInfo.stature)||  (!this.userInfo.weight)) {
+					(!this.userInfo.stature) || (!this.userInfo.weight)) {
 					uni.showToast({
 						icon: 'none',
 						title: '請完善信息'
@@ -149,22 +146,33 @@
 					return
 				}
 				if (userValidate(this.userInfo)) {
+					upInfo(this.userInfo, this.userId).then(data => {
+						var token = uni.getStorageSync('TOKEN_KEY')
+						if (token) {
+							findByID().then(data => {
+								uni.setStorageSync('USERS_KEY',data);
+								uni.switchTab({
+									url: 'user'
+								});
+							})
+							
+						} else {
+							uni.reLaunch({
+								url: '../login/login'
+							});
+						}
+					})
 
-					// console.log('acctType:'+this.accArray[this.accIndex]);
-					// console.log(this.userInfo);
-					// console.log(this.userId);
-					upInfo(this.userInfo, this.userId)
 				}
 			},
 			findInfo() {
 				findByID().then(data => {
 					// this.userInfo = data;
-					// // console.log(data);
+					// console.log(data);
 					if (data.portrait != null && data.portrait != "") this.avatar = data.portrait;
 					if (!data.name) {
 						return
 					}
-
 					if (data.race == '亚洲人') this.raceIndex = 0;
 					if (data.race == '黑人') this.raceIndex = 1;
 					if (data.race == '拉美人') this.raceIndex = 2;
@@ -181,16 +189,20 @@
 					if (data.acctType == 'S') this.accIndex = 5;
 					if (data.acctType == 'M') this.accIndex = 6;
 					if (data.acctType == '其它') this.accIndex = 7;
-
+					this.userInfo.name = data.name
 					this.userInfo.age = '' + data.age;
 					this.userInfo.stature = '' + data.stature;
 					this.userInfo.weight = '' + data.weight;
-					this.userInfo.site = '请选择'
+					this.userInfo.site = data.site
+					this.userInfo.signature = data.signature
 				});
 			}
 		},
+		onNavigationBarButtonTap() {
+			this.update()
+		},
 		onShow() {
-			if (uni.getStorageSync('USERS_KEY').token) {
+			if (uni.getStorageSync('TOKEN_KEY')) {
 				this.findInfo();
 			}
 		}
@@ -220,13 +232,14 @@
 
 	picker {
 		width: 100%;
-		margin-left: 30upx;
-		margin-top: 5upx;
+		margin: auto 0;
+		margin-left: 50upx;
+		line-height: 25px;
 	}
 
 	.uni-input {
-
 		color: #4a4a4a;
+		padding: 0;
 	}
 
 	m-input {
@@ -235,12 +248,14 @@
 
 	.btn {
 		float: right;
+		padding: 10rpx;
 	}
 
 	.popup-btn {
-
-		margin-top: 9px;
-		margin-left: 10px;
+		width: 100%;
+		height: 25px;
+		margin: auto 0;
+		margin-left: 50upx;
 		color: #4a4a4a;
 	}
 </style>

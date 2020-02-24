@@ -33,9 +33,6 @@
 		<view class="facebook-link">
 			使用<navigator class="color" url="../reg/reg">邮箱/手机</navigator>注册
 		</view>
-		<view class="facebook-link">
-			使用<text @tap="fecebook" class="color">Facebook</text>帳號注冊
-		</view>
 		<view class="lang-link">
 			<text class="ch">繁體中文</text><text>|</text><text class="en">English</text>
 		</view>

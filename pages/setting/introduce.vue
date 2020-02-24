@@ -1,82 +1,34 @@
 <template>
 	<view class="introduce">
-		<view class="introduce-top">
-			<image src="../../static/img/user/introduce.png" mode="" class="img"></image>
-			<view class="title">
-				<text>潘多拉星球</text>
-				<text>開啓男男社交3.0時代</text>
-			</view>
-		</view>
-		<view class="introduce-content">
-			<text>PANDLA，中文名【潘多拉星球】是香港潘多拉文化傳媒有限公司推出的一款男男社交軟體，也是全球第一款基於區塊鏈底層技術的男男社交軟體
-			</text>
-			<text>潘多拉星球運用區塊鏈技術重塑了男男社交的形態，PAN幣的激勵機制，讓居民創造的價值和貢獻都紀錄在超級帳本裡，最終獲得自己應有的收益 
-			</text>
-			<text>潘多拉星球聯合星球所有居民共建一個1亿枚PAN幣的公益基金池，這部分資產將用於幫助星球有需要的居民和支持LGBT公益事業
-			</text>
-			<text>潘多拉星球是一個社交中心化，利益去中心化的星球，星球居民即星球股東
-			</text>
-		</view>
+		<image src="http://47.244.27.153/images/image/pandla.png" mode="widthFix"></image>
 	</view>
 </template>
 
 <script>
+	export default{
+		onLoad() {
+			var pages = getCurrentPages(); //当前页面栈
+			if (pages.length > 1) {  
+			    var beforePage = pages[pages.length - 2]; //获取上一个页面实例对象  
+			    beforePage.$vm.noDot(); //触发父页面中的方法change()  
+			}
+			uni.setStorageSync('USERS_DOT', true)
+		}
+	}
 </script>
 
 <style scoped>
 	.introduce {
 		background-color: #FFFFFF;
 		width: 100%;
-
 		box-sizing: border-box;
+		
 	}
-
-	.introduce-top {
+	image{
 		width: 100%;
-		margin-top: 25px;
-		height: 103px;
-		background: rgba(19, 29, 33, 1);
-		position: relative;
+		height: 100%;
+		vertical-align:bottom
 	}
+	
 
-	.img {
-		width: 158px;
-		height: 142px;
-		position: absolute;
-		top: -25px;
-		left: 0;
-	}
-
-	.title {
-		position: absolute;
-		right: 40px;
-		top: 30px;
-		text-align: center;
-	}
-
-	.title text {
-		display: block;
-		color: #FFFFFF;
-		font-size: 14px;
-		line-height: 1.5;
-		font-weight: 100;
-	}
-
-	.title text:nth-child(1) {
-		font-weight: 700;
-		font-size: 20px;
-		line-height: 1.5;
-	}
-
-	.introduce-content {
-		padding: 10px;
-		margin-top: 30px;
-	}
-	.introduce-content text{
-		display: block;
-		font-size: 14px;
-		line-height: 1.5;
-		color: #000000;
-		margin-bottom: 20px;
-	}
 </style>

@@ -1,1 +1,0 @@
-<view><canvas class="vue-ref" style="{{'width:'+(canvasW+'px')+';'+('height:'+(canvasH+'px')+';')}}" canvas-id="{{CanvasID}}" data-ref="canvas"></canvas></view>

@@ -61,17 +61,12 @@ class Request {
         dataType: lastConfig.dataType,
         responseType: lastConfig.responseType,
         complete(response) {
-          let res = response;
+		let res = response;
           if (!res.statusCode || res.statusCode !== 200) {
-						let resInterceptors = _this.resInterceptors(res);
-						res = resInterceptors;
-            reject(res);
-			console.log(res)
+            reject(response);
             return;
           } 
-		  // if(res.statusCode == 200){
-			 //  console.log(res)
-		  // }
+		 
           if (_this.resInterceptors && typeof _this.resInterceptors === 'function') {
             let resInterceptors = _this.resInterceptors(res);
             if (!resInterceptors) {

@@ -4,6 +4,15 @@
   "navigationBarTextStyle": "black",
   "bounce": "none",
   "softinputNavBar": "none",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "完成",
+        "fontSize": "16px",
+        "width": "50px"
+      }
+    ]
+  },
   "usingComponents": {
     "m-input": "/components/m-input",
     "logo": "/components/logo",

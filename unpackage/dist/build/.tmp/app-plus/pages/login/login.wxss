@@ -1,10 +1,8 @@
 
 .login-page{
 	width: 100%;
-
 	padding: 10px;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -12,11 +10,9 @@
 	margin-top:40px;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	position: relative;
 }
@@ -34,8 +30,7 @@
 .input-wrapper{
 	margin: 100px 0 50px 0;
 	width: 100%;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 }
 .input-box{
 	width: 300px;
@@ -44,12 +39,10 @@
 	border-bottom: 1px solid #FFFFFF;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 	margin: 10px auto;
 }
@@ -65,22 +58,30 @@ m-input{
 	border: 1px solid#FFFFFF;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 }
-.login-btn text{
+.login-btn button{
+	width: 100%;
+	height: 100%;
+	border: none;
 	text-align: center;
 	line-height: 60px;
 	color: #F4F4F4;
 	font-size: 16px;
+	border-radius: 5px;
+	background-color: transparent;
+}
+.login-btn button::after{
+	border-radius: 5px;
+}
+.login-btn button:active{
+	background-color: rgba(0,0,0,0.1);
 }
 .content{
 	width: 100%;
@@ -92,16 +93,13 @@ m-input{
 	margin-top: 100px;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
-	    -ms-flex-direction: row;
 	        flex-direction: row;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	font-size: 14px;
 }

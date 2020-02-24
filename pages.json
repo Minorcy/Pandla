@@ -46,22 +46,28 @@
 		{
 			"path": "pages/reg/termsofservice",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "服務條款",
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
-					"bounce": "none"
+					"bounce": "none",
+					"titleNView":{
+						"type": "transparent"
+					}
 				}
 			}
 		},
 		{
 			"path": "pages/reg/Privacypolicy",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "隱私條款",
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
-					"bounce": "none"
+					"bounce": "none",
+					"titleNView":{
+						"type": "transparent"
+					}
 				}
 			}
 		},
@@ -131,17 +137,19 @@
 					"softinputMode": "adjustPan"
 				}
 			}
-		}, {
-			"path": "pages/daily/talk",
+		},
+		{
+			"path": "pages/daily/userDyn",
 			"style": {
 				"enablePullDownRefresh": false,
 				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "white",
 				"app-plus": {
 					"animationType": "slide-in-left",
 					"titleNView": false,
 					"softinputNavBar": "none",
 					"bounce": "none",
-					"softinputMode": "adjustResize"
+					"softinputMode": "adjustPan"
 				}
 			}
 		},
@@ -155,7 +163,8 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "發表",
-							"fontSize": "16px"
+							"fontSize": "16px",
+							"width": "50px"
 						}]
 					},
 					"softinputNavBar": "none",
@@ -163,7 +172,25 @@
 				}
 			}
 		},
-
+		{
+			"path": "pages/daily/crop",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#E1E1E1",
+				"navigationBarTextStyle": "black",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "完成",
+							"fontSize": "16px",
+							"width": "50px"
+						}]
+					},
+					"softinputNavBar": "none",
+					"bounce": "none"
+				}
+			}
+		},
 		{
 			"path": "pages/daily/userInfo",
 			"style": {
@@ -211,7 +238,6 @@
 							"color": "#999999",
 							"fontSize": "20px",
 							"fontSrc": "/static/font/iconfont.ttf"
-
 						}]
 					},
 					"softinputMode": "adjustResize"
@@ -221,47 +247,10 @@
 		{
 			"path": "pages/nearby/tga",
 			"style": {
-				"navigationBarTitleText": "约会内容",
+				"navigationBarTitleText": "約會內容",
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
-					"bounce": "none",
-					"softinputNavBar": "none"
-				}
-			}
-		},
-		{
-			"path": "pages/nearby/seek",
-			"style": {
-				"navigationBarTitleText": "星球居民",
-				"navigationBarBackgroundColor": "#E1E1E1",
-				"navigationBarTextStyle": "black",
-				"enablePullDownRefresh": true,
-				"app-plus": {
-					"titleNView": {
-						"buttons": [{
-							"text": "\ue611",
-							"color": "#000000",
-							"fontSrc": "/static/font/iconfont.ttf"
-
-						}]
-					},
-					"bounce": "none",
-					"softinputMode": "adjustResize"
-				}
-			}
-		},
-		{
-			"path": "pages/publish/publish",
-			"style": {
-				"navigationBarTitleText": "",
-				"app-plus": {
-					"titleNView": {
-						"buttons": [{
-							"text": "發布",
-							"fontSize": "16px"
-						}]
-					},
 					"bounce": "none",
 					"softinputNavBar": "none"
 				}
@@ -310,7 +299,8 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "提交",
-							"fontSize": "16px"
+							"fontSize": "16px",
+							"width": "50px"
 						}]
 					},
 					"bounce": "none",
@@ -322,10 +312,21 @@
 		{
 			"path": "pages/user/user",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "我的",
+				"navigationBarBackgroundColor": "#E9E9E9",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
-					"titleNView": false,
+					"titleNView": {
+						"type": "transparent",
+						"buttons": [{
+							"text": "\ue678",
+							"color": "#000000",
+							"fontSize": "20px",
+							"width":"50px",
+							"fontSrc": "/static/font/iconfont.ttf",
+							"background":"transparent"
+						}]
+					},
 					"bounce": "none",
 					"scrollIndicator": "none"
 
@@ -340,13 +341,19 @@
 				"navigationBarTextStyle": "black",
 				"app-plus": {
 					"bounce": "none",
-					"softinputNavBar": "none"
+					"softinputNavBar": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "完成",
+							"fontSize": "16px",
+							"width": "50px"
+						}]
+					}
 				}
 			}
 		},
-
 		{
-			"path": "pages/msg/msg",
+			"path": "pages/msg/sessionList",
 			"style": {
 				"navigationBarTitleText": "通訊",
 				"navigationBarBackgroundColor": "#E1E1E1",
@@ -371,6 +378,7 @@
 			}
 
 		},
+
 		{
 			"path": "pages/msg/chat",
 			"style": {
@@ -515,11 +523,13 @@
 		{
 			"path": "pages/ledger/asset",
 			"style": {
-				"navigationBarTitleText": "PAN幣",
+				"navigationBarTitleText": "PAN",
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
-					"bounce": "none"
+					"bounce": "none",
+					"titleNView": false,
+					"statusbar": "#E1E1E1"
 				}
 			}
 		}, {
@@ -575,17 +585,6 @@
 			}
 		},
 		{
-			"path": "pages/auth/auth",
-			"style": {
-				"navigationBarTitleText": "實名認證",
-				"navigationBarBackgroundColor": "#E1E1E1",
-				"navigationBarTextStyle": "black",
-				"app-plus": {
-					"bounce": "none"
-				}
-			}
-		},
-		{
 			"path": "pages/invite/invite",
 			"style": {
 				"navigationBarTitleText": "邀請好友",
@@ -615,12 +614,30 @@
 			}
 		},
 		{
-			"path": "pages/strategy/strategy",
+			"path": "pages/base/test",
 			"style": {
-				"navigationBarTitleText": "星球攻略",
+				"navigationBarTitleText": "星球基地",
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/strategy/strategy",
+			"style": {
+				"navigationBarTitleText": "我的二維碼",
+				"navigationBarBackgroundColor": "#E1E1E1",
+				"navigationBarTextStyle": "black",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "",
+							"type": "share"
+							// "fontSize": "60upx"
+						}]
+					},
 					"bounce": "none"
 				}
 			}
@@ -663,15 +680,33 @@
 		{
 			"path": "pages/setting/introduce",
 			"style": {
-				"navigationBarTitleText": "關於PANDLA",
+				"navigationBarTitleText": "關於我們",
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					},
 					"bounce": "none"
 				}
 
 			}
 		}, {
+			"path": "pages/setting/strategy",
+			"style": {
+				"navigationBarTitleText": "星球攻略",
+				"navigationBarBackgroundColor": "#E1E1E1",
+				"navigationBarTextStyle": "black",
+				"app-plus": {
+					"titleNView": {
+						"type": "transparent"
+					},
+					"bounce": "none"
+				}
+
+			}
+		},
+		{
 			"path": "pages/setting/blacklist",
 			"style": {
 				"navigationBarTitleText": "黑名單",
@@ -681,11 +716,22 @@
 					"bounce": "none"
 				}
 			}
-		}, {
+		}, 
+		{
+			"path": "pages/setting/aboutPandla",
+			"style": {
+				"navigationBarTitleText": "關於PANDLA",
+				"navigationBarBackgroundColor": "#E1E1E1",
+				"navigationBarTextStyle": "black",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},{
 			"path": "pages/user/album",
 			"style": {
 				"navigationBarBackgroundColor": "#E1E1E1",
-				"navigationBarTitleText":"相冊",
+				"navigationBarTitleText": "相冊",
 				"navigationBarTextStyle": "black",
 				"onReachBottomDistance": 50,
 				"app-plus": {
@@ -722,7 +768,7 @@
 			"path": "pages/welfare/welfareApplication",
 
 			"style": {
-				"navigationBarTitleText": "填写资料",
+				"navigationBarTitleText": "填寫資料",
 				"navigationBarBackgroundColor": "#E1E1E1",
 				"navigationBarTextStyle": "black",
 				"app-plus": {
@@ -752,7 +798,8 @@
 					"titleNView": {
 						"buttons": [{
 							"text": "提交",
-							"fontSize": "35upx"
+							"fontSize": "35upx",
+							"width": "50px"
 						}]
 					},
 					"bounce": "none",
@@ -790,25 +837,25 @@
 		"selectedColor": "#EFEFF4",
 		"backgroundColor": "#000000",
 		"list": [{
-			"pagePath": "pages/main/main",
-			"text": "首頁",
-			"iconPath": "static/img/tabbar/home.png",
-			"selectedIconPath": "static/img/tabbar/homeHL.png"
+			"pagePath": "pages/nearby/nearby",
+			"text": "約會",
+			"iconPath": "static/img/tabbar/dingweian.png",
+			"selectedIconPath": "static/img/tabbar/dingwei.png"
 		}, {
-			"pagePath": "pages/msg/msg",
+			"pagePath": "pages/msg/sessionList",
 			"text": "通訊",
-			"iconPath": "static/img/tabbar/msg.png",
-			"selectedIconPath": "static/img/tabbar/msgHL.png"
+			"iconPath": "static/img/tabbar/tonxunan.png",
+			"selectedIconPath": "static/img/tabbar/tonxun.png"
 		}, {
-			"pagePath": "pages/pan/pan",
-			"text": "公益",
-			"iconPath": "static/img/tabbar/PAN.png",
-			"selectedIconPath": "static/img/tabbar/PANHL.png"
+			"pagePath": "pages/daily/daily",
+			"text": "相冊",
+			"iconPath": "static/img/tabbar/logan.png",
+			"selectedIconPath": "static/img/tabbar/log.png"
 		}, {
 			"pagePath": "pages/user/user",
 			"text": "我的",
-			"iconPath": "static/img/tabbar/user.png",
-			"selectedIconPath": "static/img/tabbar/userHL.png"
+			"iconPath": "static/img/tabbar/wodean.png",
+			"selectedIconPath": "static/img/tabbar/wode.png"
 		}]
 	},
 	"globalStyle": {

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "滑动验证",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
+  "bounce": "none",
+  "usingComponents": {}
+}

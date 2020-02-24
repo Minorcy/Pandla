@@ -4,7 +4,5 @@
   "navigationBarTextStyle": "black",
   "onReachBottomDistance": 10,
   "bounce": "none",
-  "usingComponents": {
-    "mescroll-uni": "/components/mescroll-uni/mescroll-uni"
-  }
+  "usingComponents": {}
 }

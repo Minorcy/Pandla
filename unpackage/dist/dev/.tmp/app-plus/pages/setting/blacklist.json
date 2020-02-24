@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "黑名單",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
+  "bounce": "none",
+  "usingComponents": {}
+}

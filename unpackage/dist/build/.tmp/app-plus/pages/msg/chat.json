@@ -17,7 +17,6 @@
   "softinputNavBar": "none",
   "softinputMode": "adjustResize",
   "usingComponents": {
-    "chat-input": "/pages/msg/yszyun-imchat-emoji/chatinput",
-    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar"
+    "chat-input": "/pages/msg/yszyun-imchat-emoji/chatinput"
   }
 }

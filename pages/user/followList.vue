@@ -14,8 +14,11 @@
 		<swiper :current="tabIndex" class="swiper-box" :duration="300" @change="changeTab">
 			<swiper-item>
 				<scroll-view scroll-y class="folllow-list">
+					<view class="no-list" v-if="followList.length==0">
+						<text>你還沒關注他人</text>
+					</view>
 					<view class="list-item" v-for="(item,index) in followList " :key="item.id">
-						<image :src="item.portrait" mode="aspectFill" class="item-img" @tap="userInfo(item.id)"></image>
+						<image :src="item.portrait" mode="aspectFill" class="item-img" lazy-load @tap="userInfo(item.id)" @error="imgError(index)"></image>
 						<view class="list-item-right">
 							<view class="item-userInfo">
 								<text class="name">{{item.name}}</text>
@@ -30,9 +33,12 @@
 				</scroll-view>
 			</swiper-item>
 			<swiper-item>
+				<view class="no-list" v-if="fnasList.length==0">
+					<text>你還沒有粉絲</text>
+				</view>
 				<scroll-view scroll-y class="folllow-list">
 					<view class="list-item" v-for="(item,index) in fnasList " :key="item.id">
-						<image :src="item.portrait" mode="aspectFill" class="item-img" @tap="userInfo(item.id)"></image>
+						<image :src="item.portrait" mode="aspectFill" class="item-img" lazy-load @tap="userInfo(item.id)" @error="imgError1(index)"></image>
 						<view class="list-item-right">
 							<view class="item-userInfo">
 								<text class="name">{{item.name}}</text>
@@ -48,8 +54,11 @@
 			</swiper-item>
 			<swiper-item>
 				<scroll-view scroll-y class="folllow-list">
+					<view class="no-list" v-if="friendList.length==0">
+						<text>你還沒有好友</text>
+					</view>
 					<view class="list-item" v-for="(item,index) in friendList " :key="item.id">
-						<image :src="item.portrait" mode="aspectFill" class="item-img" @tap="userInfo(item.id)"></image>
+						<image :src="item.portrait" mode="aspectFill" class="item-img" lazy-load @tap="userInfo(item.id)"></image>
 						<view class="list-item-right">
 							<view class="item-userInfo">
 								<text class="name">{{item.name}}</text>
@@ -98,7 +107,13 @@
 		},
 		onLoad() {
 			this.changeStatus(4)
+			uni.showLoading({
+				title: "加载中"
+			})
 			this.getInfo()
+			setTimeout(()=>{
+				uni.hideLoading()
+			},2000)
 		},
 		methods: {
 			changeStatus(type) {
@@ -111,17 +126,23 @@
 					delta: 1
 				})
 			},
-
+			imgError(index){
+				this.followList[index].portrait = '../../static/img/error/defaultAvatar.png'
+			},
+			imgError1(index){
+				this.fnasList[index].portrait = '../../static/img/error/defaultAvatar.png'
+			},
 			getInfo() {
 				getFollow().then(data => {
 					this.followList = data;
 					console.log(this.followList)
 					getFans().then(data => {
 						this.fnasList = data;
-
 						console.log(data);
 						this.getFriend()
+						uni.hideLoading()
 					});
+					
 				});
 
 
@@ -414,5 +435,16 @@
 	.item-btn image {
 		width: 75px;
 		height: 35px;
+	}
+	.no-list{
+		width: 60%;
+		margin: 200rpx auto;
+		text-align: center;
+	}
+	.no-list text{
+		font-size: 16px;
+		font-weight: 700;
+		text-align: center;
+		line-height: 1.5;
 	}
 </style>

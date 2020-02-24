@@ -1,7 +1,20 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "我的",
+  "navigationBarBackgroundColor": "#E9E9E9",
   "navigationBarTextStyle": "black",
-  "titleNView": false,
+  "titleNView": {
+    "type": "transparent",
+    "buttons": [
+      {
+        "text": "",
+        "color": "#000000",
+        "fontSize": "20px",
+        "width": "50px",
+        "fontSrc": "/static/font/iconfont.ttf",
+        "background": "transparent"
+      }
+    ]
+  },
   "bounce": "none",
   "scrollIndicator": "none",
   "usingComponents": {}

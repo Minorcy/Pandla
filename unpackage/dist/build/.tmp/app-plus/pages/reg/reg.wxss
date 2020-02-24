@@ -24,46 +24,42 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.reg-page.data-v-5a15b5ce {
+.reg-page.data-v-3754a412 {
   width: 100%;
   padding: 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background-repeat: no-repeat;
   background-position: center;
 }
-.reg-page .logo.data-v-5a15b5ce {
+.reg-page .logo.data-v-3754a412 {
     margin-top: 40px;
     display: -webkit-box;
     display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-        -ms-flex-pack: center;
             justify-content: center;
     position: relative;
 }
-.reg-page .logo .back.data-v-5a15b5ce {
+.reg-page .logo .back.data-v-3754a412 {
     position: absolute;
     top: 0px;
     left: 10px;
     width: 44px;
     height: 44px;
 }
-.reg-page .logo image.data-v-5a15b5ce {
+.reg-page .logo image.data-v-3754a412 {
     width: 65px;
     height: 65px;
 }
-.reg-page .title-wrap.data-v-5a15b5ce {
+.reg-page .title-wrap.data-v-3754a412 {
     width: 200px;
     height: 36px;
     margin-left: 48px;
     margin-top: 60px;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
-.reg-page .title-wrap .by-link.data-v-5a15b5ce {
+.reg-page .title-wrap .by-link.data-v-3754a412 {
       line-height: 36px;
       font-size: 18px;
       float: left;
@@ -72,32 +68,31 @@
       color: #FFFFFF;
       display: inline-block;
 }
-.reg-page .title-wrap .sp-line.data-v-5a15b5ce {
+.reg-page .title-wrap .sp-line.data-v-3754a412 {
       color: #FFFFFF;
       line-height: 32px;
       float: left;
       margin: 0 5px;
 }
-.reg-page .title-wrap .link.data-v-5a15b5ce {
+.reg-page .title-wrap .link.data-v-3754a412 {
       font-size: 18px;
       color: #9B9B9B;
 }
-.reg-page .from .field.data-v-5a15b5ce {
+.reg-page .from .field.data-v-3754a412 {
     position: relative;
     min-height: 60px;
 }
-.reg-page .from .field .input-box.data-v-5a15b5ce {
+.reg-page .from .field .input-box.data-v-3754a412 {
       width: 100%;
       height: 60px;
       margin: 0 auto;
       top: 0;
       left: 0;
 }
-.reg-page .from .field .input-box .uni-input.data-v-5a15b5ce {
+.reg-page .from .field .input-box .uni-input.data-v-3754a412 {
         background: transparent !important;
 }
-.reg-page .from .field .input-box picker.data-v-5a15b5ce {
-        -webkit-box-sizing: border-box;
+.reg-page .from .field .input-box picker.data-v-3754a412 {
         box-sizing: border-box;
         padding-right: 20px;
         font-size: 16px;
@@ -111,24 +106,22 @@
         left: 0px;
         outline: none;
 }
-.reg-page .from .field .input-box .input-container.data-v-5a15b5ce {
+.reg-page .from .field .input-box .input-container.data-v-3754a412 {
         height: 60px;
         width: 280px;
-        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         position: relative;
         margin: 0 auto;
         border-bottom: 1px solid #fff;
 }
-.reg-page .from .field .input-box .input-container image.data-v-5a15b5ce {
+.reg-page .from .field .input-box .input-container image.data-v-3754a412 {
           position: absolute;
           left: 0;
           bottom: 6px;
           width: 25px;
           height: 25px;
 }
-.reg-page .from .field .input-box .input-container .ipt.data-v-5a15b5ce {
-          -webkit-box-sizing: border-box;
+.reg-page .from .field .input-box .input-container .ipt.data-v-3754a412 {
           box-sizing: border-box;
           padding-right: 20px;
           font-size: 16px;
@@ -142,7 +135,7 @@
           left: 35px;
           outline: none;
 }
-.reg-page .from .field .input-box .input-container .cod-btn.data-v-5a15b5ce {
+.reg-page .from .field .input-box .input-container .cod-btn.data-v-3754a412 {
           width: 100px;
           height: 30px;
           line-height: 30px;
@@ -157,17 +150,17 @@
           background: transparent;
           z-index: 99;
 }
-.reg-page .from .field .input-box .input-container .cod-btn.data-v-5a15b5ce:after {
+.reg-page .from .field .input-box .input-container .cod-btn.data-v-3754a412:after {
           border: none;
 }
-.reg-page .submit.data-v-5a15b5ce {
+.reg-page .submit.data-v-3754a412 {
     padding: 40px 26px;
     height: 66px;
     border-bottom: none;
     position: relative;
     min-height: 60px;
 }
-.reg-page .submit .btn-box.data-v-5a15b5ce {
+.reg-page .submit .btn-box.data-v-3754a412 {
       height: 40px;
       line-height: 38px;
       border-radius: 5px;
@@ -176,37 +169,43 @@
       margin: 10px 0 20px 0;
       border: 1px solid white;
 }
-.reg-page .submit .btn-box .btn.data-v-5a15b5ce {
-        display: block;
+.reg-page .submit .btn-box .btn.data-v-3754a412 {
+        width: 100%;
+        height: 100%;
         color: #fff;
         text-align: center;
         width: 100%;
         line-height: 40px;
         font-size: 14px;
-        height: 30px;
+        border-radius: 5px;
+        background-color: transparent;
+}
+.reg-page .submit .btn-box .btn.data-v-3754a412::after {
         border-radius: 5px;
 }
-.reg-page .submit .agreement.data-v-5a15b5ce {
+.reg-page .submit .btn-box .btn.data-v-3754a412:active {
+        background-color: rgba(0, 0, 0, 0.1);
+}
+.reg-page .submit .agreement.data-v-3754a412 {
       font-size: 12px;
       margin: 21px 0;
       color: #fff;
 }
-.reg-page .submit .agreement text.data-v-5a15b5ce {
+.reg-page .submit .agreement text.data-v-3754a412 {
         color: #fff;
 }
-.reg-page .submit .agreement radio-group.data-v-5a15b5ce {
+.reg-page .submit .agreement radio-group.data-v-3754a412 {
         display: inline-block;
 }
-.reg-page .submit .agreement .checked.data-v-5a15b5ce {
+.reg-page .submit .agreement .checked.data-v-3754a412 {
         margin-left: 18px;
         resize: none;
         border: none;
         outline: 0;
-        -webkit-box-shadow: none;
         box-shadow: none;
         border-radius: 0;
 }
-.reg-page .submit .agreement navigator.data-v-5a15b5ce {
+.reg-page .submit .agreement navigator.data-v-3754a412 {
         color: #4A90E2;
         display: inline-block;
 }

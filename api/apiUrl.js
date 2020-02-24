@@ -3,10 +3,10 @@ let baseURL;
 if (process.env.NODE_ENV === 'development') {
 	console.log('开发环境');
 	// baseURL = 'http://192.168.0.117:8080/';
-	baseURL = 'http://pandla.io:8080/';
+	baseURL = 'http://apelord.cn:8080/';
 } else {
 	console.log('生产环境');
-	baseURL = 'http://pandla.io:8080/';
+	baseURL = 'http://apelord.cn:8080/';
 }
 // 全局配置
 request.setConfig({

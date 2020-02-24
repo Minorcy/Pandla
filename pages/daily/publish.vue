@@ -1,35 +1,38 @@
 <template>
 	<view class="publish-page">
-		<view class="textarea">
-			<textarea v-model="dynContent" placeholder="写下你这刻的想法~~~" maxlength="-1" auto-height='true' />
+			<view class="textarea">
+			<textarea v-model="dynContent" placeholder="寫下你這刻的想法~~~" />
 			</view>
-		<view class="img">
-			<image :src="imgTemp" mode="aspectFill" />
-		</view>
-		<view class="option-section">
-			<view>
-				<image src="../../static/img/daily/publish/map.svg"></image>
-				<text @tap="toLocation">{{location}}</text>
+			<view class="img">
+				<image :src="imgTemp" mode="aspectFill" />
 			</view>
-			<view>
-				<image src="../../static/img/daily/publish/user.svg"></image>
-				<text>{{showType}}</text>
+			<view class="option-section">
+				<view>
+					<image src="../../static/img/daily/publish/map.svg"></image>
+					<text @tap="toLocation">{{location}}</text>
+				</view>
+				<view>
+					<image src="../../static/img/daily/publish/user.svg"></image>
+					<text>{{showType}}</text>
+				</view>
+				<view>
+					<image src="../../static/img/daily/publish/aite.svg"></image>
+					<text>{{remain}}</text>
+				</view>
 			</view>
-			<view>
-				<image src="../../static/img/daily/publish/aite.svg"></image>
-				<text>{{remain}}</text>
+			<view class="bottom">
+				<text>不允許發裸露和涉及政治的內容，搬運內容被原創者舉報將會被降級</text>
 			</view>
-		</view>
-		<view class="bottom">
-			<text>不允許發裸露和涉及政治的內容，搬運內容被原創者舉報將會被降級</text>
-		</view>
+		
 	</view>
 </template>
 
 <script>
+	
 	import {
 		upload,
-		createDyn
+		createDyn,
+		getImgTemp,
 	} from '../../api/api.js';
 	export default {
 		data() {
@@ -42,7 +45,7 @@
 				location: '所在位置',
 				showType: '誰可以看',
 				remain: '提醒誰看',
-				flog: false
+				flog: true
 			}
 		},
 		methods: {
@@ -50,10 +53,6 @@
 				var that = this
 				uni.chooseLocation({
 					success: function(res) {
-						console.log('位置名称：' + res.name);
-						console.log('详细地址：' + res.address);
-						console.log('纬度：' + res.latitude);
-						console.log('经度：' + res.longitude);
 						that.address = res.name
 						that.location = res.name
 						that.latitude =res.latitude
@@ -63,41 +62,50 @@
 			}
 		},
 		onNavigationBarButtonTap() {
-			if (this.flog) {
+			if (!this.flog) {
 				return
 			}
-			this.flog = true
+			this.flog = false
+			setTimeout(()=>{
+				this.flog = true
+			},5000)
 			console.log(this.latitude,this.longitude)
-			
 			upload(this.imgTemp).then(data => {
 				// console.log(data)
 				if (data != '') {
 					createDyn(this.dynContent, data,this.address,this.latitude,this.longitude).then(data => {
 						if (data) {
-							uni.reLaunch({
-								url: 'daily'
+							const that = this;
+							var pages = getCurrentPages(); //当前页面栈  
+							if (pages.length > 1) {  
+							    var beforePage = pages[pages.length - 3]; //获取上一个页面实例对象  
+							    beforePage.$vm.findDyn(); //触发父页面中的方法change()  this.findDyn()
+							 }  
+							uni.switchTab({
+							    url: '/pages/daily/daily'
 							});
 						}
-						this.flog = false
+						
 					});
 				}
-
+				
 			});
-		}
+		},
+		
 	}
 </script>
 
 <style scoped>
 	.publish-page{
 		width: 100%;
-		padding: 10px;
+		
 		box-sizing: border-box;
 		background-color: #FFFFFF;
 	}
 	.textarea {
 		width: 100%;
 		box-sizing: border-box;
-		min-height: 100px;
+		height: 100px;
 		font-size: 30upx;
 		padding: 20upx;
 		position: relative;
@@ -107,8 +115,9 @@ textarea{
 	height: 100%;
 }
 	.img image {
-		width: 175px;
-		height: 175px;
+		padding: 20upx;
+		width: 360upx;
+		height: 360upx;
 	}
 
 	.option-section {

@@ -1,5 +1,5 @@
-let Token = uni.getStorageSync('USERS_KEY').token;
-const URL = 'http://pandla.io:8080/v1/';
+let Token = uni.getStorageSync('TOKEN_KEY');
+const URL = 'http://apelord.cn:8080/v1/';
 // const URL = "http://192.168.0.117:8080/v1/";
 const systemUrl = URL + 'system/';
 const fansUrl = URL + 'fans/';
@@ -21,6 +21,9 @@ const reportUrl = URL + 'sys/report/';
 const pushUrl = URL + 'push/'
 const ixxUrl = URL + 'ixx/'
 const mapUrl = URL + 'map/'
+const commUrl = URL + 'comm/'
+
+import store from '@/store/'
 
 /*********************登录注册***************************/
 // 登录
@@ -38,12 +41,12 @@ export const login = (account, password) => {
 		success: (res) => {
 			if (res.data.status == 200) {
 				uni.setStorageSync('USERS_KEY', res.data.data);
-				Token = uni.getStorageSync('USERS_KEY').token;
-				registerWyAccount()
+				Token = res.data.data.token;
+				uni.setStorageSync('TOKEN_KEY', Token)
+				loginCat()
 				uni.reLaunch({
 					url: '../login/Verification'
 				});
-
 			}
 			if (res.data.status == 404) {
 				uni.showToast({
@@ -59,13 +62,41 @@ export const login = (account, password) => {
 			}
 		},
 		fail: (err) => {
+			console.log(err)
 			uni.showToast({
 				icon: 'none',
-				title: '登錄失敗，請稍后重試'
+				title: '當前網絡不可用'
 			});
 		}
 	});
 };
+
+// 登入聊天
+export const loginCat = () => {
+	var userInfo = uni.getStorageSync('USERS_KEY')
+	uni.request({
+		url: 'http://apelord.cn:8080/router/login',
+		method: 'POST',
+		data: {
+			name: userInfo.name,
+			id: userInfo.id,
+			avatar: userInfo.portrait
+		},
+		header: {
+			'token': Token,
+			'content-type': 'application/json',
+		},
+		success: (res) => {
+			// console.log(res)
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '當前網絡不可用'
+			});
+		}
+	})
+}
 
 // 验证码
 export const sendCode = (account, type) => new Promise((resolve, reject) => {
@@ -95,15 +126,15 @@ export const sendCode = (account, type) => new Promise((resolve, reject) => {
 		fail() {
 			uni.showToast({
 				icon: 'none',
-				title: '發送失败了，请稍后重试'
+				title: '當前網絡不可用'
 			});
-			
+
 		}
 	});
 });
 
 // 注册
-export const register = (password, account, regCode, inviteCode) => {
+export const register = (password, account, regCode, inviteCode) => new Promise((resolve, reject) => {
 	uni.request({
 		url: systemUrl + 'register',
 		method: 'POST',
@@ -117,17 +148,14 @@ export const register = (password, account, regCode, inviteCode) => {
 			'content-type': 'application/json'
 		},
 		success: (res) => {
-			console.log(res.data);
+			console.log(res)
 			if (res.data.status == 200) {
 				uni.showToast({
 					icon: 'none',
 					title: '注冊成功'
 				});
 				uni.setStorageSync('USERS_KEY', res.data.data);
-				uni.reLaunch({
-					url: '../user/update'
-				});
-
+				resolve(res.data.data)
 			} else {
 				uni.showToast({
 					icon: 'none',
@@ -139,13 +167,29 @@ export const register = (password, account, regCode, inviteCode) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '發送失败了，请稍后重试'
+				title: '當前網絡不可用'
 			});
 			return;
 		}
 	});
-};
+});
 
+//GET /v1/system/logout 用户退出
+export const logout = () => new Promise((resolve, reject) => {
+	let Uid = uni.getStorageSync('USERS_KEY').id;
+	uni.request({
+		url: systemUrl + 'logout?uid=' + Uid,
+		success: (res) => {
+			// console.log(res)
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '當前網絡不可用'
+			});
+		}
+	});
+});
 //注册网易云信id
 export const registerWyAccount = () => new Promise((resolve, reject) => {
 	uni.request({
@@ -159,11 +203,17 @@ export const registerWyAccount = () => new Promise((resolve, reject) => {
 				console.log(JSON.parse(res.data.data).info)
 				putWyToken(JSON.parse(res.data.data).info.token)
 			}
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -179,11 +229,17 @@ export const putWyToken = (wyToken) => new Promise((resolve, reject) => {
 		success: (res) => {
 			console.log(res)
 			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -199,11 +255,17 @@ export const getWyToken = () => new Promise((resolve, reject) => {
 		},
 		success: (res) => {
 			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -252,15 +314,19 @@ export const findByID = () => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success: (res) => {
-			// console.log(res.data);
-			// uni.setStorageSync('USERS_KEY', res.data.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -278,29 +344,18 @@ export const getAllSocialInfo = () => new Promise((resolve, reject) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
-			if (res.data.status == 500) {
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
-
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
-					}
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
 				});
 			}
+
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -329,15 +384,6 @@ export const upInfo = (userInfo, userId) => new Promise((resolve, reject) => {
 		success: (res) => {
 			// console.log(res.data);
 			if (res.data.status == 200) {
-				if (uni.getStorageSync('USERS_KEY').token) {
-					uni.switchTab({
-						url: 'user'
-					});
-				} else {
-					uni.reLaunch({
-						url: '../login/login'
-					});
-				}
 				resolve(res.data.status);
 				// console.log(res.data);
 			} else {
@@ -368,29 +414,18 @@ export const getInfo = (uid) => new Promise((resolve, reject) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
-			if (res.data.status == 500) {
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
-
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
-					}
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
 				});
 			}
+
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -417,35 +452,43 @@ export const getDyn = (uid, pageSize) => new Promise((resolve, reject) => {
 				});
 				resolve(null)
 			}
-			if (res.data.status == 500) {
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
 
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
-					}
-				});
-			}
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
 	});
 });
+//GET /v1/dyn/checkMeAllDyn
+export const checkMeAllDyn = (uid) => new Promise((resolve, reject) => {
+	// console.log(uid);
+	uni.request({
+		url: dynUrl + 'checkMeAllDyn?uid=' + uid,
+		header: {
+			'token': Token
+		},
+		success: (res) => {
+			// console.log(res.data.data);
+			if (res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+			if (res.data.status == 404) {
+				resolve(null)
+			}
 
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '當前網絡不可用'
+			});
+			reject(err);
+		}
+	});
+});
 // 获取用户所以动态
 export const getAlbum = () => new Promise((resolve, reject) => {
 	// console.log(uid);
@@ -457,30 +500,19 @@ export const getAlbum = () => new Promise((resolve, reject) => {
 		success: (res) => {
 			// console.log(res.data.data);
 			if (res.data.status == 200) resolve(res.data.data);
-			// else reject(res.data.msg);
-			if (res.data.status == 500) {
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
-
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
-					}
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
 				});
 			}
+
+
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -498,12 +530,18 @@ export const getFollow = () => new Promise((resolve, reject) => {
 		success: (res) => {
 			// console.log(res.data.data);
 			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
+				});
+			}
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -521,12 +559,18 @@ export const getFans = () => new Promise((resolve, reject) => {
 		success: (res) => {
 			// console.log(res.data.data);
 			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
+				});
+			}
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -543,12 +587,18 @@ export const checkIsCon = (uid) => new Promise((resolve, reject) => {
 		success: (res) => {
 			// console.log(res.data.data);
 			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
+				});
+			}
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -575,29 +625,12 @@ export const findAllDyn = (count) => new Promise((resolve, reject) => {
 					title: '没有更多数据了'
 				});
 			}
-			if (res.data.status == 500) {
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
 
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
-					}
-				});
-			}
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -624,7 +657,7 @@ export const getDynInfo = (did) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -632,28 +665,34 @@ export const getDynInfo = (did) => new Promise((resolve, reject) => {
 });
 
 // 获取日志评论列表
-export const getComment = (did) => new Promise((resolve, reject) => {
-	// console.log(did);
-	uni.request({
-		url: dynUrl + 'getComment?did=' + did,
-		header: {
-			'token': Token
-		},
-		success: (res) => {
-			console.log(res.data.data);
-			if (res.data.status == 200) resolve(res.data.data);
-			// if(res.data.status == 400) reject(0);
-			// else reject(res.data.msg);
-		},
-		fail: (err) => {
-			uni.showToast({
-				icon: 'none',
-				title: '页面加载失败，請稍后重試'
-			});
-			reject(err);
-		}
-	});
-});
+// export const getComment = (did) => new Promise((resolve, reject) => {
+// 	// console.log(did);
+// 	uni.request({
+// 		url: dynUrl + 'getComment?did=' + did,
+// 		header: {
+// 			'token': Token
+// 		},
+// 		success: (res) => {
+// 			// console.log(res.data.data);
+// 			if (res.data.status == 200) resolve(res.data.data);
+// 			if (res.data.status == 404) {
+// 				uni.showToast({
+// 					icon: 'none',
+// 					title: res.data.msg
+// 				});
+// 			}
+// 			// if(res.data.status == 400) reject(0);
+// 			// else reject(res.data.msg);
+// 		},
+// 		fail: (err) => {
+// 			uni.showToast({
+// 				icon: 'none',
+// 				title: '當前網絡不可用'
+// 			});
+// 			reject(err);
+// 		}
+// 	});
+// });
 
 // 用户评论
 export const addComment = (content, did) => new Promise((resolve, reject) => {
@@ -666,12 +705,18 @@ export const addComment = (content, did) => new Promise((resolve, reject) => {
 		success: (res) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
+				});
+			}
 			// else reject(res.data.msg);
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -686,22 +731,21 @@ export const concern = (type, gid) => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success: (res) => {
-			// console.log(res.data);
 			if (res.data.status == 200) {
-				// if (type == 2) {
-				// 	uni.showToast({
-				// 		icon: 'none',
-				// 		title: '已取消關注'
-				// 	});
-				// }
+
 				resolve(res.data.data);
 			}
-			// else reject(res.data.msg);
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -736,7 +780,7 @@ export const like = (did, likeNumber) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -754,14 +798,17 @@ export const likeCount = (did) => new Promise((resolve, reject) => {
 		success: (res) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
-
-
-			// else reject(res.data.msg);
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -782,7 +829,7 @@ export const getBullet = (did) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -790,28 +837,28 @@ export const getBullet = (did) => new Promise((resolve, reject) => {
 });
 
 // 回复评论
-export const reply = (cid, content) => new Promise((resolve, reject) => {
-	uni.request({
-		url: dynUrl + 'reply?cid=' + cid + '&content=' + content,
-		header: {
-			'token': Token
-		},
-		success: (res) => {
-			// console.log(res.data);
-			if (res.data.status == 200) resolve(res.data.data);
-			// else reject(res.data.msg)
-			if (res.data.status == 404) resolve(res.data.data);
+// export const reply = (cid, content) => new Promise((resolve, reject) => {
+// 	uni.request({
+// 		url: dynUrl + 'reply?cid=' + cid + '&content=' + content,
+// 		header: {
+// 			'token': Token
+// 		},
+// 		success: (res) => {
+// 			// console.log(res.data);
+// 			if (res.data.status == 200) resolve(res.data.data);
+// 			// else reject(res.data.msg)
+// 			if (res.data.status == 404) resolve(res.data.data);
 
-		},
-		fail: (err) => {
-			uni.showToast({
-				icon: 'none',
-				title: '页面加载失败，請稍后重試'
-			});
-			reject(err);
-		}
-	});
-});
+// 		},
+// 		fail: (err) => {
+// 			uni.showToast({
+// 				icon: 'none',
+// 				title: '當前網絡不可用'
+// 			});
+// 			reject(err);
+// 		}
+// 	});
+// });
 
 //刪除動態
 export const deleteDyn = (did) => new Promise((resolve, reject) => {
@@ -827,13 +874,143 @@ export const deleteDyn = (did) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
 	});
 });
 
+/***********************评论***********************/
+
+// 获取评论  GET /v1/comm/getComment
+export const getComment = (did) => new Promise((resolve, reject) => {
+	uni.request({
+		url: commUrl + 'getComment?did=' + did,
+		header: {
+			'token': Token
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 200) resolve(res.data.data);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '當前網絡不可用'
+			});
+			reject(err);
+		}
+	});
+});
+//发表评论GET /v1/comm/createCom
+export const createCom = (did, content) => new Promise((resolve, reject) => {
+	uni.request({
+		url: commUrl + 'createCom?did=' + did + '&content=' + content,
+		header: {
+			'token': Token
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 200) resolve(res.data.data);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '當前網絡不可用'
+			});
+			reject(err);
+		}
+	});
+});
+
+//获取下一级评论GET /v1/comm/getReply
+export const getReply = (cid) => new Promise((resolve, reject) => {
+	uni.request({
+		url: commUrl + 'getReply?cid=' + cid,
+		header: {
+			'token': Token
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 200) resolve(res.data.data);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '當前網絡不可用'
+			});
+			reject(err);
+		}
+	});
+});
+//回复评论GET /v1/comm/reply
+export const reply = (cid, content, parentId, to) => new Promise((resolve, reject) => {
+	uni.request({
+		url: commUrl + 'reply',
+		method: "POST",
+		header: {
+			'token': Token
+		},
+		data: {
+			"cid": cid,
+			"content": content,
+			"parentId": parentId,
+			"to": to
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 200) resolve(res.data.data);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '當前網絡不可用'
+			});
+			reject(err);
+		}
+	});
+});
+//删除评论GET /v1/comm/deleteComm/{id}
+export const deleteComm = (id) => new Promise((resolve, reject) => {
+	uni.request({
+		url: commUrl + 'deleteComm/' + id,
+		header: {
+			'token': Token
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 200) resolve(res.data.data);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '當前網絡不可用'
+			});
+			reject(err);
+		}
+	});
+});
+//删除回复GET /v1/comm/deleteReply/{id}
+export const deleteReply = (id) => new Promise((resolve, reject) => {
+	uni.request({
+		url: commUrl + 'deleteReply/' + id,
+		header: {
+			'token': Token
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 200) resolve(res.data.data);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '當前網絡不可用'
+			});
+			reject(err);
+		}
+	});
+});
 /*********************TOPIC***************************/
 //获取话题分类
 export const checkTopicList = (tid, pageSize) => new Promise((resolve, reject) => {
@@ -851,7 +1028,7 @@ export const checkTopicList = (tid, pageSize) => new Promise((resolve, reject) =
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -874,7 +1051,7 @@ export const getLikeNumber = (tid) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -897,7 +1074,7 @@ export const topicLike = (tid) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -920,7 +1097,7 @@ export const getAllComment = (tid) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -928,27 +1105,27 @@ export const getAllComment = (tid) => new Promise((resolve, reject) => {
 });
 
 //获取回复信息根据评论id
-export const getReply = (cid) => new Promise((resolve, reject) => {
-	uni.request({
-		url: topicUrl + 'getReply?cid=' + cid,
-		method: "GET",
-		header: {
-			'token': Token
-		},
-		success: (res) => {
-			// console.log(res.data);
-			if (res.data.status == 200) resolve(res.data.data);
-			// else reject(res.data.msg);
-		},
-		fail: (err) => {
-			uni.showToast({
-				icon: 'none',
-				title: '页面加载失败，請稍后重試'
-			});
-			reject(err);
-		}
-	});
-});
+// export const getReply = (cid) => new Promise((resolve, reject) => {
+// 	uni.request({
+// 		url: topicUrl + 'getReply?cid=' + cid,
+// 		method: "GET",
+// 		header: {
+// 			'token': Token
+// 		},
+// 		success: (res) => {
+// 			// console.log(res.data);
+// 			if (res.data.status == 200) resolve(res.data.data);
+// 			// else reject(res.data.msg);
+// 		},
+// 		fail: (err) => {
+// 			uni.showToast({
+// 				icon: 'none',
+// 				title: '當前網絡不可用'
+// 			});
+// 			reject(err);
+// 		}
+// 	});
+// });
 //发表话题
 export const createTopic = (content, location = "广州", tid) => new Promise((resolve, reject) => {
 	uni.request({
@@ -971,7 +1148,7 @@ export const createTopic = (content, location = "广州", tid) => new Promise((r
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -994,7 +1171,7 @@ export const topicComment = (tid, content) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1016,7 +1193,7 @@ export const topicReply = (cid, content) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1027,36 +1204,28 @@ export const topicReply = (cid, content) => new Promise((resolve, reject) => {
 /*********************nearby***************************/
 //獲取附近的人22.9913456029,113.3352184296
 export const checkNearbyPerson = (lng, lat, scope, info) => new Promise((resolve, reject) => {
+	// lng = 113.3352184296
+	// lat =  22.9913456029
 	scope = scope || 10
-	var tga = uni.getStorageSync("tga")
-	info = info || tga
+	info = uni.getStorageSync("tga")
 	uni.request({
 		url: nearbyUrl + 'checkNearbyPerson?lng=' + lng + '&lat=' + lat + '&scope=' + scope + '&info=' + info,
 		header: {
 			'token': Token,
 		},
 		success: (res) => {
+			// console.log(res)
 			if (res.data.status == 200) resolve(res.data.data);
-			if (res.data.status == 500) {
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
-
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
-					}
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
 				});
 			}
+
 		},
 		fail: (err) => {
+			uni.hideLoading();
 			uni.showToast({
 				icon: 'none',
 				title: '請稍后重試'
@@ -1075,6 +1244,12 @@ export const updateLab = (lable) => new Promise((resolve, reject) => {
 		},
 		success: (res) => {
 			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
+				});
+			}
 
 		},
 		fail: (err) => {
@@ -1122,30 +1297,18 @@ export const getIndex = () => new Promise((resolve, reject) => {
 		success: (res) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
-			// else reject(res.data.msg);
-			if (res.data.status == 500) {
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
-
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
-					}
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
 				});
 			}
+
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1182,7 +1345,7 @@ export const donate = (number) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1204,7 +1367,7 @@ export const getPollTop = () => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1226,12 +1389,34 @@ export const getMeRanking = () => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
 	});
 });
+//公益活动GET /v1/poll/getActivity
+export const getActivity = () => new Promise((resolve, reject) => {
+	uni.request({
+		url: pollUrl + 'getActivity',
+		header: {
+			'token': Token
+		},
+		success: (res) => {
+			// console.log(res.data);
+			if (res.data.status == 200) resolve(res.data.data);
+			// else reject(res.data.msg);
+		},
+		fail: (err) => {
+			uni.showToast({
+				icon: 'none',
+				title: '當前網絡不可用'
+			});
+			reject(err);
+		}
+	});
+});
+
 
 /*********************PAN资产账本***************************/
 //PAN币余额
@@ -1242,32 +1427,19 @@ export const getBalance = () => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success: (res) => {
-			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
-			// else reject(res.data.msg);
-			if (res.data.status == 500) {
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
-
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
-					}
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
 				});
 			}
+
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1292,29 +1464,12 @@ export const getBill = (pageSize) => new Promise((resolve, reject) => {
 					title: '暫無更多數據'
 				});
 			};
-			if (res.data.status == 500) {
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
 
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
-					}
-				});
-			}
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1331,30 +1486,12 @@ export const checkTaskList = () => new Promise((resolve, reject) => {
 		success: (res) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
-			// else reject(res.data.msg);
-			if (res.data.status == 500) {
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
 
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
-					}
-				});
-			}
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1378,7 +1515,7 @@ export const getChange_24h = () => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1401,7 +1538,7 @@ export const getForBalance = () => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1430,7 +1567,7 @@ export const getForBill = (pageSize) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1452,7 +1589,7 @@ export const checkForTaskList = () => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1469,12 +1606,17 @@ export const checkSignToday = () => new Promise((resolve, reject) => {
 		success: (res) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
-			// else reject(res.data.msg);
+			if (res.data.status == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
+				});
+			}
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1503,7 +1645,7 @@ export const signin = (force, day) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1520,29 +1662,12 @@ export const signinMsg = () => new Promise((resolve, reject) => {
 			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
 			// else reject(res.data.msg);
-			if (res.data.status == 500) {
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
 
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
-					}
-				});
-			}
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1566,7 +1691,7 @@ export const toTreIndex = () => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1589,7 +1714,7 @@ export const isVote = (tid) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1612,7 +1737,7 @@ export const sysVote = (tid, isWell) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1635,7 +1760,7 @@ export const getBarList = (location) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1657,7 +1782,7 @@ export const getBarInfo = (id) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1691,7 +1816,7 @@ export const setBar = (barInfo) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1727,7 +1852,7 @@ export const upLogo = (imgTemp, type) => new Promise((resolve, reject) => {
 			console.log('uploadImage fail', err);
 			uni.showToast({
 				icon: 'none',
-				title: '上传失败,请勿选择超过4M的图片'
+				title: '上傳失敗,請稍後重試'
 			});
 		}
 	});
@@ -1748,7 +1873,7 @@ export const getBarlocation = (address) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1784,7 +1909,7 @@ export const createBenfit = (barInfo) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1807,7 +1932,7 @@ export const getBenfitList = () => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1822,14 +1947,12 @@ export const findById = (id) => new Promise((resolve, reject) => {
 			'token': Token
 		},
 		success: (res) => {
-			// console.log(res.data);
 			if (res.data.status == 200) resolve(res.data.data);
-			// else reject(res.data.msg);
 		},
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -1923,7 +2046,7 @@ export const upPicture = (userId) => new Promise((resolve, reject) => {
 					console.log('uploadImage fail', err);
 					uni.showToast({
 						icon: 'none',
-						title: '上传失败,请勿选择超过4M的图片'
+						title: '上傳失敗,請稍後重試'
 					});
 				}
 			});
@@ -1947,10 +2070,11 @@ export const getImgTemp = () => new Promise((resolve, reject) => {
 			resolve(tempFilePaths[0]);
 		},
 		fail(res) {
+			uni.hideLoading()
 			console.log(res)
 			uni.showToast({
 				icon: 'none',
-				title: '出錯了，請稍後重試'
+				title: '請稍後重試'
 			});
 		}
 	});
@@ -1976,7 +2100,7 @@ export const upload = (imgTemp) => new Promise((resolve, reject) => {
 			console.log('uploadImage fail', err);
 			uni.showToast({
 				icon: 'none',
-				title: '上传失败,请勿选择超过4M的图片'
+				title: '上傳失敗,請稍後重試'
 			});
 		}
 	});
@@ -1984,7 +2108,7 @@ export const upload = (imgTemp) => new Promise((resolve, reject) => {
 
 // 上传日志内容
 export const createDyn = (dynContent, path, location, lat, lng) => new Promise((resolve, reject) => {
-	var id = uni.getStorageSync('USERS_KEY').id 
+	var id = uni.getStorageSync('USERS_KEY').id
 	console.log(id)
 	uni.request({
 		url: dynUrl + 'createDyn',
@@ -2015,7 +2139,7 @@ export const createDyn = (dynContent, path, location, lat, lng) => new Promise((
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -2059,7 +2183,7 @@ export const submitReport = (reportInfo) => new Promise((resolve, reject) => {
 		fail: (err) => {
 			uni.showToast({
 				icon: 'none',
-				title: '页面加载失败，請稍后重試'
+				title: '當前網絡不可用'
 			});
 			reject(err);
 		}
@@ -2088,6 +2212,46 @@ export const getPushConnMsg = () => new Promise((resolve, reject) => {
 		},
 		success(res) {
 			if (res.data.status == 200) resolve(res.data.data);
+			if (res.data.code == 500) {
+				uni.removeStorageSync('USERS_KEY');
+				uni.removeStorageSync('TOKEN_KEY');
+				uni.showModal({
+					title: '',
+					content: "服務器繁忙，請稍後重新登入",
+					confirmText: "確定",
+					showCancel: false, // 不显示取消按钮
+					success(res) {
+						if (res.confirm) {
+							uni.reLaunch({
+								url: '../login/login'
+							});
+							logout()
+							store.commit('openSocket', false)
+						}
+					}
+				});
+			}
+		},
+		fail(err) {
+			uni.removeStorageSync('USERS_KEY');
+			uni.removeStorageSync('TOKEN_KEY');
+			uni.showModal({
+				title: '',
+				content: "服務器繁忙，請稍後重新登入",
+				confirmText: "確定",
+				showCancel: false, // 不显示取消按钮
+				success(res) {
+					if (res.confirm) {
+						uni.reLaunch({
+							url: '../login/login'
+						});
+						logout()
+						uni.removeStorageSync('USERS_KEY');
+						uni.removeStorageSync('TOKEN_KEY');
+						store.commit('openSocket', false)
+					}
+				}
+			});
 		}
 	});
 });
@@ -2100,6 +2264,25 @@ export const getPushFansMsg = () => new Promise((resolve, reject) => {
 		},
 		success(res) {
 			if (res.data.status == 200) resolve(res.data.data);
+		},
+		fail(err) {
+			uni.showModal({
+				title: '',
+				content: "服務器繁忙，請稍後重新登入",
+				confirmText: "確定",
+				showCancel: false, // 不显示取消按钮
+				success(res) {
+					if (res.confirm) {
+						uni.reLaunch({
+							url: '../login/login'
+						});
+						logout()
+						uni.removeStorageSync('USERS_KEY');
+						uni.removeStorageSync('TOKEN_KEY');
+						store.commit('openSocket', false)
+					}
+				}
+			});
 		}
 	});
 });
@@ -2112,24 +2295,26 @@ export const getPushLikeMsg = () => new Promise((resolve, reject) => {
 		},
 		success(res) {
 			if (res.data.status == 200) resolve(res.data.data);
-			if (res.data.status == 500) {
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
 
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
+		},
+		fail(err) {
+			uni.showModal({
+				title: '',
+				content: "服務器繁忙，請稍後重新登入",
+				confirmText: "確定",
+				showCancel: false, // 不显示取消按钮
+				success(res) {
+					if (res.confirm) {
+						uni.reLaunch({
+							url: '../login/login'
+						});
+						logout()
+						uni.removeStorageSync('USERS_KEY');
+						uni.removeStorageSync('TOKEN_KEY');
+						store.commit('openSocket', false)
 					}
-				});
-			}
+				}
+			});
 		}
 	});
 });
@@ -2143,24 +2328,26 @@ export const getPushSystemMsg = () => new Promise((resolve, reject) => {
 		},
 		success(res) {
 			if (res.data.status == 200) resolve(res.data.data);
-			if (res.data.status == 500) {
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
 
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
+		},
+		fail(err) {
+			uni.showModal({
+				title: '',
+				content: "服務器繁忙，請稍後重新登入",
+				confirmText: "確定",
+				showCancel: false, // 不显示取消按钮
+				success(res) {
+					if (res.confirm) {
+						uni.reLaunch({
+							url: '../login/login'
+						});
+						logout()
+						uni.removeStorageSync('USERS_KEY');
+						uni.removeStorageSync('TOKEN_KEY');
+						store.commit('openSocket', false)
 					}
-				});
-			}
+				}
+			});
 		}
 	});
 });
@@ -2174,24 +2361,7 @@ export const upStatus = (type) => new Promise((resolve, reject) => {
 		},
 		success(res) {
 			if (res.data.status == 200) resolve(res.data.data);
-			if (res.data.status == 500) {
-				uni.showModal({
-					title: '',
-					content: "登入失效，請重新登入",
-					showCancel: false, // 不显示取消按钮
-					success(res) {
-						if (res.confirm) {
 
-							uni.clearStorageSync('USERS_KEY');
-							uni.clearStorageSync('uid');
-							uni.clearStorageSync('sdktoken')
-							uni.reLaunch({
-								url: '../login/login'
-							});
-						}
-					}
-				});
-			}
 		}
 	});
 });
@@ -2226,6 +2396,18 @@ export const getDistance = (lat1Str, lng1Str, lat2Str, lng2Str) => new Promise((
 	uni.request({
 		url: mapUrl + 'getDistance?lat1Str=' + lat1Str + '&lng1Str=' + lng1Str + '&lat2Str=' + lat2Str + '&lng2Str=' +
 			lng2Str,
+		header: {
+			'token': Token
+		},
+		success(res) {
+			if (res.data.status == 200) resolve(res.data.data);
+		}
+	});
+});
+//獲取對方坐標GET /v1/map/getToUserLocation
+export const getToUserLocation = (tid) => new Promise((resolve, reject) => {
+	uni.request({
+		url: mapUrl + 'getToUserLocation?tid=' + tid,
 		header: {
 			'token': Token
 		},
@@ -2362,6 +2544,331 @@ export const regIxxAccount = (ixxId) => new Promise((resolve, reject) => {
 					title: "該用戶已註冊"
 				})
 			};
+		}
+	});
+});
+
+
+/******************************聊天********************/
+//向指定人发送消息
+export const sendMessage = (toId, message, type) => new Promise((resolve, reject) => {
+	uni.request({
+		url: 'http://apelord.cn:8080/chat/push',
+		method: 'POST',
+		data: {
+			toId: toId + '',
+			text: message,
+			type: type
+
+		},
+		header: {
+			'content-type': 'application/json',
+			'token': Token
+		},
+		success: (res) => {
+			// console.log(res)
+			if (res.data.errcode == 200) resolve(res.data.data)
+			if (res.data.errcode == 404) {
+				resolve(res.data.data)
+				uni.showToast({
+					icon: 'none',
+					title: res.data.msg
+				});
+			}
+		},
+		fail: (err) => {
+			console.log(err)
+			// uni.showToast({
+			// 	icon: 'none',
+			// 	title: '登錄失敗，請稍后重試'
+			// });
+		}
+	});
+});
+
+//获取当前窗口信息GET /chat/info/{
+export const chatUserInfo = (id) => new Promise((resolve, reject) => {
+	uni.request({
+		url: 'http://apelord.cn:8080/chat/info/' + id,
+		header: {
+			'token': Token
+		},
+		method: 'GET',
+		success(res) {
+			// console.log(res)
+			if (res.data.code == 200) resolve(res.data.data)
+			if (res.data.code == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: '获取信息,請稍后重試'
+				});
+			}
+		},
+		fail(err) {
+			console.log(err)
+			uni.hideLoading()
+		}
+	});
+});
+
+//获取会话列表
+export const sessionList = (id) => new Promise((resolve, reject) => {
+	uni.request({
+		url: 'http://apelord.cn:8080/chat/push/info/' + id,
+		header: {
+			'token': Token
+		},
+		method: 'GET',
+		success(res) {
+			console.log(res)
+		},
+		fail(err) {
+			console.log(err)
+		}
+	});
+});
+//获取当前对话信息
+export const currentSession = (fromId, toId) => new Promise((resolve, reject) => {
+	uni.request({
+		url: 'http://apelord.cn:8080/chat/self/' + fromId + '/' + toId,
+		header: {
+			'token': Token
+		},
+		method: 'GET',
+		success(res) {
+			// console.log(res)
+			if (res.data.errcode == 200) resolve(res.data.data)
+			if (res.data.errcode == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: '获取信息,請稍后重試'
+				});
+			}
+		},
+		fail(err) {
+			console.log(err)
+		}
+	});
+});
+
+//聊天发送图片上传到服务器
+export const uploadPictures = (imgTemp) => new Promise((resolve, reject) => {
+	uni.uploadFile({
+		url: 'http://apelord.cn:8080/file/upLogo',
+		header: {
+			'token': Token
+		},
+		filePath: imgTemp,
+		name: 'file',
+		success: (res) => {
+			var jsonObj = JSON.parse(res.data);
+			resolve(jsonObj.data);
+		},
+		fail: (err) => {
+			console.log('uploadImage fail', err);
+			uni.showToast({
+				icon: 'none',
+				title: '上傳失敗,請稍後重試'
+			});
+		}
+	});
+});
+
+//GET /chat/deleteList/{toId}删除聊天
+export const deleteList = (toId) => new Promise((resolve, reject) => {
+	uni.request({
+		url: 'http://apelord.cn:8080/chat/deleteList/' + toId,
+		header: {
+			'token': Token
+		},
+		method: 'GET',
+		success(res) {
+			console.log(res)
+			if (res.data.errcode == 200) resolve(res.data.data)
+			if (res.data.errcode == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: '获取信息,請稍后重試'
+				});
+			}
+		},
+		fail(err) {
+			console.log(err)
+		}
+	});
+});
+
+//设置备注GET /router/remark
+export const setRemark = (toId, name) => new Promise((resolve, reject) => {
+	uni.request({
+		url: 'http://apelord.cn:8080/router/remark',
+		header: {
+			'token': Token
+		},
+		data: {
+			toUid: toId,
+			remaerName: name
+		},
+		method: 'GET',
+		success(res) {
+			// console.log(res)
+			if (res.data.errcode == 200) resolve(res.data.data)
+			if (res.data.errcode == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: '获取信息,請稍后重試'
+				});
+			}
+		},
+		fail(err) {
+			console.log(err)
+		}
+	});
+});
+
+//删除备注GET /router/deleteRemark
+export const deleteRemark = (toId) => new Promise((resolve, reject) => {
+	uni.request({
+		url: 'http://apelord.cn:8080/router/deleteRemark',
+		header: {
+			'token': Token
+		},
+		data: {
+			toUid: toId,
+		},
+		method: 'GET',
+		success(res) {
+			// console.log(res)
+			if (res.data.errcode == 200) resolve(res.data.data)
+			if (res.data.errcode == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: '获取信息,請稍后重試'
+				});
+			}
+		},
+		fail(err) {
+			console.log(err)
+		}
+	});
+});
+
+//加入黑名单GET /router/blacklist
+export const pushBlacklist = (toId) => new Promise((resolve, reject) => {
+	uni.request({
+		url: 'http://apelord.cn:8080/router/blacklist',
+		header: {
+			'token': Token
+		},
+		data: {
+			toUid: toId,
+		},
+		method: 'GET',
+		success(res) {
+			// console.log(res)
+			if (res.data.errcode == 200) resolve(res.data)
+			if (res.data.errcode == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: '获取信息,請稍后重試'
+				});
+			}
+		},
+		fail(err) {
+			console.log(err)
+		}
+	});
+});
+
+//移除黑名单GET /router/removeBlacklist
+export const removeBlacklist = (id) => new Promise((resolve, reject) => {
+	uni.request({
+		url: 'http://apelord.cn:8080/router/removeBlacklist',
+		header: {
+			'token': Token
+		},
+		data: {
+			id: id,
+		},
+		method: 'GET',
+		success(res) {
+			// console.log(res)
+			if (res.data.errcode == 200) resolve(res.data)
+			if (res.data.errcode == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: '获取信息,請稍后重試'
+				});
+			}
+		},
+		fail(err) {
+			console.log(err)
+		}
+	});
+});
+
+
+//查询黑名单列表GET /router/checkBlacklist
+export const checkBlacklist = () => new Promise((resolve, reject) => {
+	uni.request({
+		url: 'http://apelord.cn:8080/router/checkBlacklist',
+		header: {
+			'token': Token
+		},
+		method: 'GET',
+		success(res) {
+			// console.log(res)
+			if (res.data.errcode == 200) resolve(res.data.data)
+			if (res.data.errcode == 404) {
+				uni.showToast({
+					icon: 'none',
+					title: '获取信息,請稍后重試'
+				});
+			}
+		},
+		fail(err) {
+			console.log(err)
+		}
+	});
+});
+
+//查询是否在黑名单GET /router/checkBlackListByToUid
+export const queryBlackList = (toId) => new Promise((resolve, reject) => {
+	uni.request({
+		url: 'http://apelord.cn:8080/router/checkBlackListByToUid',
+		header: {
+			'token': Token
+		},
+		data: {
+			toUid: toId
+		},
+		method: 'GET',
+		success(res) {
+			console.log(res)
+			if (res.data.errcode == 200) resolve(res.data.data)
+			if (res.data.errcode == 404) resolve(false)
+		},
+		fail(err) {
+			console.log(err)
+		}
+	});
+});
+
+//查询用户是否在线GET /chat/chaeckOnlineByUid/{uid}
+export const chaeckOnlineByUid = (toId) => new Promise((resolve, reject) => {
+	uni.request({
+		url: 'http://apelord.cn:8080/chat/chaeckOnlineByUid/' + toId,
+		header: {
+			'token': Token
+		},
+		method: 'GET',
+		success(res) {
+			// console.log(res)
+			if (res.data.errcode == 200) resolve(res.data.data)
+			if (res.data.errcode == 404) resolve(false)
+		},
+		fail(err) {
+			console.log(err)
 		}
 	});
 });

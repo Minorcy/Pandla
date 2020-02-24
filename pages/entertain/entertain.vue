@@ -87,10 +87,11 @@
 			// });
 			this.getBarListData();
 		},
-		onBackPress() {
+		onBackPress(e) {
 			uni.switchTab({
-				url: '/pages/main/main'
+				url: '/pages/user/user'
 			});
+			return true
 		}
 	}
 </script>

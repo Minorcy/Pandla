@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "附近居民",
-  "onReachBottomDistance": 50,
-  "enablePullDownRefresh": true,
-  "usingComponents": {
-    "comments": "/components/comments"
-  }
-}

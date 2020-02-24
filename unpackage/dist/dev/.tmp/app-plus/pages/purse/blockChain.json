@@ -1,7 +1,5 @@
 {
   "navigationBarTitleText": "區塊鏈地址",
   "bounce": "none",
-  "usingComponents": {
-    "loading": "/components/loading8"
-  }
+  "usingComponents": {}
 }

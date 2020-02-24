@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "",
+  "navigationBarTextStyle": "white",
+  "animationType": "slide-in-left",
+  "titleNView": false,
+  "softinputNavBar": "none",
+  "bounce": "none",
+  "usingComponents": {
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "comm": "/components/comments",
+    "l-barrage": "/components/l-barrage/l-barrage"
+  }
+}

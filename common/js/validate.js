@@ -210,7 +210,7 @@ export const barValidate = (barInfo, isUpload) => {
 		});
 		return false;
 	} else {
-		if (!pReg.exec(barInfo.phone) || barInfo.phone.length < 8) {
+		if ( barInfo.phone.length < 8) {
 			uni.showToast({
 				icon: 'none',
 				title: '联系电话格式不正確'
@@ -278,7 +278,7 @@ export const welfareValidate = (barInfo, isUpload) => {
 		});
 		return false;
 	} else {
-		if (!pReg.exec(barInfo.phone) || barInfo.phone.length < 8) {
+		if (barInfo.phone.length < 8) {
 			uni.showToast({
 				icon: 'none',
 				title: '联系电话格式不正確'

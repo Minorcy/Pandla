@@ -8,6 +8,7 @@ text {
 	font-size: 12px;
 }
 .title {
+	margin-top: 50px;
 	text-align: center;
 	font-size: 18px;
 	display: block;

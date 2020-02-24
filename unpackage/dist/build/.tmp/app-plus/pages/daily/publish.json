@@ -6,7 +6,8 @@
     "buttons": [
       {
         "text": "發表",
-        "fontSize": "16px"
+        "fontSize": "16px",
+        "width": "50px"
       }
     ]
   },

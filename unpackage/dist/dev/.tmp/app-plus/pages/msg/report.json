@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "举报",
+  "navigationBarBackgroundColor": "#E1E1E1",
+  "navigationBarTextStyle": "black",
+  "bounce": "none",
+  "softinputNavBar": "none",
+  "usingComponents": {}
+}

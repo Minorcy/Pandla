@@ -1,29 +1,26 @@
 
-.header.data-v-012981f0 {
+.header.data-v-2142edcc {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
-.logo.data-v-012981f0 {
+.logo.data-v-2142edcc {
 	width: 70px;
 	height: 65px;
 	display: block;
 	margin: 0 auto;
 }
-.logo image.data-v-012981f0{
+.logo image.data-v-2142edcc{
 	width: 100%;
 }
-.slogan.data-v-012981f0 {
+.slogan.data-v-2142edcc {
 	color: #EFEFF4;
 	font-size: 60rpx;
 	text-align: center;

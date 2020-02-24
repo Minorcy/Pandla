@@ -7,8 +7,8 @@
   "id": "__UNI__F2A9BD3",
   "name": "Pandla",
   "version": {
-    "name": "1.0.8",
-    "code": 108
+    "name": "1.1.7",
+    "code": 117
   },
   "description": "全球第一款区块链同志社交软件",
   "launch_path": "__uniappview.html",
@@ -162,7 +162,22 @@
           "NSCameraUsageDescription": "獲取您的相機，拍照並上傳，用於發表",
           "NSLocationWhenInUseUsageDescription": "獲取您的位置，用同城相關服務",
           "NSLocationAlwaysAndWhenInUseUsageDescription": "獲取您的位置，用同城相關服務"
-        }
+        },
+        "idfa": false,
+        "shortcuts": [
+          {
+            "type": "share",
+            "title": "二维码",
+            "icontype": "UIApplicationShortcutIconTypeShare"
+          },
+          {
+            "type": "about",
+            "title": "关 于",
+            "userinfo": {
+              "key3": "value3"
+            }
+          }
+        ]
       },
       "plugins": {
         "maps": {
@@ -192,10 +207,7 @@
       }
     },
     "softinput": {
-      "navBar": "none",
-      "bottom": {
-        "offset": "auto"
-      }
+      "navBar": "none"
     },
     "arguments": "{\"name\":\"index\",\"pathName\":\"pages/index/index\",\"query\":\"id=1\",\"id\":0}",
     "allowsInlineMediaPlayback": true,
@@ -206,10 +218,13 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.3.7",
+      "compilerVersion": "2.4.6",
       "control": "v8",
-      "nvueCompiler": "weex",
-      "renderer": "auto"
+      "nvueCompiler": "uni-app",
+      "renderer": "auto",
+      "nvue": {
+        "flex-direction": "column"
+      }
     },
     "tabBar": {
       "color": "#767676",
@@ -217,28 +232,28 @@
       "backgroundColor": "#000000",
       "list": [
         {
-          "pagePath": "pages/main/main",
-          "text": "首頁",
-          "iconPath": "static/img/tabbar/home.png",
-          "selectedIconPath": "static/img/tabbar/homeHL.png"
+          "pagePath": "pages/nearby/nearby",
+          "text": "約會",
+          "iconPath": "static/img/tabbar/dingweian.png",
+          "selectedIconPath": "static/img/tabbar/dingwei.png"
         },
         {
-          "pagePath": "pages/msg/msg",
+          "pagePath": "pages/msg/sessionList",
           "text": "通訊",
-          "iconPath": "static/img/tabbar/msg.png",
-          "selectedIconPath": "static/img/tabbar/msgHL.png"
+          "iconPath": "static/img/tabbar/tonxunan.png",
+          "selectedIconPath": "static/img/tabbar/tonxun.png"
         },
         {
-          "pagePath": "pages/pan/pan",
-          "text": "公益",
-          "iconPath": "static/img/tabbar/PAN.png",
-          "selectedIconPath": "static/img/tabbar/PANHL.png"
+          "pagePath": "pages/daily/daily",
+          "text": "相冊",
+          "iconPath": "static/img/tabbar/logan.png",
+          "selectedIconPath": "static/img/tabbar/log.png"
         },
         {
           "pagePath": "pages/user/user",
           "text": "我的",
-          "iconPath": "static/img/tabbar/user.png",
-          "selectedIconPath": "static/img/tabbar/userHL.png"
+          "iconPath": "static/img/tabbar/wodean.png",
+          "selectedIconPath": "static/img/tabbar/wode.png"
         }
       ],
       "borderStyle": "rgba(0,0,0,0.4)",

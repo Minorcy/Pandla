@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-
+    "vue-cropper": "^0.4.9"
   }
 }

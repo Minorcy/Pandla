@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "emotion": "/pages/msg/yszyun-imchat-emoji/Emotion/ChatEmoji"
+  },
+  "component": true
+}

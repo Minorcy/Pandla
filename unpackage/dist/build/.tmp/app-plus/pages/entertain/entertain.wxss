@@ -1,12 +1,12 @@
 
-.pages-content.data-v-329a0f68 {
+.pages-content.data-v-359f13ca {
 	width: 100%;
 }
-.introduce.data-v-329a0f68{
+.introduce.data-v-359f13ca{
 	width: 100%;
 	position: relative;
 }
-.back.data-v-329a0f68{
+.back.data-v-359f13ca{
 	position: absolute;
 	top: 5px;
 	left: 5px;
@@ -14,7 +14,7 @@
 	height: 50px;
 	z-index: 10;
 }
-.no-list.data-v-329a0f68{
+.no-list.data-v-359f13ca{
 	margin: 30px auto 0;
 	width: 100%;
 	text-align: center;
@@ -23,50 +23,45 @@
 	color: #4A4A4A;
 	font-weight: 700;
 }
-.lits-item.data-v-329a0f68{
+.lits-item.data-v-359f13ca{
 	position: relative;
 	width: 100%;
 	height: 122px;
 	color: #FFFFFF;
 	margin-top: 10px;
 }
-.item-group.data-v-329a0f68 {
+.item-group.data-v-359f13ca {
 	position: relative;
 	width: 100%;
 	height: 100%;
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 	z-index: 9;
 	background-color: rgba(0,0,0,.5);
 }
-.item-group text.data-v-329a0f68{
+.item-group text.data-v-359f13ca{
 	font-size: 14px;
 	color: #FFFFFF;
 	line-height: 1.5;
 	text-align: center;
 }
-.item-group .location.data-v-329a0f68{
+.item-group .location.data-v-359f13ca{
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
-	    -ms-flex-align: center;
 	        align-items: center;
 }
-.bg.data-v-329a0f68{
+.bg.data-v-359f13ca{
 	border: 1px solid #000000;
 	position: absolute;
 	width: 100%;
@@ -77,18 +72,18 @@
 	        filter: blur(3px);
 	z-index: 1;
 }
-.logo.data-v-329a0f68 {
+.logo.data-v-359f13ca {
 	width: 100rpx;
 	height: 100rpx;
 	margin: 20rpx auto 20rpx auto;
 	border-radius: 50%;
 }
-.map.data-v-329a0f68 {
+.map.data-v-359f13ca {
 	width: 30rpx;
 	height: 20rpx;
 	margin-right: 10rpx;
 }
-.entry.data-v-329a0f68 {
+.entry.data-v-359f13ca {
 	width: 100px;
 	height: 100px;
 	position: fixed;
@@ -96,10 +91,10 @@
 	right: 20rpx;
 	z-index: 10;
 }
-scroll-view.data-v-329a0f68 {
+scroll-view.data-v-359f13ca {
 	height: 100%;
 }
-image.data-v-329a0f68 {
+image.data-v-359f13ca {
 	width: 100%;
 }
 

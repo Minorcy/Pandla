@@ -2,180 +2,261 @@
 	<view class="chat-page">
 		<view class="message-wrapper chat-list" :scroll-with-animation="true" :style="{paddingBottom:paddingBottom+'px'}">
 			<view class="message-item chat-list" id="chat-list" v-for="(msg,index) in msglist" :key="index">
-				<view class="message-time" v-if="msg.type==='timeTag'"><text>{{msg.text}}</text></view>
-				<view v-if="msg.type!='timeTag'">
-					<view class="message-body  your-msg" v-if="msg.flow==='in'">
+				<view class="message-time" v-if="msg.timeShow != 0"><text>{{msg.time|dateFormat()}}</text></view>
+				<view>
+					<view class="message-body  your-msg" v-if="msg.from.id==userInfos.id">
 						<view class="rong-avatar">
-							<img v-if="msg.type!='timeTag'" @tap="toUser()" :src="userInfos[to].avatar" class="rong-avatar-bd" mode="aspectFill">
+							<img @tap="toUser()" :src="userInfos.avatar" class="rong-avatar-bd" mode="aspectFill">
 						</view>
-						<text class="left-triangle" v-if="msg.type !='image'"></text>
-						<view class="message-text-your" :class="[msg.type =='image' ? 'nobg' : '']">
-							<rich-text :nodes="msg.text|generateRichTextNode()" :class="[msg.type==='timeTag' ? 'user-time':'user-msg']"></rich-text>
-							<view class="message-img your-img" v-if="msg.type =='image'" @tap="previewImage(msg.file.url)">
-								<image :src="msg.file.url" v-if="msg.type =='image'" mode="widthFix"></image>
+						<text class="left-triangle" v-if="msg.type !=3"></text>
+						<view class="message-text-your" :class="[msg.type === 3 ? 'nobg' : '']">
+							<rich-text space="nbsp" :nodes="msg.message|generateRichTextNode()" v-if="msg.type !=3" class="rich"></rich-text>
+							<view class="message-img your-img" v-if="msg.type ==3" @tap="previewImage(msg.message)">
+								<image :src="msg.message" v-if="msg.type ==3" mode="widthFix"></image>
 							</view>
 						</view>
 
 					</view>
-					<view class="message-body my-msg" v-if="msg.flow==='out'">
-						<view class="message-text" :class="[msg.type =='image' ? 'nobg' : '']">
-							<rich-text :nodes="msg.text|generateRichTextNode()" :class="[msg.type==='timeTag' ? 'user-time':'user-msg']"></rich-text>
-							<view class="message-img" v-if="msg.type =='image'" @tap="previewImage(msg.file.url)">
-								<image :src="msg.file.url" v-if="msg.type =='image'" mode="widthFix"></image>
+					<view class="message-body my-msg" v-if="msg.from.id==myInfo.id">
+						<view class="message-text" :class="[msg.type === 3 ? 'nobg' : '']">
+							<rich-text space="nbsp" :nodes="msg.message|generateRichTextNode()" v-if="msg.type !=3" class="rich"></rich-text>
+							<view class="message-img" v-if="msg.type ==3" @tap="previewImage(msg.message)">
+								<image :src="msg.message" v-if="msg.type ==3" mode="widthFix"></image>
 							</view>
 						</view>
 
-						<text class="right-triangle" v-if="msg.type !='image'"></text>
+						<text class="right-triangle" v-if="msg.type !=3"></text>
 						<view class="rong-avatar">
-							<img v-if="msg.type!='timeTag'" :src="myInfo.avatar" class="rong-avatar-bd" mode="aspectFill">
+							<img :src="myInfo.portrait" class="rong-avatar-bd" mode="aspectFill" alt="头像">
 						</view>
 					</view>
 				</view>
 			</view>
 		</view>
-		<!-- </view> -->
+
 
 		<view class="foot">
-			<chat-input @send-message="getInputMessage" @show="show" @foc="setScrollH" @sendImg="sendImg()"
-			 :to="to"></chat-input>
+			<chat-input @sendMsg="getInputMessage" @show="show()" @sendImg="sendImg()" @foc = "foc"></chat-input>
 		</view>
 	</view>
 </template>
 
 <script>
-	import uniNavBar from "@/components/uni-nav-bar/uni-nav-bar.vue"
-	import EmojiObj from '@/common/utils/emojimap.js';
 	import chatInput from './yszyun-imchat-emoji/chatinput.vue';
+	import EmojiObj from '@/common/utils/emojimap.js';
 	import util from '@/common/utils';
 	import pageUtil from '@/common/utils/page';
 	import {
-		upload,
+		uploadPictures,
 		getImgTemp,
-		getInfo
+		getInfo,
+		chatUserInfo,
+		currentSession,
+		sendMessage
 	} from '../../api/api.js';
 	var emoji = EmojiObj.emojiList.emoji
 	export default {
 		data() {
 			return {
-				style: {
-					pageHeight: 0,
-					contentViewHeight: 0,
-					footViewHeight: 90,
-					mitemHeight: 0,
-				},
-				scrollTop: 0,
 				sessionId: '',
 				currSessionMsgs: '',
 				title: "",
-				paddingBottom:50
+				userInfos: '',
+				myInfo: '',
+				msglist: '',
+				paddingBottom: 50
+
 			}
 		},
 		components: {
 			chatInput,
-			uniNavBar
 		},
 		onLoad(option) {
-			uni.showLoading({
-				title: "加载中"
-			})
-			setTimeout(() => {
-				this.scrollEnd()
-			}, 500)
+			var that = this
 			this.sessionId = option.id
-			// console.log(this.sessionId)
-			setTimeout(() => {
-				uni.hideLoading()
-			}, 800)
-		},
-		computed: {
-			userInfos() {
-				var user = this.$store.state.userInfos
-				return user
-			},
-			myInfo() {
-				var myInfo = this.$store.state.myInfo
-				return this.$store.state.myInfo
-			},
-			msglist() {
-				let msgs = this.$store.state.currSessionMsgs
-				// console.log(msgs)
-				this.scrollEnd()
-				return msgs
-			},
-			scene() {
-				return util.parseSession(this.sessionId).scene
-			},
-			to() {
-				return util.parseSession(this.sessionId).to
-			},
-
-
-		},
-		mounted() {
-			this.$store.dispatch('setCurrSession', this.sessionId)
-			var user = this.userInfos[this.to]
-			if (user.alias) {
-				this.title = user.alias
-				uni.setNavigationBarTitle({
-					title: user.alias
-				})
-				return
-			}
-			this.title = user.nick
-			uni.setNavigationBarTitle({
-				title: user.nick
+			this.userInfo()
+			this.myInfo = uni.getStorageSync('USERS_KEY')
+			uni.$on('onMsg' + option.id, function(data) {
+				that.getMsg(data)
 			})
-		},
-		created() {
-			const res = uni.getSystemInfoSync();
-			this.style.pageHeight = res.windowHeight;
-			this.style.contentViewHeight = res.windowHeight - uni.getSystemInfoSync().screenWidth / 750 * (100); //像素
 		},
 		methods: {
-			clickLeft() {
-				uni.navigateBack({
-					delta: 1
+			interval: function(time1, time2) {
+				var stime = Date.parse(new Date(time1));
+				var etime = Date.parse(new Date(time2));
+				var usedTime = etime - stime;
+				var minutes = Math.floor(usedTime / (60 * 1000)) //计算相差分钟数
+				console.log(minutes)
+				if (minutes > 5) {
+					return true
+				} else if (minutes < 5) {
+					return false
+				}
+			},
+			userInfo() {
+				uni.showLoading({
+					title: "加載中"
 				})
-			},
-			clickRight() {
-				uni.navigateTo({
-					url: "chatSettings?id=" + this.to
+				setTimeout(() => {
+					uni.hideLoading()
+				}, 2000);
+				chatUserInfo(this.sessionId).then(data => {
+					if(!data){
+						uni.hideLoading()
+						uni.showToast({
+							icon: 'none',
+							title: '该用户未注册，暂不能聊天'
+						});
+						return
+					}
+					this.userInfos = data
+					this.msgList()
+					uni.setNavigationBarTitle({
+						title: this.userInfos.name
+					})
+					
+					
 				})
+				
 			},
-			getInputMessage: function(message) { //获取子组件的输入数据
-				this.sendTextMsg(message)
+			msgList() {
+				// currentSession(this.userInfos.id, this.myInfo.id).then(data => {
+				// 	console.log(data)
+				// 	if(!data){
+				// 		setTimeout(() => {
+				// 			uni.pageScrollTo({
+				// 				scrollTop: 9999999999,
+				// 				duration: 0
+				// 			});
+				// 			this.setSessinolist()
+				// 		}, 300);
+				// 		uni.hideLoading()
+				// 		return
+				// 	}
+				// 	uni.setStorageSync("msg"+this.userInfos.id,data)
+					
+				// 	this.msglist = data
+				// 	setTimeout(() => {
+				// 		uni.pageScrollTo({
+				// 			scrollTop: 9999999999,
+				// 			duration: 0
+				// 		});
+				// 		this.setSessinolist()
+				// 	}, 300);
+				// 	uni.hideLoading()
+				// })
+				this.msglist=uni.getStorageSync("msg"+this.userInfos.id)
+				if(!this.msglist){
+					uni.hideLoading()
+					this.msglist = []
+					return
+				}
+				setTimeout(() => {
+					uni.pageScrollTo({
+						scrollTop: 999999999,
+						duration:0
+					});
+					this.setSessinolist()
+				}, 300);
+				uni.hideLoading()
 			},
-			sendTextMsg(message) {
+			getInputMessage(message) { //获取子组件的输入数据
 				this.paddingBottom = 50
-				this.$store.dispatch('sendMsg', {
-					type: 'text',
-					scene: "p2p",
-					to: this.to,
-					text: message.content
+				var that = this
+				sendMessage(that.userInfos.id, message, 1).then(data => {
+					if (!data) {
+						return
+					}
+					that.msglist.push({
+						from: {
+							id: that.myInfo.id,
+							avatar: that.myInfo.portrait,
+							name: that.myInfo.name
+						},
+						message: message,
+						to: {
+							id: that.userInfos.id,
+							avatar: that.userInfos.avatar,
+							name: that.userInfos.name
+						},
+						time: new Date().getTime(),
+						type: 1,
+						lastMsgShow: 0
+					})
+					uni.setStorageSync("msg"+that.userInfos.id,that.msglist)
+					setTimeout(() => {
+						uni.pageScrollTo({
+							scrollTop: 9999999999,
+							duration: 0
+						});
+						
+						that.setSessinolist()
+					}, 200)
 				})
-
 			},
 			sendImg() {
 				var that = this
-				uni.chooseImage({
-					count: 1, //默认9
-					sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-					sourceType: ['album'], //从相册选择
-					success: function(res) {
-						uni.showLoading({
-							title: '发送中...',
+				getImgTemp().then(data => {
+					uni.showLoading({
+						title: "加载中"
+					})
+					setTimeout(() => {
+						uni.hideLoading()
+					}, 2000);
+					// console.log(data)
+					uploadPictures(data).then(data => {
+						sendMessage(that.userInfos.id, data, 3).then(data => {
+							if (!data) {
+								return
+							}
+							that.msglist.push({
+								from: {
+									id: that.myInfo.id,
+									avatar: that.myInfo.portrait,
+									name: that.myInfo.name
+								},
+								message: data,
+								to: {
+									id: that.userInfos.id,
+									avatar: that.userInfos.avatar,
+									name: that.userInfos.name
+								},
+								time: new Date().getTime(),
+								type: 3,
+								lastMsgShow: 0
+							})
+							uni.setStorageSync("msg"+that.userInfos.id,that.msglist)
+							uni.hideLoading()
+							setTimeout(() => {
+								uni.pageScrollTo({
+									scrollTop: 9999999999,
+									duration: 0
+								});
+								this.setSessinolist()
+							}, 200)
 						})
-						that.$store.dispatch('sendFileMsg', {
-							scene: "p2p",
-							to: that.to,
-							fileInput: res.tempFilePaths
-						})
-					}
-				});
 
+					})
+				})
+			},
+			getMsg(data) {
+				this.msglist.push(data)
+				setTimeout(() => {
+					uni.pageScrollTo({
+						scrollTop: 9999999999,
+						duration: 0
+					});
+				}, 200)
+			
 			},
 			scrollEnd: function() {
-				
+				uni.pageScrollTo({
+					scrollTop: 9999999999,
+					duration: 0
+				});
+			},
+			show() {
+				this.paddingBottom = 300
 				setTimeout(() => {
 					uni.pageScrollTo({
 						scrollTop: 9999999999,
@@ -183,48 +264,27 @@
 					});
 				}, 300)
 			},
-			show(){
-				this.paddingBottom = 300
+			foc(){
 				setTimeout(() => {
 					uni.pageScrollTo({
 						scrollTop: 9999999999,
-						duration: 0
+						duration: 300
 					});
-				}, 200)
+				}, 800)
 			},
 			setScrollH: function() {
-				this.paddingBottom = 50
-				setTimeout(() => {
-					uni.pageScrollTo({
-						scrollTop: 9999999999,
-						duration: 0
-					});
-				}, 500)
-				var query = uni.createSelectorQuery();
-				let footh = query.select('.foot');
-				//console.log('fh',footh);
-				const res = uni.getSystemInfoSync();
-				this.style.pageHeight = res.windowHeight;
-				this.$nextTick(function() {
-					footh.fields({
-						size: true
-					}, data => {
-						footh = data.height;
-						// console.log('fh', data.height);
-						this.style.contentViewHeight = res.windowHeight - footh; //像素
-					}).exec();
-				})
+
 			},
 			toUser() {
 				uni.navigateTo({
-					url: '/pages/daily/userInfo?uid=' + this.to
+					url: '/pages/daily/userInfo?uid=' + this.sessionId
 				});
 			},
 			previewImage(url) {
 				var imgSrc = []
 				this.msglist.filter(item => {
-					if (item.file) {
-						imgSrc.push(item.file.url)
+					if (item.type == 3) {
+						imgSrc.push(item.message)
 					}
 				})
 				var index = imgSrc.indexOf(url)
@@ -243,82 +303,78 @@
 				});
 			},
 			moveHandle() {},
-			generateRichTextNode(text) {
-				let tempStr = text
-				let richTextNode = []
-				let leftBracketIndex = tempStr.indexOf('[')
-				let rightBracketIndex = tempStr.indexOf(']')
-				let countOfWord = 0
-				Array.from(tempStr).map(item => {
-					if (item != '[' && item != ']') {
-						countOfWord++
+			setSessinolist() {
+				var that = this
+				var session = uni.getStorageSync('updateSessionList')
+				var msg = that.msglist.slice(-1)
+				if(msg.length!=0){
+					var lastmsg = JSON.parse(JSON.stringify(msg))
+					lastmsg = lastmsg[0]
+					lastmsg.lastMsgShow = 0
+					if (lastmsg.to.id == that.sessionId) {
+						lastmsg.from = {
+							id: that.userInfos.id,
+							avatar: that.userInfos.avatar,
+							name: that.userInfos.name
+						}
+						lastmsg.lastMsgShow = 0
+					}
+				}else{
+					return
+				}
+				var has = false
+				var idx = 0
+				if (session.length == 0) {
+					var session = []
+					session.unshift(lastmsg)
+					uni.setStorageSync('updateSessionList', session)
+					uni.$emit('updateSessionList', session)
+					return
+				}
+				session.filter((item, index) => {
+					if (item.from.id == that.sessionId) {
+						has = true
+						idx = index
 					}
 				})
-				if (leftBracketIndex == -1 || rightBracketIndex == -1 || countOfWord == 0) { //没有emoji
-					richTextNode.push({
-						type: 'text',
-						text: tempStr
-					})
-					return richTextNode
+				if (has) {
+					session.splice(idx, 1, lastmsg)
+					var arr = session[0]
+					session[0] = lastmsg
+					session[idx] = arr
+					uni.setStorageSync('updateSessionList', session)
+					uni.$emit('updateSessionList', session)
+					return
 				}
-				while (tempStr.length != 0) {
-					leftBracketIndex = tempStr.indexOf('[')
-					rightBracketIndex = tempStr.indexOf(']')
-					if (leftBracketIndex == 0) { // 开头是[
-						rightBracketIndex = tempStr.indexOf(']')
-						if (rightBracketIndex == -1) {
-							richTextNode.push({
-								type: 'text',
-								text: tempStr
-							})
-							tempStr = ''
-						} else {
-							let emojiName = tempStr.slice(0, rightBracketIndex + 1)
-							if (emoji[emojiName]) { // 有效emoji
-								richTextNode.push({
-									name: 'img',
-									attrs: {
-										width: '30rpx',
-										height: '30rpx',
-										src: emoji[emojiName].img
-									}
-								})
-							} else { //无效emoji
-								richTextNode.push({
-									type: 'text',
-									text: emojiName
-								})
-							}
-							tempStr = tempStr.substring(rightBracketIndex + 1, tempStr.length)
-						}
-					} else { // 开头不是[
-						if (leftBracketIndex == -1) { // 最后全是文字
-							richTextNode.push({
-								type: 'text',
-								text: tempStr.slice(0, tempStr.length)
-							})
-							tempStr = ''
-						} else {
-							richTextNode.push({
-								type: 'text',
-								text: tempStr.slice(0, leftBracketIndex)
-							})
-							tempStr = tempStr.substring(leftBracketIndex, tempStr.length + 1)
-						}
-					}
-				}
-				return richTextNode
+				session.unshift(lastmsg)
+				uni.setStorageSync('updateSessionList', session)
+				uni.$emit('updateSessionList', session)
 			}
 		},
 		onNavigationBarButtonTap() {
 			uni.navigateTo({
-				url: "chatSettings?id=" + this.to
+				url: "chatSettings?userInfo=" + JSON.stringify(this.userInfos)
 			})
 		},
 		onBackPress() {
 			uni.hideKeyboard()
+			this.setSessinolist()
 		},
+		onShow() {
+			chatUserInfo(this.sessionId).then(data => {
+				this.userInfos = data
+				uni.setNavigationBarTitle({
+					title: this.userInfos.name
+				})
+
+			})
+		},
+	
 		filters: {
+			dateFormat(time) {
+				time = Number(time)
+				return util.formatDate(time, true)
+			},
 			generateRichTextNode(text) {
 				let tempStr = text
 				let richTextNode = []
@@ -495,6 +551,10 @@
 
 	}
 
+	.message-text rich-text div {
+		vertical-align: middle
+	}
+
 	.message-img {}
 
 	.message-img image {
@@ -519,6 +579,10 @@
 		font-size: 32rpx;
 		line-height: 48rpx;
 
+	}
+
+	.rich {
+		vertical-align: middle
 	}
 
 	.right-triangle {

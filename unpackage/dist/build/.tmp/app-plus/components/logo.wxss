@@ -1,29 +1,26 @@
 
-.header.data-v-e0a46544 {
+.header.data-v-14896bbc {
 	display: -webkit-box;
 	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
 	        justify-content: center;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
 	        flex-direction: column;
 }
-.logo.data-v-e0a46544 {
+.logo.data-v-14896bbc {
 	width: 70px;
 	height: 65px;
 	display: block;
 	margin: 0 auto;
 }
-.logo image.data-v-e0a46544{
+.logo image.data-v-14896bbc{
 	width: 100%;
 }
-.slogan.data-v-e0a46544 {
+.slogan.data-v-14896bbc {
 	color: #EFEFF4;
 	font-size: 60rpx;
 	text-align: center;

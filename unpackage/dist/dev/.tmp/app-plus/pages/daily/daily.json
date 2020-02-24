@@ -8,7 +8,8 @@
   "bounce": "none",
   "softinputMode": "adjustPan",
   "usingComponents": {
-    "chat-input": "/components/chatinput",
-    "image-cropper": "/components/invinbg-image-cropper/invinbg-image-cropper"
+    "uni-popup": "/components/uni-popup/uni-popup",
+    "comm": "/components/comments",
+    "l-barrage": "/components/l-barrage/l-barrage"
   }
 }

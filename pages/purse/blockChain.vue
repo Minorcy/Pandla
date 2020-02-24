@@ -1,7 +1,7 @@
 <template>
 	<view class="pages-content">
 		<view class="box">
-			<loading></loading>
+			
 			<text>頁面正在建設中
 				程序員小哥哥正在努力</text>
 		</view>
@@ -9,12 +9,7 @@
 </template>
 
 <script>
-	import loading from '../../components/loading8.vue'
-	export default{
-		components:{
-			loading
-		}
-	}
+	
 </script>
 
 <style>
